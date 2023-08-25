@@ -46,17 +46,17 @@ Regardless of the Network topology being used, Matter has a concept of Fabrics. 
 
 ## Matter Layered Architecture
 
-Matter is split up into a layered architecture to help separate the different responsibilities and encapsulate various pieces of the protocol stack. The following diagram shows the various interactions between the Matter application stack layers:
+Matter is split up into a layered architecture to help separate the different responsibilities and encapsulate various pieces of the protocol stack. The following diagram shows the various interactions between the Matter application stack layers as defined by the Matter CSA specification. For implementation purposes the last four layers are handled as a Messaging Layer and a Transport layer.
 
 ![Stack layer interactions](resources/image4.png)
 
-- The **Application Layer** of the Matter stack is the highest layer, and corresponds to the high-level logic of the device. The user application is built on the unified data model, which helps improve interoperability. 
+- The **Application Layer** of the Matter stack is the highest layer, and corresponds to the high-level logic of the device. The user application is built on the unified data model, which helps improve interoperability.
 - The **Data Model** layer corresponds to how the data and action elements support the functionality of the application, such as the defines of the elements, namespaces for endpoints, clusters, and attributes in the application.
-- The **Interaction Model** handles, as the name suggests, the interactions between the nodes and is responsible for how data is transferred between nodes. Both the Data Model and Interaction Model are inherited from the well-known dotdot standard used by Zigbee. 
-- The interactions are transformed into a message payload. This process is noted by the CSA as  **Action Framing**. 
+- The **Interaction Model** handles, as the name suggests, the interactions between the nodes and is responsible for how data is transferred between nodes. Both the Data Model and Interaction Model are inherited from the well-known dotdot standard used by Zigbee.
+- The **Action Framing** layer is where the interactions are transformed into a message payload.
 - The **Security Layer** takes the payload and encrypts and appends the packet with a MAC (Message authentication code).
-- From the security layer, the packet transfers down to the Transport layer to what the CSA refers to as the **Message Framing and Routing** layer. This updates the payload with the necessary routing information such as fabric and Node ID. 
-- Finally the packet is sent to the **Transport and IP Framing** layer, from which the payload is sent through the IP network either through TCP (which is not yet currently supported) or Matter's Message Reliability Protocol, a software layer on top of UDP, for IP management of the data. Note that the IP Framing in Matter is handled by the Networking Protocol stack to handle this. 
+- From the security layer, the packet transfers down to the Transport layer to what the CSA refers to as the **Message Framing and Routing** layer. This updates the payload with the necessary routing information such as fabric and Node ID.
+- Finally the packet is sent to the **Transport and IP Framing** layer, from which the payload is sent through the IP network either through TCP (which is not yet currently supported) or Matter's Message Reliability Protocol, a software layer on top of UDP, for IP management of the data. Note that the IP Framing in Matter is handled by the Networking Protocol stack to handle this.
 
 Once the data is received on a peer device, it travels up the Matter Protocol stack in reverse and delivers the message to the **Application** layer.
 
@@ -70,4 +70,4 @@ As mentioned before, one of the main benefits of using Matter is the enhanced se
 | **PASE (Passcode Authentication Session Establishment)** | This process at the Commissioning stage uses a passcode provided out-of-band (like a device's QR code) to commission a Matter device on the network. |
 | **CASE (Certificate Authentication Session Establishment)** | This process at the Operational stage establishes and provides an authentication key exchanged between two devices.  |
 
-More detailed information on Matter security can be found in our [Matter Security Documentation](/matter/<docspace-docleaf-version>/matter-overview-guides/matter-security) and [Matter Commissioning Documentation](/matter/<docspace-docleaf-version>/matter-overview-guides/matter-commissioning). 
+More detailed information on Matter security can be found in [Matter Security Documentation](/matter/<docspace-docleaf-version>/matter-overview-guides/matter-security) and [Matter Commissioning Documentation](/matter/<docspace-docleaf-version>/matter-overview-guides/matter-commissioning).
