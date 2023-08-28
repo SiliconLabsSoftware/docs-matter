@@ -2,7 +2,7 @@
 
 The Data Model in Matter describes a hierarchical encapsulation of data elements in the Matter network, including, but not limited to, nodes, endpoints, clusters, and device types, where the node is the highest level data element.
 
-A single physical Matter device, such as a light, switch, or door lock, can be represented by one or more nodes. An environment where multiple Matter nodes interoperate is referred to as a Matter fabric. The nodes share a common root of trust. On each separate fabric, a physical Matter device is represented by a node. Every node has a unique network address (Operational Node ID) that makes it uniquely identifiable in the fabric it is on. For example, in the following figure a Matter Lighting device on an Apple HomePod fabric (blue) has an operational node ID unique to the HomePod fabric and a Matter Switch device on a separate Samsung SmartThings Station fabric (red) in the same home has an operational node ID unique to the SmartThings fabric. These IDs may be the same or different; they are independent of each other because they are on two different fabrics.
+A single physical Matter device, such as a light, switch, or door lock, can be represented by one or more nodes. An environment where multiple Matter nodes interoperate is referred to as a Matter fabric. These nodes share a common root of trust. On each separate fabric, a physical Matter device is represented by a node. Every node has a unique network address (Operational Node ID) that makes it uniquely identifiable in the fabric it is on. For example, in the following figure a Matter Lighting device on an Apple HomePod fabric (blue) has an operational node ID unique to the HomePod fabric and a Matter Switch device on a separate Samsung SmartThings Station fabric (red) in the same home has an operational node ID unique to the SmartThings fabric. These IDs may be the same or different; they are independent of each other because they are on two different fabrics.
 
 A Matter device may also be part of more than one fabric and thus is represented on each different fabric by a different node. In following figure, a Matter Door Lock device is on both the HomePod and SmartThings fabrics. Thus, the Door Lock is represented by two different nodes; one for the HomePod fabric and another for the SmartThings fabric. The operational node IDs for the two nodes representing the device may be the same or different; the IDs are independent of each other because the nodes are on two different fabrics.
 
@@ -16,7 +16,7 @@ In the following figure, the hierarchical structure of endpoint, cluster, attrib
 
 ![Matter Node Overview](resources/image2.jpg)
 
-Each node contains the complete application functionality for its device on a single stack. Because of this, nodes can communicate directly with other nodes on the network without the need for an intermediary. Communication over a Matter network starts and ends at a node.
+Each node contains the complete application functionality for its device on a single stack. Because of this, nodes can communicate directly with other nodes on the network without the need for an intermediary.
 
 Nodes have a set of related behaviors, known as a role. There are a few main node roles:
 
@@ -32,7 +32,7 @@ Endpoints enclose one component of a node’s complete functionality; together, 
 
 Each of these endpoints are known as a feature set, which is made of clusters that define the attributes, events, and commands of a single endpoint's functionality. There are two distinct types of endpoints in Matter: leaf endpoints and composed endpoints.
 
-- Leaf endpoints, such as Endpoints 2, 10, and 11 in the following figure, do not require other endpoints to function.
+- Leaf endpoints, such as Endpoints 0, 10, and 11 in the following figure, do not require other endpoints to function.
 - Composed endpoints, such as Endpoint 1 in the following figure, require other endpoints to function. Connector lines indicate the endpoints that a certain endpoint has access to.
 
 ![Leaf and Composed Endpoints](resources/image3.jpg)
@@ -80,7 +80,7 @@ Device types are a collection of clusters on their respective endpoints that def
 
 A device can be made up of any combination of clusters. Therefore, to ensure the interoperability of devices from different manufacturers on a single network, Matter defined sets of requirements for official device types in the Matter Device Library for users to implement and extend. Every definition contains the device type ID, type revision number, and mandatory cluster(s) with their minimum revision number. Device Types are constantly updating, with each iteration tracked using the revision number starting from 1. However, changes to a device type's definition do not change its functionality, but only serve to improve operation. It is also important to note that newer versions of a device will continue to interoperate with older revision levels.
 
-The device types that Matter supports are an unyielding requirement for Matter nodes. Nodes that implement certain device types are required to include feature sets of clusters on one or more endpoints for the said device type. A node cannot implement a device type if it does not have all the required feature sets. Official documentation lists the application device types that Matter supports in the Device Library Specification, while the respective supported application clusters are defined in the Application Cluster Library. These two documents, along with the main Matter specification document, can be found on the website for CSA members: [Specifications Download Request - CSA-IOT](https://csa-iot.org/developer-resource/specifications-download-request/).
+The device types that Matter supports are an unyielding requirement for Matter nodes. Nodes that implement certain device types are required to include feature sets of clusters on one or more endpoints for the said device type. A node cannot implement a device type if it does not have all the required feature sets. Official documentation lists the application device types that Matter supports in the Device Library Specification, while the respective supported application clusters are defined in the Application Cluster Library. These two documents, along with Chapter 7: Data Model Specifciation of the Matter specification document, can be found on the website for CSA members: [Specifications Download Request - CSA-IOT](https://csa-iot.org/developer-resource/specifications-download-request/).
 
 ## Relating Matter to Zigbee
 
