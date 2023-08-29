@@ -35,17 +35,13 @@ The following concepts are important for understanding transactions.
 
   When groupcasting, a path may include the group or a wildcard operator to address several nodes simultaneously, decreasing the number of actions required and thus decreasing the response time of an interaction. Without groupcasting, humans may perceive latency between multiple devices reacting to an interaction. For example, when turning off a strip of lights, a path would include the group containing all the lights instead of turning off each light individually.
 
-When using the Matter SDK, the individual actions **Grace should this be transactions, rather than actions?** in Read, Write, and Invoke interactions are handled automatically. This conveniently allows developers to call the overarching interactions instead of each individual transaction directly.
-
 The following sections review each of the four interaction types and their constituent transactions and actions.
 
 ## The Read Interaction
 
 ![Diagram of a Read Interaction](resources/read-interaction.jpg)
 
-An initiator starts a Read Interaction when it wants to determine the value of one or more of a target node's attributes or events.
-
-A Read Transaction is begun and the following steps take place.
+An initiator starts a Read Interaction when it wants to determine the value of one or more of a target node's attributes or events. The following steps occur:
 
 1. **Read Request Action** - Requests a list of the target’s attributes and/or events, along with paths to each
 2. **Report Data Action** - Generated in response to the Read Request Action. Target sends back the requested list of attributes and/or events, a suppress response, and a subscription ID.
@@ -96,11 +92,11 @@ A Timed Write Transaction consists of the following sequence of actions:
 
 ### Untimed Write Transactions
 
-An Untimed Write Transaction only uses steps 2 and 3 of the Timed Write Transaction, as no time interval needs to be set or confirmed.
+An Untimed Write Transaction requires only the Write Request Action and the Write Response Action Timed Write Transaction since there is no time interval that needs to be set or confirmed.
 
 ### Write Transaction Restrictions
 
-Untimed and timed Write Transactions differ in their restrictions. All actions in timed transactions are unicast-only, whereas Untimed Write Request Actions may be multicast but require the Suppress Response flag to be set to prevent the network from flooding with status responses. In terms of the diagram, a multicast Untimed Write Request would only have the top beige box of the Write Request. (**Grace - not sure this is clear - this is untimed and the top box is timed?** )
+Untimed and timed Write Transactions differ in their restrictions. All actions in timed transactions are unicast-only, whereas Untimed Write Request Actions may be multicast but require the Suppress Response flag to be set to prevent the network from flooding with status responses.
 
 ## Invoke Interaction
 
@@ -171,3 +167,8 @@ Subscription Interactions have a few restrictions.
 ## Relating Matter to Zigbee
 
 The Matter Interaction Model originates from Chapter 2 in the Zigbee Cluster Library found here: [https://groups.csa-iot.org/wg/members-all/document/23019](https://groups.csa-iot.org/wg/members-all/document/23019); the Interaction model extends this by abstracting interactions from other layers (security, transport, message format, encoding). The Interaction Model fills in gaps in the Zigbee Cluster Library identified by the Matter Data Model Tiger Team, adding Multi-Element Message support, Synchronized Reporting, reduce message types in commands and actions, complex data type support in all messages, Events, and interception attack.
+
+## Matter Specifications
+
+More information on the Matter Interaction Model can be found in Chapter 8 of Matter Core Specifications [ Specifications Download Request - CSA-IOT](https://csa-iot.org/developer-resource/specifications-download-request/).
+
