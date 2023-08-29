@@ -16,7 +16,7 @@ Matter is an IPv6-based protocol that utilizes transport layer protocols like TC
 
 The true power of Matter lies in its commitment to interoperability. Industry leaders such as Google, Apple, Amazon, and Samsung Smart Things have implemented Matter in their IoT devices, fostering wider adoption from other manufacturers. Matter also supports bridging from other existing technologies, such as Zigbee, Bluetooth® Mesh and Z-Wave. This allows already existing IoT technology to be integrated into an interoperable environment. The compatibility and seamless integration across brands create a unified ecosystem where your smart devices work harmoniously.
 
-![The Matter Ecosystem](resources/image1.jpg)
+![The Matter Ecosystem](resources/ecosystem.jpg)
 
 ## Matter Network Architecture
 
@@ -24,11 +24,11 @@ In theory, Matter can sit on top of any IPv6-bearing network. However in practic
 
 Two common underlying network topologies are commonly used in Matter. The first is known as a Single Network topology, where Matter runs solely over one Network. This means the Matter Network could run over one 802.15.4 Thread network or over a Wi-Fi network. In this scenario all Matter devices are connected to the same single logical network.
 
-![Single network topology](resources/image2.png)
+![Single network topology](resources/single-network-topology.png)
 
 The other, more common, network topology is the star network, which consists of multiple peripheral networks joined together by a central hub network. If a peripheral network is used it must be directly joined to a hub via one or more border routers. A border router (or an edge router) is a special router that can provide routing services between two IP Subnets, effectively acting as a bridge between the two different networks. This enables a lot of flexibility and interoperability between various home networks that can all be interconnected.
 
-![Star network topology](resources/image3.png)
+![Star network topology](resources/star-network-topology.png)
 
 Regardless of the Network topology being used, Matter has a concept of Fabrics. A Matter Fabric is a security domain that contains a collection of nodes. These nodes can be identified and can communicate with each other within the context of that security domain. Each Matter Fabric has a unique Node ID for each node within the fabric and has a unique Fabric ID. Any Matter device can be a part of multiple Matter fabrics, and in turn will have multiple associated Node IDs / Fabric IDs depending on the fabric it is communicating with.
 
@@ -48,7 +48,7 @@ Regardless of the Network topology being used, Matter has a concept of Fabrics. 
 
 Matter is split up into a layered architecture to help separate the different responsibilities and encapsulate various pieces of the protocol stack. The following diagram shows the various interactions between the Matter application stack layers as defined by the Matter CSA specification. For implementation purposes the last four layers are handled as a Messaging Layer and a Transport layer.
 
-![Stack layer interactions](resources/image4.png)
+![Stack layer interactions](resources/stack-layer-interactions.png)
 
 - The **Application Layer** of the Matter stack is the highest layer, and corresponds to the high-level logic of the device. The user application is built on the unified data model, which helps improve interoperability.
 - The **Data Model** layer corresponds to how the data and action elements support the functionality of the application, such as the defines of the elements, namespaces for endpoints, clusters, and attributes in the application.
