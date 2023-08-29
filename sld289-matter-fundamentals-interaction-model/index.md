@@ -1,6 +1,6 @@
 # The Matter Interaction Model
 
-The Matter Device Interaction Model (IM) defines the methods of communication between nodes, serving as the common language for node-to-node information transmission.
+The Matter Device Interaction Model (IM) defines the methods of communication between nodes, and serves as the common language for node-to-node information transmission.
 
 Nodes communicate with each other through interactions. Interactions are a sequence of transaction(s), which in turn are a sequence of actions.
 
@@ -170,5 +170,5 @@ The Matter Interaction Model originates from Chapter 2 in the Zigbee Cluster Lib
 
 ## Matter Specifications
 
-More information on the Matter Interaction Model can be found in Chapter 8 of Matter Core Specifications [ Specifications Download Request - CSA-IOT](https://csa-iot.org/developer-resource/specifications-download-request/).
+More information on the Matter Interaction Model can be found in Chapter 8 of Matter Core Specifications [Specifications Download Request - CSA-IOT](https://csa-iot.org/developer-resource/specifications-download-request/).
 
