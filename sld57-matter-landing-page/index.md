@@ -14,7 +14,7 @@ an _IoT Service_ in a Unify Framework.
 
 These pages are for users who want to develop Matter applications in Simplicity Studio. The Simplicity Studio development path is the preferred path if you are looking for a GUI-based development experience in which you can create production-ready projects from a well-tested library. The Simplicity Studio development path also natively supports development on the Windows operating system. As a result, Windows users should use Simplicity Studio for their development environment.
 
-Alternatively you can develop applications directly out of the [Silicon Labs Matter GitHub repo](https://github.com/SiliconLabs/matter). Complete documentation for the GitHub development use case is provided in the [Silicon Labs Matter GitHub Documentation](https://github.com/SiliconLabs/matter/blob/latest/docs/silabs/README.md). This path is best for those who are experienced working with Matter and Silicon Labs products, prefer working with GitHub and a workflow that's not IDE-driven, or need access to newer features sooner at the cost of lesser test coverage.
+Alternatively you can develop applications directly out of the [Silicon Labs Matter GitHub repo](https://github.com/SiliconLabs/matter). Complete documentation for the GitHub development use case is provided in the [Silicon Labs Matter GitHub Documentation](https://siliconlabs.github.io/matter/latest/). This path is best for those who are experienced working with Matter and Silicon Labs products, prefer working with GitHub and a workflow that's not IDE-driven, or need access to newer features sooner at the cost of lesser test coverage.
 
 ## Other Resources
 
