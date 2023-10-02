@@ -45,7 +45,7 @@ This will build chip-tool in `out/standalone`.
 If you are just running the Matter demo, and are not interested in building the
 Matter Accessory Device images from scratch, you can download the MAD images for
 Wi-Fi from this software release on the
-[Matter Artifacts Page](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts)
+[Matter Artifacts Page](../sld249-matter-prerequisites/matter-artifacts.md)
 
 **Note:** A pre-built image is not available for SiWx917 in SoC mode. It must be built from scratch in this release.
 Pre-built images will be provided in the next release.
@@ -55,7 +55,7 @@ forward to the instructions for running the demo.
 
   - **For EFR32MG24 host processors**
 
-    - [Running the Matter Demo for EFR32 device over Wi-Fi page](./run-demo.md)
+    - [Running the Matter Demo for EFR32 device over Wi-Fi page](./run-matter-demo.md)
 
   - **For SiWx917 SoC processor**
 

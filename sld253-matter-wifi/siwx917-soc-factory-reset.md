@@ -2,7 +2,7 @@
 
 ## SiWx917 SoC Factory Reset without Ozone
 
-1. Press the BTN0 on WSTK for about 6-7 seconds. The LED0 will flash 5 times and board will reboot.
+1. Press and hold the BTN0 on WSTK for about 6-7 seconds. LED0 will flash 5 times and then the board will reboot.
 
 ## SiWx917 SoC Factory Reset with Ozone
 

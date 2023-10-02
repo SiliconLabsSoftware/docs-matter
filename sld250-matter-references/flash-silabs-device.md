@@ -4,9 +4,15 @@ Once you have an image built, you can flash it onto your EFR or SiWx917 device (
 
 ## Simplicity Studio
 
-Simplicity Studio is a complete development environment and tool suite. It has the ability to discover USB connected development boards and flash them.
+Simplicity Studio is a complete development environment and tool suite. It has the ability to discover USB-connected development boards and flash them.
 
-- [Download Simplicity Studio](https://www.silabs.com/developers/simplicity-studio)
+- [Download Simplicity Studio](https://www.silabs.com/developers/simplicity-studio).
+- Building application Using Simplicity Studio:
+    - [Build Application for EFR32](/matter/<docspace-docleaf-version>/matter-wifi/build-efx32-application-using-studio)
+    - [Build Application for SoC](/matter/<docspace-docleaf-version>/matter-wifi/build-soc-application-using-studio)
+- Flash application Using Simplicity Studio:
+    - [Build Application for EFR32 Step 9](/matter/<docspace-docleaf-version>/matter-wifi/build-efx32-application-using-studio)
+    - [Build Application for SoC Step 9](/matter/<docspace-docleaf-version>/matter-wifi/build-soc-application-using-studio)
 - [Simplicity Studio Reference Guide](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-building-and-flashing/flashing)
 
 ## Simplicity Commander
@@ -16,4 +22,3 @@ Links to download Simplicity Commander's standalone versions are included below.
 - Linux: https://www.silabs.com/documents/public/software/SimplicityCommander-Linux.zip
 - Mac: https://www.silabs.com/documents/public/software/SimplicityCommander-Mac.zip
 - Windows: https://www.silabs.com/documents/public/software/SimplicityCommander-Windows.zip
-

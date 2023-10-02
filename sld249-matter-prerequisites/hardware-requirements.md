@@ -35,7 +35,7 @@ image for a board which is not listed here, download and build your image in
 Simplicity Studio. Pre-built OpenThread RCP firmware images are provided for
 the following boards on the [Matter Artifacts page](./matter-artifacts.md):
 
-**Note:** The EFR32MG24 is the preferred starting point for Matter MCUs.  It provides Secure Vault and can use the internal flash of the device to store an upgrade image. 
+**Note:** The EFR32MG24 is the preferred starting point for Matter MCUs. It provides Secure Vault and can use the internal flash of the device to store an upgrade image. 
 
 -   **MG24 boards:**
     -   BRD4186C / SLWSTK6006A / Wireless Starter Kit / 2.4GHz@10dBm
@@ -62,7 +62,7 @@ Pre-built binary images for the Matter accessory devices are provided on the
 [Matter Artifacts page](./matter-artifacts.md). Silicon Labs supports development of
 Matter Accessory Devices for Matter over Thread on the following platforms:
 
-**Note:** The EFR32MG24 is the preferred starting point for Matter MCUs.  It provides Secure Vault and can use the internal flash of the device to store an upgrade image. 
+**Note:** The EFR32MG24 is the preferred starting point for Matter MCUs. It provides Secure Vault and can use the internal flash of the device to store an upgrade image. 
 
 
 -   **MG24 boards:**
@@ -100,16 +100,18 @@ Matter Accessory Devices for Matter over Thread on the following platforms:
         915MHz@19dBm
         -   [SLWRB4170A](https://www.silabs.com/development-tools/wireless/zigbee/slwrb4170a-efr32mg12-radio-board)
 
+## Matter Over Wi-Fi Accessory Device Requirements
 
-## Matter over Wi-Fi Accessory Device Requirements for NCP mode
+### Matter over Wi-Fi Accessory Device Requirements for NCP Mode
 
 The Silicon Labs Matter over Wi-Fi NCP mode demo and development requires two boards: the
 Silicon Labs EFR32 Radio board to run the Matter code and either the RS9116, SiWx917 or WF200 to run the Wi-Fi protocol stack. 
 Pre-built images for the EFR32 are provided on the [Matter Artifacts page](./matter-artifacts.md). Pre-built images for SiWx917 or RS9116 connectivity 
 firmware are also provided on the [Matter Artifacts page](./matter-artifacts.md). 
 
-**Note:** 
-1. The EFR32MG24 is the preferred starting point for Matter MCUs.  It provides Secure Vault and can use the internal flash of the device to store an upgrade image.
+**Note:**
+
+1. The EFR32MG24 is the preferred starting point for Matter MCUs. It provides Secure Vault and can use the internal flash of the device to store an upgrade image.
 2. The WF200 connectivity firmware image is included in the EFR32MG12 or EFR32MG24 images on the [Matter Artifacts page](./matter-artifacts.md) for running with the WF200 in NCP mode. The Matter application downloads the connectivity firmware onto the WF200 on first-time startup.
 
 The following boards are supported for the Matter over Wi-Fi demos and development:
@@ -146,7 +148,7 @@ The following boards are supported for the Matter over Wi-Fi demos and developme
     -   WFM200S / Single Band Wi-Fi Expansion Board / 2.4GHz
         -   [SLEXP8023A](https://www.silabs.com/development-tools/wireless/wi-fi/wfm200-wifi-expansion-kit)
 
-## Matter over Wi-Fi Accessory Device Requirements for SoC mode
+### Matter over Wi-Fi Accessory Device Requirements for SoC Mode
 
 The Silicon Labs Matter over Wi-Fi demo and development for SoC mode requires the SiWx917 SoC board that supports Matter over Wi-Fi in a single-chip package - the integrated MCU is dedicated for peripheral and application-related processing (Matter), while the ThreadArch® runs the wireless and networking protocol stacks. 
 
@@ -161,16 +163,23 @@ Pre-built images for the SiWx917 connectivity firmware are available as per the 
         -   BRD4325B - A0 dual flash 1.2
     -   SiWx917 SoC / Common Flash Radio Board / 2.4GHz
         -   BRD4325C - B0 common flash v1.2
-        -   BRD4325G - B0 Stacked Flash + External PSRAM v1.2 
+        -   BRD4325G - B0 Stacked Flash + External PSRAM v1.2
+        -   BRD4338a - B0 common flash v2.0
     
     **Note:**
     Refer [SiWx917 SoC](https://www.silabs.com/wireless/wi-fi/siwx917-wireless-socs) for more details
 
-## Additional Matter over Wi-Fi Hardware Requirements
+### Additional Matter over Wi-Fi Hardware Requirements
 
 In addition to your Matter over Wi-Fi Accessory Device you will need the
 following for both running the demo and for development:
 
+-   Windows/Linux/MacOS computer with a USB port
+-   USB cable for connecting WSTK Board to Computer
+-   Raspberry Pi with a >32 GB SD Card
 -   Access point with Internet access
 -   microSD card (>=32GB) (if using Raspberry Pi)
 -   **[Optional]** Android Mobile phone (If using the chip-tool on Android)
+-   Interconnect board (included in the RS9116 kit)
+-   SPI Cable (included in the RS9116 kit)
+-   Jumper Cables (included in the RS9116 kit)

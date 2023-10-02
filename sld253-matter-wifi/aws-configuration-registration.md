@@ -27,7 +27,7 @@
 ```
 Once done, select `Create`.
 
-6. Steps to generate the certificate for your Matter application to use in the `dic_config.h` header.
+6. Steps to generate the certificate for your Matter application to use in the `dic_nvm_cert.cpp` source file. 
     - Go to `All Devices -> Things` and select `Create Things`.
     - Select `Create Single Thing` and click **Next**.
     - Specify thing properties Info -> Give the thing a name (Note: Client ID) and click **Next**.
@@ -57,7 +57,7 @@ Once done, select `Create`.
     - If gbl file is already uploaded to AWS then select `Choose a previously signed file`
     - If gbl file is modified customly then select `Use my custome signed file`
 10. In `Existing code signing profile` select `dic_ota_codesign` . Refer [AWS Code Signing Certificate Creation](https://docs.aws.amazon.com/freertos/latest/userguide/ota-code-sign-cert.html) 
-11. For uploading gbl file follow above step `9`.
+11. For uploading gbl file follow above step `9`. To create gbl file, refer [genrate gbl image](./matter-ota.md#generating-the-ota-image)
 12. In File upload location in S3 select S3 URL as `ota_demo`. Refer [AWS S3 bucket Creation](https://docs.aws.amazon.com/freertos/latest/userguide/dg-ota-bucket.html)
 13. In `Path name of file on device` give any file name (file.txt).
 14. Select `ota_demo` as `IAM role` and click on Next.

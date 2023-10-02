@@ -55,21 +55,8 @@ The Wi-Fi station in Power Save mode wakes up to receive the DTIM beacon and che
 To enable sleepy functionality for Wi-Fi, the following components need to be added in the project file.
 
 - For rs9116 and WF200 - `matter_sed_wifi`
-- For 917NCP - `matter_sed_wifi_917ncp`
+- For 917NCP - `matter_sed_wifi_917`
 
-### Minimal Power Consumption
+### How to Measure Power
 
-Simply enabling Sleepy functionality does not give the application the best power consumption.
-By default, several features that increase power consumption are enabled in the example applications.
-The following set of features increase power consumption.
-
-To achieve the most power-efficient build, the following components need to be disabled.
-
-- Matter Shell (`matter_shell`)
-- LCD (`matter_lcd`) and Qr Code (`matter_qr_code`)
-
-> **Note:**
-> `matter_shell` is not enabled by default in project file.
->
-> - Add `matter_shell` component in project file to enable the matter shell feature (for Wi-Fi non-sleepy apps)
-> - Remove `matter_shell` while enabling sleepy apps
+To measure power on the Matter Devices, refer [Power Measurement](./wifi-sleepy-device-power-measurement.md#power-consumption-measurement-efr-using-energy-profiler)

@@ -14,6 +14,16 @@ next step.
 
 ## Demo Execution - Commissioning a Wi-Fi Device using chip-tool for Linux
 
+The commissioning procedure does the following:
+
+- Chip-tool scans BLE and locates the Silicon Labs device that uses the
+specified discriminator
+- Establishes operational certificates
+- Sends the Wi-Fi SSID and Passkey
+- The Silicon Labs device will join the Wi-Fi network and get an IP address.
+It then starts providing mDNS records on IPv4 and IPv6
+- Future communications (tests) will then happen over Wi-Fi
+
 Commissioning can be done using chip-tool running either on Linux or Raspberry Pi
 
 1. Get the SSID and PSK of the Wi-Fi network (WPA2 - Security) you are connected
@@ -27,20 +37,29 @@ $ cd $MATTER_WORKDIR/matter
 ### Commissioning Command:
 
 ```shell
-$ out/standalone/chip-tool pairing ble-wifi 1122 $SSID $PSK 20202021 3840
+$ out/standalone/chip-tool pairing ble-wifi <node_id> <ssid> <password> <pin_code> <discriminator>
 ```
+
+In this command:
+ - node_id is the user-defined ID of the node being commissioned.
+ - ssid and password are credentials.
+ - pin_code and discriminator are device-specific keys.
+
+  **Note**:- You can find these values in the logging terminal of the device (for instance UART) when the device boots up. Foe example:
+
+![Silicon Labs - design](./images/device-configuration.png)
 
 The node ID used here is 1122. This will be used in future commands.
 '\$SSID' is a placeholder for your Wi-Fi SSID and '\$PSK' is a placeholder
-for the password of your Wi-Fi network.
+for the password of your Wi-Fi network. '20202021' is the Setup Pin Code used to authenticate the device. '3840' is the Setup Discriminator used to discern between multiple commissionable device advertisements.
 
-3. To turn **on** the LED on the EFR32MG24:
+1. To turn **on** the LED on the EFR32MG24:
 
     ```shell
     $ out/standalone/chip-tool onoff on 1122 1
     ```
 
-4. To turn **off** the LED on the EFR32MG24:
+2. To turn **off** the LED on the EFR32MG24:
 
     ```shell
     $ out/standalone/chip-tool onoff off 1122 1
@@ -62,17 +81,7 @@ instance, if you have an Ethernet connection as well as a Wi-Fi connection, you
 need to unplug the Ethernet connection and try running the chip-tool as in step
 #2 above.
 
+## Factory Reset the Device
 As the device remembers the Access Point credentials given for commissioning, if
 you want to run the demo multiple times, do a factory reset by pressing the BTN0
 on EFR32MG24 for about 6-7 seconds. The LED0 will flash 3 times.
-
-The commissioning command mentioned above does the following:
-
-- chip-tool scans BLE and locates the Silicon Labs device that uses the
-specified discriminator
-- Sends the Wi-Fi SSID and Passkey
-- The Silicon Labs device will join the Wi-Fi network and get an IP address.
-It then starts providing mDNS records on IPv4 and IPv6
-- chip-tool then locates the device over Wi-Fi and establishes operational
-certificates
-- Future communications (tests) will then happen over Wi-Fi

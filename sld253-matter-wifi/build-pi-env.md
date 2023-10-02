@@ -1,8 +1,8 @@
 # Using the Pre-Built Raspberry Pi "Matter Hub" Image
 
-When using a Raspberry Pi as a controller in your Matter network you have two
-options
-
+When using a Raspberry Pi as a controller in your Matter network you have two options
+  - Building Environment using Raspberry Pi 4
+  - To start using the Raspberry Pi
 ## Building Environment using Raspberry Pi 4
 
 ### To flash the Ubuntu OS onto the SD card:
@@ -36,8 +36,7 @@ On powering up the board, the red and green lights should start blinking.
 
 ### To start using the Raspberry Pi:
 
-1. Use this [reference](/matter/<docspace-docleaf-version>/matter-references) to find the IP address of your Raspberry Pi.
-   
+1. Power-up the RPi4B. Once it is booted up, check the Raspberry Pi's IP address. Refer to [Finding Raspberry Pi IP address](/matter/<docspace-docleaf-version>/matter-references/find-raspi) in the References chapter to get the IP address or enter the Hostname directly in PuTTY. 
 2. Once you find the IP address, launch Putty, select `Session`, enter the IP
    address of the Raspberry Pi, and click `Open`
 3. Enter the username and password given at the time of flashing and click
@@ -46,13 +45,16 @@ On powering up the board, the red and green lights should start blinking.
    Note: If username and password not provided while flashing then by default 
    Username: ubuntu
    Password: ubuntu
+
+4. Switch to root mode and navigate to path "/home/ubuntu/connectedhomeip/out/standalone" to find the chip-tool.
+   Matter hub/chip-tool are ready and working. Keep the PuTTY session open for the further steps.
    
-4. Update the latest packages by running following commands in the terminal:
+5. Update the latest packages by running following commands in the terminal:
    ```shell
    $ sudo apt update 
    $ sudo apt install
    ```
-5. Install required packages using the following commands:
+6. Install required packages using the following commands:
     ```shell
    $ sudo apt-get install git gcc g++ pkg-config libssl-dev libdbus-1-dev libglib2.0-dev libavahi-client-dev ninja-build python3-venv python3-dev python3-pip unzip libgirepository1.0-dev libcairo2-dev libreadline-dev
    ```
@@ -60,7 +62,7 @@ On powering up the board, the red and green lights should start blinking.
    If you see any popups between installs, you can select 'Ok' or 'Continue'
 
 ## Build Environment
-S
+
 1. Installing prerequisites on Raspberry Pi 4
 Follow the instructions in 
 [the Project CHIP GitHub Site](https://github.com/project-chip/connectedhomeip/blob/master/docs/guides/BUILDING.md),
