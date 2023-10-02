@@ -22,11 +22,11 @@ Hardware Required for Apple EcoSystem [Refer Ecosystem overview Prequisites Sect
 
 ### **4. Matter Demo Execution using Apple Homepod**
 
-1. Refer [Getting Started Overview Guide](./getting-started-overview) for setting up Silicon Labs Matter Accessory Device 
+1. Refer [Getting Started Overview Guide](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example) for setting up Silicon Labs Matter Accessory Device 
 
 2. Connect Board to a Computer
-    - For Wi-Fi NCP Mode Boards [Follow Connect EFR32 Board to computer](./getting-started-efx32-ncp#connect-the-boards-to-a-computer)
-    - For Wi-Fi SOC Mode Boards [Follow Connect SiWx917 SOC to Computer](./getting-started-with-soc#connect-siwx917-soc-to-computer)
+    - For Wi-Fi NCP Mode Boards [Follow Connect EFR32 Board to computer](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/getting-started-efx32-ncp#connect-the-boards-to-a-computer)
+    - For Wi-Fi SOC Mode Boards [Follow Connect SiWx917 SOC to Computer](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/getting-started-with-soc#connect-siwx917-soc-to-computer)
 
 3. Flash the [bootloader binary](./flashing-using-commander) for your device along with the application (e.g., lighting , lock, thermostat, window covering, light-switch).
    [Follow the instructions in this link to flash binaries](./flashing-using-commander)
@@ -34,17 +34,17 @@ Hardware Required for Apple EcoSystem [Refer Ecosystem overview Prequisites Sect
 4. In Apple Home App Click on "+" button.
 ![Silicon Labs - design](./images/apple-home-app.png)
 
-5. Select **Add Accessory**
+1. Select **Add Accessory**
 ![Silicon Labs - design](./images/apple-home-app-add-accessory.png)
 
-6. It will prompt for Scanning QR Code using Mobile Camera.
+1. It will prompt for Scanning QR Code using Mobile Camera.
 ![Silicon Labs - design](./images/apple-home-app-scan-qr-code.png)
 
-7. Plug Device to computer and scan the QR code within the Home app.
+1. Plug Device to computer and scan the QR code within the Home app.
 
-8. Proceed to add the device to your home. You should see LED0 fast blinking when commissioning happens.
+2. Proceed to add the device to your home. You should see LED0 fast blinking when commissioning happens.
 
-9. Once commission is done Apple Home app will ask for **select One Room** to add your Matter application. Select any room as per your choice and give Application name. (For Example: Light, Lock)
+3. Once commission is done Apple Home app will ask for **select One Room** to add your Matter application. Select any room as per your choice and give Application name. (For Example: Light, Lock)
 
 ### 4a. Control the Light via Apple Home App
 - In the Apple Home app, you will now be able to tap your light to turn it ON and OFF.

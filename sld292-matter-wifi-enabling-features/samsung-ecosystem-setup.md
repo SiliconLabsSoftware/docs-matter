@@ -22,29 +22,29 @@ Hardware Required for Samsung Smart Thing EcoSystem [Refer Ecosystem Setup Prequ
   [Build MATTER Application](./sw-setup)
 
 2. Connect Board to a Computer
-    - For Wi-Fi NCP Mode Boards [Follow Connect EFR32 Board to computer](./getting-started-efx32-ncp#connect-the-efx32-boards-to-a-computer)
-    - For Wi-Fi SOC Mode Boards [Follow Connect SiWx917 SOC to Computer](./getting-started-with-soc#connect-siwx917-soc-to-computer)
+    - For Wi-Fi NCP Mode Boards [Follow Connect EFR32 Board to computer](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/getting-started-efx32-ncp#connect-the-efx32-boards-to-a-computer)
+    - For Wi-Fi SOC Mode Boards [Follow Connect SiWx917 SOC to Computer](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/getting-started-with-soc#connect-siwx917-soc-to-computer)
 
 3. Flash the bootloader binary for your device along with the application (e.g., lighting , lock, thermostat, window covering, light-switch).
 
 4. Open Smart things app , tap on “+" ,Select **Add device**
 ![Silicon Labs - design](./images/samsung-app-add-device.png)
 
-5. Select Partnet Devices.
+1. Select Partnet Devices.
 ![Silicon Labs - design](./images/samsung-app-select-partner.png)
 
-6. Through the smart things app scan the Application QR code to trigger commissioning.
+1. Through the smart things app scan the Application QR code to trigger commissioning.
  
-7. After scanning QR code ,verify Commissioning is triggered by checking on the DUT logs.
+2. After scanning QR code ,verify Commissioning is triggered by checking on the DUT logs.
 ![Silicon Labs - design](./images/samsung-app-commissioning.png)
 
-8. While commissionig at last step it will Register your device with Access Point.
+1. While commissionig at last step it will Register your device with Access Point.
 ![Silicon Labs - design](./images/samsung-register-device.png)
 
-9. Once commissiong is success, verify Matter Application is added in one  room of Samsung smart App and is in online mode.
+1. Once commissiong is success, verify Matter Application is added in one  room of Samsung smart App and is in online mode.
 ![Silicon Labs - design](./images/samsung-light-added.png)
 
-10. Send UI command from Smart thing app to control Matter Application.
+1.  Send UI command from Smart thing app to control Matter Application.
    
    For Example: Tap on Light UI to turn ON/OFF.
 

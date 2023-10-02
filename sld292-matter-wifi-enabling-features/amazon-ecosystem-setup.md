@@ -35,12 +35,12 @@ Refer to [Set up Alexa in a Few Easy Steps](https://www.amazon.com/alexa-setup-g
 
 ## Matter Demo Execution using Amazon Alexa
 
-1. Refer to the [Getting Started Overview Guide](./getting-started-overview.md) for setting up a Silicon Labs Matter Accessory Device. 
+1. Refer to the [Getting Started Overview Guide](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example) for setting up a Silicon Labs Matter Accessory Device. 
 
 2. Connect a board to a computer.
 
-   - For Wi-Fi NCP Mode Boards see [Connect EFR32 Board to Computer](./getting-started-efx32-ncp#connect-the-boards-to-a-computer)
-   - For Wi-Fi SoC Mode Boards see [Connect SiWx917 SoC to Computer](./getting-started-with-soc#connect-siwx917-soc-to-computer)
+   - For Wi-Fi NCP Mode Boards see [Connect EFR32 Board to Computer](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/getting-started-efx32-ncp#connect-the-boards-to-a-computer)
+   - For Wi-Fi SoC Mode Boards see [Connect SiWx917 SoC to Computer](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/getting-started-with-soc#connect-siwx917-soc-to-computer)
 
 3. Flash the bootloader binary for your device along with the application (for example, lighting, lock, thermostat, window covering, light-switch) using [these instructions](./flashing-using-commander).
 
@@ -51,42 +51,42 @@ Refer to [Set up Alexa in a Few Easy Steps](https://www.amazon.com/alexa-setup-g
 6. In the Alexa App, tap **Devices section**.
 ![Silicon Labs - design](./images/amazon-alexa-app.png)
 
-7. Then, tap "+" at top right corner. Three options are displayed: 
+1. Then, tap "+" at top right corner. Three options are displayed: 
 
    - Add device
    - Add group
    - Combine speakers
 
-8. Tap **Add device**.  Several options are displayed.
+2. Tap **Add device**.  Several options are displayed.
 
     ![Silicon Labs - design](./images/amazon-alexa-add-device.png)
 
-9. Scroll down and select **other** option.
+3. Scroll down and select **other** option.
 
     ![Silicon Labs - design](./images/amazon-alexa-device-selection.png)
 
-10. Logos such as “Matter”, “Bluetooth”, “Zigbee”, “Wi-fi”, “Z-wave" are displayed. Tap the “Matter” logo.
+4.  Logos such as “Matter”, “Bluetooth”, “Zigbee”, “Wi-fi”, “Z-wave" are displayed. Tap the “Matter” logo.
 
     ![Silicon Labs - design](./images/amazon-alexa-logos.png)
 
-11. Alexa App will ask "Does your device have a matter logo?" Select "Yes".
-12. Alexa will be prompted to "Locate a QR code shown for your device." Select **Scan QR Code**.
+5.  Alexa App will ask "Does your device have a matter logo?" Select "Yes".
+6.  Alexa will be prompted to "Locate a QR code shown for your device." Select **Scan QR Code**.
  
     ![Silicon Labs - design](./images/amazon-alexa-scan-qr-code.png)
 
-13. After scanning the QR code through a smartphone camera, verify Commissioning is started by checking the Device logs.
+7.  After scanning the QR code through a smartphone camera, verify Commissioning is started by checking the Device logs.
 
-14. Once commissioning is triggered the Alexa app will prompt for Access Point Credentials. Add them. 
+8.  Once commissioning is triggered the Alexa app will prompt for Access Point Credentials. Add them. 
 
-15. After Access Point Credentials are provided the device will join to the network and commissioning is completed.
+9.  After Access Point Credentials are provided the device will join to the network and commissioning is completed.
 
     ![Silicon Labs - design](./images/amazon-alexa-app-added.png)
 
-16. Next, select a group for your device (for example, Bedroom), and click **Add to Group**.
+10. Next, select a group for your device (for example, Bedroom), and click **Add to Group**.
 
     ![Silicon Labs - design](./images/amazon-alexa-select-group.png)
 
-17. Now the application is ready to use. You can see the Matter application in Amazon Alexa app inside the **Groups Panel** at the **Bedroom** tab.
+11. Now the application is ready to use. You can see the Matter application in Amazon Alexa app inside the **Groups Panel** at the **Bedroom** tab.
 
    ![Silicon Labs - design](./images/amazon-alexa-application-added-to-group.png)
 

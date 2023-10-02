@@ -15,5 +15,5 @@ In this section how to setup Apple Home Ecosystem steps not repeated in very det
 6. Open Google Home App and click on **Devices Section** and click on "Add" Button.
 7. Click on **Set up without QR Code** and insert the setup code displayed in **Step 5**.
 ![Silicon Labs - design](./images/matter-google-add-setup-code.png)
-8. The commissiong will start and proceed in the same way as explained in [Matter Demo using Google Home Section 5](./google-ecosystem-setup#5-matter-demo-using-google-home).
+8. The commissiong will start and proceed in the same way as explained in [Matter Demo using Google Home Section 5](./google-ecosystem-setup.md).
 9. Once the commissioning is done, the new Matter Wi-Fi device should be visible in the Room view of Google Home App.

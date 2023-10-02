@@ -83,11 +83,11 @@ Having finished the above, the only step left to have your setup ready is to ope
 ### **5. Matter Demo Execution using Google Home**
 ***
 ### 5a. Commission Matter device through Google Home app
-1. Refer [Getting Started Overview Guide](./getting-started-overview) for setting up Silicon Labs Matter Accessory Device.
+1. Refer [Getting Started Overview Guide](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example) for setting up Silicon Labs Matter Accessory Device.
 
 2. Connect Board to a Computer
-    - For Wi-Fi NCP Mode Boards [Follow Connect EFR32 Board to computer](./getting-started-efx32-ncp#connect-the-efx32-boards-to-a-computer)
-    - For Wi-Fi SOC Mode Boards [Follow Connect SiWx917 SOC to Computer](./getting-started-with-soc#connect-siwx917-soc-to-computer)
+    - For Wi-Fi NCP Mode Boards [Follow Connect EFR32 Board to computer](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/getting-started-efx32-ncp#connect-the-efx32-boards-to-a-computer)
+    - For Wi-Fi SOC Mode Boards [Follow Connect SiWx917 SOC to Computer](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/getting-started-with-soc#connect-siwx917-soc-to-computer)
 
 3. Flash the bootloader binary for your device along with the application (e.g., lighting , lock, thermostat, window covering, light-switch).
    [Follow the instructions in this link to flash binaries](./flashing-using-commander)
