@@ -1,17 +1,20 @@
 # Serial Port Communication on the Silicon Labs Platform
+
   The matter-shell exposes the configuration and the management APIs via the matter command line interface (matter CLI). This interface can be used to change the state of the device.
 
-## Hardware Requirement
-- To run matter shell on the Silicon Labs Platform, refer to the [Hardware Requirments](/matter/<docspace-docleaf-version>/matter-prerequisites/hardware-requirements)
+## Hardware Requirements
 
-## Software Requirement
-- To run matter shell on the Silicon Labs Platform, refer to the [Software Requirments](/matter/<docspace-docleaf-version>/matter-prerequisites/software-requirements)
+- To run matter shell on the Silicon Labs Platform, refer to the [Hardware Requiements](/matter/<docspace-docleaf-version>/matter-prerequisites/hardware-requirements)
 
-## Execution of Matter Shell on Silicon Labs Platform
+## Software Requirements
+
+- To run matter shell on the Silicon Labs Platform, refer to the [Software Requirements](/matter/<docspace-docleaf-version>/matter-prerequisites/software-requirements)
+
+## Execute Matter Shell on Silicon Labs Platform
 
 1. [Download](https://www.silabs.com/developers/simplicity-studio) and Install Simplicity Studio.
    
-2. To install the software packages for Simplicity Studio, refer [Software Package Installation](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/software-installation#installation-of-software-packages)
+2. To install the software packages for Simplicity Studio, refer [Software Package Installation](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/software-installation#installation-of-software-packages).
 
 3. Log in to Simplicity Studio and connect the EFR32 board to the computer.
 
@@ -29,18 +32,18 @@
    - The Preferred SDK is the version you selected earlier.
    ![Silicon Labs - design](./images/create-project-verify-efx-general-information.png)
 
-8. Click on Example Projects and Demos Option and Create Project for **Matter Lock Application**.
+8. Open the Example Projects and Demos tab and create a project for **Matter Lock Application**.
    ![Silicon Labs - design](./images/create-project-select-efx-lock-example.png)
 
-9. In the New Project Wizard window, click Finish.
+9. In the New Project Wizard window, click **Finish**.
    ![Silicon Labs - design](./images/create-project-lock-click-finish.png)
 
-10. After creation of project , click on **Software Components** tab and in search bar type **Matter Shell** and install it.
+10. After creation of project, open the Software Components tab and in search bar type **Matter Shell** and install it.
     ![Silicon Labs - desing](./images/matter-shell-enable.png)
 
-11. Build the Project after Enabling **Matter Shell** Component.
+11. Build the project after enabling **Matter Shell** component.
 
-12. After successful build commission the device , refer [Commission Matter Platform](./run-matter-demo#creating-the-matter-network)
+12. After a successful build, commission the device as described in [Commission Matter Platform](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/use-case-execution#creating-the-matter-network).
 
 13. Open Tera Term and under New Connection, under Serial Port, select JLink port and click **OK**.
     ![Silicon Labs - design](./images/tera-term-select-jlink-port.png)

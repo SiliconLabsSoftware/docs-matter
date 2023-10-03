@@ -4,6 +4,7 @@
 In order to run a Matter over Wi-Fi application you must first create a Matter network using the chip-tool and then control the Matter device from the chip-tool.
 
 ## Creating the Matter Network
+
 This procedure uses the chip-tool installed on the Matter Hub. The commissioning procedure does the following:
 
 - Chip-tool scans BLE and locates the Silicon Labs device that uses the
@@ -27,7 +28,7 @@ In this command:
  - ssid and password are credentials.
  - pin_code and discriminator are device-specific keys.
 
-  **Note**:- You can find these values in the logging terminal of the device (for instance UART) when the device boots up. Foe example:
+  **Note**: You can find these values in the logging terminal of the device (for instance UART) when the device boots up. For example:
 
 ![Silicon Labs - design](./images/device-configuration.png)
 
@@ -35,13 +36,13 @@ The node ID used here is 1122. This will be used in future commands.
 '\$SSID' is a placeholder for your Wi-Fi SSID and '\$PSK' is a placeholder
 for the password of your Wi-Fi network. '20202021' is the Setup Pin Code used to authenticate the device. '3840' is the Setup Discriminator used to discern between multiple commissionable device advertisements.
 
-
 If there are any failures, run the following command and then re-run the
 chip-tool command:
 
 ```shell
 $ rm -rf /tmp/chip_*
 ```
+
 If you are having difficulty getting the chip-tool to commission the device successfully, it may be because you have more than one network interface available to the chip-tool. The device on which you are running the chip-tool must be on the same Wi-Fi network.For instance, if you have an Ethernet connection as well as a Wi-Fi connection, you need to unplug the Ethernet connection and try running the chip-tool.
 
 ## Controlling the Matter Accessory Device
@@ -52,6 +53,7 @@ If you are having difficulty getting the chip-tool to commission the device succ
    2. For dev board with buttons available, you can use BTN1 to toggle the light status locally.
 
 ## Factory Reset the Device
+
 As the device remembers the Access Point credentials given for commissioning, if
 you want to run the demo multiple times, do a factory reset by pressing the BTN0
 on WSTK for about 6-7 seconds. The LED0 will flash 3 times.

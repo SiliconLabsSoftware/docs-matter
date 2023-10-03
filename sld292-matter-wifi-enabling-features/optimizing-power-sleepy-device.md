@@ -1,5 +1,6 @@
 # Optimizing Power Consumption for Intermittently Connected Devices (ICD)
-This document provides information on optimizing power consumption for Intermittently Connected Devices (ICD) formerly called Sleepy End Devices.
+
+This page provides information on optimizing power consumption for Intermittently Connected Devices (ICD) formerly called Sleepy End Devices.
 
 ## Minimal Power Consumption
 
@@ -17,42 +18,31 @@ To achieve the most power-efficient build, the following components need to be d
 > - Add `matter_shell` component in project file to enable the matter shell feature (for Wi-Fi non-sleepy apps)
 > - Remove `matter_shell` while enabling sleepy apps
 
+To achieve power optimization when LCD is enabled, use sleepy end device with LCD component (for example, **matter_sed_wf200_lcd**) instead of using the direct sed component (matter_sed_wifi). The sed with LCD component enables the sleepy along with the LCD configurations.
 
-### Achieving power optimization when LCD is enabled
+## Flow of the Matter Wi-Fi App with LCD Configuration
 
-- For this need to use sleepy end device with LCD component(ex: matter_sed_wf200_lcd) instead of using the direct sed component(matter_sed_wifi)
-The sed with LCD component enables the sleepy along with the LCD configurations
+- A timer starts in the Start of App Task. If there is NO activity after defaultTimeoutMs, the callback is triggered and the LCD will go to Sleep.
+- In between, if the user presses BTN1, the LED1 will toggle as usual and the LCD screen will be enabled. After timeoutMs it will trigger the callback and disable the LCD.
+- If the User presses BTN0, the system will check if the device is already commissioned. If it is not commissioned, the display will be enabled, it will toggle the QR Code, and the call back function will be triggered after QRtimeoutMs.
 
-## Flow of The Matter Wi-Fi App with LCD configuration:
+### Start of Commissioning
 
-- On Start of App Task we are starting a timer, if there is NO activity after defaultTimeoutMs the the callback will be triggered, and the LCD will go to Sleep.
-
-- In between if User presses BTN1 the LED1 will toggle as usual and LCD screen will be enabled. After timeoutMs  it will trigger the callback and disables the LCD.
-
-- If the User presses the BTN0 the system will check if the device is already commissioned, if it is not commissioned the display will be enable, it will toggle the QR Code and the call back function will be triggered after QRtimeoutMs.
-
-## Start of Commissioning :
-
-- On start of commissioning initially the display will remain enabled and on pressing the BTN0 user will able to see the QR code to commission for a period of QRtimeoutMs.
+- At the start of commissioning the display remains enabled. On pressing BTN0 the user can see the QR code to commission for a period of QRtimeoutMs.
 
 - Once the commissioning process starts, the LCD screen will be disabled.
 
-## After Commissioning :
+### After Commissioning
 
-- LCD display is off during in-active transmissions.
-- LCD display active , if there is any BTN press or data transfer
-- On pressing the BTNs it will work the same way before.
-- On initiating Data Transfer, once the action is initiated the LCD display will be enabled and disabled back after specified time.
-- On triggering Factory Reset the LCD will be enabled for QRtimeoutMs then it will be disabled.
-- Below diagram gives end-to-end flow for optimizing power consumption
-  ![Silicon Labs - design](./images/optimize-lcd-sleepy.png)
+- The LCD display is off during inactive transmissions.
+- The LCD display active if there is any BTN press or data transfer.
+- On pressing the BTNs it will work the same way as before.
+- On initiating Data Transfer, once the action is initiated the LCD display will be enabled and disabled again after the specified time.
+- On triggering Factory Reset the LCD will be enabled for QRtimeoutMs, then it will be disabled.
 
-### Power Save Methods
+The following diagram shows the end-to-end flow for optimizing power consumption:
+  ![Optimizing Power Consumption](./images/optimize-lcd-sleepy.png)
 
- - For information on power saving, refer to the following guide: [Power Save Methods](./wifi-sleepy-end-device.md#power-save-methods)
+## Power Save Methods
 
-### Enabling Power Optimization using LCD Configuration
-
-To enable power optimization using LCD Configuration, the following component needs to be added in the **.slcp** project file.
-
-- For WF200 - `matter_sed_wf200_lcd`
+For information on power saving, refer to [Power Save Methods](./wifi-sleepy-end-device#power-save-methods)

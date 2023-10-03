@@ -1,11 +1,13 @@
 # Using the Pre-Built Raspberry Pi "Matter Hub" Image
 
 When using a Raspberry Pi as a controller in your Matter network you have two options
-  - Building the Raspberry Pi Environment "from scratch" using a Raspberry Pi 4
-  - Using the Silicon Labs Pre-Built Raspberry Pi image available on the [Matter Artifacts page](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts) page.
+
+- Building the Raspberry Pi Environment "from scratch" using a Raspberry Pi 4
+- Using the Silicon Labs Pre-Built Raspberry Pi image available on the [Matter Artifacts page](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts) page.
+
 ## Building Environment using Raspberry Pi 4
 
-### To flash the Ubuntu OS onto the SD card:
+### Flash the Ubuntu OS Onto the SD Card
 
 1. Insert the flashed SD card (directly or using a card reader) into the
    laptop/PC that will run the Raspberry Pi Imager tool.
@@ -34,7 +36,7 @@ When using a Raspberry Pi as a controller in your Matter network you have two op
 
 On powering up the board, the red and green lights should start blinking. 
 
-### To start using the Raspberry Pi:
+### Start Using the Raspberry Pi
 
 1. Power-up the RPi4B. Once it is booted up, check the Raspberry Pi's IP address. Refer to [Finding Raspberry Pi IP address](/matter/<docspace-docleaf-version>/matter-references/find-raspi) in the References chapter to get the IP address or enter the Hostname directly in PuTTY. 
 2. Once you find the IP address, launch Putty, select `Session`, enter the IP
@@ -69,13 +71,12 @@ Follow the instructions in
 in the section "Installing prerequisites on Raspberry Pi
 4".
 
-2. To build environment follow the `Software setup` and `Compiling chip-tool` steps given in [Software setup](./../sld120-matter-wifi-getting-started/04-light-switch-step-by-step-example.md),
+2. To build environment follow the `Software setup` and `Compiling chip-tool` steps given in [Software setup](/matter/<docspace-docleaf-version>/matter-wifi-getting-started/04-light-switch-step-by-step-example).
 
 ## Bluetooth Setup
 
-Make sure Bluetooth LE (BLE) is up and running on Raspberry Pi. Raspberry Pi internally has
-some issues with BLE that may cause it to crash. Because BLE is used for
-commissioning on Matter, make sure BLE is running.
+Because Bluetooth LE (BLE) is used for commissioning on Matter, make sure BLE is up and running on Raspberry Pi. Raspberry Pi internally has
+some issues with BLE that may cause it to crash. 
 
 ```shell
 $ sudo systemctl status bluetooth.service

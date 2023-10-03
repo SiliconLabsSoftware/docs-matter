@@ -1,7 +1,7 @@
 # Silicon Labs Matter Over Wi-Fi Example
 
 This document walks through the steps to build the Matter 1.1 applications, such as lighting, light Switch, window covering, thermostat, door lock and On/Off Plug for
-EFR32MG24 boards. A complete list of hardware supported for Wi-Fi is included on the [Hardware Requirements page](/matter/<docspace-docleaf-version>/matter-prerequisites/hardware-requirements)
+EFR32MG24 boards. A complete list of hardware supported for Wi-Fi is included on the [Hardware Requirements page](/matter/<docspace-docleaf-version>/matter-prerequisites/hardware-requirements).
 
 ## Step 1: Matter Wi-Fi Prerequisites
 

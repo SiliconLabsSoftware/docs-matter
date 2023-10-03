@@ -1,26 +1,31 @@
 # Upgrading the Wi-Fi Connectivity Firmware
-- It is recommended that an upgrade the of the NCP combos connectivity firmware be done under the following circumstances:
+
+- It is recommended that an upgrade of the NCP combos connectivity firmware be done under the following circumstances:
+
   - When the EFR32 evaluation kit (EVK) is first received.
-  - When the radio board is first received, or when
-    - upgrading to a new version of the WiSeConnect SDK v2.x or v3.x extension
+  - When the radio board is first received.
+  - When upgrading to a new version of the WiSeConnect SDK v2.x or v3.x extension.
 
 ## Upgrading the Connectivity Firmware on NCP devices
 
 - The SiWx917 NCP or RS9116 EVK connectivity firmware can be upgraded using Teraterm or kermit.
 
-### Connectivity firmware upgrade using Teraterm
+### Connectivity Firmware Upgrade Using Teraterm
+
 1. Make sure that the switches on the expansion board are pushed towards the UART side.
 ![Switch Position before firmware flash](images/si917-board.png)
 
-2. Refer to the following guide [Updating the Firmware](https://docs.silabs.com/rs9116/wiseconnect/2.0/update-evk-firmware) 
-  ```shell
-  Instructions are the same for both SiWx917 NCP and RS9116 EVK.
-  ```
+2. Refer to [Updating the Firmware](https://docs.silabs.com/rs9116/wiseconnect/2.0/update-evk-firmware).
+
+    ```shell
+    Instructions are the same for both SiWx917 NCP and RS9116 EVK.
+    ```
+
 3. Once firmware flashing is done make sure to put the switches back to Expansion mode, while using it with the host platform.
 ![Switch Position after firmware flash](images/mg21-si917-board.jpg)
 
-
 ### Troubleshooting an NCP Firmware Update Failure
+
 If the firmware update fails, try the following:
   - Toggle the power switch towards AEM (Advanced Energy Monitoring) on the WSTK board.
   - Perform the following steps and try the firmware update again
@@ -31,10 +36,11 @@ If the firmware update fails, try the following:
      - The flash will be erased.
      - Retry the firmware upgrade.
 
-## Upgrading the Connectivity Firmware on SoC devices
+## Upgrading the Connectivity Firmware on SoC Devices
+
 - SiWx917 SOC connectivity firmware can be upgraded using studio.
 
-### Connectivity firmware upgrade using Studio
+### Connectivity Firmware Upgrade Using Simplicity Studio
   
 1. In the Simplicity Studio home page, click Tools.
    
@@ -58,7 +64,9 @@ If the firmware update fails, try the following:
 ![Silicon Labs - design](./images/commander-flash-success.png)
 
 ### Troubleshoot SiWx917 SOC Firmware Update Failure
+
 If the firmware update fails, try the following:
+
   - Toggle the power switch towards AEM (Advanced Energy Monitoring) on the WSTK board.
   - Perform the following steps and try the firmware update again
      - Toggle the ISP switch towards ISP on the radio board.

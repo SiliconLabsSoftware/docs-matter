@@ -1,14 +1,19 @@
 # Building the Chip-Tool
 
+This page covers:
+
+- [Building the chip-tool for Linux](#build-environment-for-linux)
+- [Building the chip-tool for Raspberry Pi](#build-environment-using-raspberry-pi-4)
+
 ## Build Environment for Linux
 
-This section will go through the steps required to build the chip-tool for Linux.
+This section goes through the steps required to build the chip-tool for Linux.
 
 **Do not execute any commands on this page as ROOT (no _su_ required), unless specified**
 
 ### Prepare Linux Packages
 
-Update the latest packages by typing following commands in terminal:
+Update the latest packages by typing following commands in the terminal:
 
 ```shell
 $ sudo apt update
@@ -17,7 +22,7 @@ $ sudo apt install
 
 ### Prerequisites for Matter (CHIP) project on Linux
 
-#### 1. Installing packages on Ubuntu Laptop/PC
+#### Install Packages on Ubuntu Laptop/PC
 
 - Open the Linux terminal from Start menu
 - Install required packages on Ubuntu Laptop/PC using the following commands:
@@ -27,13 +32,13 @@ $ sudo apt install
     libglib2.0-dev libavahi-client-dev ninja-build python3-venv python3-dev python3-pip unzip libgirepository1.0-dev libcairo2-dev libreadline-dev
     ```
 
-#### 2. Building the chip-tool Environment
+#### Build the chip-tool Environment
 
-- To build chip-tool environment, follow below steps for the Software setup and Compiling chip-tool:
+To build chip-tool environment, first set up the software and then compile the chip-tool. 
 
 ##### Software Setup
 
-If you have not downloaded or cloned this repository, you can run the following
+If you have not downloaded or cloned the repository, you can run the following
 commands on a Linux terminal running on either Linux machine, WSL or Virtual
 Machine to clone the repository and run bootstrap to prepare to build the sample
 application images.
@@ -56,7 +61,7 @@ application images.
 
 ##### Compiling the chip-tool
 
-In order to control the Wi-Fi Matter Accessory Device you will have to compile
+To control the Wi-Fi Matter Accessory Device you must compile
 and run the chip-tool on either a Linux, Mac or Raspberry Pi. The chip-tool builds
 faster on the Mac and Linux machines so that is recommended, but if you have
 access to a Raspberry Pi that will work as well.
@@ -69,9 +74,9 @@ access to a Raspberry Pi that will work as well.
 
 This will build chip-tool in `out/standalone`.
 
-## Building Environment using Raspberry Pi 4
+## Build Environment using Raspberry Pi 4
 
-### To flash the Ubuntu OS onto the SD card:
+### Flash the Ubuntu OS onto the SD Card
 
 1. Insert the flashed SD card (directly or using a card reader) into the
    laptop/PC that will run the Raspberry Pi Imager tool.
@@ -100,20 +105,21 @@ This will build chip-tool in `out/standalone`.
 
 On powering up the board, the red and green lights should start blinking. 
 
-### To start using the Raspberry Pi:
+### Start Using the Raspberry Pi
 
 1. Power-up the RPi4B. Once it is booted up, check the Raspberry Pi's IP address. Refer to [Finding Raspberry Pi IP address](/matter/<docspace-docleaf-version>/matter-references/find-raspi) in the References chapter to get the IP address or enter the Hostname directly in PuTTY. 
 2. Once you find the IP address, launch Putty, select `Session`, enter the IP
    address of the Raspberry Pi, and click `Open`
 3. Enter the username and password given at the time of flashing and click
-   `Enter` 
+   `Enter`.
    
-   Note: If username and password not provided while flashing then by default 
-   Username: ubuntu
-   Password: ubuntu
+   Note: If the username and password are not provided while flashing then by default
+
+   - Username: ubuntu
+   - Password: ubuntu
 
 4. Switch to root mode and navigate to path "/home/ubuntu/connectedhomeip/out/standalone" to find the chip-tool.
-   Matter hub/chip-tool are ready and working. Keep the PuTTY session open for the further steps.
+   Matter hub/chip-tool are ready and working. Keep the PuTTY session open for later steps.
    
 5. Update the latest packages by running following commands in the terminal:
    ```shell
@@ -127,21 +133,20 @@ On powering up the board, the red and green lights should start blinking.
 
    If you see any popups between installs, you can select 'Ok' or 'Continue'
 
-## Build Environment
+### Build Environment
 
-1. Installing prerequisites on Raspberry Pi 4
-Follow the instructions in 
+1. Follow the instructions in 
 [the Project CHIP GitHub Site](https://github.com/project-chip/connectedhomeip/blob/master/docs/guides/BUILDING.md),
 in the section "Installing prerequisites on Raspberry Pi
 4".
 
-2. To build environment follow the `Software setup` and `Compiling chip-tool` steps given in [Software setup](./../sld120-matter-wifi-getting-started/04-light-switch-step-by-step-example.md),
+2. To build the environment, follow the `Software setup` and `Compiling chip-tool` steps given in [Software setup](/matter/<docspace-docleaf-version>/matter-wifi-getting-started/04-light-switch-step-by-step-example).
 
-## Bluetooth Setup
+### Bluetooth Set Up
 
-Make sure Bluetooth LE (BLE) is up and running on Raspberry Pi. Raspberry Pi internally has
-some issues with BLE that may cause it to crash. Because BLE is used for
-commissioning on Matter, make sure BLE is running.
+Because Bluetooth LE (BLE) is used for
+commissioning on Matter, make sure BLE is up and running on Raspberry Pi. Raspberry Pi internally has
+some issues with BLE that may cause it to crash. 
 
 ```shell
 $ sudo systemctl status bluetooth.service
