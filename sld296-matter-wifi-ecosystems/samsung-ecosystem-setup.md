@@ -25,21 +25,21 @@ See the Aeotec instructions on [How to Set Up a Smart Home Hub](https://aeotec.f
 3. Flash the bootloader binary for your device along with the application (for example, lighting, lock, thermostat, window covering, or light-switch) using [Simplicity Commander](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/flashing-using-commander). 
 
 4. Open the Smart Things app, tap **'+**, and select **Add device**.
-![Add device](./images/samsung-app-add-device.png)
+![Add device](./images/samsung-app-add-device.png?width=40%&height=40%)
 
 5. Select Partner Devices.
-![Partner devices](./images/samsung-app-select-partner.png)
+![Partner devices](./images/samsung-app-select-partner.png?width=40%&height=40%)
 
 6. Through the Smart Things app scan the Application QR code to trigger commissioning.
  
 7. After scanning the QR code, verify commissioning is triggered by checking on the DUT logs.
-![commissioning in logs](./images/samsung-app-commissioning.png)
+![commissioning in logs](./images/samsung-app-commissioning.png?width=40%&height=40%)
 
 8. The last step of the commissioning process is to register your device with Access Point.
-![Register device](./images/samsung-register-device.png)
+![Register device](./images/samsung-register-device.png?width=40%&height=40%)
 
 9. Once commissioning has succeeded, verify the Matter application is added in one room of the Smart Things app and is in online mode.
-![Light added](./images/samsung-light-added.png)
+![Light added](./images/samsung-light-added.png?width=40%&height=40%)
 
 10. In the Samsung Smart Thing app, you can now tap your light to turn it ON and OFF. You will see the LED1 on your WSTK board turned on or off depending on the command you enter. **Note**: Samsung Smart Things does not support voice control commands.
 

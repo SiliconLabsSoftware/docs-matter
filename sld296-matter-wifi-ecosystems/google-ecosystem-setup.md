@@ -100,42 +100,42 @@ Having finished the above, the only step left to have your setup ready is to ope
 4. Open the Google Home app on your phone.
 
 5. Click **Devices Section** and click **Add**.
-![Add device](./images/google-home-app-add-device.png)
+![Add device](./images/google-home-app-add-device.png?width=40%&height=40%)
 
 6. In the **Set Up Device** window, tap to select the **New Device** option.
-![New Device](./images/google-home-app-new-device.png)
+![New Device](./images/google-home-app-new-device.png?width=40%&height=40%)
 
 7. In the **Choose Home Section** select your home and click next.
-![home selection](./images/google-home-app-select-home.png)
+![home selection](./images/google-home-app-select-home.png?width=40%&height=40%)
 
 8. The Google Home App searches for a nearby Matter device.
-![looking for device](./images/google-home-app-looking-for-device.png)
+![looking for device](./images/google-home-app-looking-for-device.png?width=40%&height=40%)
 
 9. If the device is found, click the Application which you flashed on the device, such as Light or Lock.
 
 10. If the device is not found, tap **Matter Enabled Device**.
-![Matter enabled device](./images/google-home-app-matter-enabled-device.png)
+![Matter enabled device](./images/google-home-app-matter-enabled-device.png?width=40%&height=40%)
 
 11. Once the Google Home app has found the device, it will ask you to scan its QR code.
 
 12.  Google Home app asks if you want to connect this device to your Google account. Tap **I agree**.
-![Add to account](./images/google-home-app-account-prompt.png)
+![Add to account](./images/google-home-app-account-prompt.png?width=40%&height=40%)
 
 13. The Google Home app now starts commission the device with Bluetooth LE.
-![Commissioning](./images/google-home-app-connecting.png)
+![Commissioning](./images/google-home-app-connecting.png?width=40%&height=40%)
 
 14. Once you see the 'Device connected' message, tap **Done**.
-![App Connected](./images/google-home-app-connected.png)
+![App Connected](./images/google-home-app-connected.png?width=40%&height=40%)
 
 15. The Google Home App now asks you to select a Room where you want to keep the **Application**. You can select any room from the list and click **Next**.
-![Select room](./images/google-home-app-select-room.png)
+![Select room](./images/google-home-app-select-room.png?width=40%&height=40%)
 
 16. At the prompt to create a unique name for the application (For Example: Light, Lock), create any name to identify the application and click **Next**.
 
-![app name](./images/google-home-app-give-app-name.png)
+![app name](./images/google-home-app-give-app-name.png?width=40%&height=40%)
 
 17. You will now see your device (for example, Light) shown as being connected to your Google account and added to your selected Room at Step 15.
-![Light added](./images/google-home-app-light-added.png)
+![Light added](./images/google-home-app-light-added.png?width=40%&height=40%)
 
 ### Control the Light via Google Home App
 
