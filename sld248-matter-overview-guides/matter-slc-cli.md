@@ -2,7 +2,7 @@
 
 The Silicon Labs Configurator (SLC) defines a way of creating and configuring embedded software projects for Silicon Labs IoT devices. The SLC Command Line Interface (SLC-CLI) tool resolves project and component dependencies and generates a project for a specified embedded target and build system (for example, GNU tools via a Makefile). See _UG520: Software Project Generation and Configuration with SLC-CLI_ for a complete description.
 
-This guide lists the steps that can be followed to create and build a Silicon Labs Matter SLC project using SLC-CLI and `make`. These scripts are at a Beta level of development and have been verified to work on Ubuntu 22.04.3 LTS and MacOS Version 13.5.1, Windows support will come in the future releases. 
+This guide lists the steps that can be followed to create and build a Silicon Labs Matter SLC project using SLC-CLI and `make`. These scripts are evaluation quality and have been verified to work on Ubuntu 22.04.3 LTS and MacOS Version 13.5.1, Windows support will come in the future releases. 
 
 ## Setting up the environment
 
