@@ -1,4 +1,4 @@
-# Matter Software Update with EFR32 Example Applications
+# Matter Software Update with EFR32 Example Applications 
 
 The Over The Air (OTA) Software Update functionality is enabled by default for
 all of the EFR32 example applications. Its inclusion in an application is
@@ -6,10 +6,11 @@ controlled by the OTA Requestor component in a Matter Studio project.
 
 ## Running the OTA Download Scenario
 
-- For Matter with OpenThread: Bring up the OpenThread Border Router and get its operational
+-   For Matter with OpenThread: Bring up the OpenThread Border Router and get its operational
     dataset.
 
-- On a Linux or Darwin platform build the chip-tool and the ota-provider-app as follows:
+-   On a Linux or Darwin platform build the chip-tool and the ota-provider-app
+    as follows:
 
     ```shell
     $ scripts/examples/gn_build_example.sh examples/chip-tool out/
@@ -19,36 +20,40 @@ controlled by the OTA Requestor component in a Matter Studio project.
     $ scripts/examples/gn_build_example.sh examples/ota-provider-app/linux out/debug chip_config_network_layer_ble=false
     ```
 
-- Build or download the Gecko Bootloader binary. Follow the instructions in
-    [Creating the Bootloader for Use in Matter OTA](ota-bootloader.md). For the
-    bootloader using the external flash select the "external SPI" bootloader
-    type configured with a single slot of at least 1000 KB. For the bootloader
-    using the internal flash see the Internal Storage Bootloader section below.
+-   Build or download the Gecko Bootloader binary which can be obtained in one of the following ways:
+    - Follow the instructions in [Creating the Bootloader for Use in Matter OTA](ota-bootloader.md)
+    - Pre-built binaries (only valid for the external SPI-flash storage OTA update) are available on the
+      [Matter Artifacts page](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts).
+    - Bootloader (only valid for the external SPI-flash storage OTA update) project can be built as a part of any Matter Solution in Studio 
 
-- Using the commander tool, upload the bootloader to the device running the
+-   Using the commander tool, upload the bootloader to the device running the
     application.
 
-- Create a bootable image file (using the Lighting application image as an
+-   Create a bootable image file (using the Lighting application image as an
     example):
 
     ```shell
     $ commander gbl create chip-efr32-lighting-example.gbl --app chip-efr32-lighting-example.s37
     ```
 
-- Create the Matter OTA file from the bootable image file:
+-   Create the Matter OTA file from the bootable image file:
 
     ```shell
     $ ./src/app/ota_image_tool.py create -v 0xFFF1 -p 0x8005 -vn 2 -vs "2.0" -da sha256 chip-efr32-lighting-example.gbl chip-efr32-lighting-example.ota
     ```
 
-- In a terminal start the Provider app and pass to it the path to the Matter
+-   In a terminal start the Provider app and pass to it the path to the Matter
     OTA file created in the previous step:
 
     ```shell
-    $ rm -r /tmp/chip_* ./out/debug/chip-ota-provider-app -f chip-efr32-lighting-example.ota
+    $ rm -r /tmp/chip_kvs_provider
     ```
 
-- In a separate terminal run the chip-tool commands to provision the Provider:
+    ```shell
+    ./out/debug/chip-ota-provider-app  --KVS /tmp/chip_kvs_provider -f chip-efr32-lighting-example.ota
+    ```
+
+-   In a separate terminal run the chip-tool commands to provision the Provider:
 
     ```shell
     $ ./out/chip-tool pairing onnetwork 1 20202021
@@ -58,24 +63,23 @@ controlled by the OTA Requestor component in a Matter Studio project.
     $ ./out/chip-tool accesscontrol write acl '[{"fabricIndex": 1, "privilege": 5, "authMode": 2, "subjects": [112233], "targets": null}, {"fabricIndex": 1, "privilege": 3, "authMode": 2, "subjects": null, "targets": null}]' 1 0
     ```
 
-- If the application device had been previously commissioned, hold Button 0
+-   If the application device had been previously commissioned, hold Button 0
     for six seconds to factory-reset the device.
 
-- In the chip-tool terminal enter:
-
+-   In the chip-tool terminal enter:
     ```shell
     $ ./out/chip-tool pairing ble-thread 2 hex:<operationalDataset> 20202021 3840
     ```
 
 where operationalDataset is obtained from the OpenThread Border Router.
 
-- Once the commissioning process completes enter:
+-   Once the commissioning process completes enter:
 
     ```shell
-    $ ./out/chip-tool otasoftwareupdaterequestor announce-ota-provider 1 0 0 0 2 0
+    $ ./out/chip-tool otasoftwareupdaterequestor announce-otaprovider 1 0 0 0 2 0
     ```
 
-- The application device will connect to the Provider and start the image
+-   The application device will connect to the Provider and start the image
     download. Once the image is downloaded the device will reboot into the
     downloaded image.
 
@@ -85,7 +89,8 @@ Internal storage bootloader for Matter OTA software update is supported on MG24
 boards only. In this use case both the running image and the downloadable update
 image must fit on the internal flash at the same time. This in turn requires
 that both images are built with a reduced feature set, such as disabled logging
-and Matter shell. 
+and Matter shell. See [Creating the Bootloader for Use in Matter OTA](ota-bootloader.md) 
+for more details. 
 
 Uninstalling the following components leaves out all the optional features and 
 results in the minimal image size: 
