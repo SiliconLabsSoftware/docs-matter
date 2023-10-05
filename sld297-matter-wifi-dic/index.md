@@ -42,10 +42,10 @@ A remote user is used to check the state of Matter device. In this context MQTT 
 1. Follow [Build DIC](./build-dic.md) to enable DIC feature in code.
 
 2. After Enabling DIC feature in the Matter extension code, click **Preferences** and go to **SDKs tab** in Simplicity Studio.
-   ![Silicon Labs - design](./images/dic-extension-refresh.png)
+   ![Extension refresh in tab](./images/dic-extension-refresh.png)
 
 3. In the **SDKs** tab click  **Gecko SDK** and click **Refresh**. It will refresh matter extension code for changes made in step 1.
-   ![Silicon Labs - design](./images/dic-extension-refresh-1.png)
+   ![Extension refresh](./images/dic-extension-refresh-1.png)
 
 4. After refreshing the Matter extension, create and build a project for the Silicon Labs Device Platform. Refer the following:
     - [Creating and Building Project for NCP Board](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/getting-started-efx32-ncp#building-and-flashing-an-application)

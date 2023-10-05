@@ -30,7 +30,7 @@ In this command:
 
   **Note**: You can find these values in the logging terminal of the device (for instance UART) when the device boots up. For example:
 
-![Silicon Labs - design](./images/device-configuration.png)
+![Device Configuration](./images/device-configuration.png)
 
 The node ID used here is 1122. This will be used in future commands.
 '\$SSID' is a placeholder for your Wi-Fi SSID and '\$PSK' is a placeholder

@@ -90,7 +90,7 @@ Refer to [Set up Alexa in a Few Easy Steps](https://www.amazon.com/alexa-setup-g
 
 17. Now the application is ready to use. You can see the Matter application in Amazon Alexa app inside the **Groups Panel** at the **Bedroom** tab.
 
-   ![Silicon Labs - design](./images/amazon-alexa-application-added-to-group.png?width=40%&height=40%)
+   ![Alexa application added to group](./images/amazon-alexa-application-added-to-group.png?width=40%&height=40%)
 
 In the Amazon Alexa app, you will now be able to tap your light to turn it ON and OFF. You can also control the light by giving a voice command (for example, 'Hey Alexa! Turn ON Light') and through the app user interface.
 

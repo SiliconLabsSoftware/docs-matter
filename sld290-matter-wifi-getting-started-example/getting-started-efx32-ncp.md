@@ -103,9 +103,9 @@ Refer to the [Wi-Fi Software Installation Page](./software-installation)
 ## Connect the Boards to a Computer
 
 1. Mount the EFR32 radio board on the EFR32 WSTK board.
-![Silicon Labs - design](./images/mount-efr32.png)
+![Mount EFR on radio board](./images/mount-efr32.png)
 2. Connect the NCP expansion board to the EXP header on the EFR32 WSTK board.
-![Silicon Labs - design](./images/mount-expansion.png)
+![Connect expansion board](./images/mount-expansion.png)
 3. Toggle the upper switch on the NCP expansion board to EXP-UART.
 4. Connect the EFR32 WSTK board to computer using a USB cable.
 
@@ -122,22 +122,22 @@ If Simplicity Studio does not detect EFR32 radio board, try the following:
 
 This document describes  how to create a project for the EFR32 boards.
 
-1. In Simplicity Studio, click on Example Projects and Demos Option and Create Project.
-   ![Silicon Labs - design](./images/create-project-select-efx-example.png)
+1. In Simplicity Studio, click on Example Projects and Demos Option, select a project, and click **Create**. 
+   ![Example Projects and Demos](./images/create-project-select-efx-example.png)
 
-9. In the New Project Wizard window, click Finish.
-   ![Silicon Labs - design](./images/create-project-click-finish.png)
+9. In the New Project Wizard window, click **Finish**.
+   ![Finish project](./images/create-project-click-finish.png)
 
-10. Once the project is created, right-click on the project and select *Build Project* in the Project Explorer tab.
-    ![Silicon Labs - design](./images/project-created-efx32.png) 
+10. Once the project is created, right-click the project and select *Build Project* in the Project Explorer tab.
+    ![Project Created](./images/project-created-efx32.png) 
 
-11. Once the project is compiled successfully, Go to the Project Explorer view and expand the binaries folder to flash the binary.
-    ![Silicon Labs - design](./images/select-binary-to-flash-efx32.png)
+11. Once the project is compiled successfully, go to the Project Explorer view and expand the binaries folder to flash the binary.
+    ![Binaries folder](./images/select-binary-to-flash-efx32.png)
 
-12. Right-click on the selected *.s37* binary and click on *flash to device*.
-    ![Silicon Labs - design](./images/SiWx917-soc-flash-todevice.png)
+12. Right-click the selected *.s37* binary and click **flash to device**.
+    ![Flash to Device](./images/SiWx917-soc-flash-todevice.png)
 
-13. Flash programmer window will be opened, Click on *Erase button and then Program* button to start the flashing.
-    ![Silicon Labs - design](./images/flash-binary-to-efx32-device.png)
+13. Flash programmer window will be opened. Click **Erase** and then **Program** to start flashing.
+    ![Flash binary](./images/flash-binary-to-efx32-device.png)
 
 **Note:** Output of the EFR32 NCP Host application will be displayed on the J-Link RTT Viewer.
