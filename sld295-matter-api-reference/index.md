@@ -1,8 +1,8 @@
 # Matter API Reference
 
-- [**DataModelTypes**](./datamodeltypes.md)
-- [**Cluster**](./cluster.md)
-- [**Attribute**](./attributes.md)
+- [**DataModel**](./datamodeltypes.md)
+- [**Attributes**](./attributes.md)
+- [**Clusters**](./cluster.md)
 - [**Commands**](./commands.md)
-- [**Event**](./event.md)
+- [**Events**](./event.md)
 - [**Cluster Implementation**](./cluster-implementation.md)

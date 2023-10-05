@@ -53,21 +53,25 @@ RS9116 chip/module needs to be flashed with proper firmware as mentioned below:
 
 ## SiWx917 Firmware for SiWx917 NCP
 
-The SiWx917 firmware(`SiWx917NCP_firmware_files.zip`) is used to update the SiWx917 NCP which can be found in the Assets section of this page:
+The SiWx917 firmware(SiWx917NCP_firmware_files.zip) is used to update the SiWx917 NCP which can be found in the Assets section of this page:
 
 https://github.com/SiliconLabs/matter_extension/releases/tag/v2.1.1
 
 **Note**:
-SiWx917 NCP boards needs to be flashed with proper firmware as mentioned below:
-- `SiWG917-A.1.0.0.0.23.rps - This firmware image is valid for BRD8036A (A0 Expansion v1.0) and BRD8036A (A0 Expansion v1.1) boards`
+SiWx917 NCP board need to be flashed with proper firmware as mentioned below:
+- ``SiWG917-A.2.9.X.X.X.rps - This firmware image is valid for BRD8036A (A0 Expansion v1.1) board`
+
 
 ## SiWx917 Firmware for SiWx917 SoC
 
-The SiWx917 firmware (`SiWx917SOC_firmware_files.zip`)  along with WiSeConnect 3 SDK is used to update the SiWx917 SoC which can be found in the Assets section of this page.
+The SiWx917 firmware (SiWx917SOC_firmware_files.zip) along with WiSeConnect 3 SDK is used to update the SiWx917 SoC which can be found in the Assets section of this page:
 
 https://github.com/SiliconLabs/matter_extension/releases/tag/v2.1.1
 
 **Note**:
-SiWx917 SoC boards needs to be flashed with proper firmware as mentioned below:
-- `SiWG917-A.2.9.X.X.X.rps - This firmware image is valid for BRD4325B(A0 dual flash 1.1) and BRD4325B(A0 dual flash 1.2) boards`
-- `SiWG917-B.2.9.X.X.X.rps - This firmware image is valid for BRD4325C(B0 common flash v1.2) and BRD4325G(B0 Stacked Flash + External PSRAM v1.2) boards`
+SiWx917 SoC boards need to be flashed with proper firmware as mentioned below:
+- `SiWG917-A.2.9.X.X.X.rps - This firmware image is valid for BRD4325B(A0 dual flash 1.2) board`
+- `SiWG917-B.2.9.X.X.X.rps - This firmware image is valid for BRD4325C(B0 common flash v1.2) board`
+- `SiWG917-B.2.9.X.X.X.rps - This firmware image is valid for BRD4338A(B0 common flash v2.0) board`
+
+
