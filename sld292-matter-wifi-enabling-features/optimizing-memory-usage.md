@@ -1,19 +1,6 @@
 # Optimizing Memory Usage
 
 This page provides information on optimizing memory usage for Silicon Labs devices.
-
-## Memory Reports for Silicon Labs Devices
-
-Memory usage information is provided in the reports below:
-
- - Memory usage of silicon labs devices can be checked at
-
-   ![Memory Usage Report](./images/memory-usage-report.png)
-
- - Detailed Memory Footprint can be checked at
-
-   ![Memory FootPrint](./images/memory-footprint-report.png)
-
 ## How to Optimize Memory
 
 To optimize an application's memory footprint, check the following:
