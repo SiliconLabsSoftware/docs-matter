@@ -14,20 +14,20 @@ use case.
 ## Step 2: Building the chip-tool for Wi-Fi
 
 In order to run the Matter Wi-Fi demo you will need to run the chip-tool on one
-of two platforms, either Linux/Mac or Raspberry Pi.
-
-1. [Build Linux Environment](build-chip-env.md)
-
-2. [Build Raspberry-Pi Environment](build-pi-env.md)
+of two platforms, either Linux/Mac or Raspberry Pi. Refer to [Building the Chip-Tool](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/build-chip-tool). 
 
 ## Step 3: Building the Matter Accessory Device (MAD) for Wi-Fi
 
-See [Building a Matter Accessory Device for Wi-Fi with Simplicity Studio](/matter/<docspace-docleaf-version>/matter-wifi-getting-started/04-light-switch-step-by-step-example#creating-the-matter-accessory-devices-ma-ds).
+Refer to [Getting Started with Matter Development](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/) for instructions. 
 
 ## Step 4: Running the Example Network
-This contains instructions to run the Matter Wi-Fi applications using chip-tool
-[Running the Matter Demo on EFR32 hosts](run-demo.md)
 
-This contains instructions to run the Matter Wi-Fi demo using chip-tool
-running on a Linux Machine (either Laptop or Raspberry Pi) - follow this
+This contains instructions to run the Matter Wi-Fi applications using chip-tool
+[Running the Matter Demo on Matter Accessory Device](/matter/<docspace-docleaf-version>/matter-wifi-run-demo) on a Linux Machine (either Laptop or Raspberry Pi) - follow this
 after successfully executing the above steps.
+
+## Additional Information
+
+- [Enabling Features](/matter/<docspace-docleaf-version>/matter-wifi-enabling-features)
+- [Matter Shell](/matter/<docspace-docleaf-version>/matter-wifi-shell)
+- [Matter OTA](/matter/<docspace-docleaf-version>/matter-wifi-ota)

@@ -28,7 +28,7 @@ Matter hub/chip-tool are ready and working. Keep the PuTTY session open for the 
 
 ## Creating the Matter Accessory Devices (MADs)
 
-> If using NCP hardware, make sure firmware is properly loaded to the NCP using instructions provided in: [Loading firmware Expansion board](/matter/<docspace-docleaf-version>/matter-wifi/loading-firmware-expansion-board).
+> If using NCP hardware, make sure firmware is properly loaded to the NCP using instructions provided in: [Upgrading the Wi-Fi Connectivity Firmware](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/loading-firmware-for-ncp-and-soc-boards).
 
 1. In Simplicity Studio 5, create the Light MAD:
 
