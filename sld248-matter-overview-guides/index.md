@@ -8,4 +8,5 @@ The Overview pages offer a general review of Matter topics including:
  - [Matter OTA Software Update](ota-software-update.md)
  - [Matter OTA Bootloader](ota-bootloader.md)
  - [Matter Security](matter-security.md)
+ - [Matter SLC CLI Setup and Build Instructions](matter-slc-cli.md)
  - [Matter Solutions](matter-solutions.md)
