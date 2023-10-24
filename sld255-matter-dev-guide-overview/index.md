@@ -16,4 +16,5 @@ prerequisites.
 - The [**Unify Matter Bridge**](/matter/<docspace-docleaf-version>/matter-bridge) is an application that makes legacy devices, such as Z-Wave and Zigbee devices, accessible on a Matter fabric. It does so by acting as an IoT Service in a Unify Framework. This application is developed outside of Simplicity Studio. 
 - [**Detailed Development Topics**](/matter/<docspace-docleaf-version>/matter-overview-guides) cover
   a number of other topics of interest to developers, including commissioning, security, and
-  over-the-air update. 
+  over-the-air update.
+  
