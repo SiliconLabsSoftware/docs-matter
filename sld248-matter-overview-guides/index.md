@@ -10,3 +10,4 @@ The Overview pages offer a general review of Matter topics including:
  - [Matter Security](matter-security.md)
  - [Matter SLC CLI Setup and Build Instructions](matter-slc-cli.md)
  - [Matter Solutions](matter-solutions.md)
+ - [Matter and Mobile App](matter-and-mobile-app.md)
