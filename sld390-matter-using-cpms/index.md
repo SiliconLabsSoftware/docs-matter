@@ -1,411 +1,131 @@
-# Matter Custom Part Manufacturing Services (CPMS)
-
-Tools in the Silicon Labs Matter GitHub `cpms` folder are used to load mandatory authentication information into Matter devices. For more information on accessing the cpms tools and cloning the Silicon Labs Matter GitHub repository see the documentation located here: [Silicon Labs Matter GitHub repo](https://github.com/SiliconLabs/matter).
-
-Most of the required parameters are stored once during the manufacturing process, and shall not
-change during the lifetime of the device. During runtime, two interfaces are
-used to pull the authentication data from permanent storage:
-
-* [CommissionableDataProvider](https://github.com/project-chip/connectedhomeip/blob/master/src/include/platform/CommissionableDataProvider.h), implemented as [EFR32DeviceDataProvider](https://github.com/project-chip/connectedhomeip/blob/master/examples/platform/silabs/efr32/EFR32DeviceDataProvider.cpp)
-* [DeviceAttestationCredsProvider](https://github.com/project-chip/connectedhomeip/blob/master/src/credentials/DeviceAttestationCredsProvider.h), implemented as [SilabsDeviceAttestationCreds](https://github.com/project-chip/connectedhomeip/blob/master/examples/platform/silabs/SilabsDeviceAttestationCreds.h)
-
-The provisioning script in this folder now supersedes the following tool:
-* [Factory Data Provider](https://github.com/project-chip/connectedhomeip/tree/master/scripts/tools/silabs)
-
-## Provisioned Data
-
-The Commissionable Data includes Serial Number, Vendor Id, Product Id, and the Setup Payload (typicallty displayed in the QR), while the Attestation Credentials includes the Certificate Declaration (CD), the Product Attestation Intermediate (PAI) certificate, and the DAC (Device Attestation Certificate).
-
-During commissioning, Matter devices perform a Password Authenticated Key Exchange using the SPAKE2+ protocol. The SPAKE2+ verifier is pre-calculated [using an external tool](https://github.com/project-chip/connectedhomeip/tree/master/src/tools/spake2p).
-
-The passcode is used to derive a QR code, typically printed on the label, or displayed by the device itself. The QR code contains the pre-computed setup payload, which allows the commissioner to establish a session with the device. The parameters required to generate and validate the session keys are static and stored in NVM3.
-
-To protect the attestation private-key (used to generate the DAC), the asymmetric key-pair should be generated on-device, using PSA, and the most secure storage location available to the specific part.
-However, the private-key may be generated externally, and imported using the --dac_key parameter.
-
-The DAC is generated and signed by a Certification Authority (CA), which may reside on a separate host. The `modules/signing_server.py` script simulates the role of the CA, and uses OpenSSL to to generate and sign the DAC. In a real factory environment, this script is replaced by an actual CA.
-
-
-## Generator Firmware
-
-The Generator Firmware (GFW) is a baremetal application that runs on the targeted device, and assists with the initial setup of the device. The GFW performs the following tasks:
-
-* Generates the device key-pair on the most secure location available
-* Returns a CSR (Certificate Signing Request) to the provisioning script. The CSR contains the device public-key, Vendor Id, Product Id, and Serial Number.
-* Calculates the Setup Payload
-* Stores the Commissionable Data into NVM3 (including the Setup Payload)
-* Stores the Attestation Data on the main flash (CD, PAI, DAC)
-* Stores the size and offsets used to store the Attestation Data, along with the KeyId used to generate the private-key
-
-The main source code of the GFW is located under `cpms/generator`, while the board support is located under `cpms/support`. Pre-compiled images for the supported chips can be found in `cpms/images`.
-
-The directory structure is as follows:
-- cpms
-    - generator
-    - images
-    - modules
-    - support
-        - efr32mg12
-        - efr32mg24
-
-## Provisioner Script
-
-The `provision.py` file is the main script used to load all the required data on the Matter device. This script requires:
-* [Simplicity Commander](https://community.silabs.com/s/article/simplicity-commander?language=en_US)
-* [SEGGER J-Link](https://www.segger.com/downloads/jlink/)
-* [SPAKE2+ generator](https://github.com/project-chip/connectedhomeip/tree/master/src/tools/spake2p)
-* [PyLink](https://pylink.readthedocs.io/en/latest/index.html)
-
-sudo pip3 install ecdsa
-
-The Provisioner Script executes the following steps:
-
-1. Parses and validates the command-line arguments
-2. Obtains the Part Number from the connected device (using Simplicity Commander)
-3. If no SPAKE2+ verifier is provided:
-   3.1. Generates SPAKE2+ verifier (using the external `spake2p` tool)
-4. Loads the Generator Firmware into the device (if no GFW path is provided, the Part Number is used to choose the corresponding file from the `cpms/images`)
-5. Configures the NVM3 based on the flash size of the connected device
-6. If CSR mode is used (--csr):
-   6.1. Requests a CSR from the device
-    - The GFW generates the key-pair and CSR, then returns the the CSR to the host script
-   6.2. Sends the CSR to the Signing Server (`cpms/modules/signing_server.py`), and retrieves the DAC
-7. Sends CD, PAI, and DAC to the GFW
-    - The GFW stores CD, PAI, and DAC on the last page of main flash, and updates the offsets and sizes in NVM3
-
-8. Sends the Commissionable Data to the GFW
-    - The GFW initializes the flash, generates the Setup Payload, and stores the data into NVM3
-9. If a PFW is provided, writes the PFW into flash using Simplicity Commander
-
-The provisioning script and the GFW communicates through J-Link RTT using the PyLink module.
-
-### Arguments
-
-| Arguments                 | Conformance          | Type               | Description                                                                             |
-| ------------------------- | -------------------- | ------------------ | --------------------------------------------------------------------------------------- |
-| -c,  --config             | optional             | string             | Path to a JSON configuration file            |
-| -j,  --jlink              | optional ^1   | dec/hex            | JLink connection string.  |
-| -g,  --generate           | optional             | flag               | Auto-generate test certificates            |
-| -m,  --cpms               | optional             | flag               | CPMS mode: When true, only generate the JSON configuration, and exit.                    |
-| -r,  --csr                | optional             | flag               | CSR mode: When true, instructs the GFW to generate the private key, and issue a CSR.                    |
-| -gf, --gen_fw             | optional             | dec/hex            | Path to the Generator Firmware image.                                                   |
-| -pf, --prod_fw            | optional             | dec/hex            | Path to the Production Firmware image.                                                   |
-| -v,  --vendor_id          | optional             | dec/hex            | Vendor ID. e.g: 65521 or 0xFFF1 (Max 2 bytes).                              |
-| -V,  --vendor_name        | optional             | string             | Vendor name (Max 32 char).                                                  |
-| -p,  --product_id         | optional             | dec/hex            | Product ID. e.g: 32773 or 0x8005 (Max 2 bytes).                             |
-| -P,  --product_name       | optional             | string             | Product name (Max 32 char).                                                 |
-| -pl, --product_label      | optional             | string             | Product label.                |
-| -pu, --product_url        | optional             | string             | Product URL.                |
-| -pn, --part_number        | optional             | dec/hex            | Device Part Number (Max 32 char).                                               |
-| -hv, --hw_version         | optional             | dec/hex            | The hardware version value (Max 2 bytes).                                       |
-| -hs, --hw_version_str     | optional             | string             | The hardware version string (Max 64 char).                                      |
-| -cf, --commissioning_flow | optional             | dec/hex            | Commissioning Flow 0=Standard, 1=User Action, 2=Custom.                         |
-| -rf, --rendezvous_flags   | optional             | dec/hex            | Rendez-vous flag: 1=SoftAP, 2=BLE 4=OnNetwork (Can be combined).                |
-| -md, --manufacturing_date | optional             | string             | Manufacturing date.                |
-| -d,  --discriminator      | optional ^2   | dec/hex            | BLE pairing discriminator. e.g: 3840 or 0xF00. (12-bit)                                 |
-| -ct, --cert_tool          | optional             | string             | Path to the chip-cert tool. Defaults to `../out/tools/chip-cert`          |
-| -ki, --key_id             | required             | dec/hex            | Attestation Key ID.                |
-| -kp, --key_pass           | optional ^3   | string             | Password for the key file.                |
-| -xc, --att_certs          | optional ^3   | string             | Path to the PKCS#12 attestation certificates file.                |
-| -ic, --pai_cert           | required             | string             | Path to the PAI certificate.                |
-| -dc, --dac_cert           | optional ^3   | string             | Path to the PAI certificate.                |
-| -dk, --dac_key            | optional ^3   | dec/hex            | Path to the PAI private-key.                |
-| -cd, --certification      | required             | string             | Path to the Certification Declaration (CD) file.                |
-| -cn, --common_name        | optional ^4   | string             | Common Name to use in the Device Certificate (DAC) .                |
-| -u,  --unique_id          | optional ^5   | hex string         | A 128 bits hex string unique id (without 0x).                                           |
-| -sv, --spake2p_verifier   | optional             | string ^6   | Pre-generated SPAKE2+ verifier.                                          |
-| -sp, --spake2p_passcode   | required             | dec/hex            | Session passcode used to generate the SPAKE2+ verifier.        |
-| -ss, --spake2p_salt       | required             | string ^6   | Salt used to generate the SPAKE2+ verifier.                             |
-| -si, --spake2p_iterations | required             | dec/hex            | Iteration count used to generate the SPAKE2+ verifier.                  |
-
- ^1   Use xxxxxxxxx for serial, or xxx.xxx.xxx.xxx[:yyyy] for TCP.
- ^2   If not provided (or zero), the `discriminator `is calculated as the last 12 bits of SHA256(serial_number)
- ^3   If the DAC is provided, its corresponding private-key also must be provided
- ^4   Required if the DAC is not provided
- ^5   If not provided, the `unique_id` is calculated as the first 128 bits of SHA256(serial_number)
- ^6   Salt and verifier must be provided as base64 string
-
-For the hex type, provide the value with the `0x` prefix. For hex string type, do not add the `0x` prefix.
-
-The -c/--config argument allows to read all the required parameters from a JSON file. The same validation rules apply
-both for command line or configuration file, but JSON does not support hexadecimal numbers. Command line arguments
-override arguments read from a configuration file.
-For instance, with the configuration `cpms.json`:
-
-```shell
-{
-    "version": "1.0",
-    "matter": {
-        "prod_fw": "/git/matter/out/lighting-app/BRD4187C/chip-efr32-lighting-example.s37",
-        "vendor_id": 4169,
-        "product_id": 32773,
-        "discriminator": 3841,
-        "attestation": {
-            "dac_cert": "temp/certs/dac_cert.pem",
-            "dac_key": "temp/certs/dac_key.pem",
-            "pai_cert": "temp/certs/pai_cert.pem",
-            "certification": "temp/certs/cd.der",
-        },
-        "spake2p": {
-            "passcode": 62034001,
-            "salt": "95834coRGvFhCB69IdmJyr5qYIzFgSirw6Ja7g5ySYA",
-            "iterations": 15000
-        }
-    }
-}
-```
-
-You may run:
-
-```shell
-python3 ./provision.py -c cpms.json -d 2748 -p 0x8006 -si 10000
-```
-
-Which will set the connected device with discriminator 2748 (instead of 3841), product ID 32774 (instead of 32773),
-and use 10000 SPAKE2+ iterations (instead of 15000).
-
-To ease development and testing, the `provision.py` script provides defaults for most of the parameters. The only
-arguments that are truly mandatory are `vendor_id`, and `product_id`. Test certificates may be auto-generated using
-the -g flag, provided the `chip-cert` can be found, either in the default location, or through the `--cert-tool` argument.
-For instance, you may run:
-
-```shell
-python3 ./provision.py -v 0x1049 -p 0x8005 -g
-```
-
-Which will generate the test certificates using `chip-cert`, and set the device with the following parameters:
-
-```shell
-{
-    "version": "1.0",
-    "matter": {
-        "generate": true,
-        "vendor_id": 65522,
-        "product_id": 32773,
-        "discriminator": 3840,
-        "attestation": {
-            "cert_tool": "./out/tools/chip-cert",
-            "key_id": 2,
-        },
-        "spake2p": {
-            "verifier": null,
-            "passcode": 62034001,
-            "salt": "95834coRGvFhCB69IdmJyr5qYIzFgSirw6Ja7g5ySYA=",
-            "iterations": 15000
-        }
-    }
-}
-```
-
-For each run, `provision.py` will generate the file `cpms/config/latest.json`, containing the arguments used to set up the device.
-A default configuration with developer settings can be found at `cpms/config/develop.json`:
-
-```shell
-python ./provision.py -c config/develop.json
-```
-
-## Attestation Files
-
-The `--generate` option instructs the `provider.py` script to generate test attestation files with the given Vendor ID, and Product ID.
-These files are generated using [the chip-cert tool](https://github.com/project-chip/connectedhomeip/tree/master/src/tools/chip-cert),
-and stored under the `cpms/temp` folder.
-
-To generate the certificates manually:
-
-```shell
-./chip-cert gen-cd -f 1 -V 0xfff1 -p 0x8005 -d 0x0016 -c ZIG20142ZB330003-24 -l 0 -i 0 -n 257 -t 0 -o 0xfff1 -r 0x8005 -C ./credentials/test/certification-declaration/Chip-Test-CD-Signing-Cert.pem -K ./credentials/test/certification-declaration/Chip-Test-CD-Signing-Key.pem -O ./temp/cd.der
-
-./chip-cert gen-att-cert -t a -l 3660 -c "Matter PAA" -V 0xfff1 -o ./temp/paa_cert.pem -O ./temp/paa_key.pem
-
-./chip-cert gen-att-cert -t i -l 3660 -c "Matter PAI" -V 0xfff1 -P 0x8005 -C ./temp/paa_cert.pem -K ./temp/paa_key.pem -o ./temp/pai_cert.pem -O ./temp/pai_key.pem
-
-./chip-cert gen-att-cert -t d -l 3660 -c "Matter DAC" -V 0xfff1 -P 0x8005 -C ./temp/pai_cert.pem -K ./temp/pai_key.pem -o ./temp/dac_cert.pem -O ./temp/dac_key.pem
-```
-
-NOTE: The commissioning fails if the commissioner do not recognize the root certificate (PAA).
-When using [chip-tool](https://github.com/project-chip/connectedhomeip/tree/master/examples/chip-tool),
-you can use the `--paa-trust-store-path` to enabled the PAA certificates for testing purposes.
-
-## Example
-
-In Simplicity Studio, add the Matter Device Attestation Credentials component to the project and build it. The resulting s37 file is used as an input to the provision.py script in the next step.
-
-Set up the device with key generation:
-
-```shell
-python3 ./provision.py -v 0x1049 -p 0x8005 \
-    -r -ki 2 -cn "Silabs Device" -ic ./temp/pai_cert.pem -cd ./temp/cd.der \
-    -sp 62034001 -ss 95834coRGvFhCB69IdmJyr5qYIzFgSirw6Ja7g5ySYA= -si 15000 \
-    -d 0xf01 -j 440266330 -pf chip-efr32-lighting-example.s37
-```
-
-Or, set up the device with imported key:
-
-```shell
-python3 ./provision.py -v 0x1049 -p 0x8005 \
-    -ki 2 -cn "Silabs Device" -dc ./temp/dac_cert.pem  -dk ./temp/dac_key.pem  -ic ./temp/pai_cert.pem -cd ./temp/cd.der \
-    -sp 62034001 -ss 95834coRGvFhCB69IdmJyr5qYIzFgSirw6Ja7g5ySYA= -si 15000 \
-    -d 0xf01 -j 440266330 -pf chip-efr32-lighting-example.s37
-```
-
-Set up device with PKCS#12 attestation certificates file
-
-```shell
-python3 ./provision.py -c config/silabs.json -xc certs.p12 -kp cBiqGji1ARHKQ8gv6kiVh1uJQDn/dMXlTXbNOXwjNDE= -cd /certificate.cd -d 0x771
-```
-## Validation
-
-If the certificate injection is successful, the commissioning process should
-complete normally. In order to verify that the new certificates are actually
-being used, first check the last page of the flash using Commander. The content
-of the flash must then be compared with the credentials received by the
-commissioner, which can be done using a debugger.
-
-### Flash Dump
-
-On EFR32MG12, the last page starts at address 0x000FF800. On EFR32MG24,
-the last page is located at 0x0817E000. These addresses can be found in
-the memory map of the board's datasheet. For instance, for a MG24 board:
-
-```shell
-commander readmem --range 0x0817E000:+1536 --serialno 440266330`
-```
-
-The output should look something like:
-
-```shell
-commander readmem --range 0x0817E000:+1536 --serialno 440266330
-Reading 1536 bytes from 0x0817e000...
-{address:  0  1  2  3  4  5  6  7  8  9  A  B  C  D  E  F}
-000ff800: 30 82 01 D8 30 82 01 7F A0 03 02 01 02 02 04 07
-000ff810: 5B CD 15 30 0A 06 08 2A 86 48 CE 3D 04 03 02 30
-...
-000ff9c0: 2B BA 15 32 2F 4C 69 F2 38 48 D2 BC 62 2A 47 FB
-000ff9d0: 3F F7 28 8A 7C 90 75 72 58 84 96 E7 00 00 00 00
-000ff9e0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-000ff9f0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-000ffa00: 30 82 01 C8 30 82 01 6E A0 03 02 01 02 02 08 79
-000ffa10: 6E 32 5A FA 5B D1 F8 30 0A 06 08 2A 86 48 CE 3D
-...
-000ffbb0: FD 92 D1 EB 59 95 D8 38 DE 5D 80 E3 05 65 24 4A
-000ffbc0: 62 FD 9F E9 D8 00 FA CD 0F 32 7C C9 00 00 00 00
-000ffbd0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-000ffbe0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-000ffbf0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-000ffc00: 30 81 EF 06 09 2A 86 48 86 F7 0D 01 07 02 A0 81
-000ffc10: E1 30 81 DE 02 01 03 31 0D 30 0B 06 09 60 86 48
-...
-000ffce0: 28 41 FD B8 28 CD 19 F2 BB DB A0 0F 33 B2 21 D3
-000ffcf0: 33 CE 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-000ffd00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-```
-
-On this example, the DAC is located at address 0817e000 (offset 0), and
-has 476 octets:
-
-```shell
-0817e000: 30 82 01 D9 30 82 01 7F A0 03 02 01 02 02 04 07
-0817e010: 5B CD 15 30 0A 06 08 2A 86 48 CE 3D 04 03 02 30
-...
-0817e1c0: 2E 4F 10 20 38 BA A6 B5 F6 A4 77 7A 19 91 23 79
-0817e1d0: 2F A0 FF AF F5 5C A1 59 98 08 C7 BC 5F 00 00 00
-```
-
-This should match the contents of the DER-formatted DAC certificate, which is
-stored by the setup script as ./temp/dac.der :
-
-```shell
-$ xxd ./temp/dac.der
-```
-```shell
-00000000: 3082 01d8 3082 017f a003 0201 0202 0407  0...0...........
-00000010: 5bcd 1530 0a06 082a 8648 ce3d 0403 0230  [..0...*.H.=...0
-...
-000001c0: 2bba 1532 2f4c 69f2 3848 d2bc 622a 47fb  +..2/Li.8H..b*G.
-000001d0: 3ff7 288a 7c90 7572 5884 96e7            ?.(.|.urX...
-
-
-The PAI certificate is located at address 0x0817e200 (offset 512), and
-has 460 octets:
-0817e200: 30 82 01 C8 30 82 01 6E A0 03 02 01 02 02 08 79
-0817e210: 6E 32 5A FA 5B D1 F8 30 0A 06 08 2A 86 48 CE 3D
-...
-0817e3b0: FD 92 D1 EB 59 95 D8 38 DE 5D 80 E3 05 65 24 4A
-0817e3c0: 62 FD 9F E9 D8 00 FA CD 0F 32 7C C9 00 00 00 00
-```
-
-This should match the contents of the DER-formatted PAI certificate, which is
-stored by the setup script as ./temp/pai_cert.der :
-
-```shell
-$ xxd ./temp/pai_cert.der
-```
-
-```shell
-00000000: 3082 01c8 3082 016e a003 0201 0202 0879  0...0..n.......y
-00000010: 6e32 5afa 5bd1 f830 0a06 082a 8648 ce3d  n2Z.[..0...*.H.=
-...
-000001b0: fd92 d1eb 5995 d838 de5d 80e3 0565 244a  ....Y..8.]...e$J
-000001c0: 62fd 9fe9 d800 facd 0f32 7cc9            b........2|.
-```
-
-Finally, on this example the CD is located at address 0817e400
-(offset 1024), and contains 541 octets:
-
-```shell
-0817e400: 30 81 EF 06 09 2A 86 48 86 F7 0D 01 07 02 A0 81
-0817e410: E1 30 81 DE 02 01 03 31 0D 30 0B 06 09 60 86 48
-...
-0817e4d0: 02 20 38 B9 9C 73 B2 30 92 D7 A2 92 47 30 14 F7
-0817e4e0: 28 41 FD B8 28 CD 19 F2 BB DB A0 0F 33 B2 21 D3
-0817e4f0: 33 CE 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-```
-
-The CD is a binary file, and is neither modified, nor validated by the setup
-script. It is simply stored in flash after the DAC:
-
-```shell
-$ xxd cd.der
-```
-
-```shell
-00000000: 3081 ef06 092a 8648 86f7 0d01 0702 a081  0....*.H........
-00000010: e130 81de 0201 0331 0d30 0b06 0960 8648  .0.....1.0...`.H
-...
-000000e0: 2841 fdb8 28cd 19f2 bbdb a00f 33b2 21d3  (A..(.......3.!.
-000000f0: 33ce                                     3.
-```
-
-The 0xff octets between the files and at the end of the flash are unmodified
-sections of the flash storage.
-
-### Device Terminal
-
-Logs have beed added to the SilabsDeviceAttestationCreds, to help verifying if the Attestation
-files are loaded correctly. The size and first eight bytes of CD, PAI, and DAC are printed, and
-must match the contents of `cd.der`, `pai_cert.der`, and `dac.der`, respectively:
-
-```shell
-...
-[00:00:05.109][info  ][ZCL] OpCreds: Certificate Chain request received for PAI
-[00:00:05.109][info  ][DL] GetProductAttestationIntermediateCert, addr:0xffa00, size:460
-[00:00:05.110][detail][ZCL] 0x30, 0x82, 0x01, 0xc8, 0x30, 0x82, 0x01, 0x6e,
-...
-[00:00:05.401][info  ][ZCL] OpCreds: Certificate Chain request received for DAC
-[00:00:05.402][info  ][DL] GetDeviceAttestationCert, addr:0xff800, size:477
-[00:00:05.402][detail][ZCL] 0x30, 0x82, 0x01, 0xd8, 0x30, 0x82, 0x01, 0x7f,
-...
-
-[00:00:05.694][info  ][ZCL] OpCreds: Received an AttestationRequest command
-[00:00:05.695][info  ][DL] GetCertificationDeclaration, addr:0xffc00, size:242
-[00:00:05.695][detail][ZCL] 0x30, 0x81, 0xef, 0x06, 0x09, 0x2a, 0x86, 0x48,
-...
-```
-
-## Board Support
-
-Pre-compiled images of the Generator Firmware can be found under cpms/images. The source
-code of these images is found under cpms/support. A single image is provided for all EFR32MG12
-parts, and another one for the EFR32MG24 family. To copy with the different flash sizes, the
-`provision.py` script reads the device information using `commander`, and send it to the GFW,
-which configures the NVM3 during the initialization step.
+# Using Custom Part Manufacturing Services (CPMS)
+
+Silicon Labs offers Matter support through our Custom Part Manufacturing Services (CPMS). Your organization can order your Matter devices directly from Silicon Labs or a third-party vendor utilizing our CPMS services. Silicon Labs is one of the few providers that can program your information directly to silicon through secure automation with our partner, Kudelski Security.
+
+## What is CPMS?
+
+CPMS allows you to customize Silicon Labs hardware – wireless SoCs, modules, MCUs – at the factory. The CPMS self-service web portal guides you through the customization process and its various customizable features and settings. You can place orders for customized test and production units to our factories securely via the CPMS portal.
+
+Unlike traditional flash programming, CPMS is a secure provisioning service that enables you to customize your chips with highly advanced features. These include secure boot, secure debug, encrypted OTA, public, private, and secret keys, secure identity certificates, and more. The custom features, identities, and certificates are injected into the hardware securely, quickly, and cost efficiently through Silicon Lab's own factories.
+
+## Why CPMS?
+
+Securing an IoT device is a highly complicated and costly process. You must generate public and private keys for secure boot and secure debug, sign code with a private key, store all the private keys in a Hardware Security Module (HSM), place the public keys for secure boot and secure debug in one-time-programmable (OTP) memory, flip OTP bits for secure boot and secure debug, and flash the encrypted code and identity certificates within the hardware. CPMS streamlines the programming part of this process for you. Even the most advanced security features, certificates, and identities can be programmed in a secure, fast, and cost-efficient way in Silicon Lab's factories.
+
+## How Does Matter Fit into the CPMS Equation?
+
+Silicon Labs is the only IoT-embedded solution provider at this time offering a secure provisioning service for Matter devices at scale. Silicon Labs has partnered with [Security](https://confluence.silabs.com/pages/viewpage.action?pageId=387091843) to provide scalable access to Device Attestation Certificates (DACs) for your Matter devices. Kudelski has "30+ years of experience securely provisioning more than 500 million devices". Rest assured that your secrets are stored in HSMs both on and offline to provide maximum security for your secret key material. Learn more about [Security](https://www.kudelski-iot.com/services-and-systems/matter-paa-pai).
+
+CPMS allows you to configure your device and receive production samples for a minimal cost before making a full production order. To configure your Matter settings, there are two ways to accomplish this with Silicon Labs tooling.
+
+If your organization uses [Simplicity Studio](https://www.silabs.com/developers/simplicity-studio), Silicon Lab's IoT IDE, we have provided a built-in utility that will output a JSON formatted data file that can be uploaded directly into CPMS. This data file will fill out the necessary Matter information for you. This is the preferred method as it reduces the potential for errors and/or typos.
+
+The second method is to simply provide the required information through the CPMS web forms. This is a minimal process that includes important attestation information such as your Vendor ID (VID), Product ID (PID), Certification Declaration, and other inputs required to generate the Matter certificate chain.
+
+CPMS has automated integrations with Kudelski to obtain the unique DACs for each device at the time of manufacturing. All data remains encrypted throughout the entire process through secure channels between Kudelski and Silicon Labs.
+
+## I'm Ready to Get my Product to Market. What is Needed by CPMS?
+
+CPMS will ask for various attributes about your device, but these are the primary elements that will be needed for proper certificate generation.
+
+- Vendor ID (VID) - Your unique VID will be required by CPMS to properly generate the necessary PKI infrastructure to allow your device on the Matter network.
+
+- Product ID (PID) - Your organization will need to provide a unique PID that will be used to identify this product on the network.
+
+- Certification Declaration (CD) - This is a cryptographic document that is issued to you by CSA after your device has been successfully certified by a CSA-approved testing facility.
+
+## Pre-Production Checklist
+
+1. Choose a Matter-capable part to develop your Matter application on.
+
+2. Become a [CSA member](https://csa-iot.org/become-member/) if your organization is not already a member. An associate-level membership or higher is required to obtain membership perks, certification, and a Vendor ID. [Learn more about this process](https://confluence.silabs.com/pages/viewpage.action?pageId=387092923). If you have not been through these steps, please ensure ample time to get this step done before you are ready to go to production.
+
+3. If you are already a CSA member, make sure that you have been supplied a VID from CSA. If not, contact CSA to obtain a VID. The VID should also have been added to the [CSA Distributed Compliance Ledger (DCL)](https://webui.dcl.csa-iot.org/).
+
+4. Confirm that your VID has been added to the [DCL](https://webui.dcl.csa-iot.org/).
+
+5. As a device maker and CSA member, you should add information about your device to the ledger before shipping your device to the market. If this is not available at the time of release, your devices will not attest properly.
+
+6. Your application has been developed and is ready for certification.
+
+7. Using the [CSA Pre-certification tool](https://csa-iot.org/certification/tools/certification-tool/), you can test your application for completeness before submitting your application for certification. Save your organization time and money by pre-certifying your application before submitting it for certification.
+
+8. Submit your application for certification to a [CSA-approved testing facility](https://csa-iot.org/certification/testing-providers/) for your product type. Once certified, you will be issued a **Certification Declaration (CD)**. This is a cryptographic document stating that your device has successfully been certified and is used in conjunction with the Matter certificate chain to attest to the Matter network. This file should be in a .der format.
+
+9. Begin the process of setting up an account with Kudelski Security as a provider of DACs. Note: Kudelski provides DACs on the Test DCL for no charge. [Learn more about our partnership](https://confluence.silabs.com/pages/viewpage.action?pageId=387091843) with Kudelski Security for Matter devices.
+
+10. Ensure that you have the CD in hand. This will need to be uploaded to CPMS.
+
+11. You're ready to order samples with [CPMS](https://cpms.silabs.com/)!
+
+## Choosing the Test DCL or Production DCL
+
+There are two public ledgers available to developers known as the Matter Distributed Compliance Ledger (DCL). The DCL is a cryptographically secure ledger based on blockchain technology. This ledger preserves an immutable record that stores public information that can be retrieved by DCL clients. For more details, see the [CSA Matter DCL whitepaper](https://csa-iot.org/developer-resource/white-paper-distributed-compliance-ledger/). Each DCL contains five schemas that can be accessed by a client to retrieve information about a device.
+
+- Vendor Info Schema - this schema provides public information about the device vendor such as the VID, Vendor Name, and Company Legal Name.
+
+- Device Model Schema - this schema provides public information about the actual device such as the Product Name, PID, VID, and more.
+
+- Device Software Version Model Schema - this schema provides public information about software-specific data about the device such as Release Notes URL, OTA software image URL, and more.
+
+- Compliance Schema - this schema provides public information about the certification of a device such as the VID, PID, Software Version, CD Certificate ID, and more.
+
+- PAA Schema - this schema provides information about valid Product Attestation Authority certificates for approved PAAs.
+
+The **Test DCL**, as the name suggests, is a public Matter ledger that will allow vendors to test their devices in a test environment. Entries into the Test DCL are less rigorous than the Production DCL and can be used to test devices using test certificates provided by Matter or other valid vendors. These test certificates cannot be used on the production DCL. For the production case, you have to ensure that you have the proper certificate chain in place. For CPMS, Kudelski provides Test DCL DACs at **no additional charge**. Your organization needs to ensure that an account has been created with Kudelski to order these DACs through CPMS. [Learn more here](https://confluence.silabs.com/pages/viewpage.action?pageId=387091843).
+
+If you are ready to take your device to production, you have the option to select the **Production DCL**. This is the primary [Matter DCL](https://webui.dcl.csa-iot.org/) for production devices. For your device to properly commission onto the Matter fabric, the commissioner needs to be able to verify that a valid certificate chain is in place. The information needed must be publicly available in the production DCL. The device needs to have a valid DAC signed by an approved PAI provider, and a root PAA provider. Your device also must contain a valid certification of the device, all available in the DCL. Silicon Labs partners with Kudelski Security as a PAA provider of choice. Kudelski also signs the Product Attestation Intermediate (PAI) certificate for our customers using CPMS. Each PAI is specific to our customer's products and is created when you set up a new product on your account with Kudelski.
+
+## CPMS Workflow
+
+You've completed all of the items in the pre-production checklist and are ready to create samples. With CPMS, you get the benefit of receiving several actual samples of your product for your approval. This allows you to test the actual device before placing a large production run. Once you approve the sample, you have an Orderable Part Number (OPN) that can be used with Silicon Labs or other third-party distributors. The workflow involves the following steps:
+
+1. To access CPMS, you need to register for an account with Silicon Labs. If you are using Simplicity Studio or other Silicon Labs tools, you probably already have this. If not, [register for a Silicon Labs account](https://community.silabs.com/SL_CommunitiesSelfReg).
+
+2. [Login to CPMS](https://cpms.silabs.com/login).
+
+3. Create a new Custom Part.
+
+4. Select the part on which you have built your Matter application. You will be asked a couple of questions about your future order. This helps Silicon Labs prepare for your eventual order and ensure that the factories are ready to go in the timeframe expected.
+
+    ![screenshot](resources/image1.png)
+
+5. Click **Customize** to start configuring your device. With CPMS, you have a wide range of options to work with to customize your device. Matter is only one component of this. You have full control over other features of the part itself such as debug lock/unlock, secure boot, and many other security features depending on the part selected.
+
+6. The Matter-specific configurations can be found in the Ecosystem Identities toggle. Select the toggle to view the available ecosystems supported by your device.
+
+    ![screenshot](resources/image2.png)
+
+7. Add the Matter Ecosystem to your part and you will be presented with the required Matter inputs to help secure the proper PAA/PAI/DAC certificates from Kudelski.
+
+8. Upload your Certification Declaration. This is the file in .der format that you should have received after successful certification from a CSA-approved testing facility.
+
+    ![screenshot](resources/image3.png)
+
+9. (optional) If you used Simplicity Studio, use the Provisioning Tool to output your Matter information directly from the application. This tool outputs a cpms.json file that can be uploaded to help you quickly fill out this information.
+
+    ![screenshot](resources/image4.png)
+
+10. Fill out the required Matter fields. This includes the VID, PID, and several additional inputs to help Silicon Labs generate the necessary Matter certificate chain. If you use the cpms.json file that is generated through the Silicon Labs Matter provisioning tool, these will be automatically filled in for you.
+
+    ![screenshot](resources/image5.png)
+
+11. (optional) Fill out the Matter Optional Fields. These fields will also be automatically filled out for you if you use the cpms.json file referenced above.
+
+    ![screenshot](resources/image6.png)
+
+12. Once you have satisfied all of the required fields, you will be prompted to **Proceed to Review** to review the selections in your order.
+
+    ![screenshot](resources/image7.png)
+
+13. Review your customizations and pricing information. You may also be asked for the shipping information if this is not on file with us already. The sample orders will be shipped to this address.
+
+14. Submit for evaluation.
+
+15. For Matter-specific parts, Silicon Labs works with Kudelski IoT to secure the DACs for your sample parts. These DACs are signed with the proper PAA/PAI certificate chains and delivered via Secure Vault Services integrations directly with Kudelski.
+
+16. Once the DACs are available, the order will go into Silicon Labs manufacturing to be programmed and shipped to your address once the samples are complete.
+
+17. You can then Approve or Reject the samples once your organization is able to test the sample parts. Silicon Labs recommends at this time that you test these samples with your device commissioner to ensure that the samples can properly attest to the Matter network.
+
+18. Once approved, you will be able to order these parts, based on the OPN for that part. You can do this through Silicon Labs or through a third-party distributor. You may also opt to work with a Silicon Labs Field Application Engineer to help get this order executed.
