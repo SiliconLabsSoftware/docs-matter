@@ -190,7 +190,6 @@ include:
     - path: CHIPProjectConfig.h
     - path: AppEvent.h
     directory: include
-
   - path: ../../../../silabs_examples/DIC_Examples
     file_list:
       - path: DIC_EventHandler.h
@@ -222,7 +221,6 @@ include:
     - path: CHIPProjectConfig.h
     - path: AppEvent.h
     directory: include
-
   - path: ../../../../silabs_examples/DIC_Examples
     file_list:
       - path: DIC_EventHandler.h
