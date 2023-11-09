@@ -51,4 +51,4 @@ two EFR32MG24-based development boards, and a Raspberry Pi used as a Matter hub.
 
 ## Next Steps
 
-Now that you have your environment you can create a [Matter over Thread network](/matter/<docspace-docleaf-version>/matter-thread-getting-started) or a [Matter over Wi-Fi network](/matter/<docspace-docleaf-version>/matter-wifi-getting-started). 
+Now that you have your environment, you can create a [Matter over Wi-Fi network](/matter/<docspace-docleaf-version>/matter-light-switch-example/01-wifi-light-switch-example) or a [Matter over Thread network](/matter/<docspace-docleaf-version>/matter-light-switch-example/02-thread-light-switch-example).
