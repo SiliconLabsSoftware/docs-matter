@@ -14,7 +14,7 @@ Securing an IoT device is a highly complicated and costly process. You must gene
 
 ## How Does Matter Fit into the CPMS Equation?
 
-Silicon Labs is the only IoT-embedded solution provider at this time offering a secure provisioning service for Matter devices at scale. Silicon Labs has partnered with [Security](https://confluence.silabs.com/pages/viewpage.action?pageId=387091843) to provide scalable access to Device Attestation Certificates (DACs) for your Matter devices. Kudelski has "30+ years of experience securely provisioning more than 500 million devices". Rest assured that your secrets are stored in HSMs both on and offline to provide maximum security for your secret key material. Learn more about [Security](https://www.kudelski-iot.com/services-and-systems/matter-paa-pai).
+Silicon Labs is the only IoT-embedded solution provider at this time offering a secure provisioning service for Matter devices at scale. Silicon Labs has partnered with [Kudelski Security](./01-matter-cpms-kudelski-security.md) to provide scalable access to Device Attestation Certificates (DACs) for your Matter devices. Kudelski has "30+ years of experience securely provisioning more than 500 million devices". Rest assured that your secrets are stored in HSMs both on and offline to provide maximum security for your secret key material. Learn more about [Security](https://www.kudelski-iot.com/services-and-systems/matter-paa-pai).
 
 CPMS allows you to configure your device and receive production samples for a minimal cost before making a full production order. To configure your Matter settings, there are two ways to accomplish this with Silicon Labs tooling.
 
@@ -38,7 +38,7 @@ CPMS will ask for various attributes about your device, but these are the primar
 
 1. Choose a Matter-capable part to develop your Matter application on.
 
-2. Become a [CSA member](https://csa-iot.org/become-member/) if your organization is not already a member. An associate-level membership or higher is required to obtain membership perks, certification, and a Vendor ID. [Learn more about this process](https://confluence.silabs.com/pages/viewpage.action?pageId=387092923). If you have not been through these steps, please ensure ample time to get this step done before you are ready to go to production.
+2. Become a [CSA member](https://csa-iot.org/become-member/) if your organization is not already a member. An associate-level membership or higher is required to obtain membership perks, certification, and a Vendor ID. See [Device Development Prerequisites](/matter/<docspace-docleaf-version>/matter-device-dev-prereqs). If you have not been through these steps, please ensure ample time to get this step done before you are ready to go to production.
 
 3. If you are already a CSA member, make sure that you have been supplied a VID from CSA. If not, contact CSA to obtain a VID. The VID should also have been added to the [CSA Distributed Compliance Ledger (DCL)](https://webui.dcl.csa-iot.org/).
 
