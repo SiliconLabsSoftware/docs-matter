@@ -188,12 +188,7 @@ include:
     file_list:
     - path: AppConfig.h
     - path: CHIPProjectConfig.h
-    - path: WindowAppImpl.h
-    directory: include
-
-  - path: ../../../../examples/window-app/common/include
-    file_list:
-    - path: WindowApp.h
+    - path: AppEvent.h
     directory: include
   - path: ../../../../silabs_examples/DIC_Examples
     file_list:
@@ -224,12 +219,7 @@ include:
     file_list:
     - path: AppConfig.h
     - path: CHIPProjectConfig.h
-    - path: WindowAppImpl.h
-    directory: include
-
-  - path: ../../../../examples/window-app/common/include
-    file_list:
-    - path: WindowApp.h
+    - path: AppEvent.h
     directory: include
   - path: ../../../../silabs_examples/DIC_Examples
     file_list:
