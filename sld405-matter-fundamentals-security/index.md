@@ -4,6 +4,8 @@ Matter raises the bar on security to a new level beyond simply guaranteeing the 
 
 Register at [Silicon Labs Tech Talks](https://www.silabs.com/about-us/events/tech-talks-wireless-technology-training/matter) to watch a detailed on-demand discussion of Matter Security, along with other tech talks as part of the Interactive Matter Training Series.
 
+>Note: All graphics were extracted from the Tech Talk, *Future-Proofing Matter Security with Secure Vault*, created by the Connectivity Standards Alliance (CSA) and used with permission.
+
 ## Security Tenants Promoted by the Connectivity Standards Alliance (CSA)
 
 1. Easy, secure, and flexible device commissioning
@@ -155,7 +157,7 @@ The focus of this phase is to verify the authenticity of the Device. The high-le
    - Distributed Compliance Ledger (DCL) or
    - Certification Declaration (CD)
 
-First, the Commissioner asks the Node for the CD, the PAI Certification, and the DAC. It then pulls the PAA from the DCL. At that point, it has information from Node and top-level in the certification chain from the DCL. The Commissioner then runs a certification chain check, and all certificates should chain together correctly. If that check is passed, the Commissioner takes the certification ID off the DCL and checks it against the CD ID that it pulls from the Device itself. The final step is to verify that the private key that launched the public key of the DAC is still in the Device to ensure that it is not stolen.
+First, the Commissioner asks the Node for the CD, the PAI Certificate, and the DAC. It then pulls the Certificate ID, the PAA Certificate, and the Device VID/PID from the immutable root of trust DCL. At that point, it has all the information needed to perform the device attestation. The Commissioner then runs a certification chain check from the DAC to the PAI, and all certificates should chain together correctly. If that check is passed, the Commissioner takes the certification ID from the DCL and checks it against the CD ID that it pulled from the device itself to make sure the device is a genuine CSA certified device. The final step is to verify that public key in the DAC pulled from the Matter device mathematically matches the private key inserted in the device during manufacture. This is done by sending a message to the device during this final step of Device Attestation, and having the message signed by the device and then the signature verified using the public key from the DAC.
 
 #### Node Operational Credentials
 
