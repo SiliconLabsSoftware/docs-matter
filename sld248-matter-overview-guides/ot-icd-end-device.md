@@ -60,7 +60,7 @@ For Matter configuration, see the [**Matter ICD**](/matter/<docspace-docleaf-ver
 
 ![Project Generation](images/IcdProjectGeneration.png)
 
-2. Once the project is generated, navigate to the software components section and install the Matter ICD component. Replace all subsequent conflicting components via the ensuing pop-up options (See below). This will install the necessary Thread Network Layer (MTD) component and ICD source code. This will also remove the conflicting Thread Network Layer (FTD), Matter Shell, and LCD components.
+1. Once the project is generated, navigate to the software components section and install the Matter ICD component. Replace all subsequent conflicting components via the ensuing pop-up options (See below). This will install the necessary Thread Network Layer (MTD) component and ICD source code. This will also remove the conflicting Thread Network Layer (FTD) component.
 
 ![ICD End Device Component](images/IcdComponent.png)
 
@@ -76,4 +76,4 @@ The Lower Power Mode component will disable:
 
 - Matter Shell
 - OpenThread CLI
-- LCD and Qr Code
+- LCD and QR Code
