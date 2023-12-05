@@ -14,16 +14,16 @@ Currently, in Matter v1.2, only ICD with Short Idle Time (SIT) is supported. ICD
 
 ICDs have two operating modes: Idle and Active. An ICD alternates normally between the Idle mode and Active mode based on the `IdleModeInterval` and `ActiveModeInterval` respectively.
 
-When the device is in _Active Mode_, the ICD is set into a fast-polling interval for maximum responsiveness.
+When the device is in *Active Mode*, the ICD is set into a fast-polling interval for maximum responsiveness.
 The `CHIP_DEVICE_CONFIG_ICD_FAST_POLL_INTERVAL` parameter communicates the maximum sleep interval of a node in active mode.
 
-Any of the following device states will start or keep the ICD in _Active Mode_:
+Any of the following device states will start or keep the ICD in *Active Mode*:
 
 - A commissioning window is open
 - An exchange context is awaiting a response or ack
 - The fail-safe is armed
   
-Any of the following events can trigger the start of the _Active Mode_ interval or extend it by one `ActiveModeThreshold`:
+Any of the following events can trigger the start of the *Active Mode* interval or extend it by one `ActiveModeThreshold`:
 
 - A message needs to be sent
 - A message was received
@@ -43,9 +43,9 @@ The Thread router will send all buffered messages to the ICD when it polls the r
 
 ## Configuration
 
-Matter exposes some defines to configure the polling intervals of the openthread stack in both Idle and Active modes. 
+Matter exposes some defines to configure the polling intervals of the OpenThread stack in both Idle and Active modes.
 
-| Parameter Name | Define | Description | Default Value | Maximum allowed Value |
+| Parameter Name | Define | Description | Default Value | Maximum Allowed Value |
 | - | - | - | - | - |
 | SlowPollInterval | CHIP_DEVICE_CONFIG_ICD_SLOW_POLL_INTERVAL (`SL_OT_IDLE_INTERVAL`) | Interval, in milliseconds, at which the thread radio will poll its network in idle mode. | 15000 ms | <= IdleModeInterval |
 | FastPollInterval | CHIP_DEVICE_CONFIG_ICD_FAST_POLL_INTERVAL (`SL_OT_ACTIVE_INTERVAL`) | Interval, in milliseconds, at which the thread radio will poll its network in active mode. | 200 ms | < ActiveModeInterval |
@@ -56,11 +56,11 @@ For Matter configuration, see the [**Matter ICD**](/matter/<docspace-docleaf-ver
 
 ### Enabling/Building
 
-1. To begin creating an OpenThread ICD example, create a generic Matter over Thread example via the "New Project Wizard". We will be using the Lighting example for demonstration purposes. Lock and Light-switch applications come out-of-box with ICD enabled.
+1. To begin creating an OpenThread ICD example, create a generic Matter over Thread example via the **New Project Wizard**. Lighting example will be used for demonstration purposes. Lock and Light-Switch applications come out-of-box with ICD enabled.
 
 ![Project Generation](images/IcdProjectGeneration.png)
 
-2. Once the project is generated, navigate to the software components section and install the Sleepy End Device component. Replace all subsequent conflicting components via the ensuing pop-up options (See below). This will install the necessary Thread Network Layer (MTD) component and sleepy source code. This will also remove the conflicting Thread Network Layer (FTD), Matter Shell, and LCD components.
+2. Once the project is generated, navigate to the software components section and install the Matter ICD component. Replace all subsequent conflicting components via the ensuing pop-up options (See below). This will install the necessary Thread Network Layer (MTD) component and ICD source code. This will also remove the conflicting Thread Network Layer (FTD), Matter Shell, and LCD components.
 
 ![ICD End Device Component](images/IcdComponent.png)
 

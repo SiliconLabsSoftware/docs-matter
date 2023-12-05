@@ -17,22 +17,22 @@ To change default values corresponding to Matter ICD examples, modify them in ei
 
 ## ICD Device Types
 
-Matter introduces two types of Intermittently Connected Device.
+Matter introduces two types of ICDs.
 
-* Short Idle Time ICDs
-* Long Idle Time ICDs
+- Short Idle Time ICDs
+- Long Idle Time ICDs
 
 ### Short Idle Time ICDs
 
 Short Idle Time ICDs are battery powered devices that can always be reached by clients.
-This means that their polling intervals are small enough to garantee that a message sent from client will be able to reach the ICD without any synchronization.
-A door lock, for example, is typicaly a SIT ICD because it needs to be able to receive commands from clients at any given time.
+This means that their polling intervals are small enough to guarantee that a message sent from a client will be able to reach the ICD without any synchronization.
+A door lock, for example, is typicaly a short idle time ICD because it needs to be able to receive commands from clients at any given time.
 These devices are usually not the initiators in the communication flow.
 
 ### Long Idle ICDs
 
 Long Idle Time ICDs are battery powered devices that require synchronization between the client and the ICD for communication to succeed.
-A sensor device is an example of a device that are typicaly LIT ICDs.
+A sensor device is an example of a device that are typicaly long idle time ICDs.
 
 Long Idle Time ICDs are provisionnal with the Matter 1.2 release.
 
@@ -78,7 +78,7 @@ The following table shows the subscribe response fields.
 ### Maximum Interval Negotiation
 
 The Matter SDK provides a default implementation that allows an ICD to negotiate its MaxInterval.
-The goal of the algorithme is to set the MaxInterval to the IdleModeInterval.
+The goal of the algorithm is to set the MaxInterval to the IdleModeInterval.
 
 ```cpp
 #if CHIP_CONFIG_ENABLE_ICD_SERVER
@@ -181,6 +181,7 @@ public:
 ```
 
 The second step is registering the callback object to the Interaction Model Engine.
+
 ```cpp
 // Register ICD subscription callback to match subscription max intervals to its idle time interval
 chip::app::InteractionModelEngine::GetInstance()->RegisterReadHandlerAppCallback(&mICDSubscriptionHandler);
@@ -191,20 +192,20 @@ chip::app::InteractionModelEngine::GetInstance()->RegisterReadHandlerAppCallback
 Persistent subscriptions were added to Matter as a means to ensure that an ICD can re-establish its subscription and by extension its secure session to a subscriber in the event of a power cycle.
 When a device accepts a subscription request, it will persist the subscription.
 When the device reboots, it will try to re-establish its subscription with the subscriber.
-If the subscription is torn down during normal operations or if the re-establishement fails,
+If the subscription is torn down during normal operations or if the re-establishment fails,
 the subscription will be deleted.
 
-Persistent subscriptions are enabled by default on all Silabs sample applications.
+Persistent subscriptions are enabled by default on all Silicon Labs sample applications.
 
 ### Subscription Timeout Resumption
 
 Matter also provides a retry mechanism for devices to try to re-establish a lost subscription with a client. This functionality is provided by the component `matter_subscription_timeout_resumption`. This feature should not be used on an ICD since it can significantly reduce battery life.
 
-This feature is enabled by default on the all examples with the exception of the door-lock and light-switch example.
+This feature is enabled by default on all examples with the exception of the door-lock and light-switch example.
 
 ## Subscription Synchronization
 
 To avoid forcing an ICD to become active multiple times, the Matter SDK allows an ICD to synchronize its subscription reporting and send all the reports at the same time.
-The mecansim syncrhonizes the maximum interval of the all subscription to only require the ICD to become active one. This functionality is provided by component `matter_subscription_synchronization`.
+The mechansim synchronizes the maximum interval of all subscriptions to only require the ICD to become active once. This functionality is provided by component `matter_subscription_synchronization`.
 
 This feature is enabled by default on the door-lock sample app and the light-switch sample application.
