@@ -1,6 +1,5 @@
 # ZCL Advanced Platform (ZAP) Tool for Matter
 
-
 ## Overview
 
 EFR32 example applications provide a baseline demonstration of a lock device,
@@ -38,8 +37,6 @@ Each Matter application consists of the following layers:
             is represented by an LED), with options to set passwords and lock
             schedules
 
- 
-
 ## Clusters
 
 Every Matter Application uses multiple clusters leveraged from the Zigbee
@@ -58,7 +55,6 @@ Application clusters are assigned to endpoints with IDs 1 and higher.
 Some applications have callbacks that are left to be implemented by the device
 manufacturer. For example, the storage and management of users and credentials in
 the lock-app is left up to the application developer.
-
 
 ## ZAP Tool
 
@@ -104,14 +100,14 @@ zap file, click the application menu for Electron (Upper left corner of the
 screen for macs), then click "Open File". Then navigate to the desired .zap
 file.
 
-![ZAP Introduction Page](./images/zap-intro.png)
+![ZAP Introduction Page](images/zcl-welcome.png)
 
 This shows the output of the run_zaptool script with a zap file given as an
 argument, or after a .zap file has been opened in the ZAP UI. An Electron
 application will open, pre-loaded with the information from the .zap file
 provided as a command line argument.
 
-![ZAP Endpoint](./images/zap-endpoint.png)
+![ZAP Endpoint](images/endpoint-0.png)
 
 The Out of the box (OOB) example lock application has 2 endpoints. Endpoint 0 is
 called the root node. It contains all Service and Device management clusters. In
@@ -136,9 +132,7 @@ Client side of the same cluster.
 Click on Endpoint 1 on the left hand side of the application. The door lock
 cluster should already be enabled as "Server".
 
-![ZAP Endpoint 1](./images/zap-endpoint-1.png)
-
- 
+![ZAP Endpoint 1](images/endpoint-1.png)
 
 ## Attributes
 
@@ -155,9 +149,7 @@ Each attribute can be provided with a default starting value value.
 Click the settings wheel to enable/disable, choose a storage option, and choose
 a default value for attributes, commands and events for Endpoint 1.
 
-![ZAP Attributes](./images/zap-attributes.png)
-
- 
+![ZAP Attributes](images/door-lock-attributes.png)
 
 ## Commands
 
@@ -168,13 +160,41 @@ the application to define. In the EFR32 lock example, the set/get user and
 credential functions are customizable as each implementation of a lock might
 store these differently.
 
-![ZAP Commands](./images/zap-commands.png)
-
- 
+![ZAP Commands](images/door-lock-commands.png)
 
 ## Generation of Code
 
 Once you have chosen the cluster options, save the current ZAP configuration using the application menu in the upper left corner. 
 
 Before v1.1.0-1.1 you needed to click the Generate button to generate code. Now, code is generated automatically in the save function. You will be prompted to choose a save location for the generated ZAP code. In the Silicon Labs Matter repository, the lock-app generated files belong in 
-matter/zzz_generated/lock-app/zap-generated .
+matter/zzz_generated/lock-app/zap-generated.
+
+## New Tutorial Button
+
+This new feature helps you understand all the steps needed to create a new endpoint.
+
+Click the **Tutorial** button at the top-right side, between the **Preview** and the **Settings** buttons.
+
+A pop-up displays with instructions for next steps.
+
+![Tutorial start page](images/tutorial1.png)
+
+These steps guide you on the components of this tool, the effects of each component, and the points you need to consider carefully when creating a new endpoint.
+
+![Tutorial end page](images/tutorial2.png)
+
+At the final step, a notification asks if you want to keep the endpoint you just created. Select what you want to finish the tutorial.
+
+## Multiple ZCL Device Types per Endpoint
+
+This is a new Matter-only feature where you can select more than one ZCL device type per endpoint. The addition of multiple device types will add the cluster configurations within the device types to the endpoint configuration.
+
+You can select multiple ZCL device types per endpoint, but there is only one **Primary Device** as in the below image.
+
+![Edit endpoint](images/edit-endpoint.png)
+
+The image above shows that endpoint 2 has more than one device type selected. The **Primary Device** denotes the primary device type that the endpoint will be associated with. The primary device type is always present at index 0 of the list of device types selected so selecting a different primary device type will change the ordering of the device types selected. The device type selections also have constraints based on the Data Model specification. ZAP protects you from choosing invalid combinations of device types on an endpoint using these constraints.
+
+![Multiple endpoints](images/multiple-endpoints.png)
+
+The image above is what the multiple device type endpoints looks like after configured. On the left-hand side, it shows the list of all clusters sequentially in order, and on the other side are clusters that are ready to be configured.
