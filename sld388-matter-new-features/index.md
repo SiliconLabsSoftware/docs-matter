@@ -5,9 +5,9 @@
 - GA support for Intermittently Connected Devices
 - Introduction of a third LCD screen to display application information
 - Introduction of the Dishwasher Demo Application
-- Adds support of Matter 1.2 Apps on all Wi-Fi devices.
-- Adds Matter support on SiWx917 SoC Common flash variants - BRD4338A.
-- Adds LCD display support on SiWx917 SoC for all the Wi-Fi Matter Apps.
+- Adds support of Matter 1.2 on all devices
+- Adds Matter support on SiWx917 SoC Common flash variants - BRD4338A
+- Adds LCD display support on SiWx917 SoC for all the Wi-Fi Matter Apps
 - Adds support for Direct Internet Connectivity on the SiWx917 SoC & NCP
 
 ### Self-Provisioning Mode
