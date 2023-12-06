@@ -4,9 +4,8 @@ The Overview pages offer a general review of Matter topics including:
 
 - [Matter Custom Part Manufacturing Services](matter-using-cpms.md)
 - [Matter Commissioning](matter-commissioning.md)
-- [Matter Security](matter-security.md)
-- [Matter Intermittently Connected Devices](matter-icd.md)
-- [Matter Over Thread Sleepy End Devices](ot-sleepy-end-device.md)
+- [Matter Intermittently Connected Devices (ICD)](matter-icd.md)
+- [Matter Over Thread ICD End Devices](ot-icd-end-device.md)
 - [Matter Serial Port Communication](serial-port-communications.md)
 - [Matter SLC CLI Setup and Build Instructions](matter-slc-cli.md)
 - [Matter Solutions](matter-solutions.md)

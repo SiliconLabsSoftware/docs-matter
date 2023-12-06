@@ -1,10 +1,61 @@
 # Matter Intermittently Connected Devices (ICD)
 
-With the 1.1 release, Matter introduced the concept of Intermittently Connected Devices (ICD) in the SDK and in the specification.
+Matter introduces the concept of Intermittently Connected Devices (ICD) in the SDK and in the specification.
 An Intermittently Connected Device is the Matter representation of a device that is not always reachable.
 This covers battery-powered devices that disable their underlying hardware when in a low-power mode or devices that can be disconnected from the network, like a phone app.
 
-This page focuses on features designed to improve the performance and reliability of battery-powered devices.
+This page focuses on features designed to improve the performance and reliability of battery-powered devices. Matter ICD functionality can be enabled with the `matter_icd` component.
+
+## Configuration
+
+To change default values corresponding to Matter ICD examples, modify them in either:
+
+1) `config/sl_matter_icd_config.h`
+2) ICD component configurator
+
+![ICD Configuration](images/IcdConfig.png)
+
+## ICD Device Types
+
+Matter introduces two types of ICDs.
+
+- Short Idle Time ICDs
+- Long Idle Time ICDs
+
+### Short Idle Time ICDs
+
+Short Idle Time ICDs are battery powered devices that can always be reached by clients.
+This means that their polling intervals are small enough to guarantee that a message sent from a client will be able to reach the ICD without any synchronization.
+A door lock, for example, is typicaly a short idle time ICD because it needs to be able to receive commands from clients at any given time.
+These devices are usually not the initiators in the communication flow.
+
+### Long Idle ICDs
+
+Long Idle Time ICDs are battery powered devices that require synchronization between the client and the ICD for communication to succeed.
+A sensor device is an example of a device that are typicaly long idle time ICDs.
+
+Long Idle Time ICDs are provisionnal with the Matter 1.2 release.
+
+## ICD Management Cluster
+
+The ICD Management Cluster enables configuration of the ICD’s behavior.
+It is required for an ICD to have this cluster enabled on endpoint 0.
+
+The ICDM Cluster exposes three configuration attributes that enable to configure an ICD.
+
+| Attribute | Type | Constraints | Description |
+|-|-|-|-|
+| IdleModeInterval      | uint32 | 1 to 64800 | Maximum interval in seconds or milliseconds the server can stay in idle mode |
+| ActiveModeInterval    | uint32 | min 300    | minimum interval in milliseconds the server will stay in active mode |
+| ActiveModeThreshold   | uint32 | min 300    | minimum amount of time in milliseconds the server typically will stay active after network activity when in active mode |
+
+These configurations can be changed by modifying the values within `sl_matter_icd_config.h` or within the settings of the `matter_icd` component.
+
+```cpp
+    #define SL_IDLE_MODE_INTERVAL = 600     // 10min Idle Mode Interval
+    #define SL_ACTIVE_MODE_INTERVAL = 1000  // 1s Active Mode Interval
+    #define SL_ACTIVE_MODE_THRESHOLD = 500  // 500ms Active Mode Threshold
+```
 
 ## Subscription Maximum Interval
 
@@ -12,10 +63,10 @@ The subscription mechanism is used by ecosystems and controllers to receive attr
 The maximum interval of a subscription request is what defines the frequency at which a device will send a liveness check if there are no attribute changes.
 
 Within the subscription request / response model, a device has the opportunity to decide the maximum interval at which it will send its liveness check (Empty Report Update). 
-The device can set a maximum interval within this range:
+The device can set a maximum interval within this range if and only if it is an ICD:
 
 ```shell
-MinIntervalRequested ≤ MaxInterval ≤ MAX(1h, MaxIntervalRequested)
+MinIntervalRequested ≤ MaxInterval ≤ MAX(IdleModeInterval, MaxIntervalRequested)
 ```
 
 The following table shows the subscribe response fields.
@@ -25,8 +76,66 @@ The following table shows the subscribe response fields.
 | MaxInterval | uint16 | the final maximum interval for the subscription in seconds |
 
 ### Maximum Interval Negotiation
-For a device to be able to Negotiate the Maximum Interval when receiving a subscribe request, 
-the application first needs to implement the `ApplicationCallback` class from the `ReadHandler.h` header.
+
+The Matter SDK provides a default implementation that allows an ICD to negotiate its MaxInterval.
+The goal of the algorithm is to set the MaxInterval to the IdleModeInterval.
+
+```cpp
+#if CHIP_CONFIG_ENABLE_ICD_SERVER
+
+    // Default behavior for ICDs where the wanted MaxInterval for a subscription is the IdleModeInterval
+    // defined in the ICD Management Cluster.
+    // Behavior can be changed with the OnSubscriptionRequested function defined in the application callbacks
+
+    // Default Behavior Steps :
+    // If MinInterval > IdleModeInterval, try to set the MaxInterval to the first interval of IdleModeIntervals above the
+    // MinInterval.
+    // If the next interval is greater than the MaxIntervalCeiling, use the MaxIntervalCeiling.
+    // Otherwise, use IdleModeInterval as MaxInterval
+
+    // GetPublisherSelectedIntervalLimit() returns the IdleModeInterval if the device is an ICD
+    uint32_t decidedMaxInterval = GetPublisherSelectedIntervalLimit();
+
+    // Check if the PublisherSelectedIntervalLimit is 0. If so, set decidedMaxInterval to MaxIntervalCeiling
+    if (decidedMaxInterval == 0)
+    {
+        decidedMaxInterval = mMaxInterval;
+    }
+
+    // If requestedMinInterval is greater than the IdleTimeInterval, select next active up time as max interval
+    if (mMinIntervalFloorSeconds > decidedMaxInterval)
+    {
+        uint16_t ratio = mMinIntervalFloorSeconds / static_cast<uint16_t>(decidedMaxInterval);
+        if (mMinIntervalFloorSeconds % decidedMaxInterval)
+        {
+            ratio++;
+        }
+
+        decidedMaxInterval *= ratio;
+    }
+
+    // Verify that decidedMaxInterval is an acceptable value (overflow)
+    if (decidedMaxInterval > System::Clock::Seconds16::max().count())
+    {
+        decidedMaxInterval = System::Clock::Seconds16::max().count();
+    }
+
+    // Verify that the decidedMaxInterval respects MAX(GetPublisherSelectedIntervalLimit(), MaxIntervalCeiling)
+    uint16_t maximumMaxInterval = std::max(GetPublisherSelectedIntervalLimit(), mMaxInterval);
+    if (decidedMaxInterval > maximumMaxInterval)
+    {
+        decidedMaxInterval = maximumMaxInterval;
+    }
+
+    // Set max interval of the subscription
+    mMaxInterval = static_cast<uint16_t>(decidedMaxInterval);
+
+#endif // CHIP_CONFIG_ENABLE_ICD_SERVER
+```
+
+If the default implementation does fit within the use-case,
+an implementation can override the default implementation.
+The first step is to implement the `ApplicationCallback` class from the `ReadHandler.h` header.
 
 ```cpp
 /*
@@ -78,64 +187,25 @@ The second step is registering the callback object to the Interaction Model Engi
 chip::app::InteractionModelEngine::GetInstance()->RegisterReadHandlerAppCallback(&mICDSubscriptionHandler);
 ```
 
-The `ICDSubscriptionCallback` class in `examples/platform/silabs/ICDSubscriptionCallback.cpp` gives an example implementation of the Maximum Interval negotiation a device can do when receiving a Subscription Request.
-
-```cpp
-CHIP_ERROR ICDSubscriptionCallback::OnSubscriptionRequested(chip::app::ReadHandler & aReadHandler,
-                                                            chip::Transport::SecureSession & aSecureSession)
-{
-    using namespace chip::System::Clock;
-
-    Seconds32 interval_s32 = std::chrono::duration_cast<Seconds32>(CHIP_DEVICE_CONFIG_SED_IDLE_INTERVAL);
-
-    if (interval_s32 > Seconds16::max())
-    {
-        interval_s32 = Seconds16::max();
-    }
-    uint32_t decidedMaxInterval = interval_s32.count();
-
-    uint16_t requestedMinInterval = 0;
-    uint16_t requestedMaxInterval = 0;
-    aReadHandler.GetReportingIntervals(requestedMinInterval, requestedMaxInterval);
-
-    // If requestedMinInterval is greater than IdleTimeInterval, select next wake up time as max interval
-    if (requestedMinInterval > decidedMaxInterval)
-    {
-        uint16_t ratio = requestedMinInterval / decidedMaxInterval;
-        if (requestedMinInterval % decidedMaxInterval)
-        {
-            ratio++;
-        }
-
-        decidedMaxInterval *= ratio;
-    }
-
-    // Verify that decidedMaxInterval is an acceptable value
-    if (decidedMaxInterval > Seconds16::max().count())
-    {
-        decidedMaxInterval = Seconds16::max().count();
-    }
-
-    // Verify that the decidedMaxInterval respects MAX(SUBSCRIPTION_MAX_INTERVAL_PUBLISHER_LIMIT, MaxIntervalCeiling)
-    uint16_t maximumMaxInterval = std::max(kSubscriptionMaxIntervalPublisherLimit, requestedMaxInterval);
-    if (decidedMaxInterval > maximumMaxInterval)
-    {
-        decidedMaxInterval = maximumMaxInterval;
-    }
-
-    return aReadHandler.SetReportingIntervals(decidedMaxInterval);
-}
-```
-
-The Silabs implementation is NOT enabled by default when building an SED application.
-
-To enable the feature when building a sleepy end device (SED) application, the Subscription Persistence component needs to be added to the project. This component requires the Sleepy End Device component.
-
 ## Persistent Subscriptions
+
 Persistent subscriptions were added to Matter as a means to ensure that an ICD can re-establish its subscription and by extension its secure session to a subscriber in the event of a power cycle.
 When a device accepts a subscription request, it will persist the subscription.
 When the device reboots, it will try to re-establish its subscription with the subscriber.
-If the subscription is torn down during normal operations or if the re-establishement fails,
+If the subscription is torn down during normal operations or if the re-establishment fails,
 the subscription will be deleted.
 
-Persistent subscriptions are  NOT enabled by default when enabling an SED example. To enable the feature when building an SED application, the Subscription Interval component needs to be added to the project. This component requires the Sleepy End Device component.
+Persistent subscriptions are enabled by default on all Silicon Labs sample applications.
+
+### Subscription Timeout Resumption
+
+Matter also provides a retry mechanism for devices to try to re-establish a lost subscription with a client. This functionality is provided by the component `matter_subscription_timeout_resumption`. This feature should not be used on an ICD since it can significantly reduce battery life.
+
+This feature is enabled by default on all examples with the exception of the door-lock and light-switch example.
+
+## Subscription Synchronization
+
+To avoid forcing an ICD to become active multiple times, the Matter SDK allows an ICD to synchronize its subscription reporting and send all the reports at the same time.
+The mechansim synchronizes the maximum interval of all subscriptions to only require the ICD to become active once. This functionality is provided by component `matter_subscription_synchronization`.
+
+This feature is enabled by default on the door-lock sample app and the light-switch sample application.
