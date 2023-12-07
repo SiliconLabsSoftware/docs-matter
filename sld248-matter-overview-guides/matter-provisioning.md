@@ -1,4 +1,4 @@
-# Matter Custom Part Manufacturing Services (CPMS)
+# Matter Provisioning
 
 Tools in the Silicon Labs Matter GitHub `cpms` folder are used to load mandatory authentication information into Matter devices. For more information on accessing the cpms tools and cloning the Silicon Labs Matter GitHub repository see the documentation located here: [Silicon Labs Matter GitHub repo](https://github.com/SiliconLabs/matter).
 

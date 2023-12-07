@@ -2,11 +2,11 @@
 
 The Overview pages offer a general review of Matter topics including:
 
-- [Matter Custom Part Manufacturing Services](matter-using-cpms.md)
+- [Matter Provisioning](matter-provisioning.md)
+- [Test Matter Certificates for Development](./test-matter-certs-for-development.md)
 - [Matter Commissioning](matter-commissioning.md)
 - [Matter Intermittently Connected Devices (ICD)](matter-icd.md)
 - [Matter Over Thread ICD End Devices](ot-icd-end-device.md)
 - [Matter Serial Port Communication](serial-port-communications.md)
 - [Matter SLC CLI Setup and Build Instructions](matter-slc-cli.md)
 - [Matter Solutions](matter-solutions.md)
-- [Matter and Mobile App](matter-and-mobile-app.md)

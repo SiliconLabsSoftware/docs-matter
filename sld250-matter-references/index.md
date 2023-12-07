@@ -11,4 +11,3 @@ The reference pages provide detailed information and instructions on these topic
 - [Using ZAP, the ZCL Advanced Platform](./matter-zap.md)
 - [Using Wireshark with Matter](./matter-wireshark.md)
 - [Matter EFR32 Flash Savings Guide](./code-size-savings.md)
-- [Test Matter Certificates for Development](./test-matter-certs-for-development.md)

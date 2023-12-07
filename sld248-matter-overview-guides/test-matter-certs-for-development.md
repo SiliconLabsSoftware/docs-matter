@@ -163,7 +163,11 @@ To choose different provisioning flows, the provisioning script has the argument
 python3.7 ./provision.py -c config/silabs.json -ic ../credentials/test/attestation/pai_cert.pem -dc ../credentials/test/attestation/dac_cert.pem -dk ../credentials/test/attestation/dac_key.pem -cd ../credentials/test/certification-declaration/Chip-Test-CD-1049-8005.der -d 0xab2 -gf images/efr32mg24.s37 -j 10.4.215.22
 ```
 
-Provisioning Tool Output
+#### Provisioning Tool Output
+
+<details>
+
+<summary>Click to see the provisioning tool output log</summary>
 
 ```bash
   ‣ commander device info --ip 10.4.215.22
@@ -238,8 +242,7 @@ Setup:
   ∙ uid: 4974be050220f9d10f899828fba42562
   ∙ payload: 48822800444056a3206507
   ```
-
->Note: If you have issues when executing the provisioning tool, refer to [Matter CPMS/Provisioning script issue list](file:///C:\pages\viewpage.action%3fpageId=359130994)
+</details>
 
 >Note: If you have connected more than one device, provide the -j \<j-link no\>.
 
