@@ -28,7 +28,16 @@ Matter hub/chip-tool are ready and working. Keep the PuTTY session open for the 
 
 ## Creating the Matter Accessory Devices (MADs)
 
-> If using NCP hardware, make sure firmware is properly loaded to the NCP using instructions provided in: [Upgrading the Wi-Fi Connectivity Firmware](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/loading-firmware-for-ncp-and-soc-boards).
+### Hardware Requirements
+-   SiWx917 / BRD4002A / Wireless Starter Kit
+-   SiWx917 SoC Mode
+    -   SiWx917 SoC / Common Flash Radio Board / 2.4GHz
+        -   BRD4338a - B0 common flash v2.0
+
+    **Note:**
+    Refer [SiWx917 SoC](https://www.silabs.com/development-tools/wireless/wi-fi/siwx917-pro-kit?tab=techdocs) for more details
+
+- If using NCP hardware, make sure firmware is properly loaded to the NCP using instructions provided in: [Upgrading the Wi-Fi Connectivity Firmware](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/loading-firmware-for-ncp-and-soc-boards).
 
 1. In Simplicity Studio 5, create the Light MAD:
 
@@ -40,7 +49,7 @@ Matter hub/chip-tool are ready and working. Keep the PuTTY session open for the 
 
    4. Open the Example Projects and Demos tab, select the **Matter** filter and enter "*Wi-Fi*" in **Filter on keywords**.
 
-   5. Select the *Matter - SoC Lighting over Wi-Fi* example for RS9116, click **Create**, rename the project if you wish, and click **Finish**.
+   5. Select the *Matter - SoC Lighting over Wi-Fi* example, click **Create**, rename the project if you wish, and click **Finish**.
 
    6. Once the project is created, the perspective changes to the Simplicity IDE perspective. In the Project Explorer view, right-click the project and select *Build Project*.
 

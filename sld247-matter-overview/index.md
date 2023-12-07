@@ -62,13 +62,13 @@ The following boards are supported for the Matter over Wi-Fi demos and developme
     -   WFM200S / Single Band Wi-Fi Expansion Board / 2.4GHz
         -   [SLEXP8023A](https://www.silabs.com/development-tools/wireless/wi-fi/wfm200-wifi-expansion-kit)
 
-**Note**:- For More info, refer [Hardware Requirements](../sld249-matter-prerequisites/hardware-requirements.md#matter-over-wi-fi-accessory-device-requirements-for-ncp-mode)
+**Note**:- For More info, refer [Hardware Requirements](/matter/<docspace-docleaf-version>/hardware-requirements#matter-over-wi-fi-accessory-device-requirements-for-ncp-mode)
 
 - **Matter over Wi-Fi Accessory Device Requirements for SoC Mode**
 
 The Silicon Labs Matter over Wi-Fi demo and development for SoC mode requires the SiWx917 SoC board that supports Matter over Wi-Fi in a single-chip package - the integrated MCU is dedicated for peripheral and application-related processing (Matter), while the ThreadArch® runs the wireless and networking protocol stacks. 
 
-Pre-built images for the SiWx917 connectivity firmware are available as per the instructions on the [Matter Artifacts page](../sld249-matter-prerequisites/matter-artifacts.md). The following boards are supported for the Matter over Wi-Fi demos and development:
+Pre-built images for the SiWx917 connectivity firmware are available as per the instructions on the [Matter Artifacts page](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts). The following boards are supported for the Matter over Wi-Fi demos and development:
 
 -   **Wi-Fi SoC boards:**
 

@@ -60,7 +60,7 @@ Bootloader binaries are available in the respective path of codebase **third_par
 
 3. Convert **.s37** binary to **.rps** using below command using commander.
 
-       commander rps convert <file_name.rps> --app <file_name.s37>
+        commander rps convert <file_name.rps> --app <file_name.s37>
 
 4. In the Simplicity Studio home page, click Tools
 
