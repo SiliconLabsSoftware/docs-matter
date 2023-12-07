@@ -48,12 +48,9 @@ The Wi-Fi station in Power Save mode wakes up to receive the DTIM beacon and che
 
 **Note**: The DTIM parameter can be configured on the access point settings.
 
-## Building with Sleepy Functionality
+## Building with ICD Functionality
 
-To enable sleepy functionality for Wi-Fi, the following components need to be added in the project file.
-
-- For rs9116 and WF200 - `matter_sed_wifi`
-- For 917NCP - `matter_sed_wifi_917`
+To enable ICD functionality for Wi-Fi, the `matter_icd` component needs to be installed within the Software Components tab.
 
 ## Power Measurements for Wi-Fi Devices
 

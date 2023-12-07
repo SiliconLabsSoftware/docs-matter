@@ -7,7 +7,7 @@ This page provides information on optimizing power consumption for Intermittentl
 Simply enabling ICD functionality does not give the application the best power consumption.
 By default, several features that increase power consumption are enabled in the example applications.
 
-To achieve the most power-efficient build, the following components need to be disabled.
+To achieve the most power-efficient build, the following components need to be disabled. The `matter_platform_low_power` component will do these steps for you, if installed.
 
 - Matter Shell (`matter_shell`)
 - LCD (`matter_lcd`) and Qr Code (`matter_qr_code`)
@@ -15,10 +15,8 @@ To achieve the most power-efficient build, the following components need to be d
 > **Note:**
 > `matter_shell` is not enabled by default in project file.
 >
-> - Add `matter_shell` component in project file to enable the matter shell feature (for Wi-Fi non-sleepy apps)
-> - Remove `matter_shell` while enabling sleepy apps
-
-To achieve power optimization when LCD is enabled, use sleepy end device with LCD component (for example, **matter_sed_wf200_lcd**) instead of using the direct sed component (matter_sed_wifi). The sed with LCD component enables the sleepy along with the LCD configurations.
+> - Add `matter_shell` component in project file to enable the matter shell feature (for Wi-Fi non-ICD apps)
+> - Remove `matter_shell` while enabling ICD apps
 
 ## Flow of the Matter Wi-Fi App with LCD Configuration
 

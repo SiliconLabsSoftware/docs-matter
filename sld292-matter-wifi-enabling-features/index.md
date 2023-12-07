@@ -6,5 +6,5 @@ Matter Over Wi-Fi supports the following features on NCP and SoC variants.
 - [**Direct Internet Connectivity (DIC)**](./dic-wifi)
 - [**Interoperability with Ecosystems**](./ecosystem-setup)
 - [**Optimization of memory usage**](./optimizing-memory-usage)
-- [**Reducing power consumption for Sleepy End Devices**](./optimizing-power-sleepy-device)
+- [**Reducing power consumption for ICD End Devices**](./optimizing-power-sleepy-device)
 - [**Developing a Custom Matter Device**](/matter/<docspace-docleaf-version>/matter-references/custom-matter-device)
