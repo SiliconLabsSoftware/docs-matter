@@ -3,7 +3,7 @@
 The Overview pages offer a general review of Matter topics including:
 
 - [Matter Provisioning](matter-provisioning.md)
-- [Test Matter Certificates for Development](./test-matter-certs-for-development.md)
+- [Test Matter Certificates for Development](test-matter-certs-for-development.md)
 - [Matter Commissioning](matter-commissioning.md)
 - [Matter Intermittently Connected Devices (ICD)](matter-icd.md)
 - [Matter Over Thread ICD End Devices](ot-icd-end-device.md)

@@ -268,7 +268,7 @@ Your application will be in /out/lighting-app/BRD4187C.
 
 This component is meant for the firmware to refer to the credentials injected by the provisioning tool.
 
-Once this is completed you can build your image and flash the \<image\>.s37 using Simplicity Studio.
+Once this is completed, you can build your image and flash the \<image\>.s37 using Simplicity Studio.
 
 ### Store Commissionable Data (NVM3), Attestation Data CD,PAI, DAC (Main Flash)
 
