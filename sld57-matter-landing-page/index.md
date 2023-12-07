@@ -6,7 +6,7 @@ Silicon Labs supports Matter on both 802.15.4 (Thread) and 802.11 (Wi-Fi) transp
 
 The Unify Matter Bridge is an application that makes legacy devices, such as
 Z-Wave and Zigbee devices, accessible on a Matter fabric. It does so by acting as
-an _IoT Service_ in a Unify Framework.
+an *IoT Service* in a Unify Framework.
 
 ![Silicon Labs Matter Summary](./resources/silicon-labs-matter.png)
 
@@ -18,7 +18,7 @@ Alternatively you can develop applications directly out of the [Silicon Labs Mat
 
 ## Other Resources
 
-**To see release notes** containing list of features and knowns issues go to [Matter Release Notes on Silicon Labs Matter Extension](https://github.com/SiliconLabs/matter_extension/releases/tag/v2.1.0). 
+**To see release notes** containing list of features and knowns issues go to [Matter Release Notes on Silicon Labs Matter Extension](https://github.com/SiliconLabs/matter_extension/releases/tag/v2.1.0).
 
 **If you are new to Matter** or would like more information about Silicon Labs Matter-based products, see the [Matter content on silabs.com](https://www.silabs.com/wireless/matter).
 
