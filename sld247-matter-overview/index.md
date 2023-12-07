@@ -17,17 +17,69 @@ two EFR32MG24-based development boards, and a Raspberry Pi used as a Matter hub.
 
 ### Hardware Requirements
 
-- Matter hub
+#### Matter hub
 
   - 1 Raspberry Pi 4B
   - 1x high speed, 64 GB SD card
 
-- Matter devices
+#### Matter devices
+-  **Matter over Wi-Fi Accessory Device Requirements for NCP Mode**
 
+The Silicon Labs Matter over Wi-Fi NCP mode demo and development requires two boards: the
+Silicon Labs EFR32 Radio board to run the Matter code and either the RS9116, SiWx917 or WF200 to run the Wi-Fi protocol stack.
+
+The following boards are supported for the Matter over Wi-Fi demos and development:
+
+-   **MG24 boards:**
+
+-   BRD4186C / SLWSTK6006A / Wireless Starter Kit / 2.4GHz@10dBm
+    -   [XG24-RB4186C](https://www.silabs.com/development-tools/wireless/xg24-rb4186c-efr32xg24-wireless-gecko-radio-board)
+    -   MG24 with WSTK : [xG24-PK6009A](https://www.silabs.com/development-tools/wireless/efr32xg24-pro-kit-10-dbm?tab=overview)
+-   BRD4187C / SLWSTK6006A / Wireless Starter Kit / 2.4GHz@20dBm
+    - [XG24-RB4187C](https://www.silabs.com/development-tools/wireless/xg24-rb4187c-efr32xg24-wireless-gecko-radio-board)
+    - MG24 with WSTK : [xG24-PK6010A](https://www.silabs.com/development-tools/wireless/efr32xg24-pro-kit-20-dbm?tab=overview)
+
+-   **Wi-Fi NCP Dev Kits & boards**
+
+-   RS9116
+    -   SB-EVK1 / Single Band Wi-Fi Development Kit / 2.4GHz
+        -   [RS9116X-SB-EVK1](https://www.silabs.com/development-tools/wireless/wi-fi/rs9116x-sb-evk-development-kit)
+    -   SB-EVK2 / Single Band Wi-Fi Development Kit / 2.4GHz
+        -   [RS9116X-SB-EVK2](https://www.silabs.com/development-tools/wireless/wi-fi/rs9116x-sb-evk2-development-kit)
+    -   DB-EVK1 / Dual Band Wi-Fi Development Kit / 2.4GHz & 5GHz
+        -   [RS9116X-DB-EVK1](https://www.silabs.com/development-tools/wireless/wi-fi/rs9116x-db-evk-development-kit)
+        **Note:** Matter only supported over 2.4GHz on this Dev kit.
+    -   Interconnect board (included in the Wi-Fi kits)
+    -   SPI Cable (included in the RS9116 kit)
+    -   Jumper Cables (included in the RS9116 kit)
+-   SiWx917
+    -   SiWx917 NCP Mode / Wi-Fi Expansion Board / 2.4GHz
+        -   BRD8036A (A0 Expansion v1.0)
+        -   BRD8036A (A0 Expansion v1.1)
+-   WF200
+    -   WF200 / Single Band Wi-Fi Expansion Board / 2.4GHz
+        -   [SLEXP8022A](https://www.silabs.com/development-tools/wireless/wi-fi/wf200-wifi-expansion-kit)
+    -   WFM200S / Single Band Wi-Fi Expansion Board / 2.4GHz
+        -   [SLEXP8023A](https://www.silabs.com/development-tools/wireless/wi-fi/wfm200-wifi-expansion-kit)
+
+**Note**:- For More info, refer [Hardware Requirements](../sld249-matter-prerequisites/hardware-requirements.md#matter-over-wi-fi-accessory-device-requirements-for-ncp-mode)
+
+- **Matter over Wi-Fi Accessory Device Requirements for SoC Mode**
+
+The Silicon Labs Matter over Wi-Fi demo and development for SoC mode requires the SiWx917 SoC board that supports Matter over Wi-Fi in a single-chip package - the integrated MCU is dedicated for peripheral and application-related processing (Matter), while the ThreadArch® runs the wireless and networking protocol stacks. 
+
+Pre-built images for the SiWx917 connectivity firmware are available as per the instructions on the [Matter Artifacts page](../sld249-matter-prerequisites/matter-artifacts.md). The following boards are supported for the Matter over Wi-Fi demos and development:
+
+-   **Wi-Fi SoC boards:**
+
+-   SiWx917 / BRD4002A / Wireless Starter Kit
+-   SiWx917 SoC Mode
+    -   SiWx917 SoC / Common Flash Radio Board / 2.4GHz
+        -   BRD4338a - B0 common flash v2.0
+    
+    **Note:**
+    Refer [SiWx917 SoC](https://www.silabs.com/development-tools/wireless/wi-fi/siwx917-pro-kit?tab=techdocs) for more details
   - 2 EFR32xG24 kits from these recommended parts:
-
-    - [EFR32xG24-PK6009A EFR32xG24 Pro Kit (+10 dBm)](https://www.silabs.com/development-tools/wireless/efr32xg24-pro-kit-10-dbm?tab=overview) [BRD4186C]
-    - [EFR32xG24-PK6009A EFR32xG24 Pro Kit (+20 dBm)](https://www.silabs.com/development-tools/wireless/efr32xg24-pro-kit-20-dbm) [BRD4187C]
 
 - (Wi-Fi only) Dual-Band Access Point
 
