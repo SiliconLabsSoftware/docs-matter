@@ -59,7 +59,7 @@ https://github.com/SiliconLabs/matter_extension/releases/tag/v2.1.1
 
 **Note**:
 SiWx917 NCP board need to be flashed with proper firmware as mentioned below:
-- ``SiWG917-A.2.9.X.X.X.rps - This firmware image is valid for BRD8036A (A0 Expansion v1.1) board`
+- ``SiWG917-B.2.9.X.X.X.rps - This firmware image is valid for BRD8036A (A0 Expansion v1.1) board`
 
 
 ## SiWx917 Firmware for SiWx917 SoC
@@ -70,8 +70,4 @@ https://github.com/SiliconLabs/matter_extension/releases/tag/v2.1.1
 
 **Note**:
 SiWx917 SoC boards need to be flashed with proper firmware as mentioned below:
-- `SiWG917-A.2.9.X.X.X.rps - This firmware image is valid for BRD4325B(A0 dual flash 1.2) board`
-- `SiWG917-B.2.9.X.X.X.rps - This firmware image is valid for BRD4325C(B0 common flash v1.2) board`
 - `SiWG917-B.2.9.X.X.X.rps - This firmware image is valid for BRD4338A(B0 common flash v2.0) board`
-
-
