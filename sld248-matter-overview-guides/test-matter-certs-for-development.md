@@ -165,10 +165,6 @@ python3.7 ./provision.py -c config/silabs.json -ic ../credentials/test/attestati
 
 #### Provisioning Tool Output
 
-<details>
-
-<summary>Click to see the provisioning tool output log</summary>
-
 ```bash
   ‣ commander device info --ip 10.4.215.22
   ‣ mkdir -p ./temp
@@ -242,7 +238,6 @@ Setup:
   ∙ uid: 4974be050220f9d10f899828fba42562
   ∙ payload: 48822800444056a3206507
   ```
-</details>
 
 >Note: If you have connected more than one device, provide the -j \<j-link no\>.
 
