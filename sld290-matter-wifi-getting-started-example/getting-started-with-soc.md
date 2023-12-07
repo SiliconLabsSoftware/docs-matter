@@ -15,12 +15,6 @@ The following hardware devices are required for executing Matter over Wi-Fi:
 - Wi-Fi Dev Kit
   - SiWx917
     - SoC mode:
-      - BRD4325B (A0 dual flash radio boards v1.2)
-             SiWx917
-      - BRD4325C (B0 common flash radio board v1.2)
-             SiWx917
-      - BRD4325G (B0 Stacked Flash + External PSRAM radio board v1.2)
-             SiWx917
       - BRD4388A (B0 2.0 common flash)
              SiWx917
 - Windows/Linux/MacOS computer with a USB port
@@ -81,9 +75,6 @@ In Simplicity Studio 5, create the Light Matter Accessory Devices (MAD):
 
 4. Go to `All Products` in the launcher tab and select one compatible board from the following supported list of SiWx917 SOC dev boards.
 
-   - BRD4325B (Dual Flash)
-   - BRD4325C (Common Flash)
-   - BRD4325G (Common Flash)
    - BRD4338A (Common Flash)
 
    ![SoC board selection](./images/SiWx917-soc-board-selection.png)
