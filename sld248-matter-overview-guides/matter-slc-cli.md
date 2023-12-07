@@ -1,6 +1,6 @@
 # Creating Matter Applications using SLC CLI
 
-The Silicon Labs Configurator (SLC) offers command-line access to application configuration and generation functions. [**Software Project Generation and Configuration with SLC-CLI**](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-tools-slc-cli/) provides a complete description and instructions on downloading and using the SLC-CLI tool.
+The Silicon Labs Configurator (SLC) offers command-line access to application configuration and generation functions. [**Software Project Generation and Configuration with SLC-CLI**](https://www.silabs.com/documents/public/user-guides/ug520-software-project-generation-configuration-with-slc-cli.pdf) provides a complete description and instructions on downloading and using the SLC-CLI tool.
 
 This guide lists the steps that can be followed to create and build a Silicon Labs Matter SLC project using SLC-CLI and `make`. These scripts are evaluation quality and have been verified to work on Ubuntu 22.04.3 LTS and MacOS Version 13.5.1, Windows support will come in the future releases.
 
@@ -66,7 +66,7 @@ Alternately, one can use SLC-CLI commands directly to generate the project and t
 
 ## Modifying an Application Project
 
-The resulting user project can be modified like any other SLC project: software components can be added or removed by modifying the project's .slcp file, configuration can be applied by modifying the files in the `config` directory, the application logic can be managed through the files in the `src` directory. Various SLC-CLI commands can be used to examine, validate, or re-generate the project after a modification, see [**Software Project Generation and Configuration with SLC-CLI**](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-tools-slc-cli/) for more information.
+The resulting user project can be modified like any other SLC project: software components can be added or removed by modifying the project's .slcp file, configuration can be applied by modifying the files in the `config` directory, the application logic can be managed through the files in the `src` directory. Various SLC-CLI commands can be used to examine, validate, or re-generate the project after a modification, see [**Software Project Generation and Configuration with SLC-CLI**](https://www.silabs.com/documents/public/user-guides/ug520-software-project-generation-configuration-with-slc-cli.pdf) for more information.
 
 For modifying Matter endpoints and clusters invoke the ZAP tool passing to it the application's ZAP file:
 
