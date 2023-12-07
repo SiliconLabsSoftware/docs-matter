@@ -59,20 +59,18 @@ Bootloader binaries are available in the respective path of codebase **third_par
 2. Copy and paste builded **.s37** binary file to Simplicity commander path
 
 3. Convert **.s37** binary to **.rps** using below command using commander.
-```shell
-  commander rps convert <file_name.rps> --app <file_name.s37>
-```
-**Note** :- Any name can be given to .rps file_name
 
-4. In the Simplicity Studio home page, click Tools.
-   
-5. In the Tools dialog, select Simplicity Commander and click OK.
+       commander rps convert <file_name.rps> --app <file_name.s37>
+
+4. In the Simplicity Studio home page, click Tools
+
+5. In the Tools dialog, select Simplicity Commander and click OK
 ![Select Commander](./images/select-commander.png)
 
 6. In the Simplicity Commander window, click Select Kit and choose your radio board.
 ![Select radio board](./images/commander-select-board.png)
 
-7. In the navigation pane, go to the Flash section.
+7. In the navigation pane, go to the Flash section
 
 8. Above beside "Reload tab" board will be displayed, click Browse next to the Binary File field and locate binary.
 ![Select flash option](./images/select-flash-option-soc-commander.png)
