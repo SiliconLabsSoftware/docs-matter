@@ -57,7 +57,7 @@ Once done, select `Create`.
     - If gbl file is already uploaded to AWS then select `Choose a previously signed file`
     - If gbl file is modified customly then select `Use my custome signed file`
 10. In `Existing code signing profile` select `dic_ota_codesign` . Refer [AWS Code Signing Certificate Creation](https://docs.aws.amazon.com/freertos/latest/userguide/ota-code-sign-cert.html) 
-11. For uploading gbl file follow above step `9`. To create gbl file, refer [genrate gbl image](/matter/<docspace-docleaf-version>/matter-wifi-ota#generating-the-ota-image)
+11. For uploading gbl file follow above step `9`. To create gbl file, refer to [Matter OTA](/matter/<docspace-docleaf-version>/matter-ota)
 12. In File upload location in S3 select S3 URL as `ota_demo`. Refer [AWS S3 bucket Creation](https://docs.aws.amazon.com/freertos/latest/userguide/dg-ota-bucket.html)
 13. In `Path name of file on device` give any file name (file.txt).
 14. Select `ota_demo` as `IAM role` and click on Next.

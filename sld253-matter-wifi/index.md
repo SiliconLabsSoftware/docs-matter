@@ -29,5 +29,5 @@ after successfully executing the above steps.
 ## Additional Information
 
 - [Enabling Features](/matter/<docspace-docleaf-version>/matter-wifi-enabling-features)
-- [Matter Shell](/matter/<docspace-docleaf-version>/matter-shell)
-- [Matter OTA](/matter/<docspace-docleaf-version>/matter-wifi-ota)
+- [Matter Shell](/matter/<docspace-docleaf-version>/matter-overview-guides/serial-port-communications.md)
+- [Matter OTA](/matter/<docspace-docleaf-version>/matter-ota)
