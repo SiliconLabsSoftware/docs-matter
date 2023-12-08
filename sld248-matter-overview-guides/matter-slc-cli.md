@@ -32,37 +32,65 @@ Install the following python packages:
 pip3 install dload
 ```
 
-Export the path of your GSDK download to the environment variable `GSDK_ROOT`. Then cd to cloned extension directory and run the `sl_setup.py` script. This will install the ARM gcc toolchain, SLC-CLI, ZAP and Java.
+Now cd to cloned extension directory and run the `sl_setup.py` script. This will install the ARM gcc toolchain, SLC-CLI, ZAP Simplicity-commander and Java. Script will also create .env file to be used by sl_create_new_app.py and sl_build.py scripts. 
+
+For Mac and Linux:
 
 ```C
-export GSDK_ROOT=Path/To/Gsdk/Download
 cd extension/matter_extension
 python3 slc/sl_setup_env.py
 ```
-
-The sl_setup_env.py script creates a shell script script that can be used to set the environment variables needed for the installed tools, ARM toolchain, SLC-CLI, Java and ZAP.
+For Windows: 
 
 ```C
-source slc/tools/sl_env_vars.sh
+cd extension\matter_extension
+python slc\sl_setup_env.py
 ```
+
+The sl_setup_env.py script creates a shell script script that can be used to set the environment variables needed for the installed tools, ARM toolchain, SLC-CLI, Java and ZAP.
 
 ## Creating an Application Project
 
 Run the `sl_create_new_app.py` script to create a BRD4161A project with name `MyNewApp` starting from the `lighting-app-thread.slcp` example application project file:
 
+The script will ask user permission to trust the gecko_sdk and matter_extension before generating.
+
+For Mac and Linux:
+
 ```C
 python3 slc/sl_create_new_app.py MyNewApp slc/sample-app/lighting-app/efr32/lighting-app-thread.slcp brd4161a
+```
+For Windows:
+```C
+python slc\sl_create_new_app.py MyNewApp slc\sample-app\lighting-app\efr32\lighting-app-thread.slcp brd4161a
 ```
 
 ## Building an Application Project
 
 After a project is created the `sl_build.py` script can be used to re-generate the `MyNewApp` project and build it:
 
+For Mac and Linux:
+
 ```C
 python3 slc/sl_build.py MyNewApp/lighting-app-thread.slcp brd4161a
 ```
 
+For Windows:
+
+```C
+python slc\sl_build.py MyNewApp\lighting-app-thread.slcp brd4161a
+```
+
+
 Alternately, one can use SLC-CLI commands directly to generate the project and then use `make` to build it.
+
+Windows users will need to install make in their system. Users can use their own or can follow the following steps to get make.
+
+Markup : 
+1. Install the MSYS terminal
+2. Open the MSYS terminal and install make using following command pacman -S make
+3. Run command `where make`, copy the path and add it to the PATH environment variable. 
+4. After this restart your command line terminal and run slc/sl_build.py or run make directly. May need to reboot the system.
 
 ## Modifying an Application Project
 
