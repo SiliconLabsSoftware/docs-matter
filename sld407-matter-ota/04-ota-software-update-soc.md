@@ -168,7 +168,7 @@ Once image is downloaded the device will reboot into the upgraded TA image.
 
 ## Generating the TA OTA image
 - For Matter OTA file, create a bootable image file (using the Lighting application image as an example) and then create the Matter OTA file from the bootable image file using commands provided below
-- Once  .ota file is created , the same will be uploaded onto raspberry pi where OTA provider application is running. 
+- Once .ota file is created, the same will be uploaded onto raspberry pi where OTA provider application is running. 
 
 - Create the Matter OTA file from the bootable image file
 ```shell
