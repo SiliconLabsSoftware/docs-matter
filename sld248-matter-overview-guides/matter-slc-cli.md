@@ -2,7 +2,7 @@
 
 The Silicon Labs Configurator (SLC) offers command-line access to application configuration and generation functions. [**Software Project Generation and Configuration with SLC-CLI**](https://www.silabs.com/documents/public/user-guides/ug520-software-project-generation-configuration-with-slc-cli.pdf) provides a complete description and instructions on downloading and using the SLC-CLI tool.
 
-This guide lists the steps that can be followed to create and build a Silicon Labs Matter SLC project using SLC-CLI and `make`. These scripts are evaluation quality and have been verified to work on Ubuntu 22.04.3 LTS and MacOS Version 13.5.1, Windows support will come in the future releases.
+This guide lists the steps that can be followed to create and build a Silicon Labs Matter SLC project using SLC-CLI and `make`. These scripts are evaluation quality and have been verified to work on Ubuntu 22.04.3 LTS , MacOS Version 13.5.1 and Windows 10. 
 
 ## Setting up the Environment
 
@@ -32,7 +32,7 @@ Install the following python packages:
 pip3 install dload
 ```
 
-Now cd to cloned extension directory and run the `sl_setup.py` script. This will install the ARM gcc toolchain, SLC-CLI, ZAP Simplicity-commander and Java. Script will also create .env file to be used by sl_create_new_app.py and sl_build.py scripts. 
+Change directory to cloned extension directory and run the `sl_setup.py` script. This will install the ARM gcc toolchain, SLC-CLI, ZAP, Simplicity-commander and Java. 
 
 For Mac and Linux:
 
@@ -47,13 +47,13 @@ cd extension\matter_extension
 python slc\sl_setup_env.py
 ```
 
-The sl_setup_env.py script creates a shell script script that can be used to set the environment variables needed for the installed tools, ARM toolchain, SLC-CLI, Java and ZAP.
+The sl_setup_env.py script creates .env file to be used to set the environment variables needed for the installed tools, ARM toolchain, SLC-CLI, Java ZAP, Simplicity-commander and Java. 
 
 ## Creating an Application Project
 
 Run the `sl_create_new_app.py` script to create a BRD4161A project with name `MyNewApp` starting from the `lighting-app-thread.slcp` example application project file:
 
-The script will ask user permission to trust the gecko_sdk and matter_extension before generating.
+The script will ask user permission to trust the `gecko_sdk` and `matter_extension` before generating.
 
 For Mac and Linux:
 
@@ -85,8 +85,6 @@ python slc\sl_build.py MyNewApp\lighting-app-thread.slcp brd4161a
 Alternately, one can use SLC-CLI commands directly to generate the project and then use `make` to build it.
 
 Windows users will need to install make in their system. Users can use their own or can follow the following steps to get make.
-
-Markup : 
 1. Install the MSYS terminal
 2. Open the MSYS terminal and install make using following command pacman -S make
 3. Run command `where make`, copy the path and add it to the PATH environment variable. 
