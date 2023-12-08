@@ -11,7 +11,7 @@ The scope of this page describes the matter OTA upgrade on 917 SoC mode for comb
 
 ## Combined Image Upgrade
 
-For 917 SoC, storing a single Matter combined upgrade image(TA+M4)  and then providing sample code that can transfer the image to the co-processor and rewrite the 917 firmware as well as M4 firmware Image then boot loading with the upgraded TA processor image and the M4 processor image.
+For 917 SoC, storing a single Matter combined upgrade image(TA+M4) and then providing sample code that can transfer the image to the co-processor and rewrite the 917 firmware as well as M4 firmware Image then boot loading with the upgraded TA processor image and the M4 processor image.
 
 Host will initiate OTA download to receive combined image (TA+M4) on to host. Host will store M4 and TA image on flash backup location. 
 
