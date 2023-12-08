@@ -81,7 +81,7 @@ Pre-built images for the SiWx917 connectivity firmware are available as per the 
 
 ![Installing the Matter Extension](./resources/install-package-advanced-device.png)
 
-**Matter Hub Raspberry Pi Image**: A copy of the pre-built image from the Silicon Labs web services can be downloaded in this [zipfile](https://www.silabs.com/documents/public/software/SilabsMatterPi_2.0.0-1.1.zip). **Note** this is a large file and will take some time to download.
+**Matter Hub Raspberry Pi Image**: A copy of the pre-built image from the Silicon Labs web services can be downloaded in this [zipfile](https://www.silabs.com/documents/public/software/SilabsMatterPi_2.2.0-1.2-extension.zip). **Note** this is a large file and will take some time to download.
 
 >**Note:** The Matter hub for Matter over Thread requires an additional device, a radio co-processor. See [the introduction to the Matter over Thread demo](/matter/<docspace-docleaf-version>/matter-thread-getting-started) for more information.
 
