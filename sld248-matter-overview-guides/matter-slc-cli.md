@@ -89,6 +89,7 @@ Windows users will need to install make in their system. Users can use their own
 2. Open the MSYS terminal and install make using following command pacman -S make
 3. Run command `where make`, copy the path and add it to the PATH environment variable. 
 4. After this restart your command line terminal and run slc/sl_build.py or run make directly. May need to reboot the system.
+
 Note: In rare cases the build may fail due to missing files in the `zap-generated/` directory. The workaround is to delete the `.zap` folder in the home directory.
 ## Modifying an Application Project
 
