@@ -1,6 +1,6 @@
 # Firmware Upgrades with Matter applications
 
-The Over The Air (OTA) Software Update functionality provides firmware upgrades within the matter environment.
+The Over The Air (OTA) Software Update functionality provides WiFi firmware upgrades within the matter environment.
 
 ## Hardware Requirements
 

@@ -3,6 +3,9 @@
 This page provides links to pre-built software image "artifacts" that can be
 used to set up the Matter Demo for the Thread and Wi-Fi use cases.
 
+Images for the items listed below are available under the "Assets" section at the bottom of this page:
+
+<https://github.com/SiliconLabs/matter_extension/releases/tag/v2.2.0>
 
 ## Matter Hub Raspberry Pi Image
 
