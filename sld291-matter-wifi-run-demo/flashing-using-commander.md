@@ -53,15 +53,17 @@ Bootloader binaries are available in the respective path of codebase **third_par
 
 
 ## Flashing the SiWx917 SOC Matter Binary using Simplicity Commander
+- SiWx917 SOC board will support **.rps** file to flash. Follow below steps to create and flash **.rps** file.
+
 1. Locate Simplicity Commander in your PC/Laptop where it is installed through command prompt(cmd).
 ![Locate Commander](./images/locate-commander.png)
 
 2. Copy and paste builded **.s37** binary file to Simplicity commander path
 
 3. Convert **.s37** binary to **.rps** using below command using commander.
-
-        commander rps convert <file_name.rps> --app <file_name.s37>
-
+```
+    commander rps convert <file_name.rps> --app <file_name.s37>
+```
 4. In the Simplicity Studio home page, click Tools
 
 5. In the Tools dialog, select Simplicity Commander and click OK

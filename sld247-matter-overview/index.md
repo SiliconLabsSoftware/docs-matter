@@ -62,7 +62,7 @@ The following boards are supported for the Matter over Wi-Fi demos and developme
     -   WFM200S / Single Band Wi-Fi Expansion Board / 2.4GHz
         -   [SLEXP8023A](https://www.silabs.com/development-tools/wireless/wi-fi/wfm200-wifi-expansion-kit)
 
-**Note**:- For More info, refer [Hardware Requirements](/matter/<docspace-docleaf-version>/hardware-requirements#matter-over-wi-fi-accessory-device-requirements-for-ncp-mode)
+**Note**:- For More info, refer [Hardware Requirements](/matter/<docspace-docleaf-version>/hardware-requirements)
 
 - **Matter over Wi-Fi Accessory Device Requirements for SoC Mode**
 
