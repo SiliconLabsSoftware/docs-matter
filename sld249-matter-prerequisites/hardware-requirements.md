@@ -159,7 +159,7 @@ Pre-built images for the SiWx917 connectivity firmware are available as per the 
 -   SiWx917 / BRD4002A / Wireless Starter Kit
 -   SiWx917 SoC Mode
     -   SiWx917 SoC / Common Flash Radio Board / 2.4GHz
-        -   BRD4338a - B0 common flash v2.0
+        -   BRD4338A - B0 common flash v2.0
     
     **Note:**
     Refer [SiWx917 SoC](https://www.silabs.com/development-tools/wireless/wi-fi/siwx917-pro-kit?tab=techdocs) for more details
