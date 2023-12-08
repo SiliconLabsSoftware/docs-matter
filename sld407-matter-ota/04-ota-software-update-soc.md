@@ -33,7 +33,7 @@ Host will initiate OTA download to receive combined image (TA+M4) on to host. Ho
 ```shell
 commander rps convert <ta_image_combined.rps> --taapp <ta_image.rps> --combinedimage
 ```
-- Create M4 (.s37) image to  (.rps) image using below command
+- Create M4 .rps file from .s37 using below command
 ```shell
 - commander rps create <m4_image.rps> --app <m4_image.s37>
 ```
