@@ -61,7 +61,7 @@ Bootloader binaries are available in the respective path of codebase **third_par
 2. Copy and paste builded **.s37** binary file to Simplicity commander path
 
 3. Convert **.s37** binary to **.rps** using below command using commander.
-```
+```shell
     commander rps convert <file_name.rps> --app <file_name.s37>
 ```
 4. In the Simplicity Studio home page, click Tools

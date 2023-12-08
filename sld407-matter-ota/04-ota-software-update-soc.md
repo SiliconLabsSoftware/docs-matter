@@ -1,4 +1,4 @@
-# Matter OTA for Combined Image on 917 SOC
+# Matter OTA for 917 SOC
 The scope of this page describes the matter OTA upgrade on 917 SoC mode for combined image(TA+M4) as well as single M4 and TA image upgrade.
 
 ## Hardware Requirements
@@ -15,7 +15,7 @@ For 917 SoC, storing a single Matter combined upgrade image(TA+M4)  and then pr
 
 Host will initiate OTA download to receive combined image (TA+M4) on to host. Host will store M4 and TA image on flash backup location. 
 
-## Use Case of OTA :
+### Use Case of OTA :
 - Combined image will be created and uploaded onto raspberry pi which provides the firmware image chunk by chunk to the device.
 - Host will initiate the OTA download and provider app will start the OTA image transfer.
 - Host will receive combined image and host will transfer the M4 and TA firmware images on to TA  chunk by chunk. . TA will write the TA image onto TA flash backup location. 
@@ -27,26 +27,26 @@ Host will initiate OTA download to receive combined image (TA+M4) on to host. Ho
 - For Matter OTA file, create a bootable image file (using the Lighting application image as an example) and then create the Matter OTA file from the bootable image file using commands provided below
 - Once combined image .ota file is created , the same will be uploaded onto raspberry pi where OTA provider application is running. 
 
-## Generating the OTA image
+## Generating the Combined OTA image
 
 - Create TA  image (.rps) with combined image flag set by using command
-```
+```shell
 commander rps convert <ta_image_combined.rps> --taapp <ta_image.rps> --combinedimage
 ```
 - Create M4 (.s37) image to  (.rps) image using below command
-```
+```shell
 - commander rps create <m4_image.rps> --app <m4_image.s37>
 ```
 - Create M4 (.rps) with combined image flag set by using command
-```
+```shell
 commander rps convert <m4_image_combined.rps> --app <m4_image.rps> --combinedimage
 ```
 - Create combined image from the above created TA and M4 images
-```
+```shell
 commander rps convert "combined_image.rps" --app "m4_image_combined.rps" --taapp "ta_image_combined.rps" 
 ```
 - Create the Matter OTA file from the bootable image file
-```
+```shell
 ./src/app/ota_image_tool.py create -v 0xFFF1 -p 0x8005 -vn 2 -vs "2.0" -da sha256 combined_image.rps combined_image.ota
 ```
 
@@ -106,11 +106,11 @@ Once image is downloaded the device will reboot into the upgraded M4 image.
 ## Generating the M4 OTA image
 
 - Create M4 (.s37) image to  (.rps) image using below command
-```
+```shell
 - commander rps create <m4_image.rps> --app <m4_image.s37>
 ```
 - Create the Matter OTA file from the bootable image file
-```
+```shell
 ./src/app/ota_image_tool.py create -v 0xFFF1 -p 0x8005 -vn 2 -vs "2.0" -da sha256 m4_image.rps m4_image.ota
 ```
 
@@ -166,11 +166,11 @@ where SSID and PSK are AP username and password.
 - TA will write the TA upgrade image onto flash backup location. 
 Once image is downloaded the device will reboot into the upgraded TA image.
 
-### Generating the TA OTA image
+## Generating the TA OTA image
 - For Matter OTA file, create a bootable image file (using the Lighting application image as an example) and then create the Matter OTA file from the bootable image file using commands provided below
 - Once  .ota file is created , the same will be uploaded onto raspberry pi where OTA provider application is running. 
 
 - Create the Matter OTA file from the bootable image file
-```
-./src/app/ota_image_tool.py create -v 0xFFF1 -p 0x8005 -vn 2 -vs "2.0" -da sha256 ta_image.rps ta_image.ota
+```shell
+    ./src/app/ota_image_tool.py create -v 0xFFF1 -p 0x8005 -vn 2 -vs "2.0" -da sha256 ta_image.rps ta_image.ota
 ```
