@@ -79,7 +79,6 @@ Pre-built images for the SiWx917 connectivity firmware are available as per the 
     
     **Note:**
     Refer [SiWx917 SoC](https://www.silabs.com/development-tools/wireless/wi-fi/siwx917-pro-kit?tab=techdocs) for more details
-  - 2 EFR32xG24 kits from these recommended parts:
 
 - (Wi-Fi only) Dual-Band Access Point
 
