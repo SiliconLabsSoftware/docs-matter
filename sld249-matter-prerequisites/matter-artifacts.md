@@ -21,7 +21,7 @@ used with a Raspberry Pi to allow the Raspberry Pi's Open Thread Border Router
 to access the Thread network. Radio Co-Processor (RCP) images are available in
 the Assets section of this page:
 
-https://github.com/SiliconLabs/matter/releases/download/v2.2.0-1.2/ot-rcp-binaries-2.2.0-1.2.zip
+https://github.com/SiliconLabs/matter_extension/releases/download/v2.2.0/ot-rcp-binaries-2.2.0-1.2.zip
 
 ## Matter Accessory Device Images
 
@@ -29,7 +29,7 @@ The Matter Accessory Device Images are used to turn an EFR into a Matter device.
 These are pre-built binary images for the Matter Demo. Matter Accessory Device
 Images are located in the Assets section of this page:
 
-https://github.com/SiliconLabs/matter/releases/download/v2.2.0-1.2/matter-accessory-device-images_2.2.0-1.2.zip
+https://github.com/SiliconLabs/matter_extension/releases/download/v2.2.0/matter-accessory-device-images_2.2.0-1.2.zip
 
 ## Matter Bootloader Binaries
 
@@ -38,13 +38,13 @@ EFR32MG2x device, you will need to flash a bootloader binary on your device alon
 with the application image. Bootloader binaries for all of the Matter supported
 devices are available here:
 
-https://github.com/SiliconLabs/matter/releases/download/v2.2.0-1.2/bootloader_binaries_2.2.0-1.2.zip
+https://github.com/SiliconLabs/matter_extension/releases/download/v2.2.0/bootloader_binaries_matter_extension_v2.2.0-1.2.zip
 
 ## RS9116 Firmware
 
 The RS9116 firmware (`rs9116_firmware_files_with_rev.zip`) is used to update the RS9116 which can be found in the Assets section of this page:
 
-https://github.com/SiliconLabs/matter/releases/download/v2.2.0-1.2/rs9116_firmware_files_with_rev_2.2.0-1.2.zip
+https://github.com/SiliconLabs/matter_extension/releases/download/v2.2.0/rs9116_firmware_files_with_rev_2.2.0-1.2.zip
 
 **Note**:
 RS9116 chip/module needs to be flashed with proper firmware as mentioned below:
@@ -55,7 +55,7 @@ RS9116 chip/module needs to be flashed with proper firmware as mentioned below:
 
 The SiWx917 firmware(SiWx917NCP_firmware_files.zip) is used to update the SiWx917 NCP which can be found in the Assets section of this page:
 
-https://github.com/SiliconLabs/matter/releases/download/v2.2.0-1.2/SiWx917NCP_firmware_files_2.2.0-1.2.zip
+https://github.com/SiliconLabs/matter_extension/releases/download/v2.2.0/SiWx917NCP_firmware_files_2.2.0-1.2.zip
 
 **Note**:
 SiWx917 NCP board need to be flashed with proper firmware as mentioned below:
@@ -66,7 +66,7 @@ SiWx917 NCP board need to be flashed with proper firmware as mentioned below:
 
 The SiWx917 firmware (SiWx917SOC_firmware_files.zip) along with WiSeConnect 3 SDK is used to update the SiWx917 SoC which can be found in the Assets section of this page:
 
-https://github.com/SiliconLabs/matter/releases/download/v2.2.0-1.2/SiWx917SOC_firmware_files_2.2.0-1.2.zip
+https://github.com/SiliconLabs/matter_extension/releases/download/v2.2.0/SiWx917SOC_firmware_files_2.2.0-1.2.zip
 
 **Note**:
 SiWx917 SoC boards need to be flashed with proper firmware as mentioned below:
@@ -75,4 +75,4 @@ SiWx917 SoC boards need to be flashed with proper firmware as mentioned below:
 ## SiWx917 SoC Configuration Files for Flashing the Matter Application
 In order to flash the Matter Application on the SiWx917 SoC, the Ozone Debugger must be configured for the SiWx917 SoC device by following the instructions on the Ozone Environment Setup for SiWx917 SoC page.
 
-The [JLinkDevices.xml](https://github.com/SiliconLabs/matter/releases/download/v2.2.0-1.2/JLinkDevices.xml) and ELF files referenced in the instructions may be found in the Assets section of this page
+The [JLinkDevices.xml](https://github.com/SiliconLabs/matter_extension/releases/download/v2.2.0/JLinkDevices.xml) and ELF files referenced in the instructions may be found in the Assets section of this page
