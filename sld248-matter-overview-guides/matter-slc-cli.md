@@ -85,7 +85,7 @@ python slc\sl_build.py MyNewApp\lighting-app-thread.slcp brd4161a
 Alternately, one can use SLC-CLI commands directly to generate the project and then use `make` to build it.
 
 Windows users will need to install `make` in their system. You can use your own or follow these steps to get `make`.
-1. Install the MSYS terminal which provides a Unix-like environment on windows. 
+1. Install the MSYS terminal, which provides a Unix-like environment on Windows. 
 2. Open the MSYS terminal and install `make` using the command `pacman -S make`.
 3. Run command `where make`, copy the path, and add it to the PATH environment variable. 
 4. Restart your command line terminal and run `slc/sl_build.py` or run make directly. You might need to reboot.
