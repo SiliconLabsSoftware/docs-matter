@@ -98,7 +98,7 @@ Pre-built images for the SiWx917 connectivity firmware are available as per the 
 
 **SSH Client**: Managing the Matter hub often requires connecting to it remotely. An SSH client is needed to follow the step-by-step example in this document (PuTTY is used). Install software such as [PuTTY](https://www.putty.org/), Terminal or a similar application for access to the Raspberry Pi-based Matter hub.
 
-**SD Card-Flashing Software**: Many different applications can be used to prepare an SD card for the Raspberry Pi, such as the [Raspberry Pi Imager](https://www.raspberrypi.com/software/), [balenaEtcher](https://www.balena.io/etcher) and [Rufus](https://silabsiot.slack.com/archives/C018366PBH8/p1654113932884999). The step-by-step example in this document uses the Raspberry Pi Imager.
+**SD Card-Flashing Software**: Many different applications can be used to prepare an SD card for the Raspberry Pi, such as the [Raspberry Pi Imager](https://www.raspberrypi.com/documentation/computers/getting-started.html#install-using-imager), [balenaEtcher](https://www.balena.io/etcher) and [Rufus](https://silabsiot.slack.com/archives/C018366PBH8/p1654113932884999). The step-by-step example in this document uses the Raspberry Pi Imager.
 
 ## Next Steps
 
