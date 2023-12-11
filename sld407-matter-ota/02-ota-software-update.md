@@ -55,7 +55,7 @@ application images.
 
 The chip-ota-provider-app binary for a Raspberry Pi is a part of the Artifacts package available with the Matter Extension release. If you are planning to run the OTA-Provider on a Raspberry Pi there is no need to build it. 
 
-- To build the OTA-Provider app in Linux Platform run the following command in a Matter repository:
+- To build the OTA-Provider app in Linux, run the following command in a Matter repository:
 
     ```shell
     $ scripts/examples/gn_build_example.sh examples/ota-provider-app/linux out chip_config_network_layer_ble=false
@@ -63,7 +63,7 @@ The chip-ota-provider-app binary for a Raspberry Pi is a part of the Artifacts p
 
 ### Building Application Images Using Simplicity Studio
 
-- The running image and the update image are regular Matter application images and are built using the standard procedure, the only additional configuration required is the use of a higher software version in the update image. See the following document for detailed steps: [build OTA application using studio](./05-build-ota-application-using-studio.md).
+- The running image and the update image are regular Matter application images and are built using the standard procedure. The only additional configuration required is the use of a higher software version in the update image. See the following document for detailed steps: [build OTA application using studio](./05-build-ota-application-using-studio.md).
 
 ### Obtaining the Bootloader binary
 
