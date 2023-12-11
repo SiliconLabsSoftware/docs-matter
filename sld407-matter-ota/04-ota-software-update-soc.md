@@ -10,6 +10,16 @@ The scope of this page describes the MATTER OTA upgrade on 917 SoC mode for comb
 
 - To run matter ota on Silicon Labs Platform, refer to [Software Requirements](/matter/<docspace-docleaf-version>/matter-prerequisites/software-requirements).
 
+## Setting up OTA Environment
+- To run OTA on Matter over Wi-Fi, Need to build two different application below:
+  - **OTA-A** is a normal application with default or older software version. It acts as **ota-requestor** where it needs to update latest software version.
+  - **OTA-B is** a normal application with updated software version.
+  - **Chip-tool** is a controller for sending commands to ota-requestor to update the software version and receving commands from device.
+  - **OTA-Provider** is the server who has the latest software version and from which ota-requestor will download the updated software.
+
+### Building OTA Application Using Simplicity Studio For 917 SOC
+- To create and build matter OTA using Simplicity studio, refer following link [build OTA application using studio](./build-ota-application-using-studio.md)
+
 ## Combined Image Upgrade
 
 For 917 SoC, storing a single Matter combined upgrade image(TA+M4) and then providing sample code that can transfer the image to the co-processor and rewrite the 917 firmware as well as M4 firmware Image then boot loading with the upgraded TA processor image and the M4 processor image.
@@ -52,6 +62,7 @@ commander rps convert "combined_image.rps" --app "m4_image_combined.rps" --taapp
 ```shell
 ./src/app/ota_image_tool.py create -v 0xFFF1 -p 0x8005 -vn 2 -vs "2.0" -da sha256 combined_image.rps combined_image.ota
 ```
+**Note:** For TA(alone) OTA firmware upgrade, follow the same steps as [combined image](./04-ota-software-update-soc.md#combined-image-upgrade)
 
 ### Running OTA Provider
 
@@ -164,25 +175,3 @@ where SSID and PSK are AP username and password.
 - The application device will connect to the Provider and start the image download. Once the image is downloaded, the device will reboot into the downloaded image.
 
 **Note:** once image download is done, disconnect jlink. it will reboot automatically with new image.
-
-## Matter Software Update with SOC TA Example Application
-
-- Host will initiate OTA download to receive TA image on to host. Host will transfer the image chunk by chunk on to TA flash backup location. 
-
-### Use Case TA(alone) OTA
-
-- OTA image will be created and uploaded onto Raspberry Pi which provides the firmware image chunk by chunk to the device.
-- Host will initiate the OTA download and provider app will start the OTA image transfer.
-- Host will receive TA image and host will transfer the TA image on to flash chunk by chunk. 
-- TA will write the TA upgrade image onto flash backup location. 
-- Once image is downloaded, the device will reboot into the upgraded TA image.
-
-## Generating The TA OTA Image
-
-- For Matter OTA file, create a bootable image file (using the Lighting application image as an example) and then create the Matter OTA file from the bootable image file using commands provided below.
-- Once .ota file is created, the same will be uploaded onto Raspberry Pi where OTA provider application is running. 
-
-- Create the Matter OTA file from the bootable image file.
-```shell
-    ./src/app/ota_image_tool.py create -v 0xFFF1 -p 0x8005 -vn 2 -vs "2.0" -da sha256 ta_image.rps ta_image.ota
-```
