@@ -12,7 +12,7 @@ Matter chip-tool. Note the image is ~10GB in size so depending on your internet
 connection this download may take some time. Start the Matter Hub Raspberry Pi
 image download here:
 
-https://www.silabs.com/documents/public/software/SilabsMatterPi_2.1.0-1.1.zip
+https://www.silabs.com/documents/public/software/SilabsMatterPi_2.2.0-1.2.zip
 
 ## Radio Co-Processor (RCP) Images
 
@@ -77,3 +77,5 @@ SiWx917 SoC boards need to be flashed with proper firmware as mentioned below:
 In order to check device logs for the Matter Application on the SiWx917 SoC, the **JLink RTT** must be configured for the SiWx917 SoC device by following the instructions on the [JLink RTT SOC Support](/matter/<docspace-docleaf-version>/matter-wifi-enabling-features/jlink-soc-setup) for SiWx917 SoC.
 
 The [JLinkDevices.xml](https://github.com/SiliconLabs/matter_extension/releases/download/v2.2.0/JLinkDevices.xml) and **.elf** files referenced in the instructions may be found in the Assets section of this page.
+
+**Note**:- For EFR32 JLink RTT Logging support is already enabled.

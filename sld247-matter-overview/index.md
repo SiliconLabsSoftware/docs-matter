@@ -23,68 +23,59 @@ two EFR32MG24-based development boards, and a Raspberry Pi used as a Matter hub.
   - 1x high speed, 64 GB SD card
 
 #### Matter Devices
--  **Matter over Wi-Fi Accessory Device Requirements for NCP Mode**
+##### **Matter over Wi-Fi Accessory Device Requirements for NCP Mode**
 
 The Silicon Labs Matter over Wi-Fi NCP mode demo and development requires two boards: the
 Silicon Labs EFR32 Radio board to run the Matter code and either the RS9116, SiWx917, WF200 to run the Wi-Fi protocol stack.
 
 The following boards are supported for the Matter over Wi-Fi demos and development:
 
--   **MG24 Boards:**
+  -  **MG24 Boards:**
 
--   BRD4186C / SLWSTK6006A / Wireless Starter Kit / 2.4GHz@10dBm
-    -   [XG24-RB4186C](https://www.silabs.com/development-tools/wireless/xg24-rb4186c-efr32xg24-wireless-gecko-radio-board)
-    -   MG24 with WSTK : [xG24-PK6009A](https://www.silabs.com/development-tools/wireless/efr32xg24-pro-kit-10-dbm?tab=overview)
--   BRD4187C / SLWSTK6006A / Wireless Starter Kit / 2.4GHz@20dBm
-    - [XG24-RB4187C](https://www.silabs.com/development-tools/wireless/xg24-rb4187c-efr32xg24-wireless-gecko-radio-board)
-    - MG24 with WSTK : [xG24-PK6010A](https://www.silabs.com/development-tools/wireless/efr32xg24-pro-kit-20-dbm?tab=overview)
+       -   BRD4186C / SLWSTK6006A / Wireless Starter Kit / 2.4GHz@10dBm
+            -   [XG24-RB4186C](https://www.silabs.com/development-tools/wireless/xg24-rb4186c-efr32xg24-wireless-gecko-radio-board)
+            -   MG24 with WSTK : [xG24-PK6009A](https://www.silabs.com/development-tools/wireless/efr32xg24-pro-kit-10-dbm?tab=overview)
+       -   BRD4187C / SLWSTK6006A / Wireless Starter Kit / 2.4GHz@20dBm
+            - [XG24-RB4187C](https://www.silabs.com/development-tools/wireless/xg24-rb4187c-efr32xg24-wireless-gecko-radio-board)
+            - MG24 with WSTK : [xG24-PK6010A](https://www.silabs.com/development-tools/wireless/efr32xg24-pro-kit-20-dbm?tab=overview)
+  -   **Wi-Fi NCP Dev Kits & boards**
 
--   **Wi-Fi NCP Dev Kits & boards**
-
--   RS9116
-    -   SB-EVK1 / Single Band Wi-Fi Development Kit / 2.4GHz
-        -   [RS9116X-SB-EVK1](https://www.silabs.com/development-tools/wireless/wi-fi/rs9116x-sb-evk-development-kit)
-    -   SB-EVK2 / Single Band Wi-Fi Development Kit / 2.4GHz
-        -   [RS9116X-SB-EVK2](https://www.silabs.com/development-tools/wireless/wi-fi/rs9116x-sb-evk2-development-kit)
-    -   DB-EVK1 / Dual Band Wi-Fi Development Kit / 2.4GHz & 5GHz
-        -   [RS9116X-DB-EVK1](https://www.silabs.com/development-tools/wireless/wi-fi/rs9116x-db-evk-development-kit)
-        **Note:** Matter only supported over 2.4GHz on this Dev kit.
-    -   Interconnect board (included in the Wi-Fi kits)
-    -   SPI Cable (included in the RS9116 kit)
-    -   Jumper Cables (included in the RS9116 kit)
--   SiWx917
-    -   SiWx917 NCP Mode / Wi-Fi Expansion Board / 2.4GHz
-        -   BRD8036A (A0 Expansion v1.0)
-        -   BRD8036A (A0 Expansion v1.1)
--   WF200
-    -   WF200 / Single Band Wi-Fi Expansion Board / 2.4GHz
-        -   [SLEXP8022A](https://www.silabs.com/development-tools/wireless/wi-fi/wf200-wifi-expansion-kit)
-    -   WFM200S / Single Band Wi-Fi Expansion Board / 2.4GHz
-        -   [SLEXP8023A](https://www.silabs.com/development-tools/wireless/wi-fi/wfm200-wifi-expansion-kit)
+       -   RS9116
+            -   SB-EVK1 / Single Band Wi-Fi Development Kit / 2.4GHz
+                -   [RS9116X-SB-EVK1](https://www.silabs.com/development-tools/wireless/wi-fi/rs9116x-sb-evk-development-kit)
+            -   SB-EVK2 / Single Band Wi-Fi Development Kit / 2.4GHz
+                -   [RS9116X-SB-EVK2](https://www.silabs.com/development-tools/wireless/wi-fi/rs9116x-sb-evk2-development-kit)
+            -   DB-EVK1 / Dual Band Wi-Fi Development Kit / 2.4GHz & 5GHz
+                -   [RS9116X-DB-EVK1](https://www.silabs.com/development-tools/wireless/wi-fi/rs9116x-db-evk-development-kit)
+    
+                **Note:** Matter only supported over 2.4GHz on this Dev kit.
+  -   Interconnect board (included in the Wi-Fi kits)
+  -   SPI Cable (included in the RS9116 kit)
+  -   Jumper Cables (included in the RS9116 kit)
 
 **Note**:- For More info, refer [Hardware Requirements](/matter/<docspace-docleaf-version>/hardware-requirements)
 
-- **Matter over Wi-Fi Accessory Device Requirements for SoC Mode**
+##### **Matter over Wi-Fi Accessory Device Requirements for SoC Mode**
 
-The Silicon Labs Matter over Wi-Fi demo and development for SoC mode requires the SiWx917 SoC board that supports Matter over Wi-Fi in a single-chip package. The integrated MCU is dedicated for peripheral and application-related processing (Matter), while the ThreadArch® runs the wireless and networking protocol stacks. 
+The Silicon Labs Matter over Wi-Fi demo and development for SoC mode requires the SiWx917 SoC board that supports Matter over Wi-Fi in a single-chip package. he integrated MCU is dedicated for peripheral and application-related processing (Matter), while the ThreadArch® runs the wireless and networking protocol stacks. 
 
 Pre-built images for the SiWx917 connectivity firmware are available as per the instructions on the [Matter Artifacts page](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts). The following boards are supported for the Matter over Wi-Fi demos and development:
 
--   **Wi-Fi SoC Boards:**
-
--   SiWx917 / BRD4002A / Wireless Starter Kit
--   SiWx917 SoC Mode
-    -   SiWx917 SoC / Common Flash Radio Board / 2.4GHz
-        -   BRD4338a - B0 common flash v2.0
-    
-    **Note:**
-    Refer [SiWx917 SoC](https://www.silabs.com/development-tools/wireless/wi-fi/siwx917-pro-kit?tab=techdocs) for more details
-
-- (Wi-Fi only) Dual-Band Access Point
+  - **Wi-Fi SoC Boards:**
+    - SiWx917 / BRD4002A / Wireless Starter Kit
+    - SiWx917 Soc Mode
+      -  SiWx917 SoC / Common Flash Radio Board / 2.4GHz
+         -  BRD4338A - B0 common flash v2.0
 
 ### Software Requirements
 
 **Simplicity Studio 5**: Download and install Simplicity Studio 5 for your operating system from the [silabs.com Simplicity Studio page](https://www.silabs.com/developers/simplicity-studio). While the installation process is easy to follow, instructions are provided in the Simplicity Studio v5 [Getting Started section](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-getting-started/install-ss-5-and-software).
+
+**Ozone - The J-Link Debugger**:  [Ozone](https://www.segger.com/products/development-tools/ozone-j-link-debugger/) is a full-featured graphical debugger for embedded applications. With Ozone it is possible to debug any embedded application on C/C++ source and assembly level.
+
+**Simplicity Commander**: [Simplicity Commander](https://www.silabs.com/documents/public/software/SimplicityCommander-Windows.zip) is a utility that provides GUI and command line access to the debug features of an EFM32 device. It allows you to flash firmware, update the kit firmware, and lock, or unlock debug access.
+
+**Tera Term**: [Tera Term]((https://osdn.net/projects/ttssh2/releases/)) is the terminal emulator for Microsoft Windows that supports serial port, telnet and SSH connections.
 
 **Silicon Labs Matter GSDK Extension**: Once Simplicity Studio 5 is installed you will be prompted to install the Gecko SDK Suite (GSDK). Here you should also install the Matter Enablement Package by making sure the extension is checked, as shown.
 

@@ -2,7 +2,7 @@
 
 The following components are common for all apps and should be modified in the corresponding app specific .slcp file.
 
-## Add the DIC Component
+## How to Add the DIC Component
 
 To add DIC Component, modify corresponding app specific .slcp file.
 
@@ -10,7 +10,7 @@ To add DIC Component, modify corresponding app specific .slcp file.
   - id: matter_dic
     from: matter
 ```
-## Add the DIC AWS OTA Component
+## How to Add the DIC AWS OTA Component
 To add DIC AWS OTA Component, modify corresponding app specific .slcp file.
 
 ```shell
@@ -20,7 +20,7 @@ To add DIC AWS OTA Component, modify corresponding app specific .slcp file.
 Note:- Building with aws_ota_wifi_dic component enables matter_dic component by default.
 
 ## Building DIC Application
-- After Modification in **.slcp** Project file, refresh the **matter-extension** in Simplicity Studio.
+- After Modification in **.slcp** Project file as above step, refresh the **matter-extension** in Simplicity Studio.
 
 - Select **Preferences** in **Launcher** tab.
 ![Select Preferences](./images/select-preferences.png)
@@ -31,7 +31,7 @@ Note:- Building with aws_ota_wifi_dic component enables matter_dic component by 
 - Expand **Gecko SDK** and click the **Refresh** button from side menu.
 ![Select Refresh](./images/select-refresh-option.png)
 
-- Build the application using Simplicity Studio
+- Build the DIC application using Simplicity Studio
     -  [Build EFx32 Application Using Studio](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/build-efx32-application-using-studio)
     -  [Build SOC Application Using Studio](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/build-soc-application-using-studio)
 

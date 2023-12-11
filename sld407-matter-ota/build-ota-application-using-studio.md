@@ -104,4 +104,4 @@
 
 12. Once the project is compiled successfully, Go to the Project Explorer view and expand OTA-B project binaries folder , using application .s37 file Need to Create .gbl file using Simplicity commander. 
 
-13. After Creation of OTA-B Application, to run OTA Scenario.
+13. After Creation of OTA-B Application run the OTA Scenario.
