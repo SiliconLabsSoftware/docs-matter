@@ -184,6 +184,15 @@ It also contains the Root PAA certificate for that Device, which is needed to co
 
 ### 3. Device Attestation
 
+Every device has a unique certificate that is signed by the manufacturer. There is no single root CA across all devices. During commissioning the device is challenged to prove possession of the associated private key. The certificate can be validated against the Distributed Compliance Ledger (**DCL**) to verify device certification status.
+
+The hierarchy allows for a 3-level tier:
+- The first level is the Product Attestation Authority (PAA)
+- The PAA will be used to sign the Product Attestation Intermediate (PAI)
+- The PAI will be used to sign the Device Attestation Certificate (DAC). The DAC will be transferred to the commissioner and verified against the DCL.
+
+![Certificate Authentication](resources/certificateauthentication.png)
+
 The focus of this phase is to verify the authenticity of the Device. The high-level steps are:
 
 1. The Commissioner verifies the Device’s:
@@ -194,6 +203,10 @@ The focus of this phase is to verify the authenticity of the Device. The high-le
    - Device Attestation Credentials
    - Distributed Compliance Ledger (DCL) or
    - Certification Declaration (CD)
+
+![Attestation Overview](resources/attestationoverview.png)
+
+DAC is retrieved and verified before the device joins the Thread or Wi-Fi network. The Commissioner issues a challenge to the device to prove it possesses the associated Private Key.
 
 First, the Commissioner asks the Node for the CD, the PAI Certificate, and the DAC. It then pulls the Certificate ID, the PAA Certificate, and the Device VID/PID from the immutable root of trust DCL. At that point, it has all the information needed to perform the device attestation. The Commissioner then runs a certification chain check from the DAC to the PAI, and all certificates should chain together correctly. If that check is passed, the Commissioner takes the certification ID from the DCL and checks it against the CD ID that it pulled from the device itself to make sure the device is a genuine CSA certified device. The final step is to verify that public key in the DAC pulled from the Matter device mathematically matches the private key inserted in the device during manufacture. This is done by sending a message to the device during this final step of Device Attestation, and having the message signed by the device and then the signature verified using the public key from the DAC.
 
