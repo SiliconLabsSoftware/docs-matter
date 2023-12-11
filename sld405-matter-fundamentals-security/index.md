@@ -6,6 +6,15 @@ Register at [Silicon Labs Tech Talks](https://www.silabs.com/about-us/events/tec
 
 >Note: All graphics were extracted from the Tech Talk, *Future-Proofing Matter Security with Secure Vault*, created by the Connectivity Standards Alliance (CSA) and used with permission.
 
+## Principles
+
+The following are the guiding principles for the Matter security design:
+1. **No anonymous joining** - Always requires “proof of ownership” (that is, a device-specific passcode)
+2. **Device Attestation** - Every device has unique identity that is authenticated by the manufacturer and verified through the CSA as a certified device
+3. **Operational Credentials** - When commissioned onto a Matter network every device is given unique operational credentials after verifying their manufacturer credentials
+4. **Network Credentials** - Wi-Fi network key or Thread Master Key are not given until device’s certificate is verified and authenticated properly
+5. **Open standard** - The open-source software is open to third parties vetting the claims by examining the standard and auditing the source code
+
 ## Security Tenants Promoted by the Connectivity Standards Alliance (CSA)
 
 1. Easy, secure, and flexible device commissioning
