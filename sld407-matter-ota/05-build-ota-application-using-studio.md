@@ -1,6 +1,6 @@
-# Create a Project for Matter OTA Application
+# Building Matter applications for OTA Software Update
 
-- This document gives information about creation of OTA-A and OTA-B Application for EFR32 and 917 SOC Boards.
+In Matter OTA Software Update scenario the running image (OTA-A) and the update image (OTA-B) are regular Matter application images and are built using the standard procedure, the only additional configuration required is the use of a higher software version in the update image. This document gives information about creation of OTA-A and OTA-B Application for EFR32 and 917 SOC Boards.
 
 **Note:** Examples used in this document for EFR32. Select BRD4338A Board to create OTA-A and OTA-B application for 917 SOC.
 

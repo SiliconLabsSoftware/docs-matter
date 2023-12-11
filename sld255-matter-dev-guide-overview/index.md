@@ -17,4 +17,3 @@ prerequisites.
 - [**Detailed Development Topics**](/matter/<docspace-docleaf-version>/matter-overview-guides) cover
   a number of other topics of interest to developers, including commissioning, security, and
   over-the-air update.
-  

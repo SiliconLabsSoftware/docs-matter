@@ -20,7 +20,6 @@ flashing an example application in the relevant version.
 
 In Simplicity Studio click on Project->New->Silicon Labs Project Wizard to
 create a new project. Select the correct Target Board, SDK and the Toolchain.
-For Matter 1.0 it is recommended that the bootloader is built with GSDK 4.1.
 
 In the next screen select the example project the bootloader will be based on.
 For a bootloader using external storage select "Bootloader SoC SPI Flash Storage
@@ -86,7 +85,7 @@ main bootloader image with a CRC32 checksum is called
 
 ## Internal Bootloader: Image Size, Selecting Storage Slot Address and Size
 
-The internal storage bootloader for Matter OTA software update is supported on
+The internal storage bootloader for Matter OTA Software Update is supported on
 MG24 boards only. In this use case both the running image and the downloadable
 update image must fit on the internal flash at the same time. This in turn
 requires that both images are built with a reduced feature set such as disabled
@@ -125,8 +124,9 @@ by using the Simplicity Commander tool:
     beginning of the second or third available block to account for potential
     growth of the application image -- this way the bootloader won't have to be
     reconfigured for every increase in the image size. The storage slot must
-    still be able to accommodate the GBL image for the update. Another way to
-    calculate the Storage Slot parameters is by examining the application's .map
+    still be able to accommodate the GBL image for the update.
+
+Another way to calculate the Storage Slot parameters is by examining the application's .map
     file:
 
 - Build the running image for the Matter application
