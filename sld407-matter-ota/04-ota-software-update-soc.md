@@ -35,7 +35,7 @@ Host will initiate OTA download to receive combined image (TA+M4) on to host. Ho
 
 ### Create Combined (TA+M4) Firmware Image
 
-- The first step is to create a combined Image that contains both the firmware (TA & M4).  
+- The first step is to create a combined Image that contains both the firmware (TA & M4).
 - This image is created by combining the binary images of both images. 
 - For Matter OTA file, create a bootable image file (using the Lighting application image as an example) and then create the Matter OTA file from the bootable image file using commands provided below.
 - Once combined image .ota file is created , the same will be uploaded onto raspberry pi where OTA provider application is running. 
