@@ -163,10 +163,13 @@ Another data construct that is necessary for Device Attestation is the Certifica
 
 #### Distributed Compliance Ledger
 
-The Distributed Compliance Ledger (DCL) is the immutable single source of truth. It is a private blockchain-based distributed ledger of data records.
+The Distributed Compliance Ledger (DCL) is the immutable single source of truth. It is a private blockchain-based distributed ledger of data records. Reading from the DCL is open to public, but writing to the DCL is restricted to various parties/roles. These roles typically include CSA certification, test house, and vendor roles.
 
-It contains many records about the Device itself like:
+![DCL Overview](resources/dcl-overview.png)
 
+It contains records about all certified devices, such as:
+
+- Certification status
 - Vendor ID (VID)
 - Product ID (PID)
 - Product name
