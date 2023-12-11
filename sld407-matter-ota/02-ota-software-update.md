@@ -20,6 +20,8 @@ The OTA Software Update scenario requires the following binaries:
 
 ### Setting up chip-tool 
 
+The chip-tool binary is a part of the Silicon Labs' Matter Hub Raspberry Pi Image available as a pert of the Release Artifacts page. If you are planning to run chip-tool on the Matter Hub you may skip the rest of this section.
+
 If you have not downloaded or cloned this repository, you can run the following
 commands on a Linux terminal running on a Mac, Linux, WSL or Virtual
 Machine to clone the repository and run bootstrap to prepare to build the sample
@@ -51,7 +53,9 @@ application images.
 
 ### Setting up OTA-Provider
 
-- To Build OTA-Provider app in Linux Platform run the following command in a Matter repository:
+The chip-ota-provider-app binary for a Raspberry Pi is a part of the Artifacts package available with the Matter Extension release. If you are planning to run the OTA-Provider on a Raspberry Pi there is no need to build it. 
+
+- To build the OTA-Provider app in Linux Platform run the following command in a Matter repository:
 
     ```shell
     $ scripts/examples/gn_build_example.sh examples/ota-provider-app/linux out chip_config_network_layer_ble=false
