@@ -74,6 +74,6 @@ SiWx917 SoC boards need to be flashed with proper firmware as mentioned below:
 
 ## SiWx917 SoC Configuration Files for Flashing the Matter Application
 
-In order to flash the Matter Application on the SiWx917 SoC, the Ozone Debugger must be configured for the SiWx917 SoC device by following the instructions on the Ozone Environment Setup for SiWx917 SoC page.
+In order to flash the Matter Application on the SiWx917 SoC, the **JLink RTT** must be configured for the SiWx917 SoC device by following the instructions on the [JLink RTT SOC Support](/matter/<docspace-docleaf-version>/matter-wifi-enabling-feature/jlink-soc-setup) for SiWx917 SoC.
 
 The [JLinkDevices.xml](https://github.com/SiliconLabs/matter_extension/releases/download/v2.2.0/JLinkDevices.xml) and ELF files referenced in the instructions may be found in the Assets section of this page.
