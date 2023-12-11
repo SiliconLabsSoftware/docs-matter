@@ -28,7 +28,19 @@ Matter hub/chip-tool are ready and working. Keep the PuTTY session open for the 
 
 ## Creating the Matter Accessory Devices (MADs)
 
-> If using NCP hardware, make sure firmware is properly loaded to the NCP using instructions provided in: [Upgrading the Wi-Fi Connectivity Firmware](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/loading-firmware-for-ncp-and-soc-boards).
+### Hardware Requirements
+-   SiWx917 / BRD4002A / Wireless Starter Kit
+-   SiWx917 SoC Mode
+    -   SiWx917 SoC / Common Flash Radio Board / 2.4GHz
+        -   BRD4338a - B0 common flash v2.0
+
+    **Note:**
+    Refer [SiWx917 SoC](https://www.silabs.com/development-tools/wireless/wi-fi/siwx917-pro-kit?tab=techdocs) for more details.
+
+### Software Requirements
+- In order to Run Light and Switch Example on SiWx917 SOC, softwares to be installed on System. Refer to[Software Requirements](/matter/<dospace-docleaf-version>/matter-prerequisites/software-requirements)
+
+- **Note**: Light and Switch application is not supported for NCP hardwares.
 
 1. In Simplicity Studio 5, create the Light MAD:
 
@@ -40,19 +52,19 @@ Matter hub/chip-tool are ready and working. Keep the PuTTY session open for the 
 
    4. Open the Example Projects and Demos tab, select the **Matter** filter and enter "*Wi-Fi*" in **Filter on keywords**.
 
-   5. Select the *Matter - SoC Lighting over Wi-Fi* example for RS9116, click **Create**, rename the project if you wish, and click **Finish**.
+   5. Select the *Matter - Lighting over Wi-Fi* example, click **Create**, rename the project if you wish, and click **Finish**.
 
    6. Once the project is created, the perspective changes to the Simplicity IDE perspective. In the Project Explorer view, right-click the project and select *Build Project*.
 
    7. Once the project has compiled, in the Debug Adapters view right-click the board and select *Upload application*.
 
-   8. Select the *Application image path* (Select the path for .s37 file in the path '\<workspace\>\project_name\GNU ARM v10.3.1 - Default') for the newly compiled project and a *Bootloader image*. The EFR32MG24 devices must be programmed with a bootloader. Obtain those here: [Silicon Labs Matter Artifacts](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts).
+   8. Select the *Application image path* (Select the path for .s37 for efr32 and .rps for soc in the path '\<workspace\>\project_name\GNU ARM v10.3.1 - Default') for the newly compiled project and a *Bootloader image for EFR32*. The EFR32MG24 devices must be programmed with a bootloader. Obtain those here: [Silicon Labs Matter Artifacts](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts).
 
    9. Disconnect the dev board from development computer.
 
    10. **Optional**: Label this device (eg: my_light or my_switch) to make it easier to identify later.
 
-2. Repeat the process with the second Dev board, but selecting the *Matter - SoC Light Switch over Wi-Fi* example instead.
+2. Repeat the process with the second Dev board, but select the *Matter - Light Switch over Wi-Fi* example instead.
 
 ## Creating the Matter Network
 

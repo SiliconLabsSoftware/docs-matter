@@ -61,7 +61,7 @@ User Setup (MQTT Explorer):
     - The following diagram shows the end-to-end flow for sharing status from a Matter device to the Cloud.
     ![Silicon Labs - DIC design](./images/dic-status-sharing.png)
 **Note**: For reference, Lighting App commands are given in the above image. Other application commands also can be passed.    
-    - For the end-to-end commands to be executed from chip-tool, refer to [Running the Matter Demo on EFR32 hosts](/matter/<docspace-docleaf-version>/matter-wifi-run-demo).
+    - For the end-to-end commands to be executed from chip-tool, refer to [Running the Matter Demo Over Wi-Fi](/matter/<docspace-docleaf-version>/matter-wifi-run-demo).
     - Below are the application-specific attribute/s information or state shared to the cloud:
        - For Lighting App, On/Off Attributes
        - For Lock App, lock/unlock Attributes
@@ -75,43 +75,47 @@ User Setup (MQTT Explorer):
      - Below diagram gives end-to-end flow for Control of the matter device through cloud interface
       ![Silicon Labs - DIC design](./images/dic-control-part.png)
 **Note**: For reference, Lighting App commands given in the above image. Similarly other application commands also can be passed.     
-     - Make sure matter device is up and commissioned successfully, refer to [Running the Matter Demo on EFR32 hosts](/matter/<docspace-docleaf-version>/matter-wifi-run-demo)
+     - Make sure matter device is up and commissioned successfully, refer to [Running the Matter Demo Over Wi-Fi](/matter/<docspace-docleaf-version>/matter-wifi-run-demo)
      - For Controlling the device, set topic name and the commands to be executed in the mqtt_explorer for below applications.
-       - Lighting App
-         - Topic: command
-         - Commands:
+
+```shell
+    - Lighting App
+      - Topic: command
+        - Commands:
            - toggle
            - on
            - off
-       - Onoff-plug App
-         - Topic: command
-         - Commands:
-           - toggle
-           - on
-           - off
-       - Lock App
-         - Topic: command
-         - Commands:
-           - lock
-           - unlock
-       - Thermostat App
-         - Topic: command
-         - Commands:
-           - SetMode/value(value need to provide 1,2,3,4 ex:SetMode/1)
-           - Heating/value(value need to provide 2500,2600 ex:HeatingSetPoint/2500)
-           - Cooling/value(value need to provide 2500,2600 ex:CoolingSetPoint/2500)
-       - Window App
-         - Topic: command
-         - Commands:
-            - Lift/value(value need to provide in range 1000 to 10000)
-            - Tilt/value(value need to provide in range 1000 to 10000)
-    - Then click `publish` button to execute the command.
+    - Onoff-plug App
+      - Topic: command
+        - Commands:
+          - toggle
+          - on
+          - off
+    - Lock App
+      - Topic: command
+        - Commands:
+          - lock
+          - unlock
+    - Thermostat App
+      - Topic: command
+        - Commands:
+          - SetMode/value(value need to provide 1,2,3,4 ex:SetMode/1)
+          - Heating/value(value need to provide 2500,2600 ex:HeatingSetPoint/2500)
+          - Cooling/value(value need to provide 2500,2600 ex:CoolingSetPoint/2500)
+    - Window App
+      - Topic: command
+        - Commands:
+          - Lift/value(value need to provide in range 1000 to 10000)
+          - Tilt/value(value need to provide in range 1000 to 10000)
+```
+
+   - Then click `publish` button to execute the command.
    ![Silicon Labs - DIC design](./images/control-device-through-cloud.png)
  
  - **Download AWS OTA Image through cloud interface**
      - Below diagram gives the end to end flow of firmware upgrade feature through AWS.
       ![Silicon Labs - DIC design](./images/dic-aws-ota.png)
-     - Make sure matter device is up and commissioned successfully, refer [Running the Matter Demo on EFR32 hosts](/matter/<docspace-docleaf-version>/matter-wifi-run-demo)
+     - Make sure matter device is up and commissioned successfully, refer [Running the Matter Demo Over Wi-Fi](/matter/<docspace-docleaf-version>/matter-wifi-run-demo)
      - Make sure device is connected to MQTT Server successfully.
      - Then Create a AWS OTA Job in the AWS Website, refer [How to create AWS OTA JOB](aws-configuration-registration.md)
      - Trigger OTA Command through MQTT Explorer like below.

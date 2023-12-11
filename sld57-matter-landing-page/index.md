@@ -18,7 +18,7 @@ Alternatively you can develop applications directly out of the [Silicon Labs Mat
 
 ## Other Resources
 
-**To see release notes** containing list of features and knowns issues go to [Matter Release Notes on Silicon Labs Matter Extension](https://github.com/SiliconLabs/matter_extension/releases/tag/v2.1.0).
+**To see release notes** containing list of features and knowns issues, go to [Matter Release Notes on Silicon Labs Matter Extension](https://github.com/SiliconLabs/matter_extension/releases/tag/v2.2.0).
 
 **If you are new to Matter** or would like more information about Silicon Labs Matter-based products, see the [Matter content on silabs.com](https://www.silabs.com/wireless/matter).
 

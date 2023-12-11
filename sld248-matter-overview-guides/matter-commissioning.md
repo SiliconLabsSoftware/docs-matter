@@ -35,7 +35,7 @@ Usually, a mobile phone serves as the administrator. Step 2 is to use the mobile
 
 Step 3 is to set up the BLE beaconing and connection between the mobile phone and the Matter device, so that the commissioning information can be exchanged through the BLE connection channel. 
 
-As the connection should be secure, step 4 is to secure the connection in a process known as password-authenticated session establishment (**PACE**). The passcode derived from the QR code is used as an input for this process. The output is the security key used by the connection.
+As the connection should be secure, step 4 is to secure the connection in a process known as password-authenticated session establishment (**PASE**). The passcode derived from the QR code is used as an input for this process. The output is the security key used by the connection.
 
 ![Steps 5-7](./images/CommissioningSteps5-7.png)
 

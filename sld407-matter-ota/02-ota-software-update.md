@@ -20,7 +20,7 @@ The OTA Software Update scenario requires the following binaries:
 
 ### Setting up chip-tool 
 
-The chip-tool binary is a part of the Silicon Labs' Matter Hub Raspberry Pi Image available as a pert of the Release Artifacts page. If you are planning to run chip-tool on the Matter Hub you may skip the rest of this section.
+The chip-tool binary is a part of the Silicon Labs' Matter Hub Raspberry Pi Image available as a part of the Release Artifacts page. If you are planning to run chip-tool on the Matter Hub you may skip the rest of this section.
 
 If you have not downloaded or cloned this repository, you can run the following
 commands on a Linux terminal running on a Mac, Linux, WSL or Virtual
@@ -63,7 +63,7 @@ The chip-ota-provider-app binary for a Raspberry Pi is a part of the Artifacts p
 
 ### Building Application Images Using Simplicity Studio
 
-- The running image and the update image are regular Matter application images and are built using the standard procedure, the only additional configuration required is the use of a higher software version in the update image. See the following document for detailed steps: [build OTA application using studio](./build-ota-application-using-studio.md).
+- The running image and the update image are regular Matter application images and are built using the standard procedure, the only additional configuration required is the use of a higher software version in the update image. See the following document for detailed steps: [build OTA application using studio](./05-build-ota-application-using-studio.md).
 
 ### Obtaining the Bootloader binary
 
@@ -74,7 +74,7 @@ The chip-ota-provider-app binary for a Raspberry Pi is a part of the Artifacts p
   - Bootloader (only valid for the external SPI-flash storage OTA update) project can be built as a part of any Matter Solution in Studio 
 
 - Using the commander tool or Studio, upload the bootloader to the device running the
-    application, more info: [Flashing Binaries](./flashing-using-commander.md).
+    application.
 
 ## Running the OTA Download Scenario
 
