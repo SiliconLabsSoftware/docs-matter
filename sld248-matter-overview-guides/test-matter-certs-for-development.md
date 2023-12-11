@@ -81,7 +81,7 @@ cd provision/
 
 ## Generating Matter Certificates (CD, PAA,PAI,DAC) - Provisioning Script
 
-Reference and detailed explanation of the different processes that take place in the provisioning script are detailed in [https://github.com/SiliconLabs/matter_extension/tree/v2.2.0/provision](https://github.com/SiliconLabs/matter_extension/tree/v2.2.0/provision). The following is an example on how to generate certificates using the chip-cert tool. We will start with generating the Certification Declaration as follows:
+Reference and detailed explanation of the different processes that take place in the provisioning script are detailed in [https://github.com/SiliconLabs/matter_extension/tree/v2.2.0/provision](https://github.com/SiliconLabs/matter_extension/tree/v2.2.0/provision). The following is an example on how to generate certificates using the chip-cert tool. Start with generating the Certification Declaration as follows:
 
 ```bash
 ./out/tools/chip-cert gen-cd -K credentials/test/certification-declaration/Chip-Test-CD-Signing-Key.pem -C credentials/test/certification-declaration/Chip-Test-CD-Signing-Cert.pem -O credentials/test/certification-declaration/Chip-Test-CD-1049-8005.der -f 1 -V 0x1049 -p 0x8005 -c ZIG20142ZB330001-24 -l 0 -i 0 -n 257 -t 0 -o 0x1049 -r 0x8005
