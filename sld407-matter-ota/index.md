@@ -6,4 +6,4 @@ The Over The Air (OTA) Software Update functionality is enabled by default for a
 - [**Matter OTA Software Update**](./02-ota-software-update.md)
 - [**Matter Firmware Upgrades**](./03-firmware-upgrades.md)
 - [**Matter 917 SOC OTA Software Update**](./04-ota-software-update-soc.md)
-- [**Matter OTA WiFi Project**](./05-ota-wifi-project.md)
+- [**Matter OTA WiFi Project**](./05-build-ota-application-using-studio.md)

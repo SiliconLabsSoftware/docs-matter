@@ -61,7 +61,7 @@ This will build chip-tool in `out/standalone`.
 
 ### Building OTA Images Using Simplicity Studio
 
-- To create and build matter OTA using Simplicity studio, refer following link [build OTA application using studio](./05-ota-wifi-project.md).
+- To create and build matter OTA using Simplicity studio, refer following link [build OTA application using studio](./05-build-ota-application-using-studio.md).
 
 ## Executing OTA Scenario
 
@@ -83,7 +83,7 @@ example):
     ./src/app/ota_image_tool.py create -v 0xFFF1 -p 0x8005 -vn 2 -vs "2.0" -da sha256 chip-efr32-lighting-example.gbl chip-efr32-lighting-example.ota
 ```
 
-**Note**: Modify **-vn** to **CHIP_DEVICE_CONFIG_DEVICE_SOFTWARE_VERSION** and **-vs** to **CHIP_DEVICE_CONFIG_DEVICE_SOFTWARE_VERSION** as per OTA-B application Building Step 10 in [Build OTA Images](./05-ota-wifi-project.md).
+**Note**: Modify **-vn** to **CHIP_DEVICE_CONFIG_DEVICE_SOFTWARE_VERSION** and **-vs** to **CHIP_DEVICE_CONFIG_DEVICE_SOFTWARE_VERSION** as per OTA-B application Building Step 10 in [Build OTA Images](./05-build-ota-application-using-studio.md).
 
 ### Running OTA Provider
 

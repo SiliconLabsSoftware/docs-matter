@@ -18,7 +18,7 @@ The scope of this page describes the MATTER OTA upgrade on 917 SoC mode for comb
   - **OTA-Provider** is the server who has the latest software version and from which ota-requestor will download the updated software.
 
 ### Building OTA Application Using Simplicity Studio For 917 SOC
-- To create and build matter OTA using Simplicity studio, refer following link [build OTA application using studio](./build-ota-application-using-studio.md)
+- To create and build matter OTA using Simplicity studio, refer following link [build OTA application using studio](./05-build-ota-application-using-studio.md)
 
 ## Combined Image Upgrade
 
