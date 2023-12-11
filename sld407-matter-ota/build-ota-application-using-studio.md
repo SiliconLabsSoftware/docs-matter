@@ -1,4 +1,9 @@
 # Create a Project for Matter OTA Application
+
+- This document gives information about creation of OTA-A and OTA-B Application for EFR32 and 917 SOC Boards.
+
+**Note:** Examples used in this document for EFR32. Select BRD4338A Board to create OTA-A and OTA-B application for 917 SOC.
+
 ## Create and Build Project for Matter OTA-A Application
 
 1. [Download](https://www.silabs.com/developers/simplicity-studio) and Install Simplicity Studio.
@@ -99,4 +104,4 @@
 
 12. Once the project is compiled successfully, Go to the Project Explorer view and expand OTA-B project binaries folder , using application .s37 file Need to Create .gbl file using Simplicity commander. 
 
-13. After Creation of OTA-B Application, to run OTA Scenario 
+13. After Creation of OTA-B Application run the OTA Scenario.

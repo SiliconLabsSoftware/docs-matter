@@ -15,7 +15,7 @@
 1. Make sure that the switches on the expansion board are pushed towards the UART side.
 ![Switch Position before firmware flash](images/si917-board.png)
 
-2. Refer to [Updating the Firmware](https://docs.silabs.com/rs9116/wiseconnect/2.0/update-evk-firmware).
+2. Refer to [Setup Tera Term and Updating the Firmware](https://docs.silabs.com/rs9116/wiseconnect/2.0/tera-term-setup).
 
     ```shell
     Instructions are the same for both SiWx917 NCP and RS9116 EVK.

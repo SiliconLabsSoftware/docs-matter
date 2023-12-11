@@ -22,7 +22,7 @@ Bootloader binaries are available in the respective path of codebase **third_par
 2. In the Tools dialog, select Simplicity Commander and click OK.
 ![Select Commander](./images/select-commander.png)
 
-3. In the Simplicity Commander window, click Select Kit and choose your radio board.
+3. In the Simplicity Commander window, click **Select Kit** and choose your radio board.
 ![Select radio board](./images/commander-select-board.png)
 
 4. In the navigation pane, go to the Flash section.
@@ -37,7 +37,7 @@ Bootloader binaries are available in the respective path of codebase **third_par
 
 1. In the Simplicity Studio home page, click Tools.
    
-2. In the Tools dialog, select Simplicity Commander and click OK.
+2. In the **Tools** dialog, select **Simplicity Commander** and click **OK**.
 ![Select Commander](./images/select-commander.png)
 
 3. In the Simplicity Commander window, click Select Kit and choose your radio board.
@@ -53,19 +53,35 @@ Bootloader binaries are available in the respective path of codebase **third_par
 
 
 ## Flashing the SiWx917 SOC Matter Binary using Simplicity Commander
+- SiWx917 SoC device support is available in the latest [Simplicity Commander](https://community.silabs.com/s/article/simplicity-commander?language=en_US).
 
-1. In the Simplicity Studio home page, click Tools.
-   
-2. In the Tools dialog, select Simplicity Commander and click OK.
+- SiWx917 SOC board will support **.rps** only file to flash. Follow these steps to create and flash **.rps** file using **.s37**.
+
+1. Locate Simplicity Commander in your PC/Laptop where it is installed through command prompt(cmd).
+![Locate Commander](./images/locate-commander.png)
+
+2. Copy and paste builded **.s37** binary file to Simplicity commander path.
+
+3. Convert **.s37** binary to **.rps** using below command using commander terminal.
+```shell
+    commander rps convert <file_name.rps> --app <file_name.s37>
+```
+   - Flash to the device using command or follow next steps to flash through Commander Software.
+```shell
+    commander rps load <file-name>.rps
+```
+4. In the Simplicity Studio home page, click **Tools**.
+
+5. In the Tools dialog, select Simplicity Commander and click OK.
 ![Select Commander](./images/select-commander.png)
 
-3. In the Simplicity Commander window, click Select Kit and choose your radio board.
+6. In the Simplicity Commander window, click **Select Kit** and choose your radio board.
 ![Select radio board](./images/commander-select-board.png)
 
-4. In the navigation pane, go to the Flash section.
+7. In the navigation pane, go to the **Flash** section.
 
-5. Above beside "Reload tab" board will be displayed, click Browse next to the Binary File field and locate binary.
+8. Above beside "Reload tab" board will be displayed, click **Browse** next to the **Binary File** field and locate binary.
 ![Select flash option](./images/select-flash-option-soc-commander.png)
 
-6. Click Flash, the binary will be flashed and the Log Window will display a "Flashing completed Successfully" message.
+9. Click **Flash**. the binary will be flashed and the Log Window will display a "Flashing completed Successfully" message.
 ![Successful flash](./images/commander-flash-success-soc.png)

@@ -10,9 +10,6 @@ In Simplicity Studio 5, create the Light MAD:
 
 4.  Go to `All Products` in launcher tab and select one compatible board from the below supported list of SiWx917 SOC dev boards. 
 ```shell
-  BRD4325B (Dual Flash)
-  BRD4325C (Common Flash)
-  BRD4325G (Common Flash)
   BRD4338A (Common Flash)
 ```
 ![Silicon Labs - design](./images/SiWx917-soc-board-selection.png)
