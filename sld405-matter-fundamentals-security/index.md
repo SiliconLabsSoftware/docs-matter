@@ -6,6 +6,15 @@ Register at [Silicon Labs Tech Talks](https://www.silabs.com/about-us/events/tec
 
 >Note: All graphics were extracted from the Tech Talk, *Future-Proofing Matter Security with Secure Vault*, created by the Connectivity Standards Alliance (CSA) and used with permission.
 
+## Principles
+
+The following are the guiding principles for the Matter security design:
+1. **No anonymous joining** - Always requires “proof of ownership” (that is, a device-specific passcode)
+2. **Device Attestation** - Every device has unique identity that is authenticated by the manufacturer and verified through the CSA as a certified device
+3. **Operational Credentials** - When commissioned onto a Matter network every device is given unique operational credentials after verifying their manufacturer credentials
+4. **Network Credentials** - Wi-Fi network key or Thread Master Key are not given until device’s certificate is verified and authenticated properly
+5. **Open standard** - The open-source software is open to third parties vetting the claims by examining the standard and auditing the source code
+
 ## Security Tenants Promoted by the Connectivity Standards Alliance (CSA)
 
 1. Easy, secure, and flexible device commissioning
@@ -44,6 +53,32 @@ A **Border Router** is intended to perform the communication protocol translatio
 End devices are what need to be trusted.
 
 ## Matter Security Provisioning
+
+### Certificates and Process Overview
+
+Each Matter device gets two certificates. The first, the **device certificate**, is programmed by the manufacturer before the device is shipped. This will be used later for device attestation when trying to join the network. The other, the **operational certificate**, is assigned by the commissioner in the commissioning stage. Certificates natively use a CHIP TLV format but can convert to/from X.509 format. All devices are given an operational certificate to prove their authorization on the Matter network (fabric) and securely identify them.
+
+Communication between Matter devices is protected with different keys in different stages. At the commissioning stage, the key is a result of the Password Authenticated Session Establishment (**PASE**) process over the commissioning channel using the passcode from the device's QR code as the input. During this initial setup, verification of possession of the passcode by both commissioner and joining device is confirmed. At the operational stage, the key is a result of the Certificate Authenticated Session Establishment (**CASE**) process over the operational channel using the operational certificate as the input. These sessions are used during normal operation between controller and device to validate that both are part of the Matter network.
+
+### Message Protection
+
+Various cryptographic algorithms are used to ensure communication security and integrity. These include: 
+
+- **Hashing Algorithm** - SHA\-256
+
+- **Message Authentication** - HMAC-SHA\-256
+
+- **Public Key** - ECC Curve NIST P\-256
+
+- **Message Encryption** - AES\-CCM (128 bit keys)
+
+![Payload Encryption](resources/payloadencryption.png)
+
+**Confidentiality** - Message payload is encrypted by the encryption key (AES)
+
+![Address Encryption](resources/addressencryption.png)
+
+**Privacy** - Addresses are encrypted by the privacy key
 
 ### Onboarding Payload
 
@@ -128,10 +163,13 @@ Another data construct that is necessary for Device Attestation is the Certifica
 
 #### Distributed Compliance Ledger
 
-The Distributed Compliance Ledger (DCL) is the immutable single source of truth. It is a private blockchain-based distributed ledger of data records.
+The Distributed Compliance Ledger (DCL) is the immutable single source of truth. It is a private blockchain-based distributed ledger of data records. Reading from the DCL is open to public, but writing to the DCL is restricted to various parties/roles. These roles typically include CSA certification, test house, and vendor roles.
 
-It contains many records about the Device itself like:
+![DCL Overview](resources/dcl-overview.png)
 
+It contains records about all certified devices, such as:
+
+- Certification status
 - Vendor ID (VID)
 - Product ID (PID)
 - Product name
@@ -146,6 +184,15 @@ It also contains the Root PAA certificate for that Device, which is needed to co
 
 ### 3. Device Attestation
 
+Every device has a unique certificate that is signed by the manufacturer. There is no single root CA across all devices. During commissioning the device is challenged to prove possession of the associated private key. The certificate can be validated against the Distributed Compliance Ledger (**DCL**) to verify device certification status.
+
+The hierarchy allows for a 3-level tier:
+- The first level is the Product Attestation Authority (PAA)
+- The PAA will be used to sign the Product Attestation Intermediate (PAI)
+- The PAI will be used to sign the Device Attestation Certificate (DAC). The DAC will be transferred to the commissioner and verified against the DCL.
+
+![Certificate Authentication](resources/certificateauthentication.png)
+
 The focus of this phase is to verify the authenticity of the Device. The high-level steps are:
 
 1. The Commissioner verifies the Device’s:
@@ -156,6 +203,10 @@ The focus of this phase is to verify the authenticity of the Device. The high-le
    - Device Attestation Credentials
    - Distributed Compliance Ledger (DCL) or
    - Certification Declaration (CD)
+
+![Attestation Overview](resources/attestationoverview.png)
+
+DAC is retrieved and verified before the device joins the Thread or Wi-Fi network. The Commissioner issues a challenge to the device to prove it possesses the associated Private Key.
 
 First, the Commissioner asks the Node for the CD, the PAI Certificate, and the DAC. It then pulls the Certificate ID, the PAA Certificate, and the Device VID/PID from the immutable root of trust DCL. At that point, it has all the information needed to perform the device attestation. The Commissioner then runs a certification chain check from the DAC to the PAI, and all certificates should chain together correctly. If that check is passed, the Commissioner takes the certification ID from the DCL and checks it against the CD ID that it pulled from the device itself to make sure the device is a genuine CSA certified device. The final step is to verify that public key in the DAC pulled from the Matter device mathematically matches the private key inserted in the device during manufacture. This is done by sending a message to the device during this final step of Device Attestation, and having the message signed by the device and then the signature verified using the public key from the DAC.
 
