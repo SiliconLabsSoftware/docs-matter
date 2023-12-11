@@ -50,11 +50,20 @@ The Wi-Fi station in Power Save mode wakes up to receive the DTIM beacon and che
 
 ## Building with ICD Functionality
 
-To enable ICD functionality for Wi-Fi, the `matter_icd` component needs to be installed within the Software Components tab.
+To enable ICD functionality for Wi-Fi, the `matter_icd` component needs to be installed within the Software Components tab from Simplicity Studio.
 
-- For rs9116 and WF200: `matter_icd` component is installed by default for lock-app. For thermostat and window need to add mentioned component to enable sleepy.
-- For 917NCP: `matter_icd` component is installed by default for lock-app. For thermostat and window need to add mentioned component to enable sleepy.
-- For SiWx917 SOC: Install `matter_icd` and uninstall `matter_subscription_timeout_resumption` from **.slcp** project file for lock, window and light-switch.
+- For rs9116 and WF200: `matter_icd` component is installed by default for lock-app. For thermostat and window need to install mentioned component to enable sleepy.
+- For 917NCP: `matter_icd` component is installed by default for lock-app. For thermostat and window need to install mentioned component to enable sleepy.
+- For SiWx917 SOC: 
+     
+     - Search `matter_icd` from **search bar** and click on install.
+    
+    ![Search matter icd](./images/search-matter-icd.png)
+
+     - Click on `Replace Subscription Timeout Resumption`. Sleepy support is enabled, build the project.
+    
+    ![Replace matter icd](./images/replace-icd-tab.png)
+
 ## Power Measurements for Wi-Fi Devices
 
 This page explains how to measure the power values for EFR and Wi-Fi co-processor.
