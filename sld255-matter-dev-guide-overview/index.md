@@ -6,7 +6,7 @@ Guide contains a deeper dive into development using examples that are similar to
 those in the [Quick-Start Guides](/matter/<docspace-docleaf-version>/matter-overview)
 as well as other topics of interest.
 
-- [**New Features**](/matter/<docspace-docleaf-version>/matter-new-features) provides 
+- [**New Features**](/matter/<docspace-docleaf-version>/matter-new-features) provides the list of new features in this release
 - [**Prerequisites**](/matter/<docspace-docleaf-version>/matter-prerequisites) provides
 a more extensive list of hardware options as well as additional detail on software
 prerequisites.
