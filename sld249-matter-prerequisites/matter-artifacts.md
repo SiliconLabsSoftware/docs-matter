@@ -3,6 +3,9 @@
 This page provides links to pre-built software image "artifacts" that can be
 used to set up the Matter Demo for the Thread and Wi-Fi use cases.
 
+Images for the items listed below are available under the "Assets" section at the bottom of this page:
+
+<https://github.com/SiliconLabs/matter_extension/releases/tag/v2.2.0>
 
 ## Matter Hub Raspberry Pi Image
 
@@ -12,7 +15,7 @@ Matter chip-tool. Note the image is ~10GB in size so depending on your internet
 connection this download may take some time. Start the Matter Hub Raspberry Pi
 image download here:
 
-https://www.silabs.com/documents/public/software/SilabsMatterPi_2.2.0-1.2.zip
+https://www.silabs.com/documents/public/software/SilabsMatterPi_2.2.0-1.2-extension.zip
 
 ## Radio Co-Processor (RCP) Images
 
@@ -59,7 +62,7 @@ https://github.com/SiliconLabs/matter_extension/releases/download/v2.2.0/SiWx917
 
 **Note**:
 SiWx917 NCP board need to be flashed with proper firmware as mentioned below:
-- ``SiWG917-B.2.9.X.X.X.rps - This firmware image is valid for BRD8036A (A0 Expansion v1.1) board`
+- `SiWG917-B.2.9.X.X.X.rps - This firmware image is valid for BRD8036A (A0 Expansion v1.1) board`
 
 
 ## SiWx917 Firmware for SiWx917 SoC

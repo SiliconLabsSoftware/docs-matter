@@ -1,6 +1,6 @@
 # Firmware Upgrades with Matter applications
 
-The Over The Air (OTA) Software Update functionality provides firmware upgrades within the matter environment.
+The Over The Air (OTA) Software Update functionality provides WiFi firmware upgrades within the matter environment.
 
 ## Hardware Requirements
 
@@ -61,7 +61,7 @@ This will build chip-tool in `out/standalone`.
 
 ### Building OTA Images Using Simplicity Studio
 
-- To create and build matter OTA using Simplicity studio, refer following link [build OTA application using studio](./build-ota-application-using-studio.md).
+- To create and build matter OTA using Simplicity studio, refer following link [build OTA application using studio](./05-build-ota-application-using-studio.md).
 
 ## Executing OTA Scenario
 
@@ -83,7 +83,7 @@ example):
     ./src/app/ota_image_tool.py create -v 0xFFF1 -p 0x8005 -vn 2 -vs "2.0" -da sha256 chip-efr32-lighting-example.gbl chip-efr32-lighting-example.ota
 ```
 
-**Note**: Modify **-vn** to **CHIP_DEVICE_CONFIG_DEVICE_SOFTWARE_VERSION** and **-vs** to **CHIP_DEVICE_CONFIG_DEVICE_SOFTWARE_VERSION** as per OTA-B application Building Step 10 in [Build OTA Images](./build-ota-application-using-studio.md).
+**Note**: Modify **-vn** to **CHIP_DEVICE_CONFIG_DEVICE_SOFTWARE_VERSION** and **-vs** to **CHIP_DEVICE_CONFIG_DEVICE_SOFTWARE_VERSION** as per OTA-B application Building Step 10 in [Build OTA Images](./05-build-ota-application-using-studio.md).
 
 ### Running OTA Provider
 
@@ -104,7 +104,7 @@ example):
 - Silicon Labs Devices will supports below Bootloader variants for EFR32 Boards.
   - Internal Storage Bootloader
   - External Storage Bootloader
-- To Flash the Bootloader Binary along with the application for Silicon Labs Device, refer [Flashing Binaries](./flashing-using-commander.md).
+- To Flash the Bootloader Binary along with the application for Silicon Labs Device, refer [Flashing Binaries](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/flashing-using-commander.md).
 
 ### Running OTA-Requestor
 
