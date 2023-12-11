@@ -93,9 +93,11 @@ Pre-built images for the SiWx917 connectivity firmware are available as per the 
 
 ### Visual Studio Development
 
-In addition to creating and building your Matter project within Simplicity Studio, Silicon Labs also provides Visual Studio Code IDE integration.
+In addition to creating and building your Matter project within Simplicity Studio, Silicon Labs also provides Visual Studio Code IDE integration. 
 
-<!-- Insert information here -->
+**Insert information here**
+
+For more information on development within Visual Studio Code, please visit [Visual Studio Code Enablement](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-vscode-ide/)
 
 ## Next Steps
 
