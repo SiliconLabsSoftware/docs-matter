@@ -91,13 +91,11 @@ Pre-built images for the SiWx917 connectivity firmware are available as per the 
 
 **SD Card-Flashing Software**: Many different applications can be used to prepare an SD card for the Raspberry Pi, such as the [Raspberry Pi Imager](https://www.raspberrypi.com/documentation/computers/getting-started.html#install-using-imager), [balenaEtcher](https://www.balena.io/etcher) and [Rufus](https://silabsiot.slack.com/archives/C018366PBH8/p1654113932884999). The step-by-step example in this document uses the Raspberry Pi Imager.
 
-### Visual Studio Development
+### Visual Studio Code Development
 
-In addition to creating and building your Matter project within Simplicity Studio, Silicon Labs also provides Visual Studio Code IDE integration. 
+In addition to creating and building your Matter project within Simplicity Studio, Silicon Labs also provides Visual Studio Code (VSCode) IDE integration. Matter projects support VSCode integration **with the exception of Matter Solutions projects**.
 
-**Insert information here**
-
-For more information on development within Visual Studio Code, please visit [Visual Studio Code Enablement](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-vscode-ide/)
+For more information on development within Visual Studio Code, please visit [Visual Studio Code Enablement](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-vscode-ide/).
 
 ## Next Steps
 
