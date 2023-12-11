@@ -1,6 +1,6 @@
 # Matter Provisioning
 
-Tools in the Silicon Labs Matter GitHub `provision` folder are used to load mandatory authentication information into Matter devices. For more information on accessing the provision tools and cloning the Silicon Labs Matter GitHub repository see the documentation located here: [Silicon Labs Matter GitHub repo](https://github.com/SiliconLabs/matter).
+Tools in the Silicon Labs Matter GitHub `provision` folder are used to load mandatory authentication information into Matter devices. For more information on accessing the provision tools and cloning the Silicon Labs Matter GitHub repository, see the documentation located here: [Silicon Labs Matter GitHub repo](https://github.com/SiliconLabs/matter).
 
 Most of the required parameters are stored once during the manufacturing process, and shall not
 change during the lifetime of the device. During runtime, two interfaces are
@@ -231,7 +231,7 @@ you can use the `--paa-trust-store-path` to enabled the PAA certificates for tes
 
 ## Example
 
-In Simplicity Studio, add the Attestation Certificate provisioning configuration component to the project and build it. The resulting s37 file is used as an input to the provision.py script in the next step.
+In Simplicity Studio, add the Attestation Certificate provisioning configuration component to the project and build it. The resulting s37 file is used as an input to the `provision.py` script in the next step.
 
 Set up the device with key generation:
 

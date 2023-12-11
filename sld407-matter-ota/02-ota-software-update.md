@@ -10,11 +10,11 @@ controlled by the OTA Requestor component in a Matter Studio project.
 ## Overview
 
 The OTA Software Update scenario requires the following binaries:
-  - **OTA-A**, the running image: a regular application built with the default/older software version value. This application will be updated to the one with a higher software version. In the OTA Software Update process it acts as the OTA Requestor
+  - **OTA-A**, the running image: a regular application built with the default/older software version value. This application will be updated to the one with a higher software version. In the OTA Software Update process it acts as the OTA Requestor.
   - **OTA-B **, the update image: a regular application built with a higher software version value.
-  - **Chip-tool**: the controller that announces the OTA-Provider's address to the application thus triggering the OTA Software Update
-  - **OTA-Provider**: the server that carries the update image and from which the OTA Requestor will download the updated software
-  - **Bootloader**: Silicon Labs Gecko Bootloader image that supports OTA; supports the external (SPI-flash) or the internal storage option
+  - **Chip-tool**: the controller that announces the OTA-Provider's address to the application thus triggering the OTA Software Update.
+  - **OTA-Provider**: the server that carries the update image and from which the OTA Requestor will download the updated software.
+  - **Bootloader**: Silicon Labs Gecko Bootloader image that supports OTA; supports the external (SPI-flash) or the internal storage option.
   
 ## Setting up the OTA Environment
 
@@ -27,7 +27,7 @@ commands on a Linux terminal running on a Mac, Linux, WSL or Virtual
 Machine to clone the repository and run bootstrap to prepare to build the sample
 application images.
 
-1. To download the [SiliconLabs Matter codebase](https://github.com/SiliconLabs/matter.git) run the following commands.
+1. To download the [SiliconLabs Matter codebase](https://github.com/SiliconLabs/matter.git), run the following commands.
 
     ```shell
      $ git clone https://github.com/SiliconLabs/matter.git
@@ -43,7 +43,7 @@ application images.
     $ mkdir out
     ```
 
-    To control the  Matter application you will have to compile and run the chip-tool on either a Linux, Mac or Raspberry Pi. The chip-tool builds faster on the Mac and Linux machines so that is recommended, but if you have access to a Raspberry Pi that will work as well.
+    To control the  Matter application you will have to compile and run the chip-tool on either a Linux, Mac, or Raspberry Pi. The chip-tool builds faster on the Mac and Linux machines so that is recommended, but if you have access to a Raspberry Pi that will work as well.
 
 3. Build the chip-tool
 
@@ -73,7 +73,7 @@ The chip-ota-provider-app binary for a Raspberry Pi is a part of the Artifacts p
       [Matter Artifacts page](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts).
   - Bootloader (only valid for the external SPI-flash storage OTA update) project can be built as a part of any Matter Solution in Studio 
 
-- Using the commander tool or Studio, upload the bootloader to the device running the
+- Using the commander tool or Simplicity Studio, upload the bootloader to the device running the
     application.
 
 ## Running the OTA Download Scenario
@@ -111,7 +111,7 @@ The chip-ota-provider-app binary for a Raspberry Pi is a part of the Artifacts p
     ```shell
     $ ./out/chip-tool accesscontrol write acl '[{"fabricIndex": 1, "privilege": 5, "authMode": 2, "subjects": [112233], "targets": null}, {"fabricIndex": 1, "privilege": 3, "authMode": 2, "subjects": null, "targets": null}]' 1 0
     ```
-- For Matter over OpenThread bring up the OpenThread Border Router and get its operational
+- For Matter over OpenThread, bring up the OpenThread Border Router and get its operational
     dataset, for Matter over WiFi bring up the AP. 
     
 - If the application device had been previously commissioned, hold Button 0
