@@ -1,4 +1,7 @@
-# Create a Project for Matter OTA Application
+# Building Matter applications for OTA Software Update
+
+In Matter OTA Software Update scenario the running image (OTA-A) and the update image (OTA-B) are regular Matter application images and are built using the standard procedure, the only additional configuration required is the use of a higher software version in the update image.
+
 ## Create and Build Project for Matter OTA-A Application
 
 1. [Download](https://www.silabs.com/developers/simplicity-studio) and Install Simplicity Studio.

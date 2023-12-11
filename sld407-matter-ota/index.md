@@ -4,4 +4,3 @@ The Over The Air (OTA) Software Update functionality is enabled by default for a
 
 - [**Matter OTA Bootloader**](./01-ota-bootloader.md)
 - [**Matter OTA Software Update**](./02-ota-software-update.md)
-- [**Matter Firmware Upgrades**](./03-firmware-upgrades.md)
