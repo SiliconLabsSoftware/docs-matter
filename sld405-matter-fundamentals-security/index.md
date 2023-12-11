@@ -60,6 +60,26 @@ Each Matter device gets two certificates. The first, the **device certificate**,
 
 Communication between Matter devices is protected with different keys in different stages. At the commissioning stage, the key is a result of the Password Authenticated Session Establishment (**PASE**) process over the commissioning channel using the passcode from the device's QR code as the input. During this initial setup, verification of possession of the passcode by both commissioner and joining device is confirmed. At the operational stage, the key is a result of the Certificate Authenticated Session Establishment (**CASE**) process over the operational channel using the operational certificate as the input. These sessions are used during normal operation between controller and device to validate that both are part of the Matter network.
 
+### Message Protection
+
+Various cryptographic algorithms are used to ensure communication security and integrity. These include: 
+
+- **Hashing Algorithm** - SHA\-256
+
+- **Message Authentication** - HMAC-SHA\-256
+
+- **Public Key** - ECC Curve NIST P\-256
+
+- **Message Encryption** - AES\-CCM (128 bit keys)
+
+![Payload Encryption](resources/payloadencryption.png)
+
+**Confidentiality** - Message payload is encrypted by the encryption key (AES)
+
+![Address Encryption](resources/addressencryption.png)
+
+**Privacy** - Addresses are encrypted by the privacy key
+
 ### Onboarding Payload
 
 The Onboarding Payload is the information used by the Commissioner to ensure interoperability between commissioners and devices. It can be encoded in different formats:
