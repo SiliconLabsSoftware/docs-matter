@@ -35,7 +35,7 @@ Matter hub/chip-tool are ready and working. Keep the PuTTY session open for the 
         -   BRD4338a - B0 common flash v2.0
 
     **Note:**
-    Refer [SiWx917 SoC](https://www.silabs.com/development-tools/wireless/wi-fi/siwx917-pro-kit?tab=techdocs) for more details
+    Refer [SiWx917 SoC](https://www.silabs.com/development-tools/wireless/wi-fi/siwx917-pro-kit?tab=techdocs) for more details.
 
 - If using NCP hardware, make sure firmware is properly loaded to the NCP using instructions provided in: [Upgrading the Wi-Fi Connectivity Firmware](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/loading-firmware-for-ncp-and-soc-boards).
 
@@ -61,7 +61,7 @@ Matter hub/chip-tool are ready and working. Keep the PuTTY session open for the 
 
    10. **Optional**: Label this device (eg: my_light or my_switch) to make it easier to identify later.
 
-2. Repeat the process with the second Dev board, but selecting the *Matter - Light Switch over Wi-Fi* example instead.
+2. Repeat the process with the second Dev board, but select the *Matter - Light Switch over Wi-Fi* example instead.
 
 ## Creating the Matter Network
 

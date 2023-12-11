@@ -162,7 +162,7 @@ Pre-built images for the SiWx917 connectivity firmware are available as per the 
         -   BRD4338A - B0 common flash v2.0
     
     **Note:**
-    Refer [SiWx917 SoC](https://www.silabs.com/development-tools/wireless/wi-fi/siwx917-pro-kit?tab=techdocs) for more details
+    Refer [SiWx917 SoC](https://www.silabs.com/development-tools/wireless/wi-fi/siwx917-pro-kit?tab=techdocs) for more details.
 
 ### Additional Matter over Wi-Fi Hardware Requirements
 

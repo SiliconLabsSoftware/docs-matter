@@ -73,6 +73,7 @@ SiWx917 SoC boards need to be flashed with proper firmware as mentioned below:
 - `SiWG917-B.2.9.X.X.X.rps - This firmware image is valid for BRD4338A(B0 common flash v2.0) board`
 
 ## SiWx917 SoC Configuration Files for Flashing the Matter Application
+
 In order to flash the Matter Application on the SiWx917 SoC, the Ozone Debugger must be configured for the SiWx917 SoC device by following the instructions on the Ozone Environment Setup for SiWx917 SoC page.
 
-The [JLinkDevices.xml](https://github.com/SiliconLabs/matter_extension/releases/download/v2.2.0/JLinkDevices.xml) and ELF files referenced in the instructions may be found in the Assets section of this page
+The [JLinkDevices.xml](https://github.com/SiliconLabs/matter_extension/releases/download/v2.2.0/JLinkDevices.xml) and ELF files referenced in the instructions may be found in the Assets section of this page.

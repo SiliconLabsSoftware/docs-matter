@@ -17,20 +17,20 @@ two EFR32MG24-based development boards, and a Raspberry Pi used as a Matter hub.
 
 ### Hardware Requirements
 
-#### Matter hub
+#### Matter Hub
 
   - 1 Raspberry Pi 4B
   - 1x high speed, 64 GB SD card
 
-#### Matter devices
+#### Matter Devices
 -  **Matter over Wi-Fi Accessory Device Requirements for NCP Mode**
 
 The Silicon Labs Matter over Wi-Fi NCP mode demo and development requires two boards: the
-Silicon Labs EFR32 Radio board to run the Matter code and either the RS9116, SiWx917 or WF200 to run the Wi-Fi protocol stack.
+Silicon Labs EFR32 Radio board to run the Matter code and either the RS9116, SiWx917, WF200 to run the Wi-Fi protocol stack.
 
 The following boards are supported for the Matter over Wi-Fi demos and development:
 
--   **MG24 boards:**
+-   **MG24 Boards:**
 
 -   BRD4186C / SLWSTK6006A / Wireless Starter Kit / 2.4GHz@10dBm
     -   [XG24-RB4186C](https://www.silabs.com/development-tools/wireless/xg24-rb4186c-efr32xg24-wireless-gecko-radio-board)
@@ -66,11 +66,11 @@ The following boards are supported for the Matter over Wi-Fi demos and developme
 
 - **Matter over Wi-Fi Accessory Device Requirements for SoC Mode**
 
-The Silicon Labs Matter over Wi-Fi demo and development for SoC mode requires the SiWx917 SoC board that supports Matter over Wi-Fi in a single-chip package - the integrated MCU is dedicated for peripheral and application-related processing (Matter), while the ThreadArch® runs the wireless and networking protocol stacks. 
+The Silicon Labs Matter over Wi-Fi demo and development for SoC mode requires the SiWx917 SoC board that supports Matter over Wi-Fi in a single-chip package. The integrated MCU is dedicated for peripheral and application-related processing (Matter), while the ThreadArch® runs the wireless and networking protocol stacks. 
 
 Pre-built images for the SiWx917 connectivity firmware are available as per the instructions on the [Matter Artifacts page](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts). The following boards are supported for the Matter over Wi-Fi demos and development:
 
--   **Wi-Fi SoC boards:**
+-   **Wi-Fi SoC Boards:**
 
 -   SiWx917 / BRD4002A / Wireless Starter Kit
 -   SiWx917 SoC Mode
