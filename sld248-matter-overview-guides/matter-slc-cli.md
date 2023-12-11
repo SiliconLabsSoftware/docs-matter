@@ -2,7 +2,7 @@
 
 The Silicon Labs Configurator (SLC) offers command-line access to application configuration and generation functions. [**Software Project Generation and Configuration with SLC-CLI**](https://www.silabs.com/documents/public/user-guides/ug520-software-project-generation-configuration-with-slc-cli.pdf) provides a complete description and instructions on downloading and using the SLC-CLI tool.
 
-This guide lists the steps that can be followed to create and build a Silicon Labs Matter SLC project using SLC-CLI and `make`. These scripts are evaluation quality and have been verified to work on Ubuntu 22.04.3 LTS and MacOS Version 13.5.1, Windows support will come in the future releases.
+This guide lists the steps to create and build a Silicon Labs Matter SLC project using SLC-CLI and `make`. These scripts are evaluation quality and have been verified to work on Ubuntu 22.04.3 LTS, MacOS Version 13.5.1, and Windows 10.
 
 ## Setting up the Environment
 
@@ -32,38 +32,65 @@ Install the following python packages:
 pip3 install dload
 ```
 
-Export the path of your GSDK download to the environment variable `GSDK_ROOT`. Then cd to cloned extension directory and run the `sl_setup.py` script. This will install the ARM gcc toolchain, SLC-CLI, ZAP and Java.
+Change directory to cloned extension directory and run the `sl_setup.py` script. This will install the ARM gcc toolchain, SLC-CLI, ZAP, Simplicity-commander, and Java. 
+
+For Mac and Linux:
 
 ```C
-export GSDK_ROOT=Path/To/Gsdk/Download
 cd extension/matter_extension
 python3 slc/sl_setup_env.py
 ```
-
-The sl_setup_env.py script creates a shell script script that can be used to set the environment variables needed for the installed tools, ARM toolchain, SLC-CLI, Java and ZAP.
+For Windows: 
 
 ```C
-source slc/tools/sl_env_vars.sh
+cd extension\matter_extension
+python slc\sl_setup_env.py
 ```
+
+The `sl_setup_env.py` script creates an .env file to be used to set the environment variables needed for the installed tools, ARM toolchain, SLC-CLI, Java ZAP, Simplicity-commander, and Java.
 
 ## Creating an Application Project
 
 Run the `sl_create_new_app.py` script to create a BRD4161A project with name `MyNewApp` starting from the `lighting-app-thread.slcp` example application project file:
 
+The script will ask user permission to trust the `gecko_sdk` and `matter_extension` before generating.
+
+For Mac and Linux:
+
 ```C
 python3 slc/sl_create_new_app.py MyNewApp slc/sample-app/lighting-app/efr32/lighting-app-thread.slcp brd4161a
+```
+For Windows:
+```C
+python slc\sl_create_new_app.py MyNewApp slc\sample-app\lighting-app\efr32\lighting-app-thread.slcp brd4161a
 ```
 
 ## Building an Application Project
 
 After a project is created the `sl_build.py` script can be used to re-generate the `MyNewApp` project and build it:
 
+For Mac and Linux:
+
 ```C
 python3 slc/sl_build.py MyNewApp/lighting-app-thread.slcp brd4161a
 ```
 
+For Windows:
+
+```C
+python slc\sl_build.py MyNewApp\lighting-app-thread.slcp brd4161a
+```
+
+
 Alternately, one can use SLC-CLI commands directly to generate the project and then use `make` to build it.
 
+Windows users will need to install `make` in their system. You can use your own or follow these steps to get `make`.
+1. Install the MSYS terminal, which provides a Unix-like environment on Windows. 
+2. Open the MSYS terminal and install `make` using the command `pacman -S make`.
+3. Run command `where make`, copy the path, and add it to the PATH environment variable. 
+4. Restart your command line terminal and run `slc/sl_build.py` or run make directly. You might need to reboot.
+
+Note: In rare cases, the build may fail due to missing files in the `zap-generated/` directory. The workaround is to delete the `.zap` folder in the home directory.
 ## Modifying an Application Project
 
 The resulting user project can be modified like any other SLC project: software components can be added or removed by modifying the project's .slcp file, configuration can be applied by modifying the files in the `config` directory, the application logic can be managed through the files in the `src` directory. Various SLC-CLI commands can be used to examine, validate, or re-generate the project after a modification, see [**Software Project Generation and Configuration with SLC-CLI**](https://www.silabs.com/documents/public/user-guides/ug520-software-project-generation-configuration-with-slc-cli.pdf) for more information.
