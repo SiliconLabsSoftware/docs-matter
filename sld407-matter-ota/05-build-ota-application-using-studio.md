@@ -48,7 +48,7 @@ In Matter OTA Software Update scenario the running image (OTA-A) and the update 
 
 12. Right-click on the selected *.s37* binary and click on *flash to device*.
   
-    ![Silicon Labs - design](images/siwx917-soc-flash-todevice.png)
+    ![Silicon Labs - design](images/siwx917-soc-flashtodevice.png)
 
 13. Flash programmer window will be opened, Click on *Erase button and then Program* button to start the flashing.
   

@@ -88,11 +88,11 @@ Refer to the [Wi-Fi Software Installation Page](./software-installation)
 
 1. Mount the EFR32 radio board on the EFR32 WSTK board.
 
-    ![Mount EFR on radio board](./images/mount-efr32.png)
+    ![Mount EFR on radio board](images/mount-efr32.png)
 
 2. Connect the NCP expansion board to the EXP header on the EFR32 WSTK board.
 
-    ![Connect expansion board](./images/mount-expansion.png)
+    ![Connect expansion board](images/mount-expansion.png)
 
 3. Toggle the upper switch on the NCP expansion board to EXP-UART.
 4. Connect the EFR32 WSTK board to computer using a USB cable.
@@ -111,26 +111,26 @@ This section describes how to create a project for the EFR32 boards.
 
 1. In Simplicity Studio, click **Example Projects and Demos**, select a project, and click **Create**.
 
-   ![Example Projects and Demos](./images/create-project-select-efx-example.png)
+   ![Example Projects and Demos](images/create-project-select-efx-example.png)
 
 2. In the New Project Wizard window, click **Finish**.
 
-   ![Finish project](./images/create-project-click-finish.png)
+   ![Finish project](images/create-project-click-finish.png)
 
 3. Once the project is created, right-click the project and select **Build Project** in the Project Explorer tab.
 
-    ![Project Created](./images/project-created-efx32.png)
+    ![Project Created](images/project-created-efx32.png)
 
 4. Once the project is compiled successfully, go to the Project Explorer view and expand the binaries folder to flash the binary.
 
-    ![Binaries folder](./images/select-binary-to-flash-efx32.png)
+    ![Binaries folder](images/select-binary-to-flash-efx32.png)
 
 5. Right-click the selected *.s37* binary and click **flash to device**.
 
-    ![Flash to Device](./images/siwx917-soc-flash-todevice.png)
+    ![Flash to Device](images/siwx917-soc-flashtodevice.png)
 
 6. Flash programmer window will be opened. Click **Erase** and then **Program** to start flashing.
 
-    ![Flash binary](./images/flash-binary-to-efx32-device.png)
+    ![Flash binary](images/flash-binary-to-efx32-device.png)
 
 **Note:** Output of the EFR32 NCP Host application will be displayed on the J-Link RTT Viewer.

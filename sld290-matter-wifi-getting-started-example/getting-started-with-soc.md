@@ -53,7 +53,7 @@ Refer to the [Wi-Fi Software Installation Page](./software-installation).
 
 1. Mount the SiWx917 radio board on the SiWx917 WSTK board.
 
-    ![SiWx917 WSTK](./images/mount-soc.png)
+    ![SiWx917 WSTK](images/mount-soc.png)
 
 2. Connect your SiWx917 Wireless Starter Kit (WSTK) board to your computer using a USB cable.
 3. Simplicity Studio will detect and display your radio board.
@@ -81,40 +81,40 @@ In Simplicity Studio 5, create the Light Matter Accessory Devices (MAD):
 
    - BRD4338A (Common Flash)
 
-   ![SoC board selection](./images/siwx917-soc-board-selection.png)
+   ![SoC board selection](images/siwx917-soc-boardselection.png)
 
 5. Once the board shows up in the Debug Adapters view, select it.
 
-    ![SoC debug adapter](./images/siwx917-soc-debug-adapter.png)
+    ![SoC debug adapter](images/siwx917-soc-debugadapter.png)
 
 6. Open the Example Projects and Demos tab, select the **Matter** filter and enter "*Wi-Fi*" in **Filter on keywords**. Click **CREATE**.
 
-    ![Create project](./images/siwx917-soc-create-wifi-projects.png)
+    ![Create project](images/siwx917-soc-create-wifiprojects.png)
 
 7. Optionally rename the project, and click **Finish**.
 
-    ![Project wizard](./images/siwx917-soc-project-wizard.png)
+    ![Project wizard](images/siwx917-soc-projectwizard.png)
 
 8. Once the project is created, right-click on the project and select *Build Project* in the Project Explorer tab.
 
-    ![Build project](./images/siwx917-soc-build-wifi-project.png)
+    ![Build project](images/siwx917-soc-build-wifiproject.png)
 
 9. To flash the application, connect the compatible dev board to the PC if not yet done.
 10. Once the project is compiled successfully, go to the Project Explorer view and select the binary to be flashed.
 
-    ![binary selection](./images/siwx917-soc-isp-binary-selection.png)
+    ![binary selection](images/siwx917-soc-isp-binaryselection.png)
 
 11. Right-click the selected *_isp.bin* binary and click *flash to device*.
 
-    ![Flash to device](./images/siwx917-soc-flash-todevice.png)
+    ![Flash to device](images/siwx917-soc-flashtodevice.png)
 
 12. The Flash programmer window opens. Click **Program** to start flashing.
 
-    ![Flash program window](./images/siwx917-soc-flash-program.png)
+    ![Flash program window](images/siwx917-soc-flashprogram.png)
 
     **Note:** Output of the SiWX917 SoC application will be displayed on the J-Link RTT Viewer.
 
 13. In order to debug your Matter Application, Right-click on the selected **Matter Project** and click on *Debug As*.
 
-    ![Debug](./images/siwx917-soc-debug.png)
+    ![Debug](images/siwx917-socdebug.png)
     
