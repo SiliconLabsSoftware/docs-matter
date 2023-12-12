@@ -20,22 +20,18 @@ CHIP, and a template for creating real products on the Silicon Labs platform.
 
 Each Matter application consists of the following layers:
 
--   Matter SDK: Source code necessary to communicate through the Matter network
-    over Thread or Wi-Fi
--   Data model layer in the form of clusters. There are two types of clusters:
-    -   Utility Clusters:
-        -   They represent common management and diagnostic features of a Matter
+- Matter SDK: Source code necessary to communicate through the Matter network over Thread or Wi-Fi
+- Data model layer in the form of clusters. There are two types of clusters:
+  - Utility Clusters:
+    - They represent common management and diagnostic features of a Matter
             endpoint
-        -   Identify cluster is an example of a Utility Cluster. Given a Node
-            ID, it can be used to Blink LED0 to the corresponding Silicon Labs
-            WSTK
-    -   Application Clusters:
-        -   These clusters represent functionalities specific to a given
+    - Identify cluster is an example of a Utility Cluster. Given a Node
+            ID, it can be used to Blink LED0 to the corresponding Silicon Labs WSTK
+  - Application Clusters:
+    - These clusters represent functionalities specific to a given
             application
-        -   Door Lock Cluster is an example of an Application specific cluster.
-            This cluster contains commands to lock and unlock a door(door-lock
-            is represented by an LED), with options to set passwords and lock
-            schedules
+    - Door Lock Cluster is an example of an Application specific cluster.
+            This cluster contains commands to lock and unlock a door(door-lock is represented by an LED), with options to set passwords and lock schedules
 
 ## Clusters
 

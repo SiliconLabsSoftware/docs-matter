@@ -32,7 +32,7 @@ Install the following python packages:
 pip3 install dload
 ```
 
-Change directory to cloned extension directory and run the `sl_setup.py` script. This will install the ARM gcc toolchain, SLC-CLI, ZAP, Simplicity-commander, and Java. 
+Change directory to cloned extension directory and run the `sl_setup.py` script. This will install the ARM gcc toolchain, SLC-CLI, ZAP, Simplicity-commander, and Java.
 
 For Mac and Linux:
 
@@ -40,7 +40,8 @@ For Mac and Linux:
 cd extension/matter_extension
 python3 slc/sl_setup_env.py
 ```
-For Windows: 
+
+For Windows:
 
 ```C
 cd extension\matter_extension
@@ -60,7 +61,9 @@ For Mac and Linux:
 ```C
 python3 slc/sl_create_new_app.py MyNewApp slc/sample-app/lighting-app/efr32/lighting-app-thread.slcp brd4161a
 ```
+
 For Windows:
+
 ```C
 python slc\sl_create_new_app.py MyNewApp slc\sample-app\lighting-app\efr32\lighting-app-thread.slcp brd4161a
 ```

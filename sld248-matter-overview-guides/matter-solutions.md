@@ -1,30 +1,25 @@
-# Solutions 
-
+# Solutions
 
 ## General
 
 Matter solutions allow the user to generate multiple projects at once, to generate a combined solution/binary and allow multiple post-build operations to provide
-flexibility and unison when developing a Matter example or application. For example, with the Matter Lighting over Thread with Bootloader Solution 
-a user can generate a Matter Bootloader, a Matter Lighting example, and the combined Bootloader + Example production image. Solutions will also generate a 
-.gbl binary for the users to make use of and create an .ota software image update binary (directions listed below).
+flexibility and unison when developing a Matter example or application. For example, with the Matter Lighting over Thread with Bootloader Solution a user can generate a Matter Bootloader, a Matter Lighting example, and the combined Bootloader + Example production image. Solutions will also generate a .gbl binary for the users to make use of and create an .ota software image update binary (directions listed below).
 
 ## Solution Creation
 
-To create a Matter Solution, proceed to the "Example Project Selection" section of Simplicty Studio's "New Project Wizard". On the left hand side, ensure "Example Projects" is 
-turned off, "Solution Examples" is turned on, and "Matter" under the "Technology" section is checked. Then, select for which application example you wish to create a project from.
+To create a Matter Solution, proceed to the "Example Project Selection" section of Simplicty Studio's "New Project Wizard". On the left hand side, ensure "Example Projects" is turned off, "Solution Examples" is turned on, and "Matter" under the "Technology" section is checked. Then, select for which application example you wish to create a project from.
 
-![Solution Generation](./images/SolutionGeneration.png)
+![Solution Generation](./images/solution-generation.png)
 
 ## Solution Building
 
-Building via solutions behaves just like a normal project. Just ensure the top-level solution is selected and build! Artifacts from the resulting projects can be found within the 
-`artifact` directory under each distinct project within the solution.
+Building via solutions behaves just like a normal project. Just ensure the top-level solution is selected and build! Artifacts from the resulting projects can be found within the `artifact` directory under each distinct project within the solution.
 
-![Solution Artifacts](./images/SolutionArtifacts.png)
+![Solution Artifacts](./images/solution-artifacts.png)
 
 ## OTA Creation
 
-Due to certain limitations with the way our Matter examples are built within Simplicity Studio, OTA file generation must be conducted by the user via the command line. 
+Due to certain limitations with the way our Matter examples are built within Simplicity Studio, OTA file generation must be conducted by the user via the command line.
 
 To create an OTA file, first build a Matter example via solutions. Locate the resulting .gbl file within the `artifact` directory. This will be used as an argument to the GBL creation script.
 Then, locate the directory that holds the Matter Extension within the GSDK in Simplicity Studio. The location should be similar to: `/Users/User/SimplicityStudio/SDKs/gecko_sdk/extension/matter_extension`. Once found, open a terminal at this location and run the command:

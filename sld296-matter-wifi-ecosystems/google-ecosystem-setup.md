@@ -118,7 +118,7 @@ Having finished the above, the only step left to have your setup ready is to ope
 
 11. Once the Google Home app has found the device, it will ask you to scan its QR code.
 
-12.  Google Home app asks if you want to connect this device to your Google account. Tap **I agree**.
+12. Google Home app asks if you want to connect this device to your Google account. Tap **I agree**.
 ![Add to account](./images/google-home-app-account-prompt.png?width=40%&height=40%)
 
 13. The Google Home app now starts commission the device with Bluetooth LE.

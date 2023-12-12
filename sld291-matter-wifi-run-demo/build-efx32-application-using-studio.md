@@ -44,7 +44,7 @@ This page provides a detailed description on how to create an Wi-Fi NCP project 
 
 12. Right-click the selected '.s37' binary and click **flash to device**.
 
-    ![flash to device](./images/SiWx917-soc-flash-todevice.png)
+    ![flash to device](./images/siwx917-soc-flash-todevice.png)
 
 13. The Flash programmer window opens. Click **Erase** and then **Program** to start flashing.
 

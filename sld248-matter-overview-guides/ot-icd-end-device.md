@@ -58,13 +58,13 @@ For Matter configuration, see the [**Matter ICD**](/matter/<docspace-docleaf-ver
 
 1. To begin creating an OpenThread ICD example, create a generic Matter over Thread example via the **New Project Wizard**. Lighting example will be used for demonstration purposes. Lock and Light-Switch applications come out-of-box with ICD enabled.
 
-![Project Generation](images/IcdProjectGeneration.png)
+![Project Generation](images/icd-project-generation.png)
 
 1. Once the project is generated, navigate to the software components section and install the Matter ICD component. Replace all subsequent conflicting components via the ensuing pop-up options (See below). This will install the necessary Thread Network Layer (MTD) component and ICD source code. This will also remove the conflicting Thread Network Layer (FTD) component.
 
-![ICD End Device Component](images/IcdComponent.png)
+![ICD End Device Component](images/icd-component.png)
 
-![ICD Component Replacement](images/IcdReplace.png)
+![ICD Component Replacement](images/icd-replace.png)
 
 3. ICD functionality should be installed and ready to build. Build the project as you would a normal example and flash the resulting binary to your specified end device. You should be able to commission the device the same way as non-ICD examples using the QR code URL (generated within the RTT logs at startup/BTN0 press).
 

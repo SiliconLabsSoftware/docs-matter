@@ -13,7 +13,7 @@ To change default values corresponding to Matter ICD examples, modify them in ei
 1. `config/sl_matter_icd_config.h`
 2. ICD component configurator
 
-![ICD Configuration](images/IcdConfig.png)
+![ICD Configuration](images/icd-config.png)
 
 ## ICD Device Types
 
@@ -205,6 +205,6 @@ This feature is enabled by default on all examples with the exception of the doo
 ## Subscription Synchronization
 
 To avoid forcing an ICD to become active multiple times, the Matter SDK allows an ICD to synchronize its subscription reporting and send all the reports at the same time.
-The mechansim synchronizes the maximum interval of all subscriptions to only require the ICD to become active once. This functionality is provided by component `matter_subscription_synchronization`.
+The mechanism synchronizes the maximum interval of all subscriptions to only require the ICD to become active once. This functionality is provided by component `matter_subscription_synchronization`.
 
 This feature is enabled by default on the door-lock sample app and the light-switch sample application.

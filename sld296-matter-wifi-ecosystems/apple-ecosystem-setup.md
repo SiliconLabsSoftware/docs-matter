@@ -19,7 +19,7 @@ Refer to Apple's [Set up HomePod or HomePod mini](https://support.apple.com/en-i
 
 ## Matter Demo Execution using Apple HomePod
 
-1. Refer to [Getting Started with Matter over Wi-Fi](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example) for instructions on setting up Silicon Labs Matter Accessory Device 
+1. Refer to [Getting Started with Matter over Wi-Fi](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example) for instructions on setting up Silicon Labs Matter Accessory Device.
 
 2. Connect a board to a computer.
 
@@ -31,7 +31,7 @@ Refer to Apple's [Set up HomePod or HomePod mini](https://support.apple.com/en-i
 4. In the Apple Home App, click the "+" button.
 ![Apple Home App](./images/apple-home-app.png?width=40%&height=40%)
 
-5. Select **Add Accessory**
+5. Select **Add Accessory**.
 ![Add accessory](./images/apple-home-app-add-accessory.png?width=40%&height=40%)
 
 6. It will prompt you to scan the QR Code using a smartphone camera.

@@ -14,6 +14,7 @@ See [How to Set Up an Apple Home Ecosystem](./apple-ecosystem-setup). Then use t
 5. The Setup Code appears, with a message printed as shown below in the Apple Home App.
 
     ![Apple Home App setup code](./images/matter-apple-application-setup-code.png)
+
 6. Open Google Home App, click the **Devices Section**, and click **Add**.
 7. Click **Set up without QR Code** and insert the setup code displayed in Step 5.
 

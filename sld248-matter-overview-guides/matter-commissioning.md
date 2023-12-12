@@ -21,11 +21,11 @@ This page focuses on Wi-Fi and Thread. The first step for these devices is to en
 
 The following figure provides an overview of the commissioning process and the actions each role performs.
 
-![Commissioning Overview](./images/CommissioningOverview.png)
+![Commissioning Overview](./images/commissioning-overview.png)
 
 ## Example Commissioning Flow
 
-![Steps 1-4](./images/CommissioningSteps1-4.png)
+![Steps 1-4](./images/commissioning-steps1-4.png)
 
 In step 1, the Matter device must enter commissioning mode in one of the two scenarios described above.
 
@@ -35,7 +35,7 @@ Step 3 is to set up the BLE beaconing and connection between the mobile phone an
 
 As the connection should be secure, step 4 is to secure the connection in a process known as password-authenticated session establishment (**PASE**). The passcode derived from the QR code is used as an input for this process. The output is the security key used by the connection.
 
-![Steps 5-7](./images/CommissioningSteps5-7.png)
+![Steps 5-7](./images/commissioning-steps5-7.png)
 
 After the secured connection is established, step 5 is to verify the Matter device's manufacturer certificate and compliance status. Each Matter device must have a device certificate programmed before it is shipped. The mobile phone, acting as administrator, reads the device certificate through the commissioning channel, then communicates with a remote database to validate the certificate and the compliance status of the device. The remote database is called the Distributed Compliance Ledger (**DCL**).
 
@@ -43,7 +43,7 @@ Step 6 is to install the operational certificate for the device. The administrat
 
 After operational security is configured, step 7 is to configure the operational network for the device. For Wi-Fi devices, the SSID and the password are configured. For Thread devices, the PAN ID, network key, and other parameters are configured.
 
-![Steps 8-10](./images/CommissioningSteps8-10.png)
+![Steps 8-10](./images/commissioning-steps8-10.png)
 
 In step 8, the device starts to join the operational network with the configured parameters.
 

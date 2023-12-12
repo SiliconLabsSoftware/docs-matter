@@ -90,7 +90,7 @@ From the Quick Access or Profiler menu, select **Start Energy Capture**.
 
 **Note**: A quick-start guide on the Energy Profiler user interface is in the Simplicity Studio User's Guide's [Energy Profiler User Interface section](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-tools-energy-profiler/energy-profiler-user-interface).
 
-### Power Consumption Measurement Using Energy Profiler for Wi-Fi Devcies
+### Power Consumption Measurement Using Energy Profiler for Wi-Fi Devices
 
 Analyze the power values using Energy Profiler.
 

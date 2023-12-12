@@ -37,7 +37,7 @@ The Generator Firmware (GFW) is a baremetal application that runs on the targete
 - Stores the Attestation Data on the main flash (CD, PAI, DAC)
 - Stores the size and offsets used to store the Attestation Data, along with the KeyId used to generate the private-key
 
-The main source code of the GFW is located under `povision/generator`, while the board support is located under `provision/support`. Pre-compiled images for the supported chips can be found in `provision/images`.
+The main source code of the GFW is located under `provision/generator`, while the board support is located under `provision/support`. Pre-compiled images for the supported chips can be found in `provision/images`.
 
 The directory structure is as follows:
 

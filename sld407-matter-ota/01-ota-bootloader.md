@@ -101,7 +101,7 @@ NVM section of the flash. In other words, the slot start address must be greater
 than the end of the running image address and the sum of the start address and
 the slot size must be less than the address of the NVM section.
 
-![Internal Flash Layout](./images/InternalFlashLayout.png)
+![Internal Flash Layout](./images/internal-flash-layout.png)
 
 The simplest way to get the relevant addresses for the running image and NVM is
 by using the Simplicity Commander tool:
@@ -158,11 +158,11 @@ on BRD4186C.
 
 - Flash the application image, bootloader. Erase the flash.
 
-    ![Erase Flash](./images/ApplicationUploadEraseFlash.png)
+    ![Erase Flash](./images/application-upload-erase-flash.png)
 
 - In Simplicity Commander display the flash map
 
-    ![Flash Map](./images/CommanderFlashMap.png)
+    ![Flash Map](./images/commander-flash-map.png)
 
 - The address of the first available page is 0x080b8000, the end address of
     the last available block is 0x08172000. This means you can set the Slot
@@ -173,7 +173,7 @@ on BRD4186C.
     image on 512kB device)" example. Configure the Bootloader Storage Slot
     component and set Slot Address and Slot Size.
 
-    ![StudioProject](./images/StudioProject.png)
+    ![StudioProject](./images/studio-project.png)
 
 - Enable the "GBL Compression (LZMA)" component.
 - Build the project
