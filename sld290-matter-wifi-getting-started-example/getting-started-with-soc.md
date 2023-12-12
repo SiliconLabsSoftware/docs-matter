@@ -103,5 +103,5 @@ In Simplicity Studio 5, create the Light Matter Accessory Devices (MAD):
 ![Flash program window](./images/SiWx917-soc-flash-program.png)
    **Note:** Output of the SiWX917 SoC application will be displayed on the J-Link RTT Viewer.
 
-1.  In order to debug your Matter Application, Right-click on the selected **Matter Project** and click on *Debug As*.
+13.  In order to debug your Matter Application, Right-click on the selected **Matter Project** and click on *Debug As*.
 ![Debug](./images/SiWx917-soc-debug.png)
