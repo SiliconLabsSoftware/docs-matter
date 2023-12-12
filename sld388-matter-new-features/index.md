@@ -10,6 +10,8 @@
 - Adds LCD display support on SiWx917 SoC for all the Wi-Fi Matter Apps
 - Adds support for Direct Internet Connectivity on the SiWx917 SoC & NCP
 - Support for Visual Studio Code integration
+- Adds support for certificate provisioning on SiWx917 SOC
+- Adds support for Firmware Upgrade on SiWx917 SOC
 
 ### Self-Provisioning Mode
 

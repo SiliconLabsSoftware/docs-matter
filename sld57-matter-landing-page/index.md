@@ -10,6 +10,10 @@ an *IoT Service* in a Unify Framework.
 
 ![Silicon Labs Matter Summary](./resources/silicon-labs-matter.png)
 
+Device: SiWx917 SoC
+
+![Silicon Labs - SiWx917 soc](./resources/silicon-labs-matter-SiWx917.png)
+
 ## Two Paths for Development
 
 These pages are for users who want to develop Matter applications in Simplicity Studio. The Simplicity Studio development path is the preferred path if you are looking for a GUI-based development experience in which you can create production-ready projects from a well-tested library. The Simplicity Studio development path also natively supports development on the Windows operating system. As a result, Windows users should use Simplicity Studio for their development environment.

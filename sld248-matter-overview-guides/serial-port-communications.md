@@ -16,7 +16,7 @@ The matter-shell exposes the configuration and the management APIs via the matte
 
 2. To install the software packages for Simplicity Studio, refer [Software Package Installation](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/software-installation#installation-of-software-packages).
 
-3. Log in to Simplicity Studio and connect the EFR32 board to the computer.
+3. Log in to Simplicity Studio and connect the EFR32MG2x or SiWx917 SOC board to the computer.
 
 4. Go to the All Products section.
 
@@ -52,15 +52,20 @@ The matter-shell exposes the configuration and the management APIs via the matte
 
 12. After a successful build, commission the device as described in [Commission Matter Platform](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/use-case-execution#creating-the-matter-network).
 
-13. Open Tera Term and under New Connection, under Serial Port, select JLink port and click **OK**.
+13. For SiWx917 SOC Connect the TTL cables with Radio Board to execute **Matter Shell**.
+    ![Connect TTL Cable](./images/shell-ttl-cable-soc.png)
+
+**Note**:- For EFR32MG2x Devices TTL Cable support is not required.
+
+14. Open Tera Term and under New Connection, under Serial Port, select JLink port and click **OK**.
 
     ![Silicon Labs - design](./images/tera-term-select-jlink-port.png)
 
-14. Click on Setup from Menu bar and change the value to 115200 under Speed category, then click on New setting.
+15. Click on Setup from Menu bar and change the value to 115200 under Speed category, then click on New setting.
 
     ![Silicon Labs - design](./images/tera-term-selection-in-terminal.png)
 
-15. Inside **Terminal** Set the below values and click **OK**.
+16. Inside **Terminal** Set the below values and click **OK**.
 
     - Terminal Size : 80 * 24
     - New-Line
@@ -69,23 +74,23 @@ The matter-shell exposes the configuration and the management APIs via the matte
 
     ![Silicon Labs - design](./images/tera-term-terminal-setup.png)
 
-16. Click on File from Menu bar again, select **Serial Port** option.
+17. Click on File from Menu bar again, select **Serial Port** option.
 
     ![Silicon Labs - design](./images/tera-term-select-serial-port.png)
 
-17. Increase the speed to **115200** and click on **New setting**.
+18. Increase the speed to **115200** and click on **New setting**.
 
     ![Silicon Labs - design](./images/tera-term-select-speed.png)
 
-18. Click on File from Menu bar, select TTY Record. Create any empty file with extension " .tty " and click on save.
+19. Click on File from Menu bar, select TTY Record. Create any empty file with extension " .tty " and click on save.
 
     ![Silicon Labs - design](./images/tera-term-tty-record.png)
 
-19. After creating tty file just click on **Enter** button from Keyboard then it will show you **matterCli** terminal.
+20. After creating tty file just click on **Enter** button from Keyboard then it will show you **matterCli** terminal.
 
     ![Silicon Labs - design](./images/tera-term-matter-cli.png)
 
-20. Send any command through **matterCli** terminal, from the below list of commands:
+21. Send any command through **matterCli** terminal, from the below list of commands:
 
     - doorlock event door-state-change "DoorState"
         - Door State List
@@ -109,7 +114,7 @@ The matter-shell exposes the configuration and the management APIs via the matte
 
       ![Silicon Labs - design](./images/matter-shell-command-send.png)
 
-21. After changing DoorState and AlarmCode in **matterCli**, run the commands below using chip-tool on Raspberry PI to verify the event.
+22. After changing DoorState and AlarmCode in **matterCli**, run the commands below using chip-tool on Raspberry PI to verify the event.
   
     - To Read Door State
   

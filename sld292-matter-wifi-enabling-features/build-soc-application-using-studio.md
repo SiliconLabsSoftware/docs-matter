@@ -26,6 +26,8 @@ In Simplicity Studio 5, create the Light MAD:
 
     ![Silicon Labs - design](./images/SiWx917-soc-create-wifi-projects.png)
 
+   **Note**:- Make sure Installed Simplicity Studio is having IDE/GNU ARM v12.2.x version.
+
 7. Rename the **Project Name** if you wish, and click **Finish**.
 
     ![Silicon Labs - design](./images/SiWx917-soc-project-wizard.png)

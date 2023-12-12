@@ -32,8 +32,7 @@ Below are the software tools, packages, and images required for executing Matter
 - Tera Term
 - Simplicity Studio
 - Putty for controlling EFR32 hardware using chip-tool controller
-- Ozone Debugger for logging and debugging (Optional)
-- JLink RTT for logging only (Optional)
+- JLink RTT for logging only
 
 ### Software Packages
 
@@ -42,7 +41,9 @@ Below are the software tools, packages, and images required for executing Matter
 
 ### Firmware Images
 
-Refer to the [Matter Artifacts Page](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts#siwx917-firmware-for-siwx917-soc).
+- Download the Firmware images from [Matter Artifacts Page](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts#siwx917-firmware-for-siwx917-soc).
+
+- For Flashing the firmware images, Refer to [Flashing Firmware Images](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/loading-firmware-for-ncp-and-soc-boards).
 
 ## Installation of the Wi-Fi Software Tools and Packages
 
@@ -102,5 +103,5 @@ In Simplicity Studio 5, create the Light Matter Accessory Devices (MAD):
 ![Flash program window](./images/SiWx917-soc-flash-program.png)
    **Note:** Output of the SiWX917 SoC application will be displayed on the J-Link RTT Viewer.
 
-13. In order to debug your Matter Application, Right-click on the selected *_isp.bin* binary and click on *Debug As*.
+13.  In order to debug your Matter Application, Right-click on the selected **Matter Project** and click on *Debug As*.
 ![Debug](./images/SiWx917-soc-debug.png)

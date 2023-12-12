@@ -9,7 +9,7 @@ Direct Internet Connectivity (DIC) is a Silicon Labs-only feature to connect Mat
 
 The following diagram illustrates the end-to-end flow for Direct Internet Connectivity.
 
-  ![Silicon Labs - DIC design](images/dic-flow.png)
+![Silicon Labs - DIC design](images/dic-flow.png)
 
 ## Prerequisites
 
@@ -44,15 +44,15 @@ A remote user is used to check the state of a Matter device. In this context, MQ
 
 2. After Enabling DIC feature in the Matter extension code, click **Preferences** and go to **SDKs tab** in Simplicity Studio.
 
-   ![Extension refresh in tab](images/dic-extension-refresh.png)
+  ![Extension refresh in tab](images/dic-extension-refresh.png)
 
 3. In the **SDKs** tab, click  **Gecko SDK** and click **Refresh**. It will refresh matter extension code for changes made in step 1.
 
-   ![Extension refresh](images/dic-extension-refresh-1.png)
+  ![Extension refresh](images/dic-extension-refresh-1.png)
 
 4. After refreshing the Matter extension, create and build a project for the Silicon Labs Device Platform. Refer the following:
-    - [Creating and Building Project for NCP Board](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/getting-started-efx32-ncp#building-and-flashing-an-application)
-    - [Creating and Building Project for SoC Board](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/getting-started-with-soc#building-the-917-soc-matter-accessory-devices-using-simplicity-studio)
+  - [Creating and Building Project for NCP Board](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/getting-started-efx32-ncp#building-and-flashing-an-application)
+  - [Creating and Building Project for SoC Board](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/getting-started-with-soc#building-the-917-soc-matter-accessory-devices-using-simplicity-studio)
 
 **Note**: Matter extension code is located at the following location: `C:\Users\system_name\SimplicityStudio\SDKs\gecko_sdk\extension`.
 
@@ -63,9 +63,9 @@ User Setup (MQTT Explorer):
 - Sharing status of device to cloud
   - The following diagram shows the end-to-end flow for sharing status from a Matter device to the Cloud.
 
-    ![Silicon Labs - DIC design](images/dic-status-sharing.png)
+![Silicon Labs - DIC design](images/dic-status-sharing.png)
 
-    **Note**: For reference, Lighting App commands are given in the above image. Other application commands also can be passed.
+  **Note**: For reference, Lighting App commands are given in the above image. Other application commands also can be passed.
 
 - For the end-to-end commands to be executed from chip-tool, refer to [Running the Matter Demo Over Wi-Fi](/matter/<docspace-docleaf-version>/matter-wifi-run-demo).
 - Below are the application-specific attribute/s information or state shared to the cloud:
@@ -121,13 +121,13 @@ User Setup (MQTT Explorer):
 
 - Click **Publish** to execute the command.
 
-   ![Silicon Labs - DIC design](images/control-device-through-cloud.png)
+![Silicon Labs - DIC design](images/control-device-through-cloud.png)
 
 - Download AWS OTA Image through cloud interface.
   
   - The diagram below provides the end to end flow of firmware upgrade feature through AWS.
 
-      ![Silicon Labs - DIC design](images/dic-aws-ota.png)
+  ![Silicon Labs - DIC design](images/dic-aws-ota.png)
 
   - Make sure Matter device is up and commissioned successfully. Refer to [Running the Matter Demo Over Wi-Fi](/matter/<docspace-docleaf-version>/matter-wifi-run-demo).
   
@@ -139,4 +139,4 @@ User Setup (MQTT Explorer):
   
   - Click **Publish** to execute the AWS OTA command.
   
-     ![Silicon Labs - DIC design](images/download-aws-ota-through-cloud.png)
+  ![Silicon Labs - DIC design](images/download-aws-ota-through-cloud.png)

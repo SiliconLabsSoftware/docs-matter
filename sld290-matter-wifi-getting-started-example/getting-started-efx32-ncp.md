@@ -20,16 +20,16 @@ The following hardware devices are required for executing Matter over Wi-Fi:
       - SiWx917 NCP expansion board
 - **MG24 boards:**
 
-- BRD4186C / SLWSTK6006A / Wireless Starter Kit / 2.4GHz@10dBm
-  - [XG24-RB4186C](https://www.silabs.com/development-tools/wireless/xg24-rb4186c-efr32xg24-wireless-gecko-radio-board)
+  - BRD4186C / SLWSTK6006A / Wireless Starter Kit / 2.4GHz@10dBm
+    - [XG24-RB4186C](https://www.silabs.com/development-tools/wireless/xg24-rb4186c-efr32xg24-wireless-gecko-radio-board)
     - MG24 with WSTK : [xG24-PK6009A](https://www.silabs.com/development-tools/wireless/efr32xg24-pro-kit-10-dbm?tab=overview)
-- BRD4187C / SLWSTK6006A / Wireless Starter Kit / 2.4GHz@20dBm
-  - [XG24-RB4187C](https://www.silabs.com/development-tools/wireless/xg24-rb4187c-efr32xg24-wireless-gecko-radio-board)
+  - BRD4187C / SLWSTK6006A / Wireless Starter Kit / 2.4GHz@20dBm
+    - [XG24-RB4187C](https://www.silabs.com/development-tools/wireless/xg24-rb4187c-efr32xg24-wireless-gecko-radio-board)
     - MG24 with WSTK : [xG24-PK6010A](https://www.silabs.com/development-tools/wireless/efr32xg24-pro-kit-20-dbm?tab=overview)
 
 - **Wi-Fi Dev Kits & boards**
 
-  - RS9116
+  - **RS9116**
     - SB-EVK1 / Single Band Wi-Fi Development Kit / 2.4GHz
       - [RS9116X-SB-EVK1](https://www.silabs.com/development-tools/wireless/wi-fi/rs9116x-sb-evk-development-kit)
     - SB-EVK2 / Single Band Wi-Fi Development Kit / 2.4GHz
@@ -37,14 +37,10 @@ The following hardware devices are required for executing Matter over Wi-Fi:
     - DB-EVK1 / Dual Band Wi-Fi Development Kit / 2.4GHz & 5GHz
       - [RS9116X-DB-EVK1](https://www.silabs.com/development-tools/wireless/wi-fi/rs9116x-db-evk-development-kit)
         **Note:** Matter only supported over 2.4GHz on this Dev kit.
-    - Interconnect board (included in the Wi-Fi kits)
-    - SPI Cable (included in the RS9116 kit)
-    - Jumper Cables (included in the RS9116 kit)
-- SiWx917
-  - SiWx917 NCP Mode / Wi-Fi Expansion Board / 2.4GHz
-    - BRD8036A (A0 Expansion v1.0)
-    - BRD8036A (A0 Expansion v1.1)
-  - WF200
+  - **SiWx917**
+    - SiWx917 NCP Mode / Wi-Fi Expansion Board / 2.4GHz
+      - BRD8045A (B0 Expansion v2.0)
+  - **WF200**
     - WF200 / Single Band Wi-Fi Expansion Board / 2.4GHz
       - [SLEXP8022A](https://www.silabs.com/development-tools/wireless/wi-fi/wf200-wifi-expansion-kit)
     - WFM200S / Single Band Wi-Fi Expansion Board / 2.4GHz
@@ -64,7 +60,7 @@ Below are the software tools, packages and images required for executing Matter 
 
 ### Software Tools Requirements
 
-- Simplicity Commander for flashing bootloader on EFR32 Boards and firmware on Siwx917 SOC
+- Simplicity Commander for flashing bootloader on EFR32 Boards and Siwx917 NCP.
 - Tera Term for flashing firmware on EFR32 NCP Boards.
 - Simplicity Studio
 - Putty for controling EFR32 hardware using chip-tool controller
@@ -80,7 +76,9 @@ Below are the software tools, packages and images required for executing Matter 
 
 ### Firmware Images
 
-Refer to the [Matter Artifacts Page](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts#rs9116-firmware) for pre-built firmware images for the Matter over Wi-Fi demo.
+- Download the Firmware images from [Matter Artifacts Page](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts)
+
+- For Flashing the firmware images, Refer to [Flashing Firmware Images](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/loading-firmware-for-ncp-and-soc-boards).
 
 ## Installation of the Wi-Fi Software Tools and Packages
 

@@ -12,55 +12,85 @@
 
 ### Connectivity Firmware Upgrade Using Teraterm
 
-1. Make sure that the switches on the expansion board are pushed towards the UART side.
-![Switch Position before firmware flash](images/si917-board.png)
+#### Firmware Upgrade On RS9116
 
-2. Refer to [Setup Tera Term and Updating the Firmware](https://docs.silabs.com/rs9116/wiseconnect/2.0/tera-term-setup).
+1. Connect the EVK to PC using the USB interface labeled UART as identified below.
+![Switch Position before firmware flash](images/rs916-board.png)
+
+2. If this is the first time connecting the EVK to your PC, verfy that it is properly detected by the PC. The EVK will appear to the PC as a COM port labeled USB Serial Port (COMx)
+
+3. Configure your terminal application with the following settings:
+   - Configure the serial port settings to 115200 baud / 8-bit data / No parity / 1 stop bit
+   - Enable local echo
+   - Set receive and transmit new-line characters to CR+LF
+
+4. Refer to [Setup Tera Term and Updating the Firmware](https://docs.silabs.com/rs9116/wiseconnect/2.0/tera-term-setup).
+    ```shell
+    Instructions are the same for both SiWx917 NCP and RS9116 EVK.
+    ```
+5. Once firmware flashing is done The console displays **Loading...** followed by **Loading Done**.
+
+
+#### Firmware Upgrade On SIWx917 NCP
+
+1. Connect USB-UART Cable to Machine and WPK board as well with SOC Mounted on it.
+![Connect NCP Board](./images/ncp-board-connect.png)
+
+2. Connect USB-UART Cable 2(Yellow) to F9 and 3(Green) to F8 on WPK Board shown below.
+![Connect Port Wires](./images/connect-board-port.png)
+
+3. Configure your terminal application with the following settings:
+
+   - Configure the serial port settings to 115200 baud / 8-bit data / No parity / 1 stop bit
+   - Enable local echo
+   - Set receive and transmit new-line characters to CR+LF
+
+4. Refer to [Setup Tera Term and Updating the Firmware](https://docs.silabs.com/rs9116/wiseconnect/2.0/tera-term-setup).
 
     ```shell
     Instructions are the same for both SiWx917 NCP and RS9116 EVK.
     ```
 
-3. Once firmware flashing is done make sure to put the switches back to Expansion mode, while using it with the host platform.
-![Switch Position after firmware flash](images/mg21-si917-board.jpg)
+5. Once firmware flashing is done The console displays **Loading...** followed by **Loading Done**.
 
 ### Troubleshooting an NCP Firmware Update Failure
 
 If the firmware update fails, try the following:
-  - Toggle the power switch towards AEM (Advanced Energy Monitoring) on the WSTK board.
+  - Toggle the power switch towards AEM (Advanced Energy Monitoring) on the WPK board.
   - Perform the following steps and try the firmware update again
-     - Toggle the ISP switch towards ISP on the radio board.
      - Press the RESET button on the WSTK board.
-     - Toggle the ISP switch away from ISP on the radio board.
-     - In the Flash section in step 5 above, click Erase chip.
-     - The flash will be erased.
      - Retry the firmware upgrade.
 
 ## Upgrading the Connectivity Firmware on SoC Devices
 
-- SiWx917 SOC connectivity firmware can be upgraded using studio.
+- SiWx917 SOC connectivity firmware can be upgraded using Simplicity Commander.
 
-### Connectivity Firmware Upgrade Using Simplicity Studio
+### Connectivity Firmware Upgrade Using Simplicity Commander
   
 1. In the Simplicity Studio home page, click Tools.
    
 2. In the Tools dialog, select Simplicity Commander and click OK.
+
 ![Silicon Labs - design](./images/select-commander.png)
 
 3. In the Simplicity Commander window, click Select Kit and choose your radio board.
+
 ![Silicon Labs - design](./images/commander-select-board.png)
 
 4. In the navigation pane, go to the Flash section.
    
 5. Click Browse next to the Binary File field.
+
 ![Silicon Labs - design](./images/select-flash-option-in-commander.png)
 
 6. Refer to [Firmware for SiWx917 SoC](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts#siwx917-firmware-for-siwx917-soc) to identify the correct firmware to be flashed into the specific hardware. Locate and select the firmware file to flash. 
    
 7. Click Flash
+
 ![Silicon Labs - design](./images/commander-click-flash-button.png)
 
 8. The firmware will be flashed and the Log Window will display a "Resetting" message.
+
 ![Silicon Labs - design](./images/commander-flash-success.png)
 
 ### Troubleshoot SiWx917 SOC Firmware Update Failure
@@ -69,9 +99,5 @@ If the firmware update fails, try the following:
 
   - Toggle the power switch towards AEM (Advanced Energy Monitoring) on the WSTK board.
   - Perform the following steps and try the firmware update again
-     - Toggle the ISP switch towards ISP on the radio board.
      - Press the RESET button on the WSTK board.
-     - Toggle the ISP switch away from ISP on the radio board.
-     - In the Flash section in step 5 above, click Erase chip.
-     - The flash will be erased.
      - Retry the firmware upgrade.

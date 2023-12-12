@@ -94,7 +94,7 @@ The Silicon Labs Matter over Wi-Fi NCP mode demo and development requires two bo
 **Note:**
 
 1. The EFR32MG24 is the preferred starting point for Matter MCUs. It provides Secure Vault and can use the internal flash of the device to store an upgrade image.
-2. The WF200 connectivity firmware image is included in the EFR32MG12 or EFR32MG24 images on the [Matter Artifacts page](./matter-artifacts.md) for running with the WF200 in NCP mode. The Matter application downloads the connectivity firmware onto the WF200 on first-time startup.
+2. The WF200 connectivity firmware image is included in the EFR32MG24 images on the [Matter Artifacts page](./matter-artifacts.md) for running with the WF200 in NCP mode. The Matter application downloads the connectivity firmware onto the WF200 on first-time startup.
 
 The following boards are supported for the Matter over Wi-Fi demos and development:
 
@@ -108,33 +108,29 @@ The following boards are supported for the Matter over Wi-Fi demos and developme
     - MG24 with WSTK : [xG24-PK6010A](https://www.silabs.com/development-tools/wireless/efr32xg24-pro-kit-20-dbm?tab=overview)
 
 - **Wi-Fi NCP Dev Kits & boards**
-
-  - RS9116
+  - **RS9116**
     - SB-EVK1 / Single Band Wi-Fi Development Kit / 2.4GHz
       - [RS9116X-SB-EVK1](https://www.silabs.com/development-tools/wireless/wi-fi/rs9116x-sb-evk-development-kit)
     - SB-EVK2 / Single Band Wi-Fi Development Kit / 2.4GHz
       - [RS9116X-SB-EVK2](https://www.silabs.com/development-tools/wireless/wi-fi/rs9116x-sb-evk2-development-kit)
     - DB-EVK1 / Dual Band Wi-Fi Development Kit / 2.4GHz & 5GHz
       - [RS9116X-DB-EVK1](https://www.silabs.com/development-tools/wireless/wi-fi/rs9116x-db-evk-development-kit)
+  -  **SiWx917 NCP**
+      - SiWx917 NCP Mode / Wi-Fi Expansion Board / 2.4GHz
+        - BRD8045A (B0 Expansion v2.0)
+  -  **WF200**
+      -  WF200 / Single Band Wi-Fi Expansion Board / 2.4GHz
+         - [SLEXP8022A](https://www.silabs.com/development-tools/wireless/wi-fi/wf200-wifi-expansion-kit)
+      -  WF200 / Single Band Wi-Fi Expansion Board / 2.4GHz
+         - [SLEXP8023A](https://www.silabs.com/development-tools/wireless/wi-fi/wfm200-wifi-expansion-kit)
+  -   Interconnect board (included in the Wi-Fi kits)
+-   Interconnect board (included in the Wi-Fi kits)
+-   SPI Cable (included in the RS9116 kit)
+-   Jumper Cables (included in the RS9116 kit)
 
-      **Note:** Matter only supported over 2.4GHz on this Dev kit.
+### Matter over Wi-Fi Accessory Device Requirements for SoC Mode
 
-    - Interconnect board (included in the Wi-Fi kits)
-    - SPI Cable (included in the RS9116 kit)
-    - Jumper Cables (included in the RS9116 kit)
-  - SiWx917
-    - SiWx917 NCP Mode / Wi-Fi Expansion Board / 2.4GHz
-      - BRD8036A (A0 Expansion v1.0)
-      - BRD8036A (A0 Expansion v1.1)
-  - WF200
-    - WF200 / Single Band Wi-Fi Expansion Board / 2.4GHz
-      - [SLEXP8022A](https://www.silabs.com/development-tools/wireless/wi-fi/wf200-wifi-expansion-kit)
-    - WFM200S / Single Band Wi-Fi Expansion Board / 2.4GHz
-      - [SLEXP8023A](https://www.silabs.com/development-tools/wireless/wi-fi/wfm200-wifi-expansion-kit)
-
-### Matter Over Wi-Fi Accessory Device Requirements for SoC Mode
-
-The Silicon Labs Matter over Wi-Fi demo and development for SoC mode requires the SiWx917 SoC board that supports Matter over Wi-Fi in a single-chip package - the integrated MCU is dedicated for peripheral and application-related processing (Matter), while the ThreadArch® runs the wireless and networking protocol stacks.
+The Silicon Labs Matter over Wi-Fi demo and development for SoC mode requires the SiWx917 SoC board that supports Matter over Wi-Fi in a single-chip package - the integrated MCU is dedicated for peripheral and application-related processing (Matter), while the ThreadArch® runs the wireless and networking protocol stacks. 
 
 Pre-built images for the SiWx917 connectivity firmware are available as per the instructions on the [Matter Artifacts page](./matter-artifacts.md). The following boards are supported for the Matter over Wi-Fi demos and development:
 

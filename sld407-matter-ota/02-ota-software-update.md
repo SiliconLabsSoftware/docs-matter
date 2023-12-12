@@ -11,7 +11,7 @@ controlled by the OTA Requestor component in a Matter Studio project.
 
 The OTA Software Update scenario requires the following binaries:
   - **OTA-A**, the running image: a regular application built with the default/older software version value. This application will be updated to the one with a higher software version. In the OTA Software Update process it acts as the OTA Requestor.
-  - **OTA-B **, the update image: a regular application built with a higher software version value.
+  - **OTA-B**, the update image: a regular application built with a higher software version value.
   - **Chip-tool**: the controller that announces the OTA-Provider's address to the application thus triggering the OTA Software Update.
   - **OTA-Provider**: the server that carries the update image and from which the OTA Requestor will download the updated software.
   - **Bootloader**: Silicon Labs Gecko Bootloader image that supports OTA; supports the external (SPI-flash) or the internal storage option.
