@@ -111,7 +111,7 @@ Now two Matter accessory devices (MADs) are on the network and ready to be used.
 
    1. First, modify the Access Control List (ACL) of the Matter light device. This list determines which device in the network the Matter light device will react to. Use: `./chip-tool accesscontrol write acl '[ { "fabricIndex" : 1 , "privilege" : 5 , "authMode" : 2 , "subjects" : [`**`112233`**`] , "targets" : null } , { "fabricIndex" : 1 , "privilege" : 3 , "authMode" : 2 , "subjects" : [`**`nodeID-switch`**` ], "targets" : null }]' `**`nodeID-light 0`**, where the highlighted parameters are:
 
-      - **1122**: The node ID of the controller. This is always 1122.
+      - **112233**: The node ID of the controller. This is always 112233.
 
       - **nodeID-switch**: The node ID of the Matter light switch device.
 
