@@ -38,7 +38,7 @@ The following boards are supported for the Matter over Wi-Fi demos and developme
     - [XG24-RB4187C](https://www.silabs.com/development-tools/wireless/xg24-rb4187c-efr32xg24-wireless-gecko-radio-board)
     - MG24 with WSTK: [xG24-PK6010A](https://www.silabs.com/development-tools/wireless/efr32xg24-pro-kit-20-dbm?tab=overview)
 - **Wi-Fi NCP Dev Kits & boards**
-  - RS9116
+  - **RS9116**
     - SB-EVK1 / Single Band Wi-Fi Development Kit / 2.4GHz
       - [RS9116X-SB-EVK1](https://www.silabs.com/development-tools/wireless/wi-fi/rs9116x-sb-evk-development-kit)
     - SB-EVK2 / Single Band Wi-Fi Development Kit / 2.4GHz
