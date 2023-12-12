@@ -38,9 +38,9 @@ Matter hub/chip-tool are ready and working. Keep the PuTTY session open for the 
     Refer [SiWx917 SoC](https://www.silabs.com/development-tools/wireless/wi-fi/siwx917-pro-kit?tab=techdocs) for more details.
 
 ### Software Requirements
-- In order to Run Light and Switch Example on SiWx917 SOC, softwares to be installed on System. Refer to[Software Requirements](/matter/<dospace-docleaf-version>/matter-prerequisites/software-requirements)
+- In order to Run Light and Switch Example on SiWx917 SOC, softwares to be installed on System. Refer to, [Software Requirements](/matter/<dospace-docleaf-version>/matter-prerequisites/software-requirements)
 
-- **Note**: Light and Switch application is not supported for NCP devices
+- **Note**: Switch application is not supported for NCP devices
 
 1. In Simplicity Studio 5, create the Light MAD:
 

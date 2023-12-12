@@ -78,7 +78,7 @@ Below are the software tools, packages and images required for executing Matter 
 
 - Download Pre-built Firmware images, Refer to the [Matter Artifacts Page](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts#rs9116-firmware) for pre-built firmware images for the Matter over Wi-Fi demo.
 
-- For Flashing the firmware images, Refer to [Flashing Firmware images to NCP](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/loading-firmware-for-ncp-and-soc-boards#).
+- For Flashing the firmware images, Refer to [Flashing Firmware Images](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/loading-firmware-for-ncp-and-soc-boards#).
 
 ## Installation of the Wi-Fi Software Tools and Packages
 
