@@ -14,8 +14,6 @@ Now that you have gotten a sense of what goes into making a Matter network, you 
 
 - Matter SoC Lock over Wi-Fi
 
-- Matter SoC Thermostat over Wi-Fi
-
 - Matter SoC Window Cover over Thread
 
 - Matter SoC Lock over Thread

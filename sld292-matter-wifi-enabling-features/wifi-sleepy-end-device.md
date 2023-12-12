@@ -63,16 +63,17 @@ To enable ICD functionality for Wi-Fi, the `matter_icd` component needs to be in
 
     ![Replace matter icd](./images/replace-icd-tab.png)
 
-## Power Measurements for Wi-Fi Devices
 
-This page explains how to measure the power values for EFR and Wi-Fi co-processor.
 
 ### EFR32 + RS9116 Setup for ICDs (Sleepy Devices)
+- **The following GPIO pins should be connected for 9116 and Host handshakes.
+pin 7 and 9 to UULP_2 and UULP_0 respectively.**
 
 ![Power measurement GPIO pin connection for 9116](./images/wifi-9116-gpio-connections.png)
 
-Note: The following GPIO pins should be connected for 9116 and Host handshakes. \
-pin 7 and 9 to UULP_2 and UULP_0 respectively.
+## Power Measurements for Wi-Fi Devices
+
+This page explains how to measure the power values for EFR and Wi-Fi co-processor.
 
 ### Using Simplicity Studio Energy Profiler for Current Measurement
 

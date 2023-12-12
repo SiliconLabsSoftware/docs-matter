@@ -58,7 +58,7 @@ Matter hub/chip-tool are ready and working. Keep the PuTTY session open for the 
 
    7. Once the project has compiled, in the Debug Adapters view right-click the board and select *Upload application*.
 
-   8. Select the *Application image path* (Select the path for `.rps` or `_isp.bin` file for soc in the path '\<workspace\>\project_name\GNU ARM v10.3.1 - Default').
+   8. Select the *Application image path* (Select the path for `.rps` or `_isp.bin` file for soc in the path '\<workspace\>\project_name\GNU ARM v12.x.x - Default').
 
    9. Disconnect the dev board from development computer.
 
@@ -109,6 +109,7 @@ Now two Matter accessory devices (MADs) are on the network and ready to be used.
 
 2. In a PuTTY session to the Matter hub, use the chip-tool to bind the light_switch MAD to the light MAD, thus allowing the switch to control the light.
 
+   
    1. First, modify the Access Control List (ACL) of the Matter light device. This list determines which device in the network the Matter light device will react to. Use: `./chip-tool accesscontrol write acl '[ { "fabricIndex" : 1 , "privilege" : 5 , "authMode" : 2 , "subjects" : [`**`112233`**`] , "targets" : null } , { "fabricIndex" : 1 , "privilege" : 3 , "authMode" : 2 , "subjects" : [`**`nodeID-switch`**` ], "targets" : null }]' `**`nodeID-light 0`**, where the highlighted parameters are:
 
       - **112233**: The node ID of the controller. This is always 112233.
@@ -127,6 +128,7 @@ Now two Matter accessory devices (MADs) are on the network and ready to be used.
    
    **For Example**:- `./chip-tool accesscontrol write acl '[{"fabricIndex": 1, "privilege": 5, "authMode": 2, "subjects": [112233], "targets": null }, {"fabricIndex": 1, "privilege": 3, "authMode": 2, "subjects": [2], "targets": null }]' 1111 0`
    
+
    2. Second, bind the switch's write command to the light. This is done by updating the binding table of the Matter light_switch device. This can be done using the command: `./chip-tool binding write binding '[ { "fabricIndex" : 1 , "node" :`**`nodeID-light`**,` "endpoint" : `**`1`**,`"cluster" :`**`6`**`} ]'`**`nodeID-switch 1`**, where the highlighted parameters are:
 
       - **nodeID-light**: The node ID of the Matter light device.

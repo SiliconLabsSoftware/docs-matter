@@ -83,4 +83,4 @@ In order to check device logs for the Matter Application on the SiWx917 SoC, the
 
 The [JLinkDevices.xml](https://github.com/SiliconLabs/matter_extension/releases/download/v2.2.0/JLinkDevices.xml) and **.elf** files referenced in the instructions may be found in the Assets section of this page.
 
-**Note**:- For EFR32 JLink RTT Logging support is already enabled.
+**Note**:- For EFR32MG2x devices, JLink RTT Logging support is already enabled.

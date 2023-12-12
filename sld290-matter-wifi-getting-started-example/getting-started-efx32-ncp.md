@@ -20,11 +20,11 @@ The following hardware devices are required for executing Matter over Wi-Fi:
       - SiWx917 NCP expansion board
 - **MG24 boards:**
 
-- BRD4186C / SLWSTK6006A / Wireless Starter Kit / 2.4GHz@10dBm
-  - [XG24-RB4186C](https://www.silabs.com/development-tools/wireless/xg24-rb4186c-efr32xg24-wireless-gecko-radio-board)
+  - BRD4186C / SLWSTK6006A / Wireless Starter Kit / 2.4GHz@10dBm
+    - [XG24-RB4186C](https://www.silabs.com/development-tools/wireless/xg24-rb4186c-efr32xg24-wireless-gecko-radio-board)
     - MG24 with WSTK : [xG24-PK6009A](https://www.silabs.com/development-tools/wireless/efr32xg24-pro-kit-10-dbm?tab=overview)
-- BRD4187C / SLWSTK6006A / Wireless Starter Kit / 2.4GHz@20dBm
-  - [XG24-RB4187C](https://www.silabs.com/development-tools/wireless/xg24-rb4187c-efr32xg24-wireless-gecko-radio-board)
+  - BRD4187C / SLWSTK6006A / Wireless Starter Kit / 2.4GHz@20dBm
+    - [XG24-RB4187C](https://www.silabs.com/development-tools/wireless/xg24-rb4187c-efr32xg24-wireless-gecko-radio-board)
     - MG24 with WSTK : [xG24-PK6010A](https://www.silabs.com/development-tools/wireless/efr32xg24-pro-kit-20-dbm?tab=overview)
 
 - **Wi-Fi Dev Kits & boards**
@@ -76,9 +76,9 @@ Below are the software tools, packages and images required for executing Matter 
 
 ### Firmware Images
 
-- Download firmware images, Refer to the [Matter Artifacts Page](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts#rs9116-firmware) for pre-built firmware images for the Matter over Wi-Fi demo.
+- Download Pre-built Firmware images, Refer to the [Matter Artifacts Page](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts#rs9116-firmware) for pre-built firmware images for the Matter over Wi-Fi demo.
 
-- For Flashing the firmware images, Refer to the [Loading of Firmware to NCP](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/loading-firmware-for-ncp-and-soc-boards#).
+- For Flashing the firmware images, Refer to [Flashing Firmware images to NCP](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/loading-firmware-for-ncp-and-soc-boards#).
 
 ## Installation of the Wi-Fi Software Tools and Packages
 
