@@ -14,45 +14,45 @@ In Matter OTA Software Update scenario the running image (OTA-A) and the update 
 
 4. Go to the All Products section.
   
-   ![Silicon Labs - design](./images/all-products-selection.png)
+   ![Silicon Labs - design](images/all-products-selection.png)
 
 5. Type and Select the radio board from the displayed list and select Start.
   
-   ![Silicon Labs - design](./images/select-efx-board.png)
+   ![Silicon Labs - design](images/select-efx-board.png)
 
 6. The Launcher page will display the selected radio board's details.
   
-   ![Silicon Labs - design](./images/overview-tab-efx32.png)
+   ![Silicon Labs - design](images/overview-tab-efx32.png)
 
 7. Verify the following in the General Information section:
    - The Debug Mode is Onboard Device (MCU).
    - The Preferred SDK is the version you selected earlier.
   
-   ![Silicon Labs - design](./images/create-project-verify-efx-general-information.png)
+   ![Silicon Labs - design](images/create-project-verify-efx-general-information.png)
 
 8. Click on Example Projects and Demos Option and Create Project.
   
-   ![Silicon Labs - design](./images/create-project-select-efx-example.png)
+   ![Silicon Labs - design](images/create-project-select-efx-example.png)
 
 9. In the New Project Wizard window, click Finish.
   
-   ![Silicon Labs - design](./images/create-project-click-finish.png)
+   ![Silicon Labs - design](images/create-project-click-finish.png)
 
 10. Once the project is created, right-click on the project and select *Build Project* in the Project Explorer tab.
   
-    ![Silicon Labs - design](./images/project-created-efx32.png)
+    ![Silicon Labs - design](images/project-created-efx32.png)
 
 11. Once the project is compiled successfully, Go to the Project Explorer view and expand binaries folder to flash the binary.
   
-    ![Silicon Labs - design](./images/select-binary-to-flash-efx32.png)
+    ![Silicon Labs - design](images/select-binary-to-flash-efx32.png)
 
 12. Right-click on the selected *.s37* binary and click on *flash to device*.
   
-    ![Silicon Labs - design](./images/siwx917-soc-flash-todevice.png)
+    ![Silicon Labs - design](images/siwx917-soc-flash-todevice.png)
 
 13. Flash programmer window will be opened, Click on *Erase button and then Program* button to start the flashing.
   
-    ![Silicon Labs - design](./images/flash-binary-to-efx32-device.png)
+    ![Silicon Labs - design](images/flash-binary-to-efx32-device.png)
 
 **Note:** Output of the EFR32 NCP Host application will be displayed on the J-Link RTT Viewer.
 
@@ -69,29 +69,29 @@ In Matter OTA Software Update scenario the running image (OTA-A) and the update 
 
 4. Go to the All Products section.
   
-   ![Silicon Labs - design](./images/all-products-selection.png)
+   ![Silicon Labs - design](images/all-products-selection.png)
 
 5. Type and Select the radio board from the displayed list and select Start.
   
-   ![Silicon Labs - design](./images/select-efx-board.png)
+   ![Silicon Labs - design](images/select-efx-board.png)
 
 6. The Launcher page will display the selected radio board's details.
   
-   ![Silicon Labs - design](./images/overview-tab-efx32.png)
+   ![Silicon Labs - design](images/overview-tab-efx32.png)
 
 7. Verify the following in the General Information section:
    - The Debug Mode is Onboard Device (MCU).
    - The Preferred SDK is the version you selected earlier.
   
-   ![Silicon Labs - design](./images/create-project-verify-efx-general-information.png)
+   ![Silicon Labs - design](images/create-project-verify-efx-general-information.png)
 
 8. Click on Example Projects and Demos Option and Create Project.
   
-   ![Silicon Labs - design](./images/create-project-select-efx-example.png)
+   ![Silicon Labs - design](images/create-project-select-efx-example.png)
 
 9. In the New Project Wizard window, click Finish.
   
-   ![Silicon Labs - design](./images/create-project-click-finish.png)
+   ![Silicon Labs - design](images/create-project-click-finish.png)
 
 10. In Project Explorer section , open sl_matter_config file which is present in the config folder. Modify the **CHIP_DEVICE_CONFIG_DEVICE_SOFTWARE_VERSION 2** and **CHIP_DEVICE_CONFIG_DEVICE_SOFTWARE_VERSION_STRING "1"**
 

@@ -8,11 +8,11 @@ The Unify Matter Bridge is an application that makes legacy devices, such as
 Z-Wave and Zigbee devices, accessible on a Matter fabric. It does so by acting as
 an *IoT Service* in a Unify Framework.
 
-![Silicon Labs Matter Summary](./resources/silicon-labs-matter.png)
+![Silicon Labs Matter Summary](resources/silicon-labs-matter.png)
 
 Device: SiWx917 SoC
 
-![Silicon Labs - SiWx917 soc](./resources/silicon-labs-matter-siwx917.png)
+![Silicon Labs - SiWx917 soc](resources/silicon-labs-matter-siwx917.png)
 
 ## Two Paths for Development
 
