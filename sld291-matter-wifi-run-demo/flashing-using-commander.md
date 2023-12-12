@@ -20,18 +20,22 @@ Bootloader binaries are available in the respective path of codebase **third_par
 1. In the Simplicity Studio home page, click Tools.
 
 2. In the Tools dialog, select Simplicity Commander and click OK.
-![Select Commander](./images/select-commander.png)
+
+    ![Select Commander](./images/select-commander.png)
 
 3. In the Simplicity Commander window, click **Select Kit** and choose your radio board.
-![Select radio board](./images/commander-select-board.png)
+
+    ![Select radio board](./images/commander-select-board.png)
 
 4. In the navigation pane, go to the Flash section.
 
 5. Above beside "Reload tab" board will be displayed, click Browse next to the Binary File field and locate bootloader binary.
-![Select flash option](./images/select-flash-option-efr32-commander.png)
+
+    ![Select flash option](./images/select-flash-option-efr32-commander.png)
 
 6. Click Flash, the bootloader will be flashed and the Log Window will display a "Flashing completed Successfully" message.
-![Successful flash](./images/simplicity-commander-flash-bootloader.png)
+
+    ![Successful flash](./images/simplicity-commander-flash-bootloader.png)
 
 ## Flashing the EFR32 Matter Binary using Simplicity Commander
 
@@ -67,15 +71,15 @@ SiWx917 SoC device support is available in the latest [Simplicity Commander](htt
 
 3. Convert **.s37** binary to **.rps** using the command below using commander terminal.
 
-```shell
-    commander rps convert <file_name.rps> --app <file_name.s37>
-```
+    ```shell
+        commander rps convert <file_name.rps> --app <file_name.s37>
+    ```
 
 4. Flash to the device using command or follow the next steps to flash through Commander Software.
 
-```shell
-    commander rps load <file-name>.rps
-```
+    ```shell
+        commander rps load <file-name>.rps
+    ```
 
 5. In the Simplicity Studio home page, click **Tools**.
 

@@ -71,11 +71,11 @@ This will build chip-tool in `out/standalone`.
 2. Create a bootable image file by running below command in commander terminal(using the Lighting application image as an
 example):
 
-```shell
-    commander gbl create chip-efr32-lighting-example.gbl --compress lzma --app chip-efr32-lighting-example.s37
-```
+    ```shell
+        commander gbl create chip-efr32-lighting-example.gbl --compress lzma --app chip-efr32-lighting-example.s37
+    ```
 
-**Note**:- Using LZMA compression when building the .gbl file ( passing `--compress lzma` parameter to the `commander gbl create` command) further reduces the downloaded image size.
+    **Note**: Using LZMA compression when building the .gbl file ( passing `--compress lzma` parameter to the `commander gbl create` command) further reduces the downloaded image size.
 
 3. Create the Matter OTA file by running below command in **${WORKSPCAE_DIR}/matter** path:
 
@@ -110,20 +110,20 @@ example):
 
 1. In a separate terminal, locate the chip-tool and ota-requestor and run the chip-tool commands to provision the Provider:
 
-```shell
-    ./out/chip-tool pairing onnetwork 1 20202021
-    ./out/chip-tool accesscontrol write acl '[{"fabricIndex": 1, "privilege": 5, "authMode": 2, "subjects": [112233], "targets": null}, {"fabricIndex": 1, "privilege": 3, "authMode": 2, "subjects": null, "targets": null}]' 1 0
-```
+    ```shell
+        ./out/chip-tool pairing onnetwork 1 20202021
+        ./out/chip-tool accesscontrol write acl '[{"fabricIndex": 1, "privilege": 5, "authMode": 2, "subjects": [112233], "targets": null}, {"fabricIndex": 1, "privilege": 3, "authMode": 2, "subjects": null, "targets": null}]' 1 0
+    ```
 
 2. If the application device had been previously commissioned hold Button 0 for six seconds to factory-reset the device.
 
 3. In the chip-tool terminal, commission the Device by passing below command:
 
-```shell
-    ./out/chip-tool pairing ble-wifi "node_id" "SSID" "PSK" 20202021 3840
-```
+    ```shell
+        ./out/chip-tool pairing ble-wifi "node_id" "SSID" "PSK" 20202021 3840
+    ```
 
-where SSID and PSK are AP username and password.
+    where SSID and PSK are AP username and password.
 
 4. Once the commissioning process completes in the same terminal, run below requestor command to start downloading the image:
 

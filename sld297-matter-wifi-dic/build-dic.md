@@ -39,8 +39,8 @@ Note:- Building with aws_ota_wifi_dic component enables matter_dic component by 
  ![Select Refresh](./images/select-refresh-option.png)
 
 - Build the DIC application using Simplicity Studio
- - [Build EFx32 Application Using Studio](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/build-efx32-application-using-studio)
- - [Build SOC Application Using Studio](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/build-soc-application-using-studio)
+  - [Build EFx32 Application Using Studio](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/build-efx32-application-using-studio)
+  - [Build SOC Application Using Studio](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/build-soc-application-using-studio)
 
 ## Compile Using New/Different Certificates
 

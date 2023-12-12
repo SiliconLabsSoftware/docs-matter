@@ -10,8 +10,8 @@ This page focuses on features designed to improve the performance and reliabilit
 
 To change default values corresponding to Matter ICD examples, modify them in either:
 
-1) `config/sl_matter_icd_config.h`
-2) ICD component configurator
+1. `config/sl_matter_icd_config.h`
+2. ICD component configurator
 
 ![ICD Configuration](images/IcdConfig.png)
 
@@ -62,8 +62,7 @@ These configurations can be changed by modifying the values within `sl_matter_ic
 The subscription mechanism is used by ecosystems and controllers to receive attribute change updates and liveness checks.
 The maximum interval of a subscription request is what defines the frequency at which a device will send a liveness check if there are no attribute changes.
 
-Within the subscription request / response model, a device has the opportunity to decide the maximum interval at which it will send its liveness check (Empty Report Update). 
-The device can set a maximum interval within this range if and only if it is an ICD:
+Within the subscription request / response model, a device has the opportunity to decide the maximum interval at which it will send its liveness check (Empty Report Update). The device can set a maximum interval within this range if and only if it is an ICD:
 
 ```shell
 MinIntervalRequested ≤ MaxInterval ≤ MAX(IdleModeInterval, MaxIntervalRequested)

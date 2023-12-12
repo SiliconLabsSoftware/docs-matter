@@ -11,14 +11,15 @@ In Simplicity Studio 5, create the Light MAD:
 
 4. Go to **All Products** in the **Launcher** tab and select a compatible board from the supported SiWx917 SOC dev boards.
 
-```shell
-  BRD4338A (Common Flash)
-```
+    ```shell
+      BRD4338A (Common Flash)
+    ```
 
-![Silicon Labs - design](./images/SiWx917-soc-board-selection.png)
+    ![Silicon Labs - design](./images/SiWx917-soc-board-selection.png)
 
 5. Once it shows up in the **Debug Adapters** view, select it.
-![Silicon Labs - design](./images/SiWx917-soc-debug-adapter.png)
+
+    ![Silicon Labs - design](./images/SiWx917-soc-debug-adapter.png)
 
 6. Open the **Example Projects and Demos** tab, select the **Matter** filter and enter *Wi-Fi* in **Filter on keywords** and click **CREATE**.
 
@@ -42,15 +43,13 @@ In Simplicity Studio 5, create the Light MAD:
 
     ![Silicon Labs - design](./images/SiWx917-soc-flash-todevice.png)
 
-**Note:**
-   SiWX917 SoC device will supprot both **_isp.bin** and **.rps** file format to flash.
+    **Note**: SiWX917 SoC device will supprot both **_isp.bin** and **.rps** file format to flash.
 
-1.  The Flash programmer window will open. Click the **Program** button to start the flashing.
+12. The Flash programmer window will open. Click the **Program** button to start the flashing.
 
     ![Silicon Labs - design](./images/SiWx917-soc-flash-program.png)
 
-**Note:**
-   Output of the SiWX917 SoC application will be displayed on the J-Link RTT Viewer.
+    **Note**: Output of the SiWX917 SoC application will be displayed on the J-Link RTT Viewer.
 
 13. In order to debug Matter Application, right-click the selected *_isp.bin* binary and click on **Debug As**.
 

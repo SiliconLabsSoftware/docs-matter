@@ -42,7 +42,7 @@
 
    4. Power-up the RPi4B. Once it is booted up, check your local network DHCP IP address allocation rules to determine the RPi4B's assigned IP address. You may also use networking tools such as *nmap* to find your RPi4B’s IP assigned address.
 
-   5. Use PuTTY to connect to your RPi4B. 
+   5. Use PuTTY to connect to your RPi4B.
 
       1. The first time you connect to your RPi4B, PuTTY will warn you about a new host key or key fingerprint. Accept the key.
 
@@ -94,7 +94,7 @@ You now have a working Matter hub. Keep the PuTTY session open for the following
 
       **Note**: If you are unsure of the path for the newly created binary, you can find the project’s path in the project’s *Properties* window under *Resource*. The binary is typically located inside the *{workspace folder}\|{project name folder}\|{GNU ARM v??? folder}\|{project name binary}.s37*. For example, you would find the binary for a Matter light over Thread project with the default name here: *{workspace folder}\|MatterLightOverThread\|GNU ARM v10.3.1 - Default\|MatterLightOverThread.s37*
 
-      **Note**: You should only need to upload a bootloader image and erase the chip once. Subsequent application uploads do not need the bootloader image or chip erasure. 
+      **Note**: You should only need to upload a bootloader image and erase the chip once. Subsequent application uploads do not need the bootloader image or chip erasure.
 
       ![Image location](resources/image15.png)
 
@@ -108,7 +108,7 @@ You now have a working Matter hub. Keep the PuTTY session open for the following
 
 ## Creating the Matter Network
 
-The *mattertool* is a convenient wrapper script that allows you to easily perform common steps using *chip-tool*. Chip-tool provides a command-line interface into the Matter protocol. mattertool and chip-tool are installed in the Matter Hub image file. 
+The *mattertool* is a convenient wrapper script that allows you to easily perform common steps using *chip-tool*. Chip-tool provides a command-line interface into the Matter protocol. mattertool and chip-tool are installed in the Matter Hub image file.
 
 mattertool provides many commands at your disposal. These are some important ones used in this example:
 
@@ -124,7 +124,7 @@ mattertool provides many commands at your disposal. These are some important one
 
 You can use the command *mattertool help* to display the available commands. With some commands (such as on, off, and toggle), you may also want to specify which node ID to interact with. You can do this by adding the *-n nodeID* parameter after a command, such as *mattertool on -n 5678*.
 
-The *mattertool* also allows you to perform any of the commands you can normally use directly with the *chip-tool*. 
+The *mattertool* also allows you to perform any of the commands you can normally use directly with the *chip-tool*.
 
 1. In a PuTTY session to the Matter hub, use the *mattertool* to create your network.
 

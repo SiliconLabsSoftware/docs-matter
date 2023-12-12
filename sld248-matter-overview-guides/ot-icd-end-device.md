@@ -32,7 +32,7 @@ Any of the following events can trigger the start of the *Active Mode* interval 
 Once the active mode is triggered, the ICD stays in this mode for a minimum duration of `ActiveModeInterval`
 When the active interval has elapsed and none of the aforementioned states are active, the device will switch its operating mode to the Idle Mode.
 
-In _Idle mode_, the ICD will poll its associated router at its slow-polling interval to see if another device has tried to communicate with it while it was sleeping.
+In *Idle mode*, the ICD will poll its associated router at its slow-polling interval to see if another device has tried to communicate with it while it was sleeping.
 If no event occurs, the ICD stays in its idle mode for the entirety of the `IdleModeInterval`.
 The `CHIP_DEVICE_CONFIG_ICD_SLOW_POLL_INTERVAL` parameter communicates the slow-polling interval and therefore the maximum sleep interval of the node in idle mode. This parameter affects both the minimum power consumption and maximum latency.
 

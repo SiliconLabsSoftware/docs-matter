@@ -2,7 +2,7 @@
 
 ## Setting up the Matter Hub/Chip-Tool
 
-This procedure prepares the Raspberry Pi 4B (RPi4B) to become a Matter Hub. You should have downloaded the Matter Hub Raspberry Pi image and Raspberry Pi Imager as described in the [Overview](/matter/<docspace-docleaf-version>/matter-overview). The Raspberry Pi image contains software called chip-tool, which provides a command-line interface into the Matter protocol. 
+This procedure prepares the Raspberry Pi 4B (RPi4B) to become a Matter Hub. You should have downloaded the Matter Hub Raspberry Pi image and Raspberry Pi Imager as described in the [Overview](/matter/<docspace-docleaf-version>/matter-overview). The Raspberry Pi image contains software called chip-tool, which provides a command-line interface into the Matter protocol.
 
 1. Install the Raspberry Pi Imager and insert the SD card into the PC to flash the image.
 
@@ -16,7 +16,7 @@ This procedure prepares the Raspberry Pi 4B (RPi4B) to become a Matter Hub. You 
 
 2. Insert the SD card into Raspberry Pi 4B (RPi4B).
 
-3. Power-up the RPi4B. Once it is booted up, check the Raspberry Pi's IP address. Refer to [Finding Raspberry Pi IP address](/matter/<docspace-docleaf-version>/matter-references/find-raspi) in the References chapter to get the IP address or enter the Hostname directly in PuTTY. 
+3. Power-up the RPi4B. Once it is booted up, check the Raspberry Pi's IP address. Refer to [Finding Raspberry Pi IP address](/matter/<docspace-docleaf-version>/matter-references/find-raspi) in the References chapter to get the IP address or enter the Hostname directly in PuTTY.
 
 4. Use PuTTY to connect to RPi4B.
 
@@ -29,16 +29,18 @@ Matter hub/chip-tool are ready and working. Keep the PuTTY session open for the 
 ## Creating the Matter Accessory Devices (MADs)
 
 ### Hardware Requirements
--   SiWx917 / BRD4002A / Wireless Starter Kit
--   SiWx917 SoC Mode
-    -   SiWx917 SoC / Common Flash Radio Board / 2.4GHz
-        -   BRD4338A - B0 common flash v2.0
+
+- SiWx917 / BRD4002A / Wireless Starter Kit
+- SiWx917 SoC Mode
+  - SiWx917 SoC / Common Flash Radio Board / 2.4GHz
+    - BRD4338A - B0 common flash v2.0
 
     **Note:**
-    Refer [SiWx917 SoC](https://www.silabs.com/development-tools/wireless/wi-fi/siwx917-pro-kit?tab=techdocs) for more details.
+    Refer to [SiWx917 SoC](https://www.silabs.com/development-tools/wireless/wi-fi/siwx917-pro-kit?tab=techdocs) for more details.
 
 ### Software Requirements
-- In order to Run Light and Switch Example on SiWx917 SOC, softwares to be installed on System. Refer to, [Software Requirements](/matter/<dospace-docleaf-version>/matter-prerequisites/software-requirements)
+
+In order to run the Light and Switch Example on SiWx917 SOC, software must be installed. Refer to [Software Requirements](/matter/<dospace-docleaf-version>/matter-prerequisites/software-requirements).
 
 **Note**: Switch application is not supported for NCP devices
 
@@ -46,7 +48,7 @@ Matter hub/chip-tool are ready and working. Keep the PuTTY session open for the 
 
    1. Switch to the Launcher view (if not already in it).
 
-   2. Connect one compatible dev board to the development computer. 
+   2. Connect one compatible dev board to the development computer.
 
    3. Once it shows up in the Debug Adapters view, select it.
 
@@ -109,7 +111,6 @@ Now two Matter accessory devices (MADs) are on the network and ready to be used.
 
 2. In a PuTTY session to the Matter hub, use the chip-tool to bind the light_switch MAD to the light MAD, thus allowing the switch to control the light.
 
-   
    1. First, modify the Access Control List (ACL) of the Matter light device. This list determines which device in the network the Matter light device will react to. Use: `./chip-tool accesscontrol write acl '[ { "fabricIndex" : 1 , "privilege" : 5 , "authMode" : 2 , "subjects" : [`**`112233`**`] , "targets" : null } , { "fabricIndex" : 1 , "privilege" : 3 , "authMode" : 2 , "subjects" : [`**`nodeID-switch`**` ], "targets" : null }]' `**`nodeID-light 0`**, where the highlighted parameters are:
 
       - **112233**: The node ID of the controller. This is always 112233.
@@ -125,9 +126,8 @@ Now two Matter accessory devices (MADs) are on the network and ready to be used.
       - **nodeID**: The nodeID of the Matter device (Light or Light_switch) to read the ACL contents from.
 
       - **0**: The endpoint in the Matter device that holds the ACL. This is always 0.
-   
+
    **For Example**:- `./chip-tool accesscontrol write acl '[{"fabricIndex": 1, "privilege": 5, "authMode": 2, "subjects": [112233], "targets": null }, {"fabricIndex": 1, "privilege": 3, "authMode": 2, "subjects": [2], "targets": null }]' 1111 0`
-   
 
    2. Second, bind the switch's write command to the light. This is done by updating the binding table of the Matter light_switch device. This can be done using the command: `./chip-tool binding write binding '[ { "fabricIndex" : 1 , "node" :`**`nodeID-light`**,` "endpoint" : `**`1`**,`"cluster" :`**`6`**`} ]'`**`nodeID-switch 1`**, where the highlighted parameters are:
 
@@ -149,4 +149,4 @@ Now two Matter accessory devices (MADs) are on the network and ready to be used.
   
    **For Example**:- `./chip-tool binding write binding '[{"fabricIndex": 1, "node": 1, "endpoint": 1, "cluster":6}]' 2222 1`
 
-3. With the binding complete, a button press (BTN1) on Matter light_switch device should now toggle the light status of Matter light device. 
+3. With the binding complete, a button press (BTN1) on Matter light_switch device should now toggle the light status of Matter light device.

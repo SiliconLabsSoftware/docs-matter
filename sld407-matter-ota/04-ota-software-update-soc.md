@@ -8,17 +8,20 @@ The scope of this page describes the MATTER OTA upgrade on 917 SoC mode for comb
 
 ## Software Requirements
 
-- To run matter ota on Silicon Labs Platform, refer to [Software Requirements](/matter/<docspace-docleaf-version>/matter-prerequisites/software-requirements).
+To run matter ota on Silicon Labs Platform, refer to [Software Requirements](/matter/<docspace-docleaf-version>/matter-prerequisites/software-requirements).
 
 ## Setting up OTA Environment
-- To run OTA on Matter over Wi-Fi, Need to build two different application below:
-  - **OTA-A** is a normal application with default or older software version. It acts as **ota-requestor** where it needs to update latest software version.
-  - **OTA-B is** a normal application with updated software version.
-  - **Chip-tool** is a controller for sending commands to ota-requestor to update the software version and receving commands from device.
-  - **OTA-Provider** is the server who has the latest software version and from which ota-requestor will download the updated software.
+
+To run OTA on Matter over Wi-Fi, Need to build two different application below:
+
+- **OTA-A** is a normal application with default or older software version. It acts as **ota-requestor** where it needs to update latest software version.
+- **OTA-B is** a normal application with updated software version.
+- **Chip-tool** is a controller for sending commands to ota-requestor to update the software version and receving commands from device.
+- **OTA-Provider** is the server who has the latest software version and from which ota-requestor will download the updated software.
 
 ### Building OTA Application Using Simplicity Studio For 917 SOC
-- To create and build matter OTA using Simplicity studio, refer following link [build OTA application using studio](./05-build-ota-application-using-studio.md)
+
+To create and build Matter OTA using Simplicity Studio, refer to [build OTA application using Simplicity Studio](./05-build-ota-application-using-studio.md).
 
 ## Combined Image Upgrade
 
@@ -30,38 +33,48 @@ Host will initiate OTA download to receive combined image (TA+M4) on to host. Ho
 
 - Combined image will be created and uploaded onto Raspberry Pi which provides the firmware image chunk by chunk to the device.
 - Host will initiate the OTA download and provider app will start the OTA image transfer.
-- Host will receive combined image and host will transfer the M4 and TA firmware images on to TA chunk by chunk, TA will write the TA image onto TA flash backup location. 
+- Host will receive combined image and host will transfer the M4 and TA firmware images on to TA chunk by chunk, TA will write the TA image onto TA flash backup location.
 - Once both images are downloaded, the device will reboot into the downloaded image.
 
 ### Create Combined (TA+M4) Firmware Image
 
 - The first step is to create a combined Image that contains both the firmware (TA & M4).
-- This image is created by combining the binary images of both images. 
+- This image is created by combining the binary images of both images.
 - For Matter OTA file, create a bootable image file (using the Lighting application image as an example) and then create the Matter OTA file from the bootable image file using commands provided below.
-- Once combined image .ota file is created , the same will be uploaded onto raspberry pi where OTA provider application is running. 
+- Once combined image .ota file is created , the same will be uploaded onto raspberry pi where OTA provider application is running.
 
 ## Generating The Combined OTA image
 
 - Create TA  image (.rps) with combined image flag set by using command.
+
 ```shell
 commander rps convert <ta_image_combined.rps> --taapp <ta_image.rps> --combinedimage
 ```
+
 - Create M4 .rps file from .s37 using below command.
+
 ```shell
 - commander rps create <m4_image.rps> --app <m4_image.s37>
 ```
+
 - Create M4 (.rps) with combined image flag set by using command.
+
 ```shell
 commander rps convert <m4_image_combined.rps> --app <m4_image.rps> --combinedimage
 ```
+
 - Create combined image from the above created TA and M4 images.
+
 ```shell
 commander rps convert "combined_image.rps" --app "m4_image_combined.rps" --taapp "ta_image_combined.rps" 
 ```
+
 - Create the Matter OTA file from the bootable image file.
+
 ```shell
 ./src/app/ota_image_tool.py create -v 0xFFF1 -p 0x8005 -vn 2 -vs "2.0" -da sha256 combined_image.rps combined_image.ota
 ```
+
 **Note:** For TA(alone) OTA firmware upgrade, follow the same steps as [combined image](./04-ota-software-update-soc.md#combined-image-upgrade)
 
 ### Running OTA Provider
@@ -83,20 +96,20 @@ commander rps convert "combined_image.rps" --app "m4_image_combined.rps" --taapp
 
 1. In a separate terminal, locate the chip-tool and ota-requestor and run the chip-tool commands to provision the Provider.
 
-```shell
-    ./out/chip-tool pairing onnetwork 1 20202021
-    ./out/chip-tool accesscontrol write acl '[{"fabricIndex": 1, "privilege": 5, "authMode": 2, "subjects": [112233], "targets": null}, {"fabricIndex": 1, "privilege": 3, "authMode": 2, "subjects": null, "targets": null}]' 1 0
-```
+    ```shell
+        ./out/chip-tool pairing onnetwork 1 20202021
+        ./out/chip-tool accesscontrol write acl '[{"fabricIndex": 1, "privilege": 5, "authMode": 2, "subjects": [112233], "targets": null}, {"fabricIndex": 1, "privilege": 3, "authMode": 2, "subjects": null, "targets": null}]' 1 0
+    ```
 
 2. If the application device had been previously commissioned, hold Button 0 for six seconds to factory-reset the device.
 
 3. In the chip-tool terminal, commission the Device by passing below command.
 
-```shell
-    ./out/chip-tool pairing ble-wifi "node_id" "SSID" "PSK" 20202021 3840
-```
+    ```shell
+        ./out/chip-tool pairing ble-wifi "node_id" "SSID" "PSK" 20202021 3840
+    ```
 
-where SSID and PSK are AP username and password.
+    where SSID and PSK are AP username and password.
 
 4. Once the commissioning process completes in the same terminal, run below requestor command to start downloading the image.
 
@@ -108,7 +121,6 @@ where SSID and PSK are AP username and password.
 
 **Note:** once image download is done, disconnect jlink. it will reboot automatically with new image.
 
-
 ## Matter Software Update with SOC M4 Example Applications
 
 - Host will initiate OTA download to receive M4 image on to host. Host will store M4 image on flash backup location.
@@ -118,16 +130,19 @@ where SSID and PSK are AP username and password.
 - OTA image will be created and uploaded onto Raspberry Pi which provides the firmware image chunk by chunk to the device.
 - Host will initiate the OTA download, and provider app will start the OTA image transfer.
 - Host will receive M4 image and host will transfer the M4 image on to flash chunk by chunk.
-- TA will write the M4 image onto flash backup location. 
+- TA will write the M4 image onto flash backup location.
 - Once image is downloaded, the device will reboot into the upgraded M4 image.
 
 ## Generating The M4 OTA image
 
 - Create M4 (.s37) image to  (.rps) image using below command.
+
 ```shell
     commander rps create <m4_image.rps> --app <m4_image.s37>
 ```
+
 - Create the Matter OTA file from the bootable image file
+
 ```shell
    ./src/app/ota_image_tool.py create -v 0xFFF1 -p 0x8005 -vn 2 -vs "2.0" -da sha256 m4_image.rps m4_image.ota
 ```
@@ -151,20 +166,20 @@ where SSID and PSK are AP username and password.
 
 1. In a separate terminal, locate the **chip-tool** and **ota-requestor**, and run the chip-tool commands to provision the Provider.
 
-```shell
-    ./out/chip-tool pairing onnetwork 1 20202021
-    ./out/chip-tool accesscontrol write acl '[{"fabricIndex": 1, "privilege": 5, "authMode": 2, "subjects": [112233], "targets": null}, {"fabricIndex": 1, "privilege": 3, "authMode": 2, "subjects": null, "targets": null}]' 1 0
-```
+    ```shell
+        ./out/chip-tool pairing onnetwork 1 20202021
+        ./out/chip-tool accesscontrol write acl '[{"fabricIndex": 1, "privilege": 5, "authMode": 2, "subjects": [112233], "targets": null}, {"fabricIndex": 1, "privilege": 3, "authMode": 2, "subjects": null, "targets": null}]' 1 0
+    ```
 
 2. If the application device had been previously commissioned, hold Button 0 for six seconds to factory-reset the device.
 
 3. In the chip-tool terminal, commission the Device by passing below command.
 
-```shell
-    ./out/chip-tool pairing ble-wifi "node_id" "SSID" "PSK" 20202021 3840
-```
+    ```shell
+        ./out/chip-tool pairing ble-wifi "node_id" "SSID" "PSK" 20202021 3840
+    ```
 
-where SSID and PSK are AP username and password.
+    where SSID and PSK are AP username and password.
 
 4. Once the commissioning process completes in the same terminal, run below requestor command to start downloading the image.
 

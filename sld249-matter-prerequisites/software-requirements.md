@@ -40,7 +40,7 @@ Below are the software tools both optional and required for developing Matter ov
 
 5. [Firmware for SiWx917 NCP](./matter-artifacts.md#siwx917-firmware-for-siwx917-ncp)
 
-## Software Packages Required for Wi-Fi SiWx917 SoC devices
+## Software Packages Required for Wi-Fi SiWx917 SoC Devices
 
 1. [GeckoSDK package](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/software-installation#installation-of-gecko-sdk-extension), which can be installed as part of the Simplicity Studio tool installation.
 

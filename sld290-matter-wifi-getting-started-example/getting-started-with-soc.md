@@ -72,7 +72,8 @@ In Simplicity Studio 5, create the Light Matter Accessory Devices (MAD):
 2. To install the software packages for Simplicity Studio, refer to the [Software Package Installation Section](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/software-installation#installation-of-software-packages)
 
 3. Switch to the Launcher view (if not already in it).
-![SoC Launcher tab](./images/SiWx917-soc-launcer-tab.png)
+
+    ![SoC Launcher tab](./images/SiWx917-soc-launcer-tab.png)
 
 4. Go to `All Products` in the launcher tab and select one compatible board from the following supported list of SiWx917 SOC dev boards.
 
@@ -81,27 +82,37 @@ In Simplicity Studio 5, create the Light Matter Accessory Devices (MAD):
    ![SoC board selection](./images/SiWx917-soc-board-selection.png)
 
 5. Once the board shows up in the Debug Adapters view, select it.
-![SoC debug adapter](./images/SiWx917-soc-debug-adapter.png)
+
+    ![SoC debug adapter](./images/SiWx917-soc-debug-adapter.png)
 
 6. Open the Example Projects and Demos tab, select the **Matter** filter and enter "*Wi-Fi*" in **Filter on keywords**. Click **CREATE**.
-![Create project](./images/SiWx917-soc-create-wifi-projects.png)
+
+    ![Create project](./images/SiWx917-soc-create-wifi-projects.png)
 
 7. Optionally rename the project, and click **Finish**.
-![Project wizard](./images/SiWx917-soc-project-wizard.png)
+
+    ![Project wizard](./images/SiWx917-soc-project-wizard.png)
 
 8. Once the project is created, right-click on the project and select *Build Project* in the Project Explorer tab.
-![Build project](./images/SiWx917-soc-build-wifi-project.png)
+
+    ![Build project](./images/SiWx917-soc-build-wifi-project.png)
 
 9. To flash the application, connect the compatible dev board to the PC if not yet done.
 10. Once the project is compiled successfully, go to the Project Explorer view and select the binary to be flashed.
-![binary selection](./images/SiWx917-soc-isp-binary-selection.png)
+
+    ![binary selection](./images/SiWx917-soc-isp-binary-selection.png)
 
 11. Right-click the selected *_isp.bin* binary and click *flash to device*.
-![Flash to device](./images/SiWx917-soc-flash-todevice.png)
+
+    ![Flash to device](./images/SiWx917-soc-flash-todevice.png)
 
 12. The Flash programmer window opens. Click **Program** to start flashing.
-![Flash program window](./images/SiWx917-soc-flash-program.png)
-   **Note:** Output of the SiWX917 SoC application will be displayed on the J-Link RTT Viewer.
 
-13.  In order to debug your Matter Application, Right-click on the selected **Matter Project** and click on *Debug As*.
-![Debug](./images/SiWx917-soc-debug.png)
+    ![Flash program window](./images/SiWx917-soc-flash-program.png)
+
+    **Note:** Output of the SiWX917 SoC application will be displayed on the J-Link RTT Viewer.
+
+13. In order to debug your Matter Application, Right-click on the selected **Matter Project** and click on *Debug As*.
+
+    ![Debug](./images/SiWx917-soc-debug.png)
+    

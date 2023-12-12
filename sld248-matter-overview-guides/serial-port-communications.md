@@ -53,9 +53,10 @@ The matter-shell exposes the configuration and the management APIs via the matte
 12. After a successful build, commission the device as described in [Commission Matter Platform](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/use-case-execution#creating-the-matter-network).
 
 13. For SiWx917 SOC Connect the TTL cables with Radio Board to execute **Matter Shell**.
+
     ![Connect TTL Cable](./images/shell-ttl-cable-soc.png)
 
-**Note**:- For EFR32MG2x Devices TTL Cable support is not required.
+    **Note**:- For EFR32MG2x Devices TTL Cable support is not required.
 
 14. Open Tera Term and under New Connection, under Serial Port, select JLink port and click **OK**.
 

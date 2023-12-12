@@ -44,15 +44,16 @@ A remote user is used to check the state of a Matter device. In this context, MQ
 
 2. After Enabling DIC feature in the Matter extension code, click **Preferences** and go to **SDKs tab** in Simplicity Studio.
 
-  ![Extension refresh in tab](images/dic-extension-refresh.png)
+    ![Extension refresh in tab](images/dic-extension-refresh.png)
 
 3. In the **SDKs** tab, click  **Gecko SDK** and click **Refresh**. It will refresh matter extension code for changes made in step 1.
 
-  ![Extension refresh](images/dic-extension-refresh-1.png)
+    ![Extension refresh](images/dic-extension-refresh-1.png)
 
 4. After refreshing the Matter extension, create and build a project for the Silicon Labs Device Platform. Refer the following:
-  - [Creating and Building Project for NCP Board](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/getting-started-efx32-ncp#building-and-flashing-an-application)
-  - [Creating and Building Project for SoC Board](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/getting-started-with-soc#building-the-917-soc-matter-accessory-devices-using-simplicity-studio)
+
+    - [Creating and Building Project for NCP Board](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/getting-started-efx32-ncp#building-and-flashing-an-application)
+    - [Creating and Building Project for SoC Board](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/getting-started-with-soc#building-the-917-soc-matter-accessory-devices-using-simplicity-studio)
 
 **Note**: Matter extension code is located at the following location: `C:\Users\system_name\SimplicityStudio\SDKs\gecko_sdk\extension`.
 

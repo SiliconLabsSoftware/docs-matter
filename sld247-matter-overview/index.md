@@ -45,17 +45,17 @@ The following boards are supported for the Matter over Wi-Fi demos and developme
       - [RS9116X-SB-EVK2](https://www.silabs.com/development-tools/wireless/wi-fi/rs9116x-sb-evk2-development-kit)
     - DB-EVK1 / Dual Band Wi-Fi Development Kit / 2.4GHz & 5GHz
       - [RS9116X-DB-EVK1](https://www.silabs.com/development-tools/wireless/wi-fi/rs9116x-db-evk-development-kit)
-  -  **SiWx917 NCP**
-      - SiWx917 NCP Mode / Wi-Fi Expansion Board / 2.4GHz
-        - BRD8045A (B0 Expansion v2.0)
-  -  **WF200**
-      -  WF200 / Single Band Wi-Fi Expansion Board / 2.4GHz
-         - [SLEXP8022A](https://www.silabs.com/development-tools/wireless/wi-fi/wf200-wifi-expansion-kit)
-      -  WF200 / Single Band Wi-Fi Expansion Board / 2.4GHz
-         - [SLEXP8023A](https://www.silabs.com/development-tools/wireless/wi-fi/wfm200-wifi-expansion-kit)
-  -   Interconnect board (included in the Wi-Fi kits)
-  -   SPI Cable (included in the RS9116 kit)
-  -   Jumper Cables (included in the RS9116 kit)
+  - **SiWx917 NCP**
+    - SiWx917 NCP Mode / Wi-Fi Expansion Board / 2.4GHz
+      - BRD8045A (B0 Expansion v2.0)
+  - **WF200**
+    - WF200 / Single Band Wi-Fi Expansion Board / 2.4GHz
+      - [SLEXP8022A](https://www.silabs.com/development-tools/wireless/wi-fi/wf200-wifi-expansion-kit)
+      - WF200 / Single Band Wi-Fi Expansion Board / 2.4GHz
+      - [SLEXP8023A](https://www.silabs.com/development-tools/wireless/wi-fi/wfm200-wifi-expansion-kit)
+  - Interconnect board (included in the Wi-Fi kits)
+  - SPI Cable (included in the RS9116 kit)
+  - Jumper Cables (included in the RS9116 kit)
 
 **Note**: For more information, refer to [Hardware Requirements](/matter/<docspace-docleaf-version>/hardware-requirements).
 
@@ -69,7 +69,7 @@ Pre-built images for the SiWx917 connectivity firmware are available as per the 
   - SiWx917 / BRD4002A / Wireless Starter Kit
   - SiWx917 Soc Mode
     - SiWx917 SoC / Common Flash Radio Board / 2.4GHz
-        - BRD4338A - B0 common flash v2.0
+      - BRD4338A - B0 common flash v2.0
 
 ### Software Requirements
 
