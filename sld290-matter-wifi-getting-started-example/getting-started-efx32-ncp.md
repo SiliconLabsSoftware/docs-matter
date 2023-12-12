@@ -87,9 +87,13 @@ Refer to the [Wi-Fi Software Installation Page](./software-installation)
 ## Connect the Boards to a Computer
 
 1. Mount the EFR32 radio board on the EFR32 WSTK board.
-![Mount EFR on radio board](./images/mount-efr32.png)
+
+    ![Mount EFR on radio board](./images/mount-efr32.png)
+
 2. Connect the NCP expansion board to the EXP header on the EFR32 WSTK board.
-![Connect expansion board](./images/mount-expansion.png)
+
+    ![Connect expansion board](./images/mount-expansion.png)
+
 3. Toggle the upper switch on the NCP expansion board to EXP-UART.
 4. Connect the EFR32 WSTK board to computer using a USB cable.
 
@@ -123,7 +127,7 @@ This section describes how to create a project for the EFR32 boards.
 
 5. Right-click the selected *.s37* binary and click **flash to device**.
 
-    ![Flash to Device](./images/SiWx917-soc-flash-todevice.png)
+    ![Flash to Device](./images/siwx917-soc-flash-todevice.png)
 
 6. Flash programmer window will be opened. Click **Erase** and then **Program** to start flashing.
 

@@ -60,28 +60,34 @@ If you already selected the Gecko SDK extension while installing Studio, you may
 4. In the **Debug Adapters** panel, select the radio board.
 
 5. In the **General Information** section, click **Manage SDKs**.
-![Manage SDKs](./images/click-manage-sdks-efx-board.png)
+
+    ![Manage SDKs](./images/click-manage-sdks-efx-board.png)
 
 6. The Preferences window will be opened in the SDKs section.
 
 7. Select **Add SDK**.
-![Add SDK](./images/Add-sdk.png)
+
+    ![Add SDK](./images/add-sdk.png)
 
 8. In the **Add SDK Extensions** window, click **Browse**.
-![Browse](./images/click-browse.png)
+
+    ![Browse](./images/click-browse.png)
 
 9. Locate and select the Gecko SDK sub-folder extracted in step 2 above, which contains the source code.
 
 10. Studio will detect the Gecko SDK extension.
 
 11. Select the detected extension and click **OK**.
-![Add SDK path](./images/Add-sdk-path.png)
+
+    ![Add SDK path](./images/add-sdk-path.png)
 
 12. If a **Verify SDK Extension** popup is displayed, click **Trust**.
-![Trust pop-up](./images/install-wiseconnect-3-ext-manage-sdks-trust-popup.png)
+
+    ![Trust pop-up](./images/install-wiseconnect-3-ext-manage-sdks-trust-popup.png)
 
 13. The selected GSDK extension will be displayed.
-![Selected GSDK](./images/selected-gsdk.png)
+
+    ![Selected GSDK](./images/selected-gsdk.png)
 
 14. Click **Apply** and **Close**.
 
@@ -101,12 +107,14 @@ Install WiSeConnect SDK v2.x or v3.x through one of the following alternative pa
 1. Log in to Simplicity Studio if not already done.
 
 2. In the Simplicity Studio home page, select **Install > Manage installed packages**.
-![WiseConnect step1](./images/install-wiseconnect-sdk-step-1.png)
+
+    ![WiseConnect step1](./images/install-wiseconnect-sdk-step-1.png)
 
 3. Select the **SDKs** tab.
 
 4. Next to the WiSeConnect SDK v2.x or v3.x extension, click **Install**.
-![WiseConnect step2](./images/install-wiseconnect-sdk-step-2.png)
+
+    ![WiseConnect step2](./images/install-wiseconnect-sdk-step-2.png)
 
 #### Install WiSeConnect SDK Through the Manage SDKs Window
 
@@ -123,27 +131,33 @@ Install WiSeConnect SDK v2.x or v3.x through one of the following alternative pa
 4. In the **Debug Adapters** pane, select your radio board.
 
 5. In the **General Information** section, click **Manage SDKs**.
-![Manage SDKs](./images/click-manage-sdks-efx-board.png)
+
+    ![Manage SDKs](./images/click-manage-sdks-efx-board.png)
 
 6. The **Preferences** window will be opened in the **SDKs** section.
 
 7. Select Gecko SDK Suite vx.x.x and click **Add Extension**.
-![Add Extension](./images/click-add-extensions.png)
+
+    ![Add Extension](./images/click-add-extensions.png)
 
 8. In the Add SDK Extensions window, click **Browse**.
-![Browse](./images/click-browse.png)
+
+    ![Browse](./images/click-browse.png)
 
 9. Locate and select the WiSeConnect SDK v2.x or v3.x sub-folder extracted in step 2 above, which contains the source code.
 
 10. Studio will detect the WiSeConnect 3 SDK extension.
 
 11. Select the detected extension and click **OK**.
-![Add extension](./images/install-wc3-ext-add-sdk-extensions-window.png)
+
+    ![Add extension](./images/install-wc3-ext-add-sdk-extensions-window.png)
 
 12. If a Verify SDK Extension popup is displayed, click **Trust**.
-![Trust pop up](./images/install-wiseconnect-3-ext-manage-sdks-trust-popup.png)
+
+    ![Trust pop up](./images/install-wiseconnect-3-ext-manage-sdks-trust-popup.png)
 
 13. The selected WiSeConnect SDK v2.x or v3.x extension will be displayed.
-![Extension displays](./images/selected-sdk.png)
+
+    ![Extension displays](./images/selected-sdk.png)
 
 14. Click **Apply and Close**.
