@@ -48,9 +48,27 @@ The following boards are supported for the Matter over Wi-Fi demos and developme
 
       **Note:** Matter only supported over 2.4GHz on this Dev kit.
 
-- Interconnect board (included in the Wi-Fi kits)
-- SPI Cable (included in the RS9116 kit)
-- Jumper Cables (included in the RS9116 kit)
+       -   RS9116
+            -   SB-EVK1 / Single Band Wi-Fi Development Kit / 2.4GHz
+                -   [RS9116X-SB-EVK1](https://www.silabs.com/development-tools/wireless/wi-fi/rs9116x-sb-evk-development-kit)
+            -   SB-EVK2 / Single Band Wi-Fi Development Kit / 2.4GHz
+                -   [RS9116X-SB-EVK2](https://www.silabs.com/development-tools/wireless/wi-fi/rs9116x-sb-evk2-development-kit)
+            -   DB-EVK1 / Dual Band Wi-Fi Development Kit / 2.4GHz & 5GHz
+                -   [RS9116X-DB-EVK1](https://www.silabs.com/development-tools/wireless/wi-fi/rs9116x-db-evk-development-kit)
+    
+                **Note:** Matter only supported over 2.4GHz on this Dev kit.
+  
+  -  **SiWx917 NCP**
+      - SiWx917 NCP Mode / Wi-Fi Expansion Board / 2.4GHz
+        - BRD8045A (B0 Expansion v2.0)
+  -  **WF200**
+      -  WF200 / Single Band Wi-Fi Expansion Board / 2.4GHz
+         - [SLEXP8022A](https://www.silabs.com/development-tools/wireless/wi-fi/wf200-wifi-expansion-kit)
+      -  WF200 / Single Band Wi-Fi Expansion Board / 2.4GHz
+         - [SLEXP8023A](https://www.silabs.com/development-tools/wireless/wi-fi/wfm200-wifi-expansion-kit)
+  -   Interconnect board (included in the Wi-Fi kits)
+  -   SPI Cable (included in the RS9116 kit)
+  -   Jumper Cables (included in the RS9116 kit)
 
 **Note**: For more information, refer to [Hardware Requirements](/matter/<docspace-docleaf-version>/hardware-requirements).
 

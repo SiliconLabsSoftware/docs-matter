@@ -64,7 +64,7 @@ Below are the software tools, packages and images required for executing Matter 
 
 ### Software Tools Requirements
 
-- Simplicity Commander for flashing bootloader on EFR32 Boards and firmware on Siwx917 SOC
+- Simplicity Commander for flashing bootloader on EFR32 Boards and Siwx917 NCP.
 - Tera Term for flashing firmware on EFR32 NCP Boards.
 - Simplicity Studio
 - Putty for controling EFR32 hardware using chip-tool controller
@@ -80,7 +80,9 @@ Below are the software tools, packages and images required for executing Matter 
 
 ### Firmware Images
 
-Refer to the [Matter Artifacts Page](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts#rs9116-firmware) for pre-built firmware images for the Matter over Wi-Fi demo.
+- Download firmware images, Refer to the [Matter Artifacts Page](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts#rs9116-firmware) for pre-built firmware images for the Matter over Wi-Fi demo.
+
+- For Flashing the firmware images, Refer to the [Loading of Firmware to NCP](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/loading-firmware-for-ncp-and-soc-boards#).
 
 ## Installation of the Wi-Fi Software Tools and Packages
 

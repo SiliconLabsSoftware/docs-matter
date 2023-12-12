@@ -64,7 +64,7 @@ https://github.com/SiliconLabs/matter_extension/releases/download/v2.2.0/SiWx917
 **Note**:
 SiWx917 NCP board need to be flashed with proper firmware as mentioned below:
 
-- `SiWG917-B.2.9.X.X.X.rps - This firmware image is valid for BRD8036A (A0 Expansion v1.1) board`
+- `SiWG917-B.2.x.X.X.X.rps - This firmware image is valid for BRD8045A (B0 Expansion v2.0) board`
 
 ## SiWx917 Firmware for SiWx917 SoC
 
@@ -75,7 +75,7 @@ https://github.com/SiliconLabs/matter_extension/releases/download/v2.2.0/SiWx917
 **Note**:
 SiWx917 SoC boards need to be flashed with proper firmware as mentioned below:
 
-- `SiWG917-B.2.9.X.X.X.rps - This firmware image is valid for BRD4338A(B0 common flash v2.0) board`
+- `SiWG917-B.2.x.X.X.X.rps - This firmware image is valid for BRD4338A(B0 common flash v2.0) board`
 
 ## SiWx917 SoC Configuration Files For JLink RTT Logging
 
