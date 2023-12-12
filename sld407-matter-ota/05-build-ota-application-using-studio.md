@@ -100,7 +100,7 @@ In Matter OTA Software Update scenario the running image (OTA-A) and the update 
 
 11. Once the modification is done for Software version, right-click on the project and select *Build Project* in the Project Explorer tab.
   
-    ![Silicon Labs - design](./images/project-created-efx32.png)
+    ![Silicon Labs - design](images/project-created-efx32.png)
 
 12. Once the project is compiled successfully, Go to the Project Explorer view and expand OTA-B project binaries folder , using application .s37 file Need to Create .gbl file using Simplicity commander.
 

@@ -12,7 +12,7 @@ an *IoT Service* in a Unify Framework.
 
 Device: SiWx917 SoC
 
-![Silicon Labs - SiWx917 soc](resources/silicon-labs-matter-siwx917.png)
+![Silicon Labs - SiWx917 soc](resources/silabs-matter-siwx917.png)
 
 ## Two Paths for Development
 
