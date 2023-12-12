@@ -111,7 +111,7 @@ Now two Matter accessory devices (MADs) are on the network and ready to be used.
 
    1. First, modify the Access Control List (ACL) of the Matter light device. This list determines which device in the network the Matter light device will react to. Use: `./chip-tool accesscontrol write acl '[ { "fabricIndex" : 1 , "privilege" : 5 , "authMode" : 2 , "subjects" : [`**`112233`**`] , "targets" : null } , { "fabricIndex" : 1 , "privilege" : 3 , "authMode" : 2 , "subjects" : [`**`nodeID-switch`**` ], "targets" : null }]' `**`nodeID-light 0`**, where the highlighted parameters are:
 
-      - **112233**: The node ID of the controller. This is always 112233.
+      - **1122**: The node ID of the controller. This is always 1122.
 
       - **nodeID-switch**: The node ID of the Matter light switch device.
 
@@ -125,7 +125,7 @@ Now two Matter accessory devices (MADs) are on the network and ready to be used.
 
       - **0**: The endpoint in the Matter device that holds the ACL. This is always 0.
    
-   **For Example**:- `./chip-tool accesscontrol write acl '[{"fabricIndex": 1, "privilege": 5, "authMode": 2, "subjects": [112233], "targets": null }, {"fabricIndex": 1, "privilege": 3, "authMode": 2, "subjects": [2], "targets": null }]' 1 0`
+   **For Example**:- `./chip-tool accesscontrol write acl '[{"fabricIndex": 1, "privilege": 5, "authMode": 2, "subjects": [112233], "targets": null }, {"fabricIndex": 1, "privilege": 3, "authMode": 2, "subjects": [2], "targets": null }]' 1111 0`
    
    2. Second, bind the switch's write command to the light. This is done by updating the binding table of the Matter light_switch device. This can be done using the command: `./chip-tool binding write binding '[ { "fabricIndex" : 1 , "node" :`**`nodeID-light`**,` "endpoint" : `**`1`**,`"cluster" :`**`6`**`} ]'`**`nodeID-switch 1`**, where the highlighted parameters are:
 
@@ -145,11 +145,6 @@ Now two Matter accessory devices (MADs) are on the network and ready to be used.
 
       - **1**: The application endpoint in the switch that holds the binding table. This is always 1.
   
-   **For Example**:- `./chip-tool binding write binding '[{"fabricIndex": 1, "node": 1, "endpoint": 1, "cluster":6}]' 2 1`
+   **For Example**:- `./chip-tool binding write binding '[{"fabricIndex": 1, "node": 1, "endpoint": 1, "cluster":6}]' 2222 1`
 
-3. With the binding complete, a button press (BTN1) on Matter light_switch device should now toggle the light status of Matter light device.
-
-## Example of Light and Switch Binding
-
-1. Flash the Light application to one setup and commission the device using below command
-2. 
+3. With the binding complete, a button press (BTN1) on Matter light_switch device should now toggle the light status of Matter light device. 
