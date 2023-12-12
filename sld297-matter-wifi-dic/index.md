@@ -1,6 +1,7 @@
 # Matter Wi-Fi Direct Internet Connectivity
 
-- Direct Internet Connectivity (DIC) is a Silicon Labs-only feature to connect Matter devices to proprietary cloud solutions (AWS,GCP,APPLE ...) directly. As such, a Matter Wi-Fi device must support connecting locally on the Matter Fabric, via IPv6, and connecting to the Internet via IPv4.
+Direct Internet Connectivity (DIC) is a Silicon Labs-only feature to connect Matter devices to proprietary cloud solutions (eg, AWS,GCP,Apple) directly. As such, a Matter Wi-Fi device must support connecting locally on the Matter Fabric, via IPv6, and connecting to the Internet via IPv4.
+
 - Matter devices can be controlled by chip-tool or controller and the respective status of the attribute modified will be published to the cloud.
 - Remote users can install the cloud-specific application to get the notifications on the attribute status and to control the device.
 
@@ -14,7 +15,7 @@ The following diagram illustrates the end-to-end flow for Direct Internet Connec
 
 ### Hardware Requirements
 
-For the hardware required for the DIC feature to run on Silicon Labs Platform, refer to [Matter Hardware Requirements](/matter/<docspace-docleaf-version>/matter-prerequisites/hardware-requirements).
+For the hardware required for the DIC feature to run on the Silicon Labs Platform, refer to [Matter Hardware Requirements](/matter/<docspace-docleaf-version>/matter-prerequisites/hardware-requirements).
 
 ### Software Requirements
 
@@ -35,7 +36,7 @@ To set up and configure AWS or Mosquitto for DIC support, see the following docu
 
 ### Remote User Setup (MQTT Explorer)
 
-A remote user is used to check the state of Matter device. In this context, MQTT explorer is used as a remote user. See [MQTT explorer setup and configuration](./mqtt-explorer-setup.md).
+A remote user is used to check the state of a Matter device. In this context, MQTT explorer is used as a remote user. See [MQTT explorer setup and configuration](./mqtt-explorer-setup.md).
 
 ### Building Matter DIC Application using Simplicity Studio
 
@@ -53,7 +54,7 @@ A remote user is used to check the state of Matter device. In this context, MQTT
     - [Creating and Building Project for NCP Board](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/getting-started-efx32-ncp#building-and-flashing-an-application)
     - [Creating and Building Project for SoC Board](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/getting-started-with-soc#building-the-917-soc-matter-accessory-devices-using-simplicity-studio)
 
-**Note**: Matter extension code is located at the following location: `C:\Users\system_name\SimplicityStudio\SDKs\gecko_sdk\extension`
+**Note**: Matter extension code is located at the following location: `C:\Users\system_name\SimplicityStudio\SDKs\gecko_sdk\extension`.
 
 ## End-to-End Test of DIC Application
 
@@ -75,15 +76,17 @@ User Setup (MQTT Explorer):
   - For On/off Plug App, On/Off Attributes
   - Application status would be updated on the mqtt_explorer UI, as shown in below image.
   
-      ![DIC STATUS UPDATE](images/mqtt-explorer-4.png)
+      ![DIC status update](images/mqtt-explorer-4.png)
 
 - **Control of the device through cloud interface**
   - Below diagram gives end-to-end flow for Control of the matter device through cloud interface
   
       ![Silicon Labs - DIC design](images/dic-control-part.png)
-**Note**: For reference, Lighting App commands given in the above image. Similarly other application commands also can be passed.
+
+    **Note**: For reference, Lighting App commands given in the above image. Similarly other application commands also can be passed.
+
   - Make sure matter device is up and commissioned successfully, refer to [Running the Matter Demo Over Wi-Fi](/matter/<docspace-docleaf-version>/matter-wifi-run-demo)
-  - For Controlling the device, set topic name and the commands to be executed in the mqtt_explorer for below applications.
+  - For controlling the device, set topic name and the commands to be executed in the mqtt_explorer for below applications.
 
 ```shell
     - Lighting App
@@ -116,24 +119,24 @@ User Setup (MQTT Explorer):
           - Tilt/value(value need to provide in range 1000 to 10000)
 ```
 
-- Then click **Publish** to execute the command.
+- Click **Publish** to execute the command.
 
    ![Silicon Labs - DIC design](images/control-device-through-cloud.png)
 
-- **Download AWS OTA Image through cloud interface**
+- Download AWS OTA Image through cloud interface.
   
   - The diagram below provides the end to end flow of firmware upgrade feature through AWS.
 
       ![Silicon Labs - DIC design](images/dic-aws-ota.png)
 
-  - Make sure matter device is up and commissioned successfully, refer [Running the Matter Demo Over Wi-Fi](/matter/<docspace-docleaf-version>/matter-wifi-run-demo)
+  - Make sure Matter device is up and commissioned successfully. Refer to [Running the Matter Demo Over Wi-Fi](/matter/<docspace-docleaf-version>/matter-wifi-run-demo).
   
   - Make sure device is connected to MQTT Server successfully.
   
-  - Then Create an AWS OTA Job in the AWS Website. Refer to [How to create AWS OTA JOB](aws-configuration-registration.md).
+  - Create an AWS OTA Job on the AWS website. Refer to [How to create AWS OTA job](./aws-configuration-registration.md).
   
   - Trigger OTA Command through MQTT Explorer like below.
   
-  - Then click **Publish** to execute the AWS OTA command.
+  - Click **Publish** to execute the AWS OTA command.
   
      ![Silicon Labs - DIC design](images/download-aws-ota-through-cloud.png)
