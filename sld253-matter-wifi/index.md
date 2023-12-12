@@ -25,5 +25,5 @@ This contains instructions to run the Matter Wi-Fi applications using chip-tool
 ## Additional Information
 
 - [Enabling Features](/matter/<docspace-docleaf-version>/matter-wifi-enabling-features)
-- [Matter Shell](/matter/<docspace-docleaf-version>/matter-overview-guides/serial-port-communications.md)
+- [Matter Shell](/matter/<docspace-docleaf-version>/matter-overview-guides/serial-port-communications)
 - [Matter OTA](/matter/<docspace-docleaf-version>/matter-ota)
