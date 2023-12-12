@@ -7,7 +7,7 @@ To optimize an application's memory footprint, check the following:
 
 1. Analyze and reduce stack usage of the application wherever possible.
 2. Disable any included debug modules.
-3. Turn off unused peripherals, features and functions.
+3. Turn off unused peripherals, features, and functions.
 
 ### Disabling Debug Logging
 

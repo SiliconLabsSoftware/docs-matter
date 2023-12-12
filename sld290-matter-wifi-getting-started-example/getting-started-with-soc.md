@@ -32,7 +32,7 @@ Below are the software tools, packages, and images required for executing Matter
 - Tera Term
 - Simplicity Studio
 - Putty for controlling EFR32 hardware using chip-tool controller
-- Ozone Debugger for logging and debugging (Optional) 
+- Ozone Debugger for logging and debugging (Optional)
 - JLink RTT for logging only (Optional)
 
 ### Software Packages
@@ -89,7 +89,7 @@ In Simplicity Studio 5, create the Light Matter Accessory Devices (MAD):
 ![Project wizard](./images/SiWx917-soc-project-wizard.png)
 
 8. Once the project is created, right-click on the project and select *Build Project* in the Project Explorer tab.
-![Build project](./images/SiWx917-soc-build-wifi-project.png) 
+![Build project](./images/SiWx917-soc-build-wifi-project.png)
 
 9. To flash the application, connect the compatible dev board to the PC if not yet done.
 10. Once the project is compiled successfully, go to the Project Explorer view and select the binary to be flashed.

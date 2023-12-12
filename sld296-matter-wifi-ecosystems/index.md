@@ -17,16 +17,16 @@
 
 ### Smartphone to Control the Ecosystem
 
-- Android smart phone installed with respective Ecosystem mobile apps **Amazon Alexa, Google Home, Samsung Smart Things**
-- Apple iphone installed with mobile app **Apple Home**.
+- Android smart phone installed with respective Ecosystem mobile apps **Amazon Alexa, Google Home, Samsung Smart Things**.
+- Apple iPhone installed with mobile app **Apple Home**.
 
 ### Silicon Labs Development Boards
 
-For detailed information about Silicon Labs Development Boards refer to the [Hardware Requirements Page](/matter/<docspace-docleaf-version>/matter-prerequisites/hardware-requirements).
+For detailed information about Silicon Labs Development Boards, refer to the [Hardware Requirements Page](/matter/<docspace-docleaf-version>/matter-prerequisites/hardware-requirements).
 
-## Setting up Matter with an Ecosystem and running a Matter Application
+## Setting up Matter with an Ecosystem and Running a Matter Application
 
-A Matter device can be controlled by single Ecosystem controller and is also interoperable with multiple controllers
+A Matter device can be controlled by single Ecosystem controller and is also interoperable with multiple controllers.
 
 - Follow [Single Controller Setup and Execution](./singlecontroller-ecosystem.md) to operate with single controller
 - Follow [Multiple Controller Setup and Execution](./multicontroller-ecosystem.md) to interoperate with multiple controllers

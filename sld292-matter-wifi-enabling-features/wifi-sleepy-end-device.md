@@ -54,14 +54,13 @@ To enable ICD functionality for Wi-Fi, the `matter_icd` component needs to be in
 
 - For rs9116 and WF200: `matter_icd` component is installed by default for lock-app. For thermostat and window need to install mentioned component to enable sleepy.
 - For 917NCP: `matter_icd` component is installed by default for lock-app. For thermostat and window need to install mentioned component to enable sleepy.
-- For SiWx917 SOC: 
-     
-     - Search `matter_icd` from **search bar** and click on install.
-    
+- For SiWx917 SOC:
+  - Search `matter_icd` from **search bar** and click **Install**.
+
     ![Search matter icd](./images/search-matter-icd.png)
 
-     - Click on `Replace Subscription Timeout Resumption`. Sleepy support is enabled, build the project.
-    
+  - Click on **Replace Subscription Timeout Resumption**. Sleepy support is enabled; build the project.
+
     ![Replace matter icd](./images/replace-icd-tab.png)
 
 ## Power Measurements for Wi-Fi Devices
@@ -81,11 +80,11 @@ After flashing the Matter application to the module, Energy profiler or a power 
 
 ![Power measurement connection overview](./images/wifi-powersave-overview.png)
 
-In Simplicity Studio, click **Tools** on the toolbar, select Energy Profiler, and click "OK".
+In Simplicity Studio, click **Tools** on the toolbar, select **Energy Profiler**, and click **OK**.
 
 ![Power measurement PowerProfiler](./images/wifi-powerprofiler.png)
 
-From the Quick Access or Profiler menu, select 'Start Energy Capture'. 
+From the Quick Access or Profiler menu, select **Start Energy Capture**.
 
 ![Power measurement using PowerProfiler](./images/wifi-powerprofiler-start.png)
 
@@ -94,6 +93,7 @@ From the Quick Access or Profiler menu, select 'Start Energy Capture'.
 ### Power Consumption Measurement (EFR) Using Energy Profiler
 
 Analyze the power values using Energy Profiler.
+
 ![Power measurement for EFR using EnergyProfiler](./images/wifi-efr-power-energyprofiler.png)
 
 ### Power Consumption Measurement Using a Power Meter

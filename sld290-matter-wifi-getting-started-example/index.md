@@ -12,7 +12,7 @@ Refer to the [Release Notes](https://github.com/SiliconLabs/matter_extension/rel
 To control the Matter Accessory Device, a controller must be set up called the chip-tool. The chip-tool can be set up in two ways:
 
 - **On the Raspberry PI**: See [Setting up chip-tool on Raspberry Pi](./build-chip-tool#build-environment-using-raspberry-pi-4).
-- **On Linux** - See [Setting up chip-tool on Linux](./build-chip-tool#build-environment-for-linux).
+- **On Linux**: See [Setting up chip-tool on Linux](./build-chip-tool#build-environment-for-linux).
 
 ## Running the Matter over Wi-Fi Demo
 
