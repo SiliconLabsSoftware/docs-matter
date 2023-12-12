@@ -45,19 +45,6 @@ The following boards are supported for the Matter over Wi-Fi demos and developme
       - [RS9116X-SB-EVK2](https://www.silabs.com/development-tools/wireless/wi-fi/rs9116x-sb-evk2-development-kit)
     - DB-EVK1 / Dual Band Wi-Fi Development Kit / 2.4GHz & 5GHz
       - [RS9116X-DB-EVK1](https://www.silabs.com/development-tools/wireless/wi-fi/rs9116x-db-evk-development-kit)
-
-      **Note:** Matter only supported over 2.4GHz on this Dev kit.
-
-       -   RS9116
-            -   SB-EVK1 / Single Band Wi-Fi Development Kit / 2.4GHz
-                -   [RS9116X-SB-EVK1](https://www.silabs.com/development-tools/wireless/wi-fi/rs9116x-sb-evk-development-kit)
-            -   SB-EVK2 / Single Band Wi-Fi Development Kit / 2.4GHz
-                -   [RS9116X-SB-EVK2](https://www.silabs.com/development-tools/wireless/wi-fi/rs9116x-sb-evk2-development-kit)
-            -   DB-EVK1 / Dual Band Wi-Fi Development Kit / 2.4GHz & 5GHz
-                -   [RS9116X-DB-EVK1](https://www.silabs.com/development-tools/wireless/wi-fi/rs9116x-db-evk-development-kit)
-    
-                **Note:** Matter only supported over 2.4GHz on this Dev kit.
-  
   -  **SiWx917 NCP**
       - SiWx917 NCP Mode / Wi-Fi Expansion Board / 2.4GHz
         - BRD8045A (B0 Expansion v2.0)
@@ -97,6 +84,9 @@ Pre-built images for the SiWx917 connectivity firmware are available as per the 
 **Silicon Labs Matter GSDK Extension**: Once Simplicity Studio 5 is installed, you will be prompted to install the Gecko SDK Suite (GSDK). Here you should also install the Matter Enablement Package by making sure the extension is checked, as shown.
 
 ![Installing the Matter Extension](./resources/install-package-advanced-device.png)
+
+**Installation of Wi-Fi SDK and Wiseconnect Packages**
+The following packages will be installed during the installation of Simplicity Studio, Refer to [Package Installation](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/software-installation)
 
 **Matter Hub Raspberry Pi Image**: A copy of the pre-built image from the Silicon Labs web services can be downloaded in this [zipfile](https://www.silabs.com/documents/public/software/SilabsMatterPi_2.2.0-1.2-extension.zip). **Note** this is a large file and will take some time to download.
 

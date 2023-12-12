@@ -32,8 +32,7 @@ Below are the software tools, packages, and images required for executing Matter
 - Tera Term
 - Simplicity Studio
 - Putty for controlling EFR32 hardware using chip-tool controller
-- Ozone Debugger for logging and debugging (Optional)
-- JLink RTT for logging only (Optional)
+- JLink RTT for logging only
 
 ### Software Packages
 

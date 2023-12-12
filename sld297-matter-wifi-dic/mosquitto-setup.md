@@ -17,7 +17,7 @@ Mosquitto is a lightweight open source (EPL/EDL licensed) message broker that im
 9. In “Security” section change uncomment the flag allow_anonymous false.
 10. Now that your configuration file is set, save it and run the following command in terminal to run Mosquitto:-
   
-    `Mosquitto -v -c Mosquitto.conf`
+    - Mosquitto -v -c Mosquitto.conf
 
 ### Windows Environment
 

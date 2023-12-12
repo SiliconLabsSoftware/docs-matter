@@ -38,11 +38,14 @@ In Simplicity Studio 5, create the Light MAD:
 
     ![Silicon Labs - design](./images/SiWx917-soc-isp-binary-selection.png)
 
-11. Right-click the selected *_isp.bin* binary and click on **Flash to Device**.
+11. Right-click the selected *_isp.bin* or *.rps* binary file and click on **Flash to Device**.
 
     ![Silicon Labs - design](./images/SiWx917-soc-flash-todevice.png)
 
-12. The Flash programmer window will open. Click the **Program** button to start the flashing.
+**Note:**
+   SiWX917 SoC device will supprot both **_isp.bin** and **.rps** file format to flash.
+
+1.  The Flash programmer window will open. Click the **Program** button to start the flashing.
 
     ![Silicon Labs - design](./images/SiWx917-soc-flash-program.png)
 

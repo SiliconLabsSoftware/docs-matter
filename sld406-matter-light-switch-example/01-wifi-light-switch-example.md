@@ -58,7 +58,7 @@ Matter hub/chip-tool are ready and working. Keep the PuTTY session open for the 
 
    7. Once the project has compiled, in the Debug Adapters view right-click the board and select *Upload application*.
 
-   8. Select the *Application image path* (Select the path for .s37 for efr32 and .rps for soc in the path '\<workspace\>\project_name\GNU ARM v10.3.1 - Default') for the newly compiled project and a *Bootloader image for EFR32*. The EFR32MG24 devices must be programmed with a bootloader. Obtain those here: [Silicon Labs Matter Artifacts](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts).
+   8. Select the *Application image path* (Select the path for `.rps` or `_isp.bin` file for soc in the path '\<workspace\>\project_name\GNU ARM v10.3.1 - Default').
 
    9. Disconnect the dev board from development computer.
 
@@ -88,7 +88,7 @@ In a PuTTY session to the Matter hub, use the chip-tool to commission the Matter
 
 2. Once it is powered up and booted, use the PuTTY session to commission the device using
 
-   `./*chip-tool pairing ble-wifi  nodeID SSID PSK 20202021 3840`
+   `./chip-tool pairing ble-wifi  nodeID SSID PSK 20202021 3840`
   
    where `nodeID` is replaced with the desired ID (for example `./chip-tool pairing ble-wifi 1122 Silabs PSK 20202021 3840`).
 
@@ -124,7 +124,9 @@ Now two Matter accessory devices (MADs) are on the network and ready to be used.
       - **nodeID**: The nodeID of the Matter device (Light or Light_switch) to read the ACL contents from.
 
       - **0**: The endpoint in the Matter device that holds the ACL. This is always 0.
-
+   
+   **For Example**:- `./chip-tool accesscontrol write acl '[{"fabricIndex": 1, "privilege": 5, "authMode": 2, "subjects": [112233], "targets": null }, {"fabricIndex": 1, "privilege": 3, "authMode": 2, "subjects": [2], "targets": null }]' 1 0`
+   
    2. Second, bind the switch's write command to the light. This is done by updating the binding table of the Matter light_switch device. This can be done using the command: `./chip-tool binding write binding '[ { "fabricIndex" : 1 , "node" :`**`nodeID-light`**,` "endpoint" : `**`1`**,`"cluster" :`**`6`**`} ]'`**`nodeID-switch 1`**, where the highlighted parameters are:
 
       - **nodeID-light**: The node ID of the Matter light device.
@@ -142,5 +144,12 @@ Now two Matter accessory devices (MADs) are on the network and ready to be used.
       - **nodeID-switch**: The node ID of the Matter switch.
 
       - **1**: The application endpoint in the switch that holds the binding table. This is always 1.
+  
+   **For Example**:- `./chip-tool binding write binding '[{"fabricIndex": 1, "node": 1, "endpoint": 1, "cluster":6}]' 2 1`
 
 3. With the binding complete, a button press (BTN1) on Matter light_switch device should now toggle the light status of Matter light device.
+
+## Example of Light and Switch Binding
+
+1. Flash the Light application to one setup and commission the device using below command
+2. 
