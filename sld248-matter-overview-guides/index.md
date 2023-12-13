@@ -2,11 +2,11 @@
 
 The Overview pages offer a general review of Matter topics including:
 
- - [Matter Commissioning](matter-commissioning.md)
- - [Matter Intermittently Connected Devices](matter-icd.md)
- - [Matter Over Thread Sleepy End Devices](ot-sleepy-end-device.md)
- - [Matter OTA Software Update](ota-software-update.md)
- - [Matter OTA Bootloader](ota-bootloader.md)
- - [Matter Security](matter-security.md)
- - [Matter SLC CLI Setup and Build Instructions](matter-slc-cli.md)
- - [Matter Solutions](matter-solutions.md)
+- [Matter Provisioning](matter-provisioning.md)
+- [Test Matter Certificates for Development](test-matter-certs-for-development.md)
+- [Matter Commissioning](matter-commissioning.md)
+- [Matter Intermittently Connected Devices (ICD)](matter-icd.md)
+- [Matter Over Thread ICD End Devices](ot-icd-end-device.md)
+- [Matter Serial Port Communication](serial-port-communications.md)
+- [Matter SLC CLI Setup and Build Instructions](matter-slc-cli.md)
+- [Matter Solutions](matter-solutions.md)

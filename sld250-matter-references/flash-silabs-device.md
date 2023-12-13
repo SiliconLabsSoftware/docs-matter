@@ -8,11 +8,11 @@ Simplicity Studio is a complete development environment and tool suite. It has t
 
 - [Download Simplicity Studio](https://www.silabs.com/developers/simplicity-studio).
 - Building application Using Simplicity Studio:
-    - [Build Application for EFR32](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/build-efx32-application-using-studio)
-    - [Build Application for SoC](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/build-soc-application-using-studio)
+  - [Build Application for EFR32](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/build-efx32-application-using-studio)
+  - [Build Application for SoC](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/build-soc-application-using-studio)
 - Flash application Using Simplicity Studio:
-    - [Build Application for EFR32 Step 9](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/build-efx32-application-using-studio)
-    - [Build Application for SoC Step 9](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/build-soc-application-using-studio)
+  - [Build Application for EFR32 Step 9](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/build-efx32-application-using-studio)
+  - [Build Application for SoC Step 9](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/build-soc-application-using-studio)
 - [Simplicity Studio Reference Guide](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-building-and-flashing/flashing)
 
 ## Simplicity Commander
