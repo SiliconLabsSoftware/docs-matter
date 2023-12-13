@@ -15,17 +15,17 @@ For the hardware required for the Google Nest Hub Ecosystem, refer to the [Ecosy
 
 The Google Matter **Early Access Program** is a partnership between Google and silicon providers who support Matter development. This partnership allows for faster onboarding of new devices into Matter and Thread by lowering the bar for starting with development of a new Matter-based product.
 
-The Google Matter Early Access Program is run through the [Google Developer Center](https://developers.home.google.com/). 
+The Google Matter Early Access Program is run through the [Google Developer Center](https://developers.home.google.com/).
 
-The Matter-focused portion of the Google Developer Center is located [here](https://developers.home.google.com/matter). 
+The Matter-focused portion of the Google Developer Center is located [here](https://developers.home.google.com/matter).
 
-The Google Matter Early Access Program is located [here](https://developers.home.google.com/matter/eap). 
+The Google Matter Early Access Program is located [here](https://developers.home.google.com/matter/eap).
 
 **Note**: Until the public preview, access to this page is reserved to those allowed in by the Google Partner engineering team.
 
 ### Prerequisites for Google Setup
 
-To run the Google Ecosystem demo you will need both Google and a Matter device. You will also need Google Nest Hub 2nd Generation and
+To run the Google Ecosystem demo, you will need both Google and a Matter device. You will also need Google Nest Hub 2nd Generation and
 an Android phone (at least a Pixel 5 is recommended) that can run at least Android 8 (8.1, API Level 27) or newer and has Bluetooth LE capability.
 
 ### Instructions for Setting Up EAP
@@ -49,7 +49,7 @@ After completing these steps, you should be ready to build your Matter accessory
 
 ## Matter Integration Setup in the Developer Console
 
-- Once you have created a home in your Android smartphone, add your Nest Hub to that home. 
+- Once you have created a home in your Android smartphone, add your Nest Hub to that home.
 - After this, on a browser on your PC go to this to create a project:
   [https://developers.home.google.com/matter](https://developers.home.google.com/matter)
 - Click **Console** at the top of the page.
@@ -66,14 +66,14 @@ After completing these steps, you should be ready to build your Matter accessory
   - Product ID (PID): 0x8005
 
 - Product ID options for Matter devices are as follows:
-  - Light-Switch: 0x8004 
+  - Light-Switch: 0x8004
   - Light: 0x8005
-  - Lock: 0x8006 
-  - Thermostat: 0x800E 
+  - Lock: 0x8006
+  - Thermostat: 0x800E
   - Window Covering: 0x8010
 - Click **Save & Continue**.
 - On the next page click **Save**.
-- You will now see a Matter integration for device type light in your console. 
+- You will now see a Matter integration for device type light in your console.
 
 You have now completed setting up the following:
 
@@ -84,7 +84,7 @@ You have now completed setting up the following:
 Having finished the above, the only step left to have your setup ready is to open a QR code webpage for the light device type in your PC. A QR Code link will be present in Device configuration section of logs. Copy the link and paste it in google chrome so you will be able to QR Code.
 
 ![QR code link page](./images/matter-rtt-qr-code-link.png)
- 
+
 ## Matter Demo Execution using Google Home
 
 ### Commission Matter Device through Google Home App
@@ -95,7 +95,7 @@ Having finished the above, the only step left to have your setup ready is to ope
     - For Wi-Fi NCP Mode Boards see [Connect EFR32 Board to computer](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/getting-started-efx32-ncp#connect-the-efx32-boards-to-a-computer)
     - For Wi-Fi SOC Mode Boards see [Connect SiWx917 SOC to Computer](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/getting-started-with-soc#connect-siwx917-soc-to-computer)
 
-3. Flash the bootloader binary for your device along with the application (for example, lighting, lock, thermostat, window covering, or light-switch) using [Simplicity Commander](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/flashing-using-commander). 
+3. Flash the bootloader binary for your device along with the application (for example, lighting, lock, thermostat, window covering, or light-switch) using [Simplicity Commander](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/flashing-using-commander).
 
 4. Open the Google Home app on your phone.
 
@@ -118,7 +118,7 @@ Having finished the above, the only step left to have your setup ready is to ope
 
 11. Once the Google Home app has found the device, it will ask you to scan its QR code.
 
-12.  Google Home app asks if you want to connect this device to your Google account. Tap **I agree**.
+12. Google Home app asks if you want to connect this device to your Google account. Tap **I agree**.
 ![Add to account](./images/google-home-app-account-prompt.png?width=40%&height=40%)
 
 13. The Google Home app now starts commission the device with Bluetooth LE.

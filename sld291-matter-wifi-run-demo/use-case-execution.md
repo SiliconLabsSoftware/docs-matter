@@ -17,16 +17,18 @@ It then starts providing mDNS records on IPv4 and IPv6.
 
 Commissioning can be done using chip-tool running either on Linux or Raspberry Pi
 
-1. Get the SSID and PSK of the Wi-Fi network (WPA2 - Security) you are connected
-   to.
+1. Get the SSID and PSK of the Wi-Fi network (WPA2 - Security) you are connected to.
 2. Go to **$MATTER_WORKDIR/matter** directory and run the following:
+
 ```shell
 $ out/standalone/chip-tool pairing ble-wifi <node_id> <ssid> <password> <pin_code> <discriminator>
 ```
+
 In this command:
- - node_id is the user-defined ID of the node being commissioned.
- - ssid and password are credentials.
- - pin_code and discriminator are device-specific keys.
+
+- node_id is the user-defined ID of the node being commissioned.
+- ssid and password are credentials.
+- pin_code and discriminator are device-specific keys.
 
   **Note**: You can find these values in the logging terminal of the device (for instance UART) when the device boots up. For example:
 

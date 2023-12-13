@@ -4,40 +4,50 @@ This page provides a detailed description on how to create an Wi-Fi NCP project 
 
 1. [Download](https://www.silabs.com/developers/simplicity-studio) and Install Simplicity Studio.
 
-2. To install the software packages for Simplicity Studio, refer to [Software Package Installation](/matter/<docspace-docleaf-version>/matter-prerequisites/software-requirements#installation-of-software-packages)
+2. To install the software packages for Simplicity Studio, refer to [Software Package Installation](/matter/<docspace-docleaf-version>/matter-prerequisites/software-requirements#installation-of-software-packages).
 
 3. Log in to Simplicity Studio and connect the EFR32 WSTK board to the computer.
 
-4. Go to the All Products section.
-   ![All Products](./images/all-products-selection.png)
+4. Go to the **All Products** section.
 
-5. Search and select the radio board from the displayed list and select Start.
-   ![Select the radio board](./images/select-efx-board.png)
+   ![All Products](images/all-products-selection.png)
+
+5. Search and select the radio board from the displayed list and select **Start**.
+
+   ![Select the radio board](images/select-efx-board.png)
 
 6. The Launcher page will display the selected radio board's details.
-   ![Overview tab](./images/overview-tab-efx32.png)
+
+   ![Overview tab](images/overview-tab-efx32.png)
 
 7. Verify the following in the General Information section:
    - The Debug Mode is Onboard Device (MCU).
    - The Preferred SDK is the version you selected earlier.
-   ![Verify SDK](./images/create-project-verify-efx-general-information.png)
 
-8. Open the Example Projects and Demos tab, select a project, and click **Create Project**.
-   ![Create Project](./images/create-project-select-efx-example.png)
+   ![Verify SDK](images/create-project-verify-efx-general-information.png)
+
+8. Open the **Example Projects and Demos** tab, select a project, and click **Create Project**.
+
+   ![Create Project](images/create-project-select-efx-example.png)
 
 9. In the New Project Wizard window, click **Finish**.
-   ![Finish project](./images/create-project-click-finish.png)
+
+   ![Finish project](images/create-project-click-finish.png)
 
 10. Once the project is created, right-click the project and select **Build Project** in the Project Explorer tab.
-    ![Build project](./images/project-created-efx32.png) 
+
+    ![Build project](images/project-created-efx32.png)
 
 11. Once the project is compiled successfully, go to the Project Explorer view and expand the binaries folder to flash the binary.
-    ![Select binary](./images/select-binary-to-flash-efx32.png)
+
+    ![Select binary](images/select-binary-to-flash-efx32.png)
 
 12. Right-click the selected '.s37' binary and click **flash to device**.
-    ![flash to device](./images/SiWx917-soc-flash-todevice.png)
 
-13. Flash programmer window opens. Click **Erase** and then **Program** to start flashing.
-    ![Flash binary](./images/flash-binary-to-efx32-device.png)
+    ![flash to device](images/siwx917-soc-flashtodevice.png)
+
+13. The Flash programmer window opens. Click **Erase** and then **Program** to start flashing.
+
+    ![Flash binary](images/flash-binary-to-efx32-device.png)
 
 **Note:** Output of the EFR32 NCP Host application will be displayed on the J-Link RTT Viewer.

@@ -21,7 +21,7 @@ non-Matter devices" for details.
 The figure below illustrates the system architecture of the Unify Matter Bridge
 and two Unify protocol controllers.
 
-![UnifyMatterBridgeSystem](./images/UnifyMatterSystem.png)
+![UnifyMatterBridgeSystem](./images/unify-matter-system.png)
 
 More Information about the Unify Framework can be found
 [here](https://siliconlabs.github.io/UnifySDK/doc/UnifySDK.html)

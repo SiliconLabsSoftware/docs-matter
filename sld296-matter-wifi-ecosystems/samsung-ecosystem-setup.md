@@ -19,10 +19,10 @@ See the Aeotec instructions on [How to Set Up a Smart Home Hub](https://aeotec.f
 
 2. Connect a board to a computer.
 
-   - For Wi-Fi NCP Mode Boards see [Connect EFR32 Board to Computer](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/getting-started-efx32-ncp#connect-the-boards-to-a-computer)
-   - For Wi-Fi SoC Mode Boards see [Connect SiWx917 SoC to Computer](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/getting-started-with-soc#connect-siwx917-soc-to-computer)
+   - For Wi-Fi NCP Mode Boards, see [Connect EFR32 Board to Computer](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/getting-started-efx32-ncp#connect-the-boards-to-a-computer).
+   - For Wi-Fi SoC Mode Boards, see [Connect SiWx917 SoC to Computer](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/getting-started-with-soc#connect-siwx917-soc-to-computer).
 
-3. Flash the bootloader binary for your device along with the application (for example, lighting, lock, thermostat, window covering, or light-switch) using [Simplicity Commander](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/flashing-using-commander). 
+3. Flash the bootloader binary for your device along with the application (for example, lighting, lock, thermostat, window covering, or light-switch) using [Simplicity Commander](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/flashing-using-commander).
 
 4. Open the Smart Things app, tap **'+**, and select **Add device**.
 ![Add device](./images/samsung-app-add-device.png?width=40%&height=40%)
@@ -31,7 +31,7 @@ See the Aeotec instructions on [How to Set Up a Smart Home Hub](https://aeotec.f
 ![Partner devices](./images/samsung-app-select-partner.png?width=40%&height=40%)
 
 6. Through the Smart Things app scan the Application QR code to trigger commissioning.
- 
+
 7. After scanning the QR code, verify commissioning is triggered by checking on the DUT logs.
 ![commissioning in logs](./images/samsung-app-commissioning.png?width=40%&height=40%)
 
@@ -47,4 +47,4 @@ See the Aeotec instructions on [How to Set Up a Smart Home Hub](https://aeotec.f
 
 - In order to remove the Matter application from Samsung Smart Things app go to **Devices Section**.
 - Long Press and Hold Matter application and click **Remove**.
-- If you want to add the Matter application again follow the procedure above. 
+- If you want to add the Matter application again follow the procedure above.

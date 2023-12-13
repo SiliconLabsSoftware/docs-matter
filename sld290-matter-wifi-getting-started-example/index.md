@@ -7,12 +7,12 @@ To get started with Matter over Wi-Fi, download the latest version of Simplicity
 
 ## Setting up the Matter over Wi-Fi Development Environment
 
-Refer to the [Release Notes](https://github.com/SiliconLabs/matter_extension/releases/tag/v2.1.1) to know more about the latest releases from Silicon Labs
+Refer to the [Release Notes](https://github.com/SiliconLabs/matter_extension/releases/tag/v2.2.0) to know more about the latest releases from Silicon Labs.
 
-To control the Matter Accessory Device, a controller must be set up called the chip-tool. The chip-tool can be set up in two ways:
+To control the Matter Accessory Device, a controller is required which is termed as **chip-tool**. The chip-tool can be set up in two ways:
 
 - **On the Raspberry PI**: See [Setting up chip-tool on Raspberry Pi](./build-chip-tool#build-environment-using-raspberry-pi-4).
-- **On Linux** - See [Setting up chip-tool on Linux](./build-chip-tool#build-environment-for-linux).
+- **On Linux**: See [Setting up chip-tool on Linux](./build-chip-tool#build-environment-for-linux).
 
 ## Running the Matter over Wi-Fi Demo
 
