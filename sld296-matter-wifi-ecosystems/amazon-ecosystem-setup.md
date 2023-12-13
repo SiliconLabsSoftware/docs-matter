@@ -7,13 +7,13 @@ For the hardware required for an Amazon EcoSystem, refer to the [Ecosystem Prere
 ## Software Requirements
 
 - Amazon account
-- Amazon Alexa App on a smartphone 
+- Amazon Alexa App on a smartphone
 
 ## Amazon Alexa and Android Smartphone Setup
 
 ### Amazon Alexa MSS (Matter Simple Setup)
 
-As part of partnership with Amazon, the following link contains information required for Matter device certification with Amazon. 
+As part of partnership with Amazon, the following link contains information required for Matter device certification with Amazon.
 
 [https://developer.amazon.com/docs/frustration-free-setup/matter-simple-setup-for-wifi-overview.html](https://developer.amazon.com/docs/frustration-free-setup/matter-simple-setup-for-wifi-overview.html)
 
@@ -39,8 +39,8 @@ Refer to [Set up Alexa in a Few Easy Steps](https://www.amazon.com/alexa-setup-g
 
 2. Connect a board to a computer.
 
-   - For Wi-Fi NCP Mode Boards see [Connect EFR32 Board to Computer](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/getting-started-efx32-ncp#connect-the-boards-to-a-computer)
-   - For Wi-Fi SoC Mode Boards see [Connect SiWx917 SoC to Computer](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/getting-started-with-soc#connect-siwx917-soc-to-computer)
+   - For Wi-Fi NCP Mode Boards, see [Connect EFR32 Board to Computer](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/getting-started-efx32-ncp#connect-the-boards-to-a-computer).
+   - For Wi-Fi SoC Mode Boards, see [Connect SiWx917 SoC to Computer](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/getting-started-with-soc#connect-siwx917-soc-to-computer).
 
 3. Flash the bootloader binary for your device along with the application (for example, lighting, lock, thermostat, window covering, light-switch) using [Simplicity Commander](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/flashing-using-commander).
 
@@ -73,12 +73,12 @@ Refer to [Set up Alexa in a Few Easy Steps](https://www.amazon.com/alexa-setup-g
 11. Alexa App will ask "Does your device have a matter logo?" Select "Yes".
 
 12. Alexa will prompt "Locate a QR code shown for your device." Select **Scan QR Code**.
- 
+
     ![Scan QR code](./images/amazon-alexa-scan-qr-code.png?width=40%&height=40%)
 
 13. After scanning the QR code through a smartphone camera, verify Commissioning is started by checking the Device logs.
 
-14. Once commissioning is triggered the Alexa app will prompt for Access Point Credentials. Add them. 
+14. Once commissioning is triggered the Alexa app will prompt for Access Point Credentials. Add them.
 
 15. After Access Point Credentials are provided the device will join to the network and commissioning is completed.
 

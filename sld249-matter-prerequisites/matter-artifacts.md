@@ -3,6 +3,9 @@
 This page provides links to pre-built software image "artifacts" that can be
 used to set up the Matter Demo for the Thread and Wi-Fi use cases.
 
+Images for the items listed below are available under the "Assets" section at the bottom of this page:
+
+<https://github.com/SiliconLabs/matter_extension/releases/tag/v2.2.0>
 
 ## Matter Hub Raspberry Pi Image
 
@@ -12,7 +15,7 @@ Matter chip-tool. Note the image is ~10GB in size so depending on your internet
 connection this download may take some time. Start the Matter Hub Raspberry Pi
 image download here:
 
-https://www.silabs.com/documents/public/software/SilabsMatterPi_2.1.0-1.1.zip
+https://www.silabs.com/documents/public/software/SilabsMatterPi_2.2.0-1.2-extension.zip
 
 ## Radio Co-Processor (RCP) Images
 
@@ -21,7 +24,7 @@ used with a Raspberry Pi to allow the Raspberry Pi's Open Thread Border Router
 to access the Thread network. Radio Co-Processor (RCP) images are available in
 the Assets section of this page:
 
-https://github.com/SiliconLabs/matter_extension/releases/tag/v2.1.1
+https://github.com/SiliconLabs/matter_extension/releases/download/v2.2.0/ot-rcp-binaries-2.2.0-1.2.zip
 
 ## Matter Accessory Device Images
 
@@ -29,7 +32,7 @@ The Matter Accessory Device Images are used to turn an EFR into a Matter device.
 These are pre-built binary images for the Matter Demo. Matter Accessory Device
 Images are located in the Assets section of this page:
 
-https://github.com/SiliconLabs/matter_extension/releases/tag/v2.1.1
+https://github.com/SiliconLabs/matter_extension/releases/download/v2.2.0/matter-accessory-device-images_2.2.0-1.2.zip
 
 ## Matter Bootloader Binaries
 
@@ -38,16 +41,17 @@ EFR32MG2x device, you will need to flash a bootloader binary on your device alon
 with the application image. Bootloader binaries for all of the Matter supported
 devices are available here:
 
-https://github.com/SiliconLabs/matter_extension/releases/tag/v2.1.1
+https://github.com/SiliconLabs/matter_extension/releases/download/v2.2.0/bootloader_binaries_matter_extension_v2.2.0-1.2.zip
 
 ## RS9116 Firmware
 
 The RS9116 firmware (`rs9116_firmware_files_with_rev.zip`) is used to update the RS9116 which can be found in the Assets section of this page:
 
-https://github.com/SiliconLabs/matter_extension/releases/tag/v2.1.1
+https://github.com/SiliconLabs/matter_extension/releases/download/v2.2.0/rs9116_firmware_files_with_rev_2.2.0-1.2.zip
 
 **Note**:
 RS9116 chip/module needs to be flashed with proper firmware as mentioned below:
+
 - `RS916.x.x.x.x.x.rps - This firmware image is valid for RS9116 1.5 revision chip/module`
 - `RS9116.x.x.x.x.x.rps - This firmware image is valid for RS9116 1.4/1.3 revision chip/module`
 
@@ -55,23 +59,28 @@ RS9116 chip/module needs to be flashed with proper firmware as mentioned below:
 
 The SiWx917 firmware(SiWx917NCP_firmware_files.zip) is used to update the SiWx917 NCP which can be found in the Assets section of this page:
 
-https://github.com/SiliconLabs/matter_extension/releases/tag/v2.1.1
+https://github.com/SiliconLabs/matter_extension/releases/download/v2.2.0/SiWx917NCP_firmware_files_2.2.0-1.2.zip
 
 **Note**:
 SiWx917 NCP board need to be flashed with proper firmware as mentioned below:
-- ``SiWG917-A.2.9.X.X.X.rps - This firmware image is valid for BRD8036A (A0 Expansion v1.1) board`
 
+- `SiWG917-B.2.x.X.X.X.rps - This firmware image is valid for BRD8045A (B0 Expansion v2.0) board`
 
 ## SiWx917 Firmware for SiWx917 SoC
 
 The SiWx917 firmware (SiWx917SOC_firmware_files.zip) along with WiSeConnect 3 SDK is used to update the SiWx917 SoC which can be found in the Assets section of this page:
 
-https://github.com/SiliconLabs/matter_extension/releases/tag/v2.1.1
+https://github.com/SiliconLabs/matter_extension/releases/download/v2.2.0/SiWx917SOC_firmware_files_2.2.0-1.2.zip
 
 **Note**:
 SiWx917 SoC boards need to be flashed with proper firmware as mentioned below:
-- `SiWG917-A.2.9.X.X.X.rps - This firmware image is valid for BRD4325B(A0 dual flash 1.2) board`
-- `SiWG917-B.2.9.X.X.X.rps - This firmware image is valid for BRD4325C(B0 common flash v1.2) board`
-- `SiWG917-B.2.9.X.X.X.rps - This firmware image is valid for BRD4338A(B0 common flash v2.0) board`
 
+- `SiWG917-B.2.x.X.X.X.rps - This firmware image is valid for BRD4338A(B0 common flash v2.0) board`
 
+## SiWx917 SoC Configuration Files For JLink RTT Logging
+
+In order to check device logs for the Matter Application on the SiWx917 SoC, the **JLink RTT** must be configured for the SiWx917 SoC device by following the instructions on the [JLink RTT SOC Support](/matter/<docspace-docleaf-version>/matter-wifi-enabling-features/jlink-soc-setup) for SiWx917 SoC.
+
+The [JLinkDevices.xml](https://github.com/SiliconLabs/matter_extension/releases/download/v2.2.0/JLinkDevices.xml) and **.elf** files referenced in the instructions may be found in the Assets section of this page.
+
+**Note**:- For EFR32MG2x devices, JLink RTT Logging support is already enabled.

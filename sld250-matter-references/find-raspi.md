@@ -6,7 +6,7 @@ Sometimes it can be difficult to find your Raspberry Pi on the network. One way 
 
 This is a [good tutorial](https://raspberryexpert.com/find-raspberry-pi-ip-address/) on how to find the IP address.
 
-### Mac / Linux 
+### Mac / Linux
 
 ***Nmap***
 

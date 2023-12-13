@@ -1,6 +1,5 @@
 # Using Simplicity Studio's GATT Configurator with Matter
 
-
 The Simplicity Studio Bluetooth LE (BLE) GATT Configurator is an Advanced Configurator
 within the Simplicity Studio Project Configuration suite. For more information on
 using the
@@ -42,4 +41,4 @@ follows:
 
     Copy the BLE GATT db header files out of your project and into the Matter
     project. BLE GATT db header and `.c` files are located in
-    `./src/platform/EFR32` in the Silicon Labs Matter GitHub repo. 
+    `./src/platform/EFR32` in the Silicon Labs Matter GitHub repo.
