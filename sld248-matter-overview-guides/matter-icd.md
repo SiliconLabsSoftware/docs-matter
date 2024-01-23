@@ -4,16 +4,7 @@ Matter introduces the concept of Intermittently Connected Devices (ICD) in the S
 An Intermittently Connected Device is the Matter representation of a device that is not always reachable.
 This covers battery-powered devices that disable their underlying hardware when in a low-power mode or devices that can be disconnected from the network, like a phone app.
 
-This page focuses on features designed to improve the performance and reliability of battery-powered devices. Matter ICD functionality can be enabled with the `matter_icd` component.
-
-## Configuration
-
-To change default values corresponding to Matter ICD examples, modify them in either:
-
-1. `config/sl_matter_icd_config.h`
-2. ICD component configurator
-
-![ICD Configuration](images/icd-config.png)
+This page focuses on features designed to improve the performance and reliability of battery-powered devices. Matter ICD functionality can be enabled with the `matter_icd_management` component. The Matter light-switch and lock examples are ICD's by default.
 
 ## ICD Device Types
 
@@ -49,7 +40,7 @@ The ICDM Cluster exposes three configuration attributes that enable to configure
 | ActiveModeInterval    | uint32 | min 300    | minimum interval in milliseconds the server will stay in active mode |
 | ActiveModeThreshold   | uint32 | min 300    | minimum amount of time in milliseconds the server typically will stay active after network activity when in active mode |
 
-These configurations can be changed by modifying the values within `sl_matter_icd_config.h` or within the settings of the `matter_icd` component.
+These configurations can be changed by modifying the values within `sl_matter_icd_config.h` or within the settings of the `matter_icd_management` component.
 
 ```cpp
     #define SL_IDLE_MODE_INTERVAL = 600     // 10min Idle Mode Interval
@@ -186,6 +177,50 @@ The second step is registering the callback object to the Interaction Model Engi
 chip::app::InteractionModelEngine::GetInstance()->RegisterReadHandlerAppCallback(&mICDSubscriptionHandler);
 ```
 
+# Creating an ICD example via Simplicity Studio
+
+## Enabling/Building
+
+To begin creating an OpenThread ICD example, create a generic Matter over Thread solution example via the **New Project Wizard**. Lighting solution example will be used for demonstration purposes.
+
+**Lock and Light-Switch applications come out-of-box with ICD enabled. The low power component can be added by user.**
+
+1. Create project
+
+    ![Project Generation](images/icd-project-generation.png)
+
+2. Navigate to the "Configuration Tools" section and open the Zigbee Cluster Configurator.
+
+    ![ICD ZAP](images/icd-open-zap.png)
+
+3. Search for the ICD Management cluster and enable for "Server". You will receive a warning that the corresponding component was unable to be installed. This is due to component conflicts within Simplicity Studio.
+
+    ![ICD Cluster](images/icd-enable-icd-cluster.png)
+
+4. Navigate to the "Software Components" tab and install the ICD Management Server Cluster component.
+
+    ![ICD Component](images/icd-install-icd-component.png)
+
+5. Replace all subsequent conflicting components via the ensuing pop-up options (See below). This will install the necessary Thread Network Layer (MTD) component and ICD source code. This will also remove the conflicting Thread Network Layer (FTD) component.
+
+    ![ICD Component Conflicts](images/icd-resolve-conflicts.png)
+
+**Reccomended: Install the `matter_platform_low_power` and `matter_subscription_synchronization` components to achieve further energy savings. See details below.**
+
+ICD functionality should be installed and ready to build. Build the project as you would a normal example and flash the resulting binary to your specified end device. You should be able to commission the device the same way as non-ICD examples using the QR code URL (generated within the RTT logs at startup or BTN0 press).
+
+# Power Saving Components
+
+## Minimal Power Consumption
+
+The Lower Power Mode component is optional for low-power builds with the component `matter_platform_low_power`.
+
+The Lower Power Mode component will disable:
+
+- Matter Shell
+- OpenThread CLI
+- LCD and QR Code
+  
 ## Persistent Subscriptions
 
 Persistent subscriptions were added to Matter as a means to ensure that an ICD can re-establish its subscription and by extension its secure session to a subscriber in the event of a power cycle.
@@ -194,9 +229,9 @@ When the device reboots, it will try to re-establish its subscription with the s
 If the subscription is torn down during normal operations or if the re-establishment fails,
 the subscription will be deleted.
 
-Persistent subscriptions are enabled by default on all Silicon Labs sample applications.
+Persistent subscriptions are enabled by default on all Silicon Labs sample applications via the `matter_subscription_persistence` component.
 
-### Subscription Timeout Resumption
+## Subscription Timeout Resumption
 
 Matter also provides a retry mechanism for devices to try to re-establish a lost subscription with a client. This functionality is provided by the component `matter_subscription_timeout_resumption`. This feature should not be used on an ICD since it can significantly reduce battery life.
 
@@ -208,3 +243,12 @@ To avoid forcing an ICD to become active multiple times, the Matter SDK allows a
 The mechanism synchronizes the maximum interval of all subscriptions to only require the ICD to become active once. This functionality is provided by component `matter_subscription_synchronization`.
 
 This feature is enabled by default on the door-lock sample app and the light-switch sample application.
+
+# Configuration
+
+To change default values corresponding to Matter ICD examples, modify them in either:
+
+1. `config/sl_matter_icd_config.h`
+2. ICD component configurator
+
+![ICD Configuration](images/icd-config.png)

@@ -50,12 +50,12 @@ The Wi-Fi station in Power Save mode wakes up to receive the DTIM beacon and che
 
 ## Building with ICD Functionality
 
-To enable ICD functionality for Wi-Fi, the `matter_icd` component needs to be installed within the Software Components tab from Simplicity Studio.
+To enable ICD functionality for Wi-Fi, the `matter_icd_management` component needs to be installed within the Software Components tab from Simplicity Studio.
 
-- For rs9116 and WF200: `matter_icd` component is installed by default for lock-app. For thermostat and window need to install mentioned component to enable sleepy.
-- For 917NCP: `matter_icd` component is installed by default for lock-app. For thermostat and window need to install mentioned component to enable sleepy.
+- For rs9116 and WF200: `matter_icd_management` component is installed by default for lock-app. For thermostat and window need to install mentioned component to enable sleepy.
+- For 917NCP: `matter_icd_management` component is installed by default for lock-app. For thermostat and window need to install mentioned component to enable sleepy.
 - For SiWx917 SOC:
-  - Search `matter_icd` from **search bar** and click **Install**.
+  - Search `matter_icd_management` from **search bar** and click **Install**.
 
     ![Search matter icd](./images/search-matter-icd.png)
 

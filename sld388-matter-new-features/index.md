@@ -53,5 +53,5 @@ The default configurations can be found in their respective `sl_matter_icd_confi
 
 - CHANGES:
   - Optimized the subscription reports by synchronizing all client’s subscriptions with the ICD idle mode interval. This ensures the minimal amount of wake ups possible due to subscription reports. This component is introduced as `matter_subscription_synchronization`.
-  - The previous `matter_sed` components has been replaced by `matter_icd`. This goes in line with previous sleepy end device behavior being deprecated and replaced by the ICD behavior.
+  - The previous `matter_sed` components has been replaced by `matter_icd_management`. This goes in line with previous sleepy end device behavior being deprecated and replaced by the ICD behavior.
   - Silicon Labs' Light Switch and Door Lock apps support the ICD implementation and have the ICD cluster enabled.
