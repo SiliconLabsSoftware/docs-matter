@@ -1,6 +1,6 @@
 # Creating Matter Applications using SLC CLI
 
-The Silicon Labs Configurator (SLC) offers command-line access to application configuration and generation functions. [**Software Project Generation and Configuration with SLC-CLI**](https://www.silabs.com/documents/public/user-guides/ug520-software-project-generation-configuration-with-slc-cli.pdf) provides a complete description and instructions on downloading and using the SLC-CLI tool.
+**Silicon Labs Configurator (SLC)**: SLC offers command-line access to application configuration and generation functions. [**Software Project Generation and Configuration with SLC-CLI**]( https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-tools-slc-cli/) provides instructions on downloading and using the SLC-CLI tool.
 
 This guide lists the steps to create and build a Silicon Labs Matter SLC project using SLC-CLI and `make`. These scripts are evaluation quality and have been verified to work on Ubuntu 22.04.3 LTS, MacOS Version 13.5.1, and Windows 10.
 
