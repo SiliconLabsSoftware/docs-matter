@@ -165,7 +165,7 @@ python3.7 ./provision.py -c config/silabs.json -ic ../credentials/test/attestati
 
 #### Provisioning Tool Output
 
-:::collapsed{summary="Expand to view output."}
+:::collapsed{summary="**Expand** to see output."}
 
 ```bash
   ‣ commander device info --ip 10.4.215.22
@@ -239,9 +239,8 @@ Setup:
   ∙ discriminator: 0xab2
   ∙ uid: 4974be050220f9d10f899828fba42562
   ∙ payload: 48822800444056a3206507
-  ```
-
-:::  
+```
+:::
 
 >Note: If you have connected more than one device, provide the -j \<j-link no\>.
 
