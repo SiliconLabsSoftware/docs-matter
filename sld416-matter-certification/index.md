@@ -4,7 +4,7 @@
 
 ## Why Certify
 
-Matter Certification is required for all Matter devices to be interoperable with one another. Unlike other networking protocols, non-certified Matter devices are **PREVENTED** from commissioning into Matter networks. This is due to the high security features that Matter offers, where Matter Commissioning requires each Matter device to prove that they are Matter Certified. This process is called Device Attestation. Refer to [**Device Attestation**](/matter/<docspace-docleaf-version>/matter-device-attestation) for more information on how the various Matter Certificates and Credentials are used in the Matter Commissioning Process.
+Matter Certification is required for all Matter devices. Unlike other networking protocols, non-certified Matter devices are prevented from commissioning into Matter networks. Matter's secure design requires that every joining device proves they are Matter Certified. This is part of the commissioning process called Device Attestation. Refer to [**Device Attestation**](/matter/<docspace-docleaf-version>/matter-device-attestation) for more information on how the various Matter Certificates and Credentials are used in the Matter Commissioning Process.
 
 ## Matter Certification Paths
 
@@ -30,9 +30,9 @@ This group of certification is for Matter Software Components, like App-based de
 
 **Product Family Certification**: This certification is intended to certify variants of the same product. This path requires the first "parent" product to be fully tested either at an ATL/SVE, and then the other "family" products are certified without need for testing.
 
-**Certification by similarity (CbS)**: This certification is intended for for a very similar product that has already been certified by either standard or product family certification. If a Matter product qualifies for CbS, you can get your new product certified without additional testing. The CSA certification team will need to determine if this is an applicable route.
+**Certification by similarity (CbS)**: This certification is intended for a very similar product that has already been certified by either standard or product family certification. If a Matter product qualifies for CbS, you can get your new product certified without additional testing. The CSA certification team will need to determine if this is an applicable route.
 
-**Certification Transfer Program (CTP)**: This certification is for cases for re-labeling a product manufacturer by another member. This requires an Associate CSA membership level and to partner with an Alliance Participant or Promoter member.
+**Certification Transfer Program (CTP)**: This certification is for re-labeling a product manufacturer by another member. This requires an Associate CSA membership level and to partner with an Alliance Participant or Promoter member.
 
 ## Matter Certification Flow
 
@@ -40,11 +40,11 @@ This group of certification is for Matter Software Components, like App-based de
 
 1. **Become a CSA Member**.
 
-    There are different tiers of memberships so be sure to select the right level depending on your needs. The minimum membership tier to get certified is Adopter level. More information on various levels can be found on the CSA website, [Become a Member | The Future of IOT - CSA-IOT](https://csa-iot.org/become-member/).
+    There are different tiers of CSA memberships that offer your company varying levels of access and benefits. The minimum membership tier required to get certified is Adopter level. More information on various membership levels can be found on the CSA website, [Become a Member | The Future of IOT - CSA-IOT](https://csa-iot.org/become-member/).
 
 2. **Request a Vendor ID From the Alliance Certification Team**.
 
-    Once you are a member, you will need to request a Vendor ID. Once issued, the Vendor ID will be listed in the Manufacturer code database in the CSA which is updated monthly. For certification, you will also need to decide on a Product ID (PID) to make up your own unique 16-bit number to identify your distinct Matter products. You may have as many PIDs as you want, but each has to have its own unique certification ID. For development purposes, Silicon Labs 'tests' VID and PID for our Sample Applications.
+    Once you are a member, you will need to request a Vendor ID. Once issued, the Vendor ID will be listed in the Manufacturer code database in the CSA which is updated monthly. For certification, you will also need to decide on a Product ID (PID) to make up your own unique 16-bit number to identify your distinct Matter products. You may have as many PIDs as you want, but each has to have its own unique certification ID. For development purposes, Silicon Labs provides 'test' VID and PID for our Sample Applications.
 
 3. **Finalize Product, Select a Network Transport, and Develop Your Product**.
 
@@ -52,11 +52,11 @@ This group of certification is for Matter Software Components, like App-based de
 
 4. **Obtain Transport Layer Certification from the Relevant Standards Organization**.
 
-    You are required to have proof of all Networking Protocol Certification in your Matter product before officially applying for Matter Certification. The CSA will accept certification by inheritance of certification if it is applicable for your device.
+     You are required to have proof that your device passes all relevant Networking Protocol Certification before officially applying for Matter Certification. The CSA will accept certification by inheritance if it is applicable to your device.
 
-     1. OpenThread Certification (Thread 1.3.0 or later): To get certified in OpenThread, you are required to join the Thread Group for Certification ([https://www.threadgroup.org/thread-group](https://www.threadgroup.org/thread-group)). Certification by inheritance is available for certain Silicon Labs SoC devices if using the Certified Thread Component Libraries ([https://community.silabs.com/s/article/Thread-Certification-Overview?language=en_US](https://community.silabs.com/s/article/Thread-Certification-Overview?language=en_US)). If the Matter Product is using RCP, it will need to go through Thread Certification on its own.
+     1. OpenThread Certification (Thread 1.3.0 or later): To get certified in OpenThread, you are required to join the Thread Group for Certification ([https://www.threadgroup.org/thread-group](https://www.threadgroup.org/thread-group)). Certification by inheritance is available for certain Silicon Labs SoC devices if using the Certified Thread Component Libraries ([https://community.silabs.com/s/article/Thread-Certification-Overview?language=en_US](https://community.silabs.com/s/article/Thread-Certification-Overview?language=en_US)). If the Matter Product is using Host/RCP, it will need to go through OpenThread Certification on its own.
 
-     2. BLE Certification (LE v4.0 or later): To get the BLE Certification, you need to be a member of the Bluetooth SIG ([https://www.bluetooth.com/develop-with-bluetooth/join/](https://www.bluetooth.com/develop-with-bluetooth/join/)). Certification by inheritance is available through the Silicon Labs BLE Component if no modifications have been made.
+     2. BLE Certification (LE v4.0 or Later): To get the BLE Certification, you need to be a member of the Bluetooth SIG ([https://www.bluetooth.com/develop-with-bluetooth/join/](https://www.bluetooth.com/develop-with-bluetooth/join/)). Certification by inheritance is available through the Silicon Labs BLE Component if no modifications have been made.
 
      3. Wi-Fi Certification processes (Wi-Fi 4 /802.11n or later). This certification requires joining the Wi-Fi Alliance ([https://www.wi-fi.org/membership](https://www.wi-fi.org/membership)).
 

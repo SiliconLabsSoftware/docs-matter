@@ -47,7 +47,7 @@ The following figure provides an overview of the commissioning process and the a
 
 Depending on the network topology and Matter device implementation, there are a few ways to implement device discovery:
 
-- Bluetooth Low Energy (BLE): This is the method used in the example below. Note that if the Matter device utilizes Thread, it MUST also support BLE for the purpose of discovery and commissioning as you cannot solely use Thread-based commissioning and Device Discovery.
+- Bluetooth Low Energy (BLE): This is the method used in the example below. Note that if the Matter device utilizes Thread, it **must** also support BLE for the purpose of discovery and commissioning as you cannot solely use Thread-based commissioning and Device Discovery.
 - Wi-Fi (IEEE 802.11-2020): This method utilizes Soft-AP functionality.
 - Over IP if device is already on an IP network. This method utilizes discovery service like DNS-SD conveying credentials over IP.
 
@@ -57,7 +57,7 @@ The following figure provides an overview of the commissioning process and the a
 
 ## Password Authenticated Session Establishment (PASE)
 
-For Matter devices to ensure the utmost security, the Matter Commissionee and Commissioner establish a secure channel of communication. Here, the Commissioner and the Commissionnee establish a password-authenticated session establishment where they derive encryption keys. Once this session is established, all other messages will be encrypted with the PASE derived keys. This connection is timed and confined between the Commissionee and the Commissioner, and is meant to establish a secure connection between the two devices to communicate with one another.
+For Matter devices to ensure the utmost security, the Matter Commissionee and Commissioner establish a secure channel of communication. Here, the Commissioner and the Commissionee establish a password-authenticated session establishment where they derive encryption keys. Once this session is established, all other messages will be encrypted with the PASE derived keys. This connection is timed and confined between the Commissionee and the Commissioner, and is meant to establish a secure connection between the two devices to communicate with one another.
 
 ## Device Attestation
 
