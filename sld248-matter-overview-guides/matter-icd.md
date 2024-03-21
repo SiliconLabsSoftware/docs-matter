@@ -4,7 +4,7 @@ Matter introduces the concept of Intermittently Connected Devices (ICD) in the S
 An Intermittently Connected Device is the Matter representation of a device that is not always reachable.
 This covers battery-powered devices that disable their underlying hardware when in a low-power mode or devices that can be disconnected from the network, like a phone app.
 
-This page focuses on features designed to improve the performance and reliability of battery-powered devices. Matter ICD functionality can be enabled with the `matter_icd_management` component. The Matter light-switch and lock examples are ICD's by default.
+This page focuses on features designed to improve the performance and reliability of battery-powered devices. Matter ICD functionality can be enabled with the `matter_icd_management` component. The Matter light-switch and lock examples are ICDs by default.
 
 ## ICD Device Types
 
@@ -48,7 +48,7 @@ These configurations can be changed by modifying the values within `sl_matter_ic
     #define SL_ACTIVE_MODE_THRESHOLD = 500  // 500ms Active Mode Threshold
 ```
 
-## Creating an ICD example via Simplicity Studio
+## Creating an ICD Example via Simplicity Studio
 
 ### Enabling/Building
 
@@ -56,19 +56,19 @@ To begin creating an OpenThread ICD example, create a generic Matter over Thread
 
 **Lock and Light-Switch applications come out-of-box with ICD enabled. The low power component can be added by user.**
 
-1. Create project
+1. Create project.
 
     ![Project Generation](images/icd-project-generation.png)
 
-2. Navigate to the "Configuration Tools" section and open the Zigbee Cluster Configurator.
+2. Navigate to the **Configuration Tools** section and open the **Zigbee Cluster Configurator**.
 
     ![ICD ZAP](images/icd-open-zap.png)
 
-3. Search for the ICD Management cluster and enable for "Server". You will receive a warning that the corresponding component was unable to be installed. This is due to component conflicts within Simplicity Studio.
+3. Search for the ICD Management cluster and enable for **Server**. You will receive a warning that the corresponding component was unable to be installed. This is due to component conflicts within Simplicity Studio.
 
     ![ICD Cluster](images/icd-enable-icd-cluster.png)
 
-4. Navigate to the "Software Components" tab and install the ICD Management Server Cluster component.
+4. Navigate to the **Software Components** tab and install the ICD Management Server Cluster component.
 
     ![ICD Component](images/icd-install-icd-component.png)
 
@@ -76,9 +76,9 @@ To begin creating an OpenThread ICD example, create a generic Matter over Thread
 
     ![ICD Component Conflicts](images/icd-resolve-conflicts.png)
 
-**Reccomended: Install the `matter_platform_low_power` and `matter_subscription_synchronization` components to achieve further energy savings. See details below.**
+**Recommended: Install the `matter_platform_low_power` and `matter_subscription_synchronization` components to achieve further energy savings. See details below.**
 
-ICD functionality should be installed and ready to build. Build the project as you would a normal example and flash the resulting binary to your specified end device. You should be able to commission the device the same way as non-ICD examples using the QR code URL (generated within the RTT logs at startup or BTN0 press).
+ICD functionality should be installed and ready to build. Build the project as you would a normal example and flash the resulting binary to your specified end device. You should be able to commission the device the same way as non-ICD examples using the QR code URL (generated within the RTT logs at startup or **BTN0** press).
 
 ## **Power Saving Components**
 

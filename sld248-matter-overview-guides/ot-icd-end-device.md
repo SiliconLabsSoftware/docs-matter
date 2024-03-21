@@ -52,4 +52,4 @@ Matter exposes some defines to configure the polling intervals of the OpenThread
 
 For Matter configuration, see the [**Matter ICD**](/matter/<docspace-docleaf-version>/matter-overview-guides/matter-icd#configuration) documentation.
 
-For how to build an ICD example application within Simplicity Studio, see [**Matter ICD Example Guide**](/matter/<docspace-docleaf-version>/matter-overview-guides/matter-icd#enabling-building).
+To build an ICD example application within Simplicity Studio, see [**Matter ICD Example Guide**](/matter/<docspace-docleaf-version>/matter-overview-guides/matter-icd#enabling-building).
