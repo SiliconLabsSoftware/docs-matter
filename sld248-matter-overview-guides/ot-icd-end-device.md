@@ -50,30 +50,6 @@ Matter exposes some defines to configure the polling intervals of the OpenThread
 | SlowPollInterval | CHIP_DEVICE_CONFIG_ICD_SLOW_POLL_INTERVAL (`SL_OT_IDLE_INTERVAL`) | Interval, in milliseconds, at which the thread radio will poll its network in idle mode. | 15000 ms | <= IdleModeInterval |
 | FastPollInterval | CHIP_DEVICE_CONFIG_ICD_FAST_POLL_INTERVAL (`SL_OT_ACTIVE_INTERVAL`) | Interval, in milliseconds, at which the thread radio will poll its network in active mode. | 200 ms | < ActiveModeInterval |
 
-For Matter configuration, see the [**Matter ICD**](/matter/<docspace-docleaf-version>/matter-overview-guides/matter-icd#Configuration) documentation.
+For Matter configuration, see the [**Matter ICD**](/matter/<docspace-docleaf-version>/matter-overview-guides/matter-icd#configuration) documentation.
 
-## Building
-
-### Enabling/Building
-
-1. To begin creating an OpenThread ICD example, create a generic Matter over Thread example via the **New Project Wizard**. Lighting example will be used for demonstration purposes. Lock and Light-Switch applications come out-of-box with ICD enabled.
-
-![Project Generation](images/icd-project-generation.png)
-
-1. Once the project is generated, navigate to the software components section and install the Matter ICD component. Replace all subsequent conflicting components via the ensuing pop-up options (See below). This will install the necessary Thread Network Layer (MTD) component and ICD source code. This will also remove the conflicting Thread Network Layer (FTD) component.
-
-![ICD End Device Component](images/icd-component.png)
-
-![ICD Component Replacement](images/icd-replace.png)
-
-3. ICD functionality should be installed and ready to build. Build the project as you would a normal example and flash the resulting binary to your specified end device. You should be able to commission the device the same way as non-ICD examples using the QR code URL (generated within the RTT logs at startup/BTN0 press).
-
-## Minimal Power Consumption
-
-The Lower Power Mode component is optional for low-power builds with the component `matter_platform_low_power`.
-
-The Lower Power Mode component will disable:
-
-- Matter Shell
-- OpenThread CLI
-- LCD and QR Code
+To build an ICD example application within Simplicity Studio, see [**Matter ICD Example Guide**](/matter/<docspace-docleaf-version>/matter-overview-guides/matter-icd#enabling-building).
