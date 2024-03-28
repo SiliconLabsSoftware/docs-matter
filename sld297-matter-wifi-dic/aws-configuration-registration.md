@@ -8,10 +8,11 @@ Amazon Web Services offers reliable, scalable, and inexpensive cloud computing s
 2. Open [AWS](https://aws.amazon.com/).
 3. Login using your AWS credentials.
 4. Register the CA Certificate in AWS:
-  
     - Go to `Security -> Certificate Authorities` and `Register CA Certificate`.
-    - Select `Register CA` in the Multi-account mode.
-    - Choose the CA certificate that you previously created in the Openssl Certificate Creation (CA.crt) step in the CA certificate registration, and set the CA status to `Active` and the `Automatic certificate registration` option to `ON`.
+    - Select `Register CA` in the Single account mode.
+    - Choose the CA certificate that you previously created in the Openssl Certificate Creation (CA.crt) step in the CA certificate registration.
+    - Create a CA verification certificate to register the CA certificate in the console (same directory where you created a openssl certificates). Refer [Manage your CA Certificate](https://docs.aws.amazon.com/iot/latest/developerguide/manage-your-CA-certs.html#create-CA-verification-cert.html?icmpid=docs_iot_console_secure_ca_reg).
+    - Set the CA status to `Active` and the `Automatic certificate registration` option to `ON`.
     - Register the CA.
 
 5. Go to `Security -> Policies` and select `Create Policy`. Enter the policy name (ex: `DIC_POLICY`) and in the policy statements select `JSON` and replace the contents with the JSON provided below:
