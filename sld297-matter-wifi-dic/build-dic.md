@@ -55,5 +55,5 @@ Note:- Building with aws_ota_wifi_dic component enables matter_dic component by 
   - Under `#if USE_MOSQUITTO`
   - Use `DIC_SERVER_HOST` name with your Server host name where Mosquitto Broker is running.
   - Use OpenSSL CA certificate as ca_certificate, device_certificate and device_key.
-  - `DIC_CLIENT_ID` is not required here but `DIC_CLIENT_USER` and `DIC_CLIENT_PASS` in `matter_extension/examples/platform/silabs/DIC/matter_abs_interface/inc/dic_config.h` to be updated as per your Mosquitto password file.
+  - `DIC_CLIENT_ID` is not required here but `DIC_CLIENT_USER` and `DIC_CLIENT_PASS` in `matter_extension/examples/platform/silabs/DIC/matter_abs_interface/inc/dic_config.h` needs to be updated as per your Mosquitto password file.
   - The preferred certificate type to use in the application is ECDSA.
