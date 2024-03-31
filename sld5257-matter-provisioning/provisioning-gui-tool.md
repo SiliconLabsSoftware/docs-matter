@@ -1,4 +1,4 @@
-# CPMS GUI Provisioning Tool
+# Provisioning GUI Tool
 
 ## Background
 

@@ -1,6 +1,5 @@
 # How to Build and Flash the Radio Co-Processor (RCP)
 
-
 The Radio Co-Processor is a 15.4 stack image flashed onto a Silicon Labs
 development kit or Thunderboard Sense 2. The 15.4 stack on the development kit
 communicates with the higher layers of the Thread stack running on the Raspberry
@@ -11,7 +10,6 @@ A complete list of supported hardware for the RCP is provided on the
 
 First, in order to flash the RCP, connect it to your laptop directly by USB.
 
-
 ## Step 1: Get or Build the Image File to Flash the RCP
 
 We have provided two ways to get the required image to flash the RCP. You can
@@ -21,13 +19,15 @@ use one of the following options:
 2. Build the image file from the 'ot-efr32' repository, which is listed on the
    [Matter Repositories and Commit Hashes page](/matter/<docspace-docleaf-version>/matter-references/commit-hashes)
 
-
 ### **Using a Pre-built Image File**
 
 RCP image files for all demo boards are accessible through the
 [Matter Artifacts Page](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts). If you are using a pre-built
 image file, you can skip to [Step #2: Flash the RCP](#step-2-flash-the-rcp).
 
+### Building the Image File from Simplicity Studio
+
+RCP Images can be built from Simplicity Studio. Select **File > New > Silicon Labs Project Wizard**, look through the **Example Projects**, and then select the **Openthread - RCP Project**. Once the project is generated, you can build and flash the RCP. You can follow along in the [Simplicity Studio Getting Started Guide](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-getting-started/start-a-project) for more information.
 
 ### **Building the Image File from the Repository**
 
@@ -54,14 +54,14 @@ $ cd ot-efr32
 $ git submodule update --init
 ```
 
-After updating the submodules you can check out the correct branch or commit
-hash for the system. Check the current branch and commit hash used here:
-[Matter Branches and Commit Hashes](/matter/<docspace-docleaf-version>/matter-prerequisites/)
+You can check the current branch and commit hash used here:
+[Matter Branches and Commit Hashes](/matter/<docspace-docleaf-version>/matter-prerequisites/):
 
 ```shell
 $ git checkout <commit hash>
 ```
 
+If you are not using the latest GSDK version for your Matter host image, you must first checkout the correct ot-efr32 commit hash that matches the GSDK. Refer to the third_party/silabs commit bump history to find which ot-efr32 commit to checkout. Mismatching versions may result in host-RCP incompatibility.
 
 **2. Build the RCP**
 
@@ -75,17 +75,39 @@ to be flashed onto the board to create an RCP is 'ot-rcp.s37'.
 The output of the build process puts all the image files in the following
 location: '(git)/ot-efr32/build/(efr32xgxx)'
 
-
 ## Step 2: Flash the RCP
 
-Once you get the RCP image, either by downloading a prebuilt image or building
-the image file from the repo, you can flash it onto your device. This is done
-directly from your laptop and not through the Raspberry Pi, so make sure that
-the device is connected directly over USB to your laptop. You can flash your RCP using 
-Simplicity Studio or using standalone Simplicity Commander.
+Once you get the RCP image, either by downloading a prebuilt image or building the image file from the repo, you can flash it onto your device. This is done directly from your laptop and not through the Raspberry Pi, so make sure that the device is connected directly over USB to your laptop. You can flash your RCP using Simplicity Studio or using standalone Simplicity Commander.
 
-Once you have flashed the image, the device becomes the RCP. Disconnect it from
-you laptop and connect it via USB to the Raspberry Pi.
+Once you have flashed the image, the device becomes the RCP. Disconnect it from you laptop and connect it via USB to the Raspberry Pi.
 
-The Raspberry Pi's Open Thread Border Router can then use the RCP to communicate
-with the Thread network.
+The Raspberry Pi's Open Thread Border Router can then use the RCP to communicate with the Thread network.
+
+## Troubleshooting
+
+To run the Mattertool, you need the OTBR to be running. To check the OTBR status, *enter sudo systemctl status otbr-agent* on the Raspberry Pi console.
+
+A successfully running OTBR will show the output below:
+
+```C
+pi@raspberrypi:~ $ sudo systemctl status otbr-agent
+● otbr-agent.service - OpenThread Border Router Agent
+     Loaded: loaded (/lib/systemd/system/otbr-agent.service; enabled; vendor preset: enabled)
+     Active: active (running) since Mon 2024-03-04 09:09:44 EST; 1 weeks 2 days ago
+```
+
+You can restart the OTBR agent by entering *sudo systemctl restart otbr-agent*.
+
+If the OTBR agent is restarting continuously, it's likely because it cannot connect to the RCP. There are multiple reasons that can contribute to this:
+
+Ensure that RCP has been configured correctly:
+
+- The RCP has a default UART baudrate of 115200.
+- If using a Wireless Gecko Starter Kit (WSTK), make sure the WSTK baud is configured correctly:
+
+   1. Open the WSTK console in Simplicity Studio by right clicking on the device under **Debug Adapters**.
+   2. Select the **Admin** tab in the console.
+   3. Configure the RCP with `serial vcom config <'baud'>`.
+
+- Make sure the RCP has been flashed with a bootloader image.
+- Make sure the RCP GSDK version matches the OTBR GSDK version.

@@ -54,11 +54,11 @@ This group of certification is for Matter Software Components, like App-based de
 
      You are required to have proof that your device passes all relevant Networking Protocol Certification before officially applying for Matter Certification. The CSA will accept certification by inheritance if it is applicable to your device.
 
-     1. OpenThread Certification (Thread 1.3.0 or later): To get certified in OpenThread, you are required to join the Thread Group for Certification ([https://www.threadgroup.org/thread-group](https://www.threadgroup.org/thread-group)). Certification by inheritance is available for certain Silicon Labs SoC devices if using the Certified Thread Component Libraries ([https://community.silabs.com/s/article/Thread-Certification-Overview?language=en_US](https://community.silabs.com/s/article/Thread-Certification-Overview?language=en_US)). If the Matter Product is using Host/RCP, it will need to go through OpenThread Certification on its own.
+     1. OpenThread Certification (Thread 1.3.0 or later): OpenThread certification is done through the Thread Group ([https://www.threadgroup.org/thread-group](https://www.threadgroup.org/thread-group)). Certification by inheritance is available for certain Silicon Labs SoC devices if using the Certified Thread Component Libraries ([https://community.silabs.com/s/article/Thread-Certification-Overview?language=en_US](https://community.silabs.com/s/article/Thread-Certification-Overview?language=en_US)). If the Matter Product is using Host/RCP architecture, it will need to go through OpenThread Certification on its own.
 
-     2. BLE Certification (LE v4.0 or Later): To get the BLE Certification, you need to be a member of the Bluetooth SIG ([https://www.bluetooth.com/develop-with-bluetooth/join/](https://www.bluetooth.com/develop-with-bluetooth/join/)). Certification by inheritance is available through the Silicon Labs BLE Component if no modifications have been made.
+     2. BLE Certification (LE v4.0 or Later): BLE Certification is done through Bluetooth SIG ([https://www.bluetooth.com/develop-with-bluetooth/join/](https://www.bluetooth.com/develop-with-bluetooth/join/)). Certification by inheritance can be available in certain cases if the design and functionality is unaltered from the certified QDID. If you are able to inherit our End Product / Subsystem results, you can skip Bluetooth testing.
 
-     3. Wi-Fi Certification processes (Wi-Fi 4 /802.11n or later). This certification requires joining the Wi-Fi Alliance ([https://www.wi-fi.org/membership](https://www.wi-fi.org/membership)).
+     3. Wi-Fi Certification processes (Wi-Fi 4 /802.11n or later). Wi-Fi certification is done through the Wi-Fi Alliance ([https://www.wi-fi.org/membership](https://www.wi-fi.org/membership)).
 
      4. Ethernet Transport Protocol: This certification can be received by showing evidence of successfully passing self-defined / self-testing of IEEE PMA.
 
