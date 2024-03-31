@@ -7,4 +7,3 @@ The Matter Production Guide includes:
 - [**Device Attestation**](/matter/<docspace-docleaf-version>/matter-device-attestation) describes this step in the Commissioning process for Matter devices to be commissioned into a Matter network.
 - [**Matter Distributed Compliance Ledger**](/matter/<docspace-docleaf-version>/matter-dcl) introduces the Distributed Compliance Ledger (DCL), including DCL roles, what is stored in the DCL, and how to use the DCL in commissioning.
 - [**Matter Certification**](/matter/<docspace-docleaf-version>/matter-certification) explains why certification is required, possible certification paths, and a detailed certification flow.
-- [**Securing Production Devices**](/matter/<docspace-docleaf-version>/matter-securing-prod-devices) describes....
