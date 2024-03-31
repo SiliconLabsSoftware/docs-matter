@@ -19,7 +19,7 @@ use one of the following options:
 2. Build the image file from the 'ot-efr32' repository, which is listed on the
    [Matter Repositories and Commit Hashes page](/matter/<docspace-docleaf-version>/matter-references/commit-hashes)
 
-### **Using a Pre-built Image File**
+### Using a Pre-built Image File
 
 RCP image files for all demo boards are accessible through the
 [Matter Artifacts Page](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts). If you are using a pre-built
@@ -29,7 +29,7 @@ image file, you can skip to [Step #2: Flash the RCP](#step-2-flash-the-rcp).
 
 RCP Images can be built from Simplicity Studio. Select **File > New > Silicon Labs Project Wizard**, look through the **Example Projects**, and then select the **Openthread - RCP Project**. Once the project is generated, you can build and flash the RCP. You can follow along in the [Simplicity Studio Getting Started Guide](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-getting-started/start-a-project) for more information.
 
-### **Building the Image File from the Repository**
+### Building the Image File from the Repository
 
 **1. Clone the ot-efr32 repository**
 
