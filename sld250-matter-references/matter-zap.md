@@ -52,6 +52,8 @@ Some applications have callbacks that are left to be implemented by the device
 manufacturer. For example, the storage and management of users and credentials in
 the lock-app is left up to the application developer.
 
+>**Note:** When enabling clusters in a Matter project within Simplicity Studio, users should always modify the cluster within the **Zigbee Cluster Configurator** and _not_ manually install the corresponding cluster component within the **Software Components** tab.
+
 ## ZAP Tool
 
 The ZAP tool is built and maintained by Silicon Labs and developers in the ZAP
