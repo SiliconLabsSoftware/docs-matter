@@ -16,7 +16,8 @@ We have provided two ways to get the required image to flash the RCP. You can
 use one of the following options:
 
 1. Use the pre-built 'ot-rcp' image file
-2. Build the image file from the 'ot-efr32' repository, which is listed on the
+2. Build the image file from Simplicity Studio
+3. Build the image file from the 'ot-efr32' repository, which is listed on the
    [Matter Repositories and Commit Hashes page](/matter/<docspace-docleaf-version>/matter-references/commit-hashes)
 
 ### Using a Pre-built Image File
@@ -29,7 +30,7 @@ image file, you can skip to [Step #2: Flash the RCP](#step-2-flash-the-rcp).
 
 RCP Images can be built from Simplicity Studio. Select **File > New > Silicon Labs Project Wizard**, look through the **Example Projects**, and then select the **Openthread - RCP Project**. Once the project is generated, you can build and flash the RCP. You can follow along in the [Simplicity Studio Getting Started Guide](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-getting-started/start-a-project) for more information.
 
-### Building the Image File from the Repository
+### Building the Image File from the ot-efr32 Repository
 
 **1. Clone the ot-efr32 repository**
 
@@ -77,7 +78,7 @@ location: '(git)/ot-efr32/build/(efr32xgxx)'
 
 ## Step 2: Flash the RCP
 
-Once you get the RCP image, either by downloading a prebuilt image or building the image file from the repo, you can flash it onto your device. This is done directly from your laptop and not through the Raspberry Pi, so make sure that the device is connected directly over USB to your laptop. You can flash your RCP using Simplicity Studio or using standalone Simplicity Commander.
+Once you get the RCP image, either by downloading a prebuilt image or building the image file, you can flash it onto your device. This is done directly from your laptop and not through the Raspberry Pi, so make sure that the device is connected directly over USB to your laptop. You can flash your RCP using Simplicity Studio or using standalone Simplicity Commander.
 
 Once you have flashed the image, the device becomes the RCP. Disconnect it from you laptop and connect it via USB to the Raspberry Pi.
 
@@ -107,7 +108,7 @@ Ensure that RCP has been configured correctly:
 
    1. Open the WSTK console in Simplicity Studio by right clicking on the device under **Debug Adapters**.
    2. Select the **Admin** tab in the console.
-   3. Configure the RCP with `serial vcom config <'baud'>`.
+   3. Configure the RCP with `serial vcom config <'baud rate'>`.
 
 - Make sure the RCP has been flashed with a bootloader image.
 - Make sure the RCP GSDK version matches the OTBR GSDK version.
