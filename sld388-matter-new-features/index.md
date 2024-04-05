@@ -1,5 +1,7 @@
 # New Features
 
+## New Features for v2.2.1-1.2
+
 ## New Features for v2.2.0-1.2
 
 - GA support for Intermittently Connected Devices
