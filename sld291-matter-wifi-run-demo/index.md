@@ -2,15 +2,17 @@
 
 Follow the procedure below to run Matter demo over Wi-Fi.
 
+## Flashing the Bootloader Binary
+
+   **Note**: Flashing the bootloader binaries is only required for NCP devices (MG12 and MG24), it is not applicable to the SiWx917 SoC.
+
+- The bootloader binary is supported on EFR32 boards only and it can be flashed using the Simplicity Commander software or Simplicity Studio.
+- To Flash the Bootloader Binary for EFR32 Board, refer to the following guide: [Flashing Bootloader Binaries on EFR32 Devices](./flashing-using-commander#flashing-the-bootloader-binaries-for-efx32-board-using-simplicity-commander).
+
 ## Flashing the Connectivity Firmware
 
 - To flash the connectivity firmware on an NCP device, refer to the following guide: [Upgrading Connectivity Firmware for NCP Devices](./loading-firmware-for-ncp-and-soc-boards#upgrading-the-connectivity-firmware-on-ncp-devices).
 - To flash the connectivity firmware on a SiWx917 SoC, refer to the following guide [Upgrading Connectivity Firmware for SoC Devices](./loading-firmware-for-ncp-and-soc-boards#upgrading-the-connectivity-firmware-on-soc-devices).
-
-## Flashing the Bootloader Binary
-
-- The bootloader binary is supported on EFR32 boards only and it can be flashed using the Simplicity Commander software or Simplicity Studio.
-- To Flash the Bootloader Binary for EFR32 Board, refer to the following guide: [Flashing Bootloader Binaries on EFR32 Devices](./flashing-using-commander#flashing-the-bootloader-binaries-for-efx32-board-using-simplicity-commander).
 
 ## Building and Flashing the Matter Application using Simplicity Studio
 
