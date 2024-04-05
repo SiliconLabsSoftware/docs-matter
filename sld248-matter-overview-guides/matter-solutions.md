@@ -13,7 +13,7 @@ To create a Matter Solution, proceed to the "Example Project Selection" section 
 
 ## Solution Building
 
-Building via solutions behaves just like a normal project. Just ensure the top-level solution is selected and build! Artifacts from the resulting projects can be found within the `artifact` directory under each distinct project within the solution.
+Building via solutions behaves just like a normal project. Just ensure the top-level solution is selected and build! Artifacts from the resulting projects can be found within the `artifact` directory under each distinct project within the solution. Users selecting to build _just_ the sample application may get an error at the end of their build assuming the bootloader was built with it as well. Disregard this notification.
 
 ![Solution Artifacts](./images/solution-artifacts.png)
 
