@@ -196,3 +196,7 @@ The image above shows that endpoint 2 has more than one device type selected. Th
 ![Multiple endpoints](images/multiple-endpoints.png)
 
 The image above is what the multiple device type endpoints looks like after configured. On the left-hand side, it shows the list of all clusters sequentially in order, and on the other side are clusters that are ready to be configured.
+
+## Defining a Custom Cluster
+
+Create an XML file with custom cluster definitions, for an example see [Sample MEI Cluster](https://github.com/project-chip/connectedhomeip/blob/master/src/app/zap-templates/zcl/data-model/chip/sample-mei-cluster.xml). In ZAP click 'Extensions' and add the XML file. The newly defined cluster can then be enabled in any endpoint under the domain for which it was defined (for example General), its Commands and Attributes can be managed like those of any other cluster. 
