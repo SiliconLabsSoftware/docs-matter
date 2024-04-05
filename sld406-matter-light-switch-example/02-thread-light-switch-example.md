@@ -74,15 +74,15 @@ You now have a working Matter hub. Keep the PuTTY session open for the following
 
    4. Go to the Example Projects and Demos tab, turn off *Demos*, check the *Matter* filter under *Wireless Technology* and enter "*thread*"  in the *Filter on keywords* box. Select the *Matter - SoC Lighting over Thread with external Bootloader Solution* and click **Create**.
 
-       ![Select the example project](resources/example_project.png)
+       ![Select the example project](resources/example-project.png)
 
    5. Name your project and click **Finish** (no other changes are required at this time).
 
-      ![Create the project](resources/create_project.png)
+      ![Create the project](resources/create-project.png)
 
    6. Once the solution is created, select it in the Project Explorer view and click the hammer icon to build. This will begin building both the bootloader and application images.
 
-      ![Build the project](resources/build_project.png)
+      ![Build the project](resources/build-project.png)
 
    7. Once the compilation is done, right-click the dev board in the Debug Adapters view and select *Upload application...*
 
@@ -90,7 +90,7 @@ You now have a working Matter hub. Keep the PuTTY session open for the following
 
    8. Select the *Application image path* for your newly compiled solution application. The resulting application image will be within the **artifact** directory inside the project workspace. This image has both the bootloader and application binaries combined into one image. Check "Erase chip before uploading image". Bootloader images are also provided in the zip file referenced on the [Silicon Labs Matter Artifacts page](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts). Unzip and reference the extracted location if electing to use these default bootloader images.
 
-       ![Application image upload](resources/image_upload.png)
+       ![Application image upload](resources/image-upload.png)
 
       **Note**: If you are unsure of the path for the newly created binary, you can find the project’s path in the project’s *Properties* window under *Resource*. The binary is typically located inside the 
       >*{workspace folder}\|{project name folder}\|{GNU ARM v??? folder}\|{project name binary}.s37*.
@@ -103,7 +103,7 @@ You now have a working Matter hub. Keep the PuTTY session open for the following
 
       **Note**: You should only need to upload a bootloader image and erase the chip once. Subsequent application uploads do not need the bootloader image or chip erasure. 
 
-      ![Image location](resources/image_location.png)
+      ![Image location](resources/image-location.png)
 
    9. If you are using a dev board with a WSTK, you should now see a QR code displayed on the WSTK's LCD.
 
