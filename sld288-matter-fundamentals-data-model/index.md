@@ -20,11 +20,11 @@ Each node contains the complete application functionality for its device on a si
 
 Nodes have a set of related behaviors, known as a role. There are a few main node roles:
 
-- **Commissioner** - Commissions/adds new devices to a Matter network
-- **Controller** - Controls one or more nodes
-- **Controlee** - Can be controlled by one or more nodes
-- **Over the Air (OTA) Provider** - Provides OTA software updates to the OTA Requestor
-- **OTA Requestor** - Requests OTA software updates from the OTA Provider
+- **Commissioner**: Commissions/adds new devices to a Matter network
+- **Controller**: Controls one or more nodes
+- **Controlee**: Can be controlled by one or more nodes
+- **Over the Air (OTA) Provider**: Provides OTA software updates to the OTA Requestor
+- **OTA Requestor**: Requests OTA software updates from the OTA Provider
 
 ### Endpoints
 
@@ -57,8 +57,8 @@ Attributes, events, and commands make up clusters:
   - Commands always have a direction, either from client to server or vice versa.
   - The target can reply to the command in one of two ways:
 
-    - **Request** - such as toggling the ON/OFF attribute of a server cluster representing a light.
-    - **Response** - such as sending a success status, or an error/unsupported status.
+    - **Request**: such as toggling the ON/OFF attribute of a server cluster representing a light.
+    - **Response**: such as sending a success status, or an error/unsupported status.
 
 - **Events** are a record of past transitions between states of the node.
 
@@ -67,8 +67,8 @@ Attributes, events, and commands make up clusters:
 
 Clusters have two main types:
 
-- **Server cluster** - Stateful, holds the data for the attributes, events, and commands.
-- **Client cluster** - Stateless, interacts with other server clusters by reading and writing attributes, reading remote events, and/or invoking methods.
+- **Server cluster**: Stateful, holds the data for the attributes, events, and commands.
+- **Client cluster**: Stateless, interacts with other server clusters by reading and writing attributes, reading remote events, and/or invoking methods.
 
 Any cluster can be a server or a client, giving nodes the ability to both store information and horizontally communicate with other nodes. For a light and switch example, a client cluster in the light would send a command to a server cluster in the light to toggle the on/off feature of the light. The following figure illustrates examples of cluster communication. On the top is a light and switch example and on the bottom is an app controlling a door lock.
 

@@ -1,6 +1,6 @@
 # Creating Matter Applications using SLC CLI
 
-**Silicon Labs Configurator (SLC)**: SLC offers command-line access to application configuration and generation functions. [**Software Project Generation and Configuration with SLC-CLI**]( https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-tools-slc-cli/) provides instructions on downloading and using the SLC-CLI tool.
+**Silicon Labs Configurator (SLC)**: SLC offers command-line access to application configuration and generation functions. [Software Project Generation and Configuration with SLC-CLI](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-tools-slc-cli/) provides instructions on downloading and using the SLC-CLI tool.
 
 This guide lists the steps to create and build a Silicon Labs Matter SLC project using SLC-CLI and `make`. These scripts are evaluation quality and have been verified to work on Ubuntu 22.04.3 LTS, MacOS Version 13.5.1, and Windows 10.
 
@@ -84,19 +84,20 @@ For Windows:
 python slc\sl_build.py MyNewApp\lighting-app-thread.slcp brd4161a
 ```
 
-
 Alternately, one can use SLC-CLI commands directly to generate the project and then use `make` to build it.
 
 Windows users will need to install `make` in their system. You can use your own or follow these steps to get `make`.
-1. Install the MSYS terminal, which provides a Unix-like environment on Windows. 
+
+1. Install the MSYS terminal, which provides a Unix-like environment on Windows.
 2. Open the MSYS terminal and install `make` using the command `pacman -S make`.
-3. Run command `where make`, copy the path, and add it to the PATH environment variable. 
+3. Run command `where make`, copy the path, and add it to the PATH environment variable.
 4. Restart your command line terminal and run `slc/sl_build.py` or run make directly. You might need to reboot.
 
 Note: In rare cases, the build may fail due to missing files in the `zap-generated/` directory. The workaround is to delete the `.zap` folder in the home directory.
+
 ## Modifying an Application Project
 
-The resulting user project can be modified like any other SLC project: software components can be added or removed by modifying the project's .slcp file, configuration can be applied by modifying the files in the `config` directory, the application logic can be managed through the files in the `src` directory. Various SLC-CLI commands can be used to examine, validate, or re-generate the project after a modification, see [**Software Project Generation and Configuration with SLC-CLI**](https://www.silabs.com/documents/public/user-guides/ug520-software-project-generation-configuration-with-slc-cli.pdf) for more information.
+The resulting user project can be modified like any other SLC project: software components can be added or removed by modifying the project's .slcp file, configuration can be applied by modifying the files in the `config` directory, the application logic can be managed through the files in the `src` directory. Various SLC-CLI commands can be used to examine, validate, or re-generate the project after a modification, see [Software Project Generation and Configuration with SLC-CLI](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-tools-slc-cli/) for more information.
 
 For modifying Matter endpoints and clusters invoke the ZAP tool passing to it the application's ZAP file:
 

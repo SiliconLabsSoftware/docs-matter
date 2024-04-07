@@ -113,7 +113,7 @@ Once you have finished generating you Certificates, you can proceed with install
 
 ## Provisioning Tool
 
->Important: Please review the required installations in the [Provisioner Script](https://github.com/SiliconLabs/matter_extension/tree/v2.2.1/provision#provisioner-script) Section.
+>Important: Please review the required installations in the [Provisioner Script](https://github.com/SiliconLabs/matter_extension/tree/v2.2.1/provision#provisioner-script) section.
 
 ### Required Installation
 
@@ -165,7 +165,7 @@ python3.7 ./provision.py -c config/silabs.json -ic ../credentials/test/attestati
 
 #### Provisioning Tool Output
 
-:::collapsed{summary="**Expand** to see output."}
+:::collapsed{summary="Click to expand and view output."}
 
 ```bash
   ‣ commander device info --ip 10.4.215.22

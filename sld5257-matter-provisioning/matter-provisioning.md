@@ -2,9 +2,7 @@
 
 Tools in the Silicon Labs Matter GitHub `provision` folder are used to load mandatory authentication information into Matter devices. For more information on accessing the provision tools and cloning the Silicon Labs Matter GitHub repository, see the documentation located here: [Silicon Labs Matter GitHub repo](https://github.com/SiliconLabs/matter).
 
-Most of the required parameters are stored once during the manufacturing process, and shall not
-change during the lifetime of the device. During runtime, two interfaces are
-used to pull the authentication data from permanent storage:
+Most of the required parameters are stored once during the manufacturing process, and shall not change during the lifetime of the device. During runtime, two interfaces are used to pull the authentication data from permanent storage:
 
 - [CommissionableDataProvider](https://github.com/project-chip/connectedhomeip/blob/master/src/include/platform/CommissionableDataProvider.h), implemented as [EFR32DeviceDataProvider](https://github.com/project-chip/connectedhomeip/blob/master/examples/platform/silabs/efr32/EFR32DeviceDataProvider.cpp)
 - [DeviceAttestationCredsProvider](https://github.com/project-chip/connectedhomeip/blob/master/src/credentials/DeviceAttestationCredsProvider.h), implemented as [SilabsDeviceAttestationCreds](https://github.com/project-chip/connectedhomeip/blob/master/examples/platform/silabs/SilabsDeviceAttestationCreds.h)
@@ -15,14 +13,13 @@ The provisioning script in this folder now supersedes the following tool:
 
 ## Provisioned Data
 
-The Commissionable Data includes Serial Number, Vendor Id, Product Id, and the Setup Payload (typicallty displayed in the QR), while the Attestation Credentials includes the Certificate Declaration (CD), the Product Attestation Intermediate (PAI) certificate, and the DAC (Device Attestation Certificate).
+The Commissionable Data includes Serial Number, Vendor Id, Product Id, and the Setup Payload (typically displayed in the QR), while the Attestation Credentials includes the Certificate Declaration (CD), the Product Attestation Intermediate (PAI) certificate, and the DAC (Device Attestation Certificate).
 
 During commissioning, Matter devices perform a Password Authenticated Key Exchange using the SPAKE2+ protocol. The SPAKE2+ verifier is pre-calculated [using an external tool](https://github.com/project-chip/connectedhomeip/tree/master/src/tools/spake2p).
 
 The passcode is used to derive a QR code, typically printed on the label, or displayed by the device itself. The QR code contains the pre-computed setup payload, which allows the commissioner to establish a session with the device. The parameters required to generate and validate the session keys are static and stored in NVM3.
 
-To protect the attestation private-key (used to generate the DAC), the asymmetric key-pair should be generated on-device, using PSA, and the most secure storage location available to the specific part.
-However, the private-key may be generated externally, and imported using the --dac_key parameter.
+To protect the attestation private-key (used to generate the DAC), the asymmetric key-pair should be generated on-device, using PSA, and the most secure storage location available to the specific part. However, the private-key may be generated externally, and imported using the `--dac_key` parameter.
 
 The DAC is generated and signed by a Certification Authority (CA), which may reside on a separate host. The `modules/signing_server.py` script simulates the role of the CA, and uses OpenSSL to to generate and sign the DAC. In a real factory environment, this script is replaced by an actual CA.
 
@@ -58,37 +55,36 @@ The `provision.py` file is the main script used to load all the required data on
 - [SPAKE2+ generator](https://github.com/project-chip/connectedhomeip/tree/master/src/tools/spake2p)
 - [PyLink](https://pylink.readthedocs.io/en/latest/index.html)
 
-sudo pip3 install ecdsa
+`sudo pip3 install ecdsa`
 
-The Provisioner Script executes the following steps:
+The Provisioner script executes the following steps:
 
-1. Parses and validates the command-line arguments
-2. Obtains the Part Number from the connected device (using Simplicity Commander)
+1. Parses and validates the command-line arguments.
+2. Obtains the Part Number from the connected device (using Simplicity Commander).
 3. If no SPAKE2+ verifier is provided:
-   3.1. Generates SPAKE2+ verifier (using the external `spake2p` tool)
-4. Loads the Generator Firmware into the device (if no GFW path is provided, the Part Number is used to choose the corresponding file from the `provision/images`)
-5. Configures the NVM3 based on the flash size of the connected device
+    - Generates SPAKE2+ verifier (using the external `spake2p` tool).
+4. Loads the Generator Firmware into the device (if no GFW path is provided, the Part Number is used to choose the corresponding file from the `provision/images`).
+5. Configures the NVM3 based on the flash size of the connected device.
 6. If CSR mode is used (--csr):
-   6.1. Requests a CSR from the device
-    - The GFW generates the key-pair and CSR, then returns the the CSR to the host script
-   6.2. Sends the CSR to the Signing Server (`provision/modules/signing_server.py`), and retrieves the DAC
-7. Sends CD, PAI, and DAC to the GFW
-    - The GFW stores CD, PAI, and DAC on the last page of main flash, and updates the offsets and sizes in NVM3
-
-8. Sends the Commissionable Data to the GFW
-    - The GFW initializes the flash, generates the Setup Payload, and stores the data into NVM3
-9. If a PFW is provided, writes the PFW into flash using Simplicity Commander
+    - Requests a CSR from the device. The GFW generates the key-pair and CSR, then returns the the CSR to the host script.
+    - Sends the CSR to the Signing Server (`provision/modules/signing_server.py`), and retrieves the DAC.
+7. Sends CD, PAI, and DAC to the GFW.
+    - The GFW stores CD, PAI, and DAC on the last page of main flash, and updates the offsets and sizes in NVM3
+8. Sends the Commissionable Data to the GFW.
+    - The GFW initializes the flash, generates the Setup Payload, and stores the data into NVM3
+9. If a PFW is provided, writes the PFW into flash using Simplicity Commander.
 
 The provisioning script and the GFW communicates through J-Link RTT using the PyLink module.
 
 ### Arguments
 
+:::custom-table{width=25%,15%,10%,50%}
 | Arguments                 | Conformance          | Type               | Description                                                                             |
 | ------------------------- | -------------------- | ------------------ | --------------------------------------------------------------------------------------- |
-| -c,  --config             | optional             | string             | Path to a JSON configuration file            |
+| -c,  --config             | optional             | string             | Path to a JSON configuration file.            |
 | -j,  --jlink              | optional ^1   | dec/hex            | JLink connection string.  |
 | -l,  --pylink_lib         | optional             | string             | Path to the PyLink library.  |
-| -g,  --generate           | optional             | flag               | Auto-generate test certificates            |
+| -g,  --generate           | optional             | flag               | Auto-generate test certificates.            |
 | -m,  --stop               | optional             | flag               | Stop mode: When true, only generate the JSON configuration, and exit.                    |
 | -r,  --csr                | optional             | flag               | CSR mode: When true, instructs the GFW to generate the private key, and issue a CSR.                    |
 | -gf, --gen_fw             | optional             | dec/hex            | Path to the Generator Firmware image.                                                   |
@@ -105,8 +101,8 @@ The provisioning script and the GFW communicates through J-Link RTT using the Py
 | -cf, --commissioning_flow | optional             | dec/hex            | Commissioning Flow 0=Standard, 1=User Action, 2=Custom.                         |
 | -rf, --rendezvous_flags   | optional             | dec/hex            | Rendez-vous flag: 1=SoftAP, 2=BLE 4=OnNetwork (Can be combined).                |
 | -md, --manufacturing_date | optional             | string             | Manufacturing date.                |
-| -d,  --discriminator      | optional ^2   | dec/hex            | BLE pairing discriminator. e.g: 3840 or 0xF00. (12-bit)                                 |
-| -ct, --cert_tool          | optional             | string             | Path to the chip-cert tool. Defaults to `../out/tools/chip-cert`          |
+| -d,  --discriminator      | optional ^2   | dec/hex            | BLE pairing discriminator. e.g: 3840 or 0xF00. (12-bit).                                 |
+| -ct, --cert_tool          | optional             | string             | Path to the chip-cert tool. Defaults to `../out/tools/chip-cert`.          |
 | -ki, --key_id             | required             | dec/hex            | Attestation Key ID.                |
 | -kp, --key_pass           | optional ^3   | string             | Password for the key file.                |
 | -xc, --att_certs          | optional ^3   | string             | Path to the PKCS#12 attestation certificates file.                |
@@ -114,7 +110,7 @@ The provisioning script and the GFW communicates through J-Link RTT using the Py
 | -dc, --dac_cert           | optional ^3   | string             | Path to the PAI certificate.                |
 | -dk, --dac_key            | optional ^3   | dec/hex            | Path to the PAI private-key.                |
 | -cd, --certification      | required             | string             | Path to the Certification Declaration (CD) file.                |
-| -cn, --common_name        | optional ^4   | string             | Common Name to use in the Device Certificate (DAC) .                |
+| -cn, --common_name        | optional ^4   | string             | Common Name to use in the Device Certificate (DAC).                |
 | -u,  --unique_id          | optional ^5   | hex string         | A 128 bits hex string unique id (without 0x).                                           |
 | -sv, --spake2p_verifier   | optional             | string ^6   | Pre-generated SPAKE2+ verifier.                                          |
 | -sp, --spake2p_passcode   | required             | dec/hex            | Session passcode used to generate the SPAKE2+ verifier.        |
@@ -122,11 +118,11 @@ The provisioning script and the GFW communicates through J-Link RTT using the Py
 | -si, --spake2p_iterations | required             | dec/hex            | Iteration count used to generate the SPAKE2+ verifier.                  |
 
  ^1   Use xxxxxxxxx for serial, or xxx.xxx.xxx.xxx[:yyyy] for TCP.
- ^2   If not provided (or zero), the `discriminator`is calculated as the last 12 bits of SHA256(serial_number)
- ^3   If the DAC is provided, its corresponding private-key also must be provided
- ^4   Required if the DAC is not provided
- ^5   If not provided, the `unique_id` is calculated as the first 128 bits of SHA256(serial_number)
- ^6   Salt and verifier must be provided as base64 string
+ ^2   If not provided (or zero), the `discriminator`is calculated as the last 12 bits of SHA256(serial_number).
+ ^3   If the DAC is provided, its corresponding private-key also must be provided.
+ ^4   Required if the DAC is not provided.
+ ^5   If not provided, the `unique_id` is calculated as the first 128 bits of SHA256(serial_number).
+ ^6   Salt and verifier must be provided as base64 string.
 
 For the hex type, provide the value with the `0x` prefix. For hex string type, do not add the `0x` prefix.
 

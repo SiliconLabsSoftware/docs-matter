@@ -7,7 +7,7 @@ flexibility and unison when developing a Matter example or application. For exam
 
 ## Solution Creation
 
-To create a Matter Solution, proceed to the "Example Project Selection" section of Simplicty Studio's "New Project Wizard". On the left hand side, ensure "Example Projects" is turned off, "Solution Examples" is turned on, and "Matter" under the "Technology" section is checked. Then, select for which application example you wish to create a project from.
+To create a Matter Solution, proceed to the **Example Project Selection** section of Simplicity Studio's **New Project Wizard**. On the left side, ensure that **Example Projects** is toggled off, **Solution Examples** is toggled on, and **Matter** under the **Technology** section is checked. Then, select the application example you wish to create a project from.
 
 ![Solution Generation](./images/solution-generation.png)
 

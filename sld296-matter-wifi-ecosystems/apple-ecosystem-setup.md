@@ -15,7 +15,7 @@ For the Hardware required for an Apple EcoSystem, refer to the [Ecosystem overvi
 
 ## Set Up Apple HomePod and Apple Phone
 
-Refer to Apple's [Set up HomePod or HomePod mini](https://support.apple.com/en-in/HT208241)
+Refer to Apple's [Set up HomePod or HomePod mini](https://support.apple.com/en-in/HT208241).
 
 ## Matter Demo Execution using Apple HomePod
 
@@ -28,7 +28,7 @@ Refer to Apple's [Set up HomePod or HomePod mini](https://support.apple.com/en-i
 
 3. Flash the bootloader binary for your device along with the application (for example, lighting, lock, thermostat, window covering, or light-switch) using [Simplicity Commander](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/flashing-using-commander).
 
-4. In the Apple Home App, click the "+" button.
+4. In the Apple Home app, tap the "+" button.
 ![Apple Home App](./images/apple-home-app.png?width=40%&height=40%)
 
 5. Select **Add Accessory**.
@@ -39,7 +39,7 @@ Refer to Apple's [Set up HomePod or HomePod mini](https://support.apple.com/en-i
 
 7. Connect the device to a computer and scan the QR code within the Home app.
 
-8. Proceed to add the device to your home. You should see LED0 fast blinking when commissioning happens.
+8. Proceed to add the device to your home. You should see **LED0** fast blinking when commissioning happens.
 
 9. Once commissioning is complete, the Apple Home app prompts you to **select One Room** for your Matter application. Select any room as per your choice and enter the Application name. (For Example: Light, Lock)
 
@@ -47,11 +47,11 @@ Refer to Apple's [Set up HomePod or HomePod mini](https://support.apple.com/en-i
 
 - In the Apple Home app, you can now tap your light to turn it ON and OFF.
 - You can control the light by giving a voice command (for example, 'Hey Siri! Turn ON Light') and through the app user interface.
-- You will see the LED1 on your WSTK board turned on or off depending on the command you enter.
+- You will see the **LED1** on your WSTK board turned on or off depending on the command you enter.
 
 ### Delete the Matter Application From Apple Home
 
-1. Click the Matter Application for the detailed view.
+1. Tap the Matter Application for the detailed view.
 2. Scroll down to the end.
 3. Select **Remove Accessory**.
 4. Confirm to remove from **My Home** and your Matter application is removed from Apple Home.

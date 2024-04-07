@@ -73,7 +73,7 @@ Pre-built images for the SiWx917 connectivity firmware are available as per the 
 
 ### Software Requirements
 
-**Simplicity Studio 5**: Download and install Simplicity Studio 5 for your operating system from the Silicon Labs[Simplicity Studio page](https://www.silabs.com/developers/simplicity-studio). While the installation process is easy to follow, instructions are provided in the Simplicity Studio v5 [Getting Started section](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-getting-started/install-ss-5-and-software).
+**Simplicity Studio 5**: Download and install Simplicity Studio 5 for your operating system from the Silicon Labs [Simplicity Studio page](https://www.silabs.com/developers/simplicity-studio). While the installation process is easy to follow, instructions are provided in the Simplicity Studio v5 [Getting Started section](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-getting-started/install-ss-5-and-software).
 
 **Ozone - The J-Link Debugger**: [Ozone](https://www.segger.com/products/development-tools/ozone-j-link-debugger/) is a full-featured graphical debugger for embedded applications. With Ozone, it is possible to debug any embedded application on C/C++ source and assembly level.
 
@@ -85,8 +85,7 @@ Pre-built images for the SiWx917 connectivity firmware are available as per the 
 
 ![Installing the Matter Extension](./resources/install-package-advanced-device.png)
 
-**Installation of Wi-Fi SDK and Wiseconnect Packages**
-The following packages will be installed during the installation of Simplicity Studio, Refer to [Package Installation](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/software-installation)
+**Installation of Wi-Fi SDK and Wiseconnect Packages**: The following packages will be installed during the installation of Simplicity Studio. Refer to [Package Installation](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/software-installation).
 
 **Matter Hub Raspberry Pi Image**: A copy of the pre-built image from the Silicon Labs web services can be downloaded in this [zipfile](https://www.silabs.com/documents/public/software/SilabsMatterPi_2.2.0-1.2-extension.zip). **Note** this is a large file and will take some time to download.
 

@@ -1,10 +1,6 @@
 # Using the Mattertool (chip-tool)
 
-The following commands show how to start a new Thread network from the local
-OTBR, commission an EFR32 Matter End Device (Matter Accessory Device), and then
-send the on/off commands with the `mattertool` automated script. The `mattertool` 
-script provides an interface into various chip-tool and otbr commands used to create 
-and interact with a Matter network
+The following commands show how to start a new Thread network from the local OTBR, commission an EFR32 Matter End Device (Matter Accessory Device), and then send the on/off commands with the `mattertool` automated script. The `mattertool` script provides an interface into various chip-tool and otbr commands used to create and interact with a Matter network.
 
 ## Basic Mattertool Commands
 
@@ -15,34 +11,32 @@ and interact with a Matter network
 | `mattertool on`          | Sends the _on_ command to the Matter Accessory Device using the chip-tool  |
 | `mattertool off`         | Sends the _off_ command to the Matter Accessory Device using the chip-tool |
 
-You can also use the full chip-tool command set (still using mattertool)
+You can also use the full chip-tool command set (still using mattertool):
 
 ```shell
 $ mattertool levelcontrol read current-level 106 1
 ```
+
 ## Advanced Information on the Matter Hub
 
 ### Image tree
 
--   home
-    -   ubuntu (you are here)
-        -   connectedhomeip (git repo:
-            https://github.com/project-chip/connectedhomeip.git)
-        -   ot-br-posix (git repo:
-            https://github.com/openthread/ot-br-posix.git)
-        -   scripts (in-house scripts)
-            -   configurations.sh
-            -   matterTool.sh
-            -   setupOTBR.sh
+- home
+  - ubuntu (you are here)
+  - connectedhomeip (git repo: https://github.com/project-chip/connectedhomeip.git)
+  - ot-br-posix (git repo: https://github.com/openthread/ot-br-posix.git)
+  - scripts (in-house scripts)
+    - configurations.sh
+    - matterTool.sh
+    - setupOTBR.sh
 
 ## Open Thread Border Router (OTBR)
 
-For information on what commits to use for the OTBR and RCP, consult the
-[Matter Repositories and Commit Hashes page](/matter/<docspace-docleaf-version>/matter-prerequisites)
+For information on what commits to use for the OTBR and RCP, consult the [Matter Repositories and Commit Hashes page](/matter/<docspace-docleaf-version>/matter-prerequisites).
 
 The pre-installed OTBR is configured for the infrastructure interface eth0.
 
-Bash script to modify, reinstall or update the OTBR:
+Bash script to modify, reinstall, or update the OTBR:
 
 ```shell
 $ otbrsetup
@@ -60,10 +54,9 @@ Available commands:
 | -s, --setup                    | Runs the OTBR setup only, use this to change the configured infrastructure interface (use in combination with -if wlan0 for Wi-Fi) |
 | -u, --update                   | Update the OTBR installation after the repo is updated                                                                             |
 
-### Usage:
+### Usage
 
-
-Change infrastructure to wlan0: `$ otbrsetup -if wlan0 -s` 
+Change infrastructure to wlan0: `$ otbrsetup -if wlan0 -s`
 
 Rerun full install for eth0 interface: `$ otbrsetup -i`
 
@@ -87,11 +80,9 @@ $ git checkout <SHA>
 $ otbrsetup -u
 ```
 
-## Upgrading the Matter - Chip-tool
+## Upgrading the Matter Chip-Tool
 
-For more information on the commit hashes used for this demo please consult the
-following page:
-[Matter Repositories and Commit Hashes](/matter/<docspace-docleaf-version>/matter-references/commit-hashes)
+For more information on the commit hashes used for this demo please consult the following page: [Matter Repositories and Commit Hashes](/matter/<docspace-docleaf-version>/matter-references/commit-hashes).
 
 To change the chip-tool commit reference/version, follow these steps:
 
@@ -111,9 +102,7 @@ $ git checkout <SHA>
 $ mattertool buildCT
 ```
 
-The mattertool script centralizes and simplifies the use of chip-tool and
-starting a clean thread network.
-
+The mattertool script centralizes and simplifies the use of chip-tool and starting a clean thread network.
 
 Available commands:
 
@@ -132,10 +121,7 @@ Available commands:
 | rebuildCT    | Rebuild the chip-tool                                                                                          |
 | vars         | Print the Variables in use by the script                                                                      |
 
-
-Some options/arguments can be added to the command to update the values of the
-variables used by the script.
-
+Some options/arguments can be added to the command to update the values of the variables used by the script.
 
 Available commands:
 
@@ -148,9 +134,7 @@ Available commands:
 | -s, --ssid STRING        | Wi-Fi AP SSID that the end devices need to connect to |
 | -p, --password STRING    | Wi-Fi AP password                                     |
 
-These configurations are held until overwritten, cleared with cleanVars or
-when Raspberry Pi reboots.
-
+These configurations are held until overwritten, cleared with cleanVars or when Raspberry Pi reboots.
 
 Active variables used by mattertool:
 
@@ -165,22 +149,17 @@ Active variables used by mattertool:
 | SSID            | \<your_SSID>                                          |
 | lastNodeId      | 0                                                     |
 
-You can preset them with export X=Y before running the script or use some
-available options to change some of them.
+You can preset them with export X=Y before running the script or use some available options to change some of them.
 
-In most cases, MATTER_ROOT, CHIPTOOL_PATH, PINCODE, and DISCRIMINATOR should
-remain at the default set value.
+In most cases, MATTER_ROOT, CHIPTOOL_PATH, PINCODE, and DISCRIMINATOR should remain at the default set value.
 
-For commissioning commands (bleThread, bleWifi) NODE_ID will be randomized if
-it is the same as the last pairing
+For commissioning commands (bleThread, bleWifi), NODE_ID will be randomized if it is the same as the last pairing.
 
-When the startThread command is used, THREAD_DATA_SET will be assigned with
-the right operation dataset for the created Thread Network.
+When the startThread command is used, THREAD_DATA_SET will be assigned with the right operation dataset for the created Thread Network.
 
 ### Scripts Alias
 
-The commands presented above are linked to scripts. You can edit **_.bashrc_**
-and rename the following alias to your liking.
+The commands presented above are linked to scripts. You can edit **_.bashrc_** and rename the following alias to your liking.
 
 ```shell
 $ alias mattertool=‘source $HOME/scripts/matterTool.sh’

@@ -52,7 +52,7 @@ Some applications have callbacks that are left to be implemented by the device
 manufacturer. For example, the storage and management of users and credentials in
 the lock-app is left up to the application developer.
 
->**Note:** When enabling clusters in a Matter project within Simplicity Studio, users should always modify the cluster within the **Zigbee Cluster Configurator** and _not_ manually install the corresponding cluster component within the **Software Components** tab.
+>**Note**: When enabling clusters in a Matter project within Simplicity Studio, users should always modify the cluster within the **Zigbee Cluster Configurator** and _not_ manually install the corresponding cluster component within the **Software Components** tab.
 
 ## ZAP Tool
 
@@ -62,22 +62,18 @@ Library, which was the starting point for the Matter data model. ZAP is used for
 generating code for Matter applications based on the Zigbee Cluster Library and
 associated Matter code templates.
 
-The ZAP tool is no longer present as a submodule in the Matter repo. The ZAP tool 
-can be downloaded as a binary from GitHub or optionally you can clone the entire ZAP 
-repo and build the ZAP binary from scratch.
+The ZAP tool is no longer present as a submodule in the Matter repo. The ZAP tool can be downloaded as a binary from GitHub or optionally you can clone the entire ZAP repo and build the ZAP binary from scratch.
 
 ZAP binaries can be downloaded from the latest ZAP release here:
 
 `https://github.com/project-chip/zap/releases/latest`
 
 Optionally, the ZAP tool can be cloned using the following git command. This will create a
-root level zap folder in your current directory. 
+root level zap folder in your current directory.
 
 `$ git clone https://github.com/project-chip/zap.git`
 
-The ZAP tool can be invoked using the `run_zaptool.sh` script located in the Matter repo at 
-`./scripts/tools/zap/run_zaptool.sh`. Before you run this script you have to provide the location of the ZAP instance to be run. This is either the binary that you downloaded or 
-the binary that you built from scratch in the ZAP repo. You can do this by setting the `ZAP_INSTALL_PATH` environment variable
+The ZAP tool can be invoked using the `run_zaptool.sh` script located in the Matter repo at `./scripts/tools/zap/run_zaptool.sh`. Before you run this script you have to provide the location of the ZAP instance to be run. This is either the binary that you downloaded or the binary that you built from scratch in the ZAP repo. You can do this by setting the `ZAP_INSTALL_PATH` environment variable
 like this:
 
 `$ export ZAP_INSTALL_PATH=(path to your instance of the ZAP binary)`
@@ -162,10 +158,9 @@ store these differently.
 
 ## Generation of Code
 
-Once you have chosen the cluster options, save the current ZAP configuration using the application menu in the upper left corner. 
+Once you have chosen the cluster options, save the current ZAP configuration using the application menu in the upper left corner.
 
-Before v1.1.0-1.1 you needed to click the Generate button to generate code. Now, code is generated automatically in the save function. You will be prompted to choose a save location for the generated ZAP code. In the Silicon Labs Matter repository, the lock-app generated files belong in 
-matter/zzz_generated/lock-app/zap-generated.
+Before v1.1.0-1.1 you needed to click the Generate button to generate code. Now, code is generated automatically in the save function. You will be prompted to choose a save location for the generated ZAP code. In the Silicon Labs Matter repository, the lock-app generated files belong in matter/zzz_generated/lock-app/zap-generated.
 
 ## New Tutorial Button
 
@@ -199,4 +194,4 @@ The image above is what the multiple device type endpoints looks like after conf
 
 ## Defining a Custom Cluster
 
-Create an XML file with custom cluster definitions, for an example see [Sample MEI Cluster](https://github.com/project-chip/connectedhomeip/blob/master/src/app/zap-templates/zcl/data-model/chip/sample-mei-cluster.xml). In ZAP click 'Extensions' and add the XML file. The newly defined cluster can then be enabled in any endpoint under the domain for which it was defined (for example General), its Commands and Attributes can be managed like those of any other cluster. 
+Create an XML file with custom cluster definitions, for an example see [Sample MEI Cluster](https://github.com/project-chip/connectedhomeip/blob/master/src/app/zap-templates/zcl/data-model/chip/sample-mei-cluster.xml). In ZAP click 'Extensions' and add the XML file. The newly defined cluster can then be enabled in any endpoint under the domain for which it was defined (for example General), its Commands and Attributes can be managed like those of any other cluster.

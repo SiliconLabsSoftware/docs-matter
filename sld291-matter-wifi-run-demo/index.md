@@ -1,6 +1,6 @@
 # Running the Matter Demo over Wi-Fi
 
-Follow the procedure below to run Matter demo over Wi-Fi.
+Follow the procedure below to run the Matter demo over Wi-Fi.
 
 ## Flashing the Bootloader Binary
 

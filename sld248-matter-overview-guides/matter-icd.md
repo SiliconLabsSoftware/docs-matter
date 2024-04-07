@@ -1,8 +1,6 @@
 # Matter Intermittently Connected Devices (ICD)
 
-Matter introduces the concept of Intermittently Connected Devices (ICD) in the SDK and in the specification.
-An Intermittently Connected Device is the Matter representation of a device that is not always reachable.
-This covers battery-powered devices that disable their underlying hardware when in a low-power mode or devices that can be disconnected from the network, like a phone app.
+Matter introduces the concept of Intermittently Connected Devices (ICD) in the SDK and in the specification. An Intermittently Connected Device is the Matter representation of a device that is not always reachable. This covers battery-powered devices that disable their underlying hardware when in a low-power mode or devices that can be disconnected from the network, like a phone app.
 
 This page focuses on features designed to improve the performance and reliability of battery-powered devices. Matter ICD functionality can be enabled with the `matter_icd_management` component. The Matter light-switch and lock examples are ICDs by default.
 
@@ -15,30 +13,27 @@ Matter introduces two types of ICDs.
 
 ### Short Idle Time ICDs
 
-Short Idle Time ICDs are battery powered devices that can always be reached by clients.
-This means that their polling intervals are small enough to guarantee that a message sent from a client will be able to reach the ICD without any synchronization.
-A door lock, for example, is typicaly a short idle time ICD because it needs to be able to receive commands from clients at any given time.
-These devices are usually not the initiators in the communication flow.
+Short Idle Time ICDs are battery powered devices that can always be reached by clients. This means that their polling intervals are small enough to guarantee that a message sent from a client will be able to reach the ICD without any synchronization. A door lock, for example, is typically a short idle time ICD because it needs to be able to receive commands from clients at any given time. These devices are usually not the initiators in the communication flow.
 
 ### Long Idle ICDs
 
-Long Idle Time ICDs are battery powered devices that require synchronization between the client and the ICD for communication to succeed.
-A sensor device is an example of a device that are typicaly long idle time ICDs.
+Long Idle Time ICDs are battery powered devices that require synchronization between the client and the ICD for communication to succeed. A sensor device is an example of a device that are typically long idle time ICDs.
 
-Long Idle Time ICDs are provisionnal with the Matter 1.2 release.
+Long Idle Time ICDs are provisional with the Matter 1.2 release.
 
 ## ICD Management Cluster
 
-The ICD Management Cluster enables configuration of the ICD’s behavior.
-It is required for an ICD to have this cluster enabled on endpoint 0.
+The ICD Management Cluster enables configuration of the ICD’s behavior. It is required for an ICD to have this cluster enabled on endpoint 0.
 
 The ICDM Cluster exposes three configuration attributes that enable to configure an ICD.
 
+:::custom-table{width=18%,10%,13%,59%}
 | Attribute | Type | Constraints | Description |
 |-|-|-|-|
 | IdleModeInterval      | uint32 | 1 to 64800 | Maximum interval in seconds or milliseconds the server can stay in idle mode |
 | ActiveModeInterval    | uint32 | min 300    | minimum interval in milliseconds the server will stay in active mode |
 | ActiveModeThreshold   | uint32 | min 300    | minimum amount of time in milliseconds the server typically will stay active after network activity when in active mode |
+:::
 
 These configurations can be changed by modifying the values within `sl_matter_icd_config.h` or within the settings of the `matter_icd_management` component.
 
@@ -94,11 +89,7 @@ The Lower Power Mode component will disable:
   
 ### **Persistent Subscriptions**
 
-Persistent subscriptions were added to Matter as a means to ensure that an ICD can re-establish its subscription and by extension its secure session to a subscriber in the event of a power cycle.
-When a device accepts a subscription request, it will persist the subscription.
-When the device reboots, it will try to re-establish its subscription with the subscriber.
-If the subscription is torn down during normal operations or if the re-establishment fails,
-the subscription will be deleted.
+Persistent subscriptions were added to Matter as a means to ensure that an ICD can re-establish its subscription and by extension its secure session to a subscriber in the event of a power cycle. When a device accepts a subscription request, it will persist the subscription. When the device reboots, it will try to re-establish its subscription with the subscriber. If the subscription is torn down during normal operations or if the re-establishment fails, the subscription will be deleted.
 
 Persistent subscriptions are enabled by default on all Silicon Labs sample applications via the `matter_subscription_persistence` component.
 
@@ -110,8 +101,7 @@ This feature is enabled by default on all examples with the exception of the doo
 
 ### **Subscription Synchronization**
 
-To avoid forcing an ICD to become active multiple times, the Matter SDK allows an ICD to synchronize its subscription reporting and send all the reports at the same time.
-The mechanism synchronizes the maximum interval of all subscriptions to only require the ICD to become active once. This functionality is provided by component `matter_subscription_synchronization`.
+To avoid forcing an ICD to become active multiple times, the Matter SDK allows an ICD to synchronize its subscription reporting and send all the reports at the same time. The mechanism synchronizes the maximum interval of all subscriptions to only require the ICD to become active once. This functionality is provided by component `matter_subscription_synchronization`.
 
 This feature is enabled by default on the door-lock sample app and the light-switch sample application.
 
@@ -126,8 +116,7 @@ To change default values corresponding to Matter ICD examples, modify them in ei
 
 ## Subscription Maximum Interval
 
-The subscription mechanism is used by ecosystems and controllers to receive attribute change updates and liveness checks.
-The maximum interval of a subscription request is what defines the frequency at which a device will send a liveness check if there are no attribute changes.
+The subscription mechanism is used by ecosystems and controllers to receive attribute change updates and liveness checks. The maximum interval of a subscription request is what defines the frequency at which a device will send a liveness check if there are no attribute changes.
 
 Within the subscription request / response model, a device has the opportunity to decide the maximum interval at which it will send its liveness check (Empty Report Update). The device can set a maximum interval within this range if and only if it is an ICD:
 
@@ -143,8 +132,7 @@ The following table shows the subscribe response fields.
 
 ### Maximum Interval Negotiation
 
-The Matter SDK provides a default implementation that allows an ICD to negotiate its MaxInterval.
-The goal of the algorithm is to set the MaxInterval to the IdleModeInterval.
+The Matter SDK provides a default implementation that allows an ICD to negotiate its MaxInterval. The goal of the algorithm is to set the MaxInterval to the IdleModeInterval.
 
 ```cpp
 #if CHIP_CONFIG_ENABLE_ICD_SERVER
@@ -199,9 +187,7 @@ The goal of the algorithm is to set the MaxInterval to the IdleModeInterval.
 #endif // CHIP_CONFIG_ENABLE_ICD_SERVER
 ```
 
-If the default implementation does fit within the use-case,
-an implementation can override the default implementation.
-The first step is to implement the `ApplicationCallback` class from the `ReadHandler.h` header.
+If the default implementation does fit within the use-case, an implementation can override the default implementation. The first step is to implement the `ApplicationCallback` class from the `ReadHandler.h` header.
 
 ```cpp
 /*

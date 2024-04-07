@@ -17,18 +17,18 @@ The Interaction Model supports four types of interactions:
 
 All interaction types except Subscribe consist of one transaction. The Interaction Model supports five types of transactions:
 
-- **Read** - Get attributes and/or events from a server.
-- **Write** - Modify attribute values.
-- **Invoke** - Invoke cluster commands.
-- **Subscribe** - Create subscription for clients to receive periodic updates from servers automatically.
-- **Report** - Maintain the subscription for the Subscribe Interaction.
+- **Read**: Get attributes and/or events from a server.
+- **Write**: Modify attribute values.
+- **Invoke**: Invoke cluster commands.
+- **Subscribe**: Create subscription for clients to receive periodic updates from servers automatically.
+- **Report**: Maintain the subscription for the Subscribe Interaction.
 
 The following concepts are important for understanding transactions.
 
-- **Initiators and Targets** - Interactions happen between an initiator node and target node(s). The initiator starts the transaction, and the target responds to the initiator's action. More specifically, the transaction is usually between a client cluster on the initiator node and a server cluster on the target node.
-- **Transaction ID** - The transaction ID field must be present in all actions that are part of a transaction to indicate the logical grouping of the actions as part of one transaction. All actions that are part of the same transaction must have the same transaction ID.
-- **Groups** - Groups of devices allow an initiator to send an action to multiple targets. This group-level communication is known as a groupcast, which leverages Ipv6 multicast messages.
-- **Paths** - Paths are the location of the attribute, event, or command an interaction seeks to access. Examples of path assembly:
+- **Initiators and Targets**: Interactions happen between an initiator node and target node(s). The initiator starts the transaction, and the target responds to the initiator's action. More specifically, the transaction is usually between a client cluster on the initiator node and a server cluster on the target node.
+- **Transaction ID**: The transaction ID field must be present in all actions that are part of a transaction to indicate the logical grouping of the actions as part of one transaction. All actions that are part of the same transaction must have the same transaction ID.
+- **Groups**: Groups of devices allow an initiator to send an action to multiple targets. This group-level communication is known as a groupcast, which leverages Ipv6 multicast messages.
+- **Paths**: Paths are the location of the attribute, event, or command an interaction seeks to access. Examples of path assembly:
 
   - `<path> = <node> <endpoint> <cluster> <attribute / event / command>`
   - `<path> = <group ID> <attribute / event / command>`
@@ -43,13 +43,13 @@ The following sections review each of the four interaction types and their const
 
 An initiator starts a Read Interaction when it wants to determine the value of one or more of a target node's attributes or events. The following steps occur:
 
-1. **Read Request Action** - Requests a list of the target’s attributes and/or events, along with paths to each
-2. **Report Data Action** - Generated in response to the Read Request Action. Target sends back the requested list of attributes and/or events, a suppress response, and a subscription ID.
+1. **Read Request Action**: Requests a list of the target’s attributes and/or events, along with paths to each
+2. **Report Data Action**: Generated in response to the Read Request Action. Target sends back the requested list of attributes and/or events, a suppress response, and a subscription ID.
 
    1. Suppress response: Flag that indicates whether the status response should be sent or withheld.
    2. Subscription ID: Integer that identifies the subscription transaction, only included if the report is part of a Subscription Transaction.
 
-3. **Status Response Action** (OPTIONAL) - Generates a Status Response by default; however, not sent if the suppress response flag is set. Ends transaction once the initiator sends the Status Response or receives a Report Data with the suppress flag set.
+3. **Status Response Action** (optional): Generates a Status Response by default; however, not sent if the suppress response flag is set. Ends transaction once the initiator sends the Status Response or receives a Report Data with the suppress flag set.
 
 Read Transactions are restricted to unicast only. This means that the Read Request and Report Data actions cannot target groups of nodes, whereas the Status Response Action cannot be generated as a response to a groupcast.
 
@@ -79,16 +79,16 @@ Although timed transactions are important in guarding against attacks, they incr
 
 A Timed Write Transaction consists of the following sequence of actions:
 
-1. **Timed Request Action** - Sets the time interval to send a Write Request Action.
-2. **Status Response Action** - Confirms the transaction and time interval.
-3. **Write Request Action** - Requests three items:
+1. **Timed Request Action**: Sets the time interval to send a Write Request Action.
+2. **Status Response Action**: Confirms the transaction and time interval.
+3. **Write Request Action**: Requests three items:
 
     1. List of tuples (each tuple is called a write request) containing the path and data to be modified.
     2. Timed request flag indicating if the transaction is timed.
     3. Suppress response flag.
 
    If the transaction is timed and a timed request flag is set, the initiator must also send a timeout: the number of milliseconds the transaction remains open, during which the next action to be received is still valid.
-4. **Write Response Action (OPTIONAL)** - A list of paths or error codes for every write request. Like a Read Transaction Status Response, a Write Response is not sent if the suppress response flag is set.
+4. **Write Response Action** (optional): A list of paths or error codes for every write request. Like a Read Transaction Status Response, a Write Response is not sent if the suppress response flag is set.
 
 ### Untimed Write Transactions
 
@@ -106,9 +106,9 @@ An initiator invokes command(s) on a target’s cluster(s) through Invoke Intera
 
 Just like a Timed Write Transaction, a Timed Invoke Transaction consists of the following steps:
 
-1. **Timed Request Action** - Sets the time interval to send a Write Request Action.
-2. **Status Response Action** - Confirms the transaction and time interval.
-3. **Invoke Request Action** - Requests four items:
+1. **Timed Request Action**: Sets the time interval to send a Write Request Action.
+2. **Status Response Action**: Confirms the transaction and time interval.
+3. **Invoke Request Action**: Requests four items:
 
     1. List of paths to cluster commands (each item in the list is an invoke command which may optionally contain argument(s) for the command).
     2. Timed request flag.
@@ -117,7 +117,7 @@ Just like a Timed Write Transaction, a Timed Invoke Transaction consists of the 
 
    An Invoke Request initiating a timed Invoke Transaction must also send a timeout just like a timed Write Transaction.
 
-4. **Invoke Response (OPTIONAL)** - Target responds by sending back the interaction ID and a list of invoke responses: command responses and statuses for each invoke request. Like a Write Response, an Invoke Response is not sent if the suppress response flag is set
+4. **Invoke Response** (optional): Target responds by sending back the interaction ID and a list of invoke responses: command responses and statuses for each invoke request. Like a Write Response, an Invoke Response is not sent if the suppress response flag is set
 
 Untimed and timed Invoke Transactions differ in the same way that untimed and timed Write Transactions differ, both in their actions and restrictions on unicast or multicast.
 
@@ -139,9 +139,9 @@ The Subscribe Transaction is as follows:
     2. Max interval ceiling (maximum interval between Data Reports).
     3. Request for attributes and/or events to be reported.
 
-2. **Subscribe Request Action** - A Report Data Action containing the first batch of data, known as the Primed Published Data.
-3. **Status Response Action** - Acknowledges the Report Data Action.
-4. **Subscribe Response Action** - Finalizes the subscription ID (an integer that acts as an identifier for the subscription) and the min interval floor and max interval ceiling. Indicates a successful subscription between the subscriber and publisher.
+2. **Subscribe Request Action**: A Report Data Action containing the first batch of data, known as the Primed Published Data.
+3. **Status Response Action**: Acknowledges the Report Data Action.
+4. **Subscribe Response Action**: Finalizes the subscription ID (an integer that acts as an identifier for the subscription) and the min interval floor and max interval ceiling. Indicates a successful subscription between the subscriber and publisher.
 
 ### Report Transaction
 
@@ -149,12 +149,12 @@ After a successful subscription, Report Transactions are sent to the subscriber.
 
 1. **Non-empty**
 
-   1. Report Data Action - Reports data and/or events with the SuppressResponse flag set to FALSE
-   2. Status Response - Indicates a successful report or an error, the latter of which ends the interaction
+   1. Report Data Action: Reports data and/or events with the SuppressResponse flag set to FALSE
+   2. Status Response: Indicates a successful report or an error, the latter of which ends the interaction
 
 2. **Empty**
 
-   1. Report Data Action - A report that has no data or events with the SuppressResponse flag set to TRUE, meaning no Status Response.
+   1. Report Data Action: A report that has no data or events with the SuppressResponse flag set to TRUE, meaning no Status Response.
 
 ### Subscription Interaction Restrictions
 
