@@ -56,7 +56,7 @@ cd extension\matter_extension
 python slc\sl_setup_env.py
 ```
 
-The `sl_setup_env.py` script creates an .env file to be used to set the environment variables needed for the installed tools, ARM toolchain, SLC-CLI, Java ZAP, Simplicity-commander, ninja, and Java.
+The `sl_setup_env.py` script creates an .env file to be used to set the environment variables needed for the installed tools, ARM toolchain, SLC-CLI, Java ZAP, Simplicity Commander, Ninja, and Java.
 
 It will also create `environment_variables_vscode.txt` this file can be referred to add environment variables for VS code based builds. 
 
