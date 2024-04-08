@@ -26,7 +26,7 @@ git clone https://github.com/SiliconLabs/wiseconnect.git
 ```
 
 
-Your path to the Matter extension and Wiseconnect extension should look like
+Your path to the Matter extension and WisConnect extension should look like:
 
 ```C
 <Path/To/Gsdk/Download>/extension/matter_extension
