@@ -19,14 +19,14 @@ Clone the  Matter GSDK Extension inside the `extension` directory:
 ```C
 git clone https://github.com/SiliconLabs/matter_extension.git
 ```
-To use SiWx91x Wi-Fi applications, clone the WisConnect SDK inside the extension directory.
+To use SiWx91x Wi-Fi applications, clone the WiSeConnect SDK inside the extension directory.
 
 ```C
 git clone https://github.com/SiliconLabs/wiseconnect.git
 ```
 
 
-Your path to the Matter extension and WisConnect extension should look like:
+Your path to the Matter extension and WiSeConnect extension should look like:
 
 ```C
 <Path/To/Gsdk/Download>/extension/matter_extension
