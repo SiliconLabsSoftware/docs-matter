@@ -60,7 +60,7 @@ The `sl_setup_env.py` script creates an .env file to be used to set the environm
 
 It will also create `environment_variables_vscode.txt` this file can be referred to add environment variables for VS code based builds. 
 
-The script will ask user permission to trust the gecko_sdk, matter_extension and wiseconnect . 
+The script will ask the user permission to trust gecko_sdk, matter_extension and wiseconnect.
 
 ## Creating an Application Project
 
