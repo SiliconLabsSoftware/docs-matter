@@ -40,7 +40,7 @@ pip3 install dload
 pip3 install python-dotenv  
 ```
 
-Change directory to cloned extension directory and run the `sl_setup.py` script. This will install the ARM gcc toolchain, SLC-CLI, ZAP, Simplicity-commander, ninja, and Java.
+Change directory to cloned extension directory and run the `sl_setup.py` script. This will install the ARM gcc toolchain, SLC-CLI, ZAP, Simplicity Commander, Ninja, and Java.
 
 For Mac and Linux:
 
