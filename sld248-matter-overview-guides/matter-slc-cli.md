@@ -19,20 +19,28 @@ Clone the  Matter GSDK Extension inside the `extension` directory:
 ```C
 git clone https://github.com/SiliconLabs/matter_extension.git
 ```
+To use the  SiWx91x wifi applications. Clone the Wisconnect SDK inside extension directory
 
-Your path to the Matter extension should look like
+```C
+git clone https://github.com/SiliconLabs/wiseconnect.git
+```
+
+
+Your path to the Matter extension and Wiseconnect extension should look like
 
 ```C
 <Path/To/Gsdk/Download>/extension/matter_extension
+<Path/To/Gsdk/Download>/extension/wiseconnect
 ```
 
 Install the following python packages:
 
 ```C
 pip3 install dload
+pip3 install python-dotenv  
 ```
 
-Change directory to cloned extension directory and run the `sl_setup.py` script. This will install the ARM gcc toolchain, SLC-CLI, ZAP, Simplicity-commander, and Java.
+Change directory to cloned extension directory and run the `sl_setup.py` script. This will install the ARM gcc toolchain, SLC-CLI, ZAP, Simplicity-commander, ninja, and Java.
 
 For Mac and Linux:
 
@@ -48,7 +56,11 @@ cd extension\matter_extension
 python slc\sl_setup_env.py
 ```
 
-The `sl_setup_env.py` script creates an .env file to be used to set the environment variables needed for the installed tools, ARM toolchain, SLC-CLI, Java ZAP, Simplicity-commander, and Java.
+The `sl_setup_env.py` script creates an .env file to be used to set the environment variables needed for the installed tools, ARM toolchain, SLC-CLI, Java ZAP, Simplicity-commander, ninja, and Java.
+
+It will also create `environment_variables_vscode.txt` this file can be referred to add environment variables for VS code based builds. 
+
+The script will ask user permission to trust the gecko_sdk, matter_extension and wiseconnect . 
 
 ## Creating an Application Project
 
@@ -104,3 +116,13 @@ For modifying Matter endpoints and clusters invoke the ZAP tool passing to it th
 ```C
 ./scripts/tools/zap/run_zaptool.sh MyNewApp/config/common/lighting-thread-app.zap
 ```
+
+##Edit and Build with Visual Studio Code 
+
+Install "Simplicity Studio for VS Code" extension on VS code.
+
+Add the POST_BUILD_EXE and NINJA_BUILD_EXE variables from the `slc\tools\environment_variables_vscode.txt` to the environment variables. 
+
+Run the `sl_setup_env.py` and `sl_create_new_app.py` to setup and create a sample application, then load the application in VS code by following the "Adding a VS Code-Enabled Simplicity Studio Project to VS Code" section from [Simplicity Studio User Guide](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-tools-slc-cli/)
+
+User can make all the changes in source files and regenerate app using 'slc generate' commands.
