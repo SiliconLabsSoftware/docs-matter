@@ -2,6 +2,9 @@
 
 ## New Features for v2.2.1-1.2
 
+- Full [Matter Solutions](../sld248-matter-overview-guides/matter-solutions.md) functionality for all sample applications. Example only project generation has been deprecated.
+- Adds support for custom clusters Matter Studio projects – simply add the cluster XML file through the "Extensions" menu in ZAP
+
 ## New Features for v2.2.0-1.2
 
 - GA support for Intermittently Connected Devices
