@@ -11,7 +11,7 @@ Images for the items listed below are available under the "Assets" section at th
 
 The Matter Hub image is intended to be flashed onto an SD card for a Raspberry
 Pi. The Matter Hub Image provides both an Open Thread Border Router and the
-Matter chip-tool. Note the image is ~10GB in size so depending on your internet
+Matter chip-tool. Note the image is ~7GB in size so depending on your internet
 connection this download may take some time. Start the Matter Hub Raspberry Pi
 image download here:
 
