@@ -15,7 +15,7 @@ Matter chip-tool. Note the image is ~10GB in size so depending on your internet
 connection this download may take some time. Start the Matter Hub Raspberry Pi
 image download here:
 
-https://www.silabs.com/documents/public/software/SilabsMatterPi_2.2.0-1.2-extension.zip
+https://www.silabs.com/documents/public/software/SilabsMatterPi_2.2.1-1.2-extension.zip
 
 ## Radio Co-Processor (RCP) Images
 

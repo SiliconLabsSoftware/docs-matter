@@ -8,13 +8,14 @@ The following repositories, branches and commit hashes are to be used together i
 
 | Repo                                       | Branch | Commit Hash                              |
 | ------------------------------------------ | ------ | ---------------------------------------- |
-| https://github.com/SiliconLabs/ot-br-posix | main   | 1813352247aa60fb8993773918f1e5b4af6f3b79 |
+| https://github.com/SiliconLabs/ot-br-posix | main   | 42f98b27b |
 
 ### Radio Co-Processor (RCP)
 
 | Repo                                    | Branch | Commit Hash                              |
 | --------------------------------------- | ------ | ---------------------------------------- |
-| https://github.com/SiliconLabs/ot-efr32 | main   | 7a567da02a078546eb34136c1c44170c8832dd55 |
+| https://github.com/SiliconLabs/ot-efr32 | main   | e75c76737 |
+
 
 ### Connectivity Standards Alliance (CSA) connectedhomeip (Matter)
 
@@ -26,13 +27,8 @@ The following repositories, branches and commit hashes are to be used together i
 
 | Repo                                            | Branch | Commit Hash                              |
 | ----------------------------------------------- | ------ | ---------------------------------------- |
-| https://github.com/SiliconLabs/matter | \<this branch\>   | \<this commit\> |
+| https://github.com/openthread/openthread | main  | 7074a43e4 |
 
-### Matter Accessory Device (MAD)
-
-| Repo                                            | Branch | Commit Hash                              |
-| ----------------------------------------------- | ------ | ---------------------------------------- |
-| https://github.com/SiliconLabs/matter | \<this branch\>   | \<this commit\> |
 
 ## Versioning Scheme
 
@@ -93,6 +89,7 @@ Update digits based on the following criteria:
 | v2.1.1-1.1 | :para[4-Oct-23] :para[GSDK 4.3.2] :para[(917 Pre-Cert)] | 4.3.2 | |
 | :para[v2.1.2-1.1] :para[Tentative] | :para [31-Oct-23] :para[(917 GA)] | 4.3.2 | |
 | v2.2.0-1.2 | 6-Dec-23 | 4.4.0 | |
+| v2.2.1-1.2 | 10-Apr-23 | 4.4.2 | |
 
 ## Silabs Matter Github (SMG)
 
