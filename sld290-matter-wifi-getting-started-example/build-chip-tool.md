@@ -2,8 +2,8 @@
 
 This page covers:
 
-- [Building the chip-tool for Linux](#build-environment-for-linux)
-- [Building the chip-tool for Raspberry Pi](#build-environment-using-raspberry-pi-4)
+- Building the chip-tool for Linux
+- Building the chip-tool for Raspberry Pi
 
 ## Build Environment for Linux
 
@@ -72,8 +72,7 @@ This will build chip-tool in `out/standalone`.
 
 ### Flash the Ubuntu OS onto the SD Card
 
-1. Insert the flashed SD card (directly or using a card reader) into the
-   laptop/PC that will run the Raspberry Pi Imager tool.
+1. Insert the flashed SD card (directly or using a card reader) into the laptop/PC that will run the Raspberry Pi Imager tool.
 2. Launch Raspberry Pi 4 Imager.
 3. Flash the Pi image using any one of the following procedure:
 
@@ -85,8 +84,7 @@ This will build chip-tool in `out/standalone`.
    - Download the Matter Hub Raspberry Pi Image provided on the [Matter Artifacts page](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts), then click 'Choose OS' --> 'Use custom' --> select the Matter Hub Raspberry Pi Image which you downloaded.
 
 4. Click **Storage** and select the **SD card detect**.
-5. This Raspberry Pi 4's console can be accessed in multiple ways.
-    In [this guide](https://www.raspberrypi.com/documentation/computers/remote-access.html), Raspberry Pi 4 is being accessed using Putty.
+5. This Raspberry Pi 4's console can be accessed in multiple ways. In [this guide](https://www.raspberrypi.com/documentation/computers/remote-access.html), Raspberry Pi 4 is being accessed using Putty.
 6. Enter the details like User name, Password, SSID, and its password to connect to network. Click **Save**.
 7. Click **Write** and then **Yes** when you are asked for permission to erase data on the SD card. It will then start flashing the OS onto the SD card.
 8. When it is done, click **Continue**.
@@ -128,9 +126,7 @@ On powering up the board, the red and green lights should start blinking.
 
 ### Build Environment
 
-1. Follow the instructions in
-[the Project CHIP GitHub Site](https://github.com/project-chip/connectedhomeip/blob/master/docs/guides/BUILDING.md),
-in the section "Installing prerequisites on Raspberry Pi 4".
+1. Follow the instructions in [the Project CHIP GitHub Site](https://github.com/project-chip/connectedhomeip/blob/master/docs/guides/BUILDING.md), in the section "Installing prerequisites on Raspberry Pi 4".
 
 2. To build the environment, follow the `Software setup` and `Compiling chip-tool` steps given in [Software setup](/matter/<docspace-docleaf-version>/matter-wifi-getting-started/04-light-switch-step-by-step-example).
 

@@ -25,7 +25,7 @@ To create and build Matter OTA using Simplicity Studio, refer to [build OTA appl
 
 ## Combined Image Upgrade
 
-For 917 SoC, storing a single Matter combined upgrade image(TA+M4) and then providing sample code that can transfer the image to the co-processor and rewrite the 917 firmware as well as M4 firmware Image then boot loading with the upgraded TA processor image and the M4 processor image.
+For 917 SoC, storing a single Matter combined upgrade image (TA+M4) and then providing sample code that can transfer the image to the co-processor and rewrite the 917 firmware as well as M4 firmware Image then bootloading with the upgraded TA processor image and the M4 processor image.
 
 Host will initiate OTA download to receive combined image (TA+M4) on to host. Host will store M4 and TA image on flash backup location.
 
@@ -33,7 +33,7 @@ Host will initiate OTA download to receive combined image (TA+M4) on to host. Ho
 
 - Combined image will be created and uploaded onto Raspberry Pi which provides the firmware image chunk by chunk to the device.
 - Host will initiate the OTA download and provider app will start the OTA image transfer.
-- Host will receive combined image and host will transfer the M4 and TA firmware images on to TA chunk by chunk, TA will write the TA image onto TA flash backup location.
+- Host will receive combined image and host will transfer the M4 and TA firmware images on to TA chunk by chunk. TA will write the TA image onto TA flash backup location.
 - Once both images are downloaded, the device will reboot into the downloaded image.
 
 ### Create Combined (TA+M4) Firmware Image
@@ -41,7 +41,7 @@ Host will initiate OTA download to receive combined image (TA+M4) on to host. Ho
 - The first step is to create a combined Image that contains both the firmware (TA & M4).
 - This image is created by combining the binary images of both images.
 - For Matter OTA file, create a bootable image file (using the Lighting application image as an example) and then create the Matter OTA file from the bootable image file using commands provided below.
-- Once combined image .ota file is created , the same will be uploaded onto raspberry pi where OTA provider application is running.
+- Once combined image .ota file is created, the same will be uploaded onto Raspberry pi where OTA provider application is running.
 
 ## Generating The Combined OTA image
 
@@ -75,7 +75,7 @@ commander rps convert "combined_image.rps" --app "m4_image_combined.rps" --taapp
 ./src/app/ota_image_tool.py create -v 0xFFF1 -p 0x8005 -vn 2 -vs "2.0" -da sha256 combined_image.rps combined_image.ota
 ```
 
-**Note:** For TA(alone) OTA firmware upgrade, follow the same steps as [combined image](./04-ota-software-update-soc.md#combined-image-upgrade)
+**Note:** For TA(alone) OTA firmware upgrade, follow the same steps as [combined image](./04-ota-software-update-soc.md#combined-image-upgrade).
 
 ### Running OTA Provider
 
@@ -94,14 +94,14 @@ commander rps convert "combined_image.rps" --app "m4_image_combined.rps" --taapp
 
 - Enhancements to the Wi-Fi sdk IOT firmware upgrade application for MATTER OTA combined firmware application.
 
-1. In a separate terminal, locate the chip-tool and ota-requestor and run the chip-tool commands to provision the Provider.
+1. In a separate terminal, locate the chip-tool and ota-requestor, and run the chip-tool commands to provision the Provider.
 
     ```shell
         ./out/chip-tool pairing onnetwork 1 20202021
         ./out/chip-tool accesscontrol write acl '[{"fabricIndex": 1, "privilege": 5, "authMode": 2, "subjects": [112233], "targets": null}, {"fabricIndex": 1, "privilege": 3, "authMode": 2, "subjects": null, "targets": null}]' 1 0
     ```
 
-2. If the application device had been previously commissioned, hold Button 0 for six seconds to factory-reset the device.
+2. If the application device had been previously commissioned, hold button 0 for six seconds to factory-reset the device.
 
 3. In the chip-tool terminal, commission the Device by passing below command.
 
@@ -119,7 +119,7 @@ commander rps convert "combined_image.rps" --app "m4_image_combined.rps" --taapp
 
 - The application device will connect to the Provider and start the image download. Once the image is downloaded, the device will reboot into the downloaded image.
 
-**Note:** once image download is done, disconnect jlink. it will reboot automatically with new image.
+**Note**: Once image download is done, disconnect jlink. It will reboot automatically with new image.
 
 ## Matter Software Update with SOC M4 Example Applications
 
@@ -149,7 +149,7 @@ commander rps convert "combined_image.rps" --app "m4_image_combined.rps" --taapp
 
 ### Running OTA Provider
 
-- Locate **ota-provider** terminal, Run the Provider app along with the Matter OTA file created in the previous step.
+- Locate **ota-provider** terminal. Run the Provider app along with the Matter OTA file created in the previous step.
 
 ```shell
     rm -r /tmp/chip_*
@@ -171,7 +171,7 @@ commander rps convert "combined_image.rps" --app "m4_image_combined.rps" --taapp
         ./out/chip-tool accesscontrol write acl '[{"fabricIndex": 1, "privilege": 5, "authMode": 2, "subjects": [112233], "targets": null}, {"fabricIndex": 1, "privilege": 3, "authMode": 2, "subjects": null, "targets": null}]' 1 0
     ```
 
-2. If the application device had been previously commissioned, hold Button 0 for six seconds to factory-reset the device.
+2. If the application device had been previously commissioned, hold button 0 for six seconds to factory-reset the device.
 
 3. In the chip-tool terminal, commission the Device by passing below command.
 
@@ -189,4 +189,4 @@ commander rps convert "combined_image.rps" --app "m4_image_combined.rps" --taapp
 
 - The application device will connect to the Provider and start the image download. Once the image is downloaded, the device will reboot into the downloaded image.
 
-**Note:** once image download is done, disconnect jlink. it will reboot automatically with new image.
+**Note**: Once image download is done, disconnect jlink. It will reboot automatically with new image.

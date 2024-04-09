@@ -22,7 +22,7 @@
 
 ### Silicon Labs Development Boards
 
-For detailed information about Silicon Labs Development Boards, refer to the [Hardware Requirements Page](/matter/<docspace-docleaf-version>/matter-prerequisites/hardware-requirements).
+For detailed information about Silicon Labs Development Boards, refer to [Hardware Requirements](/matter/<docspace-docleaf-version>/matter-prerequisites/hardware-requirements).
 
 ## Setting up Matter with an Ecosystem and Running a Matter Application
 
