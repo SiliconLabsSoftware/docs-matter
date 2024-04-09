@@ -17,9 +17,9 @@ Bootloader binaries are available in the respective path of codebase **third_par
 
 ## Flashing the Bootloader Binaries for EFR32 Board using Simplicity Commander
 
-1. In the Simplicity Studio home page, click Tools.
+1. On the Simplicity Studio home page, click **Tools**.
 
-2. In the Tools dialog, select Simplicity Commander and click OK.
+2. In the Tools dialog, select **Simplicity Commander** and click **OK**.
 
     ![Select Commander](./images/select-commander.png)
 
@@ -27,25 +27,25 @@ Bootloader binaries are available in the respective path of codebase **third_par
 
     ![Select radio board](./images/commander-select-board.png)
 
-4. In the navigation pane, go to the Flash section.
+4. In the navigation pane, go to the **Flash** section.
 
-5. Above beside "Reload tab" board will be displayed, click Browse next to the Binary File field and locate bootloader binary.
+5. Beside **Reload Tab**, the board will be displayed. Click **Browse** next to the **Binary File** field and locate bootloader binary.
 
     ![Select flash option](./images/select-flash-option-efr32-commander.png)
 
-6. Click Flash, the bootloader will be flashed and the Log Window will display a "Flashing completed Successfully" message.
+6. Click **Flash**. The bootloader will be flashed, and the Log Window will display a "Flashing completed Successfully" message.
 
     ![Successful flash](./images/simplicity-commander-flash-bootloader.png)
 
 ## Flashing the EFR32 Matter Binary using Simplicity Commander
 
-1. In the Simplicity Studio home page, click **Tools**.
+1. On the Simplicity Studio home page, click **Tools**.
 
 2. In the **Tools** dialog, select **Simplicity Commander** and click **OK**.
 
     ![Select Commander](./images/select-commander.png)
 
-3. In the Simplicity Commander window, click S**elect Kit** and choose your radio board.
+3. In the Simplicity Commander window, click **Select Kit** and choose your radio board.
 
     ![Select radio board](./images/commander-select-board.png)
 
@@ -55,35 +55,35 @@ Bootloader binaries are available in the respective path of codebase **third_par
 
     ![Select flash option](./images/select-flash-option-efr32-commander.png)
 
-6. Click **Flash**. The binary will be flashed and the Log Window will display a "Flashing completed Successfully" message.
+6. Click **Flash**. The binary will be flashed, and the Log Window will display a "Flashing completed Successfully" message.
 
     ![Successful flash](./images/commander-flash-success-efr32.png)
 
 ## Flashing the SiWx917 SOC Matter Binary using Simplicity Commander
 
-SiWx917 SoC device support is available in the latest [Simplicity Commander](https://community.silabs.com/s/article/simplicity-commander?language=en_US). The SiWx917 SOC board will support **.rps** only file to flash. Follow these steps to create and flash **.rps** file using **.s37**.
+SiWx917 SoC device support is available in the latest [Simplicity Commander](https://community.silabs.com/s/article/simplicity-commander?language=en_US). The SiWx917 SOC board will support **.rps** as the only file to flash. Follow these steps to create and flash the **.rps** file using **.s37**.
 
-1. Locate Simplicity Commander in your PC/Laptop where it is installed through command prompt(cmd).
+1. Locate Simplicity Commander on your PC/Laptop where it is installed through command prompt(cmd).
 
     ![Locate Commander](./images/locate-commander.png)
 
 2. Copy and paste the built **.s37** binary file to the Simplicity commander path.
 
-3. Convert **.s37** binary to **.rps** using the command below using commander terminal.
+3. Convert the **.s37** binary to **.rps** using the command below using commander terminal.
 
     ```shell
         commander rps convert <file_name.rps> --app <file_name.s37>
     ```
 
-4. Flash to the device using command or follow the next steps to flash through Commander Software.
+4. Flash to the device using command or follow the next steps to flash through Simplicity Commander.
 
     ```shell
         commander rps load <file-name>.rps
     ```
 
-5. In the Simplicity Studio home page, click **Tools**.
+5. On the Simplicity Studio home page, click **Tools**.
 
-6. In the Tools dialog, select Simplicity Commander and click OK.
+6. In the Tools dialog, select **Simplicity Commander** and click **OK**.
 
     ![Select Commander](./images/select-commander.png)
 
@@ -93,10 +93,10 @@ SiWx917 SoC device support is available in the latest [Simplicity Commander](htt
 
 8. In the navigation pane, go to the **Flash** section.
 
-9. Above beside "Reload tab" board will be displayed, click **Browse** next to the **Binary File** field and locate binary.
+9. Beside **Reload Tab**, the board will be displayed. Click **Browse** next to the **Binary File** field and locate binary.
 
     ![Select flash option](./images/select-flash-option-soc-commander.png)
 
-10. Click **Flash**. The binary will be flashed and the Log Window will display a "Flashing completed Successfully" message.
+10. Click **Flash**. The binary will be flashed, and the Log Window will display a "Flashing completed Successfully" message.
 
     ![Successful flash](./images/commander-flash-success-soc.png)

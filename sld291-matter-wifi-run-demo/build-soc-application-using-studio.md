@@ -21,7 +21,7 @@ In Simplicity Studio 5, create the Light MAD:
 
     ![Silicon Labs - design](images/siwx917-soc-debugadapter.png)
 
-6. Open the **Example Projects and Demos** tab, select the **Matter** filter and enter *Wi-Fi* in **Filter on keywords** and click **CREATE**.
+6. Open the **Example Projects and Demos** tab, select the **Matter** filter, and enter *Wi-Fi* in **Filter on keywords** and click **CREATE**.
 
     ![Silicon Labs - design](images/siwx917-soc-create-wifiprojects.png)
 

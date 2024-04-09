@@ -13,7 +13,7 @@ The procedures here describe how to make a simple network of a light, a switch, 
 ## Initial Setup
 
 Both the Matter over Wi-Fi and Matter over Thread demos require that you have set up a simple development environment with Simplicity Studio,
-two EFR32MG24-based development boards, and a Raspberry Pi used as a Matter hub. The following requirements are common to both demos. The Thread demo also requires a radio co-processor (RCP) as part of the Matter Hub. The requirements for this are provided in the [introduction to the Thread demo](/matter/<docspace-docleaf-version>/matter-thread-getting-started).
+two EFR32MG24-based development boards, and a Raspberry Pi used as a Matter hub. The following requirements are common to both demos. The Thread demo also requires a radio co-processor (RCP) as part of the Matter Hub. The requirements for this are provided in the [introduction to the Thread demo](/matter/<docspace-docleaf-version>/matter-light-switch-example/02-thread-light-switch-example).
 
 ### Hardware Requirements
 
@@ -57,7 +57,7 @@ The following boards are supported for the Matter over Wi-Fi demos and developme
   - SPI Cable (included in the RS9116 kit)
   - Jumper Cables (included in the RS9116 kit)
 
-**Note**: For more information, refer to [Hardware Requirements](/matter/<docspace-docleaf-version>/hardware-requirements).
+**Note**: For more information, refer to [Hardware Requirements](#hardware-requirements).
 
 ##### **Matter Over Wi-Fi Accessory Device Requirements for SoC Mode**
 
@@ -73,30 +73,29 @@ Pre-built images for the SiWx917 connectivity firmware are available as per the 
 
 ### Software Requirements
 
-**Simplicity Studio 5**: Download and install Simplicity Studio 5 for your operating system from the Silicon Labs[Simplicity Studio page](https://www.silabs.com/developers/simplicity-studio). While the installation process is easy to follow, instructions are provided in the Simplicity Studio v5 [Getting Started section](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-getting-started/install-ss-5-and-software).
+**Simplicity Studio 5**: Download and install Simplicity Studio 5 for your operating system from the Silicon Labs [Simplicity Studio page](https://www.silabs.com/developers/simplicity-studio). While the installation process is easy to follow, instructions are provided in the Simplicity Studio v5 [Getting Started section](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-getting-started/install-ss-5-and-software).
 
 **Ozone - The J-Link Debugger**: [Ozone](https://www.segger.com/products/development-tools/ozone-j-link-debugger/) is a full-featured graphical debugger for embedded applications. With Ozone, it is possible to debug any embedded application on C/C++ source and assembly level.
 
 **Simplicity Commander**: [Simplicity Commander](https://www.silabs.com/documents/public/software/SimplicityCommander-Windows.zip) is a utility that provides GUI and command line access to the debug features of an EFM32 device. It allows you to flash firmware, update the kit firmware, and lock or unlock debug access.
 
-**Tera Term**: [Tera Term]((https://osdn.net/projects/ttssh2/releases/)) is the terminal emulator for Microsoft Windows that supports serial port, telnet, and SSH connections.
+**Tera Term**: [Tera Term](https://osdn.net/projects/ttssh2/releases/) is the terminal emulator for Microsoft Windows that supports serial port, telnet, and SSH connections.
 
 **Silicon Labs Matter GSDK Extension**: Once Simplicity Studio 5 is installed, you will be prompted to install the Gecko SDK Suite (GSDK). Here you should also install the Matter Enablement Package by making sure the extension is checked, as shown.
 
 ![Installing the Matter Extension](./resources/install-package-advanced-device.png)
 
-**Installation of Wi-Fi SDK and Wiseconnect Packages**
-The following packages will be installed during the installation of Simplicity Studio, Refer to [Package Installation](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/software-installation)
+**Installation of Wi-Fi SDK and Wiseconnect Packages**: The following packages will be installed during the installation of Simplicity Studio. Refer to [Package Installation](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/software-installation).
 
-**Matter Hub Raspberry Pi Image**: A copy of the pre-built image from the Silicon Labs web services can be downloaded in this [zipfile](https://www.silabs.com/documents/public/software/SilabsMatterPi_2.2.0-1.2-extension.zip). **Note** this is a large file and will take some time to download.
+**Matter Hub Raspberry Pi Image**: A copy of the pre-built image from the Silicon Labs web services can be downloaded in this [zipfile](https://www.silabs.com/documents/public/software/SilabsMatterPi_2.2.1-1.2-extension.zip). **Note** this is a large file and will take some time to download.
 
->**Note:** The Matter hub for Matter over Thread requires an additional device, a radio co-processor. See [the introduction to the Matter over Thread demo](/matter/<docspace-docleaf-version>/matter-thread-getting-started) for more information.
+>**Note:** The Matter hub for Matter over Thread requires an additional device, a radio co-processor. See [the introduction to the Matter over Thread demo](/matter/<docspace-docleaf-version>/matter-light-switch-example/02-thread-light-switch-example) for more information.
 
 **Matter Bootloader Image**: The EFR32MG24 devices must be programmed with a bootloader. Obtain those here: [Silicon Labs Matter Artifacts](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts).
 
 **SSH Client**: Managing the Matter hub often requires connecting to it remotely. An SSH client is needed to follow the step-by-step example in this document (PuTTY is used). Install software such as [PuTTY](https://www.putty.org/), Terminal, or a similar application for access to the Raspberry Pi-based Matter hub.
 
-**SD Card-Flashing Software**: Many different applications can be used to prepare an SD card for the Raspberry Pi, such as the [Raspberry Pi Imager](https://www.raspberrypi.com/documentation/computers/getting-started.html#install-using-imager), [balenaEtcher](https://www.balena.io/etcher), and [Rufus](https://silabsiot.slack.com/archives/C018366PBH8/p1654113932884999). The step-by-step example in this document uses the Raspberry Pi Imager.
+**SD Card-Flashing Software**: Many different applications can be used to prepare an SD card for the Raspberry Pi, such as the [Raspberry Pi Imager](https://www.raspberrypi.com/documentation/computers/getting-started.html#install-using-imager) and [balenaEtcher](https://www.balena.io/etcher). The step-by-step example in this document uses the Raspberry Pi Imager.
 
 ### Visual Studio Code Development
 

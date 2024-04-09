@@ -120,4 +120,8 @@ $ mattertool levelcontrol move-to-level {desired_level} 0 1 1 {node_ID} 1
 $ mattertool levelcontrol read current-level 1 1 // Returns 10
 ```
 
-For more information on running a Silicon Labs lighting example on a Thunderboard Sense 2 see you can view documentation in the Silicon Labs Matter GitHub Repo. 
+For more information on running a Silicon Labs lighting example on a Thunderboard Sense 2 see you can view documentation in the Silicon Labs Matter GitHub Repo.
+
+## Defining a Custom Cluster
+
+Create an XML file with custom cluster definitions, for an example see [Sample MEI Cluster](https://github.com/project-chip/connectedhomeip/blob/master/src/app/zap-templates/zcl/data-model/chip/sample-mei-cluster.xml). In ZAP click 'Extensions' and add the XML file. The newly defined cluster can then be enabled in any endpoint under the domain for which it was defined (for example General), its Commands and Attributes can be managed like those of any other cluster.

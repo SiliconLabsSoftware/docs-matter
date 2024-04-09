@@ -27,24 +27,24 @@ See the Aeotec instructions on [How to Set Up a Smart Home Hub](https://aeotec.f
 4. Open the Smart Things app, tap **'+**, and select **Add device**.
 ![Add device](./images/samsung-app-add-device.png?width=40%&height=40%)
 
-5. Select Partner Devices.
+5. Select **Partner devices**.
 ![Partner devices](./images/samsung-app-select-partner.png?width=40%&height=40%)
 
-6. Through the Smart Things app scan the Application QR code to trigger commissioning.
+6. Through the Smart Things app, scan the Application QR code to trigger commissioning.
 
-7. After scanning the QR code, verify commissioning is triggered by checking on the DUT logs.
+7. After scanning the QR code, verify that commissioning is triggered by checking on the DUT logs.
 ![commissioning in logs](./images/samsung-app-commissioning.png?width=40%&height=40%)
 
 8. The last step of the commissioning process is to register your device with Access Point.
 ![Register device](./images/samsung-register-device.png?width=40%&height=40%)
 
-9. Once commissioning has succeeded, verify the Matter application is added in one room of the Smart Things app and is in online mode.
+9. Once commissioning has succeeded, verify that the Matter application is added in one room of the Smart Things app and is in online mode.
 ![Light added](./images/samsung-light-added.png?width=40%&height=40%)
 
-10. In the Samsung Smart Thing app, you can now tap your light to turn it ON and OFF. You will see the LED1 on your WSTK board turned on or off depending on the command you enter. **Note**: Samsung Smart Things does not support voice control commands.
+10. In the Samsung Smart Thing app, you can now tap your light to turn it ON and OFF. You will see the **LED1** on your WSTK board turned on or off depending on the command you enter. **Note**: Samsung Smart Things does not support voice control commands.
 
 ## Deleting the Matter Application From Samsung Smart Things App
 
-- In order to remove the Matter application from Samsung Smart Things app go to **Devices Section**.
-- Long Press and Hold Matter application and click **Remove**.
-- If you want to add the Matter application again follow the procedure above.
+- To remove the Matter application from the Samsung Smart Things app, go to **Devices**.
+- Press and hold the Matter application and tap **Remove**.
+- If you want to add the Matter application again, follow the procedure above.

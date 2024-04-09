@@ -89,7 +89,7 @@ Pre-built binary images for the Matter accessory devices are provided on the [Ma
 
 ### Matter Over Wi-Fi Accessory Device Requirements for NCP Mode
 
-The Silicon Labs Matter over Wi-Fi NCP mode demo and development requires two boards: the Silicon Labs EFR32 Radio board to run the Matter code and either the RS9116, SiWx917 or WF200 to run the Wi-Fi protocol stack. Pre-built images for the EFR32 are provided on the [Matter Artifacts page](./matter-artifacts.md). Pre-built images for SiWx917 or RS9116 connectivity firmware are also provided on the [Matter Artifacts page](./matter-artifacts.md).
+The Silicon Labs Matter over Wi-Fi NCP mode demo and development requires two boards: the Silicon Labs EFR32 Radio board to run the Matter code and either the RS9116, SiWx917 or WF200 to run the Wi-Fi protocol stack. Pre-built images for the EFR32, and also for SiWx917 or RS9116 connectivity firmware, are provided on the [Matter Artifacts page](./matter-artifacts.md).
 
 **Note:**
 
@@ -139,7 +139,7 @@ Pre-built images for the SiWx917 connectivity firmware are available as per the 
   - SiWx917 / BRD4002A / Wireless Starter Kit
   - SiWx917 SoC Mode
     - SiWx917 SoC / Common Flash Radio Board / 2.4GHz
-      - BRD4338A - B0 common flash v2.0
+      - BRD4338A - SiWx917 Wi-Fi 6 and Bluetooth LE 8MB Flash Radio Board
 
     **Note**: Refer to [SiWx917 SoC](https://www.silabs.com/development-tools/wireless/wi-fi/siwx917-pro-kit?tab=techdocs) for more details.
 

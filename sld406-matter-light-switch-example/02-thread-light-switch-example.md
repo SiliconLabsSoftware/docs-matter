@@ -1,6 +1,6 @@
 # Matter over Thread Light and Switch Step-by-Step Example
 
-## Setting up the Matter hub
+## Setting up the Matter Hub
 
 1. Prepare a compatible dev board to become your Matter hub's ot-rcp (see details in the [introduction](./index.md)):
 
@@ -14,7 +14,7 @@
 
       ![Debug Adapters view](resources/image2.png)
 
-   4. Go to the Example Projects and Demos tab. Select the *OpenThread* filter and enter "*openthread rcp*" in the **Filter on keywords** box. Select the *OpenThread - RCP* example and click *Run*.
+   4. Go to the Example Projects and Demos tab. Select the **OpenThread** filter and enter *openthread rcp* in the **Filter on keywords** box. Select the **OpenThread - RCP** example and click **Run**.
 
       ![Example projects and demos view](resources/image3.png)
 
@@ -34,7 +34,7 @@
 
           ![Raspberry Pi Storage selection](resources/image5.png)
 
-      3. Click **WRITE** and confirm the action by clicking **YES**. Wait for the process to finish writing to the SD card and verifying the results.
+      3. Click **WRITE** and then click **YES** to confirm the action. Wait for the process to finish writing to the SD card and verifying the results.
 
           ![Raspberry Pi write to SD card](resources/image6.png)
 
@@ -48,7 +48,7 @@
 
          ![Warning from PuTTY](resources/image7.png)
 
-      2. The default credentials are **ubuntu**:**ubuntu** (username:password). **Note**: In PuTTY, you can set the default username to **ubuntu** under *Connection > Data > Auto-login username*.
+      2. The default credentials are **ubuntu**:**ubuntu** (username:password). **Note**: In PuTTY, you can set the default username to **ubuntu** under **Connection > Data > Auto-login username**.
 
          ![PuTTY Configuration](resources/image8.png)
 
@@ -72,31 +72,38 @@ You now have a working Matter hub. Keep the PuTTY session open for the following
 
    3. Once it shows up in the Debug Adapters view, select it.
 
-   4. Go to the Example Projects and Demos tab, turn off *Demos*, check the *Matter* filter under *Wireless Technology* and enter "*thread*"  in the *Filter on keywords* box.
+   4. Go to the Example Projects and Demos tab, turn off **Demos**, check the **Matter** filter under **Wireless Technology**, and enter *thread* in the **Filter on keywords** box. Select the **Matter - SoC Lighting over Thread with external Bootloader Solution** and click **Create**.
 
-       ![Select the example project](resources/image10.png)
+       ![Select the example project](resources/example-project.png)
 
-   5. Select the *Matter - SoC Light over Thread* example and click **Create**. Name your project and click **Finish** (no other changes are required at this time).
+   5. Name your project and click **Finish** (no other changes are required at this time).
 
-      ![Create the project](resources/image11.png)
+      ![Create the project](resources/create-project.png)
 
-   6. Once the project is created, right-click it in the Project Explorer view and select *Build Project*.
+   6. Once the solution is created, select it in the Project Explorer view and click the hammer icon to build. This will begin building both the bootloader and application images.
 
-      ![Build the project](resources/image12.png)
+      ![Build the project](resources/build-project.png)
 
-   7. Once the compilation is done, right-click the dev board in the Debug Adapters view and select *Upload application...*
+   7. Once the compilation is done, right-click the dev board in the Debug Adapters view and select **Upload application...**.
 
       ![Upload application](resources/image13.png)
 
-   8. Select the *Application image path* for your newly compiled project and a *Bootloader image*. Bootloader images are provided in the zip file referenced on the [Silicon Labs Matter Artifacts page](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts). Unzip and reference the extracted location. Check "Erase chip before uploading image".
+   8. Select the **Application image path** for your newly compiled solution application. The resulting application image will be within the **artifact** directory inside the project workspace. This image has both the bootloader and application binaries combined into one image. Check **Erase chip before uploading image**. Bootloader images are also provided in the zip file referenced on the [Silicon Labs Matter Artifacts page](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts). Unzip and reference the extracted location if electing to use these default bootloader images.
 
-       ![Application image upload](resources/image14.png)
+       ![Application image upload](resources/image-upload.png)
 
-      **Note**: If you are unsure of the path for the newly created binary, you can find the project’s path in the project’s *Properties* window under *Resource*. The binary is typically located inside the *{workspace folder}\|{project name folder}\|{GNU ARM v??? folder}\|{project name binary}.s37*. For example, you would find the binary for a Matter light over Thread project with the default name here: *{workspace folder}\|MatterLightOverThread\|GNU ARM v10.3.1 - Default\|MatterLightOverThread.s37*
+      **Note**: If you are unsure of the path for the newly created binary, you can find the project’s path in the project’s *Properties* window under *Resource*. The binary is typically located in:
+      >*{workspace folder}\|{project name folder}\|{GNU ARM v??? folder}\|{project name binary}.s37*
+
+      For example, you would find the binary for a Matter light over Thread project with the default name here:
+      >*{workspace folder}/MatterLightOverThread/GNU ARM v12.2.1 - Default/MatterLightOverThread.s37*
+      
+      The combined binary (bootloader and application image) will be located in:
+      >*{workspace folder}/MatterLightOverThread/artifact/MatterLightOverThreadSolution-full.s37*
 
       **Note**: You should only need to upload a bootloader image and erase the chip once. Subsequent application uploads do not need the bootloader image or chip erasure.
 
-      ![Image location](resources/image15.png)
+      ![Image location](resources/image-location.png)
 
    9. If you are using a dev board with a WSTK, you should now see a QR code displayed on the WSTK's LCD.
 
@@ -138,7 +145,7 @@ The *mattertool* also allows you to perform any of the commands you can normally
 
 1. In a PuTTY session to the Matter hub, use the *mattertool* to commission your Matter light switch device.
 
-   1. Connect to a power source your Matter light switch device.
+   1. Connect your Matter light switch device to a power source.
 
       >**Notes**: Only power-up one device at a time to ensure proper commissioning since no discriminator is used to keep this example simple.
 
@@ -152,9 +159,9 @@ The *mattertool* also allows you to perform any of the commands you can normally
 
       ![Output example](resources/image17.png)
 
-      >**Note**: If you do not specify a *nodeID*, one will be assigned automatically. Make sure to take note of what nodeID assigned to your Matter light switch & Matter light devices. These will be needed later for modifying the Matter light's ACL & the Matter light switch's binding table.
+      >**Note**: If you do not specify a *nodeID*, one will be assigned automatically. Make sure to take note of what nodeID assigned to your Matter light switch and Matter light devices. These will be needed later for modifying the Matter light's ACL & the Matter light switch's binding table.
 
-   3. Power up the Matter light device and commission it as well, by following the previous steps for this MAD but using a different *nodeID* .
+   3. Power up the Matter light device and commission it as well, by following the previous steps for this MAD but using a different *nodeID*.
 
 You now have two Matter devices on your network ready to be used
 
@@ -170,7 +177,7 @@ The various compatible boards will have different setups for their LED(s). Typic
 
 - Solid on: indicates the MAD is now in the network.
 
-For example, on the dev board *xG24-DK2601B EFR32xG24* (also known as *BRD2601*), the red channel of *LED0* is used to indicate the network status. The green channel of *LED0* is used to indicate the light status.
+For example, on the dev board *xG24-DK2601B EFR32xG24* (also known as *BRD2601*), the red channel of **LED0** is used to indicate the network status. The green channel of **LED0** is used to indicate the light status.
 
 ![Boards and features](resources/image18.png)
 
@@ -180,7 +187,7 @@ For example, on the dev board *xG24-DK2601B EFR32xG24* (also known as *BRD2601*)
 
       ![Controlling the Light MAD](resources/image19.png)
 
-   2. For dev board with buttons available, you can use BTN1 to toggle the light status locally.
+   2. For dev board with buttons available, you can use **BTN1** to toggle the light status locally.
 
 2. In a PuTTY session to your Matter hub, use the *mattertool* to bind your Matter light switch device to your Matter light device, thus allowing the switch to control the light.
 
@@ -210,7 +217,7 @@ For example, on the dev board *xG24-DK2601B EFR32xG24* (also known as *BRD2601*)
 
       - **nodeID-light**: The node ID of the Matter light device.
 
-      - **1**: The application endpoint in the light. In the Silabs examples, this is always 1.
+      - **1**: The application endpoint in the light. In the Silicon Labs examples, this is always 1.
 
       - **6**: The on/off cluster in the light. This is always 6.
 

@@ -50,18 +50,20 @@ The Wi-Fi station in Power Save mode wakes up to receive the DTIM beacon and che
 
 ## Building with ICD Functionality
 
-To enable ICD functionality for Wi-Fi, the `matter_icd` component needs to be installed within the Software Components tab from Simplicity Studio.
+To enable ICD functionality for Wi-Fi, the `ICD Management` cluster/component needs to be installed within the **Software Components** tab from Simplicity Studio.
 
-- For rs9116 and WF200: `matter_icd` component is installed by default for lock-app. For thermostat and window need to install mentioned component to enable sleepy.
-- For 917NCP: `matter_icd` component is installed by default for lock-app. For thermostat and window need to install mentioned component to enable sleepy.
-- For SiWx917 SOC:
-  - Search `matter_icd` from **search bar** and click **Install**.
+- Search for the ICD Management cluster and enable for **Server**. You will receive a warning that the corresponding component was unable to be installed. This is due to component conflicts within Simplicity Studio.
 
-    ![Search matter icd](./images/search-matter-icd.png)
+    ![ICD Cluster](images/icd-enable-icd-cluster.png)
 
-  - Click on **Replace Subscription Timeout Resumption**. Sleepy support is enabled; build the project.
+- Navigate to the **Software Components** tab and install the ICD Management Server Cluster component.
 
-    ![Replace matter icd](./images/replace-icd-tab.png)
+    ![ICD Component](images/icd-install-icd-component.png)
+
+- For SiWx917 SOC, click on **Replace Subscription Timeout Resumption**. Sleepy support is enabled; build the project. Additional sleep support can be enabled by installing `matter_siwx917_m4_sleep`.
+
+- For rs9116 and WF200: `matter_icd_management` component is installed by default for lock-app. For thermostat and window, you need to install the mentioned cluster/component to enable sleepy.
+- For 917NCP: `matter_icd_management` component is installed by default for lock-app. For thermostat and window, you need to install the mentioned cluster/component to enable sleepy.
 
 ### EFR32 + RS9116 Setup for ICDs (Sleepy Devices)
 

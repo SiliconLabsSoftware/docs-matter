@@ -1,7 +1,6 @@
 # Set Up MQTT Explorer
 
-Download and install the MQTT Explorer from https://mqtt-explorer.com/
-Setting up MQTT Explorer for testing.
+Download and install the MQTT Explorer from https://mqtt-explorer.com/.
 
 ![MQTT Explorer settings](./images/mqtt-explorer-1.png)
 
@@ -59,6 +58,6 @@ Setting up MQTT Explorer for testing.
       - lift/*
       - tilt/*
   - MQTT Client ID depends on the certificate set that you will use.
-  - Add the Certificate, following step 5 in [openssl certificate create](./openssl-certificate-creation.md)
+  - Add the Certificate, following step 5 in [openssl certificate create](./openssl-certificate-creation.md).
 
 ![Silicon Labs - DIC design](./images/mqtt-explorer-5.png)
