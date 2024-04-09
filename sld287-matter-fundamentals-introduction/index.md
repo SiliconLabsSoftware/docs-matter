@@ -70,4 +70,4 @@ As mentioned before, one of the main benefits of using Matter is the enhanced se
 | **PASE (Passcode Authentication Session Establishment)** | This process at the Commissioning stage uses a passcode provided out-of-band (like a device's QR code) to commission a Matter device on the network. |
 | **CASE (Certificate Authentication Session Establishment)** | This process at the Operational stage establishes and provides an authentication key exchanged between two devices.  |
 
-More detailed information on Matter security can be found in [Matter Security Documentation](/matter/<docspace-docleaf-version>/matter-overview-guides/matter-security) and [Matter Commissioning Documentation](/matter/<docspace-docleaf-version>/matter-overview-guides/matter-commissioning).
+More detailed information on Matter security can be found in [Matter Security](/matter/<docspace-docleaf-version>/matter-fundamentals-security) and [Matter Commissioning](/matter/<docspace-docleaf-version>/matter-overview-guides/matter-commissioning).

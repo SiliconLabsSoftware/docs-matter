@@ -41,13 +41,13 @@ Below are the software tools, packages, and images required for executing Matter
 
 ### Firmware Images
 
-- Download the Firmware images from [Matter Artifacts Page](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts#siwx917-firmware-for-siwx917-soc).
+- Download the Firmware images from [Matter Artifacts page](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts#siwx917-firmware-for-siwx917-soc).
 
 - For Flashing the firmware images, Refer to [Flashing Firmware Images](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/loading-firmware-for-ncp-and-soc-boards).
 
 ## Installation of the Wi-Fi Software Tools and Packages
 
-Refer to the [Wi-Fi Software Installation Page](./software-installation).
+Refer to the [Wi-Fi Software Installation page](./software-installation).
 
 ## Connect SiWx917 SOC to Computer
 
@@ -71,7 +71,7 @@ If Simplicity Studio does not detect the SiWx917 SoC board, try the following:
 In Simplicity Studio 5, create the Light Matter Accessory Devices (MAD):
 
 1. [Download](https://www.silabs.com/developers/simplicity-studio) and Install Simplicity Studio 5.
-2. To install the software packages for Simplicity Studio, refer to the [Software Package Installation Section](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/software-installation#installation-of-software-packages)
+2. To install the software packages for Simplicity Studio, refer to the [Software Package Installation Section](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/software-installation#installation-of-software-packages).
 
 3. Switch to the Launcher view (if not already in it).
 
@@ -87,7 +87,7 @@ In Simplicity Studio 5, create the Light Matter Accessory Devices (MAD):
 
     ![SoC debug adapter](images/siwx917-soc-debugadapter.png)
 
-6. Open the Example Projects and Demos tab, select the **Matter** filter and enter "*Wi-Fi*" in **Filter on keywords**. Click **CREATE**.
+6. Open the Example Projects and Demos tab, select the **Matter** filter, and enter *Wi-Fi* in **Filter on keywords**. Click **CREATE**.
 
     ![Create project](images/siwx917-soc-create-wifiprojects.png)
 
@@ -95,7 +95,7 @@ In Simplicity Studio 5, create the Light Matter Accessory Devices (MAD):
 
     ![Project wizard](images/siwx917-soc-projectwizard.png)
 
-8. Once the project is created, right-click on the project and select *Build Project* in the Project Explorer tab.
+8. Once the project is created, right-click on the project and select **Build Project** in the Project Explorer tab.
 
     ![Build project](images/siwx917-soc-build-wifiproject.png)
 
@@ -114,7 +114,6 @@ In Simplicity Studio 5, create the Light Matter Accessory Devices (MAD):
 
     **Note:** Output of the SiWX917 SoC application will be displayed on the J-Link RTT Viewer.
 
-13. In order to debug your Matter Application, Right-click on the selected **Matter Project** and click on *Debug As*.
+13. In order to debug your Matter Application, Right-click on the selected **Matter Project** and click **Debug As**.
 
     ![Debug](images/siwx917-socdebug.png)
-    

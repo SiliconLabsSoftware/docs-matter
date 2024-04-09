@@ -1,6 +1,6 @@
 # Creating Matter Applications using SLC CLI
 
-The Silicon Labs Configurator (SLC) offers command-line access to application configuration and generation functions. [**Software Project Generation and Configuration with SLC-CLI**](https://www.silabs.com/documents/public/user-guides/ug520-software-project-generation-configuration-with-slc-cli.pdf) provides a complete description and instructions on downloading and using the SLC-CLI tool.
+**Silicon Labs Configurator (SLC)**: SLC offers command-line access to application configuration and generation functions. [Software Project Generation and Configuration with SLC-CLI](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-tools-slc-cli/) provides instructions on downloading and using the SLC-CLI tool.
 
 This guide lists the steps to create and build a Silicon Labs Matter SLC project using SLC-CLI and `make`. These scripts are evaluation quality and have been verified to work on Ubuntu 22.04.3 LTS, MacOS Version 13.5.1, and Windows 10.
 
@@ -19,20 +19,28 @@ Clone the  Matter GSDK Extension inside the `extension` directory:
 ```C
 git clone https://github.com/SiliconLabs/matter_extension.git
 ```
+To use SiWx91x Wi-Fi applications, clone the WiSeConnect SDK inside the extension directory.
 
-Your path to the Matter extension should look like
+```C
+git clone https://github.com/SiliconLabs/wiseconnect.git
+```
+
+
+Your path to the Matter extension and WiSeConnect extension should look like:
 
 ```C
 <Path/To/Gsdk/Download>/extension/matter_extension
+<Path/To/Gsdk/Download>/extension/wiseconnect
 ```
 
 Install the following python packages:
 
 ```C
 pip3 install dload
+pip3 install python-dotenv  
 ```
 
-Change directory to cloned extension directory and run the `sl_setup.py` script. This will install the ARM gcc toolchain, SLC-CLI, ZAP, Simplicity-commander, and Java.
+Change directory to cloned extension directory and run the `sl_setup.py` script. This will install the ARM gcc toolchain, SLC-CLI, ZAP, Simplicity Commander, Ninja, and Java.
 
 For Mac and Linux:
 
@@ -48,7 +56,11 @@ cd extension\matter_extension
 python slc\sl_setup_env.py
 ```
 
-The `sl_setup_env.py` script creates an .env file to be used to set the environment variables needed for the installed tools, ARM toolchain, SLC-CLI, Java ZAP, Simplicity-commander, and Java.
+The `sl_setup_env.py` script creates an .env file to be used to set the environment variables needed for the installed tools, ARM toolchain, SLC-CLI, Java ZAP, Simplicity Commander, Ninja, and Java.
+
+It will also create `environment_variables_vscode.txt`. This file can be referred to add environment variables for VS Code based builds.
+
+The script will ask you for permission to trust gecko_sdk, matter_extension, and wiseconnect.
 
 ## Creating an Application Project
 
@@ -84,22 +96,33 @@ For Windows:
 python slc\sl_build.py MyNewApp\lighting-app-thread.slcp brd4161a
 ```
 
-
 Alternately, one can use SLC-CLI commands directly to generate the project and then use `make` to build it.
 
 Windows users will need to install `make` in their system. You can use your own or follow these steps to get `make`.
-1. Install the MSYS terminal, which provides a Unix-like environment on Windows. 
+
+1. Install the MSYS terminal, which provides a Unix-like environment on Windows.
 2. Open the MSYS terminal and install `make` using the command `pacman -S make`.
-3. Run command `where make`, copy the path, and add it to the PATH environment variable. 
+3. Run command `where make`, copy the path, and add it to the PATH environment variable.
 4. Restart your command line terminal and run `slc/sl_build.py` or run make directly. You might need to reboot.
 
 Note: In rare cases, the build may fail due to missing files in the `zap-generated/` directory. The workaround is to delete the `.zap` folder in the home directory.
+
 ## Modifying an Application Project
 
-The resulting user project can be modified like any other SLC project: software components can be added or removed by modifying the project's .slcp file, configuration can be applied by modifying the files in the `config` directory, the application logic can be managed through the files in the `src` directory. Various SLC-CLI commands can be used to examine, validate, or re-generate the project after a modification, see [**Software Project Generation and Configuration with SLC-CLI**](https://www.silabs.com/documents/public/user-guides/ug520-software-project-generation-configuration-with-slc-cli.pdf) for more information.
+The resulting user project can be modified like any other SLC project: software components can be added or removed by modifying the project's .slcp file, configuration can be applied by modifying the files in the `config` directory, the application logic can be managed through the files in the `src` directory. Various SLC-CLI commands can be used to examine, validate, or re-generate the project after a modification, see [Software Project Generation and Configuration with SLC-CLI](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-tools-slc-cli/) for more information.
 
 For modifying Matter endpoints and clusters invoke the ZAP tool passing to it the application's ZAP file:
 
 ```C
 ./scripts/tools/zap/run_zaptool.sh MyNewApp/config/common/lighting-thread-app.zap
 ```
+
+##Edit and Build with Visual Studio Code 
+
+Install the "Simplicity Studio for VS Code" extension on VS code.
+
+Add the POST_BUILD_EXE and NINJA_BUILD_EXE variables from the `slc\tools\environment_variables_vscode.txt` to the environment variables. 
+
+Run the `sl_setup_env.py` and `sl_create_new_app.py` to set up and create a sample application, then load the application in VS Code by following the "Adding a VS Code-Enabled Simplicity Studio Project to VS Code" section from [Simplicity Studio User Guide](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-tools-slc-cli/)
+
+You can make all the changes in source files and regenerate app using 'slc generate' commands.

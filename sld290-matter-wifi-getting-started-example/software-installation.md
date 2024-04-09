@@ -42,7 +42,7 @@ If you already selected the Gecko SDK extension while installing Studio, you may
 4. Next to the Gecko SDK version, click the three dots button.
 ![Installation step 2](images/install-gecko-sdk-step-2.png)
 
-5. Select **Change Version** and select **New Version** from dropdown to install, and click **Finish**.
+5. Select **Change Version** and select **New Version** from the dropdown to install, and click **Finish**.
 ![Installation step 3](images/install-gecko-sdk-step-3.png)
 
 #### Install the Gecko SDK Through the "Manage SDK" Window

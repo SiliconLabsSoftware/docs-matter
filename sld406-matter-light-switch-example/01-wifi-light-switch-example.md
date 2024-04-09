@@ -6,23 +6,23 @@ This procedure prepares the Raspberry Pi 4B (RPi4B) to become a Matter Hub. You 
 
 1. Install the Raspberry Pi Imager and insert the SD card into the PC to flash the image.
 
-   1. Open the Imager, select the Operating System as 'Custom OS' and browse for the Raspberry Pi Image.
+   1. Open the Imager, select the Operating System as Custom OS, and browse for the Raspberry Pi Image.
 
    2. Select the storage as an SD card.
 
-   3. Click the settings icon to configure the access point (AP) credentials, Hostname and user credentials. Make sure the 5 GHz Wi-Fi credentials of the dual-band AP are entered.
+   3. Click the settings icon to configure the access point (AP) credentials, Hostname, and user credentials. Make sure the 5 GHz Wi-Fi credentials of the dual-band AP are entered.
 
    4. Click the 'write' option. **Note** this will erase all existing content on that SD card.
 
 2. Insert the SD card into Raspberry Pi 4B (RPi4B).
 
-3. Power-up the RPi4B. Once it is booted up, check the Raspberry Pi's IP address. Refer to [Finding Raspberry Pi IP address](/matter/<docspace-docleaf-version>/matter-references/find-raspi) in the References chapter to get the IP address or enter the Hostname directly in PuTTY.
+3. Power-up the RPi4B. Once it is booted up, check the Raspberry Pi's IP address. Refer to [Finding Raspberry Pi IP address](/matter/<docspace-docleaf-version>/matter-references/find-raspi) in the Resources section to get the IP address or enter the Hostname directly in PuTTY.
 
 4. Use PuTTY to connect to RPi4B.
 
    1. The first time connecting to RPi4B, PuTTY will warn about a new host key or key fingerprint. Accept the key.
    2. The credentials (username: password) are the same given Step 1.
-   3. Switch to root mode and navigate to path "/home/ubuntu/connectedhomeip/out/standalone" to find the chip-tool.
+   3. Switch to root mode and navigate to path */home/ubuntu/connectedhomeip/out/standalone* to find the chip-tool.
 
 Matter hub/chip-tool are ready and working. Keep the PuTTY session open for the following steps.
 
@@ -40,9 +40,9 @@ Matter hub/chip-tool are ready and working. Keep the PuTTY session open for the 
 
 ### Software Requirements
 
-In order to run the Light and Switch Example on SiWx917 SOC, software must be installed. Refer to [Software Requirements](/matter/<dospace-docleaf-version>/matter-prerequisites/software-requirements).
+To run the Light and Switch Example on SiWx917 SOC, software must be installed. Refer to [Software Requirements](/matter/<dospace-docleaf-version>/matter-prerequisites/software-requirements).
 
-**Note**: Switch application is not supported for NCP devices
+**Note**: Switch application is not supported for NCP devices.
 
 1. In Simplicity Studio 5, create the Light MAD:
 
@@ -52,21 +52,21 @@ In order to run the Light and Switch Example on SiWx917 SOC, software must be in
 
    3. Once it shows up in the Debug Adapters view, select it.
 
-   4. Open the Example Projects and Demos tab, select the **Matter** filter and enter "*Wi-Fi*" in **Filter on keywords**.
+   4. Open the Example Projects and Demos tab, select the **Matter** filter, and enter *Wi-Fi* in **Filter on keywords**.
 
-   5. Select the *Matter - Lighting over Wi-Fi* example, click **Create**, rename the project if you wish, and click **Finish**.
+   5. Select the **Matter - Lighting over Wi-Fi** example, click **Create**, rename the project if you wish, and click **Finish**.
 
-   6. Once the project is created, the perspective changes to the Simplicity IDE perspective. In the Project Explorer view, right-click the project and select *Build Project*.
+   6. Once the project is created, the perspective changes to the Simplicity IDE. In the Project Explorer view, right-click the project and select **Build Project**.
 
-   7. Once the project has compiled, in the Debug Adapters view right-click the board and select *Upload application*.
+   7. Once the project has compiled, in the Debug Adapters view, right-click the board and select **Upload application**.
 
-   8. Select the *Application image path* (Select the path for `.rps` or `_isp.bin` file for soc in the path '\<workspace\>\project_name\GNU ARM v12.x.x - Default').
+   8. Select the **Application image path** (Select the path for the `.rps` or `_isp.bin` file for soc in the path *\<workspace\>\project_name\GNU ARM v12.x.x - Default*).
 
    9. Disconnect the dev board from development computer.
 
    10. **Optional**: Label this device (eg: my_light or my_switch) to make it easier to identify later.
 
-2. Repeat the process with the second Dev board, but select the *Matter - Light Switch over Wi-Fi* example instead.
+2. Repeat the process with the second Dev board, but select the **Matter - Light Switch over Wi-Fi** example instead.
 
 ## Creating the Matter Network
 
@@ -96,7 +96,7 @@ In a PuTTY session to the Matter hub, use the chip-tool to commission the Matter
 
 3. Make sure the SSID and PSK given here are of 2.4 GHz of the Dual Band AP.
 
-   Be sure to note which nodeIDs are used for Matter light and  Matter light_switch devices. These will be needed later for modifying the Matter light's ACL & the Matter light switch's binding table.
+   Be sure to note which nodeIDs are used for Matter light and  Matter light_switch devices. These will be needed later for modifying the Matter light's ACL and the Matter light switch's binding table.
 
 4. Power up the Matter light switch device and commission it too, using a different `nodeID`.
 
@@ -107,7 +107,7 @@ Now two Matter accessory devices (MADs) are on the network and ready to be used.
 1. In a PuTTY session to the Matter hub, use the chip-tool to test the Matter light device.
 
    1. Control the light status of the light MAD Using `./chip-tool onoff on nodeID  1`. You can also use `chip-tool onoff off`  and `chip-tool toggle`.
-   2. For dev board with buttons available, you can use BTN1 to toggle the light status locally.
+   2. For the dev board with buttons available, you can use **BTN1** to toggle the light status locally.
 
 2. In a PuTTY session to the Matter hub, use the chip-tool to bind the light_switch MAD to the light MAD, thus allowing the switch to control the light.
 
@@ -121,13 +121,13 @@ Now two Matter accessory devices (MADs) are on the network and ready to be used.
 
       - **0**: The endpoint in the Matter light device that holds the ACL. This is always 0.
 
-      To read the ACL for a Matter device use: `./chip-tool accesscontrol read acl`**`nodeID 0`**, where the highlighted parameters are:
+        To read the ACL for a Matter device use: `./chip-tool accesscontrol read acl`**`nodeID 0`**, where the highlighted parameters are:
 
       - **nodeID**: The nodeID of the Matter device (Light or Light_switch) to read the ACL contents from.
 
       - **0**: The endpoint in the Matter device that holds the ACL. This is always 0.
 
-   **For Example**:- `./chip-tool accesscontrol write acl '[{"fabricIndex": 1, "privilege": 5, "authMode": 2, "subjects": [112233], "targets": null }, {"fabricIndex": 1, "privilege": 3, "authMode": 2, "subjects": [2], "targets": null }]' 1111 0`
+       **For Example**:- `./chip-tool accesscontrol write acl '[{"fabricIndex": 1, "privilege": 5, "authMode": 2, "subjects": [112233], "targets": null }, {"fabricIndex": 1, "privilege": 3, "authMode": 2, "subjects": [2], "targets": null }]' 1111 0`
 
    2. Second, bind the switch's write command to the light. This is done by updating the binding table of the Matter light_switch device. This can be done using the command: `./chip-tool binding write binding '[ { "fabricIndex" : 1 , "node" :`**`nodeID-light`**,` "endpoint" : `**`1`**,`"cluster" :`**`6`**`} ]'`**`nodeID-switch 1`**, where the highlighted parameters are:
 
@@ -141,12 +141,12 @@ Now two Matter accessory devices (MADs) are on the network and ready to be used.
 
       - **1**: This is the application endpoint in the switch that holds the binding table. This is always 1.
 
-      The binding table from a Matter device can be read using: `./chip-tool binding read binding`**`nodeID-switch 1`**, where the highlighted parameters are:
+        The binding table from a Matter device can be read using: `./chip-tool binding read binding`**`nodeID-switch 1`**, where the highlighted parameters are:
 
       - **nodeID-switch**: The node ID of the Matter switch.
 
       - **1**: The application endpoint in the switch that holds the binding table. This is always 1.
   
-   **For Example**:- `./chip-tool binding write binding '[{"fabricIndex": 1, "node": 1, "endpoint": 1, "cluster":6}]' 2222 1`
+         **For Example**:- `./chip-tool binding write binding '[{"fabricIndex": 1, "node": 1, "endpoint": 1, "cluster":6}]' 2222 1`
 
-3. With the binding complete, a button press (BTN1) on Matter light_switch device should now toggle the light status of Matter light device.
+3. With the binding complete, a button press (BTN1) on the Matter light_switch device should now toggle the light status of Matter light device.

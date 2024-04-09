@@ -48,56 +48,56 @@ Refer to [Set up Alexa in a Few Easy Steps](https://www.amazon.com/alexa-setup-g
 
 5. Make sure the Matter Application is flashed into the Matter Device (for example, EFR32MG24, SiWx917 SoC, SiWx917 NCP).
 
-6. In the Alexa App, tap **Devices section**.
+6. In the Alexa app, tap **Devices**.
 
-![Devices section](./images/amazon-alexa-app.png?width=40%&height=40%)
+    ![Devices section](./images/amazon-alexa-app.png?width=40%&height=40%)
 
-7. Tap "+" at the top right corner. Three options are displayed: 
+7. Tap "+" at the top right corner. Three options are displayed:
 
    - Add device
    - Add group
    - Combine speakers
 
-8. Tap **Add device**.  Several options are displayed.
+8. Tap **Add Device**.  Several options are displayed.
 
-    ![Add device](./images/amazon-alexa-add-device.png?width=40%&height=40%)
+    ![Add Device](./images/amazon-alexa-add-device.png?width=40%&height=40%)
 
-9. Scroll down and select **other** option.
+9. Scroll down and select **Other** option.
 
     ![Device selection](./images/amazon-alexa-device-selection.png?width=40%&height=40%)
 
-10. Logos such as “Matter”, “Bluetooth”, “Zigbee”, “Wi-fi”, “Z-wave" are displayed. Tap the “Matter” logo.
+10. Logos such as “Matter”, “Bluetooth”, “Zigbee”, “Wi-fi”, and “Z-wave" are displayed. Tap the “Matter” logo.
 
     ![Matter logo](./images/amazon-alexa-logos.png?width=40%&height=40%)
 
-11. Alexa App will ask "Does your device have a matter logo?" Select "Yes".
+11. Alexa will ask **Does your device have a matter logo?** Select **Yes**.
 
-12. Alexa will prompt "Locate a QR code shown for your device." Select **Scan QR Code**.
+12. Alexa will prompt **Locate a QR code shown for your device**. Select **Scan QR Code**.
 
     ![Scan QR code](./images/amazon-alexa-scan-qr-code.png?width=40%&height=40%)
 
-13. After scanning the QR code through a smartphone camera, verify Commissioning is started by checking the Device logs.
+13. After scanning the QR code through a smartphone camera, verify that commissioning is started by checking the Device logs.
 
-14. Once commissioning is triggered the Alexa app will prompt for Access Point Credentials. Add them.
+14. Once commissioning is triggered, the Alexa app will prompt for Access Point Credentials. Add them.
 
-15. After Access Point Credentials are provided the device will join to the network and commissioning is completed.
+15. After Access Point Credentials are provided, the device will join to the network and commissioning is completed.
 
     ![App added](./images/amazon-alexa-app-added.png?width=40%&height=40%)
 
-16. Next, select a group for your device (for example, Bedroom), and click **Add to Group**.
+16. Next, select a group for your device (for example, Bedroom), and tap **Add to Group**.
 
     ![Select a group](./images/amazon-alexa-select-group.png?width=40%&height=40%)
 
-17. Now the application is ready to use. You can see the Matter application in Amazon Alexa app inside the **Groups Panel** at the **Bedroom** tab.
+17. Now the application is ready to use. You can see the Matter application in the Amazon Alexa app inside the **Groups Panel** at the **Bedroom** tab.
 
    ![Alexa application added to group](./images/amazon-alexa-application-added-to-group.png?width=40%&height=40%)
 
 In the Amazon Alexa app, you will now be able to tap your light to turn it ON and OFF. You can also control the light by giving a voice command (for example, 'Hey Alexa! Turn ON Light') and through the app user interface.
 
-The LED1 on your WSTK board will turn on or off depending on the command you enter.
+The **LED1** on your WSTK board will turn on or off depending on the command you enter.
 
 ## Deleting Matter Application from Amazon Alexa
 
-1. Click Matter Application for detailed view.
-2. Click **Setting** button on top right corner.
-3. Select **Dustbin Button** on top right corner, it will prompt **Remove "First light"**. Click **DELETE**.
+1. Tap the Matter Application for a detailed view.
+2. Tap the **Setting** button on top right corner.
+3. Select **Dustbin Button** on top right corner. It will prompt **Remove "First light"**. Tap **DELETE**.
