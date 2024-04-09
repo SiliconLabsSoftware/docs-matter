@@ -60,7 +60,7 @@ The `sl_setup_env.py` script creates an .env file to be used to set the environm
 
 It will also create `environment_variables_vscode.txt`. This file can be referred to add environment variables for VS Code based builds.
 
-The script will ask the user permission to trust gecko_sdk, matter_extension and wiseconnect.
+The script will ask you for permission to trust gecko_sdk, matter_extension, and wiseconnect.
 
 ## Creating an Application Project
 
@@ -119,10 +119,10 @@ For modifying Matter endpoints and clusters invoke the ZAP tool passing to it th
 
 ##Edit and Build with Visual Studio Code 
 
-Install "Simplicity Studio for VS Code" extension on VS code.
+Install the "Simplicity Studio for VS Code" extension on VS code.
 
 Add the POST_BUILD_EXE and NINJA_BUILD_EXE variables from the `slc\tools\environment_variables_vscode.txt` to the environment variables. 
 
-Run the `sl_setup_env.py` and `sl_create_new_app.py` to setup and create a sample application, then load the application in VS Code by following the "Adding a VS Code-Enabled Simplicity Studio Project to VS Code" section from [Simplicity Studio User Guide](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-tools-slc-cli/)
+Run the `sl_setup_env.py` and `sl_create_new_app.py` to set up and create a sample application, then load the application in VS Code by following the "Adding a VS Code-Enabled Simplicity Studio Project to VS Code" section from [Simplicity Studio User Guide](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-tools-slc-cli/)
 
-User can make all the changes in source files and regenerate app using 'slc generate' commands.
+You can make all the changes in source files and regenerate app using 'slc generate' commands.
