@@ -20,6 +20,8 @@ These pages are for users who want to develop Matter applications in Simplicity 
 
 Alternatively you can develop applications directly out of the [Silicon Labs Matter GitHub repo](https://github.com/SiliconLabs/matter). Complete documentation for the GitHub development use case is provided in the [Silicon Labs Matter GitHub Documentation](https://siliconlabs.github.io/matter/latest/). This path is best for those who are experienced working with Matter and Silicon Labs products, prefer working with GitHub and a workflow that's not IDE-driven, or need access to newer features sooner at the cost of lesser test coverage.
 
+**Note: Silicon Labs Matter GitHub is being phased out in favor of using the Matter GSDK Extension that is available thru Studio and standalone via SLC-CLI.**
+
 ## Other Resources
 
 **To see release notes** containing a list of features and knowns issues, go to [Matter Release Notes on Silicon Labs Matter Extension](https://github.com/SiliconLabs/matter_extension/releases/tag/v2.2.1).
