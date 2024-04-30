@@ -1,5 +1,11 @@
 # New Features
 
+## New Features for v2.2.2-1.2
+
+- Works with Gecko SDK v4.4.3 and WiSeConnect SDK v3.2.0.
+- Resolved issue affecting custom board project generation.
+- Miscellaneous bug fixes and improvements.
+
 ## New Features for v2.2.1-1.2
 
 - Works with Gecko SDK v4.4.2 and WiSeConnect SDK v3.1.4.
