@@ -4,7 +4,7 @@
 
 ## Basic chip-tool Usage
 
-In terminal run chip-tool without any parameters so it will give the information about usage, list of clusters supported and the commands list as given below.
+In terminal run chip-tool with no parameters so it will give the information about usage, list of clusters supported and the commands list as given below.
 
 ```shell
 $ ./chip-tool
@@ -16,13 +16,13 @@ or:
 
   chip-tool command_set_name command_name [param1 param2 ...]
 
- ![chip-tool - clusters](images/clusters.png)
+ ![chip-tool - clusters](./images/clusters-list.png)
 
- ![chip-tool - commands](images/commands_list.png)
+ ![chip-tool - commands](./images/commands-list.png)
 
  If cluster-name/command is given with chip-tool command then it will provide the list of commands supported by that cluster.
 
- ![chip-tool - commands](images/onoff_cluster.png)
+ ![chip-tool - onoff cluster](./images/onoff-cluster.png)
 
 Chip-tool gives the information of the commands as just keep typing the parts of the command to get to the next level.
 
@@ -72,5 +72,3 @@ In a PuTTY session to the Matter hub, use the chip-tool to test the Matter light
 
    1. Control the window status of the window MAD Using `./chip-tool windowcovering down-or-close 1 1`. Window status can be checked by using `./chip-tool  windowcovering read current-position-tilt-percent100ths 1 1`
    2. For dev board with buttons available, you can use **BTN1** to up/down the window locally.
-
-For further information on chip-tool commands
