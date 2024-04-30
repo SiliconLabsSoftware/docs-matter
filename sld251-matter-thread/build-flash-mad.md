@@ -33,14 +33,14 @@ If you are coming from Simplicity Studio, you may have already installed the dem
 
 ### Building the Matter Image File
 
-There are two ways to build a Matter Accessory Device image file. You can build it using the Silicon Labs Matter GitHub Repo or you can build it using Simplicity Studio. The entire build process for Simplicity Studio is covered in the [Matter Over Thread Quick Start Guide](/matter/<docspace-docleaf-version>/matter-thread-getting-started/).
+There are two ways to build a Matter Accessory Device image file. You can build it using the Silicon Labs Matter GitHub Repo or you can build it using Simplicity Studio. The entire build process for Simplicity Studio is covered in the [Matter Over Thread Quick Start Guide](/matter/<docspace-docleaf-version>/matter-light-switch-example/02-thread-light-switch-example).
 
-- [Build Using the Matter GitHub Repo](https://github.com/SiliconLabs/matter/blob/latest/examples/lighting-app/silabs/efr32/README.md)
-- [Build Using Simplicity Studio](/matter/<docspace-docleaf-version>/matter-thread-getting-started/03-light-switch-step-by-step-example#creating-the-matter-accessory-devices-ma-ds)
+- [Build Using the Matter GitHub Repo](https://github.com/SiliconLabs/matter/blob/latest/examples/lighting-app/silabs/README.md)
+- [Build Using Simplicity Studio](/matter/<docspace-docleaf-version>/matter-light-switch-example/02-thread-light-switch-example#creating-the-matter-accessory-devices-ma-ds)
 
 ## Step 2: Flash the Matter Accessory Device
 
-For more information on how to flash your Silicon Labs development platform, see the following instructions: [How to Flash a Silicon Labs Device](/matter/<docspace-docleaf-version>/matter-references).
+For more information on how to flash your Silicon Labs development platform, see the following instructions: [How to Flash a Silicon Labs Device](/matter/<docspace-docleaf-version>/matter-references/flash-silabs-device).
 
 Once your Matter Accessory Device has been flashed, it should show a QR code on the LCD. If no QR Code is present, it may be that you need to add a bootloader to
 your device. Bootloader images are provided on the [Matter Artifacts page](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts).

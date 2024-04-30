@@ -4,7 +4,7 @@ Tools in the Silicon Labs Matter GitHub `provision` folder are used to load mand
 
 Most of the required parameters are stored once during the manufacturing process, and shall not change during the lifetime of the device. During runtime, two interfaces are used to pull the authentication data from permanent storage:
 
-- [CommissionableDataProvider](https://github.com/project-chip/connectedhomeip/blob/master/src/include/platform/CommissionableDataProvider.h), implemented as [EFR32DeviceDataProvider](https://github.com/project-chip/connectedhomeip/blob/master/examples/platform/silabs/efr32/EFR32DeviceDataProvider.cpp)
+- [CommissionableDataProvider](https://github.com/project-chip/connectedhomeip/blob/master/src/include/platform/CommissionableDataProvider.h), implemented as [BLEManagerImpl](https://github.com/project-chip/connectedhomeip/blob/master/src/platform/silabs/efr32/BLEManagerImpl.cpp)
 - [DeviceAttestationCredsProvider](https://github.com/project-chip/connectedhomeip/blob/master/src/credentials/DeviceAttestationCredsProvider.h), implemented as [SilabsDeviceAttestationCreds](https://github.com/project-chip/connectedhomeip/blob/master/examples/platform/silabs/SilabsDeviceAttestationCreds.h)
 
 The provisioning script in this folder now supersedes the following tool:

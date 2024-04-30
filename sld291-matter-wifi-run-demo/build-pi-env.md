@@ -66,7 +66,7 @@ On powering up the board, the red and green lights should start blinking.
 1. Installing prerequisites on Raspberry Pi 4. Follow the instructions in [the Project CHIP GitHub Site](https://github.com/project-chip/connectedhomeip/blob/master/docs/guides/BUILDING.md),
 in the section "Installing prerequisites on Raspberry Pi 4".
 
-2. To build the environment, follow the Software setup and Compiling chip-tool steps in [Software setup](/matter/<docspace-docleaf-version>/matter-wifi-getting-started/04-light-switch-step-by-step-example).
+2. To build the environment, follow the Software setup and Compiling chip-tool steps in [Software setup](/matter/<docspace-docleaf-version>/matter-light-switch-example/01-wifi-light-switch-example).
 
 ## Bluetooth Setup
 
