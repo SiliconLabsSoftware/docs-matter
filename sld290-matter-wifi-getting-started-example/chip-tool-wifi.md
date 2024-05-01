@@ -120,3 +120,6 @@ In a PuTTY session to the Matter hub, use the chip-tool to test the Matter therm
    ```shell
    ./chip-tool thermostat read min-heat-setpoint-limit 1122 1
    ```
+   ```shell
+   ./chip-tool thermostat read occupied-cooling-setpoint 1122 1
+   ```
