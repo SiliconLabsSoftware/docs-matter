@@ -1,6 +1,6 @@
 # Silicon Labs Matter Over Wi-Fi Example
 
-This section walks through the steps to build the Matter 1.2 applications, such as lighting, light-switch, window covering, thermostat, door lock, and on/off plug on silicon labs Wi-Fi devices. A complete list of hardware supported for Wi-Fi is included on the [Hardware Requirements page](/matter/<docspace-docleaf-version>/matter-prerequisites/hardware-requirements).
+This section walks through the steps to build the Matter 1.2 applications, such as lighting, light-switch, window covering, thermostat, door lock, and on/off plug on Silicon Labs Wi-Fi devices.
 
 ## Step 1: Matter Wi-Fi Prerequisites
 
