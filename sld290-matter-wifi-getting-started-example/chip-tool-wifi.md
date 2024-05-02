@@ -55,7 +55,7 @@ Ex:
  ```
 
 ## Controlling the Matter Accessory Device
-This sections gives information about how to control the commissioned Matter device using chip-tool commands. Basic commands for light,lock,window and thermostat applications are given in the next sections for reference.  
+This sections gives information about how to control the commissioned Matter device using chip-tool commands. Basic commands for light, lock, window and thermostat applications are given in the next sections for reference.  
 
 ### Controlling Matter Lighting device
 
@@ -71,7 +71,7 @@ In a PuTTY session to the Matter hub, use the chip-tool to test the Matter light
    ```shell
     $ ./chip-tool onoff toggle 1122  1
    ```
-   2. For dev board with buttons available, you can use **BTN1** to toggle the light status locally.
+   2. For development boards with buttons available, you can use **BTN1** to toggle the light status locally.
 
 ### Controlling Matter Lock device
 
@@ -90,7 +90,7 @@ In a PuTTY session to the Matter hub, use the chip-tool to test the Matter lock 
    ```
    ./chip-tool doorlock read lock-state 1122 1
    ```
-   2. For dev board with buttons available, you can use **BTN1** to lock/unlock the door locally.
+   2. For development boards with buttons available, you can use **BTN1** to lock/unlock the door locally.
 
 ### Controlling Matter Window device
 
@@ -106,7 +106,7 @@ In a PuTTY session to the Matter hub, use the chip-tool to test the Matter windo
    ```shell
   ./chip-tool  windowcovering read current-position-tilt-percent100ths 1122 1
    ```
-   2. For dev board with buttons available, you can use **BTN0** to up/**BTN1** to down the window locally.
+   2. For development boards with buttons available, you can use **BTN0**(up)/**BTN1**(down) to modify the window locally.
 
 ### Controlling Matter Thermostat device
 
