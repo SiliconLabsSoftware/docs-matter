@@ -97,7 +97,7 @@ You now have a working Matter hub. Keep the PuTTY session open for the following
 
       For example, you would find the binary for a Matter light over Thread project with the default name here:
       >*{workspace folder}/MatterLightOverThread/GNU ARM v12.2.1 - Default/MatterLightOverThread.s37*
-      
+
       The combined binary (bootloader and application image) will be located in:
       >*{workspace folder}/MatterLightOverThread/artifact/MatterLightOverThreadSolution-full.s37*
 
