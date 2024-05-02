@@ -7,7 +7,7 @@ In Simplicity Studio 5, create the Light MAD:
 
 3. Switch to the Launcher view (if not already in it).
 
-    ![Silicon Labs - design](images/siwx917-Launcher.png)
+    ![Silicon Labs - design](images/siwx917-launcher.png)
 
 4. Go to **All Products** in the **Launcher** tab and select a compatible board from the supported SiWx917 SOC dev boards.
 
