@@ -44,6 +44,7 @@ In Simplicity Studio 5, create the Light MAD:
     ![Silicon Labs - design](images/siwx917-soc-flashtodevice.png)
 
     **Note**: SiWX917 SoC device will support both **_isp.bin** and **.rps** file format to flash.
+    Users must not use **.s37** files for flashing.
 
 12. The Flash programmer window will open. Click the **Program** button to start the flashing.
 
