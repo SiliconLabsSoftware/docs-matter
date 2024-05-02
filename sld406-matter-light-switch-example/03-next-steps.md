@@ -17,7 +17,7 @@ Now that you have gotten a sense of what goes into making a Matter network, you 
 - Light Switch
   - **Note:** Supported for SiWx917 SoC devices only.
 - Lock
-  - **Note:** By default, M4 is active and the TA will be in sleep mode for SiWx917 SoC devices. Please refer to the configuration options within the release notes.
+  - **Note:** By default, M4 is active and the TA will be in sleep mode for SiWx917 SoC devices. Refer to the configuration options within the release notes.
 - Window Covering
 - Thermostat
 - OnOff Plug
