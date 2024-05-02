@@ -17,7 +17,7 @@ image download here:
 
 https://www.silabs.com/documents/public/software/SilabsMatterPi_2.2.1-1.2-extension.zip
 
-> Note: Matter Extension v2.2.2-1.2 is compatabile with prior release Matter Hub image.
+> Note: Matter Extension v2.2.2-1.2 is compatible with prior release Matter Hub image.
 
 ## Radio Co-Processor (RCP) Images
 
