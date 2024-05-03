@@ -12,7 +12,7 @@ Below are the software tools both optional and required for developing Matter ov
 2. (Optional) [Ozone - The J-Link Debugger for Windows](https://www.segger.com/products/development-tools/ozone-j-link-debugger/)
 
    Ozone is a full-featured graphical debugger for embedded applications. With Ozone it is possible to debug any embedded application on C/C++ source and assembly level.
-3. (Optional) [Simplicity Commander](https://www.silabs.com/documents/public/software/SimplicityCommander-Windows.zip)
+3. (Optional) [Simplicity Commander](/matter/<docspace-docleaf-version>/matter-references/flash-silabs-device#simplicity-commander)
 
    Simplicity Commander is a utility that provides GUI and command line access to the debug features of an EFM32 device. It allows you to flash firmware, update the kit firmware, and lock, or unlock debug access.
 
