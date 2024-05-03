@@ -77,7 +77,7 @@ Pre-built images for the SiWx917 connectivity firmware are available as per the 
 
 **Ozone - The J-Link Debugger**: [Ozone](https://www.segger.com/products/development-tools/ozone-j-link-debugger/) is a full-featured graphical debugger for embedded applications. With Ozone, it is possible to debug any embedded application on C/C++ source and assembly level.
 
-**Simplicity Commander**: [Simplicity Commander](https://www.silabs.com/documents/public/software/SimplicityCommander-Windows.zip) is a utility that provides GUI and command line access to the debug features of an EFM32 device. It allows you to flash firmware, update the kit firmware, and lock or unlock debug access.
+**Simplicity Commander**: [Simplicity Commander](/matter/<docspace-docleaf-version>/matter-references/flash-silabs-device#simplicity-commander) is a utility that provides GUI and command line access to the debug features of an EFM32 device. It allows you to flash firmware, update the kit firmware, and lock or unlock debug access.
 
 **Tera Term**: [Tera Term](https://osdn.net/projects/ttssh2/releases/) is the terminal emulator for Microsoft Windows that supports serial port, telnet, and SSH connections.
 

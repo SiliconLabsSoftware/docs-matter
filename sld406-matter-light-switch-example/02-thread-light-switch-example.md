@@ -2,7 +2,7 @@
 
 ## Setting up the Matter Hub
 
-1. Prepare a compatible dev board to become your Matter hub's ot-rcp (see details in the [introduction](./index.md)):
+1. Prepare a compatible development board to become your Matter hub's ot-rcp:
 
    1. Start Simplicity Studio 5 with the latest GSDK and Silicon Labs Matter GSDK Extension installed (see details in the [Overview](/matter/<docspace-docleaf-version>/matter-overview#software-requirements)).
 
@@ -97,7 +97,7 @@ You now have a working Matter hub. Keep the PuTTY session open for the following
 
       For example, you would find the binary for a Matter light over Thread project with the default name here:
       >*{workspace folder}/MatterLightOverThread/GNU ARM v12.2.1 - Default/MatterLightOverThread.s37*
-      
+
       The combined binary (bootloader and application image) will be located in:
       >*{workspace folder}/MatterLightOverThread/artifact/MatterLightOverThreadSolution-full.s37*
 
