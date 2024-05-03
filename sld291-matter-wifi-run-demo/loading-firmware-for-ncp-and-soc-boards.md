@@ -16,7 +16,7 @@ The SiWx917 NCP or RS9116 EVK connectivity firmware can be upgraded using Terate
 
 1. Connect the EVK to PC using the USB interface labeled **UART** as identified below.
 
-    ![Switch Position before firmware flash](images/rs916-board.png)
+    ![Switch Position before firmware flash](./images/rs916-board.png)
 
 2. If this is the first time connecting the EVK to your PC, verify that it is properly detected by the PC. The EVK will appear to the PC as a COM port labeled **USB Serial Port (COMx)**.
 
