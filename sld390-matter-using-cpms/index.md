@@ -1,6 +1,6 @@
 # Using Custom Part Manufacturing Services (CPMS)
 
-Silicon Labs offers Matter support through our Custom Part Manufacturing Services (CPMS). Your organization can order your Matter devices directly from Silicon Labs or a third-party vendor utilizing our CPMS services. Silicon Labs is one of the few providers that can program your information directly to silicon through secure automation with our partner, Kudelski Security.
+Silicon Labs offers Matter support through our [Custom Part Manufacturing Services (CPMS)](https://docs.silabs.com/iot-security/latest/iot-security-cpms/).Your organization can order your Matter devices directly from Silicon Labs or a third-party vendor utilizing our CPMS services. Silicon Labs is one of the few providers that can program your information directly to silicon through secure automation with our partner, Kudelski Security.
 
 ## What is CPMS?
 
