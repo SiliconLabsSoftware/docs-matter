@@ -4,12 +4,44 @@ The following commands show how to start a new Thread network from the local OTB
 
 ## Basic Mattertool Commands
 
-| **Command**              | **Usage**                                                                 |
-| ------------------------ | ------------------------------------------------------------------------- |
-| `mattertool startThread` | Starts the thread network on the OTBR                                     |
-| `mattertool bleThread`   | Starts commissioning of a Matter Accessory Device using the chip-tool      |
-| `mattertool on`          | Sends the _on_ command to the Matter Accessory Device using the chip-tool  |
-| `mattertool off`         | Sends the _off_ command to the Matter Accessory Device using the chip-tool |
+| **Context**	   | **Command**              | **Usage**                                                                 |
+| --------------   | ------------------------ | ------------------------------------------------------------------------- |
+| `Initialization` | `mattertool startThread` | Starts the thread network on the OTBR                                     |
+| `Commissioning`  | `mattertool bleThread`   | Starts commissioning of a Matter Accessory Device using the chip-tool      |
+| `Commissioning`  | `mattertool pairing ble-thread`| Commission a Matter end device which is advertising itself           |
+| `Commissioning`  | `<node_id> <Thread dataset> <pincode> <discriminator>` | with the provided pincode and discriminator  |
+| `Commissioning`  | `mattertool pairing code` | Commission a Matter end device which is already in the IPv6 local network |
+| `Commissioning`  | `<node_id> <pairing code>`| using it's pairing code                                                   |
+| `Multi-fabric`   | `mattertool pairing open-commissioning-window` | Open a commissioning window for a Matter end device  |
+| `Multi-fabric`   | `<node_id> <option> <window_timeout> <iteration> <discriminator>`| so that it can join another fabric |
+| `Device interaction` | `mattertool on`       | Sends the _on_ command to the Matter Accessory Device using the chip-tool |
+| `Device interaction` | `mattertool off`      | Sends the _off_ command to the Matter Accessory Device using the chip-tool|
+| `Device interaction` | `mattertool onoff`    | Control the OnOff cluster of a specific Endpoint of a specific device     |
+| `Device interaction` | `<action> <node_id> <endpoint_id>`      |                                                         |
+| `Device interaction` | `mattertool doorlock set-user`          | Set a user for a Matter Lock                            |
+| `Matter lock`        | `<OperationType> <UserIndex> <UserName> <UserUniqueId> <UserStatus> <UserType> <CredentialRule>`  |
+| `Matter lock`        | `<node_id> <endpoint_id> --timedInteractionTimeoutMs <timeout value>`|                            |
+| `Device interaction` | `mattertool doorlock set-credential`    | Set credential for a specific user of a Matter Lock     |
+| `Matter lock`        | `<OperationType> <Credential> <CredentialData> <UserIndex> <UserStatus> <UserType> <node_id>`     |
+| `Matter lock`        | `<endpoint_id> --timedInteractionTimeoutMs <timeout value>`|                                      |
+| `Device interaction` | `mattertool doorlock unlock-door `      | Unlock a Matter Lock                                    |
+| `Matter lock`        | `<node_id> <endpoint_id> --timedInteractionTimeoutMs <timeout value> `                            |
+| `Device interaction` | `mattertool doorlock lock-door `        | Lock a Matter Lock                                      |
+| `Matter lock`        | `<node-id/group-id> --timedInteractionTimeoutMs <timeout value> `                                 |
+| `Device interaction` | `mattertool levelcontrol `              | Set the brightness level for a Matter dimmable light    |
+| `Matter dimmabe light`|`move-to-level <desired_level> 0 1 1 <node_id> <endpoint_id> `                                    |
+| `Device interaction` | `mattertool colorcontrol  `             | Set the saturation level for a Matter RGB light         |
+| `Matter RGB light`   | `move-to-saturation <desired_saturation> 0 1 1 <node_id> <endpoint_id> `                          |
+| `Device interaction` | `mattertool colorcontrol  `             | Set the hue level for a Matter RGB light                |
+| `Matter RGB light`   | `move-to-hue <desired_hue> 0 0 1 1 <node_id> <endpoint_id> `                                      |
+| `Device interaction` | `mattertool thermostat  `               | Read the local temperature from a Matter thermostat     |
+| `Matter thermostat`  | `read local-temperature <node_id> <endpoint_id> `                                                 |
+| `Device interaction` | `mattertool windowcovering  `           | Move the windows cover to a specific lift value         |
+| `Matter window cover`| `go-to-lift-value <LiftValue> <node_id> <endpoint_id> `                                           |
+| `Device interaction` | `mattertool windowcovering  `           | Open the windows cover                                  |
+| `Matter window cover`| `up-or-open <node_id> <endpoint_id> `                                                             |
+| `Device interaction` | `mattertool occupancysensing  `         | Read the occupancy status of a Matter occupancy sensor  |
+| `Matter occupancy sensor`| `read occupancy <node_id> <endpoint_id> `                                                     |
 
 You can also use the full chip-tool command set (still using mattertool):
 
