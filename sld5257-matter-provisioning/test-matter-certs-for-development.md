@@ -14,7 +14,7 @@
 
 - **Commissionee**
 
-  - WSTK with MG24A or MG24B (Initial boards supported for Matter CPMS Alpha program). The provisioning script also supports MG12. In this tutorial, you will build an application with a BRD4187C.
+  - WSTK with MG24A or MG24B (Initial boards supported for Matter CPMS Alpha program). The provisioning script no longer supports MG12 devices moving forward. In this tutorial, you will build an application with a BRD4187C.
 
 ## Introduction to Provisioning
 
@@ -311,7 +311,7 @@ Incoming(4):
 
 ### Building a Sample Application - SMG
 
-To build a lighting app using SMG, you can run these commands for an MG24 or an MG12. This example is using a BRD4162A. Go to the matter directory and execute the following command (in the matter directory):
+To build a lighting app using SMG, you can run these commands for an MG24. This example is using a BRD4787C. Go to the matter directory and execute the following command (in the matter directory):
 
 ```bash
 cd ..
