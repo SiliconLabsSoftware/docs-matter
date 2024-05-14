@@ -14,7 +14,7 @@
 
 - **Commissionee**
 
-  - WSTK with MG24A or MG24B (Initial boards supported for Matter CPMS Alpha program). The provisioning script no longer supports MG12 devices moving forward. In this tutorial, you will build an application with a BRD4187C.
+  - WSTK with MG24A or MG24B (Initial boards supported for Matter CPMS Alpha program). The provisioning script currently supports MG12 devices but will no longer do so moving forward. In this tutorial, you will build an application with a BRD4187C.
 
 ## Introduction to Provisioning
 
