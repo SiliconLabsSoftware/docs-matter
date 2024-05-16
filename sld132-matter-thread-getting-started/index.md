@@ -11,7 +11,6 @@ You should have obtained hardware and installed software as described in the [Qu
 - 1x radio co-processor (RCP) compatible with RCP firmware images. Images are available for the following boards:
 
   - EFR32xG24: BRD2601, BRD2703, BRD4186, BRD4187
-  - EFR32MG12: BRD4161, BRD4163, BRD4164, BRD4304, BRD4166 (TBS2), BRD4170, BRD4180
 
 ### Software
 
