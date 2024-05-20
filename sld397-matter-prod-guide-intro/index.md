@@ -1,6 +1,6 @@
 # Introduction
 
-This section is intended to help guide customers to bring their Matter devices to production. Please note that the Matter Production uses Silicon Labs [Custom Part Manufacturing Service (CPMS)](https://docs.silabs.com/iot-security/latest/iot-security-cpms/).
+This section is intended to help guide customers to bring their Matter devices to production. Note that the Matter Production uses Silicon Labs [Custom Part Manufacturing Service (CPMS)](https://docs.silabs.com/iot-security/latest/iot-security-cpms/).
 
 
 The Matter Production Guide includes:
