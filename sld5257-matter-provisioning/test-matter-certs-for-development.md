@@ -167,11 +167,11 @@ python3 ./provision.py --inputs defaults.json ---pai_cert ../credentials/test/at
 
 >Note: Only the BLE channel is available for self provisioning
 
-### Flashing matter certificates with BLE provision channel
+### Flashing Matter Certificates with BLE provision channel
 
->Note: To use the BLE provisioning channel Mac users will need Bluetooth developer mode to be set up. See [Using chip-tool on macOS, or CHIP Tool on iOS](https://github.com/project-chip/connectedhomeip/blob/master/docs/guides/darwin.md#using-chip-tool-on-macos-or-chip-tool-on-ios) for more information.
+>Note: To use the BLE provisioning channel, Mac users will need Bluetooth developer mode to be set up. See [Using chip-tool on macOS, or CHIP Tool on iOS](https://github.com/project-chip/connectedhomeip/blob/master/docs/guides/darwin.md#using-chip-tool-on-macos-or-chip-tool-on-ios) for more information.
 
-1. Build a sample application from the main ```/matter``` directory
+1. Build a sample application from the main ```/matter``` directory:
    ```bash 
    ./scripts/examples/gn_silabs_example.sh ./examples/lighting-app/silabs ./out/lighting-app/ BRD4187C
    ```
@@ -180,26 +180,36 @@ python3 ./provision.py --inputs defaults.json ---pai_cert ../credentials/test/at
    OR
    2. Write 1 to the NVM3 key 0x87228. This is useful in boards with less than two buttons, and can be accomplished using Simplicity Commander: 
    ```bash 
+   
    commander nvm3 read -o ./temp/nvm3.s37
    commander nvm3 set ./temp/nvm3.s37 --object 0x87228:01 --outfile ./temp/nvm3+.s37
    commander flash ./temp/nvm3+.s37 
+   
    ```
-3. From the ```matter/provision``` directory, get the BLE UUID via the bluet.py tool 
+3. From the ```matter/provision``` directory, get the BLE UUID via the bluet.py tool: 
     ```bash 
+    
     python3 bluet.py scan 
+   
     ```
 4. Flash the Certificates onto the device by using the sample app as the generator firmware. \
     *Example using default generated certificates:*
     ```bash
+    
     python3 ./provision.py -v "2.0" --channel bt:<bluetooth UUID> --vendor_id <VID> --product_id <PID> -g --gen_fw <../path_to_application_firmware>
+
     ``` 
     *Example using supplied certificates and arguments:*
     ```bash
+    
     ./provision.py -v "2.0" -i inputs/silabs.json -ic ../credentials/test/attestation/pai_cert.pem -dc ../credentials/test/attestation/dac_cert.pem -dk ../credentials/test/attestation/dac_key.pem -cd ../credentials/test/certification-declaration/Chip-Test-CD-1049-8005.der -d 0xab2 --channel bt:0CA515E1-8159-AF32-FA9C-FA2F51913CC1 --gen_fw ../out/lighting-app/BRD4187C/matter-silabs-lighting-example.s37
+   
     ```
-5. Re-flash the Matter application image
+5. Re-flash the Matter application image:
    ```bash
+   
    commander flash ../out/lighting-app/BRD4187C/matter-silabs-lighting-example.s37
+   
    ```
 
 #### Provisioning Tool Output
