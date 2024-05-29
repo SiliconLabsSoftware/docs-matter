@@ -55,7 +55,7 @@ To begin creating an OpenThread ICD example, create a generic Matter over Thread
 
     ![Project Generation](images/icd-project-generation.png)
 
-2. Navigate to the **Configuration Tools** section and open the **Zigbee Cluster Configurator**.
+2. Navigate to the **Configuration Tools** section and open the **ZCL Advanced Platform (ZAP)**.
 
     ![ICD ZAP](images/icd-open-zap.png)
 
