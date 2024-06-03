@@ -58,6 +58,22 @@ CPMS will ask for various attributes about your device, but these are the primar
 
 11. You're ready to order samples with [CPMS](https://cpms.silabs.com/)!
 
+
+## CPMS Matter Production Guide (Do's and Don'ts)
+
+Producing products for Matter can be a challenge. Here are a few suggestions to keep in mind when readying your product for production.
+
+1. Your Matter application should be built to work on the device that you are specifically targeting. For example, an application built for a 10dBm power output part will not work on a 20dBm part.  You will need to build and test your application on the specific target device to ensure that your application will work properly.
+2. CPMS stores Matter attestation data in the last six pages of flash.  Of those six pages, Matter certificates and the CD are stored in the last page of flash. Other Matter attestation data is located in the NVM3 block. Below is an example memory map describing how Matter attestation data is programmed.
+
+    ![screenshot](resources/image8.png)
+
+3. If a part has been programmed in CPMS with standard debug lock, this **MUST NOT** be unlocked if you are expecting to commission this device in the future.  By unlocking this, **all pages in flash will be erased**, including the Matter device attestation data and certificates.  We recommend using Secure Debug Lock in production so that you will have access to debug if required.
+
+4. During a typical Matter development journey, your project was most likely created with a default set of attestation data and certificates to be used during development. These should work great for testing our projects while in development, but will not work in production.
+
+    Once a part is created in CPMS, production certificates and attestation data are dynamically provisioned onto the part.  If, for any reason, the certificates commissioned through CPMS are erased, the device could commission through a false positive by defaulting to the development certificates.  These will not be able to attest to a production Matter network.  The QR code and scanner can be used to display the VID/PID and other helpful information to help establish which credentials are being used.
+
 ## Choosing the Test DCL or Production DCL
 
 There are two public ledgers available to developers known as the Matter Distributed Compliance Ledger (DCL). The DCL is a cryptographically secure ledger based on blockchain technology. This ledger preserves an immutable record that stores public information that can be retrieved by DCL clients. For more details, see the [CSA Matter DCL whitepaper](https://csa-iot.org/developer-resource/white-paper-distributed-compliance-ledger/). Each DCL contains five schemas that can be accessed by a client to retrieve information about a device.
