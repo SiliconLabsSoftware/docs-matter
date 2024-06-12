@@ -1,6 +1,6 @@
 # Example Applications and Demos
 
-The Silicon Labs Matter GSDK Extension (MGE) offers example applications to help you get started with Matter, the first two of these are used in this guide's step-by-step example:
+The Silicon Labs Matter SiSDK Extension offers example applications to help you get started with Matter, the first two of these are used in this guide's step-by-step example:
 
 - Matter SoC Light over Thread
 

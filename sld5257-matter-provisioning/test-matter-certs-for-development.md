@@ -60,7 +60,7 @@ A hands-on example of these provisioning flows will be provided in the following
 
 Using your PC for development, including:
 
-- Studio with Matter Extension or SMG - *preferably the latest GSDK version.*
+- Studio with Matter Extension or SMG - *preferably the latest SiSDK version.*
 - Clone the matter repo
 
 ```bash

@@ -1,5 +1,7 @@
 # Matter over Thread Light and Switch Step-by-Step Example
 
+This tutorial was created with the Matter Extension of the Gecko SDK (GSDK), going forward the latest Matter Extension will be released through the Simplicity SDK (SiSDK).
+
 ## Setting up the Matter hub
 
 1. Prepare a compatible dev board to become your Matter hub's ot-rcp (see details in the [introduction](./index.md)):

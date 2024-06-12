@@ -81,7 +81,7 @@ Pre-built images for the SiWx917 connectivity firmware are available as per the 
 
 **Tera Term**: [Tera Term](https://osdn.net/projects/ttssh2/releases/) is the terminal emulator for Microsoft Windows that supports serial port, telnet, and SSH connections.
 
-**Silicon Labs Matter GSDK Extension**: Once Simplicity Studio 5 is installed, you will be prompted to install the Gecko SDK Suite (GSDK). Here you should also install the Matter Enablement Package by making sure the extension is checked, as shown.
+**Silicon Labs Matter SiSDK Extension**: Once Simplicity Studio 5 is installed, you will be prompted to install the Simplicity SDK, formerly released as Gecko SDK (GSDK). Here you should also install the Matter Enablement Package by making sure the extension is checked, as shown.
 
 ![Installing the Matter Extension](./resources/install-package-advanced-device.png)
 

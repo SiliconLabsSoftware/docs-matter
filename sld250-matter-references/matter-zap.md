@@ -3,7 +3,7 @@
 ## Overview
 
 EFR32 example applications provide a baseline demonstration of a lock device,
-built using the Matter SDK and the Silicon Labs GeckoSDK. It can be controlled
+built using the Matter SDK and the Silicon Labs SDK. It can be controlled
 by a CHIP controller over OpenThread network.
 
 The EFR32 device can be commissioned over Bluetooth Low Energy (BLE) where the
