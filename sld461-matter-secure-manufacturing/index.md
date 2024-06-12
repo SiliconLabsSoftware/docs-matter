@@ -1,8 +1,8 @@
 # Matter Secure Manufacturing
 
-At Silicon Labs, we prioritize security by providing manufacturing solutions that enable customers to ensure that the integrity and security of their Matter devices is kept. This page explores the requirements set by the Connectivity Standards Alliance (CSA), which establish the standard for secure Matter IoT device production. Our goal is to contribute to the creation of a safer, more intelligent and connected world.
+At Silicon Labs, we prioritize security by providing manufacturing solutions that enable customers to ensure that the integrity and security of their Matter devices is kept. This page explores the requirements set by the Connectivity Standards Alliance, which establish the standard for secure Matter IoT device production. Our goal is to contribute to the creation of a safer, more intelligent and connected world.
 
-When manufacturing a Matter product you must follow the Matter Security Requirements defined by the CSA. A number of these requirements are mandatory and others are recommended. We provide the following most relevant requirements to help our customers in their Production Journey.
+When manufacturing a Matter product you must follow the Matter Security Requirements defined by the Connectivity Standards Alliance. A number of these requirements are mandatory and others are recommended. We provide the following most relevant requirements to help our customers in their Production Journey.
 
 ## Matter Manufacturing
 

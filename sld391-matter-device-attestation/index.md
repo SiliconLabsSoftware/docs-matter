@@ -6,9 +6,9 @@ For Matter devices to be commissioned into a Matter network, a Matter commission
 
 ## Device Attestation Public Key Infrastructure and Certification Declaration
 
-Device Attestation Certificates or DACs must be included in all commissionable Matter products and must be unique in each product. DACs are immutable, so they must be installed in-factory and must be issued by a Product Attestation Intermediate (PAI) which chains directly to a Product Attestation Authority (PAA), issued by specified root Certification Authorities (CAs). These root CAs are entities that have been approved by the CSA to issue digital Matter Certificates. Therefore, if you decide not to apply to become a Certification Authority, you will need to request the generation of the Matter Certificate Chain which is a Public Key Infrastructure. To request these certificates, you must meet the following requirements:
+Device Attestation Certificates or DACs must be included in all commissionable Matter products and must be unique in each product. DACs are immutable, so they must be installed in-factory and must be issued by a Product Attestation Intermediate (PAI) which chains directly to a Product Attestation Authority (PAA), issued by specified root Certification Authorities (CAs). These root CAs are entities that have been approved by the Connectivity Standards Alliance to issue digital Matter Certificates. Therefore, if you decide not to apply to become a Certification Authority, you will need to request the generation of the Matter Certificate Chain which is a Public Key Infrastructure. To request these certificates, you must meet the following requirements:
 
-- Certify your Matter Product. CSA will issue a CD with a corresponding VID and PID.
+- Certify your Matter Product. The Connectivity Standards Alliance will issue a CD with a corresponding VID and PID.
 
 - Select a Certification Authority where you will request your DACs. At Silicon Labs, we have partnered with Kudelski to offer the [Custom Manufacturing Service](/matter/<docspace-docleaf-version>/matter-using-cpms/) to facilitate this process.
 
@@ -20,7 +20,7 @@ The PAIs are intermediate certificates, signed by the PAA's private key, and are
 
 The DAC is the certificate that uniquely identifies the device itself. It is signed by the PAI, and like the PAI itself, it is sent to the Commissioner during the attestation process. The DAC public-key must match the device's private-key, which should be stored in the most secure location possible and is used to sign outgoing messages during commissioning.
 
-The CD (Certification Declaration) is a file issued by CSA upon the firmware's certification process. It contains the Vendor ID (VID), and a list of Product IDs (PIDs), which should match the VID, and PID stored in the Subject field of both the PID, and DAC certificates. Along with the PID and DAC, the CD is stored on the device and sent to the Commissioner during the commissioning process.
+The CD (Certification Declaration) is a file issued by the Connectivity Standards Alliance upon the firmware's certification process. It contains the Vendor ID (VID), and a list of Product IDs (PIDs), which should match the VID, and PID stored in the Subject field of both the PID, and DAC certificates. Along with the PID and DAC, the CD is stored on the device and sent to the Commissioner during the commissioning process.
 
 ## Certification Authorities and Recommended Certificate Use
 

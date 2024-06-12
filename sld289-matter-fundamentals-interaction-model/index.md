@@ -170,5 +170,5 @@ The Matter Interaction Model originates from Chapter 2 in the Zigbee Cluster Lib
 
 ## Matter Specifications
 
-More information on the Matter Interaction Model can be found in Chapter 8 of Matter Core Specifications [Specifications Download Request - CSA-IOT](https://csa-iot.org/developer-resource/specifications-download-request/).
+More information on the Matter Interaction Model can be found in Chapter 8 of Matter Core Specifications [Specifications Download Request - IOT](https://csa-iot.org/developer-resource/specifications-download-request/).
 

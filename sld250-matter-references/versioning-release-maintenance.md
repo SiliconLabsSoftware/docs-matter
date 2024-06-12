@@ -4,11 +4,11 @@
 
 ## Versioning Scheme
 
-- **FORMAT: vMAJOR.MINOR.PATCH-CSA\_VERSION-PRE\_RELEASE**
+- **FORMAT: vMAJOR.MINOR.PATCH\_VERSION-PRE\_RELEASE**
 
 - Silicon Labs versions e.g., 3.0.0
 
-- CSA Matter version e.g., 1.1
+- Connectivity Standards Aliiance Matter version e.g., 1.1
 
 - [Optional] Prerelease flag e.g., alpha.1
 
@@ -18,7 +18,7 @@ Update digits based on the following criteria:
 
 - **Major**
 
-  - CSA ups the major version number, or
+  - Connectivity Standards Alliance ups the major version number, or
 
   - Major GSDK version supported, or
 
@@ -26,7 +26,7 @@ Update digits based on the following criteria:
 
 - **Minor**
 
-  - CSA ups the minor version number, or
+  - Connectivity Standards Alliance ups the minor version number, or
 
   - Minor GSDK version supported, or
 
