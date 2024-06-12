@@ -36,10 +36,7 @@ https://github.com/SiliconLabs/matter_extension/releases/download/v2.2.1/matter-
 
 ## Matter Bootloader Binaries
 
-If you are using the OTA functionality and especially if you are using an
-EFR32MG2x device, you will need to flash a bootloader binary on your device along
-with the application image. Bootloader binaries for all of the Matter supported
-devices are available here:
+All Silicon Labs board supporting Matter require that a bootloader binary is flashed to the device along with the application image. Bootloader binaries for all of the Matter supported devices are available here:
 
 https://github.com/SiliconLabs/matter_extension/releases/download/v2.2.1/bootloader_binaries_matter_extension_v2.2.1-1.2.zip
 
