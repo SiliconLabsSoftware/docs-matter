@@ -170,6 +170,17 @@ Example provider configuration file:
         }
 ```
 For more info see the documentation for the ota-provider-app example in https://github.com/project-chip/connectedhomeip . 
+## Multi-Chip OTA Images
+Multi-Chip OTA is implemented only for EFR32 devices. Multi-chip OTA uses an enhanced script, ota_multi_image_tool.py, which creates .ota files that contain additional TLV headers. These TLV headers describe the binaries to be sent over the air. The enhanced script is located [here](https://github.com/SiliconLabs/matter/blob/latest/scripts/tools/silabs/ota/ota_multi_image_tool.py). It is a wrapper to the original src/app/ota_image_tool.py. Multiple binaries can be packaged in the .ota file. Some Tags are reserved for specific Silicon Labs binaries, and other Tags are available to be used for arbitrary TLVs. The payloads can be encrypted. 
+
+The script can be obtained from the Matter Extension github [repository](https://github.com/SiliconLabs/matter_extension) 
+
+For more information on creating a Multi-Chip .ota file see the 
+[README.md](https://github.com/SiliconLabs/matter/blob/latest/scripts/tools/silabs/ota/README.md)
+
+OTA-A applications must be built with the OTA Multi Image Requestor component added to the project in Simplicity Studio to enable them to process the TLVs. 
+
+The OTA Multi Image Requestor Encryption should be added to the project if the requestor is meant to process encrypted payloads.
 
 ## Additional Info
 
