@@ -8,68 +8,52 @@ The Over The Air (OTA) Software Update functionality is enabled by default for a
 
 The OTA Software Update scenario requires the following binaries:
 
-- **OTA-A**: the running image; a regular application built with the default/older software version value. This application will be updated to the one with a higher software version. In the OTA Software Update process it acts as the OTA Requestor.
-- **OTA-B**: the update image; a regular application built with a higher software version value.
+- **The running image**: a regular application built with the default/older software version value. This application will be updated to the one with a higher software version. In the OTA Software Update process it acts as the OTA Requestor.
+- **The update image**: a regular application built with a **higher software version value**.
 - **Chip-tool**: the controller that announces the OTA-Provider's address to the application thus triggering the OTA Software Update.
 - **OTA-Provider**: the server that carries the update image and from which the OTA Requestor will download the updated software.
 - **Bootloader**: Silicon Labs Gecko Bootloader image that supports OTA; supports the external (SPI-flash) or the internal storage option.
-  
+
+The demo scenario requires the use of the Silicon Labs Simplicity Commander tool.
+
+### Outline of the steps for the OTA Software Update scenario 
+
+- Create the running image
+- Create the update image with software version value incremented
+- Create the OTA file from the update image
+- Create/obtain a bootloader that supports Matter OTA Software Update 
+- Start the OTA-Provider passing to it the OTA file. Commission the OTA-Provider.
+- Bring up your device with the running image, commission the device.
+- Use the chip-tool to issue the Announce OTA Provider command to the device and trigger the OTA Software Update Process
+
+Note: In a production environment the Announce OTA Provider command is not used. Instead, the OTA Provider address is configured on the device by the Matter Controller and the device queries the Provider for an available image every 24 hours. 
+
 ## Setting up the OTA Environment
 
-### Setting up chip-tool
+### Setting up the chip-tool
 
-The chip-tool binary is a part of the Silicon Labs' Matter Hub Raspberry Pi Image available as a part of the Release Artifacts page. If you are planning to run chip-tool on the Matter Hub, you may skip the rest of this section.
+The chip-tool binary is a part of the Silicon Labs' Matter Hub Raspberry Pi Image available as a part of the Release Artifacts page. For building the chip-tool for Linux or Mac consult the documentation in https://github.com/project-chip/connectedhomeip . 
 
-If you have not downloaded or cloned this repository, you can run the following commands on a Linux terminal running on a Mac, Linux, WSL or Virtual Machine to clone the repository and run bootstrap to prepare to build the sample application images.
+### Setting up the OTA-Provider
 
-1. To download the [SiliconLabs Matter codebase](https://github.com/SiliconLabs/matter.git), run the following commands.
-
-    ```shell
-     $ git clone https://github.com/SiliconLabs/matter.git
-    ```
-
-2. Bootstrapping:
-
-    ```shell
-    $ cd matter
-    $ ./scripts/checkout_submodules.py --shallow --recursive --platform efr32
-    $ . scripts/bootstrap.sh
-    # Create a directory where binaries will be updated/compiled called `out`
-    $ mkdir out
-    ```
-
-    To control the  Matter application, you will have to compile and run the chip-tool on either a Linux, Mac, or Raspberry Pi. The chip-tool builds faster on the Mac and Linux machines so that is recommended, but if you have access to a Raspberry Pi, that will work as well.
-
-3. Build the chip-tool
-
-    ```shell
-    $ scripts/examples/gn_build_example.sh examples/chip-tool out/
-    ```
-
-### Setting up OTA-Provider
-
-The chip-ota-provider-app binary for a Raspberry Pi is a part of the Artifacts package available with the Matter Extension release. If you are planning to run the OTA-Provider on a Raspberry Pi, there is no need to build it.
-
-- To build the OTA-Provider app in Linux, run the following command in a Matter repository:
-
-    ```shell
-    $ scripts/examples/gn_build_example.sh examples/ota-provider-app/linux out chip_config_network_layer_ble=false
-    ```
+The chip-ota-provider-app binary for a Raspberry Pi is a part of the Artifacts package available with the Matter Extension release. For building the chip-ota-provider-app for Linux or Mac consult the documentation in https://github.com/project-chip/connectedhomeip . 
 
 ### Building Application Images Using Simplicity Studio
 
-The running image and the update image are regular Matter application images and are built using the standard procedure. The only additional configuration required is the use of a higher software version in the update image. See the following page for detailed steps: [build OTA application using studio](./05-build-ota-application-using-studio.md).
+The running image and the update image are regular Matter application images and are built using the standard procedure. The only additional configuration required is the use of a higher software version in the update image. The software version is configured in a Studio Matter project by navigating to Software Components -> Silicon Labs Matter -> Stack -> Matter Core Components, clicking "Configure" and setting the "Device software version" and "Device software version string" parameters.  
+
+See the following page for detailed steps: [build OTA application using studio](./05-build-ota-application-using-studio.md).
 
 ### Obtaining the Bootloader binary
 
 - Build or download the Gecko Bootloader binary which can be obtained in one of the following ways:
   - Follow the instructions in [Creating the Bootloader for Use in Matter OTA](01-ota-bootloader.md).
   - Pre-built binaries (only valid for the external SPI-flash storage OTA update) are available on the [Matter Artifacts page](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts).
-  - Bootloader (only valid for the external SPI-flash storage OTA update) project can be built as a part of any Matter Solution in Simplicity Studio.
+  - Bootloader (only valid for the external SPI-flash storage OTA update) is built as a part of any Matter Solution in Simplicity Studio.
 
 - Using the Commander tool or Simplicity Studio, upload the bootloader to the device running the application.
 
-## Running the OTA Download Scenario
+## Running the OTA Download demo scenario
 
 - Create a bootable image file (using the Lighting application image as an example):
 
@@ -90,17 +74,17 @@ The running image and the update image are regular Matter application images and
     ```
 
     ```shell
-    ./out/chip-ota-provider-app  --KVS /tmp/chip_kvs_provider -f chip-efr32-lighting-example.ota
+    chip-ota-provider-app  --KVS /tmp/chip_kvs_provider -f chip-efr32-lighting-example.ota
     ```
 
 - In a separate terminal, run the chip-tool commands to provision the Provider:
 
     ```shell
-    $ ./out/chip-tool pairing onnetwork 1 20202021
+    $ chip-tool pairing onnetwork 1 20202021
     ```
 
     ```shell
-    $ ./out/chip-tool accesscontrol write acl '[{"fabricIndex": 1, "privilege": 5, "authMode": 2, "subjects": [112233], "targets": null}, {"fabricIndex": 1, "privilege": 3, "authMode": 2, "subjects": null, "targets": null}]' 1 0
+    $ chip-tool accesscontrol write acl '[{"fabricIndex": 1, "privilege": 5, "authMode": 2, "subjects": [112233], "targets": null}, {"fabricIndex": 1, "privilege": 3, "authMode": 2, "subjects": null, "targets": null}]' 1 0
     ```
 
 - For Matter over OpenThread, bring up the OpenThread Border Router and get its operational dataset. For Matter over WiFi, bring up the AP.
@@ -112,7 +96,7 @@ The running image and the update image are regular Matter application images and
   For Matter over OpenThread:
 
     ```shell
-    $ ./out/chip-tool pairing ble-thread 2 hex:<operationalDataset> 20202021 3840
+    $ chip-tool pairing ble-thread 2 hex:<operationalDataset> 20202021 3840
     ```
 
     where operationalDataset is obtained from the OpenThread Border Router.
@@ -120,16 +104,24 @@ The running image and the update image are regular Matter application images and
     For Matter over Wi-Fi:
 
     ```shell
-      ./out/chip-tool pairing ble-wifi "node_id" "SSID" "PSK" 20202021 3840
+    $ chip-tool pairing ble-wifi 2 "SSID" "PSK" 20202021 3840
     ```
 
 - Once the commissioning process completes, enter:
 
     ```shell
-    $ ./out/chip-tool otasoftwareupdaterequestor announce-otaprovider 1 0 0 0 2 0
+    $ chip-tool otasoftwareupdaterequestor announce-otaprovider 1 0 0 0 2 0
     ```
 
 - The application device will connect to the Provider and start the image download. Once the image is downloaded, the device will reboot into the downloaded image.
+
+Note: In a production environment the Announce OTA Provider command is not used. Instead, the OTA Provider address is configured on the device by the Matter Controller, for example:
+
+```shell
+    $ chip-tool otasoftwareupdaterequestor write default-otaproviders '[{"fabricIndex": 1, "providerNodeID": 1, "endpoint": 0}]' 2 0
+```
+
+With this configuration the device will query the OTA-Provider for an available image every 24 hours and if an update image is available the OTA Software Update process will start. 
 
 ## Internal Storage Bootloader
 
