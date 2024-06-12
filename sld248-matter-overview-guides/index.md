@@ -8,3 +8,4 @@ The Overview pages offer a general review of Matter topics including:
 - [Matter Serial Port Communication](serial-port-communications.md)
 - [Matter SLC CLI Setup and Build Instructions](matter-slc-cli.md)
 - [Matter Solutions](matter-solutions.md)
+- [SMG to Matter Extension (SLC/Simplicity Studio) Project Migration Guide](matter-smg-migration-guide.md)
