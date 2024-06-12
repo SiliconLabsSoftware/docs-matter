@@ -150,6 +150,8 @@ For the Provider to successfully serve the image to a device during the OTA Soft
 
 For the OTA Software Update subsystem to consider an update to be successful and for the NotifyUpdateApplied command to be transmitted, the CHIP_DEVICE_CONFIG_DEVICE_SOFTWARE_VERSION in the updated image must exceed the software version of the running image (continuing the above example, the image for the update must be built with CHIP_DEVICE_CONFIG_DEVICE_SOFTWARE_VERSION set to 2).
 
+The CHIP_DEVICE_CONFIG_DEVICE_SOFTWARE_VERSION is configured in a Studio Matter project by navigating to Software Components -> Silicon Labs Matter -> Stack -> Matter Core Components, clicking "Configure" and setting the "Device software version"
+
 ## Managing the Vendor and Product ID
 
 Starting the ota-provider-app with the `--otaImageList` command line option allows the user to supply a JSON file specifying the Software Version, Vendor, and
@@ -167,6 +169,7 @@ Example provider configuration file:
           ]
         }
 ```
+For more info see the documentation for the ota-provider-app example in https://github.com/project-chip/connectedhomeip . 
 
 ## Additional Info
 
