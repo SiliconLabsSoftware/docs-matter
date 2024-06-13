@@ -2,7 +2,7 @@
 
 To run Matter over Thread or over Wi-Fi requires some Silicon Labs hardware in order to run demos and do development. Following are the hardware requirements for both Thread and Wi-Fi use cases broken down by platform and transport protocol.
 
-The following sections describe the hardware that may be used for Matter+OpenThread (Matter Hub and Accessory Device) and for Matter+Wi-Fi (Accessory Device). The EFRMG24 is the preferred starting point for Matter MCUs (including the Matter Hub RCP and both Accessory Devices). It provides Secure Vault and can use the internal flash of the device to store an upgrade image. The EFR32MG24 is recommended for running the [Matter over Thread and Matter over Wi-Fi Quick-Start guides](/matter/<docspace-docleaf-version>/matter-overview).
+The following sections describe the hardware that may be used for Matter+OpenThread (Matter Hub and Accessory Device) and for Matter+Wi-Fi (Accessory Device). The EFR32MG24 is the preferred starting point for Matter MCUs (including the Matter Hub RCP and both Accessory Devices). It provides Secure Vault and can use the internal flash of the device to store an upgrade image. The EFR32MG24 is recommended for running the [Matter over Thread and Matter over Wi-Fi Quick-Start guides](/matter/<docspace-docleaf-version>/matter-overview).
 
 ## Matter Over Thread "Matter Hub" Requirements
 
@@ -23,13 +23,19 @@ The RCP radio board is connected to the Raspberry Pi via USB.
 Over 60 Silicon Labs boards support running the RCP firmware. To build an
 image for a board which is not listed here, download and build your image in Simplicity Studio. Pre-built OpenThread RCP firmware images are provided for the following boards on the [Matter Artifacts page](./matter-artifacts.md):
 
-**Note:** The EFR32MG24 is the preferred starting point for Matter MCUs. It provides Secure Vault and can use the internal flash of the device to store an upgrade image.
+**Note:** The EFR32MG24/MG26 is the preferred starting point for Matter MCUs. It provides Secure Vault and can use the internal flash of the device to store an upgrade image.
 
 - **MG24 boards:**
   - BRD4186C / SLWSTK6006A / Wireless Starter Kit / 2.4GHz@10dBm
     - [XG24-RB4186C](https://www.silabs.com/development-tools/wireless/xg24-rb4186c-efr32xg24-wireless-gecko-radio-board)
   - BRD4187C / SLWSTK6006A / Wireless Starter Kit / 2.4GHz@20dBm
     - [XG24-RB4187C](https://www.silabs.com/development-tools/wireless/xg24-rb4187c-efr32xg24-wireless-gecko-radio-board)
+
+//TODO : check the board names
+- **MG26 boards:**
+  - BRD4116A / SLWSTK6006A / Wireless Starter Kit / 2.4GHz@10dBm
+  - BRD4117A / SLWSTK6006A / Wireless Starter Kit / 2.4GHz@20dBm
+  - BRD4118A / SLWSTK6006A / Wireless Starter Kit / 2.4GHz@20dBm
 
 ## Matter Over Thread Accessory Device Requirements
 
@@ -59,6 +65,11 @@ Pre-built binary images for the Matter accessory devices are provided on the [Ma
     - [XGM240-RB4316A](https://www.silabs.com/development-tools/wireless/xgm240-rb4316a-xgm240p-module-radio-board?tab=overview)
   - BRD4317A / SLWSTK6006A / Wireless Starter Kit/ 2.4GHz@20dBm
     - [XGM240-RB4317A](https://www.silabs.com/development-tools/wireless/xgm240-rb4317a-xgm240p-module-radio-board?tab=overview)
+
+- **MG26 boards:**
+  - BRD4116A / SLWSTK6006A / Wireless Starter Kit / 2.4GHz@10dBm
+  - BRD4117A / SLWSTK6006A / Wireless Starter Kit / 2.4GHz@20dBm
+  - BRD4118A / SLWSTK6006A / Wireless Starter Kit / 2.4GHz@20dBm
 
 ## Matter Over Wi-Fi Accessory Device Requirements
 

@@ -133,7 +133,7 @@ The running image and the update image are regular Matter application images and
 
 ## Internal Storage Bootloader
 
-Internal storage bootloader for Matter OTA software update is supported on MG24 boards only. In this use case, both the running image and the downloadable update image must fit on the internal flash at the same time. This in turn requires that both images are built with a reduced feature set, such as disabled logging and Matter shell. See [Creating the Bootloader for Use in Matter OTA](01-ota-bootloader.md) for more details.
+Internal storage bootloader for Matter OTA software update is supported on MG24/MG26 boards. In this use case, both the running image and the downloadable update image must fit on the internal flash at the same time. This in turn requires that both images are built with a reduced feature set, such as disabled logging and Matter shell. See [Creating the Bootloader for Use in Matter OTA](01-ota-bootloader.md) for more details.
 
 Installing the Lower Power Mode component in the project's Software Components tool in Simplicity Studio will uninstall the following optional components and reduce the image size:
 

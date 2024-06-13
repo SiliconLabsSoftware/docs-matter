@@ -64,11 +64,11 @@ The directory structure is as follows:
         - v1_0
         - v2_0
     - support
-        - efr32mg12
         - efr32mg24
+        - efr32mg26
 
 
-**Important:** To ensure your Matter Solution can accommodate future Application Layer functionalities, we strongly recommend using Series 2 devices. In particular, the EFR32MG24 is recommended due to its higher Flash and RAM capacity.
+**Important:** To ensure your Matter Solution can accommodate future Application Layer functionalities, we strongly recommend using Series 2 devices. In particular, the EFR32MG24/MG26 is recommended due to its higher Flash and RAM capacity.
 
 ## Provision Script
 
@@ -440,8 +440,7 @@ commissioner, which can be done using a debugger.
 
 ### Flash Dump
 
-On EFR32MG12, the last page starts at address 0x000FF800. On EFR32MG24,
-the last page is located at 0x0817E000. These addresses can be found in
+On EFR32MG24,the last page is located at 0x0817E000. These addresses can be found in
 the memory map of the board's datasheet. For instance, for a MG24 board:
 
 ```shell
