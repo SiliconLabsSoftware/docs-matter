@@ -178,9 +178,9 @@ The script can be obtained from the Matter Extension github [repository](https:/
 For more information on creating a Multi-Chip .ota file see the 
 [README.md](https://github.com/SiliconLabs/matter/blob/latest/scripts/tools/silabs/ota/README.md)
 
-OTA-A applications must be built with the OTA Multi Image Requestor component added to the project in Simplicity Studio to enable them to process the TLVs. 
+Applications must be built with the OTA Multi Image Requestor component added to the project in Simplicity Studio to enable them to process the TLVs. 
 
-The OTA Multi Image Requestor Encryption should be added to the project if the requestor is meant to process encrypted payloads.
+The OTA Multi Image Requestor Encryption component should be added to the project if the requestor is meant to process encrypted payloads.
 
 ## Additional Info
 
