@@ -143,7 +143,7 @@ file defines the well-known (default) parameters used by the automatic provision
 | -o,  --output             | optional             | path               | JSON output file.       |
 | -t,  --temp               | optional             | path               | Temporary folder.       |
 | -d,  --device             | optional             | string             | Target Device.          |
-| -c,  --channel            | optional<sup>1</sup> | dec/string         | Connection string.      |
+| -c,  --channel            | optional^1 | dec/string         | Connection string.      |
 | -s,  --stop               | optional             | flag               | Stop mode: When true, only generate the JSON configuration, and exit.                    |
 | -g,  --generate           | optional             | flag               | Auto-generate test certificates            |
 | -r,  --csr                | optional             | flag               | CSR mode: When true, instructs the GFW to generate the private key, and issue a CSR.                    |
@@ -162,13 +162,13 @@ file defines the well-known (default) parameters used by the automatic provision
 | -hv, --hw_version         | optional             | dec/hex            | The hardware version value (Max 2 bytes).                                       |
 | -hs, --hw_version_str     | optional             | string             | The hardware version string (Max 64 char).                                      |
 | -md, --manufacturing_date | optional             | string             | Manufacturing date.                |
-| -ui, --unique_id         | optional<sup>5</sup> | hex string         | A 128 bits hex string unique id (without 0x).                                           |
-| -sd,  --discriminator     | optional<sup>2</sup> | dec/hex            | BLE pairing discriminator. e.g: 3840 or 0xF00. (12-bit)                                 |
+| -ui, --unique_id         | optional^5 | hex string         | A 128 bits hex string unique id (without 0x).                                           |
+| -sd,  --discriminator     | optional^2 | dec/hex            | BLE pairing discriminator. e.g: 3840 or 0xF00. (12-bit)                                 |
 | -sp, --spake2p_passcode   | required             | dec/hex            | Session passcode used to generate the SPAKE2+ verifier.        |
 | -si, --spake2p_iterations | required             | dec/hex            | Iteration count used to generate the SPAKE2+ verifier.                  |
-| -ss, --spake2p_salt       | required             | string<sup>6</sup> | Salt used to generate the SPAKE2+ verifier.                             |
-| -sv, --spake2p_verifier   | optional             | string<sup>6</sup> | Pre-generated SPAKE2+ verifier.                                          |
-| -sy, --setup_payload      | optional             | string<sup>6</sup> | Setup Payload.                             |
+| -ss, --spake2p_salt       | required             | string^6 | Salt used to generate the SPAKE2+ verifier.                             |
+| -sv, --spake2p_verifier   | optional             | string^6 | Pre-generated SPAKE2+ verifier.                                          |
+| -sy, --setup_payload      | optional             | string^6 | Setup Payload.                             |
 | -sf, --commissioning_flow | optional             | dec/hex            | Commissioning Flow 0=Standard, 1=User Action, 2=Custom.                         |
 | -sr, --rendezvous_flags   | optional             | dec/hex            | Rendez-vous flag: 1=SoftAP, 2=BLE 4=OnNetwork (Can be combined).                |
 | -fi, --firmware_info      | optional             | string             | Firmware Information            |
@@ -176,23 +176,23 @@ file defines the well-known (default) parameters used by the automatic provision
 | -cc, --cd_cert            | optional             | string             | Certification Declaration Signing Cert            |
 | -ck, --cd_key             | optional             | string             | Certification Declaration Signing Key            |
 | -ac, --paa_cert           | required             | string             | Path to the PAA certificate.                |
-| -ak, --paa_key            | optional<sup>3</sup> | string             | Path to the PAA private-key.                |
+| -ak, --paa_key            | optional^3 | string             | Path to the PAA private-key.                |
 | -ic, --pai_cert           | required             | string             | Path to the PAI certificate.                |
 | -ik, --pai_key            | required             | string             | Path to the PAI private-key.                |
-| -dc, --dac_cert           | optional<sup>3</sup> | string             | Path to the DAC certificate.                |
-| -dk, --dac_key            | optional<sup>3</sup> | dec/hex            | Path to the DAC private-key.                |
+| -dc, --dac_cert           | optional^3 | string             | Path to the DAC certificate.                |
+| -dk, --dac_key            | optional^3 | dec/hex            | Path to the DAC private-key.                |
 | -di, --key_id             | required             | dec/hex            | Attestation Key ID.                |
-| -dp, --key_pass           | optional<sup>3</sup> | string             | Password for the key file.                |
-| -dx, --pkcs12             | optional<sup>3</sup> | string             | Path to the PKCS#12 attestation certificates file. Formerly --att_certs.        |
-| -dn, --common_name        | optional<sup>4</sup> | string             | Common Name to use in the Device Certificate (DAC) .                |
+| -dp, --key_pass           | optional^3 | string             | Password for the key file.                |
+| -dx, --pkcs12             | optional^3 | string             | Path to the PKCS#12 attestation certificates file. Formerly --att_certs.        |
+| -dn, --common_name        | optional^4 | string             | Common Name to use in the Device Certificate (DAC) .                |
 | -ok, --ota_key            | optional             | string             | Over The Air (OTA) update key.                |
 
-<sup>1</sup> Use xxxxxxxxx for serial, xxx.xxx.xxx.xxx[:yyyy] for TCP, or bt:XXXXXXXXXXXXXXXX for bluetooth
-<sup>2</sup> If not provided (or zero), the `discriminator` is generated at random
-<sup>3</sup> If the DAC is provided, its corresponding private-key must also be provided
-<sup>4</sup> Required if the DAC is not provided
-<sup>5</sup> If not provided, the `unique_id` is randomly generated
-<sup>6</sup> Salt and verifier must be provided as base64 string
+^1 Use xxxxxxxxx for serial, xxx.xxx.xxx.xxx[:yyyy] for TCP, or bt:XXXXXXXXXXXXXXXX for bluetooth
+^2 If not provided (or zero), the `discriminator` is generated at random
+^3 If the DAC is provided, its corresponding private-key must also be provided
+^4 Required if the DAC is not provided
+^5 If not provided, the `unique_id` is randomly generated
+^6 Salt and verifier must be provided as base64 string
 
 WARNING:
     With the release of version 2.0, many shortcuts have been modified. Single-characters are now reserved for tool options.
@@ -201,7 +201,7 @@ WARNING:
 ### Custom Parameters
 
 Custom parameters may be defined in a YAML file, with the following format as an example:
-```
+```shell
 custom:
   - id: 1
     name: "example1"
@@ -228,11 +228,11 @@ Supported types are int8u, int16u, int32u, string, binary, and path. The `path` 
 If such file exists, its contents are read and sent to the firmware as a binary value.
 
 Given the previous configuration, the actual arguments may be provided as command-line:
-```
+```shell
 python3 provision.py -x1 99 --example2 "ABC123"
 ```
 Or, as part of an input file:
-```
+```shell
 {
     "version": "2.0",
     "options": {
@@ -263,12 +263,12 @@ In contrast, version 2.x defines the following actions:
    This action sends: `version`, `serial_number`, `vendor_id`, `vendor_name`, `product_id`, `product_name`, `product_label`, `product_url`, `part_number`, `hw_version`, `hw_version_str`, `manufacturing_date`, `unique_id`, `discriminator`, `spake2p_passcode`, `spake2p_iterations`, `spake2p_salt`, `spake2p_verifier`, `setup_payload`, `commissioning_flow`, `rendezvous_flags`, `firmware_info`, `dac_cert`, `pai_cert`, `certification`, `dac_key`
     And reads-back: `unique_id`, `discriminator`, `spake2p_passcode`, `setup_payload`
 * `write`: Only arguments defined either in input files or command-line are sent, for instance:
-```
+```shell
 python3 provision.py write --vendor_name "Silicon Labs" --product_name "Silabs Example"
 ```
 * `read`: Only arguments defined in a comma-separated list are read from the device. Arguments of type `path` are read in binary form, and
 stored in the given path, for instance:
-```
+```shell
 python3 provision.py read "vendor_name, product_name, version, dac_cert" --dac_cert cert.der
 ```
 
@@ -277,7 +277,7 @@ python3 provision.py read "vendor_name, product_name, version, dac_cert" --dac_c
 ### Zero Command-line Arguments
 
 The simplest use of the Provision Tool is using all-defaults, for instance:
-```
+```shell
 cd ./provision/
 python3 ./provision.py
 ```
@@ -289,7 +289,7 @@ Any or all of these arguments may be overwritten though the command line.
 The -i/--inputs argument reads all the required arguments from a provided JSON file. The same validation rules apply
 both for command line or configuration file, but JSON does not support hexadecimal numbers. Command line arguments
 take precedence over file arguments. For instance, with the configuration `example.json`:
-```
+```shell
 {
     "version": "2.0",
     "options": {
@@ -312,11 +312,11 @@ take precedence over file arguments. For instance, with the configuration `examp
 }
 ```
 You may run:
-```
+```shell
 python3 ./provision.py --inputs example.json
 ```
 Which will set the connected device with discriminator **3840**, product ID **32773**, and use **15000** SPAKE2+ iterations. However, if you run instead:
-```
+```shell
 python3 ./provision.py --inputs example.json --discriminator 2748 --product_id 0x8006 --spake2p_iterations 10000
 ```
 The connected device will be set with discriminator **2748** (instead of 3840), product ID **32774** (instead of 32773),
@@ -324,7 +324,7 @@ and use **10000** SPAKE2+ iterations (instead of 15000).
 
 For each run, `provision.py` will generate a local file `latest.json`, containing the arguments compiled from the different sources.
 Example input files may be found under `./inputs/`:
-```
+```shell
 python3 ./provision.py --inputs inputs/develop.json
 ```
 NOTE:
@@ -337,11 +337,11 @@ arguments that are truly mandatory are `vendor_id`, and `product_id`, and these 
 Test certificates may be auto-generated using the `--generate` flag (provided the `chip-cert` can be found, either
 in the default location, or through the `--cert-tool` argument).
 For instance, you may run:
-```
+```shell
 python3 ./provision.py --vendor_id 0x1049 --product_id 0x8005 --generate
 ```
 Which will generate the test certificates using `chip-cert`, and provide the device with the following parameters:
-```
+```shell
 {
     "version": "2.0",
     "matter": {
@@ -365,7 +365,7 @@ These files are generated using [the chip-cert tool](../src/tools/chip-cert/READ
 and stored under the `./temp` folder (or the folder selected with `--temp` option).
 
 To generate the certificates manually (check chip-cert help for details):
-```
+```shell
 chip-cert gen-cd -f 1 -V 0xfff1 -p 0x8005 -d 0x0016 -c ZIG20142ZB330003-24 -l 0 -i 0 -n 257 -t 0 -o 0xfff1 -r 0x8005 -C credentials/test/certification-declaration/Chip-Test-CD-Signing-Cert.pem -K credentials/test/certification-declaration/Chip-Test-CD-Signing-Key.pem -O ./temp/cd.der
 
 chip-cert gen-att-cert -t a -l 3660 -c "Matter PAA" -V 0xfff1 -o ./temp/paa_cert.pem -O ./temp/paa_key.pem
@@ -382,12 +382,12 @@ its key [Chip-Test-PAA-NoVID-Key.der](../credentials/test/attestation/Chip-Test-
 ### Example
 
 From the root of the Silicon Labs Matter repo, build an sample application. For instance:
-```
+```shell
 ./scripts/examples/gn_silabs_example.sh ./examples/lighting-app/silabs ./out/lighting-app/ BRD4187C
 ```
 
 Set up the device with key generation:
-```
+```shell
 python3 ./provision.py --vendor_id 0x1049 --product_id 0x8005 \
     --csr --common_name  "Silabs Device" --certification ./samples/light/1/cd.bin --pai_cert ./samples/light/1/pai_cert.der \
     --dac_cert ./samples/light/1/dac_cert.der -dk ./samples/light/1/dac_key.der \
@@ -396,7 +396,7 @@ python3 ./provision.py --vendor_id 0x1049 --product_id 0x8005 \
 ```
 
 Or, set up the device with imported key:
-```
+```shell
 python3 ./provision.py --vendor_id 0x1049 --product_id 0x8005 \
     --certification ./samples/light/1/cd.bin --pai_cert ./samples/light/1/pai_cert.der --dac_cert ./samples/light/1/dac_cert.der -dk ./samples/light/1/dac_key.der \
     --spake2p_passcode 62034001 --spake2p_salt 95834coRGvFhCB69IdmJyr5qYIzFgSirw6Ja7g5ySYA= --spake2p_iterations 15000 \
@@ -409,19 +409,19 @@ Silicon Labs' Matter examples include the same provisioning engine used by the G
 but provisioned multiple times. There are two ways to put the application in provisioning mode:
 * Factory-reset by pressing both BTN0 and BTN1 for six seconds
 * Write 1 to the NVM3 key 0x87228. This is useful in boards with less than two buttons, and can be accomplished using Simplicity Commander:
-```
+```shell
 commander nvm3 read -o ./temp/nvm3.s37
 commander nvm3 set ./temp/nvm3.s37 --object 0x87228:01 --outfile ./temp/nvm3+.s37
 commander flash ./temp/nvm3+.s37
 ```
 Once in provisioning mode, the example firmware can respond to Provision Protocol 2.0 commands using bluetooth. To use the
 bluetooth channel, use the `--channel` option with the string `bt:` followed by the bluetooth address of the device, for instance:
-```
+```shell
 python3 provision.py --inputs inputs/develop.json --channel bt:84:FD:27:EC:5D:FA
 ```
 The bluetooth channel closes upon the reception of the Finish command, or reset.
 To obtain the address of the device, the `bluet.py` tool may be used with the scan feature:
-```
+```shell
 python3 bluet.py scan
     Scanning....
     00:0D:6F:5C:FB:E5  -40  "SiLabs-Light"
@@ -445,7 +445,7 @@ commander readmem --range 0x0817E000:+1536 --serialno 440266330
 ```
 
 The output should look something like:
-```
+```shell
 commander readmem --range 0x0817E000:+1536 --serialno 440266330
 Reading 1536 bytes from 0x0817e000...
 {address:  0  1  2  3  4  5  6  7  8  9  A  B  C  D  E  F}
@@ -495,7 +495,7 @@ $ xxd ./temp/dac.der
 
 The PAI certificate is located at address 0x0817e200 (offset 512), and
 has 460 octets:
-```
+```shell
 0817e200: 30 82 01 C8 30 82 01 6E A0 03 02 01 02 02 08 79
 0817e210: 6E 32 5A FA 5B D1 F8 30 0A 06 08 2A 86 48 CE 3D
 ...
@@ -518,7 +518,7 @@ $ xxd ./temp/pai_cert.der
 
 Finally, on this example the CD is located at address 0817e400
 (offset 1024), and contains 541 octets:
-```
+```shell
 0817e400: 30 81 EF 06 09 2A 86 48 86 F7 0D 01 07 02 A0 81
 0817e410: E1 30 81 DE 02 01 03 31 0D 30 0B 06 09 60 86 48
 ...
@@ -548,7 +548,7 @@ sections of the flash storage.
 Logs have beed added to the SilabsDeviceAttestationCreds, to help verify if the attestation
 files are loaded correctly. The size and first eight bytes of CD, PAI, and DAC are printed and
 must match the contents of `cd.der`, `pai_cert.der`, and `dac.der`, respectively:
-```
+```shell
 ...
 [00:00:05.109][info  ][ZCL] OpCreds: Certificate Chain request received for PAI
 [00:00:05.109][info  ][DL] GetProductAttestationIntermediateCert, addr:0xffa00, size:460
