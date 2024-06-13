@@ -18,7 +18,7 @@ The provisioning script on this folder now supercedes the following tools:
 
 ## Provisioned Data
 
-The _Commissionable Data_ includes _Serial Number_, _Vendor Id_, _Product Id_, and the _Setup Payload_ (typicallty displayed in the QR code),
+The _Commissionable Data_ includes _Serial Number_, _Vendor Id_, _Product Id_, and the _Setup Payload_ (typically displayed in the QR code),
 while the _Attestation Credentials_ include the _Certificate Declaration_ (CD), the _Product Attestation Intermediate certificate_ (PAI),
 and the _Device Attestation Certificate_ (DAC).
 
