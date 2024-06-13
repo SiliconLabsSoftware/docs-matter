@@ -71,13 +71,13 @@ The script will ask user permission to trust the `simplicity_sdk` and `matter_ex
 For Mac and Linux:
 
 ```C
-python3 slc/sl_create_new_app.py MyNewApp slc/sample-app/lighting-app/efr32/lighting-app-thread.slcp brd4161a
+python3 slc/sl_create_new_app.py MyNewApp slc/sample-app/lighting-app/efr32/lighting-app-thread.slcp brd4187c
 ```
 
 For Windows:
 
 ```C
-python slc\sl_create_new_app.py MyNewApp slc\sample-app\lighting-app\efr32\lighting-app-thread.slcp brd4161a
+python slc\sl_create_new_app.py MyNewApp slc\sample-app\lighting-app\efr32\lighting-app-thread.slcp brd4187c
 ```
 
 ## Building an Application Project
@@ -87,13 +87,13 @@ After a project is created the `sl_build.py` script can be used to re-generate t
 For Mac and Linux:
 
 ```C
-python3 slc/sl_build.py MyNewApp/lighting-app-thread.slcp brd4161a
+python3 slc/sl_build.py MyNewApp/lighting-app-thread.slcp brd4187c
 ```
 
 For Windows:
 
 ```C
-python slc\sl_build.py MyNewApp\lighting-app-thread.slcp brd4161a
+python slc\sl_build.py MyNewApp\lighting-app-thread.slcp brd4187c
 ```
 
 Alternately, one can use SLC-CLI commands directly to generate the project and then use `make` to build it.
