@@ -328,7 +328,7 @@ Example input files may be found under `./inputs/`:
 python3 ./provision.py --inputs inputs/develop.json
 ```
 NOTE:
-    In earlier versions, the JSON files where found under `./config`. Version 2.x uses two kinds of files: parameters (YAML) and inputs (JSON).
+    In earlier versions, the JSON files were found under `./config`. Version 2.x uses two kinds of files: parameters (YAML) and inputs (JSON).
 
 ### Default Arguments
 
@@ -568,6 +568,6 @@ must match the contents of `cd.der`, `pai_cert.der`, and `dac.der`, respectively
 ## Board Support
 
 Pre-compiled images of the Generator Firmware can be found under ./images. The source
-code of these images is found under ./support. A single image is provided for the EFR32MG24 family and , another one for the EFR32MG26 family. To cope with the different flash sizes, the
+code of these images is found under ./support. A single image is provided for the EFR32MG24 family and another one for the EFR32MG26 family. To cope with the different flash sizes, the
 `provision.py` script reads the device information using `commander`, and send it to the GFW,
 which configures the NVM3 during the initialization step.
