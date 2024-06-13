@@ -8,7 +8,7 @@
 
 - Silicon Labs versions e.g., 3.0.0
 
-- Connectivity Standards Aliance Matter version e.g., 1.1
+- Connectivity Standards Alliance Matter version e.g., 1.1
 
 - [Optional] Prerelease flag e.g., alpha.1
 
