@@ -22,7 +22,7 @@ The following repositories, branches and commit hashes are to be used together i
 | ----------------------------------------------- | ------ | ---------------------------------------- |
 | https://github.com/openthread/openthread | main  | 7074a43e4 |
 
-### Connectivity Standards Alliance (CSA) connectedhomeip (Matter)
+### Connectivity Standards Alliance connectedhomeip (Matter)
 
 | Repo                                            | Branch | Commit Hash                              |
 | ----------------------------------------------- | ------ | ---------------------------------------- |

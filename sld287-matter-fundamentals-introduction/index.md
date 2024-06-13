@@ -2,7 +2,7 @@
 
 ## Why Matter?
 
-The Connectivity Standards Alliance (CSA) seeks to enable smart home devices to be secure, reliable, and interoperable with other Internet of Things (IoT) devices, regardless of manufacturer. One of the biggest pain points of smart home devices is the various application-layer implementations that limit the compatibility of different smart home devices. Therefore, Matter was adopted so that matter-enabled devices, under the same standard, provide a better experience for both the manufacturers and users.
+The Connectivity Standards Alliance seeks to enable smart home devices to be secure, reliable, and interoperable with other Internet of Things (IoT) devices, regardless of manufacturer. One of the biggest pain points of smart home devices is the various application-layer implementations that limit the compatibility of different smart home devices. Therefore, Matter was adopted so that matter-enabled devices, under the same standard, provide a better experience for both the manufacturers and users.
 
 While Matter was created to make the IoT seamless and effortless for users, it is important to acknowledge the complexity involved under the surface. Matter leverages a range of tools to enable seamless and secure connectivity within an IoT system. Understanding these tools is crucial for a comprehensive overview of this technology.
 
@@ -46,7 +46,7 @@ Regardless of the Network topology being used, Matter has a concept of Fabrics. 
 
 ## Matter Layered Architecture
 
-Matter is split up into a layered architecture to help separate the different responsibilities and encapsulate various pieces of the protocol stack. The following diagram shows the various interactions between the Matter application stack layers as defined by the Matter CSA specification. For implementation purposes the last four layers are handled as a Messaging Layer and a Transport layer.
+Matter is split up into a layered architecture to help separate the different responsibilities and encapsulate various pieces of the protocol stack. The following diagram shows the various interactions between the Matter application stack layers as defined by the Matter specification. For implementation purposes the last four layers are handled as a Messaging Layer and a Transport layer.
 
 ![Stack layer interactions](resources/stack-layer-interactions.png)
 
@@ -55,7 +55,7 @@ Matter is split up into a layered architecture to help separate the different re
 - The **Interaction Model** handles, as the name suggests, the interactions between the nodes and is responsible for how data is transferred between nodes. Both the Data Model and Interaction Model are inherited from the well-known dotdot standard used by Zigbee.
 - The **Action Framing** layer is where the interactions are transformed into a message payload.
 - The **Security Layer** takes the payload and encrypts and appends the packet with a MAC (Message authentication code).
-- From the security layer, the packet transfers down to the Transport layer to what the CSA refers to as the **Message Framing and Routing** layer. This updates the payload with the necessary routing information such as fabric and Node ID.
+- From the security layer, the packet transfers down to the Transport layer to what the Connectivity Standards Alliance refers to as the **Message Framing and Routing** layer. This updates the payload with the necessary routing information such as fabric and Node ID.
 - Finally the packet is sent to the **Transport and IP Framing** layer, from which the payload is sent through the IP network either through TCP (which is not yet currently supported) or Matter's Message Reliability Protocol, a software layer on top of UDP, for IP management of the data. Note that the IP Framing in Matter is handled by the Networking Protocol stack to handle this.
 
 Once the data is received on a peer device, it travels up the Matter Protocol stack in reverse and delivers the message to the **Application** layer.
