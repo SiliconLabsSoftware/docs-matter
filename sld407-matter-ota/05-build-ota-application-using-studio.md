@@ -93,10 +93,7 @@ In Matter OTA Software Update scenario the running image (OTA-A) and the update 
   
    ![Silicon Labs - design](images/create-project-click-finish.png)
 
-10. In Project Explorer section , open sl_matter_config file which is present in the config folder. Modify the **CHIP_DEVICE_CONFIG_DEVICE_SOFTWARE_VERSION 2** and **CHIP_DEVICE_CONFIG_DEVICE_SOFTWARE_VERSION_STRING "1"**
-
-    **Note:**
-        Make sure always CHIP_DEVICE_CONFIG_DEVICE_SOFTWARE_VERSION should be greater than CHIP_DEVICE_CONFIG_DEVICE_SOFTWARE_VERSION_STRING
+10. In the newly created project navigate to Software Components -> Silicon Labs Matter -> Stack -> Matter Core Components, clicking "Configure" and set the "Device software version" and "Device software version string" parameters to "2".  
 
 11. Once the modification is done for Software version, right-click on the project and select *Build Project* in the Project Explorer tab.
   
