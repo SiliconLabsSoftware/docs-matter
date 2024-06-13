@@ -361,7 +361,7 @@ Which will generate the test certificates using `chip-cert`, and provide the dev
 ## Attestation Files
 
 The `--generate` option instructs the `provider.py` script to generate test attestation files with the given _Vendor ID_, and _Product ID_.
-These files are generated using [the chip-cert tool](../src/tools/chip-cert/README.md),
+These files are generated using [the chip-cert tool](https://github.com/SiliconLabs/matter_extension/blob/main/src/tools/chip-cert/README.md),
 and stored under the `./temp` folder (or the folder selected with `--temp` option).
 
 To generate the certificates manually (check chip-cert help for details):
