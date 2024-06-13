@@ -6,15 +6,15 @@ This guide lists the steps to create and build a Silicon Labs Matter SLC project
 
 ## Setting up the Environment
 
-Clone Gecko SDK:
+Clone Simplicity SDK:
 
 ```C
-git clone https://github.com/SiliconLabs/gecko_sdk.git
+git clone https://github.com/SiliconLabs/simplicity_sdk
 ```
 
-Create a directory named `extension` inside the Gecko SDK directory.
+Create a directory named `extension` inside the SiSDK directory.
 
-Clone the  Matter GSDK Extension inside the `extension` directory:
+Clone the  Matter SiSDK Extension inside the `extension` directory:
 
 ```C
 git clone https://github.com/SiliconLabs/matter_extension.git
@@ -29,8 +29,8 @@ git clone https://github.com/SiliconLabs/wiseconnect.git
 Your path to the Matter extension and WiSeConnect extension should look like:
 
 ```C
-<Path/To/Gsdk/Download>/extension/matter_extension
-<Path/To/Gsdk/Download>/extension/wiseconnect
+<Path/To/Sdk/Download>/extension/matter_extension
+<Path/To/Sdk/Download>/extension/wiseconnect
 ```
 
 Install the following python packages:
@@ -60,13 +60,13 @@ The `sl_setup_env.py` script creates an .env file to be used to set the environm
 
 It will also create `environment_variables_vscode.txt`. This file can be referred to add environment variables for VS Code based builds.
 
-The script will ask you for permission to trust gecko_sdk, matter_extension, and wiseconnect.
+The script will ask you for permission to trust simplicity_sdk, matter_extension, and wiseconnect.
 
 ## Creating an Application Project
 
 Run the `sl_create_new_app.py` script to create a BRD4161A project with name `MyNewApp` starting from the `lighting-app-thread.slcp` example application project file:
 
-The script will ask user permission to trust the `gecko_sdk` and `matter_extension` before generating.
+The script will ask user permission to trust the `simplicity_sdk` and `matter_extension` before generating.
 
 For Mac and Linux:
 

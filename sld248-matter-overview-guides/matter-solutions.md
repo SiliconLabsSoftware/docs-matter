@@ -22,7 +22,7 @@ Building via solutions behaves just like a normal project. Just ensure the top-l
 Due to certain limitations with the way our Matter examples are built within Simplicity Studio, OTA file generation must be conducted by the user via the command line.
 
 To create an OTA file, first build a Matter example via solutions. Locate the resulting .gbl file within the `artifact` directory. This will be used as an argument to the GBL creation script.
-Then, locate the directory that holds the Matter Extension within the GSDK in Simplicity Studio. The location should be similar to: `/Users/User/SimplicityStudio/SDKs/gecko_sdk/extension/matter_extension`. Once found, open a terminal at this location and run the command:
+Then, locate the directory that holds the Matter Extension within the SiSDK in Simplicity Studio. The location should be similar to: `/Users/User/SimplicityStudio/SDKs/simplicity_sdk/extension/matter_extension`. Once found, open a terminal at this location and run the command:
 
 ```bash
 ./src/app/ota_image_tool.py create -v 0xFFF1 -p 0x8005 -vn <SoftwareVersion> -vs <SoftwareVersionString> -da sha256 <PathToArtifactDirectory>/<GblFile>  <PathToArtifactDirectory>/<ResultingOtaFileName>

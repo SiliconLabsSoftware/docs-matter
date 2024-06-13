@@ -51,7 +51,7 @@ You can check the current branch and commit hash used here:
 $ git checkout <commit hash>
 ```
 
-If you are not using the latest GSDK version for your Matter host image, you must first checkout the correct ot-efr32 commit hash that matches the GSDK. Refer to the third_party/silabs commit bump history to find which ot-efr32 commit to checkout. Mismatching versions may result in host-RCP incompatibility.
+If you are not using the latest SiSDK version for your Matter host image, you must first checkout the correct ot-efr32 commit hash that matches the SiSDK. Refer to the third_party/silabs commit bump history to find which ot-efr32 commit to checkout. Mismatching versions may result in host-RCP incompatibility.
 
 **2. Build the RCP**
 
@@ -96,4 +96,4 @@ Ensure that RCP has been configured correctly:
    3. Configure the RCP with `serial vcom config <'baud rate'>`.
 
 - Make sure the RCP has been flashed with a bootloader image.
-- Make sure the RCP GSDK version matches the OTBR GSDK version.
+- Make sure the RCP SiSDK version matches the OTBR SiSDK version.
