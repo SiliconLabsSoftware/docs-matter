@@ -31,11 +31,11 @@ image for a board which is not listed here, download and build your image in Sim
   - BRD4187C / SLWSTK6006A / Wireless Starter Kit / 2.4GHz@20dBm
     - [XG24-RB4187C](https://www.silabs.com/development-tools/wireless/xg24-rb4187c-efr32xg24-wireless-gecko-radio-board)
 
-//TODO : check the board names
 - **MG26 boards:**
-  - BRD4116A / SLWSTK6006A / Wireless Starter Kit / 2.4GHz@10dBm
-  - BRD4117A / SLWSTK6006A / Wireless Starter Kit / 2.4GHz@20dBm
-  - BRD4118A / SLWSTK6006A / Wireless Starter Kit / 2.4GHz@20dBm
+  - BRD4116A / 2.4GHz@10dBm
+  - BRD4117A / 2.4GHz@20dBm
+  - BRD4118A / 2.4GHz@20dBm
+  - BRD2608A
 
 ## Matter Over Thread Accessory Device Requirements
 
@@ -67,9 +67,10 @@ Pre-built binary images for the Matter accessory devices are provided on the [Ma
     - [XGM240-RB4317A](https://www.silabs.com/development-tools/wireless/xgm240-rb4317a-xgm240p-module-radio-board?tab=overview)
 
 - **MG26 boards:**
-  - BRD4116A / SLWSTK6006A / Wireless Starter Kit / 2.4GHz@10dBm
-  - BRD4117A / SLWSTK6006A / Wireless Starter Kit / 2.4GHz@20dBm
-  - BRD4118A / SLWSTK6006A / Wireless Starter Kit / 2.4GHz@20dBm
+  - BRD4116A / 2.4GHz@10dBm
+  - BRD4117A / 2.4GHz@20dBm
+  - BRD4118A / 2.4GHz@20dBm
+  - BRD2608A
 
 ## Matter Over Wi-Fi Accessory Device Requirements
 
