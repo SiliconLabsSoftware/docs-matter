@@ -50,7 +50,7 @@ By becoming a member of the Connectivity Standards Alliance, access to their [Ma
 
 - Important Matter Resources and a Q&A
 
-Once your device is approved, your organization will be issued an official Certification Declaration (CD). This CD is a cryptographic document issued by Connectivity Standards Alliance  that confirms that your device has been certified. The CD is included in the attestation process sent by the Commissionee during device attestation. To view a list of authorized test facilities, check out the [Authorized Testing Providers](https://csa-iot.org/certification/testing-providers/) summary. This CD is required to be injected during the manufacturing process if you are using the Silicon Labs CPMS process.  This certification process can take some time to complete. You should ensure that this time is accounted for during your development lifecycle to keep your product on schedule.
+Once your device is approved, your organization will be issued an official Certification Declaration (CD). This CD is a cryptographic document issued by Connectivity Standards Alliance  that confirms that your device has been certified. The CD is included in the attestation process sent by the Commissionee during device attestation. To view a list of authorized test facilities, check out the [Authorized Testing Providers](https://csa-iot.org/certification/testing-providers/) summary. This CD is required to be injected during the manufacturing process if you are using the Silicon Labs CPMS process. This certification process can take some time to complete. You should ensure that this time is accounted for during your development lifecycle to keep your product on schedule.
 
 ### Helpful Links
 

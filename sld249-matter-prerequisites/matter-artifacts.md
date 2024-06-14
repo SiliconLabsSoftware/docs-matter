@@ -1,36 +1,26 @@
 # Matter Software Artifacts
 
-This page provides links to pre-built software image "artifacts" that can be
-used to set up the Matter Demo for the Thread and Wi-Fi use cases.
+This page provides links to pre-built software image "artifacts" that can be used to set up the Matter Demo for the Thread and Wi-Fi use cases.
 
 Images for the items listed below are available under the "Assets" section at the bottom of this page:
 
-<https://github.com/SiliconLabs/matter_extension/releases/tag/v2.3.0>
+https://github.com/SiliconLabs/matter_extension/releases/tag/v2.3.0
 
 ## Matter Hub Raspberry Pi Image
 
-The Matter Hub image is intended to be flashed onto an SD card for a Raspberry
-Pi. The Matter Hub Image provides both an Open Thread Border Router and the
-Matter chip-tool. Note the image is ~7GB in size so depending on your internet
-connection this download may take some time. Start the Matter Hub Raspberry Pi
-image download here:
+The Matter Hub image is intended to be flashed onto an SD card for a Raspberry Pi. The Matter Hub Image provides both an Open Thread Border Router and the Matter chip-tool. Note the image is ~7GB in size so depending on your internet connection this download may take some time. Start the Matter Hub Raspberry Pi image download here:
 
 https://www.silabs.com/documents/public/software/SilabsMatterPi_2.3.0-1.3-extension.zip
 
 ## Radio Co-Processor (RCP) Images
 
-The Radio Co-Processor firmware is used to turn an EFR into an RCP that can be
-used with a Raspberry Pi to allow the Raspberry Pi's Open Thread Border Router
-to access the Thread network. Radio Co-Processor (RCP) images are available in
-the Assets section of this page:
+The Radio Co-Processor firmware is used to turn an EFR into an RCP that can be used with a Raspberry Pi to allow the Raspberry Pi's Open Thread Border Router to access the Thread network. Radio Co-Processor (RCP) images are available in the Assets section of this page:
 
 https://github.com/SiliconLabs/matter_extension/releases/download/v2.3.0/ot-rcp-binaries-2.3.0-1.3.zip
 
 ## Matter Accessory Device Images
 
-The Matter Accessory Device Images are used to turn an EFR into a Matter device.
-These are pre-built binary images for the Matter Demo. Matter Accessory Device
-Images are located in the Assets section of this page:
+The Matter Accessory Device Images are used to turn an EFR into a Matter device. These are pre-built binary images for the Matter Demo. Matter Accessory Device Images are located in the Assets section of this page:
 
 https://github.com/SiliconLabs/matter_extension/releases/download/v2.3.0/matter-accessory-device-images_2.3.0-1.3.zip
 

@@ -28,11 +28,11 @@ CPMS has automated integrations with Kudelski to obtain the unique DACs for each
 
 CPMS will ask for various attributes about your device, but these are the primary elements that will be needed for proper certificate generation.
 
-- Vendor ID (VID) - Your unique VID will be required by CPMS to properly generate the necessary PKI infrastructure to allow your device on the Matter network.
+- Vendor ID (VID): Your unique VID will be required by CPMS to properly generate the necessary PKI infrastructure to allow your device on the Matter network.
 
-- Product ID (PID) - Your organization will need to provide a unique PID that will be used to identify this product on the network.
+- Product ID (PID): Your organization will need to provide a unique PID that will be used to identify this product on the network.
 
-- Certification Declaration (CD) - This is a cryptographic document that is issued to you by Connectivity Standards Alliance after your device has been successfully certified by an approved testing facility.
+- Certification Declaration (CD): This is a cryptographic document that is issued to you by Connectivity Standards Alliance after your device has been successfully certified by an approved testing facility.
 
 ## Pre-Production Checklist
 
@@ -58,7 +58,6 @@ CPMS will ask for various attributes about your device, but these are the primar
 
 11. You're ready to order samples with [CPMS](https://cpms.silabs.com/)!
 
-
 ## CPMS Matter Production Guide (Do's and Don'ts)
 
 Producing products for Matter can be a challenge. Here are a few suggestions to keep in mind when readying your product for production.
@@ -78,15 +77,15 @@ Producing products for Matter can be a challenge. Here are a few suggestions to 
 
 There are two public ledgers available to developers known as the Matter Distributed Compliance Ledger (DCL). The DCL is a cryptographically secure ledger based on blockchain technology. This ledger preserves an immutable record that stores public information that can be retrieved by DCL clients. For more details, see the [Matter DCL whitepaper](https://csa-iot.org/developer-resource/white-paper-distributed-compliance-ledger/). Each DCL contains five schemas that can be accessed by a client to retrieve information about a device.
 
-- Vendor Info Schema - this schema provides public information about the device vendor such as the VID, Vendor Name, and Company Legal Name.
+- Vendor Info Schema: This schema provides public information about the device vendor such as the VID, Vendor Name, and Company Legal Name.
 
-- Device Model Schema - this schema provides public information about the actual device such as the Product Name, PID, VID, and more.
+- Device Model Schema: This schema provides public information about the actual device such as the Product Name, PID, VID, and more.
 
-- Device Software Version Model Schema - this schema provides public information about software-specific data about the device such as Release Notes URL, OTA software image URL, and more.
+- Device Software Version Model Schema: This schema provides public information about software-specific data about the device such as Release Notes URL, OTA software image URL, and more.
 
-- Compliance Schema - this schema provides public information about the certification of a device such as the VID, PID, Software Version, CD Certificate ID, and more.
+- Compliance Schema: This schema provides public information about the certification of a device such as the VID, PID, Software Version, CD Certificate ID, and more.
 
-- PAA Schema - this schema provides information about valid Product Attestation Authority certificates for approved PAAs.
+- PAA Schema: This schema provides information about valid Product Attestation Authority certificates for approved PAAs.
 
 The **Test DCL**, as the name suggests, is a public Matter ledger that will allow vendors to test their devices in a test environment. Entries into the Test DCL are less rigorous than the Production DCL and can be used to test devices using test certificates provided by Matter or other valid vendors. These test certificates cannot be used on the production DCL. For the production case, you have to ensure that you have the proper certificate chain in place. For CPMS, Kudelski provides Test DCL DACs at **no additional charge**. Your organization needs to ensure that an account has been created with Kudelski to order these DACs through CPMS. [Learn more here](https://confluence.silabs.com/pages/viewpage.action?pageId=387091843).
 

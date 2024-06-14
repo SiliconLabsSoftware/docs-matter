@@ -17,7 +17,7 @@ The following commands show how to start a new Thread network from the local OTB
 | `Matter Door Lock` | `mattertool doorlock set-user <OperationType> <UserIndex> <UserName> <UserUniqueId> <UserStatus> <UserType> <CredentialRule> <node_id> <endpoint_id> --timedInteractionTimeoutMs <timeout value>`          | Set a user for a Matter Lock                            |
 | `Matter Door Lock` | `mattertool doorlock set-credential <OperationType> <Credential> <CredentialData> <UserIndex> <UserStatus> <UserType> <node_id> <endpoint_id> --timedInteractionTimeoutMs <timeout value>`    | Set credential for a specific user of a Matter Lock     |
 | `Matter Door Lock` | `mattertool doorlock unlock-door <node_id> <endpoint_id> --timedInteractionTimeoutMs <timeout value>`      | Unlock a Matter Lock                                    |
-| `Matter Door Lock` | `mattertool doorlock lock-door`<node-id/group-id> --timedInteractionTimeoutMs <timeout value>`        | Lock a Matter Lock                                      |
+| `Matter Door Lock` | `mattertool doorlock lock-door <node-id/group-id> --timedInteractionTimeoutMs <timeout value>`        | Lock a Matter Lock                                      |
 | `Device interaction` | `mattertool levelcontrol move-to-level <desired_level> 0 1 1 <node_id> <endpoint_id>`              | Set the brightness level for a Matter dimmable light    |
 | `Matter RGB Light` | `mattertool colorcontrol move-to-saturation <desired_saturation> 0 1 1 <node_id> <endpoint_id>`             | Set the saturation level for a Matter RGB light         |
 | `Matter RGB Light` | `mattertool colorcontrol move-to-hue <desired_hue> 0 0 1 1 <node_id> <endpoint_id>`             | Set the hue level for a Matter RGB light                |

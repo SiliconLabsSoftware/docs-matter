@@ -41,7 +41,7 @@ These instructions assume that you have installed Simplicity Studio ([Getting St
    |use\_rs9116, use\_SiWx917, use\_wf200|Select the appropriate series-1, series-2, or Siw917Soc boards, and select respective projects in new project wizard.|
    |'import("//with\_pw\_rpc.gni")'|Will be introduced in Matter extension v2.3.0-1.3 release|
    |ota\_periodic\_query\_timeout\_sec|OTA Requestor, click the gear icon (configuration) and modify the  OTA Requestor periodic timeout|
-   |rs91x\_wpa3\_transition|<p>Add the following statement to the project's SLCP file:</p><p>define:</p><p>- name: WIFI\_ENABLE\_SECURITY\_WPA3\_TRANSITION</p><p>value: "1"</p><p></p>|
+   |rs91x\_wpa3\_transition| :para[Add the following statement to the project's SLCP file:] :para[define:] :para[- name:] :para[WIFI\_ENABLE\_SECURITY\_WPA3\_TRANSITION] :para[value: "1"]|
    |slc\_gen\_path|Already part of project. No need to do anything|
    |sl\_pre\_gen\_path|Already part of project. No need to do anything|
    |sl\_matter\_version|Matter Core Components, click on gear icon(configuration) and select Device software version |
@@ -50,13 +50,13 @@ These instructions assume that you have installed Simplicity Studio ([Getting St
 
    |**Presets**|**Simplicity Studio Component**|
    | :- | :- |
-   |icd|<p>Icd Management Server Cluster</p><p></p>|
-   |low-power|<p>Lower Power Mode</p><p></p>|
+   |icd| Icd Management Server Cluster |
+   |low-power| Lower Power Mode |
    |additional\_data\_advertising|GATT Additional Advertising|
    |use\_ot\_lib|OpenThread Certification Libraries|
    |use\_chip\_lwip\_lib|Matter LwIP|
-   |release|<br>Install Matter No Debug, remove Matter LCD|
-   |uart\_log|<p>Add the following statement to the project's SLCP file:</p><p>define:</p><p>- name: SILABS\_LOG\_OUT\_UART</p><p>value: "1"</p><p></p>|
+   |release| Install Matter No Debug, remove Matter LCD|
+   |uart\_log| :para[Add the following statement to the project's SLCP file:] :para[define:] :para[- name: SILABS\_LOG\_OUT\_UART] :para[value: "1"] |
    |slc\_generate|Already part of project. No need to do anything|
    |slc\_reuse\_files|Already part of project. No need to do anything|
    |bootloader|Already part of project. No need to do anything|
@@ -64,19 +64,21 @@ These instructions assume that you have installed Simplicity Studio ([Getting St
 4. Once the application is created in Simplicity Studio, the user can locate all the project files in the **Project Explorer** menu on the left.
 5. ZAP Changes:
    1. If there are ZAP changes for the project, from the Project Explorer menu, replace the ZAP file located at `config/common/<app-name>.ZAP` with the SMG project ZAP file.
-   2. To install the cluster components for enabled clusters, click <projectname>.slcp from the Project Explorer menu > Configuration Tools > Open **Zigbee Cluster Configurator**.
+   2. To install the cluster components for enabled clusters, click the .slcp from the Project Explorer menu > Configuration Tools > Open **Zigbee Cluster Configurator**.
    3. Select **Enabled Clusters** from the **Filters** dropdown in ZAP GUI.
    4. Go through the list of enabled clusters and if shown a warning, click **Install** to get the respective cluster components installed.
-   5. ![ZAP](./ZAP-troubleshooting.png)
+
+      ![ZAP](images/zap-troubleshooting.png)
+
 6. If there are code changes in the project files such as files located in `include/` and `src/`, replace the files from the SMG project to the respective `include/` and `src/` directories.
 7. The Matter stack and platform source files can be found in the Project Explorer menu under the `matter_<version_number>` directory. You can move over all the files changed from the SMG project to the Simplicity Studio project.
 8. If you have created new source files, then depending on the IDE, you will need to:
-   - For Simpliciy Studio IDE: copy them to respective locations in the Simplicity Studio project.
+   - For Simplicity Studio IDE: copy them to respective locations in the Simplicity Studio project.
    - For IAR EW: Make use of the `Add File` mechanism.
    - For CMake or Makefile: Add using a custom CMake/Makefile subfile as described in their readmes or comments.
 9. Your project should be ready to build and flash.
 
 ## Troubleshooting
 
-1. If you receive a ZAP feature level error from Simplicity Studio, add the latest ZAP by [following these instructions](https://docs.silabs.com/ZAP-tool/1.0.0/ZAP-users-guide/update-ZAP).
+1. If you receive a ZAP feature level error from Simplicity Studio, add the latest ZAP by following [these instructions](https://docs.silabs.com/ZAP-tool/1.0.0/ZAP-users-guide/update-ZAP).
 2. Get Familiar with [Simplicity Studio Project Configurator](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-developing-with-project-configurator/project-configurator).
