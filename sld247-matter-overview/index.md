@@ -87,7 +87,7 @@ Pre-built images for the SiWx917 connectivity firmware are available as per the 
 
 **Installation of Wi-Fi SDK and Wiseconnect Packages**: The following packages will be installed during the installation of Simplicity Studio. Refer to [Package Installation](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/software-installation).
 
-**Matter Hub Raspberry Pi Image**: A copy of the pre-built image from the Silicon Labs web services can be downloaded in this [zipfile](https://www.silabs.com/documents/public/software/SilabsMatterPi_2.2.1-1.2-extension.zip). **Note** this is a large file and will take some time to download.
+**Matter Hub Raspberry Pi Image**: A copy of the pre-built image from the Silicon Labs web services can be downloaded in this [zipfile](https://www.silabs.com/documents/public/software/SilabsMatterPi_2.3.0-1.3-extension.zip). **Note** this is a large file and will take some time to download.
 
 >**Note:** The Matter hub for Matter over Thread requires an additional device, a radio co-processor. See [the introduction to the Matter over Thread demo](/matter/<docspace-docleaf-version>/matter-light-switch-example/02-thread-light-switch-example) for more information.
 
