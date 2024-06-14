@@ -11,7 +11,7 @@ The Gecko Bootloader is built with Silicon Labs Simplicity Studio. These instruc
 In Simplicity Studio, click **Project > New > Silicon Labs Project Wizard** to create a new project. Select the correct Target Board, SDK and the Toolchain.
 
 In the next screen, select the example project the bootloader will be based on. For a bootloader using external storage, select **Bootloader SoC SPI Flash Storage
-(single image with slot size of 1024K)**. For a bootloader using internal storage, select **Bootloader - SoC Internal Storage (single image on 512kB device)**.
+(single image with slot size of 1024K). For a bootloader using internal storage, select **Bootloader - SoC Internal Storage (single image on 512kB device)**.
 
 ### Configuring Storage Components and Parameters
 

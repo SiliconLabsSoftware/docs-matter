@@ -16,27 +16,27 @@ The OTA Software Update scenario requires the following binaries:
 
 The demo scenario requires the use of the Silicon Labs Simplicity Commander tool.
 
-### Outline of the steps for the OTA Software Update scenario 
+### Outline of the steps for the OTA Software Update Scenario
 
-- Create the running image
-- Create the update image with software version value incremented
-- Create the OTA file from the update image
-- Create/obtain a bootloader that supports Matter OTA Software Update 
+- Create the running image.
+- Create the update image with software version value incremented.
+- Create the OTA file from the update image.
+- Create/obtain a bootloader that supports Matter OTA Software Update.
 - Start the OTA-Provider passing to it the OTA file. Commission the OTA-Provider.
 - Bring up your device with the running image, commission the device.
-- Use the chip-tool to issue the Announce OTA Provider command to the device and trigger the OTA Software Update Process
+- Use the chip-tool to issue the Announce OTA Provider command to the device and trigger the OTA Software Update Process.
 
-Note: In a production environment the Announce OTA Provider command is not used. Instead, the OTA Provider address is configured on the device by the Matter Controller and the device queries the Provider for an available image every 24 hours. 
+Note: In a production environment the Announce OTA Provider command is not used. Instead, the OTA Provider address is configured on the device by the Matter Controller and the device queries the Provider for an available image every 24 hours.
 
 ## Setting up the OTA Environment
 
 ### Setting up the chip-tool
 
-The chip-tool binary is a part of the Silicon Labs' Matter Hub Raspberry Pi Image available as a part of the Release Artifacts page. For building the chip-tool for Linux or Mac consult the documentation in https://github.com/project-chip/connectedhomeip . 
+The chip-tool binary is a part of the Silicon Labs' Matter Hub Raspberry Pi Image available as a part of the Release Artifacts page. For building the chip-tool for Linux or Mac consult the documentation in https://github.com/project-chip/connectedhomeip.
 
 ### Setting up the OTA-Provider
 
-The chip-ota-provider-app binary for a Raspberry Pi is a part of the Artifacts package available with the Matter Extension release. For building the chip-ota-provider-app for Linux or Mac consult the documentation in https://github.com/project-chip/connectedhomeip . 
+The chip-ota-provider-app binary for a Raspberry Pi is a part of the Artifacts package available with the Matter Extension release. For building the chip-ota-provider-app for Linux or Mac consult the documentation in https://github.com/project-chip/connectedhomeip.
 
 ### Building Application Images Using Simplicity Studio
 
@@ -121,7 +121,7 @@ Note: In a production environment the Announce OTA Provider command is not used.
     $ chip-tool otasoftwareupdaterequestor write default-otaproviders '[{"fabricIndex": 1, "providerNodeID": 1, "endpoint": 0}]' 2 0
 ```
 
-With this configuration the device will query the OTA-Provider for an available image every 24 hours and if an update image is available the OTA Software Update process will start. 
+With this configuration the device will query the OTA-Provider for an available image every 24 hours and if an update image is available the OTA Software Update process will start.
 
 ## Internal Storage Bootloader
 
@@ -169,16 +169,18 @@ Example provider configuration file:
           ]
         }
 ```
-For more info see the documentation for the ota-provider-app example in https://github.com/project-chip/connectedhomeip . 
+
+For more info see the documentation for the ota-provider-app example in https://github.com/project-chip/connectedhomeip.
+
 ## Multi-Chip OTA Images
-Multi-Chip OTA is implemented only for EFR32 devices. Multi-chip OTA uses an enhanced script, ota_multi_image_tool.py, which creates .ota files that contain additional TLV headers. These TLV headers describe the binaries to be sent over the air. The enhanced script is located [here](https://github.com/SiliconLabs/matter/blob/latest/scripts/tools/silabs/ota/ota_multi_image_tool.py). It is a wrapper to the original src/app/ota_image_tool.py. Multiple binaries can be packaged in the .ota file. Some Tags are reserved for specific Silicon Labs binaries, and other Tags are available to be used for arbitrary TLVs. The payloads can be encrypted. 
 
-The script can be obtained from the Matter Extension github [repository](https://github.com/SiliconLabs/matter_extension) 
+Multi-Chip OTA is implemented only for EFR32 devices. Multi-chip OTA uses an enhanced script, ota_multi_image_tool.py, which creates .ota files that contain additional TLV headers. These TLV headers describe the binaries to be sent over the air. The enhanced script is located [here](https://github.com/SiliconLabs/matter/blob/latest/scripts/tools/silabs/ota/ota_multi_image_tool.py). It is a wrapper to the original src/app/ota_image_tool.py. Multiple binaries can be packaged in the .ota file. Some Tags are reserved for specific Silicon Labs binaries, and other Tags are available to be used for arbitrary TLVs. The payloads can be encrypted.
 
-For more information on creating a Multi-Chip .ota file see the 
-[README.md](https://github.com/SiliconLabs/matter/blob/latest/scripts/tools/silabs/ota/README.md)
+The script can be obtained from the Matter Extension github [repository](https://github.com/SiliconLabs/matter_extension)
 
-Applications must be built with the OTA Multi Image Requestor component added to the project in Simplicity Studio to enable them to process the TLVs. 
+For more information on creating a Multi-Chip .ota file see the [README.md](https://github.com/SiliconLabs/matter/blob/latest/scripts/tools/silabs/ota/README.md)
+
+Applications must be built with the OTA Multi Image Requestor component added to the project in Simplicity Studio to enable them to process the TLVs.
 
 The OTA Multi Image Requestor Encryption component should be added to the project if the requestor is meant to process encrypted payloads.
 

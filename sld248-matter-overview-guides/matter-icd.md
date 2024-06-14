@@ -84,10 +84,10 @@ This includes how a client shares a Check-In token (symmetric key) with the ICD,
 The Check-In Protocol is a fail-safe mechanism which allows an ICD to notify a registered client that it is available for communication when all subscriptions between the client and ICD are lost.
 A subscription can be lost for several reasons, such as:
 
-* The ICD might not have full RAM retention when it is in an idle state.
-* When the ICD is powered off to change the battery.
-* Power or network outage causing the connection between the client and the ICD to be interrupted.
-* The client is unavailable for any reason (e.g. during a software update or hosted on a mobile device that is sometimes out-of-home).
+- The ICD might not have full RAM retention when it is in an idle state.
+- When the ICD is powered off to change the battery.
+- Power or network outage causing the connection between the client and the ICD to be interrupted.
+- The client is unavailable for any reason (e.g. during a software update or hosted on a mobile device that is sometimes out-of-home).
 
 The Check-In message is sessionless and relies on a shared secret that has been given to the ICD during the registration of the client using the ICD Management cluster.
 For more information on the ICD Check-In Protocol use-case, see the associated specification section.
@@ -97,11 +97,11 @@ For more information on the ICD Check-In Protocol use-case, see the associated s
 Since ICDs are not immediately responsive, they require a means to render them available for communication within user initiated use cases.
 Some of the user initiated use cases are:
 
-* Opening a new commissioning window to add another administrator.
-* Reconfiguration of an existing fabric (e.g. IPKs, NOC rotation, ACL changes).
-* Reconfiguration of cluster functionality (e.g. ICD Management, Bindings, Groups, Scenes).
-* Removal of a device from a fabric.
-* Changes to the device's settings.
+- Opening a new commissioning window to add another administrator.
+- Reconfiguration of an existing fabric (e.g. IPKs, NOC rotation, ACL changes).
+- Reconfiguration of cluster functionality (e.g. ICD Management, Bindings, Groups, Scenes).
+- Removal of a device from a fabric.
+- Changes to the device's settings.
 
 To enable these user initiated use cases, ICDs need to provide a way for a user to put them in active mode and render them responsive.
 The User Active Mode Trigger feature in the ICD Management cluster indicates whether a particular device implements an active mode trigger.
@@ -256,7 +256,7 @@ Persistent subscriptions are enabled by default on all Silicon Labs sample appli
 
 #### Subscription Timeout Resumption
 
-Matter also provides a retry mechanism for devices to try to re-establish a lost subscription with a client. This feature should not be used on an ICD since it can significantly reduce battery life. This functionality is disabled by default in all Matter sample apps, if necessary it can be enabled by directly editing the project's .slcp file and setting to the `CHIP_CONFIG_SUBSCRIPTION_TIMEOUT_RESUMPTION` configuration value to `1`. 
+Matter also provides a retry mechanism for devices to try to re-establish a lost subscription with a client. This feature should not be used on an ICD since it can significantly reduce battery life. This functionality is disabled by default in all Matter sample apps, if necessary it can be enabled by directly editing the project's .slcp file and setting to the `CHIP_CONFIG_SUBSCRIPTION_TIMEOUT_RESUMPTION` configuration value to `1`.
 
 #### Subscription Synchronization
 
@@ -293,10 +293,10 @@ These are recommended configurations based on the state of the current implement
 The recommended configurations are likely to change with the Matter 1.4 release.
 
 ##### ICD Default configurations
+
 - Enable ICD Server: TRUE
 - Subscription Timeout Resumption: FALSE
 - Subscription Synchronization: TRUE
-
 
 ##### ICD Matter Configuration flags
 
@@ -310,7 +310,7 @@ Configuration parameters of the ICD Server Configuration component (sl_matter_ic
 
 ##### Openthread Configuration flags
 
-Configuration parameters of the ICD Server Configuration component (sl_matter_icd_config.h): 
+Configuration parameters of the ICD Server Configuration component (sl_matter_icd_config.h):
 
 ```cpp
 #define SL_OT_IDLE_INTERVAL   5000 // 5s Idle Intervals
@@ -325,7 +325,7 @@ Long Idle Time ICDs are battery powered devices that require synchronization bet
 A sensor device is an example of a device that are typically a long idle time ICD.
 
 Long Idle Time ICDs are ready for integration in the Matter 1.3 release. The core feature-set for ICDs has been implemented through the `ICDManager`.
-LIT ICDs should be certifiable with the Matter 1.4 release. 
+LIT ICDs should be certifiable with the Matter 1.4 release.
 Splitting the two milestones in different releases is to allow more in depth interoperability testing to validate the proposed feature-set achieves it's power consumption and usability goals.
 
 #### Requirements
@@ -334,13 +334,18 @@ This section lists the requirements that Long Idle Time ICDs must respect to be 
 
 1. The ICD Management Cluster must be present on the Root Endpoint (0) with mandatory attributes.
 2. The `LITS` (Long Idle Time Support) feature map must be set to 1.
-All required features, attributes and commands required by this feature map must also be present.
-2. The `CIP` (Check-In Protocol support) feature map must be set to 1.
-All required attributes and commands required by this feature map must also be present.
-3. The `UAT` (User Active Mode Trigger support) feature map must be set to 1.
-All required attributes and commands required by this feature map must also be present.
-4. The `ActiveModeThreshold` cannot be lower than 5 seconds.
 
+   All required features, attributes and commands required by this feature map must also be present.
+
+3. The `CIP` (Check-In Protocol support) feature map must be set to 1.
+
+   All required attributes and commands required by this feature map must also be present.
+
+4. The `UAT` (User Active Mode Trigger support) feature map must be set to 1.
+
+   All required attributes and commands required by this feature map must also be present.
+
+5. The `ActiveModeThreshold` cannot be lower than 5 seconds.
 
 #### Configurations
 
@@ -352,11 +357,11 @@ The recommended configurations are likely to change with the Matter 1.4 release.
 - Enable ICD Server: TRUE
 - Subscription Timeout Resumption: FALSE
 - Subscription Synchronization: TRUE
-- ICD Slow Polling Limit Enforcement: TRUE 
-- Matter Report on Entering Active: TRUE 
-- Matter LIT Configuration: TRUE 
+- ICD Slow Polling Limit Enforcement: TRUE
+- Matter Report on Entering Active: TRUE
+- Matter LIT Configuration: TRUE
 
-The last three parameters are configuration parameters in the Matter Core Components (`ICDServerBuildConfig.h`) 
+The last three parameters are configuration parameters in the Matter Core Components (`ICDServerBuildConfig.h`)
 
 ##### ICD Matter Configuration flags
 
@@ -370,9 +375,9 @@ Configuration parameters of the ICD Server Configuration component (`sl_matter_i
 
 ##### Openthread Configuration flags
 
-Configuration parameters of the ICD Server Configuration component (`sl_matter_icd_config.h`): 
+Configuration parameters of the ICD Server Configuration component (`sl_matter_icd_config.h`):
 
 ```cpp
 #define SL_OT_IDLE_INTERVAL   3600000  // 60mins Idle Polling Interval
 #define SL_OT_ACTIVE_INTERVAL 1000     // 1s Active Polling Interval
-
+```

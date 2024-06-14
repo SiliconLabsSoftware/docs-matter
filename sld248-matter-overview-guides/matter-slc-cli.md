@@ -19,12 +19,12 @@ Clone the  Matter SiSDK Extension inside the `extension` directory:
 ```C
 git clone https://github.com/SiliconLabs/matter_extension.git
 ```
+
 To use SiWx91x Wi-Fi applications, clone the WiSeConnect SDK inside the extension directory.
 
 ```C
 git clone https://github.com/SiliconLabs/wiseconnect.git
 ```
-
 
 Your path to the Matter extension and WiSeConnect extension should look like:
 
@@ -117,11 +117,11 @@ For modifying Matter endpoints and clusters invoke the ZAP tool passing to it th
 ./scripts/tools/zap/run_zaptool.sh MyNewApp/config/common/lighting-thread-app.zap
 ```
 
-##Edit and Build with Visual Studio Code 
+## Edit and Build with Visual Studio Code
 
 Install the "Simplicity Studio for VS Code" extension on VS code.
 
-Add the POST_BUILD_EXE and NINJA_BUILD_EXE variables from the `slc\tools\environment_variables_vscode.txt` to the environment variables. 
+Add the POST_BUILD_EXE and NINJA_BUILD_EXE variables from the `slc\tools\environment_variables_vscode.txt` to the environment variables.
 
 Run the `sl_setup_env.py` and `sl_create_new_app.py` to set up and create a sample application, then load the application in VS Code by following the "Adding a VS Code-Enabled Simplicity Studio Project to VS Code" section from [Simplicity Studio User Guide](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-tools-slc-cli/)
 

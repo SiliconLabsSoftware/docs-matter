@@ -1,6 +1,6 @@
 # Matter Versioning and Release Maintenance
 
-**Silicon Labs Matter GitHub is being phased out in favor of using the Matter SiSDK Extension that is available thru Studio and standalone via SLC-CLI.**
+**Silicon Labs Matter GitHub is being phased out in favor of using the Matter SiSDK Extension that is available through Simplicity Studio and standalone via SLC-CLI.**
 
 ## Versioning Scheme
 
@@ -50,14 +50,13 @@ Update digits based on the following criteria:
 
       - beta level quality to identify certain SQA testing, but still in early development
 
-
 ## Release Maintenance
 
 ### Matter Extension
 
 | **Release** | **Date** | **GSDK/SiSDK** | **WiSeConnect 3 SDK** | **Status** |
 |-------------|----------|----------|----------|----------|
-| v1.0.1-1.0 | 19-Dec-22  | v4.2.0 |  N/A | Obsolete | 
+| v1.0.1-1.0 | 19-Dec-22  | v4.2.0 |  N/A | Obsolete |
 | v1.0.3-1.0 | 3-Feb-23   | v4.2.1 |  N/A | Obsolete |
 | v1.0.4-1.0 | 16-Feb-23  | v4.2.1 |  N/A | Obsolete |
 | v1.0.5-1.0 | 10-Mar-23  | v4.2.2, v4.2.3, v4.2.4, v4.2.5 | N/A | Monitored |
@@ -66,4 +65,4 @@ Update digits based on the following criteria:
 | v2.1.1-1.1 | 9-Oct-23   | v4.3.2, v4.3.3 | v3.1.0 | Maintained |
 | v2.2.0-1.2 | 13-Dec-23  | v4.4.0, v4.4.1 | v3.1.1 | Obsolete |
 | v2.2.1-1.2 | 10-Apr-24  | v4.4.1, v4.4.2 | v3.1.4 | Maintained |
-| v3.2.0-1.3 | 18-Jul-24	| 2024.6.0 | v3.3.0 | Active |
+| v3.2.0-1.3 | 18-Jul-24  | 2024.6.0 | v3.3.0 | Active |

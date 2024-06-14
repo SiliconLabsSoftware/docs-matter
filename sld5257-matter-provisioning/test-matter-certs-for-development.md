@@ -149,8 +149,6 @@ Once you have finished generating you Certificates, you can proceed with install
 
   - Please follow the [PyLink Installation Instructions](https://pylink.readthedocs.io/en/latest/installation.html).
 
-
-
 ### Running the Provisioning Tool
 
 Once you have generated the PAA, PAI and DAC and have installed the provisioning tool you can use it to write the Commissionable Data and the Device Attestation Data. As previously mentioned, there are two provisioning flows possible, following are the necessary steps to correctly provision your device.
@@ -172,40 +170,51 @@ python3 ./provision.py --inputs defaults.json ---pai_cert ../credentials/test/at
 >Note: To use the BLE provisioning channel, Mac users will need Bluetooth developer mode to be set up. See [Using chip-tool on macOS, or CHIP Tool on iOS](https://github.com/project-chip/connectedhomeip/blob/master/docs/guides/darwin.md#using-chip-tool-on-macos-or-chip-tool-on-ios) for more information.
 
 1. Build a sample application from the main ```/matter``` directory:
-   ```bash 
+
+   ```bash
    ./scripts/examples/gn_silabs_example.sh ./examples/lighting-app/silabs ./out/lighting-app/ BRD4187C
    ```
+
 2. Put the device into provisioning mode in one of the following two ways
    1. Factory-reset by pressing both BTN0 and BTN1 for six seconds \
    OR
-   2. Write 1 to the NVM3 key 0x87228. This is useful in boards with less than two buttons, and can be accomplished using Simplicity Commander: 
-   ```bash 
+   2. Write 1 to the NVM3 key 0x87228. This is useful in boards with less than two buttons, and can be accomplished using Simplicity Commander:
+
+   ```bash
    
    commander nvm3 read -o ./temp/nvm3.s37
    commander nvm3 set ./temp/nvm3.s37 --object 0x87228:01 --outfile ./temp/nvm3+.s37
    commander flash ./temp/nvm3+.s37 
    
    ```
-3. From the ```matter/provision``` directory, get the BLE UUID via the bluet.py tool: 
-    ```bash 
+
+3. From the ```matter/provision``` directory, get the BLE UUID via the bluet.py tool:
+
+    ```bash
     
     python3 bluet.py scan 
    
     ```
+
 4. Flash the Certificates onto the device by using the sample app as the generator firmware. \
     *Example using default generated certificates:*
+
     ```bash
     
     python3 ./provision.py -v "2.0" --channel bt:<bluetooth UUID> --vendor_id <VID> --product_id <PID> -g --gen_fw <../path_to_application_firmware>
 
-    ``` 
+    ```
+
     *Example using supplied certificates and arguments:*
+
     ```bash
     
     ./provision.py -v "2.0" -i inputs/silabs.json -ic ../credentials/test/attestation/pai_cert.pem -dc ../credentials/test/attestation/dac_cert.pem -dk ../credentials/test/attestation/dac_key.pem -cd ../credentials/test/certification-declaration/Chip-Test-CD-1049-8005.der -d 0xab2 --channel bt:0CA515E1-8159-AF32-FA9C-FA2F51913CC1 --gen_fw ../out/lighting-app/BRD4187C/matter-silabs-lighting-example.s37
    
     ```
+
 5. Re-flash the Matter application image:
+
    ```bash
    
    commander flash ../out/lighting-app/BRD4187C/matter-silabs-lighting-example.s37
@@ -213,6 +222,7 @@ python3 ./provision.py --inputs defaults.json ---pai_cert ../credentials/test/at
    ```
 
 #### Provisioning Tool Output
+
 :::collapsed{summary="Click to expand and view BLE output."}
 
 ```bash
@@ -347,12 +357,14 @@ This component is meant for the firmware to refer to the credentials injected by
 Once this is completed, you can build your image and flash the \<image\>.s37 using Simplicity Studio.
 
 ### Store Commissionable Data (NVM3), Attestation Data CD,PAI, DAC (Main Flash)
+
 To use the provisioning tool to store commissionable data and the attestation data in the device, see the following usage of the provisioning script. For more information on the arguments, refer to the [Provisioning Script readme](https://github.com/SiliconLabs/matter/tree/release_2.3.0-1.3/provision#readme).
 
 ```bash
 python3 ./provision.py --vendor_id 0x1049 --product_id 0x8005 --certification ./samples/light/1/cd.bin --pai_cert ./samples/light/1/pai_cert.der --dac_cert ./samples/light/1/dac_cert.der -dk ./samples/light/1/dac_key.der --spake2p_passcode 62034001 --spake2p_salt 95834coRGvFhCB69IdmJyr5qYIzFgSirw6Ja7g5ySYA= --spake2p_iterations 15000 --discriminator 0xf01 --prod_fw ../out/lighting-app/BRD4187C/matter-silabs-lighting-example.s37
 ```
 :::collapsed{summary="Click to expand and view output."}
+
 ```bash
 # Provision Protocol v2.0
 

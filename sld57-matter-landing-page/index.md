@@ -4,9 +4,7 @@ The Matter protocol leverages existing IP technologies, including Wi-Fi and Thre
 
 Silicon Labs supports Matter on both 802.15.4 (Thread) and 802.11 (Wi-Fi) transport protocols. The Thread development use case differs from Wi-Fi because the Thread protocol requires an OpenThread Border Router (OTBR).
 
-The Unify Matter Bridge is an application that makes legacy devices, such as
-Z-Wave and Zigbee devices, accessible on a Matter fabric. It does so by acting as
-an *IoT Service* in a Unify Framework.
+The Unify Matter Bridge is an application that makes legacy devices, such as Z-Wave and Zigbee devices, accessible on a Matter fabric. It does so by acting as an *IoT Service* in a Unify Framework.
 
 ![Silicon Labs Matter Summary](resources/silicon-labs-matter.png)
 
@@ -16,11 +14,11 @@ Device: SiWx917 SoC
 
 ## Path for Development
 
-These pages are for developing Matter applications with the Matter Extension. The Matter Extension is the preferred development path and is available through Simplicity Studio and Standalone via SLC-CLI. The Matter Extension was preivously released as an extension of the Gecko SDK (GSDK), moving forward the Matter Extension will be an extension of Silicon Labs Simplicity SDK (SiSDK).
+These pages are for developing Matter applications with the Matter Extension. The Matter Extension is the preferred development path and is available through Simplicity Studio and Standalone via SLC-CLI. The Matter Extension was previously released as an extension of the Gecko SDK (GSDK), moving forward the Matter Extension will be an extension of Silicon Labs Simplicity SDK (SiSDK).
 
-Simplicity Studio is a GUI-based development experience in which you can create production-ready projects from a well-tested library. The Simplicity Studio development path also natively supports development on the Windows operating system. As a result, Windows users should use Simplicity Studio for their development environment. SLC-CLI offers command-line access to application configuration and generation of the Matter extension. 
+Simplicity Studio is a GUI-based development experience in which you can create production-ready projects from a well-tested library. The Simplicity Studio development path also natively supports development on the Windows operating system. As a result, Windows users should use Simplicity Studio for their development environment. SLC-CLI offers command-line access to application configuration and generation of the Matter extension.
 
-The [Silicon Labs Matter GitHub repo](https://github.com/SiliconLabs/matter) will no longer be updated to reflect newer Matter versions **after Matter 1.3**. As a result, this is no longer a recommended path for Matter Development of **new products**. 
+The [Silicon Labs Matter GitHub repo](https://github.com/SiliconLabs/matter) will no longer be updated to reflect newer Matter versions **after Matter 1.3**. As a result, this is no longer a recommended path for Matter Development of **new products**.
 
 ## Other Resources
 

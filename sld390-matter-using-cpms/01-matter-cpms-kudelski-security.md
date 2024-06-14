@@ -32,12 +32,12 @@ Becoming your own PAA and issuing your own signed attestation certificates for M
 
 There are a few processes in place to get you set up and working quickly to start receiving signed DACs from Kudelski:
 
-1. Account Setup - If you are already a Connectivity Standards Alliance member, you can start the setup of your account (fees may apply) on Kudelski's cloud application. If you are not a member yet, review the Connectivity Standards Alliance requirements. Per their requirements, Kudelski will conduct some manual background checks. Your organization will also need to sign the Kudelski Requestor Agreement Document (RAD) document before any PAIs are created.
+1. Account Setup: If you are already a Connectivity Standards Alliance member, you can start the setup of your account (fees may apply) on Kudelski's cloud application. If you are not a member yet, review the Connectivity Standards Alliance requirements. Per their requirements, Kudelski will conduct some manual background checks. Your organization will also need to sign the Kudelski Requestor Agreement Document (RAD) document before any PAIs are created.
 
-2. New Product Family Setup - Once your Product Family is successfully certified by Connectivity Standards Alliance, Kudelski can create your vendor-specific Product Attestation Intermediate (PAI) on keySTREAM for that Product Family.
+2. New Product Family Setup: Once your Product Family is successfully certified by Connectivity Standards Alliance, Kudelski can create your vendor-specific Product Attestation Intermediate (PAI) on keySTREAM for that Product Family.
 
-3. Certificate Request - Once a PAI is created, you can request a batch of certificates for your devices. For the CPMS workflow, you will need to agree (with Kudelski) to allow Silicon Labs to be a requestor and receiver of DACs in order for the CPMS integrations to successfully request and receive those DACs during manufacturing.
+3. Certificate Request: Once a PAI is created, you can request a batch of certificates for your devices. For the CPMS workflow, you will need to agree (with Kudelski) to allow Silicon Labs to be a requestor and receiver of DACs in order for the CPMS integrations to successfully request and receive those DACs during manufacturing.
 
-4. Certificate Delivery - In the CPMS workflow, Silicon Labs will receive delivery of these DACs through secure services with Kudelski, which can then be programmed into your devices on the manufacturing line.
+4. Certificate Delivery: In the CPMS workflow, Silicon Labs will receive delivery of these DACs through secure services with Kudelski, which can then be programmed into your devices on the manufacturing line.
 
 5. DACs are billed after your devices are manufactured and shipped.

@@ -2,7 +2,7 @@
 
 ## Repositories
 
-The following repositories, branches and commit hashes are to be used together in this release of the Silicon Labs Matter Out of Box Experience.
+The following repositories, branches, and commit hashes are to be used together in this release of the Silicon Labs Matter Out of Box Experience.
 
 ### Open Thread Border Router (OTBR)
 
