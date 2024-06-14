@@ -24,7 +24,7 @@ The [Silicon Labs Matter GitHub repo](https://github.com/SiliconLabs/matter) wil
 
 ## Other Resources
 
-**To see release notes** containing a list of features and knowns issues, go to [Matter Release Notes on Silicon Labs Matter Extension](https://github.com/SiliconLabs/matter_extension/releases/tag/v2.2.1).
+**To see release notes** containing a list of features and knowns issues, go to [Matter Release Notes on Silicon Labs Matter Extension](https://github.com/SiliconLabs/matter_extension/releases/tag/v2.3.0).
 
 **If you are new to Matter** or would like more information about Silicon Labs Matter-based products, see the [Matter content on silabs.com](https://www.silabs.com/wireless/matter).
 
