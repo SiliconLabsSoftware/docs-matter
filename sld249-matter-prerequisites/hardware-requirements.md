@@ -2,7 +2,7 @@
 
 To run Matter over Thread or over Wi-Fi requires some Silicon Labs hardware in order to run demos and do development. Following are the hardware requirements for both Thread and Wi-Fi use cases broken down by platform and transport protocol.
 
-The following sections describe the hardware that may be used for Matter+OpenThread (Matter Hub and Accessory Device) and for Matter+Wi-Fi (Accessory Device). The EFR32MG24 is the preferred starting point for Matter MCUs (including the Matter Hub RCP and both Accessory Devices). It provides Secure Vault and can use the internal flash of the device to store an upgrade image. The EFR32MG24 is recommended for running the [Matter over Thread and Matter over Wi-Fi Quick-Start guides](/matter/<docspace-docleaf-version>/matter-overview).
+The following sections describe the hardware that may be used for Matter+OpenThread (Matter Hub and Accessory Device) and for Matter+Wi-Fi (Accessory Device). The EFR32MG24/MG26 is the preferred starting point for Matter MCUs (including the Matter Hub RCP and both Accessory Devices). It provides Secure Vault and can use the internal flash of the device to store an upgrade image. The EFR32MG24/MG26 is recommended for running the [Matter over Thread and Matter over Wi-Fi Quick-Start guides](/matter/<docspace-docleaf-version>/matter-overview).
 
 ## Matter Over Thread "Matter Hub" Requirements
 
@@ -44,7 +44,7 @@ application firmware (such as the Matter Light or Matter Switch) runs on.
 Several different platforms for the Matter Accessory Device are supported.
 Pre-built binary images for the Matter accessory devices are provided on the [Matter Artifacts page](./matter-artifacts.md). Silicon Labs supports development of Matter Accessory Devices for Matter over Thread on the following platforms:
 
-**Note:** The EFR32MG24 is the preferred starting point for Matter MCUs. It provides Secure Vault and can use the internal flash of the device to store an upgrade image.
+**Note:** The EFR32MG24/MG26 is the preferred starting point for Matter MCUs. It provides Secure Vault and can use the internal flash of the device to store an upgrade image.
 
 - **MG24 boards:**
   - BRD4186C / SLWSTK6006A / Wireless Starter Kit / 2.4GHz@10dBm
@@ -52,14 +52,11 @@ Pre-built binary images for the Matter accessory devices are provided on the [Ma
   - BRD4187C / SLWSTK6006A / Wireless Starter Kit / 2.4GHz@20dBm
     - [XG24-RB4187C](https://www.silabs.com/development-tools/wireless/xg24-rb4187c-efr32xg24-wireless-gecko-radio-board)
   - BRD2703A / MG24 Explorer Kit
-
-      **Note**: This board has yet to be released to the public, but it is supported in the Silicon Labs build flow.
-
   - BRD2601B / MG24 Explorer Kit
     - [XG24-DK2601B](https://www.silabs.com/development-tools/wireless/efr32xg24-dev-kit?tab=overview)
   - BRD4319A / SLWSTK6006A / Wireless Starter Kit/ 2.4GHz@20dBm
 
-    **Note**: This board has yet to be released to the public, but it is supported in the Silicon Labs build flow.
+    **Note**:  Only the A00 revision of this board is supported, other revisions do not have enough RAM to run Matter.
 
   - BRD4316A / SLWSTK6006A / Wireless Start Kit / 2.4GHz@10dBm
     - [XGM240-RB4316A](https://www.silabs.com/development-tools/wireless/xgm240-rb4316a-xgm240p-module-radio-board?tab=overview)
@@ -80,7 +77,7 @@ The Silicon Labs Matter over Wi-Fi NCP mode demo and development requires two bo
 
 **Note:**
 
-1. The EFR32MG24 is the preferred starting point for Matter MCUs. It provides Secure Vault and can use the internal flash of the device to store an upgrade image.
+1. The EFR32MG24/MG26 is the preferred starting point for Matter MCUs. It provides Secure Vault and can use the internal flash of the device to store an upgrade image.
 2. The WF200 connectivity firmware image is included in the EFR32MG24 images on the [Matter Artifacts page](./matter-artifacts.md) for running with the WF200 in NCP mode. The Matter application downloads the connectivity firmware onto the WF200 on first-time startup.
 
 The following boards are supported for the Matter over Wi-Fi demos and development:
