@@ -12,7 +12,7 @@ Follow the procedure below to run the Matter demo over Wi-Fi.
 ## Flashing the Connectivity Firmware
 
 - To flash the connectivity firmware on an NCP device, refer to the following guide: [Upgrading Connectivity Firmware for NCP Devices](./loading-firmware-for-ncp-and-soc-boards#upgrading-the-connectivity-firmware-on-ncp-devices).
-- To flash the connectivity firmware on a SiWx917 SoC, refer to the following guide [Upgrading Connectivity Firmware for SoC Devices](./loading-firmware-for-ncp-and-soc-boards#upgrading-the-connectivity-firmware-on-soc-devices).
+- To flash the connectivity firmware on a SiWx917 SoC, refer to the following guide: [Upgrading Connectivity Firmware for SoC Devices](./loading-firmware-for-ncp-and-soc-boards#upgrading-the-connectivity-firmware-on-so-c-devices).
 
 ## Building and Flashing the Matter Application using Simplicity Studio
 

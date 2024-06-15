@@ -4,6 +4,7 @@ The following commands show how to start a new Thread network from the local OTB
 
 ## Basic Mattertool Commands
 
+:::custom-table{width=20%,50%,30%}
 | **Context**   | **Command**              | **Usage**                                                                 |
 | --------------   | ------------------------ | ------------------------------------------------------------------------- |
 | `Initialization` | `mattertool startThread` | Start a Thread network on the OTBR                                     |
@@ -25,6 +26,7 @@ The following commands show how to start a new Thread network from the local OTB
 | `Matter Window Cover` | `mattertool windowcovering go-to-lift-value <LiftValue> <node_id> <endpoint_id>`           | Move the windows cover to a specific lift value         |
 | `Matter Window Cover` | `mattertool windowcovering up-or-open <node_id> <endpoint_id>`           | Open the windows cover                                  |
 | `Matter Occupancy Sensor` | `mattertool occupancysensing read occupancy <node_id> <endpoint_id>`         | Read the occupancy status of a Matter occupancy sensor  |
+:::
 
 You can also use the full chip-tool command set (still using mattertool):
 
@@ -47,7 +49,7 @@ $ mattertool levelcontrol read current-level 106 1
 
 ## Open Thread Border Router (OTBR)
 
-For information on what commits to use for the OTBR and RCP, consult the [Matter Repositories and Commit Hashes page](/matter/<docspace-docleaf-version>/matter-prerequisites).
+For information on what commits to use for the OTBR and RCP, see the [Matter Repositories and Commit Hashes page](/matter/<docspace-docleaf-version>/matter-references/commit-hashes).
 
 The pre-installed OTBR is configured for the infrastructure interface eth0.
 
@@ -149,7 +151,7 @@ Available commands:
 | -s, --ssid STRING        | Wi-Fi AP SSID that the end devices need to connect to |
 | -p, --password STRING    | Wi-Fi AP password                                     |
 
-These configurations are held until overwritten, cleared with cleanVars or when Raspberry Pi reboots.
+These configurations are held until overwritten, cleared with cleanVars, or when Raspberry Pi reboots.
 
 Active variables used by mattertool:
 
@@ -174,7 +176,7 @@ When the startThread command is used, THREAD_DATA_SET will be assigned with the 
 
 ### Scripts Alias
 
-The commands presented above are linked to scripts. You can edit **_.bashrc_** and rename the following alias to your liking.
+The commands presented above are linked to scripts. You can edit **_.bashrc_** and rename the following alias.
 
 ```shell
 $ alias mattertool=‘source $HOME/scripts/matterTool.sh’
