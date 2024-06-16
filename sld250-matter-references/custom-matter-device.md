@@ -124,4 +124,4 @@ For more information on running a Silicon Labs lighting example on a Thunderboar
 
 ## Defining a Custom Cluster
 
-Create an XML file with custom cluster definitions, for an example see [Sample MEI Cluster](https://github.com/project-chip/connectedhomeip/blob/master/src/app/zap-templates/zcl/data-model/chip/sample-mei-cluster.xml). In ZAP click 'Extensions' and add the XML file. The newly defined cluster can then be enabled in any endpoint under the domain for which it was defined (for example General), its Commands and Attributes can be managed like those of any other cluster.
+Create an XML file with custom cluster definitions. For an example, see [Sample MEI Cluster](https://github.com/project-chip/connectedhomeip/blob/master/src/app/zap-templates/zcl/data-model/chip/sample-mei-cluster.xml). In ZAP click 'Extensions' and add the XML file. The newly defined cluster can then be enabled in any endpoint under the domain for which it was defined (for example General), its Commands and Attributes can be managed like those of any other cluster.

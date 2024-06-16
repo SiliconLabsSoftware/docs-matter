@@ -2,7 +2,7 @@
 
 1. In the Project Explorer pane, select the project name.
   
-2. To Enable GNU Debugger Select **Preferences** in the **Launcher** tab.
+2. To Enable GNU Debugger, select **Preferences** in the **Launcher** tab.
 
 3. Expand the **Simplicity Studio** tab, and click **Debuggers**. Select **GNU Debugger** and click **Apply and Close**.
 

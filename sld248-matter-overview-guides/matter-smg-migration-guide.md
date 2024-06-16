@@ -28,6 +28,7 @@ These instructions assume that you have installed Simplicity Studio ([Getting St
 
    The mapping is as follows:
 
+   :::custom-table{width=30%,70%}
    |**Build Flag**|**Simplicity Studio Component**|
    | :- | :- |
    |chip\_build\_libshell|Matter Shell|
@@ -47,7 +48,9 @@ These instructions assume that you have installed Simplicity Studio ([Getting St
    |sl\_matter\_version|Matter Core Components, click on gear icon(configuration) and select Device software version |
    |sl\_matter\_version\_str|Matter Core Components, click on gear icon(configuration) and select Device software version string|
    |sl\_hardware\_version|Matter Core Components, click on gear icon(configuration) and select Device hardware version |
+   :::
 
+   :::custom-table{width=30%,70%}
    |**Presets**|**Simplicity Studio Component**|
    | :- | :- |
    |icd| Icd Management Server Cluster |
@@ -60,6 +63,7 @@ These instructions assume that you have installed Simplicity Studio ([Getting St
    |slc\_generate|Already part of project. No need to do anything|
    |slc\_reuse\_files|Already part of project. No need to do anything|
    |bootloader|Already part of project. No need to do anything|
+   :::
 
 4. Once the application is created in Simplicity Studio, the user can locate all the project files in the **Project Explorer** menu on the left.
 5. ZAP Changes:
@@ -81,4 +85,4 @@ These instructions assume that you have installed Simplicity Studio ([Getting St
 ## Troubleshooting
 
 1. If you receive a ZAP feature level error from Simplicity Studio, add the latest ZAP by following [these instructions](https://docs.silabs.com/ZAP-tool/1.0.0/ZAP-users-guide/update-ZAP).
-2. Get Familiar with [Simplicity Studio Project Configurator](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-developing-with-project-configurator/project-configurator).
+2. Get familiar with [Simplicity Studio Project Configurator](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-developing-with-project-configurator/project-configurator).

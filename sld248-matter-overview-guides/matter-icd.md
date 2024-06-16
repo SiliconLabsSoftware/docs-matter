@@ -48,7 +48,7 @@ The Lower Power Mode is an optional component, installing it will disable:
 
 ## ICD Configurations
 
-The ICD feature-set offers two types of configurations : cluster configurations and subscription configurations.
+The ICD feature-set offers two types of configurations: cluster configurations and subscription configurations.
 The cluster configurations are exposed through the ICD Manager Cluster interface.
 The subscription configurations are exposed through various Matter components configurations and public APIs of the Matter SDK.
 
@@ -58,11 +58,13 @@ The ICD Management Cluster enables configuration of the ICD’s behavior. It is 
 
 The ICDM Cluster exposes three configuration attributes that enable to configure an ICD.
 
+:::custom-table{width=20%,8%,12%,60%}
 | Attribute | Type | Constraints | Description |
 |-|-|-|-|
 | IdleModeInterval      | uint32 | 1 to 64800 | Maximum interval in seconds or milliseconds the server can stay in idle mode |
-| ActiveModeInterval    | uint32 | min 300    | minimum interval in milliseconds the server will stay in active mode |
-| ActiveModeThreshold   | uint32 | min 300    | minimum amount of time in milliseconds the server typically will stay active after network activity when in active mode |
+| ActiveModeInterval    | uint32 | min 300    | Minimum interval in milliseconds the server will stay in active mode |
+| ActiveModeThreshold   | uint32 | min 300    | Minimum amount of time in milliseconds the server typically will stay active after network activity when in active mode |
+:::
 
 ### Configuration Attributes
 
@@ -260,7 +262,7 @@ Matter also provides a retry mechanism for devices to try to re-establish a lost
 
 #### Subscription Synchronization
 
-To avoid forcing an ICD to become active multiple times, the Matter SDK allows an ICD to synchronize its subscription reporting and send all the reports at the same time. The mecansim syncrhonizes the maximum interval of the all subscription to only require the ICD to become active one. This functionality can be enabled by enabling the Synchronous Reports in the Matter Core Components configuration (`CHIP_CONFIG_SYNCHRONOUS_REPORTS_ENABLED` in `sl_matter_config.h`)
+To avoid forcing an ICD to become active multiple times, the Matter SDK allows an ICD to synchronize its subscription reporting and send all the reports at the same time. The mecansim syncrhonizes the maximum interval of the all subscription to only require the ICD to become active one. This functionality can be enabled by enabling the Synchronous Reports in the Matter Core Components configuration (`CHIP_CONFIG_SYNCHRONOUS_REPORTS_ENABLED` in `sl_matter_config.h`).
 
 ## ICD Device Types
 
@@ -292,13 +294,13 @@ Support of the ICD Check-In Protocol use-case and the user active mode trigger i
 These are recommended configurations based on the state of the current implementation of SIT ICDs.
 The recommended configurations are likely to change with the Matter 1.4 release.
 
-##### ICD Default configurations
+**ICD Default configurations**
 
 - Enable ICD Server: TRUE
 - Subscription Timeout Resumption: FALSE
 - Subscription Synchronization: TRUE
 
-##### ICD Matter Configuration flags
+**ICD Matter Configuration flags**
 
 Configuration parameters of the ICD Server Configuration component (sl_matter_icd_config.h):
 
@@ -308,7 +310,7 @@ Configuration parameters of the ICD Server Configuration component (sl_matter_ic
     #define SL_ACTIVE_MODE_THRESHOLD = 1000   // 1s Active Mode Threshold
 ```
 
-##### Openthread Configuration flags
+**Openthread Configuration flags**
 
 Configuration parameters of the ICD Server Configuration component (sl_matter_icd_config.h):
 
@@ -352,7 +354,7 @@ This section lists the requirements that Long Idle Time ICDs must respect to be 
 These are recommended configurations based on the state of the current implementation of LIT ICDs.
 The recommended configurations are likely to change with the Matter 1.4 release.
 
-##### ICD Default configurations
+**ICD Default configurations**
 
 - Enable ICD Server: TRUE
 - Subscription Timeout Resumption: FALSE
@@ -363,7 +365,7 @@ The recommended configurations are likely to change with the Matter 1.4 release.
 
 The last three parameters are configuration parameters in the Matter Core Components (`ICDServerBuildConfig.h`)
 
-##### ICD Matter Configuration flags
+**ICD Matter Configuration flags**
 
 Configuration parameters of the ICD Server Configuration component (`sl_matter_icd_config.h`):
 
@@ -373,7 +375,7 @@ Configuration parameters of the ICD Server Configuration component (`sl_matter_i
     #define SL_ACTIVE_MODE_THRESHOLD = 5000   // 5s Active Mode Threshold
 ```
 
-##### Openthread Configuration flags
+**Openthread Configuration flags**
 
 Configuration parameters of the ICD Server Configuration component (`sl_matter_icd_config.h`):
 

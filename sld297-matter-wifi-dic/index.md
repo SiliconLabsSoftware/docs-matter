@@ -2,7 +2,7 @@
 
 Direct Internet Connectivity (DIC) is a Silicon Labs-only feature to connect Matter devices to proprietary cloud solutions (eg, AWS, GCP, Apple) directly. As such, a Matter Wi-Fi device must support connecting locally on the Matter Fabric, via IPv6, and connecting to the Internet via IPv4.
 
-- Matter devices can be controlled by chip-tool or controller and the respective status of the attribute modified will be published to the cloud.
+- Matter devices can be controlled by chip-tool or controller, and the respective status of the attribute modified will be published to the cloud.
 - Remote users can install the cloud-specific application to get the notifications on the attribute status and to control the device.
 
 ## DIC Feature Diagram

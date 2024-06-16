@@ -8,7 +8,7 @@
 
 ### Ecosystems
 
-"Off the shelf" devices which are compatible with the official implementation of Matter in at least one commercial ecosystem:
+"Off the shelf" devices that are compatible with the official implementation of Matter in at least one commercial ecosystem:
 
 - [Google Matter Hubs](https://developers.home.google.com/matter/supported-devices#choosing_a_device_type)
 - [Apple Matter](https://www.apple.com/home-app/accessories/)
