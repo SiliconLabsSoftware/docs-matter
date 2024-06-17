@@ -1,4 +1,4 @@
-# Serial Port Communication on the Silicon Labs Platform
+# Serial Port Communication on the Silicon Labs Platform (Matter Shell)
 
 The matter-shell exposes the configuration and the management APIs via the matter command line interface (matter CLI). This interface can be used to change the state of the device.
 

@@ -1,4 +1,4 @@
-# Light and Switch Step-by-Step Example
+# Matter over Wi-Fi Light and Switch Step-by-Step Example
 
 ## Setting up the Matter Hub/Chip-Tool
 
@@ -40,7 +40,7 @@ Matter hub/chip-tool are ready and working. Keep the PuTTY session open for the 
 
 ### Software Requirements
 
-To run the Light and Switch Example on SiWx917 SOC, software must be installed. Refer to [Software Requirements](/matter/<dospace-docleaf-version>/matter-prerequisites/software-requirements).
+To run the Light and Switch Example on SiWx917 SOC, software must be installed. Refer to [Software Requirements](/matter/<docspace-docleaf-version>/matter-prerequisites/software-requirements).
 
 **Note**: Switch application is not supported for NCP devices.
 
