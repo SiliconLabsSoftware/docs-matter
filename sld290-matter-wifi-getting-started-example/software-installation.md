@@ -85,9 +85,9 @@ If you already selected the Gecko SDK extension while installing Studio, you may
 
     ![Trust pop-up](images/install-wiseconnect-3-ext-manage-sdks-trust-popup.png)
 
-13. The selected GSDK extension will be displayed.
+13. The selected SiSDK extension will be displayed.
 
-    ![Selected GSDK](images/selected-gsdk.png)
+    ![Selected SiSDK](images/selected-gsdk.png)
 
 14. Click **Apply** and **Close**.
 
@@ -95,7 +95,7 @@ If you already selected the Gecko SDK extension while installing Studio, you may
 
 If you already selected the WiSeConnect extension while installing SImplicity Studio, you may skip this section.
 
-Before installing the WiSeConnect SDK v2.x or v3.x extension, if necessary, upgrade to a compatible GSDK version by following the steps above.
+Before installing the WiSeConnect SDK v2.x or v3.x extension, if necessary, upgrade to a compatible SiSDK version by following the steps above.
 
 Install WiSeConnect SDK v2.x or v3.x through one of the following alternative paths:
 

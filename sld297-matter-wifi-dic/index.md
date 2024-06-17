@@ -46,7 +46,7 @@ A remote user is used to check the state of a Matter device. In this context, MQ
 
     ![Extension refresh in tab](images/dic-extension-refresh.png)
 
-3. In the **SDKs** tab, click  **Gecko SDK** and click **Refresh**. It will refresh the Matter extension code for changes made in step 1.
+3. In the **SDKs** tab, click  **Simplicity SDK** and click **Refresh**. It will refresh the Matter extension code for changes made in step 1.
 
     ![Extension refresh](images/dic-extension-refresh-1.png)
 
@@ -55,7 +55,7 @@ A remote user is used to check the state of a Matter device. In this context, MQ
     - [Creating and Building Project for NCP Board](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/getting-started-efx32-ncp#building-and-flashing-an-application)
     - [Creating and Building Project for SoC Board](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/getting-started-with-soc#building-the-917-soc-matter-accessory-devices-using-simplicity-studio)
 
-**Note**: Matter extension code is located at the following location: `C:\Users\system_name\SimplicityStudio\SDKs\gecko_sdk\extension`.
+**Note**: Matter extension code is located at the following location: `C:\Users\system_name\SimplicityStudio\SDKs\simplicity_sdk\extension`.
 
 ## End-to-End Test of DIC Application
 

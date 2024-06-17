@@ -6,7 +6,7 @@ A single physical Matter device, such as a light, switch, or door lock, can be r
 
 A Matter device may also be part of more than one fabric and thus is represented on each different fabric by a different node. In following figure, a Matter Door Lock device is on both the HomePod and SmartThings fabrics. Thus, the Door Lock is represented by two different nodes; one for the HomePod fabric and another for the SmartThings fabric. The operational node IDs for the two nodes representing the device may be the same or different; the IDs are independent of each other because the nodes are on two different fabrics.
 
-![Devices and their fabrics](resources/devices-fabrics.jpg)
+![Devices and their fabrics](resources/devices-fabrics.png)
 
 The following section describes the Matter data model, including Nodes and Device Types.
 
