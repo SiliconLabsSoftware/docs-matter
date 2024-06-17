@@ -36,7 +36,7 @@ Below are the software tools, packages, and images required for executing Matter
 
 ### Software Packages
 
-- Gecko SDK v4.x
+- Simplicity SDK v2024.x
 - WiSeConnect SDK v3.x
 
 ### Firmware Images

@@ -1,12 +1,12 @@
 # Matter over Thread Light and Switch Step-by-Step Example
 
-This tutorial was created with the Matter Extension of the Gecko SDK (GSDK). Going forward, the latest Matter Extension will be released through the Simplicity SDK (SiSDK).
+This tutorial was created with the Matter Extension of the Simplicity SDK (SiSDK). Going forward, the latest Matter Extension will be released through the Simplicity SDK (SiSDK).
 
 ## Setting up the Matter hub
 
 1. Prepare a compatible dev board to become your Matter hub's ot-rcp (see details in the [introduction](./index.md)):
 
-   1. Start Simplicity Studio 5 with the latest GSDK and Silicon Labs Matter GSDK Extension installed (see details in the [Overview](/matter/<docspace-docleaf-version>/matter-overview#software-requirements)).
+   1. Start Simplicity Studio 5 with the latest SiSDK and Silicon Labs Matter SiSDK Extension installed (see details in the [Overview](/matter/<docspace-docleaf-version>/matter-overview#software-requirements)).
 
       ![the Matter extension](./resources/image1.png)
 

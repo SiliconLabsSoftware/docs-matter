@@ -69,7 +69,7 @@ Below are the software tools, packages, and images required for executing Matter
 
 ### Software Packages
 
-- Gecko SDK v4.x
+- Simplicity SDK v2024.x
 - WiSeConnect SDK
   - For RS9116 use WiSeConnect SDK v2.x
   - For SiWx917 use WiSeConnect SDK v3.x
