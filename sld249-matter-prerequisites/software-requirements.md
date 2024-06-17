@@ -1,6 +1,6 @@
 # Matter Software Requirements
 
-This page provides information on the required softwares tools, packages and firmware for developing Silicon Labs Matter over Thread and Wi-Fi devices.
+This page provides information on the required softwares tools, packages, and firmware for developing Silicon Labs Matter over Thread and Wi-Fi devices.
 
 ## Software Tools Required
 
@@ -34,9 +34,9 @@ Below are the software tools both optional and required for developing Matter ov
 
 1. [SiSDK package](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/software-installation#installation-of-gecko-sdk-extension), which can be installed as part of the Simplicity Studio tool installation.
 
-2. [WiseConnect SDK v2.x for RS9116 NCP](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/software-installation#installation-of-wiseconnect-sdk-v2x-or-v3x-extension), which can be installed as part of the Simplicity Studio tool installation.
+2. [WiSeConnect SDK v2.x for RS9116 NCP](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/software-installation#installation-of-wiseconnect-sdk-v2x-or-v3x-extension), which can be installed as part of the Simplicity Studio tool installation.
 
-3. [Wiseconnect SDK v3.x for SiWx917 NCP](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/software-installation#installation-of-wiseconnect-sdk-v2x-or-v3x-extension), which can be installed as part of the Simplicity Studio tool installation.
+3. [WiSeConnect SDK v3.x for SiWx917 NCP](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/software-installation#installation-of-wiseconnect-sdk-v2x-or-v3x-extension), which can be installed as part of the Simplicity Studio tool installation.
 
 4. [Firmware for RS9116 NCP](./matter-artifacts.md#rs9116-firmware)
 

@@ -12,7 +12,7 @@ The following section describes the Matter data model, including Nodes and Devic
 
 ## Nodes
 
-In the following figure, the hierarchical structure of endpoint, cluster, attributes/commands/events is shown from left to right.
+In the following figure, the hierarchical structure of endpoint, cluster, and attributes/commands/events is shown from left to right.
 
 ![Matter Node Overview](resources/node-overview.jpg)
 
@@ -70,7 +70,7 @@ Clusters have two main types:
 - **Server cluster**: Stateful, holds the data for the attributes, events, and commands.
 - **Client cluster**: Stateless, interacts with other server clusters by reading and writing attributes, reading remote events, and/or invoking methods.
 
-Any cluster can be a server or a client, giving nodes the ability to both store information and horizontally communicate with other nodes. For a light and switch example, a client cluster in the light would send a command to a server cluster in the light to toggle the on/off feature of the light. The following figure illustrates examples of cluster communication. On the top is a light and switch example and on the bottom is an app controlling a door lock.
+Any cluster can be a server or a client, giving nodes the ability to both store information and horizontally communicate with other nodes. For a light and switch example, a client cluster in the light would send a command to a server cluster in the light to toggle the on/off feature of the light. The following figure illustrates examples of cluster communication. On the top is a light and switch example, and on the bottom is an app controlling a door lock.
 
 ![Examples of cluster communication](resources/communication-examples.jpg)
 

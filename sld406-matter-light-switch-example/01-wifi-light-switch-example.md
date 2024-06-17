@@ -2,7 +2,7 @@
 
 ## Setting up the Matter Hub/Chip-Tool
 
-This procedure prepares the Raspberry Pi 4B (RPi4B) to become a Matter Hub. You should have downloaded the Matter Hub Raspberry Pi image and Raspberry Pi Imager as described in the [Overview](/matter/<docspace-docleaf-version>/matter-overview). The Raspberry Pi image contains software called chip-tool, which provides a command-line interface into the Matter protocol.
+This procedure prepares the Raspberry Pi 4B (RPi4B) to become a Matter hub. You should have downloaded the Matter Hub Raspberry Pi image and Raspberry Pi Imager as described in the [Overview](/matter/<docspace-docleaf-version>/matter-overview). The Raspberry Pi image contains software called chip-tool, which provides a command-line interface into the Matter protocol.
 
 1. Install the Raspberry Pi Imager and insert the SD card into the PC to flash the image.
 
@@ -106,8 +106,8 @@ Now two Matter accessory devices (MADs) are on the network and ready to be used.
 
 1. In a PuTTY session to the Matter hub, use the chip-tool to test the Matter light device.
 
-   1. Control the light status of the light MAD Using `./chip-tool onoff on nodeID  1`. You can also use `chip-tool onoff off`  and `chip-tool toggle`.
-   2. For the dev board with buttons available, you can use **BTN1** to toggle the light status locally.
+   1. Control the light status of the light MAD using `./chip-tool onoff on nodeID  1`. You can also use `chip-tool onoff off`  and `chip-tool toggle`.
+   2. For the dev board with buttons available, use **BTN1** to toggle the light status locally.
 
 2. In a PuTTY session to the Matter hub, use the chip-tool to bind the light_switch MAD to the light MAD, thus allowing the switch to control the light.
 
@@ -123,11 +123,11 @@ Now two Matter accessory devices (MADs) are on the network and ready to be used.
 
         To read the ACL for a Matter device use: `./chip-tool accesscontrol read acl`**`nodeID 0`**, where the highlighted parameters are:
 
-      - **nodeID**: The nodeID of the Matter device (Light or Light_switch) to read the ACL contents from.
+        - **nodeID**: The nodeID of the Matter device (Light or Light_switch) to read the ACL contents from.
 
-      - **0**: The endpoint in the Matter device that holds the ACL. This is always 0.
+        - **0**: The endpoint in the Matter device that holds the ACL. This is always 0.
 
-       **For Example**:- `./chip-tool accesscontrol write acl '[{"fabricIndex": 1, "privilege": 5, "authMode": 2, "subjects": [112233], "targets": null }, {"fabricIndex": 1, "privilege": 3, "authMode": 2, "subjects": [2], "targets": null }]' 1111 0`
+           **For Example**:- `./chip-tool accesscontrol write acl '[{"fabricIndex": 1, "privilege": 5, "authMode": 2, "subjects": [112233], "targets": null }, {"fabricIndex": 1, "privilege": 3, "authMode": 2, "subjects": [2], "targets": null }]' 1111 0`
 
    2. Second, bind the switch's write command to the light. This is done by updating the binding table of the Matter light_switch device. This can be done using the command: `./chip-tool binding write binding '[ { "fabricIndex" : 1 , "node" :`**`nodeID-light`**,` "endpoint" : `**`1`**,`"cluster" :`**`6`**`} ]'`**`nodeID-switch 1`**, where the highlighted parameters are:
 
@@ -143,10 +143,10 @@ Now two Matter accessory devices (MADs) are on the network and ready to be used.
 
         The binding table from a Matter device can be read using: `./chip-tool binding read binding`**`nodeID-switch 1`**, where the highlighted parameters are:
 
-      - **nodeID-switch**: The node ID of the Matter switch.
+        - **nodeID-switch**: The node ID of the Matter switch.
 
-      - **1**: The application endpoint in the switch that holds the binding table. This is always 1.
+        - **1**: The application endpoint in the switch that holds the binding table. This is always 1.
   
-         **For Example**:- `./chip-tool binding write binding '[{"fabricIndex": 1, "node": 1, "endpoint": 1, "cluster":6}]' 2222 1`
+           **For Example**:- `./chip-tool binding write binding '[{"fabricIndex": 1, "node": 1, "endpoint": 1, "cluster":6}]' 2222 1`
 
 3. With the binding complete, a button press (BTN1) on the Matter light_switch device should now toggle the light status of Matter light device.

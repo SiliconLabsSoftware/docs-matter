@@ -8,20 +8,17 @@ The following sections describe the hardware that may be used for Matter+OpenThr
 
 If you are running Matter over Thread and do not have a platform on which to run the Open Thread Border Router and chip-tool, Silicon Labs recommends that you run them on a Raspberry Pi. To do so you will need:
 
-- **Raspberry Pi**
+**Raspberry Pi**
 
-  - Raspberry Pi 4 with an SD card with storage >= 64 GB
+- Raspberry Pi 4 with an SD card with storage >= 64 GB
 
 The Raspberry Pi 4 is used to run the Open Thread Border Router and the chip-tool. In this documentation the combination of this software on the Raspberry Pi is also called the 'Matter Hub' A software image for the Raspberry Pi is provided on the [Matter Artifacts page](./matter-artifacts.md).
 
-- **Radio Co-Processor (RCP)**
+**Radio Co-Processor (RCP)**
 
-The Matter Hub needs a 15.4 Radio Co-Processor (RCP) in order to create and interact with the Thread network. The RCP can be any Silicon Labs
-development board that is capable of running the OpenThread RCP firmware.
-The RCP radio board is connected to the Raspberry Pi via USB.
+The Matter Hub needs a 15.4 RCP in order to create and interact with the Thread network. The RCP can be any Silicon Labs development board that is capable of running the OpenThread RCP firmware. The RCP radio board is connected to the Raspberry Pi via USB.
 
-Over 60 Silicon Labs boards support running the RCP firmware. To build an
-image for a board which is not listed here, download and build your image in Simplicity Studio. Pre-built OpenThread RCP firmware images are provided for the following boards on the [Matter Artifacts page](./matter-artifacts.md):
+Over 60 Silicon Labs boards support running the RCP firmware. To build an image for a board that is not listed here, download and build your image in Simplicity Studio. Pre-built OpenThread RCP firmware images are provided for the following boards on the [Matter Artifacts page](./matter-artifacts.md):
 
 **Note:** The EFR32MG24/MG26 is the preferred starting point for Matter MCUs. It provides Secure Vault and can use the internal flash of the device to store an upgrade image.
 
@@ -39,14 +36,11 @@ image for a board which is not listed here, download and build your image in Sim
 
 ## Matter Over Thread Accessory Device Requirements
 
-The Matter Accessory Device (MAD) is the actual device that the Matter
-application firmware (such as the Matter Light or Matter Switch) runs on.
-Several different platforms for the Matter Accessory Device are supported.
-Pre-built binary images for the Matter accessory devices are provided on the [Matter Artifacts page](./matter-artifacts.md). Silicon Labs supports development of Matter Accessory Devices for Matter over Thread on the following platforms:
+The Matter Accessory Device (MAD) is the actual device that the Matter application firmware (such as the Matter Light or Matter Switch) runs on. Several different platforms for the MAD are supported. Pre-built binary images for the MADs are provided on the [Matter Artifacts page](./matter-artifacts.md). Silicon Labs supports development of MADs for Matter over Thread on the following platforms:
 
 **Note:** The EFR32MG24/MG26 is the preferred starting point for Matter MCUs. It provides Secure Vault and can use the internal flash of the device to store an upgrade image.
 
-- **MG24 boards:**
+- **MG24 boards**
   - BRD4186C / SLWSTK6006A / Wireless Starter Kit / 2.4GHz@10dBm
     - [XG24-RB4186C](https://www.silabs.com/development-tools/wireless/xg24-rb4186c-efr32xg24-wireless-gecko-radio-board)
   - BRD4187C / SLWSTK6006A / Wireless Starter Kit / 2.4GHz@20dBm
@@ -63,7 +57,7 @@ Pre-built binary images for the Matter accessory devices are provided on the [Ma
   - BRD4317A / SLWSTK6006A / Wireless Starter Kit/ 2.4GHz@20dBm
     - [XGM240-RB4317A](https://www.silabs.com/development-tools/wireless/xgm240-rb4317a-xgm240p-module-radio-board?tab=overview)
 
-- **MG26 boards:**
+- **MG26 boards**
   - BRD4116A / 2.4GHz@10dBm
   - BRD4117A / 2.4GHz@20dBm
   - BRD4118A / 2.4GHz@20dBm
@@ -73,16 +67,16 @@ Pre-built binary images for the Matter accessory devices are provided on the [Ma
 
 ### Matter Over Wi-Fi Accessory Device Requirements for NCP Mode
 
-The Silicon Labs Matter over Wi-Fi NCP mode demo and development requires two boards: the Silicon Labs EFR32 Radio board to run the Matter code and either the RS9116, SiWx917 or WF200 to run the Wi-Fi protocol stack. Pre-built images for the EFR32, and also for SiWx917 or RS9116 connectivity firmware, are provided on the [Matter Artifacts page](./matter-artifacts.md).
+The Silicon Labs Matter over Wi-Fi NCP mode demo and development requires two boards: the Silicon Labs EFR32 Radio board to run the Matter code and either the RS9116, SiWx917, or WF200 to run the Wi-Fi protocol stack. Pre-built images for the EFR32, and also for SiWx917 or RS9116 connectivity firmware, are provided on the [Matter Artifacts page](./matter-artifacts.md).
 
-**Note:**
+**Notes:**
 
 1. The EFR32MG24/MG26 is the preferred starting point for Matter MCUs. It provides Secure Vault and can use the internal flash of the device to store an upgrade image.
 2. The WF200 connectivity firmware image is included in the EFR32MG24 images on the [Matter Artifacts page](./matter-artifacts.md) for running with the WF200 in NCP mode. The Matter application downloads the connectivity firmware onto the WF200 on first-time startup.
 
 The following boards are supported for the Matter over Wi-Fi demos and development:
 
-- **MG24 boards:**
+- **MG24 boards**
 
   - BRD4186C / SLWSTK6006A / Wireless Starter Kit / 2.4GHz@10dBm
     - [XG24-RB4186C](https://www.silabs.com/development-tools/wireless/xg24-rb4186c-efr32xg24-wireless-gecko-radio-board)
@@ -114,11 +108,11 @@ The following boards are supported for the Matter over Wi-Fi demos and developme
 
 ### Matter over Wi-Fi Accessory Device Requirements for SoC Mode
 
-The Silicon Labs Matter over Wi-Fi demo and development for SoC mode requires the SiWx917 SoC board that supports Matter over Wi-Fi in a single-chip package - the integrated MCU is dedicated for peripheral and application-related processing (Matter), while the ThreadArch® runs the wireless and networking protocol stacks.
+The Silicon Labs Matter over Wi-Fi demo and development for SoC mode requires the SiWx917 SoC board that supports Matter over Wi-Fi in a single-chip package. The integrated MCU is dedicated for peripheral and application-related processing (Matter), while the ThreadArch® runs the wireless and networking protocol stacks.
 
 Pre-built images for the SiWx917 connectivity firmware are available as per the instructions on the [Matter Artifacts page](./matter-artifacts.md). The following boards are supported for the Matter over Wi-Fi demos and development:
 
-- **Wi-Fi SoC boards:**
+- **Wi-Fi SoC boards**
 
   - SiWx917 / BRD4002A / Wireless Starter Kit
   - SiWx917 SoC Mode
@@ -129,7 +123,7 @@ Pre-built images for the SiWx917 connectivity firmware are available as per the 
 
 ### Additional Matter Over Wi-Fi Hardware Requirements
 
-In addition to your Matter over Wi-Fi Accessory Device, you will need the following for both running the demo and for development:
+In addition to your Matter over Wi-Fi Accessory Device, you need the following for both running the demo and for development:
 
 - Windows/Linux/MacOS computer with a USB port
 - USB cable for connecting WSTK Board to Computer

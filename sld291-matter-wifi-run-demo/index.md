@@ -12,7 +12,7 @@ Follow the procedure below to run the Matter demo over Wi-Fi.
 ## Flashing the Connectivity Firmware
 
 - To flash the connectivity firmware on an NCP device, refer to the following guide: [Upgrading Connectivity Firmware for NCP Devices](./loading-firmware-for-ncp-and-soc-boards#upgrading-the-connectivity-firmware-on-ncp-devices).
-- To flash the connectivity firmware on a SiWx917 SoC, refer to the following guide [Upgrading Connectivity Firmware for SoC Devices](./loading-firmware-for-ncp-and-soc-boards#upgrading-the-connectivity-firmware-on-soc-devices).
+- To flash the connectivity firmware on a SiWx917 SoC, refer to the following guide: [Upgrading Connectivity Firmware for SoC Devices](./loading-firmware-for-ncp-and-soc-boards#upgrading-the-connectivity-firmware-on-so-c-devices).
 
 ## Building and Flashing the Matter Application using Simplicity Studio
 
@@ -23,10 +23,10 @@ Follow the procedure below to run the Matter demo over Wi-Fi.
 
 - To flash the application for EFR32 Board using Simplicity Commander, refer to [Flash EFR32 Binaries using Simplicity Commander](./flashing-using-commander#flashing-the-efr32-using-simplicity-commander).
 
-   **Note**: For EFR32, you must use the **.s37** format file only.
+   **Note**: For EFR32, you must use the **.s37** file format only.
 - To flash the application for the SiWx917 SoC Board using Simplicity Commander, refer to [Flash SiWx917 SoC Matter Pre-Built Binaries](./flashing-using-commander#flashing-the-siwx917-soc-matter-pre-built-binary-using-simplicity-commander).
   
-   **Note**: For SiWx917 SoC, use the **.rps** format file only.
+   **Note**: For SiWx917 SoC, use the **.rps** file format only.
 
 ## Setting up the Raspberry Pi
 

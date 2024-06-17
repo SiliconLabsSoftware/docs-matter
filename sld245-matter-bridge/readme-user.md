@@ -285,4 +285,4 @@ For example, if chip-tool tries to read OnOff attribute of OnOff cluster on zw-C
 
 The above MQTT debug messages can also be traced in Unify logs.
 
-- Alternatively, to disable a particular command or disable reading particular attributes from the test refer to PICS Usage from [README](https://github.com/SiliconLabs/matter/blob/latest/src/app/tests/suites/README.md)
+- Alternatively, to disable a particular command or disable reading particular attributes from the test refer to PICS Usage from [README](https://github.com/SiliconLabs/matter/blob/latest/src/app/tests/suites/README.md).

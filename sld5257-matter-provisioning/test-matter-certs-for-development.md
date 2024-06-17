@@ -113,7 +113,7 @@ Once you have finished generating you Certificates, you can proceed with install
 
 ## Provisioning Tool
 
->Important: Please review the required installations in the [Provisioner Script](https://github.com/SiliconLabs/matter_extension/tree/v2.3.0/provision#provisioner-script) section.
+>Important: Please review the required installations in the [Provision Script](https://github.com/SiliconLabs/matter/tree/release_2.3.0-1.3/provision#provision-script) section.
 
 ### Required Installation
 

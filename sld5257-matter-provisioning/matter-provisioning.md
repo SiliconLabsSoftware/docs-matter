@@ -144,8 +144,9 @@ Provision Protocol v2.x.
 Parameter files define the name, type, and restrictions of the arguments recognized by the target device. The `modules/parameters.yaml`
 file defines the well-known (default) parameters used by the automatic provisioning action.
 
-### Well-known Parameters
+### Well-Known Parameters
 
+:::custom-table{width=25%,15%,15%,45%}
 | Parameters                | Conformance          | Type               | Description                                                                             |
 | ------------------------- | -------------------- | ------------------ | --------------------------------------------------------------------------------------- |
 | -v,  --version            | optional             | string             | Provisioning version.   |
@@ -197,6 +198,7 @@ file defines the well-known (default) parameters used by the automatic provision
 | -dx, --pkcs12             | optional^3 | string             | Path to the PKCS#12 attestation certificates file. Formerly --att_certs.        |
 | -dn, --common_name        | optional^4 | string             | Common Name to use in the Device Certificate (DAC) .                |
 | -ok, --ota_key            | optional             | string             | Over The Air (OTA) update key.                |
+:::
 
 ^1 Use xxxxxxxxx for serial, xxx.xxx.xxx.xxx[:yyyy] for TCP, or bt:XXXXXXXXXXXXXXXX for bluetooth
 ^2 If not provided (or zero), the `discriminator` is generated at random
