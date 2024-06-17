@@ -34,7 +34,7 @@ Note: Building with aws_ota_wifi_dic component enables matter_dic component by d
 
  ![Select SDK](images/select-studio-sdk-option.png)
 
-- Expand **Gecko SDK** and click the **Refresh** button from side menu.
+- Expand **Simplicity SDK** and click the **Refresh** button from side menu.
 
  ![Select Refresh](images/select-refresh-option.png)
 

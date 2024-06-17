@@ -4,9 +4,7 @@ The Matter protocol leverages existing IP technologies, including Wi-Fi and Thre
 
 Silicon Labs supports Matter on both 802.15.4 (Thread) and 802.11 (Wi-Fi) transport protocols. The Thread development use case differs from Wi-Fi because the Thread protocol requires an OpenThread Border Router (OTBR).
 
-The Unify Matter Bridge is an application that makes legacy devices, such as
-Z-Wave and Zigbee devices, accessible on a Matter fabric. It does so by acting as
-an *IoT Service* in a Unify Framework.
+The Unify Matter Bridge is an application that makes legacy devices, such as Z-Wave and Zigbee devices, accessible on a Matter fabric. It does so by acting as an *IoT Service* in a Unify Framework.
 
 ![Silicon Labs Matter Summary](resources/silicon-labs-matter.png)
 
@@ -14,17 +12,17 @@ Device: SiWx917 SoC
 
 ![Silicon Labs - SiWx917 soc](resources/silabs-matter-siwx917.png)
 
-## Two Paths for Development
+## Path for Development
 
-These pages are for users who want to develop Matter applications in Simplicity Studio. The Simplicity Studio development path is the preferred path if you are looking for a GUI-based development experience in which you can create production-ready projects from a well-tested library. The Simplicity Studio development path also natively supports development on the Windows operating system. As a result, Windows users should use Simplicity Studio for their development environment.
+These pages are for developing Matter applications with the Matter Extension. The Matter Extension is the preferred development path and is available through Simplicity Studio and Standalone via SLC-CLI. The Matter Extension was previously released as an extension of the Gecko SDK (GSDK). Moving forward, the Matter Extension will be an extension of Silicon Labs Simplicity SDK (SiSDK).
 
-Alternatively you can develop applications directly out of the [Silicon Labs Matter GitHub repo](https://github.com/SiliconLabs/matter). Complete documentation for the GitHub development use case is provided in the [Silicon Labs Matter GitHub Documentation](https://siliconlabs.github.io/matter/latest/). This path is best for those who are experienced working with Matter and Silicon Labs products, prefer working with GitHub and a workflow that's not IDE-driven, or need access to newer features sooner at the cost of lesser test coverage.
+Simplicity Studio is a GUI-based development experience in which you can create production-ready projects from a well-tested library. The Simplicity Studio development path also natively supports development on the Windows operating system. As a result, Windows users should use Simplicity Studio for their development environment. SLC-CLI offers command-line access to application configuration and generation of the Matter Extension.
 
-**Note: Silicon Labs Matter GitHub is being phased out in favor of using the Matter GSDK Extension that is available thru Studio and standalone via SLC-CLI.**
+The [Silicon Labs Matter GitHub repo](https://github.com/SiliconLabs/matter) will no longer be updated to reflect newer Matter versions **after Matter 1.3**. As a result, this is no longer a recommended path for Matter Development of **new products**.
 
 ## Other Resources
 
-**To see release notes** containing a list of features and knowns issues, go to [Matter Release Notes on Silicon Labs Matter Extension](https://github.com/SiliconLabs/matter_extension/releases/tag/v2.2.2).
+**To see release notes** containing a list of features and knowns issues, go to [Matter Release Notes on Silicon Labs Matter Extension](https://github.com/SiliconLabs/matter_extension/releases/tag/v2.3.0).
 
 **If you are new to Matter** or would like more information about Silicon Labs Matter-based products, see the [Matter content on silabs.com](https://www.silabs.com/wireless/matter).
 

@@ -2,7 +2,7 @@
 
 ## Kudelski PKI Infrastructure
 
-Silicon Labs has partnered with Kudelski Security to generate Matter Device Attestation Certificates (DAC) for our Custom Part Manufacturing Service (CPMS). "Kudelski IoT’s Matter Product Attestation Certificate Service enables companies to get scalable access to Device Attestation Certificates, allowing each device to join the Matter ecosystem with confidence and ease". Kudelski is a certified CSA certificate authority that forms the root Product Attestation Authority (PAA) certificate in the CPMS Matter certificate chain. Each PAA owns a public and private key along with their self-signed PAA certificate which will be used to sign PAI certificates. Kudelski also manages the Product Attestation Intermediate (PAI) keys for CPMS used to sign the unique Device Attestation Certificates (DAC). PAIs are submitted in the form of a CSR request to the PAA to be signed. These three items, the PAA, PAI, and DAC as well as a Certification Declaration form the basis for a device to attest to the Matter network.
+Silicon Labs has partnered with Kudelski Security to generate Matter Device Attestation Certificates (DAC) for our Custom Part Manufacturing Service (CPMS). "Kudelski IoT’s Matter Product Attestation Certificate Service enables companies to get scalable access to Device Attestation Certificates, allowing each device to join the Matter ecosystem with confidence and ease". Kudelski is a certified Connectivity Standards Alliance certificate authority that forms the root Product Attestation Authority (PAA) certificate in the CPMS Matter certificate chain. Each PAA owns a public and private key along with their self-signed PAA certificate which will be used to sign PAI certificates. Kudelski also manages the Product Attestation Intermediate (PAI) keys for CPMS used to sign the unique Device Attestation Certificates (DAC). PAIs are submitted in the form of a CSR request to the PAA to be signed. These three items, the PAA, PAI, and DAC as well as a Certification Declaration form the basis for a device to attest to the Matter network.
 
 ## What is Required of My Organization with the Silicon Labs/Kudelski Security Partnership?
 
@@ -14,7 +14,7 @@ After creating your account, your organization will want to create a Product Att
 
 Kudelski IoT has done the heavy lifting for you. Kudelski is a well-established Public Key Infrastructure (PKI) provider that offers Matter certificates that allow you to be a part of the Matter ecosystem. Kudelski IoT uses its keySTREAM PKI-as-a-Service application to help manage your Matter PKI artifacts.
 
-- Kudelski has done the heavy lifting of becoming a Connectivity Standards Alliance (CSA) authorized PAA for you.
+- Kudelski has done the heavy lifting of becoming a Connectivity Standards Alliance authorized PAA for you.
 
 - Kudelski has been creating device credentials for more than 30 years and is a trusted leader in PKI-as-a-Service.
 
@@ -26,18 +26,18 @@ Kudelski IoT has done the heavy lifting for you. Kudelski is a well-established 
 
 - Spare yourself time, and get to market sooner with CPMS.  CPMS already handles this for you!
 
-Becoming your own PAA and issuing your own signed attestation certificates for Matter is no small undertaking. CSA requires very strict requirements for becoming a trusted certificate authority, as well as rigorous security and privacy requirements, hardware, infrastructure, governance, and much more. This is a costly endeavor that may include specialized hardware, such as on and offline Hardware Security Modules (HSM), specialized facility and operational needs, and much more that can quickly be out of reach of all but the largest of organizations, not to mention the time required to put these processes in place. In most cases, partnering with an established provider is far more economical for vendors and will get you up and running as quickly as possible.
+Becoming your own PAA and issuing your own signed attestation certificates for Matter is no small undertaking. Connectivity Standards Alliance requires very strict requirements for becoming a trusted certificate authority, as well as rigorous security and privacy requirements, hardware, infrastructure, governance, and much more. This is a costly endeavor that may include specialized hardware, such as on and offline Hardware Security Modules (HSM), specialized facility and operational needs, and much more that can quickly be out of reach of all but the largest of organizations, not to mention the time required to put these processes in place. In most cases, partnering with an established provider is far more economical for vendors and will get you up and running as quickly as possible.
 
 ## What Should I Expect When I Create an Account with Kudelski?
 
 There are a few processes in place to get you set up and working quickly to start receiving signed DACs from Kudelski:
 
-1. Account Setup - If you are already a CSA member, you can start the setup of your account (fees may apply) on Kudelski's cloud application. If you are not a CSA member yet, review the CSA requirements. Per CSA requirements, Kudelski will conduct some manual background checks. Your organization will also need to sign the Kudelski Requestor Agreement Document (RAD) document before any PAIs are created.
+1. Account Setup: If you are already a Connectivity Standards Alliance member, you can start the setup of your account (fees may apply) on Kudelski's cloud application. If you are not a member yet, review the Connectivity Standards Alliance requirements. Per their requirements, Kudelski will conduct some manual background checks. Your organization will also need to sign the Kudelski Requestor Agreement Document (RAD) document before any PAIs are created.
 
-2. New Product Family Setup - Once your Product Family is successfully certified by CSA, Kudelski can create your vendor-specific Product Attestation Intermediate (PAI) on keySTREAM for that Product Family.
+2. New Product Family Setup: Once your Product Family is successfully certified by Connectivity Standards Alliance, Kudelski can create your vendor-specific Product Attestation Intermediate (PAI) on keySTREAM for that Product Family.
 
-3. Certificate Request - Once a PAI is created, you can request a batch of certificates for your devices. For the CPMS workflow, you will need to agree (with Kudelski) to allow Silicon Labs to be a requestor and receiver of DACs in order for the CPMS integrations to successfully request and receive those DACs during manufacturing.
+3. Certificate Request: Once a PAI is created, you can request a batch of certificates for your devices. For the CPMS workflow, you will need to agree (with Kudelski) to allow Silicon Labs to be a requestor and receiver of DACs in order for the CPMS integrations to successfully request and receive those DACs during manufacturing.
 
-4. Certificate Delivery - In the CPMS workflow, Silicon Labs will receive delivery of these DACs through secure services with Kudelski, which can then be programmed into your devices on the manufacturing line.
+4. Certificate Delivery: In the CPMS workflow, Silicon Labs will receive delivery of these DACs through secure services with Kudelski, which can then be programmed into your devices on the manufacturing line.
 
 5. DACs are billed after your devices are manufactured and shipped.

@@ -10,7 +10,7 @@ See [How to Set Up an Apple Home Ecosystem](./apple-ecosystem-setup). Then use t
 
     ![Application design view](./images/matter-apple-application-info.png)
 
-4. Open the commissioning window for the Google Home Pod by tapping **Turn on Pairing Mode**.
+4. Open the commissioning window for the Google Home Pod by tapping **Turn On Pairing Mode**.
 5. The Setup Code appears, with a message printed as shown below in the Apple Home App.
 
     ![Apple Home App setup code](./images/matter-apple-application-setup-code.png)

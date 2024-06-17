@@ -12,7 +12,7 @@ This build guide cross-compiles for arm64 architecture to be run on Unify's refe
 
 ## Check Out Submodules
 
-> 🔴 Assuming you have cloned the matter repo in `~/matter` 
+> 🔴 Assuming you have cloned the matter repo in `~/matter`:
 
 Check out the necessary submodules with the following command.
 
@@ -20,9 +20,9 @@ Check out the necessary submodules with the following command.
 dev-machine:~/matter$ ./scripts/checkout_submodules.py --platform linux
 ```
 
-## Clone and Stage the Unify SDK Repository 
+## Clone and Stage the Unify SDK Repository
 
-> 🔴 Assuming you have cloned the matter repo in `~/matter` 
+> 🔴 Assuming you have cloned the matter repo in `~/matter`:
 
 ```bash
 dev-machine:~/matter$ git clone --depth 1 https://github.com/SiliconLabs/UnifySDK.git --recursive ../uic-matter
@@ -34,10 +34,10 @@ dev-machine:~/matter$ git clone --depth 1 https://github.com/SiliconLabs/UnifySD
 dev-machine:~/matter$ docker build -t unify-matter silabs_examples/unify-matter-bridge/docker/
 ```
 
-## Run the docker container  (arm64 compilation)
+## Run the Docker Container  (arm64 compilation)
 
 > 🔴
-> Make sure the directory structure is like follows where Unify repo `uic-matter/` and matter repo `matter/` are at same directory level
+> Make sure the directory structure is like follows where Unify repo `uic-matter/` and matter repo `matter/` are at same directory level.
 > 
 > ```shell
 > .
@@ -77,7 +77,7 @@ If you want to be able to use Zap to generate code from Unify XML files you need
 root@docker:/uic$ export UCL_XML_PATH=$PWD/stage/share/uic/ucl
 ```
 
-## Run activate in matter 
+## Run Activate in Matter
 
 Once you have all the necessary submodules, source the Matter environment with the following command. This loads a number of build tools and makes sure the correct toolchains and compilers are used for compiling the Unify Matter Bridge.
 
@@ -120,14 +120,9 @@ Unit testing is always a good idea for quality software. Documentation on writin
 
 ## Troubleshooting
 
-1. If you do not source the `matter/scripts/activate.sh` as described above in [Set Up the Matter Build Environment](#set-up-the-matter-build-environment), `gn` and other common
-   build tools will not be found.
-2. If you do not export the `pkgconfig` for the `aarch64-linux-gnu` toolchain as described above in [Build libunify](#build-libunify)
-   you will get errors such as `G_STATIC_ASSERT(sizeof (unsigned long long) == sizeof (guint64));`
-3. If you are compiling unit tests, do not try to compile the Unify Matter Bridge at
-   the same time. This will not work as when compiling unit tests you are also
-   compiling unit tests for all other sub-components.
+1. If you do not source the `matter/scripts/activate.sh` as described above, `gn` and other common build tools will not be found.
+2. If you do not export the `pkgconfig` for the `aarch64-linux-gnu` toolchain as described above in [Build libunify](#build-libunify), you will get errors such as `G_STATIC_ASSERT(sizeof (unsigned long long) == sizeof (guint64));`.
+3. If you are compiling unit tests, do not try to compile the Unify Matter Bridge at the same time. This will not work as when compiling unit tests you are also compiling unit tests for all other subcomponents.
 4. If you encounter errors linking to `libunify`, try redoing the [`libunify` compile steps](#build-libunify).
-5. Encountering problems with the submodules can be due to trying to check out
-   the submodules inside the docker container.
-6. If the Unify Matter Bridge gets stuck while booting. Try to pass `--args="chip_config_network_layer_ble=false"` to `gn gen` command while building
+5. Encountering problems with the submodules can be due to trying to check out the submodules inside the docker container.
+6. If the Unify Matter Bridge gets stuck while booting. Try to pass `--args="chip_config_network_layer_ble=false"` to `gn gen` command while building.

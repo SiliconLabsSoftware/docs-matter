@@ -1,6 +1,6 @@
 # Using Custom Part Manufacturing Services (CPMS)
 
-Silicon Labs offers Matter support through our Custom Part Manufacturing Services (CPMS). Your organization can order your Matter devices directly from Silicon Labs or a third-party vendor utilizing our CPMS services. Silicon Labs is one of the few providers that can program your information directly to silicon through secure automation with our partner, Kudelski Security.
+Silicon Labs offers Matter support through our [Custom Part Manufacturing Services (CPMS)](https://docs.silabs.com/iot-security/latest/iot-security-cpms/).Your organization can order your Matter devices directly from Silicon Labs or a third-party vendor utilizing our CPMS services. Silicon Labs is one of the few providers that can program your information directly to silicon through secure automation with our partner, Kudelski Security.
 
 ## What is CPMS?
 
@@ -28,29 +28,29 @@ CPMS has automated integrations with Kudelski to obtain the unique DACs for each
 
 CPMS will ask for various attributes about your device, but these are the primary elements that will be needed for proper certificate generation.
 
-- Vendor ID (VID) - Your unique VID will be required by CPMS to properly generate the necessary PKI infrastructure to allow your device on the Matter network.
+- Vendor ID (VID): Your unique VID will be required by CPMS to properly generate the necessary PKI infrastructure to allow your device on the Matter network.
 
-- Product ID (PID) - Your organization will need to provide a unique PID that will be used to identify this product on the network.
+- Product ID (PID): Your organization will need to provide a unique PID that will be used to identify this product on the network.
 
-- Certification Declaration (CD) - This is a cryptographic document that is issued to you by CSA after your device has been successfully certified by a CSA-approved testing facility.
+- Certification Declaration (CD): This is a cryptographic document that is issued to you by Connectivity Standards Alliance after your device has been successfully certified by an approved testing facility.
 
 ## Pre-Production Checklist
 
 1. Choose a Matter-capable part to develop your Matter application on.
 
-2. Become a [CSA member](https://csa-iot.org/become-member/) if your organization is not already a member. An associate-level membership or higher is required to obtain membership perks, certification, and a Vendor ID. See [Device Development Prerequisites](/matter/<docspace-docleaf-version>/matter-device-dev-prereqs). If you have not been through these steps, please ensure ample time to get this step done before you are ready to go to production.
+2. Become a [Connectivity Standards Alliance member](https://csa-iot.org/become-member/) if your organization is not already a member. An associate-level membership or higher is required to obtain membership perks, certification, and a Vendor ID. See [Device Development Prerequisites](/matter/<docspace-docleaf-version>/matter-device-dev-prereqs). If you have not been through these steps, please ensure ample time to get this step done before you are ready to go to production.
 
-3. If you are already a CSA member, make sure that you have been supplied a VID from CSA. If not, contact CSA to obtain a VID. The VID should also have been added to the [CSA Distributed Compliance Ledger (DCL)](https://webui.dcl.csa-iot.org/).
+3. If you are already a Connectivity Standards Alliance member, make sure that you have been supplied a VID from Connectivity Standards Alliance. If not, contact Connectivity Standards Alliance to obtain a VID. The VID should also have been added to the [Distributed Compliance Ledger (DCL)](https://webui.dcl.csa-iot.org/).
 
 4. Confirm that your VID has been added to the [DCL](https://webui.dcl.csa-iot.org/).
 
-5. As a device maker and CSA member, you should add information about your device to the ledger before shipping your device to the market. If this is not available at the time of release, your devices will not attest properly.
+5. As a device maker and Connectivity Standards Alliance member, you should add information about your device to the ledger before shipping your device to the market. If this is not available at the time of release, your devices will not attest properly.
 
 6. Your application has been developed and is ready for certification.
 
-7. Using the [CSA Pre-certification tool](https://csa-iot.org/certification/tools/certification-tool/), you can test your application for completeness before submitting your application for certification. Save your organization time and money by pre-certifying your application before submitting it for certification.
+7. Using the [Pre-certification tool](https://csa-iot.org/certification/tools/certification-tool/), you can test your application for completeness before submitting your application for certification. Save your organization time and money by pre-certifying your application before submitting it for certification.
 
-8. Submit your application for certification to a [CSA-approved testing facility](https://csa-iot.org/certification/testing-providers/) for your product type. Once certified, you will be issued a **Certification Declaration (CD)**. This is a cryptographic document stating that your device has successfully been certified and is used in conjunction with the Matter certificate chain to attest to the Matter network. This file should be in a .der format.
+8. Submit your application for certification to a [Approved testing facility](https://csa-iot.org/certification/testing-providers/) for your product type. Once certified, you will be issued a **Certification Declaration (CD)**. This is a cryptographic document stating that your device has successfully been certified and is used in conjunction with the Matter certificate chain to attest to the Matter network. This file should be in a .der format.
 
 9. Begin the process of setting up an account with Kudelski Security as a provider of DACs. Note: Kudelski provides DACs on the Test DCL for no charge. [Learn more about our partnership](https://confluence.silabs.com/pages/viewpage.action?pageId=387091843) with Kudelski Security for Matter devices.
 
@@ -58,19 +58,34 @@ CPMS will ask for various attributes about your device, but these are the primar
 
 11. You're ready to order samples with [CPMS](https://cpms.silabs.com/)!
 
+## CPMS Matter Production Guide (Do's and Don'ts)
+
+Producing products for Matter can be a challenge. Here are a few suggestions to keep in mind when readying your product for production.
+
+1. Your Matter application should be built to work on the device that you are specifically targeting. For example, an application built for a 10dBm power output part will not work on a 20dBm part.  You will need to build and test your application on the specific target device to ensure that your application will work properly.
+2. CPMS stores Matter attestation data in the last six pages of flash.  Of those six pages, Matter certificates and the CD are stored in the last page of flash. Other Matter attestation data is located in the NVM3 block. Below is an example memory map describing how Matter attestation data is programmed.
+
+    ![screenshot](resources/image8.png)
+
+3. If a part has been programmed in CPMS with standard debug lock, this **MUST NOT** be unlocked if you are expecting to commission this device in the future.  By unlocking this, **all pages in flash will be erased**, including the Matter device attestation data and certificates.  We recommend using Secure Debug Lock in production so that you will have access to debug if required.
+
+4. During a typical Matter development journey, your project was most likely created with a default set of attestation data and certificates to be used during development. These should work great for testing our projects while in development, but will not work in production.
+
+    Once a part is created in CPMS, production certificates and attestation data are dynamically provisioned onto the part.  If, for any reason, the certificates commissioned through CPMS are erased, the device could commission through a false positive by defaulting to the development certificates.  These will not be able to attest to a production Matter network.  The QR code and scanner can be used to display the VID/PID and other helpful information to help establish which credentials are being used.
+
 ## Choosing the Test DCL or Production DCL
 
-There are two public ledgers available to developers known as the Matter Distributed Compliance Ledger (DCL). The DCL is a cryptographically secure ledger based on blockchain technology. This ledger preserves an immutable record that stores public information that can be retrieved by DCL clients. For more details, see the [CSA Matter DCL whitepaper](https://csa-iot.org/developer-resource/white-paper-distributed-compliance-ledger/). Each DCL contains five schemas that can be accessed by a client to retrieve information about a device.
+There are two public ledgers available to developers known as the Matter Distributed Compliance Ledger (DCL). The DCL is a cryptographically secure ledger based on blockchain technology. This ledger preserves an immutable record that stores public information that can be retrieved by DCL clients. For more details, see the [Matter DCL whitepaper](https://csa-iot.org/developer-resource/white-paper-distributed-compliance-ledger/). Each DCL contains five schemas that can be accessed by a client to retrieve information about a device.
 
-- Vendor Info Schema - this schema provides public information about the device vendor such as the VID, Vendor Name, and Company Legal Name.
+- Vendor Info Schema: This schema provides public information about the device vendor such as the VID, Vendor Name, and Company Legal Name.
 
-- Device Model Schema - this schema provides public information about the actual device such as the Product Name, PID, VID, and more.
+- Device Model Schema: This schema provides public information about the actual device such as the Product Name, PID, VID, and more.
 
-- Device Software Version Model Schema - this schema provides public information about software-specific data about the device such as Release Notes URL, OTA software image URL, and more.
+- Device Software Version Model Schema: This schema provides public information about software-specific data about the device such as Release Notes URL, OTA software image URL, and more.
 
-- Compliance Schema - this schema provides public information about the certification of a device such as the VID, PID, Software Version, CD Certificate ID, and more.
+- Compliance Schema: This schema provides public information about the certification of a device such as the VID, PID, Software Version, CD Certificate ID, and more.
 
-- PAA Schema - this schema provides information about valid Product Attestation Authority certificates for approved PAAs.
+- PAA Schema: This schema provides information about valid Product Attestation Authority certificates for approved PAAs.
 
 The **Test DCL**, as the name suggests, is a public Matter ledger that will allow vendors to test their devices in a test environment. Entries into the Test DCL are less rigorous than the Production DCL and can be used to test devices using test certificates provided by Matter or other valid vendors. These test certificates cannot be used on the production DCL. For the production case, you have to ensure that you have the proper certificate chain in place. For CPMS, Kudelski provides Test DCL DACs at **no additional charge**. Your organization needs to ensure that an account has been created with Kudelski to order these DACs through CPMS. [Learn more here](https://confluence.silabs.com/pages/viewpage.action?pageId=387091843).
 
@@ -98,7 +113,7 @@ You've completed all of the items in the pre-production checklist and are ready 
 
 7. Add the Matter Ecosystem to your part and you will be presented with the required Matter inputs to help secure the proper PAA/PAI/DAC certificates from Kudelski.
 
-8. Upload your Certification Declaration. This is the file in .der format that you should have received after successful certification from a CSA-approved testing facility.
+8. Upload your Certification Declaration. This is the file in .der format that you should have received after successful certification from a Connectivity Standards Alliance approved testing facility.
 
     ![screenshot](resources/image3.png)
 

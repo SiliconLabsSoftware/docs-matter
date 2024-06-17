@@ -58,6 +58,6 @@ Download and install the MQTT Explorer from https://mqtt-explorer.com/.
       - lift/*
       - tilt/*
   - MQTT Client ID depends on the certificate set that you will use.
-  - Add the Certificate, following step 5 in [openssl certificate create](./openssl-certificate-creation.md).
+  - Add the Certificate, following step 5 in [Openssl Certificate Creation](./openssl-certificate-creation.md).
 
 ![Silicon Labs - DIC design](./images/mqtt-explorer-5.png)
