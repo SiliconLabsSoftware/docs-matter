@@ -8,7 +8,7 @@ First, in order to flash the RCP, connect it to your laptop directly by USB.
 
 ## Step 1: Get or Build the Image File to Flash the RCP
 
-We have provided two ways to get the required image to flash the RCP. You can use one of the following options:
+Use one of the following options to get the required image to flash the RCP:
 
 1. Use the pre-built 'ot-rcp' image file.
 2. Build the image file from Simplicity Studio.
@@ -45,13 +45,13 @@ $ git submodule update --init
 ```
 
 You can check the current branch and commit hash used here:
-[Matter Branches and Commit Hashes](/matter/<docspace-docleaf-version>/matter-prerequisites/):
+[Matter Branches and Commit Hashes](/matter/<docspace-docleaf-version>/matter-references/commit-hashes):
 
 ```shell
 $ git checkout <commit hash>
 ```
 
-If you are not using the latest GSDK version for your Matter host image, you must first checkout the correct ot-efr32 commit hash that matches the GSDK. Refer to the third_party/silabs commit bump history to find which ot-efr32 commit to checkout. Mismatching versions may result in host-RCP incompatibility.
+If you are not using the latest SiSDK version for your Matter host image, you must first checkout the correct ot-efr32 commit hash that matches the SiSDK. Refer to the third_party/silabs commit bump history to find which ot-efr32 commit to checkout. Mismatching versions may result in host-RCP incompatibility.
 
 **2. Build the RCP**
 
@@ -63,7 +63,7 @@ The output of the build process puts all the image files in the following locati
 
 ## Step 2: Flash the RCP
 
-Once you get the RCP image, either by downloading a prebuilt image or building the image file, you can flash it onto your device. This is done directly from your laptop and not through the Raspberry Pi, so make sure that the device is connected directly over USB to your laptop. You can flash your RCP using Simplicity Studio or using standalone Simplicity Commander.
+Once you get the RCP image, either by downloading a prebuilt image or building the image file, you can flash it to your device. This is done directly from your laptop and not through the Raspberry Pi, so make sure that the device is connected directly over USB to your laptop. You can flash your RCP using Simplicity Studio or using standalone Simplicity Commander.
 
 Once you have flashed the image, the device becomes the RCP. Disconnect it from you laptop and connect it via USB to the Raspberry Pi.
 
@@ -84,7 +84,7 @@ pi@raspberrypi:~ $ sudo systemctl status otbr-agent
 
 You can restart the OTBR agent by entering *sudo systemctl restart otbr-agent*.
 
-If the OTBR agent is restarting continuously, it's likely because it cannot connect to the RCP. There are multiple reasons that can contribute to this:
+If the OTBR agent is restarting continuously, it's likely because it cannot connect to the RCP. There are multiple reasons that can contribute to this.
 
 Ensure that RCP has been configured correctly:
 
@@ -96,4 +96,4 @@ Ensure that RCP has been configured correctly:
    3. Configure the RCP with `serial vcom config <'baud rate'>`.
 
 - Make sure the RCP has been flashed with a bootloader image.
-- Make sure the RCP GSDK version matches the OTBR GSDK version.
+- Make sure the RCP SiSDK version matches the OTBR SiSDK version.

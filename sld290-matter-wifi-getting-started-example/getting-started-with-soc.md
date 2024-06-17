@@ -4,7 +4,7 @@ This guide describes how to get started developing an application for the SiWx91
 
 ## Check Prerequisites
 
-In order to run Matter over Wi-Fi, check for the following prerequisites:
+To run Matter over Wi-Fi, check for the following prerequisites:
 
 ### Hardware Requirements
 
@@ -36,14 +36,14 @@ Below are the software tools, packages, and images required for executing Matter
 
 ### Software Packages
 
-- Gecko SDK v4.x
-- WiseConnect SDK v3.x
+- Simplicity SDK v2024.x
+- WiSeConnect SDK v3.x
 
 ### Firmware Images
 
-- Download the Firmware images from [Matter Artifacts page](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts#siwx917-firmware-for-siwx917-soc).
+- Download the firmware images from [Matter Artifacts page](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts#siwx917-firmware-for-siwx917-soc).
 
-- For Flashing the firmware images, Refer to [Flashing Firmware Images](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/loading-firmware-for-ncp-and-soc-boards).
+- For flashing the firmware images, refer to [Flashing Firmware Images](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/loading-firmware-for-ncp-and-soc-boards).
 
 ## Installation of the Wi-Fi Software Tools and Packages
 
@@ -51,7 +51,7 @@ Refer to the [Wi-Fi Software Installation page](./software-installation).
 
 ## Connect SiWx917 SOC to Computer
 
-1. Mount the SiWx917 radio board on the SiWx917 WSTK board.
+1. Mount the SiWx917 radio board onto the SiWx917 WSTK board.
 
     ![SiWx917 WSTK](images/mount-soc.png)
 
@@ -62,8 +62,8 @@ Refer to the [Wi-Fi Software Installation page](./software-installation).
 
 If Simplicity Studio does not detect the SiWx917 SoC board, try the following:
 
-- In the Debug Adapters panel, click Refresh (the icon of two looping arrows).
-- Press the RESET button on the SiWx917 SoC radio board.
+- In the Debug Adapters panel, click **Refresh** (the icon of two looping arrows).
+- Press the **RESET** button on the SiWx917 SoC radio board.
 - Power-cycle the SiWx917 SoC radio board by disconnecting and reconnecting the USB cable.
 
 ## Building the 917 SoC Matter Accessory Devices Using Simplicity Studio
@@ -77,7 +77,7 @@ In Simplicity Studio 5, create the Light Matter Accessory Devices (MAD):
 
     ![SoC Launcher tab](./images/siwx917-soc-launcher-tab.png)
 
-4. Go to `All Products` in the launcher tab and select one compatible board from the following supported list of SiWx917 SOC dev boards.
+4. Go to **All Products** in the Launcher tab, and select one compatible board from the following list of supported SiWx917 SOC dev boards.
 
    - BRD4338A (Common Flash)
 
@@ -95,7 +95,7 @@ In Simplicity Studio 5, create the Light Matter Accessory Devices (MAD):
 
     ![Project wizard](images/siwx917-soc-projectwizard.png)
 
-8. Once the project is created, right-click on the project and select **Build Project** in the Project Explorer tab.
+8. Once the project is created, right-click the project and select **Build Project** in the Project Explorer tab.
 
     ![Build project](images/siwx917-soc-build-wifiproject.png)
 
@@ -104,7 +104,7 @@ In Simplicity Studio 5, create the Light Matter Accessory Devices (MAD):
 
     ![binary selection](images/siwx917-soc-isp-binaryselection.png)
 
-11. Right-click the selected *_isp.bin* binary and click *flash to device*.
+11. Right-click the selected *_isp.bin* binary and click **Flash to Device**.
 
     ![Flash to device](images/siwx917-soc-flashtodevice.png)
 
@@ -114,6 +114,6 @@ In Simplicity Studio 5, create the Light Matter Accessory Devices (MAD):
 
     **Note:** Output of the SiWX917 SoC application will be displayed on the J-Link RTT Viewer.
 
-13. In order to debug your Matter Application, Right-click on the selected **Matter Project** and click **Debug As**.
+13. In order to debug your Matter application, right-click the selected **Matter Project** and click **Debug As**.
 
     ![Debug](images/siwx917-socdebug.png)

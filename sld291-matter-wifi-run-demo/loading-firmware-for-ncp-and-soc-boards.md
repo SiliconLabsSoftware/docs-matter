@@ -8,9 +8,9 @@ Silicon Labs recommends that an upgrade of the NCP combos connectivity firmware 
 
 ## Upgrading the Connectivity Firmware on NCP devices
 
-The SiWx917 NCP or RS9116 EVK connectivity firmware can be upgraded using Teraterm or kermit.
+The SiWx917 NCP or RS9116 EVK connectivity firmware can be upgraded using Tera Term or kermit.
 
-### Connectivity Firmware Upgrade Using Teraterm
+### Connectivity Firmware Upgrade Using Tera Term
 
 #### Firmware Upgrade On RS9116
 
@@ -32,7 +32,7 @@ The SiWx917 NCP or RS9116 EVK connectivity firmware can be upgraded using Terate
     Instructions are the same for both SiWx917 NCP and RS9116 EVK.
     ```
 
-5. Once firmware flashing is done The console displays **Loading...** followed by **Loading Done**.
+5. Once firmware flashing is done, the console displays **Loading...** followed by **Loading Done**.
 
 #### Firmware Upgrade On SIWx917 NCP
 
@@ -40,7 +40,7 @@ The SiWx917 NCP or RS9116 EVK connectivity firmware can be upgraded using Terate
 
     ![Connect NCP Board](./images/ncp-board-connect.png)
 
-2. Connect USB-UART Cable 2(Yellow) to **F9** and 3(Green) to **F8** on WPK Board shown below.
+2. Connect USB-UART cable 2 (Yellow) to **F9** and 3 (Green) to **F8** on WPK Board shown below.
 
     ![Connect Port Wires](./images/connect-board-port.png)
 
@@ -56,7 +56,7 @@ The SiWx917 NCP or RS9116 EVK connectivity firmware can be upgraded using Terate
     Instructions are the same for both SiWx917 NCP and RS9116 EVK.
     ```
 
-5. Once firmware flashing is done The console displays **Loading...** followed by **Loading Done**.
+5. Once firmware flashing is done, the console displays **Loading...** followed by **Loading Done**.
 
 ### Troubleshooting an NCP Firmware Update Failure
 
@@ -89,7 +89,7 @@ If the firmware update fails, try the following:
 
     ![Silicon Labs - design](./images/select-flash-option-in-commander.png)
 
-6. Refer to [Firmware for SiWx917 SoC](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts#siwx917-firmware-for-siwx917-soc) to identify the correct firmware to be flashed into the specific hardware. Locate and select the firmware file to flash.
+6. Refer to [Firmware for SiWx917 SoC](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts#siwx917-firmware-for-siwx917-so-c) to identify the correct firmware to be flashed into the specific hardware. Locate and select the firmware file to flash.
   
 7. Click **Flash**.
 

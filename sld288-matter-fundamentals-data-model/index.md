@@ -6,13 +6,13 @@ A single physical Matter device, such as a light, switch, or door lock, can be r
 
 A Matter device may also be part of more than one fabric and thus is represented on each different fabric by a different node. In following figure, a Matter Door Lock device is on both the HomePod and SmartThings fabrics. Thus, the Door Lock is represented by two different nodes; one for the HomePod fabric and another for the SmartThings fabric. The operational node IDs for the two nodes representing the device may be the same or different; the IDs are independent of each other because the nodes are on two different fabrics.
 
-![Devices and their fabrics](resources/devices-fabrics.jpg)
+![Devices and their fabrics](resources/devices-fabrics.png)
 
 The following section describes the Matter data model, including Nodes and Device Types.
 
 ## Nodes
 
-In the following figure, the hierarchical structure of endpoint, cluster, attributes/commands/events is shown from left to right.
+In the following figure, the hierarchical structure of endpoint, cluster, and attributes/commands/events is shown from left to right.
 
 ![Matter Node Overview](resources/node-overview.jpg)
 
@@ -70,7 +70,7 @@ Clusters have two main types:
 - **Server cluster**: Stateful, holds the data for the attributes, events, and commands.
 - **Client cluster**: Stateless, interacts with other server clusters by reading and writing attributes, reading remote events, and/or invoking methods.
 
-Any cluster can be a server or a client, giving nodes the ability to both store information and horizontally communicate with other nodes. For a light and switch example, a client cluster in the light would send a command to a server cluster in the light to toggle the on/off feature of the light. The following figure illustrates examples of cluster communication. On the top is a light and switch example and on the bottom is an app controlling a door lock.
+Any cluster can be a server or a client, giving nodes the ability to both store information and horizontally communicate with other nodes. For a light and switch example, a client cluster in the light would send a command to a server cluster in the light to toggle the on/off feature of the light. The following figure illustrates examples of cluster communication. On the top is a light and switch example, and on the bottom is an app controlling a door lock.
 
 ![Examples of cluster communication](resources/communication-examples.jpg)
 
@@ -80,7 +80,7 @@ Device types are a collection of clusters on their respective endpoints that def
 
 A device can be made up of any combination of clusters. Therefore, to ensure the interoperability of devices from different manufacturers on a single network, Matter defined sets of requirements for official device types in the Matter Device Library for users to implement and extend. Every definition contains the device type ID, type revision number, and mandatory cluster(s) with their minimum revision number. Device Types are constantly updating, with each iteration tracked using the revision number starting from 1. However, changes to a device type's definition do not change its functionality, but only serve to improve operation. It is also important to note that newer versions of a device will continue to interoperate with older revision levels.
 
-The device types that Matter supports are an unyielding requirement for Matter nodes. Nodes that implement certain device types are required to include feature sets of clusters on one or more endpoints for the said device type. A node cannot implement a device type if it does not have all the required feature sets. Official documentation lists the application device types that Matter supports in the Device Library Specification, while the respective supported application clusters are defined in the Application Cluster Library. These two documents, along with Chapter 7: Data Model Specification of the Matter specification document, can be found on the website for CSA members: [Specifications Download Request - CSA-IOT](https://csa-iot.org/developer-resource/specifications-download-request/).
+The device types that Matter supports are an unyielding requirement for Matter nodes. Nodes that implement certain device types are required to include feature sets of clusters on one or more endpoints for the said device type. A node cannot implement a device type if it does not have all the required feature sets. Official documentation lists the application device types that Matter supports in the Device Library Specification, while the respective supported application clusters are defined in the Application Cluster Library. These two documents, along with Chapter 7: Data Model Specification of the Matter specification document, can be found on the website for Connectivity Standards Alliance members: [Specifications Download Request - IOT](https://csa-iot.org/developer-resource/specifications-download-request/).
 
 ## Relating Matter to Zigbee
 

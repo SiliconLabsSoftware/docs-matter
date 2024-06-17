@@ -5,11 +5,11 @@ To flash the application for EFR32 and SiWx917 SOC Board Simplicity Commander so
 Before flashing the application for EFR32 Boards, flash **bootloader images** as per board variants:
 
 - **BRD4186C Board**
-  - For MG24 + RS9116 :- Internal Bootloader (bootloader-storage-internal-single-512k-BRD4186C-gsdk4.1)
-  - For MG24 + WF200 :- External Bootloader (bootloader-storage-spiflash-single-1024k-BRD4186C-gsdk4.1)
+  - For MG24 + RS9116: Internal Bootloader (bootloader-storage-internal-single-512k-BRD4186C-gsdk4.1)
+  - For MG24 + WF200: External Bootloader (bootloader-storage-spiflash-single-1024k-BRD4186C-gsdk4.1)
 - **BRD4187C Board**
-  - For MG24 + RS9116 :- Internal Bootloader (bootloader-storage-internal-single-512k-BRD4187C-gsdk4.1)
-  - For MG24 + WF200 :- External Bootloader (bootloader-storage-spiflash-single-1024k-BRD4187C-gsdk4.1)
+  - For MG24 + RS9116: Internal Bootloader (bootloader-storage-internal-single-512k-BRD4187C-gsdk4.1)
+  - For MG24 + WF200: External Bootloader (bootloader-storage-spiflash-single-1024k-BRD4187C-gsdk4.1)
 
 Bootloader binaries are available in the respective path of codebase **third_party/silabs/matter_support/matter/efr32/bootloader_binaries** folder. Silicon Labs recommends always flashing the latest bootloader binaries from the codebase.
 

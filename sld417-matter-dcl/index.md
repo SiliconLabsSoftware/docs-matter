@@ -8,13 +8,13 @@ The Distributed Compliance Ledger (DCL) is a cryptographically secure distribute
 
 As mentioned above, the DCL has various roles in which you can interact with the database. The most notable roles are as follows:
 
-- **Trustee Role**: This user is appointed by the CSA and is able to monitor the DCL. This includes creating new user accounts, assigning/revoking roles to DCL accounts, and approving x509 root certs.
+- **Trustee Role**: This user is appointed by the Connectivity Standards Alliance and is able to monitor the DCL. This includes creating new user accounts, assigning/revoking roles to DCL accounts, and approving x509 root certs.
 
-- **Vendor Role**: This role is assigned to a CSA Member. Once you receive a Vendor Key, you can publish device model information and vendor information.
+- **Vendor Role**: This role is assigned to a Connectivity Standards Alliance Member. Once you receive a Vendor Key, you can publish device model information and vendor information.
 
 - **Test House**: This role will publish the test certification for devices.
 
-- **CSA Certification Center**: This role can submit the certification status to the DCL based on the Test House as well as revoke certification status.
+- **Certification Center**: This role can submit the certification status to the DCL based on the Test House as well as revoke certification status.
 
 ## What is Stored in the DCL
 
@@ -25,18 +25,18 @@ Below are the DCL Schemas that can be stored in the DCL and who is responsible f
 | Vendor Schema | Vendor Information including: VID, Name, Website URL | Vendor Account (Member) |
 | Device Model | Product Information like VID, PID, Device Type Product Name, Commissioning Hints, link to User Manual | Vendor Account (Member) |
 | Device Software Version Model | VID, PID, Software Version, release notes | Vendor Account (Member) |
-| Device Software Compliance | Certification Status of a Model-Version (VID, PID, Software Version)  | CSA Certification Center Account |
-| PAA | List of all approved PAA (Product Attestation Authorities) | Approved by Trustee Account (Members / CSA)  |
+| Device Software Compliance | Certification Status of a Model-Version (VID, PID, Software Version)  | Connectivity Standards Alliance Certification Center Account |
+| PAA | List of all approved PAA (Product Attestation Authorities) | Approved by Trustee Account |
 
 ## Access DCL
 
-The CSA offers two ways to access the DCL. You can access via a Web UI that can be found at [https://webui.dcl.csa-iot.org/](https://webui.dcl.csa-iot.org/), or you can install the latest version and use the CLI Client, [https://github.com/zigbee-alliance/distributed-compliance-ledger/releases](https://github.com/zigbee-alliance/distributed-compliance-ledger/releases). Note that the CLI Client is platform specific to either Linux or Mac OSX.
+The Connectivity Standards Alliance offers two ways to access the DCL. You can access via a Web UI that can be found at [https://webui.dcl.csa-iot.org/](https://webui.dcl.csa-iot.org/), or you can install the latest version and use the CLI Client, [https://github.com/zigbee-alliance/distributed-compliance-ledger/releases](https://github.com/zigbee-alliance/distributed-compliance-ledger/releases). Note that the CLI Client is platform specific to either Linux or Mac OSX.
 
-You will need to create an account with the DCL and wait for CSA approval. Once approved for Vendor level access, you can enter your vendor information and add product information. **Silicon Labs recommends that you create a DCL Account sometime before Matter Certification Process is complete.**
+You will need to create an account with the DCL and wait for Connectivity Standards Alliance approval. Once approved for Vendor level access, you can enter your vendor information and add product information. **Silicon Labs recommends that you create a DCL Account sometime before Matter Certification Process is complete.**
 
 ## Preparing for Matter Certification
 
-To write a certifiable product to the DCL, you need an Approved Vendor account. You can do this by creating a DCL account and sending a request to the CSA. Once you are an approved vendor account holder, you can enter the following schemas: Vendor Schema, Device Model, and the Device Model-Version into the DCL. Once this information is in the DCL, you should notify the certification team via the Knack system. You **must have the required DCL Entries input before the CSA can input your Certification**. When your product gets officially certified and the Test House publishes the test certification status, the CSA Certification Center Account can write the Device Software Compliance. Once this is done, the CSA Trustee Account can enter the PAA information of the device to the DCL.
+To write a certifiable product to the DCL, you need an Approved Vendor account. You can do this by creating a DCL account and sending a request to the Connectivity Standards Alliance. Once you are an approved vendor account holder, you can enter the following schemas: Vendor Schema, Device Model, and the Device Model-Version into the DCL. Once this information is in the DCL, you should notify the certification team via the Knack system. You **must have the required DCL Entries input before the Connectivity Standards Alliance can input your Certification**. When your product gets officially certified and the Test House publishes the test certification status, the Certification Center Account can write the Device Software Compliance. Once this is done, the Trustee Account can enter the PAA information of the device to the DCL.
 
 ## Using the DCL in Commissioning to Verify Matter Devices
 

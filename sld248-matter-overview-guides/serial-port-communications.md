@@ -44,7 +44,7 @@ To run matter shell on the Silicon Labs Platform, refer to the [Software Require
 
    ![Silicon Labs - design](./images/create-project-lock-click-finish.png)
 
-10. After creation of project, open the **Software Components** tab and, in the search bar, type **Matter Shell** and install it.
+10. After creation of project, open the **Software Components** tab and, in the search bar, type _Matter Shell_ and install it.
 
     ![Silicon Labs - design](./images/matter-shell-enable.png)
 

@@ -3,7 +3,7 @@
 ## Overview
 
 EFR32 example applications provide a baseline demonstration of a lock device,
-built using the Matter SDK and the Silicon Labs GeckoSDK. It can be controlled
+built using the Matter SDK and the Silicon Labs SDK. It can be controlled
 by a CHIP controller over OpenThread network.
 
 The EFR32 device can be commissioned over Bluetooth Low Energy (BLE) where the
@@ -52,7 +52,7 @@ Some applications have callbacks that are left to be implemented by the device
 manufacturer. For example, the storage and management of users and credentials in
 the lock-app is left up to the application developer.
 
->**Note**: When enabling clusters in a Matter project within Simplicity Studio, users should always modify the cluster within the **Zigbee Cluster Configurator** and _not_ manually install the corresponding cluster component within the **Software Components** tab.
+>**Note**: When enabling clusters in a Matter project within Simplicity Studio, users should always modify the cluster within the **ZCL Advanced Platform (ZAP)** and _not_ manually install the corresponding cluster component within the **Software Components** tab.
 
 ## ZAP Tool
 

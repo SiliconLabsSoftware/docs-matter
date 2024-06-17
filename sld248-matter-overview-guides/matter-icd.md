@@ -4,45 +4,6 @@ Matter introduces the concept of Intermittently Connected Devices (ICD) in the S
 
 This page focuses on features designed to improve the performance and reliability of battery-powered devices. Matter ICD functionality can be enabled with the `matter_icd_management` component. The Matter light-switch and lock examples are ICDs by default.
 
-## ICD Device Types
-
-Matter introduces two types of ICDs.
-
-- Short Idle Time ICDs
-- Long Idle Time ICDs
-
-### Short Idle Time ICDs
-
-Short Idle Time ICDs are battery powered devices that can always be reached by clients. This means that their polling intervals are small enough to guarantee that a message sent from a client will be able to reach the ICD without any synchronization. A door lock, for example, is typically a short idle time ICD because it needs to be able to receive commands from clients at any given time. These devices are usually not the initiators in the communication flow.
-
-### Long Idle ICDs
-
-Long Idle Time ICDs are battery powered devices that require synchronization between the client and the ICD for communication to succeed. A sensor device is an example of a device that are typically long idle time ICDs.
-
-Long Idle Time ICDs are provisional with the Matter 1.2 release.
-
-## ICD Management Cluster
-
-The ICD Management Cluster enables configuration of the ICD’s behavior. It is required for an ICD to have this cluster enabled on endpoint 0.
-
-The ICDM Cluster exposes three configuration attributes that enable to configure an ICD.
-
-:::custom-table{width=18%,10%,13%,59%}
-| Attribute | Type | Constraints | Description |
-|-|-|-|-|
-| IdleModeInterval      | uint32 | 1 to 64800 | Maximum interval in seconds or milliseconds the server can stay in idle mode |
-| ActiveModeInterval    | uint32 | min 300    | minimum interval in milliseconds the server will stay in active mode |
-| ActiveModeThreshold   | uint32 | min 300    | minimum amount of time in milliseconds the server typically will stay active after network activity when in active mode |
-:::
-
-These configurations can be changed by modifying the values within `sl_matter_icd_config.h` or within the settings of the `matter_icd_management` component.
-
-```cpp
-    #define SL_IDLE_MODE_INTERVAL = 600     // 10min Idle Mode Interval
-    #define SL_ACTIVE_MODE_INTERVAL = 1000  // 1s Active Mode Interval
-    #define SL_ACTIVE_MODE_THRESHOLD = 500  // 500ms Active Mode Threshold
-```
-
 ## Creating an ICD Example via Simplicity Studio
 
 ### Enabling/Building
@@ -55,7 +16,7 @@ To begin creating an OpenThread ICD example, create a generic Matter over Thread
 
     ![Project Generation](images/icd-project-generation.png)
 
-2. Navigate to the **Configuration Tools** section and open the **Zigbee Cluster Configurator**.
+2. Navigate to the **Configuration Tools** section and open the **ZCL Advanced Platform (ZAP)**.
 
     ![ICD ZAP](images/icd-open-zap.png)
 
@@ -63,7 +24,7 @@ To begin creating an OpenThread ICD example, create a generic Matter over Thread
 
     ![ICD Cluster](images/icd-enable-icd-cluster.png)
 
-4. Navigate to the **Software Components** tab and install the ICD Management Server Cluster component.
+4. Navigate to the **Software Components** tab and confirm that the ICD Management Server Cluster component is installed (enabling the ICD Management cluster should automatically trigger its installation).
 
     ![ICD Component](images/icd-install-icd-component.png)
 
@@ -71,7 +32,7 @@ To begin creating an OpenThread ICD example, create a generic Matter over Thread
 
     ![ICD Component Conflicts](images/icd-resolve-conflicts.png)
 
-**Recommended: Install the `matter_platform_low_power` and `matter_subscription_synchronization` components to achieve further energy savings. See details below.**
+**Recommended: Install the `matter_platform_low_power` component to achieve further energy savings. See details below.**
 
 ICD functionality should be installed and ready to build. Build the project as you would a normal example and flash the resulting binary to your specified end device. You should be able to commission the device the same way as non-ICD examples using the QR code URL (generated within the RTT logs at startup or **BTN0** press).
 
@@ -79,31 +40,73 @@ ICD functionality should be installed and ready to build. Build the project as y
 
 ### **Minimal Power Consumption**
 
-The Lower Power Mode component is optional for low-power builds with the component `matter_platform_low_power`.
-
-The Lower Power Mode component will disable:
+The Lower Power Mode is an optional component, installing it will disable:
 
 - Matter Shell
 - OpenThread CLI
 - LCD and QR Code
-  
-### **Persistent Subscriptions**
 
-Persistent subscriptions were added to Matter as a means to ensure that an ICD can re-establish its subscription and by extension its secure session to a subscriber in the event of a power cycle. When a device accepts a subscription request, it will persist the subscription. When the device reboots, it will try to re-establish its subscription with the subscriber. If the subscription is torn down during normal operations or if the re-establishment fails, the subscription will be deleted.
+## ICD Configurations
 
-Persistent subscriptions are enabled by default on all Silicon Labs sample applications via the `matter_subscription_persistence` component.
+The ICD feature-set offers two types of configurations: cluster configurations and subscription configurations.
+The cluster configurations are exposed through the ICD Manager Cluster interface.
+The subscription configurations are exposed through various Matter components configurations and public APIs of the Matter SDK.
 
-### **Subscription Timeout Resumption**
+### ICD Management Cluster
 
-Matter also provides a retry mechanism for devices to try to re-establish a lost subscription with a client. This functionality is provided by the component `matter_subscription_timeout_resumption`. This feature should not be used on an ICD since it can significantly reduce battery life.
+The ICD Management Cluster enables configuration of the ICD’s behavior. It is required for an ICD to have this cluster enabled on endpoint 0.
 
-This feature is enabled by default on all examples with the exception of the door-lock and light-switch example.
+The ICDM Cluster exposes three configuration attributes that enable to configure an ICD.
 
-### **Subscription Synchronization**
+:::custom-table{width=20%,8%,12%,60%}
+| Attribute | Type | Constraints | Description |
+|-|-|-|-|
+| IdleModeInterval      | uint32 | 1 to 64800 | Maximum interval in seconds or milliseconds the server can stay in idle mode |
+| ActiveModeInterval    | uint32 | min 300    | Minimum interval in milliseconds the server will stay in active mode |
+| ActiveModeThreshold   | uint32 | min 300    | Minimum amount of time in milliseconds the server typically will stay active after network activity when in active mode |
+:::
 
-To avoid forcing an ICD to become active multiple times, the Matter SDK allows an ICD to synchronize its subscription reporting and send all the reports at the same time. The mechanism synchronizes the maximum interval of all subscriptions to only require the ICD to become active once. This functionality is provided by component `matter_subscription_synchronization`.
+### Configuration Attributes
 
-This feature is enabled by default on the door-lock sample app and the light-switch sample application.
+The ICD Management Cluster exposes three configuration attributes.
+These configurations are independent from the underlying transport configurations.
+These configurations can be changed by modifying the configuration of the `ICD Server Configuration` component or directly by setting values in `sl_matter_icd_config.h`.
+
+```cpp
+    #define SL_IDLE_MODE_DURATION_S = 600     // 10min Idle Mode Interval
+    #define SL_ACTIVE_MODE_INTERVAL = 1000  // 1s Active Mode Interval
+    #define SL_ACTIVE_MODE_THRESHOLD = 500  // 500ms Active Mode Threshold
+```
+
+### ICD Check-In Protocol Use-Case
+
+The ICD Check-In Protocol use case is used by ICDs to maintain a known relationship in case subscriptions with clients are lost.
+This includes how a client shares a Check-In token (symmetric key) with the ICD, when Check-In messages are sent and how the Check-In Protocol requirements are respected.
+
+The Check-In Protocol is a fail-safe mechanism which allows an ICD to notify a registered client that it is available for communication when all subscriptions between the client and ICD are lost.
+A subscription can be lost for several reasons, such as:
+
+- The ICD might not have full RAM retention when it is in an idle state.
+- When the ICD is powered off to change the battery.
+- Power or network outage causing the connection between the client and the ICD to be interrupted.
+- The client is unavailable for any reason (e.g. during a software update or hosted on a mobile device that is sometimes out-of-home).
+
+The Check-In message is sessionless and relies on a shared secret that has been given to the ICD during the registration of the client using the ICD Management cluster.
+For more information on the ICD Check-In Protocol use-case, see the associated specification section.
+
+### User Active Mode Trigger
+
+Since ICDs are not immediately responsive, they require a means to render them available for communication within user initiated use cases.
+Some of the user initiated use cases are:
+
+- Opening a new commissioning window to add another administrator.
+- Reconfiguration of an existing fabric (e.g. IPKs, NOC rotation, ACL changes).
+- Reconfiguration of cluster functionality (e.g. ICD Management, Bindings, Groups, Scenes).
+- Removal of a device from a fabric.
+- Changes to the device's settings.
+
+To enable these user initiated use cases, ICDs need to provide a way for a user to put them in active mode and render them responsive.
+The User Active Mode Trigger feature in the ICD Management cluster indicates whether a particular device implements an active mode trigger.
 
 ## **Configuration**
 
@@ -114,9 +117,12 @@ To change default values corresponding to Matter ICD examples, modify them in ei
 
 ![ICD Configuration](images/icd-config.png)
 
-## Subscription Maximum Interval
+### Subscription Configurations
 
-The subscription mechanism is used by ecosystems and controllers to receive attribute change updates and liveness checks. The maximum interval of a subscription request is what defines the frequency at which a device will send a liveness check if there are no attribute changes.
+#### Subscription Maximum Interval Negotiation
+
+The subscription mechanism is used by ecosystems and controllers to receive attribute change updates and liveness checks.
+The maximum interval of a subscription request is what defines the frequency at which a device will send a liveness check if there are no attribute changes.
 
 Within the subscription request / response model, a device has the opportunity to decide the maximum interval at which it will send its liveness check (Empty Report Update). The device can set a maximum interval within this range if and only if it is an ICD:
 
@@ -130,9 +136,8 @@ The following table shows the subscribe response fields.
 | SubscriptionId | uint32 | identifies the subscription |
 | MaxInterval | uint16 | the final maximum interval for the subscription in seconds |
 
-### Maximum Interval Negotiation
-
-The Matter SDK provides a default implementation that allows an ICD to negotiate its MaxInterval. The goal of the algorithm is to set the MaxInterval to the IdleModeInterval.
+The Matter SDK provides a default implementation that allows an ICD to negotiate its MaxInterval.
+The goal of the algorithm is to set the MaxInterval to the IdleModeInterval.
 
 ```cpp
 #if CHIP_CONFIG_ENABLE_ICD_SERVER
@@ -187,7 +192,9 @@ The Matter SDK provides a default implementation that allows an ICD to negotiate
 #endif // CHIP_CONFIG_ENABLE_ICD_SERVER
 ```
 
-If the default implementation does fit within the use-case, an implementation can override the default implementation. The first step is to implement the `ApplicationCallback` class from the `ReadHandler.h` header.
+If the default implementation does not fit within the use-case,
+an implementation can override the default implementation.
+The first step is to implement the `ApplicationCallback` class from the `ReadHandler.h` header.
 
 ```cpp
 /*
@@ -237,4 +244,142 @@ The second step is registering the callback object to the Interaction Model Engi
 ```cpp
 // Register ICD subscription callback to match subscription max intervals to its idle time interval
 chip::app::InteractionModelEngine::GetInstance()->RegisterReadHandlerAppCallback(&mICDSubscriptionHandler);
+```
+
+#### Persistent Subscriptions
+
+Persistent subscriptions were added to Matter as a means to ensure that an ICD can re-establish its subscription and by extension its secure session to a subscriber in the event of a power cycle.
+When a device accepts a subscription request, it will persist the subscription.
+When the device reboots, it will try to re-establish its subscription with the subscriber.
+If the subscription is torn down during normal operations or if the re-establishment fails,
+the subscription will be deleted.
+
+Persistent subscriptions are enabled by default on all Silicon Labs sample applications.
+
+#### Subscription Timeout Resumption
+
+Matter also provides a retry mechanism for devices to try to re-establish a lost subscription with a client. This feature should not be used on an ICD since it can significantly reduce battery life. This functionality is disabled by default in all Matter sample apps, if necessary it can be enabled by directly editing the project's .slcp file and setting to the `CHIP_CONFIG_SUBSCRIPTION_TIMEOUT_RESUMPTION` configuration value to `1`.
+
+#### Subscription Synchronization
+
+To avoid forcing an ICD to become active multiple times, the Matter SDK allows an ICD to synchronize its subscription reporting and send all the reports at the same time. The mecansim syncrhonizes the maximum interval of the all subscription to only require the ICD to become active one. This functionality can be enabled by enabling the Synchronous Reports in the Matter Core Components configuration (`CHIP_CONFIG_SYNCHRONOUS_REPORTS_ENABLED` in `sl_matter_config.h`).
+
+## ICD Device Types
+
+Matter introduces two types of ICDs.
+
+- Short Idle Time ICDs
+- Long Idle Time ICDs
+
+### Short Idle Time ICDs
+
+Short Idle Time ICDs are battery powered devices that can always be reached by clients.
+This means that their polling intervals are small enough to guarantee that a message sent from a client will be able to reach the ICD without any synchronization.
+A door lock, for example, is typicaly a short idle time ICD because it needs to be able to receive commands from clients at any given time.
+These devices are usually not the initiators in the communication flow.
+
+#### Requirements
+
+This section lists the requirements that Short Idle Time ICDs must respect to be certifiable.
+
+1. The ICD Management Cluster must be present on the Root Endpoint (0) with mandatory attributes.
+2. The transport slow poll configuration must be smaller or equal to 15s.
+This requirement is not enforced in Matter 1.3 since LIT ICD are not certifiable.
+Once LIT ICD officially launch, this will be a mandatory requirement.
+
+Support of the ICD Check-In Protocol use-case and the user active mode trigger is optional for SIT ICDs.
+
+#### Configurations
+
+These are recommended configurations based on the state of the current implementation of SIT ICDs.
+The recommended configurations are likely to change with the Matter 1.4 release.
+
+**ICD Default configurations**
+
+- Enable ICD Server: TRUE
+- Subscription Timeout Resumption: FALSE
+- Subscription Synchronization: TRUE
+
+**ICD Matter Configuration flags**
+
+Configuration parameters of the ICD Server Configuration component (sl_matter_icd_config.h):
+
+```cpp
+    #define SL_IDLE_MODE_DURATION_S  = 600    // 10min Idle Mode Interval
+    #define SL_ACTIVE_MODE_INTERVAL  = 10000  // 10s Active Mode Interval
+    #define SL_ACTIVE_MODE_THRESHOLD = 1000   // 1s Active Mode Threshold
+```
+
+**Openthread Configuration flags**
+
+Configuration parameters of the ICD Server Configuration component (sl_matter_icd_config.h):
+
+```cpp
+#define SL_OT_IDLE_INTERVAL   5000 // 5s Idle Intervals
+#define SL_OT_ACTIVE_INTERVAL 500  // 500ms Active Intervals
+```
+
+> **Note**: Wi-Fi polling configuration are dictated by the Access Point and cannot be changed at the Matter level.
+
+### Long Idle ICDs
+
+Long Idle Time ICDs are battery powered devices that require synchronization between the client and the ICD for communication to succeed.
+A sensor device is an example of a device that are typically a long idle time ICD.
+
+Long Idle Time ICDs are ready for integration in the Matter 1.3 release. The core feature-set for ICDs has been implemented through the `ICDManager`.
+LIT ICDs should be certifiable with the Matter 1.4 release.
+Splitting the two milestones in different releases is to allow more in depth interoperability testing to validate the proposed feature-set achieves it's power consumption and usability goals.
+
+#### Requirements
+
+This section lists the requirements that Long Idle Time ICDs must respect to be certifiable.
+
+1. The ICD Management Cluster must be present on the Root Endpoint (0) with mandatory attributes.
+2. The `LITS` (Long Idle Time Support) feature map must be set to 1.
+
+   All required features, attributes and commands required by this feature map must also be present.
+
+3. The `CIP` (Check-In Protocol support) feature map must be set to 1.
+
+   All required attributes and commands required by this feature map must also be present.
+
+4. The `UAT` (User Active Mode Trigger support) feature map must be set to 1.
+
+   All required attributes and commands required by this feature map must also be present.
+
+5. The `ActiveModeThreshold` cannot be lower than 5 seconds.
+
+#### Configurations
+
+These are recommended configurations based on the state of the current implementation of LIT ICDs.
+The recommended configurations are likely to change with the Matter 1.4 release.
+
+**ICD Default configurations**
+
+- Enable ICD Server: TRUE
+- Subscription Timeout Resumption: FALSE
+- Subscription Synchronization: TRUE
+- ICD Slow Polling Limit Enforcement: TRUE
+- Matter Report on Entering Active: TRUE
+- Matter LIT Configuration: TRUE
+
+The last three parameters are configuration parameters in the Matter Core Components (`ICDServerBuildConfig.h`)
+
+**ICD Matter Configuration flags**
+
+Configuration parameters of the ICD Server Configuration component (`sl_matter_icd_config.h`):
+
+```cpp
+    #define SL_IDLE_MODE_DURATION_S  = 3600   // 60min Idle Mode Interval
+    #define SL_ACTIVE_MODE_INTERVAL  = 0      // 0s Active Mode Interval
+    #define SL_ACTIVE_MODE_THRESHOLD = 5000   // 5s Active Mode Threshold
+```
+
+**Openthread Configuration flags**
+
+Configuration parameters of the ICD Server Configuration component (`sl_matter_icd_config.h`):
+
+```cpp
+#define SL_OT_IDLE_INTERVAL   3600000  // 60mins Idle Polling Interval
+#define SL_OT_ACTIVE_INTERVAL 1000     // 1s Active Polling Interval
 ```

@@ -84,7 +84,7 @@ Refer to [Set up Alexa in a Few Easy Steps](https://www.amazon.com/alexa-setup-g
 
     ![App added](./images/amazon-alexa-app-added.png?width=40%&height=40%)
 
-16. Next, select a group for your device (for example, Bedroom), and tap **Add to Group**.
+16. Next, select a group for your device (for example, Bedroom), and tap **Add To Group**.
 
     ![Select a group](./images/amazon-alexa-select-group.png?width=40%&height=40%)
 

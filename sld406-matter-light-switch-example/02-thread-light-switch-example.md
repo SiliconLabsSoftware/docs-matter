@@ -4,7 +4,7 @@
 
 1. Prepare a compatible development board to become your Matter hub's ot-rcp:
 
-   1. Start Simplicity Studio 5 with the latest GSDK and Silicon Labs Matter GSDK Extension installed (see details in the [Overview](/matter/<docspace-docleaf-version>/matter-overview#software-requirements)).
+   1. Start Simplicity Studio 5 with the latest SiSDK and Silicon Labs Matter SiSDK Extension installed (see details in the [Overview](/matter/<docspace-docleaf-version>/matter-overview#software-requirements)).
 
       ![the Matter extension](./resources/image1.png)
 
@@ -24,7 +24,7 @@
 
    1. Download and extract the Matter hub Raspberry Pi image (see details under [Software requirements](/matter/<docspace-docleaf-version>/matter-overview#software-requirements)).
 
-   2. Flash the image to the desired SD card. Please note this will erase all existing content on that SD card:
+   2. Flash the image to the desired SD card. Note that this will erase all existing content on that SD card:
 
       1. Under **Operating System**, click **CHOOSE OS**. Scroll down and choose the last option, **Use custom**. Browse to your extracted **SilabsMatterPi.img** file and select it.
 
@@ -84,7 +84,7 @@ You now have a working Matter hub. Keep the PuTTY session open for the following
 
       ![Build the project](resources/build-project.png)
 
-   7. Once the compilation is done, right-click the dev board in the Debug Adapters view and select **Upload application...**.
+   7. Once the compilation is done, right-click the dev board in the Debug Adapters view and select **Upload application**.
 
       ![Upload application](resources/image13.png)
 
@@ -95,7 +95,7 @@ You now have a working Matter hub. Keep the PuTTY session open for the following
       **Note**: If you are unsure of the path for the newly created binary, you can find the project’s path in the project’s *Properties* window under *Resource*. The binary is typically located in:
       >*{workspace folder}\|{project name folder}\|{GNU ARM v??? folder}\|{project name binary}.s37*
 
-      For example, you would find the binary for a Matter light over Thread project with the default name here:
+      For example, you will find the binary for a Matter light over Thread project with the default name here:
       >*{workspace folder}/MatterLightOverThread/GNU ARM v12.2.1 - Default/MatterLightOverThread.s37*
 
       The combined binary (bootloader and application image) will be located in:
@@ -141,7 +141,7 @@ The *mattertool* also allows you to perform any of the commands you can normally
 
    2. If you need the Thread dataset in the future (such as after a power cycle), you can use *mattertool getThreadDataset*.
 
-## Connecting MADs to the Matter hub
+## Connecting MADs to the Matter Hub
 
 1. In a PuTTY session to the Matter hub, use the *mattertool* to commission your Matter light switch device.
 
@@ -159,11 +159,11 @@ The *mattertool* also allows you to perform any of the commands you can normally
 
       ![Output example](resources/image17.png)
 
-      >**Note**: If you do not specify a *nodeID*, one will be assigned automatically. Make sure to take note of what nodeID assigned to your Matter light switch and Matter light devices. These will be needed later for modifying the Matter light's ACL & the Matter light switch's binding table.
+      >**Note**: If you do not specify a *nodeID*, one will be assigned automatically. Make sure to take note of what nodeID assigned to your Matter light switch and Matter light devices. These will be needed later for modifying the Matter light's ACL and the Matter light switch's binding table.
 
    3. Power up the Matter light device and commission it as well, by following the previous steps for this MAD but using a different *nodeID*.
 
-You now have two Matter devices on your network ready to be used
+You now have two Matter devices on your network ready to be used.
 
 ## Controlling the Light MAD
 
@@ -187,11 +187,11 @@ For example, on the dev board *xG24-DK2601B EFR32xG24* (also known as *BRD2601*)
 
       ![Controlling the Light MAD](resources/image19.png)
 
-   2. For dev board with buttons available, you can use **BTN1** to toggle the light status locally.
+   2. For a dev board with buttons available, use **BTN1** to toggle the light status locally.
 
 2. In a PuTTY session to your Matter hub, use the *mattertool* to bind your Matter light switch device to your Matter light device, thus allowing the switch to control the light.
 
-   1. First, you will need to modify the Access Control List (ACL) of your Matter light device. This list determines which device in the network your Matter light device will react to. Modify your Matter light device's ACL using: `mattertool accesscontrol write acl '[ { "fabricIndex" : 1 , "privilege" : 5 , "authMode" : 2 , "subjects" : [`**`112233`**`] , "targets" : null } , { "fabricIndex" : 1 , "privilege" : 3 , "authMode" : 2 , "subjects" : [`**`nodeID-switch`**` ], "targets" : null }]' `**`nodeID-light 0`**, where the highlighted parameters are:
+   1. First, you need to modify the Access Control List (ACL) of your Matter light device. This list determines which device in the network your Matter light device will react to. Modify your Matter light device's ACL using: `mattertool accesscontrol write acl '[ { "fabricIndex" : 1 , "privilege" : 5 , "authMode" : 2 , "subjects" : [`**`112233`**`] , "targets" : null } , { "fabricIndex" : 1 , "privilege" : 3 , "authMode" : 2 , "subjects" : [`**`nodeID-switch`**` ], "targets" : null }]' `**`nodeID-light 0`**, where the highlighted parameters are:
 
       - **112233**: The node ID of the controller (OTBR). This is always 112233.
 
@@ -203,7 +203,7 @@ For example, on the dev board *xG24-DK2601B EFR32xG24* (also known as *BRD2601*)
 
       ![Modifying the access control list](resources/image20.png)
 
-      **Note**: The ACL table action is a read/modify/write step. If you accidentally remove the chip-tool entry, this will prevent further control of the device, requiring a factory reset.
+      **Note**: The ACL table action is a read/modify/write step. Accidentally removing the chip-tool entry prevents further control of the device, requiring a factory reset.
 
       You can read the ACL for a Matter device using: *mattertool accesscontrol read acl* ***nodeID*** ***0***, where the highlighted parameters are:
 
@@ -223,11 +223,11 @@ For example, on the dev board *xG24-DK2601B EFR32xG24* (also known as *BRD2601*)
 
       - **nodeID-switch**: The node ID of the switch.
 
-      - **1**: This is the application endpoint in the switch that holds the binding table. In the Silabs examples, this is always 1.
+      - **1**: This is the application endpoint in the switch that holds the binding table. In the Silicon Labs examples, this is always 1.
 
       ![Bind the switch to the light](resources/image22.png)
 
-      **Note**: As with the ACL table step, the binding table action is a read/modify/write step. If you accidentally remove the chip-tool entry, this will prevent further control of the device, requiring a factory reset.
+      **Note**: As with the ACL table step, the binding table action is a read/modify/write step. Accidentally removing the chip-tool entry prevents further control of the device, requiring a factory reset.
 
       You can read the binding table from a Matter device using: `mattertool binding read binding`**`nodeID-switch 1`**, where the highlighted parameters are:
 
