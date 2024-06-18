@@ -2,13 +2,16 @@
 
 ## New Features for v2.3.0-1.3
 
-- Quality-tested Matter 1.3 GA solution for Thread and Wi-Fi MG24/WF200 NCP platform. Beta solution for Wi-Fi SiWx917, RS9116 platform.
+- Quality-tested Matter 1.3 GA solution for Thread, Wi-Fi MG24/WF200, and Wi-Fi MG24/RS9116 (non-sleepy) platforms. Beta solution for Wi-Fi SiWx917 and Wi-Fi MG24/RS9116 (sleepy) platforms.
 - Works with Simplicity SDK v2024.6.0 and WiSeConnect SDK v3.3.0.
 - Introduces Matter over Thread support for BRD4116A, BRD4117A, BRD4118A, and BRD2608A boards from the EFR32MG26 family.
+- Introduces the Matter Zigbee CMP (concurrent multi-protocol) Lighting example application which demonstrates the usage of the Matter Stack alongside the Silicon Labs Zigbee stack.
 - Adds support for Long Idle Time ICDs.
 - Adds Provisioning 2.0 Support for EFR32 and SiWx917 SoC.
 - Provides Multi-chip OTA functionality support (EFR32-Thread only).
-- Removes support for EFR32 Series 1 MG12 devices:  BRD4161A, BRD4162A, BRD4163A, BRD4164A, BRD4170A, BRD4166A.
+- Adds support for TA based flash storage for storing factory data in SiWx917 SoC with alpha quality.
+- Enables Tickless Idle Mode and sleepy stability improvements for SiWx917 SoC.
+- Removes support for EFR32 Series 1 MG12 devices: BRD4161A, BRD4162A, BRD4163A, BRD4164A, BRD4170A, and BRD4166A.
 - Miscellaneous bug fixes and improvements.
 
 ## New Features for v2.2.1-1.2
