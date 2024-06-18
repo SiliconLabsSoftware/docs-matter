@@ -13,7 +13,7 @@ The procedures here describe how to make a simple network of a light, a switch, 
 ## Initial Setup
 
 Both the Matter over Wi-Fi and Matter over Thread demos require that you have set up a simple development environment with Simplicity Studio,
-two EFR32MG24-based development boards, and a Raspberry Pi used as a Matter hub. The following requirements are common to both demos. The Thread demo also requires a radio co-processor (RCP) as part of the Matter Hub. The requirements for this are provided in the [introduction to the Thread demo](/matter/<docspace-docleaf-version>/matter-light-switch-example/02-thread-light-switch-example).
+two EFR32MG24-based development boards, and a Raspberry Pi used as a Matter hub. The following requirements are common to both demos. The Thread demo also requires a radio co-processor (RCP) as part of the Matter hub. The requirements for this are provided in the [introduction to the Thread demo](/matter/<docspace-docleaf-version>/matter-light-switch-example/02-thread-light-switch-example).
 
 ### Hardware Requirements
 
@@ -24,13 +24,13 @@ two EFR32MG24-based development boards, and a Raspberry Pi used as a Matter hub.
 
 #### Matter Devices
 
-##### **Matter Over Wi-Fi Accessory Device Requirements for NCP Mode**
+**Matter Over Wi-Fi Accessory Device Requirements for NCP Mode**
 
 The Silicon Labs Matter over Wi-Fi NCP mode demo and development requires two boards: the Silicon Labs EFR32 Radio board to run the Matter code and either the RS9116, SiWx917, or WF200 to run the Wi-Fi protocol stack.
 
 The following boards are supported for the Matter over Wi-Fi demos and development:
 
-- **MG24 Boards:**
+- **MG24 Boards**
   - BRD4186C / SLWSTK6006A / Wireless Starter Kit / 2.4GHz@10dBm
     - [XG24-RB4186C](https://www.silabs.com/development-tools/wireless/xg24-rb4186c-efr32xg24-wireless-gecko-radio-board)
     - MG24 with WSTK: [xG24-PK6009A](https://www.silabs.com/development-tools/wireless/efr32xg24-pro-kit-10-dbm?tab=overview)
@@ -57,15 +57,13 @@ The following boards are supported for the Matter over Wi-Fi demos and developme
   - SPI Cable (included in the RS9116 kit)
   - Jumper Cables (included in the RS9116 kit)
 
-**Note**: For more information, refer to [Hardware Requirements](#hardware-requirements).
-
-##### **Matter Over Wi-Fi Accessory Device Requirements for SoC Mode**
+**Matter Over Wi-Fi Accessory Device Requirements for SoC Mode**
 
 The Silicon Labs Matter over Wi-Fi demo and development for SoC mode requires the SiWx917 SoC board that supports Matter over Wi-Fi in a single-chip package. The integrated MCU is dedicated for peripheral and application-related processing (Matter), while the ThreadArch® runs the wireless and networking protocol stacks.
 
-Pre-built images for the SiWx917 connectivity firmware are available as per the instructions on the [Matter Artifacts page](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts). The following boards are supported for the Matter over Wi-Fi demos and development:
+Pre-built images for the SiWx917 connectivity firmware are available per the instructions on the [Matter Artifacts page](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts). The following boards are supported for the Matter over Wi-Fi demos and development:
 
-- **Wi-Fi SoC Boards:**
+- **Wi-Fi SoC Boards**
   - SiWx917 / BRD4002A / Wireless Starter Kit
   - SiWx917 Soc Mode
     - SiWx917 SoC / Common Flash Radio Board / 2.4GHz
@@ -81,13 +79,13 @@ Pre-built images for the SiWx917 connectivity firmware are available as per the 
 
 **Tera Term**: [Tera Term](https://osdn.net/projects/ttssh2/releases/) is the terminal emulator for Microsoft Windows that supports serial port, telnet, and SSH connections.
 
-**Silicon Labs Matter GSDK Extension**: Once Simplicity Studio 5 is installed, you will be prompted to install the Gecko SDK Suite (GSDK). Here you should also install the Matter Enablement Package by making sure the extension is checked, as shown.
+**Silicon Labs Matter SiSDK Extension**: Once Simplicity Studio 5 is installed, you will be prompted to install the Simplicity SDK, formerly released as Gecko SDK (GSDK). Here you should also install the Matter Enablement Package by making sure the extension is checked, as shown.
 
 ![Installing the Matter Extension](./resources/install-package-advanced-device.png)
 
-**Installation of Wi-Fi SDK and Wiseconnect Packages**: The following packages will be installed during the installation of Simplicity Studio. Refer to [Package Installation](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/software-installation).
+**Installation of Wi-Fi SDK and WiSeConnect Packages**: The following packages will be installed during the installation of Simplicity Studio. Refer to [Package Installation](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/software-installation).
 
-**Matter Hub Raspberry Pi Image**: A copy of the pre-built image from the Silicon Labs web services can be downloaded in this [zipfile](https://www.silabs.com/documents/public/software/SilabsMatterPi_2.2.1-1.2-extension.zip). **Note** this is a large file and will take some time to download.
+**Matter Hub Raspberry Pi Image**: A copy of the pre-built image from the Silicon Labs web services can be downloaded in this [zipfile](https://www.silabs.com/documents/public/software/SilabsMatterPi_2.3.0-1.3-extension.zip). **Note** this is a large file and will take some time to download.
 
 >**Note:** The Matter hub for Matter over Thread requires an additional device, a radio co-processor. See [the introduction to the Matter over Thread demo](/matter/<docspace-docleaf-version>/matter-light-switch-example/02-thread-light-switch-example) for more information.
 

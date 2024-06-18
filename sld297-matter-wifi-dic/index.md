@@ -2,7 +2,7 @@
 
 Direct Internet Connectivity (DIC) is a Silicon Labs-only feature to connect Matter devices to proprietary cloud solutions (eg, AWS, GCP, Apple) directly. As such, a Matter Wi-Fi device must support connecting locally on the Matter Fabric, via IPv6, and connecting to the Internet via IPv4.
 
-- Matter devices can be controlled by chip-tool or controller and the respective status of the attribute modified will be published to the cloud.
+- Matter devices can be controlled by chip-tool or controller, and the respective status of the attribute modified will be published to the cloud.
 - Remote users can install the cloud-specific application to get the notifications on the attribute status and to control the device.
 
 ## DIC Feature Diagram
@@ -46,7 +46,7 @@ A remote user is used to check the state of a Matter device. In this context, MQ
 
     ![Extension refresh in tab](images/dic-extension-refresh.png)
 
-3. In the **SDKs** tab, click  **Gecko SDK** and click **Refresh**. It will refresh the Matter extension code for changes made in step 1.
+3. In the **SDKs** tab, click  **Simplicity SDK** and click **Refresh**. It will refresh the Matter extension code for changes made in step 1.
 
     ![Extension refresh](images/dic-extension-refresh-1.png)
 
@@ -55,7 +55,7 @@ A remote user is used to check the state of a Matter device. In this context, MQ
     - [Creating and Building Project for NCP Board](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/getting-started-efx32-ncp#building-and-flashing-an-application)
     - [Creating and Building Project for SoC Board](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/getting-started-with-soc#building-the-917-soc-matter-accessory-devices-using-simplicity-studio)
 
-**Note**: Matter extension code is located at the following location: `C:\Users\system_name\SimplicityStudio\SDKs\gecko_sdk\extension`.
+**Note**: Matter extension code is located at the following location: `C:\Users\system_name\SimplicityStudio\SDKs\simplicity_sdk\extension`.
 
 ## End-to-End Test of DIC Application
 

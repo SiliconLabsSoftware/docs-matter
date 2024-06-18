@@ -2,23 +2,23 @@
 
 If you plan to develop a Matter end product, this page lists the prerequisites and next steps to facilitate your production journey through Matter.
 
-## Become a CSA Member
+## Become a Connectivity Standards Alliance Member
 
-Your organization must be an associate member or better to get your product certified by a CSA-approved testing facility. As a member, your organization will receive membership perks:
+Your organization must be an associate member or better to get your product certified by a Connectivity Standards Alliance approved testing facility. As a member, your organization will receive membership perks:
 
 - Official resources to assist you in developing Matter products.
 
 - Authorization to contribute to the [Matter Github repository](https://github.com/project-chip/connectedhomeip).
 
-- Once approved, CSA will reserve a unique Vendor ID (VID) chosen by your organization. This VID will be needed to provision your device.
+- Once approved, the Connectivity Standards Alliance will reserve a unique Vendor ID (VID) chosen by your organization. This VID will be needed to provision your device.
 
-  - Your unique VID will be added to the [CSA Distributed Compliance Ledger](https://webui.dcl.csa-iot.org/) (DCL).
+  - Your unique VID will be added to the [Distributed Compliance Ledger](https://webui.dcl.csa-iot.org/) (DCL).
 
 - [Matter Certification tool access](https://csa-iot.org/certification/tools/certification-tool/)
 
   - Allows you to evaluate your product for certification before the official certification process.
 
-Become a member at [CSA Membership](https://csa-iot.org/become-member/). You can see a list of the different memberships offered at CSA.
+Become a member at [Connectivity Standards Alliance Membership](https://csa-iot.org/become-member/). You can see a list of the different memberships offered.
 
 ## Develop Your Matter Application
 
@@ -34,13 +34,13 @@ Additionally, Silicon Labs recommends that you become familiar with the Matter S
 
 - Matter Application Cluster Specification
 
-These specifications can be downloaded from the [CSA's Specifications Download Request](https://csa-iot.org/developer-resource/specifications-download-request/) website.
+These specifications can be downloaded from the [Specifications Download Request](https://csa-iot.org/developer-resource/specifications-download-request/) website.
 
-## CSA Certification
+## Certification
 
-Once a device/product is ready for production, you must have your product certified by a CSA-approved testing facility to certify compliance with the Matter Standard. Review the [CSA Certification Process](https://csa-iot.org/certification/why-certify/) to ensure a smooth and prompt Matter product certification.
+Once a device/product is ready for production, you must have your product certified by a Connectivity Standards Alliance approved testing facility to certify compliance with the Matter Standard. Review the [Certification Process](https://csa-iot.org/certification/why-certify/) to ensure a smooth and prompt Matter product certification.
 
-By becoming a member of the CSA, access to their [Matter Certification Tool](https://csa-iot.org/certification/tools/certification-tool/) is granted. The Matter Certification Tool facilitates applying to certify your Matter product, after which you can create your application and upload your images and required documents. For additional resources on the certification process, refer to the [Certifying your Matter Product, an Overview](https://community.silabs.com/s/article/Certifying-your-Matter-Product-an-Overview?language=en_US) KBA. This KBA provides information on:
+By becoming a member of the Connectivity Standards Alliance, access to their [Matter Certification Tool](https://csa-iot.org/certification/tools/certification-tool/) is granted. The Matter Certification Tool facilitates applying to certify your Matter product, after which you can create your application and upload your images and required documents. For additional resources on the certification process, refer to the [Certifying your Matter Product, an Overview](https://community.silabs.com/s/article/Certifying-your-Matter-Product-an-Overview?language=en_US) KBA. This KBA provides information on:
 
 - Overview of Matter Certification Steps and milestones
 
@@ -48,23 +48,23 @@ By becoming a member of the CSA, access to their [Matter Certification Tool](htt
 
 - Matter Test Harness Guide
 
-- Important Matter CSA Resources and a Q&A
+- Important Matter Resources and a Q&A
 
-Once your device is approved, your organization will be issued an official Certification Declaration (CD). This CD is a cryptographic document issued by CSA that confirms that your device has been certified. The CD is included in the attestation process sent by the Commissionee during device attestation. To view a list of authorized test facilities, check out the [CSA Authorized Testing Providers](https://csa-iot.org/certification/testing-providers/) summary. This CD is required to be injected during the manufacturing process if you are using the Silicon Labs CPMS process.  This certification process can take some time to complete. You should ensure that this time is accounted for during your development lifecycle to keep your product on schedule.
+Once your device is approved, your organization will be issued an official Certification Declaration (CD). This CD is a cryptographic document issued by Connectivity Standards Alliance  that confirms that your device has been certified. The CD is included in the attestation process sent by the Commissionee during device attestation. To view a list of authorized test facilities, check out the [Authorized Testing Providers](https://csa-iot.org/certification/testing-providers/) summary. This CD is required to be injected during the manufacturing process if you are using the Silicon Labs CPMS process. This certification process can take some time to complete. You should ensure that this time is accounted for during your development lifecycle to keep your product on schedule.
 
-### Helpful CSA Links
+### Helpful Links
 
-- [CSA Membership](https://csa-iot.org/become-member/)
+- [Membership](https://csa-iot.org/become-member/)
 
-- [CSA Specifications Download Request page](https://csa-iot.org/developer-resource/specifications-download-request/)
+- [Specifications Download Request page](https://csa-iot.org/developer-resource/specifications-download-request/)
 
-- [CSA Pre-Certification Tool](https://csa-iot.org/certification/tools/certification-tool/)
+- [Pre-Certification Tool](https://csa-iot.org/certification/tools/certification-tool/)
 
-- [CSA Authorized Testing Providers](https://csa-iot.org/certification/testing-providers/)
+- [Authorized Testing Providers](https://csa-iot.org/certification/testing-providers/)
 
-- [CSA Distributed Compliance Ledger (DCL)](https://webui.dcl.csa-iot.org/)
+- [Distributed Compliance Ledger (DCL)](https://webui.dcl.csa-iot.org/)
 
-- [CSA Test Distributed Compliance Ledger (DCL)](https://testnet.iotledger.io/)
+- [Test Distributed Compliance Ledger (DCL)](https://testnet.iotledger.io/)
 
 - [PAA Providers](https://csa-iot.org/certification/paa/)
 

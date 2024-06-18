@@ -11,7 +11,7 @@ The Simplicity Studio Bluetooth LE (BLE) GATT Configurator is an Advanced Config
 Simplicity Studio's Energy Profiler allows you to see a graphical view of your device's energy usage over time. This can be very useful when developing an energy-friendly device.
 
 Complete documentation on using the Simplicity Studio Energy Profiler is provided in the
-[Simplicity Studio 5 Energy Profiler User's Guide](https://docs.silabs.com/simplicity-studio-5-users-guide/1.0/using-the-tools/energy-profiler/).
+[Simplicity Studio 5 Energy Profiler User's Guide](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-tools-energy-profiler/).
 
 ## Custom Hardware Configuration
 

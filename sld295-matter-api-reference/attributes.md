@@ -1,6 +1,6 @@
 # Attribute
 
-This has high level APIs for Attributes.
+This has high level APIs for Attributes. In Simplicity Studio, this will be generated in the autogen/zap-generated/ folder of the matter project.
 
 ## Header File
 

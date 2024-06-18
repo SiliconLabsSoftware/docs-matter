@@ -4,7 +4,7 @@ This page describes how to get started with developing an application on EFR32 h
 
 ## Check Prerequisites
 
-In order to run Matter over Wi-Fi, check for the following prerequisites:
+To run Matter over Wi-Fi, check for the following prerequisites:
 
 ### Hardware Requirements
 
@@ -18,7 +18,7 @@ The following hardware devices are required for executing Matter over Wi-Fi:
       - RS9116 development kit
       - WF200 expansion board
       - SiWx917 NCP expansion board
-- **MG24 boards:**
+- **MG24 boards**
 
   - BRD4186C / SLWSTK6006A / Wireless Starter Kit / 2.4GHz@10dBm
     - [XG24-RB4186C](https://www.silabs.com/development-tools/wireless/xg24-rb4186c-efr32xg24-wireless-gecko-radio-board)
@@ -56,7 +56,7 @@ The following hardware devices are required for executing Matter over Wi-Fi:
   
 ### Software Requirements
 
-Below are the software tools, packages and images required for executing Matter over Wi-Fi:
+Below are the software tools, packages, and images required for executing Matter over Wi-Fi:
 
 ### Software Tools Requirements
 
@@ -69,16 +69,16 @@ Below are the software tools, packages and images required for executing Matter 
 
 ### Software Packages
 
-- Gecko SDK v4.x
-- WiseConnect SDK
-  - For RS9116 use WiseConnect SDK v2.x
-  - For SiWx917 use WiseConnect SDK v3.x
+- Simplicity SDK v2024.x
+- WiSeConnect SDK
+  - For RS9116 use WiSeConnect SDK v2.x
+  - For SiWx917 use WiSeConnect SDK v3.x
 
 ### Firmware Images
 
-- Download the Firmware images from [Matter Artifacts page](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts).
+- Download the firmware images from [Matter Artifacts page](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts).
 
-- For Flashing the firmware images, Refer to [Flashing Firmware Images](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/loading-firmware-for-ncp-and-soc-boards).
+- For flashing the firmware images, refer to [Flashing Firmware Images](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/loading-firmware-for-ncp-and-soc-boards).
 
 ## Installation of the Wi-Fi Software Tools and Packages
 
@@ -86,7 +86,7 @@ Refer to the [Wi-Fi Software Installation page](./software-installation).
 
 ## Connect the Boards to a Computer
 
-1. Mount the EFR32 radio board on the EFR32 WSTK board.
+1. Mount the EFR32 radio board onto the EFR32 WSTK board.
 
     ![Mount EFR on radio board](images/mount-efr32.png)
 
@@ -125,11 +125,11 @@ This section describes how to create a project for the EFR32 boards.
 
     ![Binaries folder](images/select-binary-to-flash-efx32.png)
 
-5. Right-click the selected *.s37* binary and click **flash to device**.
+5. Right-click the selected *.s37* binary and click **Flash to Device**.
 
     ![Flash to Device](images/siwx917-soc-flashtodevice.png)
 
-6. Flash programmer window will be opened. Click **Erase** and then **Program** to start flashing.
+6. The Flash programmer window opens. Click **Erase** and then **Program** to start flashing.
 
     ![Flash binary](images/flash-binary-to-efx32-device.png)
 

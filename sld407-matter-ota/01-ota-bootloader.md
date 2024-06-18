@@ -11,7 +11,7 @@ The Gecko Bootloader is built with Silicon Labs Simplicity Studio. These instruc
 In Simplicity Studio, click **Project > New > Silicon Labs Project Wizard** to create a new project. Select the correct Target Board, SDK and the Toolchain.
 
 In the next screen, select the example project the bootloader will be based on. For a bootloader using external storage, select **Bootloader SoC SPI Flash Storage
-(single image with slot size of 1024K)**. For a bootloader using internal storage, select **Bootloader - SoC Internal Storage (single image on 512kB device)**.
+(single image with slot size of 1024K). For a bootloader using internal storage, select **Bootloader - SoC Internal Storage (single image on 512kB device)**.
 
 ### Configuring Storage Components and Parameters
 
@@ -31,24 +31,9 @@ At this point, the project contains all the components necessary to support the 
 
 Build the project by clicking on the hammer icon in the Studio toolbar. Flash the bootloader to the board using the **Upload Application** option from the **Debug Adapters** view.
 
-### Combined Bootloader for MG12 Boards
-
-The MG12 boards (which are Series 1 EFR32 boards) require a combined bootloader image (first stage bootloader + main bootloader) the first time a device is programmed -- whether during development or manufacturing. For subsequent programming, if the combined bootloader had been previously flashed to the device, use the regular version.
-
-To create the combined bootloader, follow this additional step (Step 6 in Section 6 of *UG489: Silicon Labs Gecko Bootloader User's Guide for GSDK 4.0 and
-Higher*) before clicking the build icon. Right-click the project name in the **Project Explorer** view and select **Properties**. In the **C/C++ Build** group, click
-**Settings**. On the **Build Steps** tab, in the **Post Build Steps Command** field, enter:
-
-```shell
-$ ../postbuild.sh "${ProjDirPath}" "${StudioSdkPath}" "${CommanderAdapterPackPath}"
-```
-
-Click **Apply and Close**. Three bootloader images will be generated into the build directory: a main bootloader, a main bootloader with CRC32 checksum, and a
-combined first stage and main bootloader with CRC32 checksum. The main bootloader image is called [project-name].s37, the main bootloader with CRC32 checksum is called [projectname]-crc.s37, while the combined first stage image + main bootloader image with a CRC32 checksum is called [projectname]-combined.s37.
-
 ## Internal Bootloader: Image Size, Selecting Storage Slot Address and Size
 
-The internal storage bootloader for Matter OTA Software Update is supported on MG24 boards only. In this use case, both the running image and the downloadable update image must fit on the internal flash at the same time. This in turn requires that both images are built with a reduced feature set such as disabled logging and Matter shell (see [here](./02-ota-software-update.md#Internal-Storage-Bootloader) for the list of features). Using LZMA compression when building the GBL file further reduces the downloaded image size.
+The internal storage bootloader for Matter OTA Software Update is supported on MG24/MG26 boards. In this use case, both the running image and the downloadable update image must fit on the internal flash at the same time. This in turn requires that both images are built with a reduced feature set such as disabled logging and Matter shell (see [here](./02-ota-software-update.md#Internal-Storage-Bootloader) for the list of features). Using LZMA compression when building the GBL file further reduces the downloaded image size.
 
 When building an internal storage bootloader, the two key configuration parameters are the **Slot Start Address** and **Slot Size** in the **Bootloader Storage Slot** component. The storage slot must not overlap with the running image and the NVM section of the flash. In other words, the slot start address must be greater than the end of the running image address and the sum of the start address and the slot size must be less than the address of the NVM section.
 

@@ -4,19 +4,19 @@ Matter raises the bar on security to a new level beyond simply guaranteeing the 
 
 Register at [Silicon Labs Tech Talks](https://www.silabs.com/about-us/events/tech-talks-wireless-technology-training/matter) to watch a detailed on-demand discussion of Matter Security, along with other tech talks as part of the Interactive Matter Training Series.
 
->Note: All graphics were extracted from the Tech Talk, *Future-Proofing Matter Security with Secure Vault*, created by the Connectivity Standards Alliance (CSA) and used with permission.
+>Note: All graphics were extracted from the Tech Talk, *Future-Proofing Matter Security with Secure Vault*, created by the Connectivity Standards Alliance and used with permission.
 
 ## Principles
 
 The following are the guiding principles for the Matter security design:
 
 1. **No anonymous joining**: Always requires “proof of ownership” (that is, a device-specific passcode).
-2. **Device Attestation**: Every device has unique identity that is authenticated by the manufacturer and verified through the CSA as a certified device.
+2. **Device Attestation**: Every device has unique identity that is authenticated by the manufacturer and verified through the Connectivity Standards Alliance as a certified device.
 3. **Operational Credentials**: When commissioned onto a Matter network, every device is given unique operational credentials after verifying their manufacturer credentials.
 4. **Network Credentials**: The Wi-Fi network key or Thread Master key are not given until the device’s certificate is verified and authenticated properly.
 5. **Open standard**: The open-source software is open to third parties vetting the claims by examining the standard and auditing the source code.
 
-## Security Tenants Promoted by the Connectivity Standards Alliance (CSA)
+## Security Tenants Promoted by the Connectivity Standards Alliance
 
 1. Easy, secure, and flexible device commissioning
 2. Validation that each device is authentic and certified
@@ -94,7 +94,7 @@ The Onboarding Payload is the information used by the Commissioner to ensure int
 | Onboarding Payload Element | Description |
 |-------------------------------------------|-------------|
 | Version | Provides versioning of the payload. |
-| Vendor ID | Assigned by CSA. Allows a way to identify the maker of the device. |
+| Vendor ID | Assigned by the Connectivity Standards Alliance. Allows a way to identify the maker of the device. |
 | Product ID | Vendor specified. Unique for each certified product within a Vendor ID. |
 | Commissioning Flow | :para[Indicates to the Commissioner the steps needed before commissioning can take place.] :list[Standard commissioning flow: A device, when uncommissioned, always enters commissioning mode upon power-up. \n User-intent commissioning flow: Device requires user action (pressing a button, for example) to enter commissioning mode. \n Custom commissioning flow: Interaction with a service provided by the manufacturer is required for initial device setup.] {type=unordered} |
 | Discovery Capabilities Bitmask | :para[Indicate device’s available technologies for device discovery:] :list[Soft-AP \n BLE \n On IP Network (device is already on the IP network)] {type=unordered} |
@@ -158,13 +158,13 @@ The Matter PKI for Device Attestation is comprised of:
 
 #### Certification Declaration
 
-Another data construct that is necessary for Device Attestation is the Certification Declaration (CD), which is cryptographically signed by CSA and contains the Vender and Device information as well as the PAA of the device. The CD must be put into the Device during manufacturing to be used during the Device Attestation process. The Commissioner will ask for the stored CD during the commissioning of the Node.
+Another data construct that is necessary for Device Attestation is the Certification Declaration (CD), which is cryptographically signed by the Connectivity Standards Alliance and contains the Vender and Device information as well as the PAA of the device. The CD must be put into the Device during manufacturing to be used during the Device Attestation process. The Commissioner will ask for the stored CD during the commissioning of the Node.
 
 ![Certification Declaration](resources/matter-certification-declaration-example.png)
 
 #### Distributed Compliance Ledger
 
-The Distributed Compliance Ledger (DCL) is the immutable single source of truth. It is a private blockchain-based distributed ledger of data records. Reading from the DCL is open to public, but writing to the DCL is restricted to various parties/roles. These roles typically include CSA certification, test house, and vendor roles.
+The Distributed Compliance Ledger (DCL) is the immutable single source of truth. It is a private blockchain-based distributed ledger of data records. Reading from the DCL is open to public, but writing to the DCL is restricted to various parties/roles. These roles typically include the Connectivity Standards Alliance certification, test house, and vendor roles.
 
 ![DCL Overview](resources/dcl-overview.png)
 
@@ -210,7 +210,7 @@ The focus of this phase is to verify the authenticity of the Device. The high-le
 
 DAC is retrieved and verified before the device joins the Thread or Wi-Fi network. The Commissioner issues a challenge to the device to prove it possesses the associated Private Key.
 
-First, the Commissioner asks the Node for the CD, the PAI Certificate, and the DAC. It then pulls the Certificate ID, the PAA Certificate, and the Device VID/PID from the immutable root of trust DCL. At that point, it has all the information needed to perform the device attestation. The Commissioner then runs a certification chain check from the DAC to the PAI, and all certificates should chain together correctly. If that check is passed, the Commissioner takes the certification ID from the DCL and checks it against the CD ID that it pulled from the device itself to make sure the device is a genuine CSA certified device. The final step is to verify that the public key in the DAC pulled from the Matter device mathematically matches the private key inserted in the device during manufacture. This is done by sending a message to the device during this final step of Device Attestation, and having the message signed by the device and then the signature verified using the public key from the DAC.
+First, the Commissioner asks the Node for the CD, the PAI Certificate, and the DAC. It then pulls the Certificate ID, the PAA Certificate, and the Device VID/PID from the immutable root of trust DCL. At that point, it has all the information needed to perform the device attestation. The Commissioner then runs a certification chain check from the DAC to the PAI, and all certificates should chain together correctly. If that check is passed, the Commissioner takes the certification ID from the DCL and checks it against the CD ID that it pulled from the device itself to make sure the device is a genuine certified device. The final step is to verify that the public key in the DAC pulled from the Matter device mathematically matches the private key inserted in the device during manufacture. This is done by sending a message to the device during this final step of Device Attestation, and having the message signed by the device and then the signature verified using the public key from the DAC.
 
 #### Node Operational Credentials
 
@@ -255,7 +255,7 @@ This completes all the commissioning steps and now on the Matter Network.
 
 ## Matter Security Requirements
 
-### Matter Security as Specified by CSA
+### Matter Security as Specified by the Connectivity Standards Alliance
 
 **Manufacturing**: Matter Devices must be injected with a unique DAC certificate/private key, Onboarding Payload (QR code delivered), Certification Declaration (CD), and other static/dynamic data during manufacturing. (SHALL)
 

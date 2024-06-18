@@ -1,6 +1,6 @@
 # Cluster
 
-This has high level APIs for Clusters.
+This has high level APIs for Clusters. In Simplicity Studio, this will be generated in the autogen/zap-generated/ folder of the matter project.
 
 ## Header File
 

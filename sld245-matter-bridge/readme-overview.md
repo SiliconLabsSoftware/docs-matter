@@ -28,7 +28,7 @@ The Unify Matter Bridge is a Unify IoT Service that allows for control of Unify 
 
 The Unify data model is largely based on the same data model as Matter, making the job of the Unify Matter Bridge relatively simple. There is almost a 1-1 relationship between them.
 
-> **Note:** Currently no control goes out to the Matter Fabric from the Unify Matter Bridge. The Unify Matter Bridge cannot '_see_' what else is on the Matter Fabric, let alone control end devices in the Matter Fabric.
+> **Note:** Currently no control goes out to the Matter Fabric from the Unify Matter Bridge. The Unify Matter Bridge cannot _see_ what else is on the Matter Fabric, let alone control end devices in the Matter Fabric.
 
 See the [GitHub release notes](https://github.com/SiliconLabs/matter/releases) for details on feature additions, bug fixes, and known issues.
 
@@ -55,7 +55,7 @@ The Unify Matter Bridge currently supports mapping the following clusters/device
 
 - [Building the Matter Bridge](./readme-building.md)
 - [Running the Matter Bridge](./readme-user.md#running-the-matter-bridge)
-- [Controlling a Z-Wave OnOff device](./readme-user.md#toggle-an-onoff-device)
-- [Toggling a group of OnOff devices](./readme-user.md#toggle-a-group-of-onoff-devices)
+- [Controlling a Z-Wave OnOff device](./readme-user.md#toggle-an-on-off-device)
+- [Toggling a group of OnOff devices](./readme-user.md#toggle-a-group-of-on-off-devices)
 
-For more information about the Unify SDK see [Unify Host SDK Documentation](https://siliconlabs.github.io/UnifySDK/doc/UnifySDK.html).
+For more information about the Unify SDK, see [Unify Host SDK Documentation](https://siliconlabs.github.io/UnifySDK/doc/UnifySDK.html).

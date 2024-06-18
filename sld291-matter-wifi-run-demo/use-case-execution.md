@@ -47,7 +47,7 @@ If you are having difficulty getting the chip-tool to commission the device succ
 1. In a PuTTY session to the Matter hub, use the chip-tool to test the Matter light device.
 
    1. Control the light status of the light MAD Using `./chip-tool onoff on nodeID  1`. You can also use  `chip-tool toggle nodeID 1`.
-   2. For dev board with buttons available, you can use **BTN1** to toggle the light status locally.
+   2. For dev board with buttons available, use **BTN1** to toggle the light status locally.
 
 ## Factory Reset the Device
 

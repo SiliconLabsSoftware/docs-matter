@@ -6,31 +6,31 @@ This guide lists the steps to create and build a Silicon Labs Matter SLC project
 
 ## Setting up the Environment
 
-Clone Gecko SDK:
+Clone Simplicity SDK:
 
 ```C
-git clone https://github.com/SiliconLabs/gecko_sdk.git
+git clone https://github.com/SiliconLabs/simplicity_sdk
 ```
 
-Create a directory named `extension` inside the Gecko SDK directory.
+Create a directory named `extension` inside the SiSDK directory.
 
-Clone the  Matter GSDK Extension inside the `extension` directory:
+Clone the  Matter SiSDK Extension inside the `extension` directory:
 
 ```C
 git clone https://github.com/SiliconLabs/matter_extension.git
 ```
+
 To use SiWx91x Wi-Fi applications, clone the WiSeConnect SDK inside the extension directory.
 
 ```C
 git clone https://github.com/SiliconLabs/wiseconnect.git
 ```
 
-
 Your path to the Matter extension and WiSeConnect extension should look like:
 
 ```C
-<Path/To/Gsdk/Download>/extension/matter_extension
-<Path/To/Gsdk/Download>/extension/wiseconnect
+<Path/To/Sdk/Download>/extension/matter_extension
+<Path/To/Sdk/Download>/extension/wiseconnect
 ```
 
 Install the following python packages:
@@ -60,24 +60,24 @@ The `sl_setup_env.py` script creates an .env file to be used to set the environm
 
 It will also create `environment_variables_vscode.txt`. This file can be referred to add environment variables for VS Code based builds.
 
-The script will ask you for permission to trust gecko_sdk, matter_extension, and wiseconnect.
+The script will ask you for permission to trust simplicity_sdk, matter_extension, and wiseconnect.
 
 ## Creating an Application Project
 
 Run the `sl_create_new_app.py` script to create a BRD4161A project with name `MyNewApp` starting from the `lighting-app-thread.slcp` example application project file:
 
-The script will ask user permission to trust the `gecko_sdk` and `matter_extension` before generating.
+The script will ask user permission to trust the `simplicity_sdk` and `matter_extension` before generating.
 
 For Mac and Linux:
 
 ```C
-python3 slc/sl_create_new_app.py MyNewApp slc/sample-app/lighting-app/efr32/lighting-app-thread.slcp brd4161a
+python3 slc/sl_create_new_app.py MyNewApp slc/sample-app/lighting-app/efr32/lighting-app-thread.slcp brd4187c
 ```
 
 For Windows:
 
 ```C
-python slc\sl_create_new_app.py MyNewApp slc\sample-app\lighting-app\efr32\lighting-app-thread.slcp brd4161a
+python slc\sl_create_new_app.py MyNewApp slc\sample-app\lighting-app\efr32\lighting-app-thread.slcp brd4187c
 ```
 
 ## Building an Application Project
@@ -87,13 +87,13 @@ After a project is created the `sl_build.py` script can be used to re-generate t
 For Mac and Linux:
 
 ```C
-python3 slc/sl_build.py MyNewApp/lighting-app-thread.slcp brd4161a
+python3 slc/sl_build.py MyNewApp/lighting-app-thread.slcp brd4187c
 ```
 
 For Windows:
 
 ```C
-python slc\sl_build.py MyNewApp\lighting-app-thread.slcp brd4161a
+python slc\sl_build.py MyNewApp\lighting-app-thread.slcp brd4187c
 ```
 
 Alternately, one can use SLC-CLI commands directly to generate the project and then use `make` to build it.
@@ -109,7 +109,7 @@ Note: In rare cases, the build may fail due to missing files in the `zap-generat
 
 ## Modifying an Application Project
 
-The resulting user project can be modified like any other SLC project: software components can be added or removed by modifying the project's .slcp file, configuration can be applied by modifying the files in the `config` directory, the application logic can be managed through the files in the `src` directory. Various SLC-CLI commands can be used to examine, validate, or re-generate the project after a modification, see [Software Project Generation and Configuration with SLC-CLI](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-tools-slc-cli/) for more information.
+The resulting user project can be modified like any other SLC project. Software components can be added or removed by modifying the project's .slcp file, configuration can be applied by modifying the files in the `config` directory, the application logic can be managed through the files in the `src` directory. Various SLC-CLI commands can be used to examine, validate, or re-generate the project after a modification, see [Software Project Generation and Configuration with SLC-CLI](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-tools-slc-cli/) for more information.
 
 For modifying Matter endpoints and clusters invoke the ZAP tool passing to it the application's ZAP file:
 
@@ -117,12 +117,12 @@ For modifying Matter endpoints and clusters invoke the ZAP tool passing to it th
 ./scripts/tools/zap/run_zaptool.sh MyNewApp/config/common/lighting-thread-app.zap
 ```
 
-##Edit and Build with Visual Studio Code 
+## Edit and Build with Visual Studio Code
 
 Install the "Simplicity Studio for VS Code" extension on VS code.
 
-Add the POST_BUILD_EXE and NINJA_BUILD_EXE variables from the `slc\tools\environment_variables_vscode.txt` to the environment variables. 
+Add the POST_BUILD_EXE and NINJA_BUILD_EXE variables from the `slc\tools\environment_variables_vscode.txt` to the environment variables.
 
-Run the `sl_setup_env.py` and `sl_create_new_app.py` to set up and create a sample application, then load the application in VS Code by following the "Adding a VS Code-Enabled Simplicity Studio Project to VS Code" section from [Simplicity Studio User Guide](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-tools-slc-cli/)
+Run the `sl_setup_env.py` and `sl_create_new_app.py` to set up and create a sample application, then load the application in VS Code by following the "Adding a VS Code-Enabled Simplicity Studio Project to VS Code" section from [Simplicity Studio User Guide](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-tools-slc-cli/).
 
 You can make all the changes in source files and regenerate app using 'slc generate' commands.

@@ -1,10 +1,10 @@
 # The Matter Interaction Model
 
-The Matter Device Interaction Model (IM) defines the methods of communication between nodes, and serves as the common language for node-to-node information transmission.
+The Matter Device Interaction Model defines the methods of communication between nodes, and serves as the common language for node-to-node information transmission.
 
 Nodes communicate with each other through interactions. Interactions are a sequence of transaction(s), which in turn are a sequence of actions.
 
-For example, in a Read Interaction, a client cluster can initiate a Read Transaction, where the client can request to read an attribute and a server cluster can respond by reporting the attribute. Both the client request and the server response are separate actions, but they are part of the same Read Transaction, which the Read Interaction encompasses.
+For example, in a Read Interaction, a client cluster can initiate a Read Transaction, where the client can request to read an attribute, and a server cluster can respond by reporting the attribute. Both the client request and the server response are separate actions, but they are part of the same Read Transaction, which the Read Interaction encompasses.
 
 ![Interaction structure overview](resources/interaction-structure.jpg)
 
@@ -43,7 +43,7 @@ The following sections review each of the four interaction types and their const
 
 An initiator starts a Read Interaction when it wants to determine the value of one or more of a target node's attributes or events. The following steps occur:
 
-1. **Read Request Action**: Requests a list of the target’s attributes and/or events, along with paths to each
+1. **Read Request Action**: Requests a list of the target’s attributes and/or events, along with paths to each.
 2. **Report Data Action**: Generated in response to the Read Request Action. Target sends back the requested list of attributes and/or events, a suppress response, and a subscription ID.
 
    1. Suppress response: Flag that indicates whether the status response should be sent or withheld.
@@ -71,7 +71,7 @@ Timed transactions are mainly used for devices such as doors or locks because th
 4. The attacker intercepts this second message and sends the first message to the target, keeping the second message for later use.
 5. The target receives the first message as if it were arriving from the initiator node, sending a confirmation response to the initiator node and, unknowingly, the attacker.
 
-The problem lies in the second message; since the target never received the second message, the attacker now has a valid message to use at its convenience. The message may elicit a response from the target node such as “unlock” or “open door,” which means that the network now has a breach in security. By establishing a maximum period to receive a message back, a timed transaction effectively guards against intercept attacks. The attacker can no longer hold a message to use at its convenience, as the message will expire after a set time.
+The problem lies in the second message. Since the target never received the second message, the attacker now has a valid message to use at its convenience. The message may elicit a response from the target node such as “unlock” or “open door,” which means that the network now has a breach in security. By establishing a maximum period to receive a message back, a timed transaction effectively guards against intercept attacks. The attacker can no longer hold a message to use at its convenience, as the message will expire after a set time.
 
 Although timed transactions are important in guarding against attacks, they increase the complexity of a network since they need more actions. Therefore, they are only recommended for use on transactions that give access to valuable information.
 
@@ -133,7 +133,7 @@ Subscription Interactions include two transactions types: A Subscribe Transactio
 
 The Subscribe Transaction is as follows:
 
-1. **Subscribe Request Action** - Requests three items:
+1. **Subscribe Request Action**: Requests three items:
 
     1. Min interval floor (minimum interval between Data Reports).
     2. Max interval ceiling (maximum interval between Data Reports).
@@ -149,26 +149,26 @@ After a successful subscription, Report Transactions are sent to the subscriber.
 
 1. **Non-empty**
 
-   1. Report Data Action: Reports data and/or events with the SuppressResponse flag set to FALSE
-   2. Status Response: Indicates a successful report or an error, the latter of which ends the interaction
+   - Report Data Action: Reports data and/or events with the SuppressResponse flag set to FALSE
+   - Status Response: Indicates a successful report or an error, the latter of which ends the interaction
 
 2. **Empty**
 
-   1. Report Data Action: A report that has no data or events with the SuppressResponse flag set to TRUE, meaning no Status Response.
+   - Report Data Action: A report that has no data or events with the SuppressResponse flag set to TRUE, meaning no Status Response.
 
 ### Subscription Interaction Restrictions
 
 Subscription Interactions have a few restrictions.
 
-- First, the Subscribe Request and Subscribe Response actions are unicast-only, meaning an initiator cannot subscribe to more than one target simultaneously.
-- Second, Report Data Actions in the same Subscription Interaction must have the same subscription ID.
-- Third, a subscription may be ended if the subscriber responds to a Report Data Action with an “INACTIVE_SUBSCRIPTION” status or if the subscriber does not receive a Report Data Action within the max interval ceiling. The latter connotes that the publisher may end a subscription by not sending Report Data Actions.
+1. The Subscribe Request and Subscribe Response actions are unicast-only, meaning an initiator cannot subscribe to more than one target simultaneously.
+2. Report Data Actions in the same Subscription Interaction must have the same subscription ID.
+3. A subscription may be ended if the subscriber responds to a Report Data Action with an “INACTIVE_SUBSCRIPTION” status or if the subscriber does not receive a Report Data Action within the max interval ceiling. The latter connotes that the publisher may end a subscription by not sending Report Data Actions.
 
 ## Relating Matter to Zigbee
 
-The Matter Interaction Model originates from Chapter 2 in the Zigbee Cluster Library found here: [https://groups.csa-iot.org/wg/members-all/document/23019](https://groups.csa-iot.org/wg/members-all/document/23019); the Interaction model extends this by abstracting interactions from other layers (security, transport, message format, encoding). The Interaction Model fills in gaps in the Zigbee Cluster Library identified by the Matter Data Model Tiger Team, adding Multi-Element Message support, Synchronized Reporting, reduce message types in commands and actions, complex data type support in all messages, Events, and interception attack.
+The Matter Interaction Model originates from Chapter 2 in the Zigbee Cluster Library found here: [https://groups.csa-iot.org/wg/members-all/document/23019](https://groups.csa-iot.org/wg/members-all/document/23019). The Interaction model extends this by abstracting interactions from other layers (security, transport, message format, encoding). The Interaction Model fills in gaps in the Zigbee Cluster Library identified by the Matter Data Model Tiger Team, adding Multi-Element Message support, Synchronized Reporting, reduce message types in commands and actions, complex data type support in all messages, Events, and interception attack.
 
 ## Matter Specifications
 
-More information on the Matter Interaction Model can be found in Chapter 8 of Matter Core Specifications [Specifications Download Request - CSA-IOT](https://csa-iot.org/developer-resource/specifications-download-request/).
+More information on the Matter Interaction Model can be found in Chapter 8 of Matter Core Specifications [Specifications Download Request - IOT](https://csa-iot.org/developer-resource/specifications-download-request/).
 

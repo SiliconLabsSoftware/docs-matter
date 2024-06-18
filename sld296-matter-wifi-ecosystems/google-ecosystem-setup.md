@@ -90,7 +90,7 @@ Having finished the above, the only step left to have your setup ready is to ope
 1. Refer to [Getting Started Overview Guide](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example) for setting up a Silicon Labs Matter Accessory Device.
 
 2. Connect board to a computer.
-    - For Wi-Fi NCP Mode Boards, see [Connect EFR32 Board to computer](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/getting-started-efx32-ncp#connect-the-efx32-boards-to-a-computer).
+    - For Wi-Fi NCP Mode Boards, see [Connect EFR32 Board to Computer](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/getting-started-efx32-ncp#connect-the-efx32-boards-to-a-computer).
     - For Wi-Fi SOC Mode Boards, see [Connect SiWx917 SOC to Computer](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/getting-started-with-soc#connect-siwx917-soc-to-computer).
 
 3. Flash the bootloader binary for your device along with the application (for example, lighting, lock, thermostat, window covering, or light-switch) using [Simplicity Commander](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/flashing-using-commander).
@@ -101,11 +101,11 @@ Having finished the above, the only step left to have your setup ready is to ope
 
     ![Add device](./images/google-home-app-add-device.png?width=40%&height=40%)
 
-6. In the **Set Up Device** window, tap to select the **New Device** option.
+6. On the **Set up a device** screen, tap **New device**.
 
     ![New Device](./images/google-home-app-new-device.png?width=40%&height=40%)
 
-7. In the **Choose Home Section** select your home and tap **Next**.
+7. On the **Choose a home** screen, select your home and tap **Next**.
 
     ![home selection](./images/google-home-app-select-home.png?width=40%&height=40%)
 
@@ -115,13 +115,13 @@ Having finished the above, the only step left to have your setup ready is to ope
 
 9. If the device is found, tap the application that you flashed on the device, such as Light or Lock.
 
-10. If the device is not found, tap **Matter Enabled Device**.
+10. If the device is not found, tap **Matter-enabled device**.
 
     ![Matter enabled device](./images/google-home-app-matter-enabled-device.png?width=40%&height=40%)
 
 11. Once the Google Home app has found the device, it will ask you to scan its QR code.
 
-12. Google Home app asks if you want to connect this device to your Google account. Tap **I agree**.
+12. Google Home app asks if you want to connect this device to your Google account. Tap **Agree**.
 
     ![Add to account](./images/google-home-app-account-prompt.png?width=40%&height=40%)
 

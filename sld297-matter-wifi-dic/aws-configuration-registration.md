@@ -8,13 +8,13 @@ Amazon Web Services offers reliable, scalable, and inexpensive cloud computing s
 2. Open [AWS](https://aws.amazon.com/).
 3. Log in using your AWS credentials.
 4. Register the CA Certificate in AWS:
-    - Go to `Security -> Certificate Authorities` and `Register CA Certificate`.
-    - Select `Register CA` in the Single account mode.
+    - Go to **Security > Certificate Authorities** and **Register CA Certificate**.
+    - Select **Register CA** in the Single account mode.
     - Choose the CA certificate (CA.crt) that you previously created above.
     - Choose the CA verification certificate (verification_cert.pem) that you previously created above.
     - Register the CA.
 
-5. Go to `Security -> Policies` and select `Create Policy`. Enter the policy name (ex: `DIC_POLICY`) and, in the policy statements, select `JSON` and replace the contents with the JSON provided below:
+5. Go to **Security > Policies** and select **Create Policy**. Enter the policy name (ex: _DIC_POLICY_) and, in the policy statements, select **JSON** and replace the contents with the JSON provided below:
 
     ```shell
      {
@@ -33,13 +33,13 @@ Amazon Web Services offers reliable, scalable, and inexpensive cloud computing s
 
 7. Steps to generate the certificate for your Matter application to use in the `dic_nvm_cert.cpp` source file:
 
-    - Go to **All Devices -> Things** and select **Create Things**.
+    - Go to **All Devices > Things** and select **Create Things**.
     - Select **Create Single Thing** and click **Next**.
-    - Specify thing properties Info -> Give the thing a name (Note: Client ID) and click **Next**.
-    - Configure the device certificate - optional Info -> Use my certificate.
-    - Certificate details -> Choose **CA is registered with AWS IOT** and select the CA registered with AWS in Step 4.
-    - Certificate -> Choose file (Choose Client certificate generated in Openssl Certificate Creation ex: `device.crt`) and set the certificate status to **Active**. Click **Next**.
-    - Use the policy (ex: `DIC_POLICY`) created in AWS Certificate creation.
+    - Specify thing properties in **Info > Give the thing a name** (Note: Client ID) and click **Next**.
+    - Configure the device certificate (optional) in **Info > Use my certificate**.
+    - In Certificate details, choose **CA is registered with AWS IOT** and select the CA registered with AWS in Step 4.
+    - In **Certificate > Choose file** (Choose Client certificate generated in Openssl Certificate Creation ex: `device.crt`), set the certificate status to **Active**. Click **Next**.
+    - Use the policy (ex: _DIC_POLICY_) created in AWS Certificate creation.
 
 8. Repeat Step 5 to create a new thing to use in MQTT Explorer using the certificate created for MQTT explorer (from Openssl Certificate Creation ex: `explorer.crt`).
 
