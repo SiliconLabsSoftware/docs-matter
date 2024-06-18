@@ -10,11 +10,13 @@ This page provides a detailed description on how to create an Wi-Fi NCP project 
 
 4. Go to the **All Products** section.
 
-   ![All Products](images/all-products-selection.png)
+   ![All Products](images/ncp-all-products.png)
+
+   
 
 5. Search and select the radio board from the displayed list and select **Start**.
 
-   ![Select the radio board](images/select-efx-board.png)
+   ![Select the radio board](images/ncp-board-selection.png)
 
 6. The Launcher page will display the selected radio board's details.
 
@@ -28,26 +30,26 @@ This page provides a detailed description on how to create an Wi-Fi NCP project 
 
 8. Open the **Example Projects and Demos** tab, select a project, and click **Create Project**.
 
-   ![Create Project](images/create-project-select-efx-example.png)
+   ![Create Project](images/ncp-proj-create.png)
 
 9. In the New Project Wizard window, click **Finish**.
 
-   ![Finish project](images/create-project-click-finish.png)
+   ![Finish project](images/ncp-proj-config.png)
 
-10. Once the project is created, right-click the project and select **Build Project** in the Project Explorer tab.
+10. Once the solution is created, right-click the project and select **Build Project** in the Project Explorer tab.
 
-    ![Build project](images/project-created-efx32.png)
+    ![Build project](images/ncp-build-proj.png)
 
 11. Once the project is compiled successfully, go to the Project Explorer view and expand the binaries folder to flash the binary.
 
-    ![Select binary](images/select-binary-to-flash-efx32.png)
+    ![Select binary](images/ncp-binary-selection.png)
 
 12. Right-click the selected '.s37' binary and click **flash to device**.
 
-    ![flash to device](images/siwx917-soc-flashtodevice.png)
+    ![flash to device](images/ncp-flash-binary.png)
 
 13. The Flash programmer window opens. Click **Erase** and then **Program** to start flashing.
 
-    ![Flash binary](images/flash-binary-to-efx32-device.png)
+    ![Flash binary](images/ncp-flash-binary-efr32.png)
 
 **Note:** Output of the EFR32 NCP Host application will be displayed on the J-Link RTT Viewer.
