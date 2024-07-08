@@ -14,7 +14,7 @@ Securing an IoT device is a highly complicated and costly process. You must gene
 
 ## How Does Matter Fit into the CPMS Equation?
 
-Silicon Labs is the only IoT-embedded solution provider at this time offering a secure provisioning service for Matter devices at scale. Silicon Labs has partnered with [Kudelski Security](./01-matter-cpms-kudelski-security.md) to provide scalable access to Device Attestation Certificates (DACs) for your Matter devices. Kudelski has "30+ years of experience securely provisioning more than 500 million devices". Rest assured that your secrets are stored in HSMs both on and offline to provide maximum security for your secret key material. Learn more about [Security](https://www.kudelski-iot.com/services-and-systems/matter-paa-pai).
+Silicon Labs is the only IoT-embedded solution provider at this time offering a secure provisioning service for Matter devices at scale. Silicon Labs has partnered with [Kudelski Security](./01-matter-cpms-kudelski.md) to provide scalable access to Device Attestation Certificates (DACs) for your Matter devices. Kudelski has "30+ years of experience securely provisioning more than 500 million devices". Rest assured that your secrets are stored in HSMs both on and offline to provide maximum security for your secret key material. Learn more about [Security](https://www.kudelski-iot.com/services-and-systems/matter-paa-pai).
 
 CPMS allows you to configure your device and receive production samples for a minimal cost before making a full production order. To configure your Matter settings, there are two ways to accomplish this with Silicon Labs tooling.
 
