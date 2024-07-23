@@ -10,6 +10,10 @@ This procedure prepares the Raspberry Pi 4B (RPi4B) to become a Matter hub. You 
 
    2. Select the storage as an SD card.
 
+      1. Test step 1
+      2. Test step 2
+      3. Test step 3
+
    3. Click the settings icon to configure the access point (AP) credentials, Hostname, and user credentials. Make sure the 5 GHz Wi-Fi credentials of the dual-band AP are entered.
 
    4. Click the 'write' option. **Note** this will erase all existing content on that SD card.
