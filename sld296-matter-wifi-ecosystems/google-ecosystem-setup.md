@@ -7,77 +7,29 @@ For the hardware required for the Google Nest Hub Ecosystem, refer to the [Ecosy
 ## Software Requirements
 
 - Google Account
-- Google Home App with Beta Version
+- Google Home App
 
 ## Set Up Google Home and Android Smartphone
-
-### Google Matter Early Access Program (EAP)
-
-The Google Matter **Early Access Program** is a partnership between Google and silicon providers who support Matter development. This partnership allows for faster onboarding of new devices into Matter and Thread by lowering the bar for starting with development of a new Matter-based product.
-
-The Google Matter Early Access Program is run through the [Google Developer Center](https://developers.home.google.com/).
-
-The Matter-focused portion of the Google Developer Center is located [here](https://developers.home.google.com/matter).
-
-The Google Matter Early Access Program is located [here](https://developers.home.google.com/matter/eap).
-
-**Note**: Until the public preview, access to this page is reserved to those allowed in by the Google Partner engineering team.
 
 ### Prerequisites for Google Setup
 
 To run the Google Ecosystem demo, you need both Google and a Matter device. You also need a Google Nest Hub 2nd Generation and an Android phone (at least a Pixel 5 is recommended) that can run at least Android 8 (8.1, API Level 27) or newer and has Bluetooth LE capability.
 
-### Instructions for Setting Up EAP
-
-Once you have access, you need to set up the Nest Hub 2nd Gen and Android phone with the Google Home app using the same Google Account that is used to access the EAP website.
-
-If you have set up the Nest Hub 2nd Gen with the correct Google account, you will receive the OTA update to the Beta version within 24 hours. You can verify this by going to Device information > Technical information > Update Channel and the channel should read "matter-dev-current-beta-channel".
-
 ### Set Up the Android Phone
 
 Follow these instructions to set up the Android phone with the necessary applications:
 
-- [Set up the Google Home app](https://developers.home.google.com/matter/eap/setup/home-app)
-- [Set up Google Play Services](https://developers.home.google.com/matter/eap/setup/play-services)
+- [Install the Google Home app](https://play.google.com/store/apps/details?id=com.google.android.apps.chromecast.app&pli=1)
+- Follow the in-app steps.
 
-### Create a Matter Integration in the Google Developer Console
-
-Follow [these instructions](http://developers.home.google.com/matter/eap/project/create) to create a Matter integration in the Google Developer Console.
-
-After completing these steps, you should be ready to build your Matter accessory device.
+**NOTE:** Currently SiWx917 SoC only supports 2.4GHz channels so ensure that the phone and hub are connected to the 2.4GHz WiFi SSID.
 
 ## Matter Integration Setup in the Developer Console
-
-- Once you have created a home in your Android smartphone, add your Nest Hub to that home.
-- After this, on a browser on your PC, go to [https://developers.home.google.com/matter](https://developers.home.google.com/matter) to create a project.
-- Click **Console** at the top of the page.
-- On the next page, click **Create a Project**.
-- Give your project a name and click **Create a new project**.
-- On the next page click **Add Matter integration**.
-- On the next page click **Next: Develop**.
-- Click **Next: Setup**.
-- Set up the fields on this page as shown:
-  - Product name: Light
-  - Device type: light
-  - Vendor ID (VID): Test VID
-  - Test VID: 0xFFF1
-  - Product ID (PID): 0x8005
-
-- Product ID options for Matter devices are as follows:
-  - Light-Switch: 0x8004
-  - Light: 0x8005
-  - Lock: 0x8006
-  - Thermostat: 0x800E
-  - Window Covering: 0x8010
-- Click **Save & Continue**.
-- On the next page click **Save**.
-- You will now see a Matter integration for device type light in your console.
 
 You have now completed setting up the following:
 
 - Your home in the Google home app in your Android smartphone
-- A project in your Google developer console
-- A matter integration for the light device type
+- A device running the Matter application e.g. lighting, light-switch, lock.
 
 Having finished the above, the only step left to have your setup ready is to open a QR code webpage for the light device type in your PC. A QR Code link will be present in Device configuration section of logs. Copy the link and paste it in google chrome so you will be able to QR Code.
 
@@ -90,8 +42,9 @@ Having finished the above, the only step left to have your setup ready is to ope
 1. Refer to [Getting Started Overview Guide](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example) for setting up a Silicon Labs Matter Accessory Device.
 
 2. Connect board to a computer.
-    - For Wi-Fi NCP Mode Boards, see [Connect EFR32 Board to Computer](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/getting-started-efx32-ncp#connect-the-efx32-boards-to-a-computer).
-    - For Wi-Fi SOC Mode Boards, see [Connect SiWx917 SOC to Computer](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/getting-started-with-soc#connect-siwx917-soc-to-computer).
+
+   - For Wi-Fi NCP Mode Boards, see [Connect EFR32 Board to Computer](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/getting-started-efx32-ncp#connect-the-efx32-boards-to-a-computer).
+   - For Wi-Fi SOC Mode Boards, see [Connect SiWx917 SOC to Computer](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/getting-started-with-soc#connect-siwx917-soc-to-computer).
 
 3. Flash the bootloader binary for your device along with the application (for example, lighting, lock, thermostat, window covering, or light-switch) using [Simplicity Commander](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/flashing-using-commander).
 
@@ -99,19 +52,21 @@ Having finished the above, the only step left to have your setup ready is to ope
 
 5. Click **Devices Section** and tap **Add**.
 
-    ![Add device](./images/google-home-app-add-device.png?width=40%&height=40%)
+   ![Add device](./images/google-home-app-add-device.png?width=40%&height=40%)
 
 6. On the **Set up a device** screen, tap **New device**.
 
-    ![New Device](./images/google-home-app-new-device.png?width=40%&height=40%)
+   ![New Device](./images/google-home-app-new-device.png?width=40%&height=40%)
+   
+   **NOTE:** If the device is running a development version of the application a prompt will appear stating that "Uncertified device", just proceed to set up the device anyway.
 
 7. On the **Choose a home** screen, select your home and tap **Next**.
 
-    ![home selection](./images/google-home-app-select-home.png?width=40%&height=40%)
+   ![home selection](./images/google-home-app-select-home.png?width=40%&height=40%)
 
 8. The Google Home App searches for a nearby Matter device.
 
-    ![looking for device](./images/google-home-app-looking-for-device.png?width=40%&height=40%)
+   ![looking for device](./images/google-home-app-looking-for-device.png?width=40%&height=40%)
 
 9. If the device is found, tap the application that you flashed on the device, such as Light or Lock.
 

@@ -29,15 +29,17 @@ Refer to Apple's [Set up HomePod or HomePod mini](https://support.apple.com/en-i
 3. Flash the bootloader binary for your device along with the application (for example, lighting, lock, thermostat, window covering, or light-switch) using [Simplicity Commander](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/flashing-using-commander).
 
 4. In the Apple Home app, tap the "+" button.
-![Apple Home App](./images/apple-home-app.png?width=40%&height=40%)
+   ![Apple Home App](./images/apple-home-app.png?width=40%&height=40%)
 
 5. Select **Add Accessory**.
-![Add accessory](./images/apple-home-app-add-accessory.png?width=40%&height=40%)
+   ![Add accessory](./images/apple-home-app-add-accessory.png?width=40%&height=40%)
 
 6. It will prompt you to scan the QR Code using a smartphone camera.
-![scan QR code](./images/apple-home-app-scan-qr-code.png?width=40%&height=40%)
+   ![scan QR code](./images/apple-home-app-scan-qr-code.png?width=40%&height=40%)
 
 7. Connect the device to a computer and scan the QR code within the Home app.
+
+   **NOTE:** If the device is running a development version of the application a prompt will appear stating that "Uncertified device", just proceed to set up the device anyway.
 
 8. Proceed to add the device to your home. You should see **LED0** fast blinking when commissioning happens.
 
