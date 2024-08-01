@@ -5,25 +5,13 @@
 This procedure prepares the Raspberry Pi 4B (RPi4B) to become a Matter hub. You should have downloaded the Matter Hub Raspberry Pi image and Raspberry Pi Imager as described in the [Overview](/matter/<docspace-docleaf-version>/matter-overview). The Raspberry Pi image contains software called chip-tool, which provides a command-line interface into the Matter protocol.
 
 1. Install the Raspberry Pi Imager and insert the SD card into the PC to flash the image.
-
    1. Open the Imager, select the Operating System as Custom OS, and browse for the Raspberry Pi Image.
-
    2. Select the storage as an SD card.
-
-      1. Test step 1
-      2. Test step 2
-      3. Test step 3
-
    3. Click the settings icon to configure the access point (AP) credentials, Hostname, and user credentials. Make sure the 5 GHz Wi-Fi credentials of the dual-band AP are entered.
-
    4. Click the 'write' option. **Note** this will erase all existing content on that SD card.
-
 2. Insert the SD card into Raspberry Pi 4B (RPi4B).
-
 3. Power-up the RPi4B. Once it is booted up, check the Raspberry Pi's IP address. Refer to [Finding Raspberry Pi IP address](/matter/<docspace-docleaf-version>/matter-references/find-raspi) in the Resources section to get the IP address or enter the Hostname directly in PuTTY.
-
 4. Use PuTTY to connect to RPi4B.
-
    1. The first time connecting to RPi4B, PuTTY will warn about a new host key or key fingerprint. Accept the key.
    2. The credentials (username: password) are the same given Step 1.
    3. Switch to root mode and navigate to path */home/ubuntu/connectedhomeip/out/standalone* to find the chip-tool.
