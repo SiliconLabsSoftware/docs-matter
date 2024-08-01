@@ -239,9 +239,9 @@ Follow these steps to provision certificates onto a device.
 
       ![Provisioning Device](images/provisioning-device6c.png)
 
-7. When the operation completes successfully, you will need to add the **Matter Device Attestation Credential** software component to your project to enable the Matter Device Attestation Credentials.
+7. When the operation completes successfully, you will need to add the **Attestation Certificate provisioning configuration** software component to your project to enable the Matter Device Attestation Credentials.
 
-   - To add the software component, double-click the project's SLCP file to open it in an editor, and then select **Software Components**, search for the keyword "attestation", select **Matter Device Attestation Credential**, and then click **Install**. Example:
+   - To add the software component, double-click the project's SLCP file to open it in an editor, and then select **Software Components**, search for the keyword "attestation", select **Attestation Certificate provisioning configuration**, and then click **Install**. Example:
 
      ![Provisioning Device](images/provisioning-device7.png)
 

@@ -1,5 +1,7 @@
 # Building the Chip-Tool
 
+NOTE: The chip-tool binary is a part of the software artifacts package provided with the Matter release, see "Assets" section at the bottom of this page:  https://github.com/SiliconLabs/matter_extension/releases/tag/v2.3.0 . It most cases it should not be necessary to build chip-tool from scratch. 
+
 This page covers:
 
 - Building the chip-tool for Linux
@@ -40,10 +42,10 @@ To build the chip-tool environment, first set up the software and then compile t
 
 If you have not downloaded or cloned the repository, you can run the following commands on a Linux terminal running on either Linux machine, WSL or Virtual Machine to clone the repository and run bootstrap to prepare to build the sample application images.
 
-1. To download the [SiliconLabs Matter codebase](https://github.com/SiliconLabs/matter.git), run the following commands.
+1. To download the [Matter codebase](https://github.com/project-chip/connectedhomeip.git), run the following commands.
 
     ```shell
-     $ git clone https://github.com/SiliconLabs/matter.git
+     $ git clone https://github.com/project-chip/connectedhomeip.git
     ```
 
 2. Bootstrapping:
