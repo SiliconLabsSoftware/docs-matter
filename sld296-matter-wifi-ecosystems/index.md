@@ -9,7 +9,7 @@ A Matter ecosystem is a commercial platform that supports the Matter protocol, e
 ## Ecosystem Components
 There are three main roles for devices in a Matter Ecosytstem:
 
-1) **Matter Accessory Device (MAD):** These are smart home devices, such as smart lights, thermostats, locks, and sensors, that are Matter-enabled. These devices are controlled by the Matter Hub.
+1) **Matter Accessory Device (MAD):** These are smart home devices, such as smart lights, thermostats, locks, and sensors that are Matter-enabled. These devices are controlled by the Matter Hub.
 2) **Matter Hub (Controller):** This device connects to all MADs over one of two wireless networking protocols, those being OpenThread or WiFi. 
 3) **Commissioner:** Often a smartphone, the commissioner securely adds new MADs to the network by scanning a QR code associated with the MAD. The commissioning process is conducted between the MAD, commissioner and Matter hub over Bluetooth Low Energy (BLE).
 
