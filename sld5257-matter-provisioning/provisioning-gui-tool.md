@@ -253,7 +253,7 @@ Follow these steps to generate a CPMS file to prepare for the production process
 
 1. Specify values for Required Fields.
     - Note: When selecting the Default options for the Certificate Declaration field and Matter PAA/PAI/DAC fields, the Vendor ID (VID) and Product ID (PID) are NOT editable and are set to default values 0x1049 and 0x8005 (Silicon Labs' VID & PID), respectively. This is to ensure that the Vendor ID and Product ID values match the ones in the default certificate files used.  
-    - When selecting the Upload options for hte Certificate Declaration field and Matter PAA/PAI/DAC fields, fields Vendor ID and Product ID are editable and the user must specify the values. This is to ensure that the Vendor ID and Product ID values match the ones in the uploaded certificate files.
+    - When selecting the Upload options for the Certificate Declaration field and Matter PAA/PAI/DAC fields, fields Vendor ID and Product ID are editable and the user must specify the values. This is to ensure that the Vendor ID and Product ID values match the ones in the uploaded certificate files.
 
     ![Generating CPMS Files](images/generating-cpms-files1.png)  
 
