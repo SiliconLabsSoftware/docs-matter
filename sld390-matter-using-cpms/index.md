@@ -1,10 +1,10 @@
 # Using Custom Part Manufacturing Services (CPMS)
 
-Silicon Labs offers Matter support through our [Custom Part Manufacturing Services (CPMS)](https://docs.silabs.com/iot-security/latest/iot-security-cpms/).Your organization can order your Matter devices directly from Silicon Labs or a third-party vendor utilizing our CPMS services. Silicon Labs is one of the few providers that can program your information directly to silicon through secure automation with our partner, Kudelski Security.
+Silicon Labs offers Matter support through our [Custom Part Manufacturing Services (CPMS)](https://docs.silabs.com/iot-security/latest/iot-security-cpms/). Your organization can order your Matter devices directly from Silicon Labs or a third-party vendor utilizing our CPMS services. Silicon Labs is one of the few providers that can program your firmware and DACs directly to silicon through secure automation with our partner, Kudelski IoT.
 
 ## What is CPMS?
 
-CPMS allows you to customize Silicon Labs hardware – wireless SoCs, modules, MCUs – at the factory. The CPMS self-service web portal guides you through the customization process and its various customizable features and settings. You can place orders for customized test and production units to our factories securely via the CPMS portal.
+CPMS allows you to customize Silicon Labs hardware – wireless SoCs, modules, MCUs – at the factory. The CPMS self-service web portal guides you through the customization process and its various customizable features and settings. You can place orders for customized test and production units from our factories, securely via the CPMS portal.
 
 Unlike traditional flash programming, CPMS is a secure provisioning service that enables you to customize your chips with highly advanced features. These include secure boot, secure debug, encrypted OTA, public, private, and secret keys, secure identity certificates, and more. The custom features, identities, and certificates are injected into the hardware securely, quickly, and cost efficiently through Silicon Lab's own factories.
 
@@ -14,13 +14,13 @@ Securing an IoT device is a highly complicated and costly process. You must gene
 
 ## How Does Matter Fit into the CPMS Equation?
 
-Silicon Labs is the only IoT-embedded solution provider at this time offering a secure provisioning service for Matter devices at scale. Silicon Labs has partnered with [Kudelski Security](./01-matter-cpms-kudelski-security.md) to provide scalable access to Device Attestation Certificates (DACs) for your Matter devices. Kudelski has "30+ years of experience securely provisioning more than 500 million devices". Rest assured that your secrets are stored in HSMs both on and offline to provide maximum security for your secret key material. Learn more about [Security](https://www.kudelski-iot.com/services-and-systems/matter-paa-pai).
+Silicon Labs is one of the few IoT-embedded solution providers at this time offering a secure provisioning service for Matter devices at scale. Silicon Labs has partnered with [Kudelski IoT](./01-matter-cpms-kudelski.md) to provide scalable access to Device Attestation Certificates (DACs) for your Matter devices. Kudelski has "30+ years of experience securely provisioning more than 500 million devices". Rest assured that your secrets are stored in HSMs both on and offline to provide maximum security for your secret key material. Learn more about [Security](https://www.kudelski-iot.com/services-and-systems/matter-paa-pai).
 
 CPMS allows you to configure your device and receive production samples for a minimal cost before making a full production order. To configure your Matter settings, there are two ways to accomplish this with Silicon Labs tooling.
 
 If your organization uses [Simplicity Studio](https://www.silabs.com/developers/simplicity-studio), Silicon Lab's IoT IDE, we have provided a built-in utility that will output a JSON formatted data file that can be uploaded directly into CPMS. This data file will fill out the necessary Matter information for you. This is the preferred method as it reduces the potential for errors and/or typos.
 
-The second method is to simply provide the required information through the CPMS web forms. This is a minimal process that includes important attestation information such as your Vendor ID (VID), Product ID (PID), Certification Declaration, and other inputs required to generate the Matter certificate chain.
+The second method is to simply provide the required information through the CPMS web forms. This is a minimal process that includes important attestation information such as your VID (Vendor ID), PID (Product ID), CD (Certification Declaration), and other inputs required to generate the Matter certificate chain.
 
 CPMS has automated integrations with Kudelski to obtain the unique DACs for each device at the time of manufacturing. All data remains encrypted throughout the entire process through secure channels between Kudelski and Silicon Labs.
 
@@ -28,11 +28,11 @@ CPMS has automated integrations with Kudelski to obtain the unique DACs for each
 
 CPMS will ask for various attributes about your device, but these are the primary elements that will be needed for proper certificate generation.
 
-- Vendor ID (VID): Your unique VID will be required by CPMS to properly generate the necessary PKI infrastructure to allow your device on the Matter network.
+- Vendor ID: Your unique VID will be required by CPMS to properly generate the necessary PKI infrastructure to allow your device on the Matter network.
 
-- Product ID (PID): Your organization will need to provide a unique PID that will be used to identify this product on the network.
+- Product ID: Your organization will need to provide a unique PID that will be used to identify this product on the network.
 
-- Certification Declaration (CD): This is a cryptographic document that is issued to you by Connectivity Standards Alliance after your device has been successfully certified by an approved testing facility.
+- Certification Declaration: This is a cryptographic document that is issued to you by Connectivity Standards Alliance after your device has been successfully certified by an approved testing facility.
 
 ## Pre-Production Checklist
 
@@ -52,9 +52,9 @@ CPMS will ask for various attributes about your device, but these are the primar
 
 8. Submit your application for certification to a [Approved testing facility](https://csa-iot.org/certification/testing-providers/) for your product type. Once certified, you will be issued a **Certification Declaration (CD)**. This is a cryptographic document stating that your device has successfully been certified and is used in conjunction with the Matter certificate chain to attest to the Matter network. This file should be in a .der format.
 
-9. Begin the process of setting up an account with Kudelski Security as a provider of DACs. Note: Kudelski provides DACs on the Test DCL for no charge. [Learn more about our partnership](https://confluence.silabs.com/pages/viewpage.action?pageId=387091843) with Kudelski Security for Matter devices.
+9. Begin the process of setting up an account with Kudelski IoT as a provider of DACs. Note: Kudelski provides DACs on the Test DCL for no charge. [Learn more about our partnership](./01-matter-cpms-kudelski.md) with Kudelski IoT for Matter devices.
 
-10. Ensure that you have the CD in hand. This will need to be uploaded to CPMS.
+10. Ensure that you have the CD in hand. This will need to be uploaded to CPMS. For a production device, this will need to be the fully accredited CD from an approved test facility.
 
 11. You're ready to order samples with [CPMS](https://cpms.silabs.com/)!
 
@@ -62,8 +62,8 @@ CPMS will ask for various attributes about your device, but these are the primar
 
 Producing products for Matter can be a challenge. Here are a few suggestions to keep in mind when readying your product for production.
 
-1. Your Matter application should be built to work on the device that you are specifically targeting. For example, an application built for a 10dBm power output part will not work on a 20dBm part.  You will need to build and test your application on the specific target device to ensure that your application will work properly.
-2. CPMS stores Matter attestation data in the last six pages of flash.  Of those six pages, Matter certificates and the CD are stored in the last page of flash. Other Matter attestation data is located in the NVM3 block. Below is an example memory map describing how Matter attestation data is programmed.
+1. Your Matter application should be built to work on the device that you are specifically targeting. For example, an application built for a 10dBm power output part will not work on a 20dBm part. You will need to build and test your application on the specific target device to ensure that your application will work properly.
+2. CPMS stores Matter attestation data in the last six pages of flash. Of those six pages, Matter certificates and the CD are stored in the last page of flash. Other Matter attestation data is located in the NVM3 block. Below is an example memory map describing how Matter attestation data is programmed.
 
     ![screenshot](resources/image8.png)
 
@@ -87,9 +87,9 @@ There are two public ledgers available to developers known as the Matter Distrib
 
 - PAA Schema: This schema provides information about valid Product Attestation Authority certificates for approved PAAs.
 
-The **Test DCL**, as the name suggests, is a public Matter ledger that will allow vendors to test their devices in a test environment. Entries into the Test DCL are less rigorous than the Production DCL and can be used to test devices using test certificates provided by Matter or other valid vendors. These test certificates cannot be used on the production DCL. For the production case, you have to ensure that you have the proper certificate chain in place. For CPMS, Kudelski provides Test DCL DACs at **no additional charge**. Your organization needs to ensure that an account has been created with Kudelski to order these DACs through CPMS. [Learn more here](https://confluence.silabs.com/pages/viewpage.action?pageId=387091843).
+The **Test DCL**, as the name suggests, is a public Matter ledger that will allow vendors to test their devices in a test environment. Entries into the Test DCL are less rigorous than the Production DCL and can be used to test devices using test certificates provided by Matter or other valid vendors. These test certificates cannot be used on the production DCL. For the production case, you must ensure that you have the proper certificate chain in place. For CPMS, Kudelski provides Test DCL DACs at **no additional charge**. Your organization needs to ensure that an account has been created with Kudelski to order these DACs through CPMS. [Learn more here](./01-matter-cpms-kudelski.md).
 
-If you are ready to take your device to production, you have the option to select the **Production DCL**. This is the primary [Matter DCL](https://webui.dcl.csa-iot.org/) for production devices. For your device to properly commission onto the Matter fabric, the commissioner needs to be able to verify that a valid certificate chain is in place. The information needed must be publicly available in the production DCL. The device needs to have a valid DAC signed by an approved PAI provider, and a root PAA provider. Your device also must contain a valid certification of the device, all available in the DCL. Silicon Labs partners with Kudelski Security as a PAA provider of choice. Kudelski also signs the Product Attestation Intermediate (PAI) certificate for our customers using CPMS. Each PAI is specific to our customer's products and is created when you set up a new product on your account with Kudelski. Production DCL samples must be approved even if you have already approved Test DCL samples before going to production.
+If you are ready to take your device to production, you have the option to select the **Production DCL**. This is the primary [Matter DCL](https://webui.dcl.csa-iot.org/) for production devices. For your device to properly commission onto the Matter fabric, the commissioner needs to be able to verify that a valid certificate chain is in place. The information needed must be publicly available in the production DCL. The device needs to have a valid DAC signed by an approved PAI provider, and a root PAA provider. Your device also must contain a valid certification of the device, all available in the DCL. Silicon Labs partners with Kudelski IoT as a PAA provider of choice. Kudelski also signs the Product Attestation Intermediate (PAI) certificate for our customers using CPMS. Each PAI is specific to our customer's products and is created when you set up a new product on your account with Kudelski. Production DCL samples must be approved even if you have already approved Test DCL samples before going to production.
 
 ## CPMS Workflow
 
@@ -111,9 +111,20 @@ You've completed all of the items in the pre-production checklist and are ready 
 
     ![screenshot](resources/image2.png)
 
-7. Add the Matter Ecosystem to your part and you will be presented with the required Matter inputs to help secure the proper PAA/PAI/DAC certificates from Kudelski.
+7. Add the Matter Ecosystem to your part and you will be presented with the required Matter inputs to help secure the proper PAA/PAI/DAC certificates from Kudelski. CPMS will automatically obtain the PAIs from Kudelski based on your email address domain. Any PAIs setup with Kudelski will be available for you to choose. This includes both Test and Production PAIs. You will need to select a PAI to continue.
 
-8. Upload your Certification Declaration. This is the file in .der format that you should have received after successful certification from a Connectivity Standards Alliance approved testing facility.
+    Example Test DCL PAIs
+    ![screenshot](resources/csa-dcl-test.jpg)
+
+    Example Production DCL PAIs
+    ![screenshot](resources/csa-dcl-production.jpg)
+
+    Upon selecting a PAI from the list, the VID (and PID if applicable) will be automatically set for you further down in the customization.
+
+    **Note:** A condition can exist where CPMS is unable to obtain PAIs from Kudelski for your company and an error is presented. This is most likely due to the system not being able to obtain PAIs from Kudelski IoT. This could be that the account has not been setup yet or the PAIs have not yet been finalized. There are a series of steps that need to complete before these are available to CPMS. Please reach out to [Kudelski IoT](https://www.kudelski-iot.com/) to check on this status and work through any remaining items.
+    ![screenshot](resources/missing-pais.jpg)
+
+8. Upload your Certification Declaration. This is the file in .der format that you should have received after successful certification from a Connectivity Standards Alliance approved testing facility. Note: If you are creating a sample for the Production DCL, the VID (and PID if applicable) in the CD must match that of the PAI. If a mismatch occurs, the sample will not be able to properly attest to the Matter network.
 
     ![screenshot](resources/image3.png)
 
@@ -121,9 +132,14 @@ You've completed all of the items in the pre-production checklist and are ready 
 
     ![screenshot](resources/image4.png)
 
-10. Fill out the required Matter fields. This includes the VID, PID, and several additional inputs to help Silicon Labs generate the necessary Matter certificate chain. If you use the cpms.json file that is generated through the Silicon Labs Matter provisioning tool, these will be automatically filled in for you.
+10. Fill out the required Matter fields. This includes the VID, PID, and several additional inputs to help Silicon Labs generate the appropriate certificate chain to generate and sign the DACs for your parts. If you use the cpms.json file that is generated through the Silicon Labs Matter provisioning tool, these will be automatically filled in for you. Depending on the type of PAI chosen prior to this step, the VID or the VID & PID will be automatically filled in for you and disabled to prevent any manual changes of these values. Any mismatch in VID/PID values will cause attestation problems when trying to attest to the Matter network. It is crucially important that the VID/PID in the PAI, CD, and any input values from CPMS all match when they are provisioned to the device for a production build.
 
     ![screenshot](resources/image5.png)
+    
+    **Note:** The PAI that you selected previously will autofill the VID and PID inputs and disable these to prevent a mismatch between the PAI and the VID/PID combination that could get entered manually. Depending on the PAI, you could have a VID-only scoped PAI which would fill only the VID value and leave the PID input open for you to fill in. If your PAI is VID & PID scoped, both of these values will be automatically filled in for you, as is the case for the scenario presented below.
+
+    ![screenshot](resources/vid-pid-autofill.png)
+
 
 11. (optional) Fill out the Matter Optional Fields. These fields will also be automatically filled out for you if you use the cpms.json file referenced above.
 
@@ -141,6 +157,6 @@ You've completed all of the items in the pre-production checklist and are ready 
 
 16. Once the DACs are available, the order will go into Silicon Labs manufacturing to be programmed and shipped to your address once the samples are complete.
 
-17. You can then Approve or Reject the samples once your organization is able to test the sample parts. Silicon Labs recommends at this time that you test these samples with your device commissioner to ensure that the samples can properly attest to the Matter network.
+17. You can then Approve or Reject the samples once your organization is able to test the sample parts. Silicon Labs recommends at this time that you test these samples with your device commissioner to ensure that the samples can properly attest to the Matter network. Sample generation typically takes from 4 to 6 weeks to produce, assuming all of the integrations with Kudelski IoT are in place to receive DACs.
 
 18. Once approved, you will be able to order these parts, based on the OPN for that part. You can do this through Silicon Labs or through a third-party distributor. You may also opt to work with a Silicon Labs Field Application Engineer to help get this order executed.
