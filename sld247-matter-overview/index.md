@@ -103,4 +103,4 @@ For more information on development within Visual Studio Code, please visit [Vis
 
 ## Next Steps
 
-Now that you have your environment, you can create a [Matter over Wi-Fi network](/matter/{build-docspace-version}/matter-light-switch-example/01-wifi-light-switch-example) or a [Matter over Thread network](/matter/{build-docspace-version}/matter-light-switch-example/02-thread-light-switch-example).
+Now that your environment is set up, you can proceed to the create a [Matter over Wi-Fi Quick-Start demo](/matter/{build-docspace-version}/matter-quick-start-demo/01-wifi-quick-start-demo) or a [Matter over Thread Quick-Start demo](/matter/{build-docspace-version}/matter-quick-start-demo/02-thread-quick-start-demo).
