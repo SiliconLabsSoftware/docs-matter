@@ -113,15 +113,16 @@ You've completed all of the items in the pre-production checklist and are ready 
 
 7. Add the Matter Ecosystem to your part and you will be presented with the required Matter inputs to help secure the proper PAA/PAI/DAC certificates from Kudelski. CPMS will automatically obtain the PAIs from Kudelski based on your email address domain. Any PAIs setup with Kudelski will be available for you to choose. This includes both Test and Production PAIs. You will need to select a PAI to continue.
 
-    Example Test DCL PAIs
+    **Example Test DCL PAIs**
     ![screenshot](resources/csa-dcl-test.jpg)
 
-    Example Production DCL PAIs
+    **Example Production DCL PAIs**
     ![screenshot](resources/csa-dcl-production.jpg)
 
     Upon selecting a PAI from the list, the VID (and PID if applicable) will be automatically set for you further down in the customization.
 
     **Note:** A condition can exist where CPMS is unable to obtain PAIs from Kudelski for your company and an error is presented. This is most likely due to the system not being able to obtain PAIs from Kudelski IoT. This could be that the account has not been setup yet or the PAIs have not yet been finalized. There are a series of steps that need to complete before these are available to CPMS. Please reach out to [Kudelski IoT](https://www.kudelski-iot.com/) to check on this status and work through any remaining items.
+
     ![screenshot](resources/missing-pais.jpg)
 
 8. Upload your Certification Declaration. This is the file in .der format that you should have received after successful certification from a Connectivity Standards Alliance approved testing facility. Note: If you are creating a sample for the Production DCL, the VID (and PID if applicable) in the CD must match that of the PAI. If a mismatch occurs, the sample will not be able to properly attest to the Matter network.
@@ -135,11 +136,10 @@ You've completed all of the items in the pre-production checklist and are ready 
 10. Fill out the required Matter fields. This includes the VID, PID, and several additional inputs to help Silicon Labs generate the appropriate certificate chain to generate and sign the DACs for your parts. If you use the cpms.json file that is generated through the Silicon Labs Matter provisioning tool, these will be automatically filled in for you. Depending on the type of PAI chosen prior to this step, the VID or the VID & PID will be automatically filled in for you and disabled to prevent any manual changes of these values. Any mismatch in VID/PID values will cause attestation problems when trying to attest to the Matter network. It is crucially important that the VID/PID in the PAI, CD, and any input values from CPMS all match when they are provisioned to the device for a production build.
 
     ![screenshot](resources/image5.png)
-    
+
     **Note:** The PAI that you selected previously will autofill the VID and PID inputs and disable these to prevent a mismatch between the PAI and the VID/PID combination that could get entered manually. Depending on the PAI, you could have a VID-only scoped PAI which would fill only the VID value and leave the PID input open for you to fill in. If your PAI is VID & PID scoped, both of these values will be automatically filled in for you, as is the case for the scenario presented below.
 
     ![screenshot](resources/vid-pid-autofill.png)
-
 
 11. (optional) Fill out the Matter Optional Fields. These fields will also be automatically filled out for you if you use the cpms.json file referenced above.
 

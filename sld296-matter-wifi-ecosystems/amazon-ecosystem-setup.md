@@ -77,10 +77,10 @@ Refer to [Set up Alexa in a Few Easy Steps](https://www.amazon.com/alexa-setup-g
     ![Scan QR code](./images/amazon-alexa-scan-qr-code.png?width=40%&height=40%)
 
 13. After scanning the QR code through a smartphone camera, verify that commissioning is started by checking the Device logs.
-    
-    **NOTE:** If the device is running a development version of the application a prompt will appear stating that "This device isn't Matter compatible", just proceed to set up the device anyway.
 
-14. Once commissioning is triggered, the Alexa app will prompt for Access Point Credentials. Add them, the results on this page varies based on the device used. Sometimes device does not show the particular Access Point, go ahead and add it manually.
+    **NOTE:** If the device is running a development version of the application, a prompt will appear stating that "This device isn't Matter compatible". Proceed to set up the device anyway.
+
+14. Once commissioning is triggered, the Alexa app will prompt for Access Point Credentials. Add them. The results on this page vary based on the device used. Sometimes a device does not show the particular Access Point so add it manually.
 
 15. After Access Point Credentials are provided, the device will join to the network and commissioning is completed.
 
