@@ -39,7 +39,7 @@ Refer to Apple's [Set up HomePod or HomePod mini](https://support.apple.com/en-i
 
 7. Connect the device to a computer and scan the QR code within the Home app.
 
-   **NOTE:** If the device is running a development version of the application a prompt will appear stating that "Uncertified device", just proceed to set up the device anyway.
+   **NOTE:** If the device is running a development version of the application, a prompt will appear stating that "Uncertified device". Proceed to set up the device anyway.
 
 8. Proceed to add the device to your home. You should see **LED0** fast blinking when commissioning happens.
 

@@ -57,8 +57,8 @@ Having finished the above, the only step left to have your setup ready is to ope
 6. On the **Set up a device** screen, tap **New device**.
 
    ![New Device](./images/google-home-app-new-device.png?width=40%&height=40%)
-   
-   **NOTE:** If the device is running a development version of the application a prompt will appear stating that "Uncertified device", just proceed to set up the device anyway.
+
+   **NOTE:** If the device is running a development version of the application, a prompt will appear stating that "Uncertified device". Proceed to set up the device anyway.
 
 7. On the **Choose a home** screen, select your home and tap **Next**.
 

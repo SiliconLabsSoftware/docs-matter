@@ -239,7 +239,7 @@ Follow these steps to provision certificates onto a device.
 
       ![Provisioning Device](images/provisioning-device6c.png)
 
-7. When the operation completes successfully confirm that the **Attestation Certificate provisioning configuration** software component is present in your project, the component is installed in all projects by default.
+7. When the operation completes successfully, confirm that the **Attestation Certificate provisioning configuration** software component is present in your project. The component is installed in all projects by default.
 
    - Double-click the project's SLCP file to open it in an editor, select **Software Components**, search for the keyword "attestation" and select **Attestation Certificate provisioning configuration**. Example:
 

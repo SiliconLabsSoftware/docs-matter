@@ -14,8 +14,6 @@ These instructions assume that you have installed Simplicity Studio ([Getting St
    |[2.2.0-1.2](https://github.com/SiliconLabs/matter/releases/tag/v2.2.0-1.2)|[v2.2.0](https://github.com/SiliconLabs/matter_extension/releases/tag/v2.2.0) (Older Extension versions do not fully work with GSDK 4.4.x)|[v4.4.0](https://github.com/SiliconLabs/gecko_sdk/releases/tag/v4.4.0)|
    |[2.3.0-1.3](https://github.com/SiliconLabs/matter/releases/tag/v2.3.0-1.3)|[v2.3.0-1.3](https://github.com/SiliconLabs/matter_extension/releases/tag/v2.3.0)|[v2024.6.0](https://github.com/SiliconLabs/simplicity_sdk/releases/tag/v2024.6.0)|
 
-   
-
    †Steps to add GSDK and Matter extension to Simplicity Studio. Refer to [Install SDK Extensions](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-getting-started/install-sdk-extensions).
 
    1. Once Simplicity Studio 5 is installed, you will be prompted to install the Gecko SDK Suite (GSDK). Install the Matter extension by making sure the extension is checked. This will install the latest GSDK as well as the Matter extension.
