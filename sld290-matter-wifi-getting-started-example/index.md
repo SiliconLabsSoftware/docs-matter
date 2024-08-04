@@ -16,4 +16,4 @@ To control the Matter Accessory Device, a controller is required which is termed
 
 ## Running the Matter over Wi-Fi Demo
 
-To run the Matter Demo over Wi-Fi, refer to [Running the Matter Demo over Wi-Fi](/matter/<docspace-docleaf-version>/matter-wifi-run-demo).
+To run the Matter Demo over Wi-Fi, refer to [Running the Matter Demo over Wi-Fi](/matter/{build-docspace-version}/matter-wifi-run-demo).

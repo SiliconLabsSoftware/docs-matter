@@ -4,7 +4,7 @@ In Simplicity Studio 5, create the Light MAD:
 
 1. [Download](https://www.silabs.com/developers/simplicity-studio) and Install Simplicity Studio 5.
 
-2. To install the software packages for Simplicity Studio, refer to the [Software Package Installation Section](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/software-installation#installation-of-software-packages).
+2. To install the software packages for Simplicity Studio, refer to the [Software Package Installation Section](/matter/{build-docspace-version}/matter-wifi-getting-started-example/software-installation#installation-of-software-packages).
 
 3. Switch to the Launcher view (if not already in it).
 

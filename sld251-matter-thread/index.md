@@ -1,13 +1,13 @@
 # Silicon Labs Matter Over Thread Example
 
-These pages describe in detail the steps for running an example lighting application for Matter over Thread. If you are new to Matter and Thread you may benefit from reviewing the [Matter Over Thread Quick Start Guide](/matter/<docspace-docleaf-version>/matter-light-switch-example/02-thread-light-switch-example), which provides a step by step tutorial on running the Matter over Thread lighting demo in Simplicity Studio.
+These pages describe in detail the steps for running an example lighting application for Matter over Thread. If you are new to Matter and Thread you may benefit from reviewing the [Matter Over Thread Quick Start Guide](/matter/{build-docspace-version}/matter-light-switch-example/02-thread-light-switch-example), which provides a step by step tutorial on running the Matter over Thread lighting demo in Simplicity Studio.
 
 At a high level, these pages walk through starting a Thread network, commissioning a new device to the Thread network using Bluetooth LE, and finally sending a basic
 OnOff command to the end device.
 
 ## Step 0: Prerequisites
 
-Before beginning your Silicon Labs Matter over Thread project be sure you have satisfied all of the [Matter Hardware](/matter/<docspace-docleaf-version>/matter-prerequisites/hardware-requirements) and [Matter Software](/matter/<docspace-docleaf-version>/matter-prerequisites/software-requirements) Requirements.
+Before beginning your Silicon Labs Matter over Thread project be sure you have satisfied all of the [Matter Hardware](/matter/{build-docspace-version}/matter-prerequisites/hardware-requirements) and [Matter Software](/matter/{build-docspace-version}/matter-prerequisites/software-requirements) Requirements.
 
 ## Step 1: Setting up the Matter Hub (Raspberry Pi)
 

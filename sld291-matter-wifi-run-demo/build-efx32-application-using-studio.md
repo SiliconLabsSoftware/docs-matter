@@ -4,15 +4,13 @@ This page provides a detailed description on how to create an Wi-Fi NCP project 
 
 1. [Download](https://www.silabs.com/developers/simplicity-studio) and Install Simplicity Studio.
 
-2. To install the software packages for Simplicity Studio, refer to [Software Package Installation](/matter/<docspace-docleaf-version>/matter-prerequisites/software-requirements#installation-of-software-packages).
+2. To install the software packages for Simplicity Studio, refer to [Software Package Installation](/matter/{build-docspace-version}/matter-prerequisites/software-requirements#installation-of-software-packages).
 
 3. Log in to Simplicity Studio and connect the EFR32 WSTK board to the computer.
 
 4. Go to the **All Products** section.
 
    ![All Products](images/ncp-all-products.png)
-
-   
 
 5. Search and select the radio board from the displayed list and select **Start**.
 

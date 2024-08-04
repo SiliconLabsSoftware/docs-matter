@@ -2,7 +2,7 @@
 
 To run Matter over Thread or over Wi-Fi requires some Silicon Labs hardware in order to run demos and do development. Following are the hardware requirements for both Thread and Wi-Fi use cases broken down by platform and transport protocol.
 
-The following sections describe the hardware that may be used for Matter+OpenThread (Matter Hub and Accessory Device) and for Matter+Wi-Fi (Accessory Device). The EFR32MG24/MG26 is the preferred starting point for Matter MCUs (including the Matter Hub RCP and both Accessory Devices). It provides Secure Vault and can use the internal flash of the device to store an upgrade image. The EFR32MG24/MG26 is recommended for running the [Matter over Thread and Matter over Wi-Fi Quick-Start guides](/matter/<docspace-docleaf-version>/matter-overview).
+The following sections describe the hardware that may be used for Matter+OpenThread (Matter Hub and Accessory Device) and for Matter+Wi-Fi (Accessory Device). The EFR32MG24/MG26 is the preferred starting point for Matter MCUs (including the Matter Hub RCP and both Accessory Devices). It provides Secure Vault and can use the internal flash of the device to store an upgrade image. The EFR32MG24/MG26 is recommended for running the [Matter over Thread and Matter over Wi-Fi Quick-Start guides](/matter/{build-docspace-version}/matter-overview).
 
 ## Matter Over Thread "Matter Hub" Requirements
 

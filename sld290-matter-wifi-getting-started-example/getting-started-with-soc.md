@@ -41,9 +41,9 @@ Below are the software tools, packages, and images required for executing Matter
 
 ### Firmware Images
 
-- Download the firmware images from [Matter Artifacts page](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts#siwx917-firmware-for-siwx917-soc).
+- Download the firmware images from [Matter Artifacts page](/matter/{build-docspace-version}/matter-prerequisites/matter-artifacts#siwx917-firmware-for-siwx917-soc).
 
-- For flashing the firmware images, refer to [Flashing Firmware Images](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/loading-firmware-for-ncp-and-soc-boards).
+- For flashing the firmware images, refer to [Flashing Firmware Images](/matter/{build-docspace-version}/matter-wifi-run-demo/loading-firmware-for-ncp-and-soc-boards).
 
 ## Installation of the Wi-Fi Software Tools and Packages
 
@@ -71,7 +71,7 @@ If Simplicity Studio does not detect the SiWx917 SoC board, try the following:
 In Simplicity Studio 5, create the Light Matter Accessory Devices (MAD):
 
 1. [Download](https://www.silabs.com/developers/simplicity-studio) and Install Simplicity Studio 5.
-2. To install the software packages for Simplicity Studio, refer to the [Software Package Installation Section](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/software-installation#installation-of-software-packages).
+2. To install the software packages for Simplicity Studio, refer to the [Software Package Installation Section](/matter/{build-docspace-version}/matter-wifi-getting-started-example/software-installation#installation-of-software-packages).
 
 3. Switch to the Launcher view (if not already in it).
 

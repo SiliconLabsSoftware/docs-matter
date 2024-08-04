@@ -8,7 +8,7 @@ In the Matter OTA Software Update scenario, the running image (OTA-A) and the up
 
 1. [Download](https://www.silabs.com/developers/simplicity-studio) and Install Simplicity Studio.
   
-2. To install the software packages for Simplicity Studio, refer  [Software Package Installation](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/software-installation#installation-of-software-packages)
+2. To install the software packages for Simplicity Studio, refer  [Software Package Installation](/matter/{build-docspace-version}/matter-wifi-getting-started-example/software-installation#installation-of-software-packages)
 
 3. Log in to Simplicity Studio and connect the board to the computer.
 
@@ -63,7 +63,7 @@ In the Matter OTA Software Update scenario, the running image (OTA-A) and the up
 
 1. [Download](https://www.silabs.com/developers/simplicity-studio) and Install Simplicity Studio.
   
-2. To install the software packages for Simplicity Studio, refer  [Software Package Installation](/matter/<docspace-docleaf-version>/software-installation.md#installation-of-software-packages)
+2. To install the software packages for Simplicity Studio, refer  [Software Package Installation](/matter/{build-docspace-version}/software-installation.md#installation-of-software-packages)
 
 3. Log in to Simplicity Studio and connect the board to the computer.
 

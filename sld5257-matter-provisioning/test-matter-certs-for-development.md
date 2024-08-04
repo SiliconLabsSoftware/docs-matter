@@ -6,11 +6,11 @@
 
   - Raspberry Pi flashed with the Matter Hub Image
 
-    - Setting Up you Matter Hub: [Developing with Silicon Labs Matter](/matter/<docspace-docleaf-version>/matter-start)
+    - Setting Up you Matter Hub: [Developing with Silicon Labs Matter](/matter/{build-docspace-version}/matter-start)
 
   - WSTK with supported boards for RCP
 
-    - How to set up your RCP: [Developing with Silicon Labs Matter](/matter/<docspace-docleaf-version>/matter-start)
+    - How to set up your RCP: [Developing with Silicon Labs Matter](/matter/{build-docspace-version}/matter-start)
 
 - **Commissionee**
 
@@ -30,7 +30,7 @@ There is a long list of parameters that may be loaded on the device in-factory, 
 
 In a production environment, different devices should have unique identifiers, passcodes, discriminators, private-keys and DACs, which implies customization during the manufacturing process. To ease the development and manufacturing of customized devices, Silicon Labs provides the [Custom Part Manufacturing Service (CPMS)](https://www.silabs.com/services/custom-part-manufacturing-service).
 
-In a development environment, Silicon Labs provides a Provisioning Tool that is used to generate a Matter Certificate Chain based on Test or Development Certificates provided by the Connectivity Standards Alliance. These certificates can have data modified such as VID, PID, Discriminator, Passcode, etc. For more information and arguments to this tool, refer to [Using CPMS](/matter/<docspace-docleaf-version>/matter-using-cpms).
+In a development environment, Silicon Labs provides a Provisioning Tool that is used to generate a Matter Certificate Chain based on Test or Development Certificates provided by the Connectivity Standards Alliance. These certificates can have data modified such as VID, PID, Discriminator, Passcode, etc. For more information and arguments to this tool, refer to [Using CPMS](/matter/{build-docspace-version}/matter-using-cpms).
 
 To provide flexibility, Silicon Labs provides two ways to write Commissionable Data and Device Attestation Credentials to Matter Devices. The following figure depicts these two flows:
 

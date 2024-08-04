@@ -82,7 +82,7 @@ This will build chip-tool in `out/standalone`.
 
      Note: Flash the latest version of Ubuntu Server (64-bit server OS for arm64 architecture).
 
-   - Download the Matter Hub Raspberry Pi Image provided on the [Matter Artifacts page](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts), then click **Choose OS > Use custom** and then select the Matter Hub Raspberry Pi Image that you downloaded.
+   - Download the Matter Hub Raspberry Pi Image provided on the [Matter Artifacts page](/matter/{build-docspace-version}/matter-prerequisites/matter-artifacts), then click **Choose OS > Use custom** and then select the Matter Hub Raspberry Pi Image that you downloaded.
 
 4. Click **Storage** and select the **SD card detect**.
 5. This Raspberry Pi 4's console can be accessed in multiple ways. In [this guide](https://www.raspberrypi.com/documentation/computers/remote-access.html), Raspberry Pi 4 is being accessed using PuTTY.
@@ -97,7 +97,7 @@ On powering up the board, the red and green lights should start blinking.
 
 ### Start Using the Raspberry Pi
 
-1. Power-up the RPi4B. Once it is booted up, check the Raspberry Pi's IP address. Refer to [Finding Raspberry Pi IP address](/matter/<docspace-docleaf-version>/matter-references/find-raspi) in the Resources section to get the IP address or enter the Hostname directly in PuTTY.
+1. Power-up the RPi4B. Once it is booted up, check the Raspberry Pi's IP address. Refer to [Finding Raspberry Pi IP address](/matter/{build-docspace-version}/matter-references/find-raspi) in the Resources section to get the IP address or enter the Hostname directly in PuTTY.
 
 2. Once you find the IP address, launch PuTTY, select **Session**, enter the IP address of the Raspberry Pi, and click **Open**.
 
@@ -130,7 +130,7 @@ On powering up the board, the red and green lights should start blinking.
 
 1. Follow the instructions in [the Project CHIP GitHub Site](https://github.com/project-chip/connectedhomeip/blob/master/docs/guides/BUILDING.md), in the section "Installing prerequisites on Raspberry Pi 4".
 
-2. To build the environment, follow the steps in the [Light and Switch Step-by-Step Example](/matter/<docspace-docleaf-version>/matter-light-switch-example/01-wifi-light-switch-example).
+2. To build the environment, follow the steps in the [Light and Switch Step-by-Step Example](/matter/{build-docspace-version}/matter-light-switch-example/01-wifi-light-switch-example).
 
 ### Bluetooth Setup
 

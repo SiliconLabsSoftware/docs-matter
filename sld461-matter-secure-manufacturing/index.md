@@ -13,7 +13,7 @@ What should your Matter device include?
 - Certification Declaration (CD)
 - Product Attestation Intermediate (PAI)
 
->Note: For more details on the data injected, refer to [Device Attestation](/matter/<docspace-docleaf-version>/matter-device-attestation/).
+>Note: For more details on the data injected, refer to [Device Attestation](/matter/{build-docspace-version}/matter-device-attestation/).
 
 - DAC Private Key stored as securely as the part will allow:
 
@@ -41,4 +41,4 @@ What should your Matter device include?
 - Devices should be protected against physical attacks to prevent tampering, side-channel, or debug glitching attacks. [AN1247: Anti-Tamper Protection Configuration and Use](https://www.silabs.com/documents/public/application-notes/an1247-efr32-secure-vault-tamper.pdf).
 - Devices should have the capability to perform a factory reset and remove all their security and privacy-related data after commissioning.
 
-Silicon Labs offers services to comply with all the mandatory and recommended security best practices to ensure that your Matter device is Secure. We have partnered with Kudelski to generate and deliver Matter Device Attestation Certificates (DAC) for our [Custom Part Manufacturing Service (CPMS)](/matter/<docspace-docleaf-version>/matter-using-cpms). For more information on the security features that CPMS offers, refer to [Custom Part Manufacturing Service](https://docs.silabs.com/iot-security/latest/iot-security-cpms/).
+Silicon Labs offers services to comply with all the mandatory and recommended security best practices to ensure that your Matter device is Secure. We have partnered with Kudelski to generate and deliver Matter Device Attestation Certificates (DAC) for our [Custom Part Manufacturing Service (CPMS)](/matter/{build-docspace-version}/matter-using-cpms). For more information on the security features that CPMS offers, refer to [Custom Part Manufacturing Service](https://docs.silabs.com/iot-security/latest/iot-security-cpms/).

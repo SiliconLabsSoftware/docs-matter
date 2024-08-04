@@ -4,11 +4,11 @@ The Over The Air (OTA) Software Update functionality provides WiFi firmware upgr
 
 ## Hardware Requirements
 
-- To run matter ota on Silicon Labs Platform, refer [Hardware Requirements](/matter/<docspace-docleaf-version>/matter-prerequisites/hardware-requirements).
+- To run matter ota on Silicon Labs Platform, refer [Hardware Requirements](/matter/{build-docspace-version}/matter-prerequisites/hardware-requirements).
 
 ## Software Requirements
 
-- To run matter ota on Silicon Labs Platform, refer [Software Requirements](/matter/<docspace-docleaf-version>/matter-prerequisites/software-requirements).
+- To run matter ota on Silicon Labs Platform, refer [Software Requirements](/matter/{build-docspace-version}/matter-prerequisites/software-requirements).
 
 ## Setting up OTA Environment
 
@@ -104,7 +104,7 @@ example):
 - Silicon Labs Devices will supports below Bootloader variants for EFR32 Boards.
   - Internal Storage Bootloader
   - External Storage Bootloader
-- To Flash the Bootloader Binary along with the application for Silicon Labs Device, refer [Flashing Binaries](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/flashing-using-commander.md).
+- To Flash the Bootloader Binary along with the application for Silicon Labs Device, refer [Flashing Binaries](/matter/{build-docspace-version}/matter-wifi-run-demo/flashing-using-commander.md).
 
 ### Running OTA-Requestor
 

@@ -2,7 +2,7 @@
 
 ## Setting up the Matter Hub/Chip-Tool
 
-This procedure prepares the Raspberry Pi 4B (RPi4B) to become a Matter Hub. You should have downloaded the Matter Hub Raspberry Pi image and Raspberry Pi Imager as described in the [Overview](/matter/<docspace-docleaf-version>/matter-overview). The Raspberry Pi image contains software called chip-tool, which provides a command-line interface into the Matter protocol.
+This procedure prepares the Raspberry Pi 4B (RPi4B) to become a Matter Hub. You should have downloaded the Matter Hub Raspberry Pi image and Raspberry Pi Imager as described in the [Overview](/matter/{build-docspace-version}/matter-overview). The Raspberry Pi image contains software called chip-tool, which provides a command-line interface into the Matter protocol.
 
 1. Install the Raspberry Pi Imager and insert the SD card into the PC to flash the image.
 
@@ -16,7 +16,7 @@ This procedure prepares the Raspberry Pi 4B (RPi4B) to become a Matter Hub. You 
 
 2. Insert the SD card into Raspberry Pi 4B (RPi4B).
 
-3. Power-up the RPi4B. Once it is booted up, check the Raspberry Pi's IP address. Refer to [Finding Raspberry Pi IP address](/matter/<docspace-docleaf-version>/matter-references/find-raspi) in the References chapter to get the IP address or enter the Hostname directly in PuTTY.
+3. Power-up the RPi4B. Once it is booted up, check the Raspberry Pi's IP address. Refer to [Finding Raspberry Pi IP address](/matter/{build-docspace-version}/matter-references/find-raspi) in the References chapter to get the IP address or enter the Hostname directly in PuTTY.
 
 4. Use PuTTY to connect to RPi4B.
 
@@ -28,7 +28,7 @@ Matter hub/chip-tool are ready and working. Keep the PuTTY session open for the 
 
 ## Creating the Matter Accessory Devices (MADs)
 
-> If using NCP hardware, make sure firmware is properly loaded to the NCP using instructions provided in: [Upgrading the Wi-Fi Connectivity Firmware](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/loading-firmware-for-ncp-and-soc-boards).
+> If using NCP hardware, make sure firmware is properly loaded to the NCP using instructions provided in: [Upgrading the Wi-Fi Connectivity Firmware](/matter/{build-docspace-version}/matter-wifi-run-demo/loading-firmware-for-ncp-and-soc-boards).
 
 1. In Simplicity Studio 5, create the Light MAD:
 
@@ -46,7 +46,7 @@ Matter hub/chip-tool are ready and working. Keep the PuTTY session open for the 
 
    7. Once the project has compiled, in the Debug Adapters view right-click the board and select *Upload application*.
 
-   8. Select the *Application image path* (Select the path for .s37 file in the path '\<workspace\>\project_name\GNU ARM v12.2.1 - Default') for the newly compiled project and a *Bootloader image*. The EFR32MG24 devices must be programmed with a bootloader. Obtain those here: [Silicon Labs Matter Artifacts](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts).
+   8. Select the *Application image path* (Select the path for .s37 file in the path '\<workspace\>\project_name\GNU ARM v12.2.1 - Default') for the newly compiled project and a *Bootloader image*. The EFR32MG24 devices must be programmed with a bootloader. Obtain those here: [Silicon Labs Matter Artifacts](/matter/{build-docspace-version}/matter-prerequisites/matter-artifacts).
 
    9. Disconnect the dev board from development computer.
 

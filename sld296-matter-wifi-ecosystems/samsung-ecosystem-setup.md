@@ -15,14 +15,14 @@ See the Aeotec instructions on [How to Set Up a Smart Home Hub](https://aeotec.f
 
 ## Matter Demo Execution using Samsung Smart Aeotec
 
-1. Refer to the [Getting Started Overview Guide](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example) for setting up a Silicon Labs Matter Accessory Device.
+1. Refer to the [Getting Started Overview Guide](/matter/{build-docspace-version}/matter-wifi-getting-started-example) for setting up a Silicon Labs Matter Accessory Device.
 
 2. Connect a board to a computer.
 
-   - For Wi-Fi NCP Mode Boards, see [Connect EFR32 Board to Computer](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/getting-started-efx32-ncp#connect-the-boards-to-a-computer).
-   - For Wi-Fi SoC Mode Boards, see [Connect SiWx917 SoC to Computer](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/getting-started-with-soc#connect-siwx917-soc-to-computer).
+   - For Wi-Fi NCP Mode Boards, see [Connect EFR32 Board to Computer](/matter/{build-docspace-version}/matter-wifi-getting-started-example/getting-started-efx32-ncp#connect-the-boards-to-a-computer).
+   - For Wi-Fi SoC Mode Boards, see [Connect SiWx917 SoC to Computer](/matter/{build-docspace-version}/matter-wifi-getting-started-example/getting-started-with-soc#connect-siwx917-soc-to-computer).
 
-3. Flash the bootloader binary for your device along with the application (for example, lighting, lock, thermostat, window covering, or light-switch) using [Simplicity Commander](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/flashing-using-commander).
+3. Flash the bootloader binary for your device along with the application (for example, lighting, lock, thermostat, window covering, or light-switch) using [Simplicity Commander](/matter/{build-docspace-version}/matter-wifi-run-demo/flashing-using-commander).
 
 4. Open the Smart Things app, tap **'+**, and select **Add device**.
 ![Add device](./images/samsung-app-add-device.png?width=40%&height=40%)

@@ -13,7 +13,7 @@ The procedures here describe how to make a simple network of a light, a switch, 
 ## Initial Setup
 
 Both the Matter over Wi-Fi and Matter over Thread demos require that you have set up a simple development environment with Simplicity Studio,
-two EFR32MG24-based development boards, and a Raspberry Pi used as a Matter hub. The following requirements are common to both demos. The Thread demo also requires a radio co-processor (RCP) as part of the Matter hub. The requirements for this are provided in the [introduction to the Thread demo](/matter/<docspace-docleaf-version>/matter-light-switch-example/02-thread-light-switch-example).
+two EFR32MG24-based development boards, and a Raspberry Pi used as a Matter hub. The following requirements are common to both demos. The Thread demo also requires a radio co-processor (RCP) as part of the Matter hub. The requirements for this are provided in the [introduction to the Thread demo](/matter/{build-docspace-version}/matter-light-switch-example/02-thread-light-switch-example).
 
 ### Hardware Requirements
 
@@ -61,7 +61,7 @@ The following boards are supported for the Matter over Wi-Fi demos and developme
 
 The Silicon Labs Matter over Wi-Fi demo and development for SoC mode requires the SiWx917 SoC board that supports Matter over Wi-Fi in a single-chip package. The integrated MCU is dedicated for peripheral and application-related processing (Matter), while the ThreadArch® runs the wireless and networking protocol stacks.
 
-Pre-built images for the SiWx917 connectivity firmware are available per the instructions on the [Matter Artifacts page](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts). The following boards are supported for the Matter over Wi-Fi demos and development:
+Pre-built images for the SiWx917 connectivity firmware are available per the instructions on the [Matter Artifacts page](/matter/{build-docspace-version}/matter-prerequisites/matter-artifacts). The following boards are supported for the Matter over Wi-Fi demos and development:
 
 - **Wi-Fi SoC Boards**
   - SiWx917 / BRD4002A / Wireless Starter Kit
@@ -75,7 +75,7 @@ Pre-built images for the SiWx917 connectivity firmware are available per the ins
 
 **Ozone - The J-Link Debugger**: [Ozone](https://www.segger.com/products/development-tools/ozone-j-link-debugger/) is a full-featured graphical debugger for embedded applications. With Ozone, it is possible to debug any embedded application on C/C++ source and assembly level.
 
-**Simplicity Commander**: [Simplicity Commander](/matter/<docspace-docleaf-version>/matter-references/flash-silabs-device#simplicity-commander) is a utility that provides GUI and command line access to the debug features of an EFM32 device. It allows you to flash firmware, update the kit firmware, and lock or unlock debug access.
+**Simplicity Commander**: [Simplicity Commander](/matter/{build-docspace-version}/matter-references/flash-silabs-device#simplicity-commander) is a utility that provides GUI and command line access to the debug features of an EFM32 device. It allows you to flash firmware, update the kit firmware, and lock or unlock debug access.
 
 **Tera Term**: [Tera Term](https://osdn.net/projects/ttssh2/releases/) is the terminal emulator for Microsoft Windows that supports serial port, telnet, and SSH connections.
 
@@ -83,13 +83,13 @@ Pre-built images for the SiWx917 connectivity firmware are available per the ins
 
 ![Installing the Matter Extension](./resources/install-package-advanced-device.png)
 
-**Installation of Wi-Fi SDK and WiSeConnect Packages**: The following packages will be installed during the installation of Simplicity Studio. Refer to [Package Installation](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/software-installation).
+**Installation of Wi-Fi SDK and WiSeConnect Packages**: The following packages will be installed during the installation of Simplicity Studio. Refer to [Package Installation](/matter/{build-docspace-version}/matter-wifi-getting-started-example/software-installation).
 
 **Matter Hub Raspberry Pi Image**: A copy of the pre-built image from the Silicon Labs web services can be downloaded in this [zipfile](https://www.silabs.com/documents/public/software/SilabsMatterPi_2.3.0-1.3-extension.zip). **Note** this is a large file and will take some time to download.
 
->**Note:** The Matter hub for Matter over Thread requires an additional device, a radio co-processor. See [the introduction to the Matter over Thread demo](/matter/<docspace-docleaf-version>/matter-light-switch-example/02-thread-light-switch-example) for more information.
+>**Note:** The Matter hub for Matter over Thread requires an additional device, a radio co-processor. See [the introduction to the Matter over Thread demo](/matter/{build-docspace-version}/matter-light-switch-example/02-thread-light-switch-example) for more information.
 
-**Matter Bootloader Image**: The EFR32MG24 devices must be programmed with a bootloader. Obtain those here: [Silicon Labs Matter Artifacts](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts).
+**Matter Bootloader Image**: The EFR32MG24 devices must be programmed with a bootloader. Obtain those here: [Silicon Labs Matter Artifacts](/matter/{build-docspace-version}/matter-prerequisites/matter-artifacts).
 
 **SSH Client**: Managing the Matter hub often requires connecting to it remotely. An SSH client is needed to follow the step-by-step example in this document (PuTTY is used). Install software such as [PuTTY](https://www.putty.org/), Terminal, or a similar application for access to the Raspberry Pi-based Matter hub.
 
@@ -103,4 +103,4 @@ For more information on development within Visual Studio Code, please visit [Vis
 
 ## Next Steps
 
-Now that you have your environment, you can create a [Matter over Wi-Fi network](/matter/<docspace-docleaf-version>/matter-light-switch-example/01-wifi-light-switch-example) or a [Matter over Thread network](/matter/<docspace-docleaf-version>/matter-light-switch-example/02-thread-light-switch-example).
+Now that you have your environment, you can create a [Matter over Wi-Fi network](/matter/{build-docspace-version}/matter-light-switch-example/01-wifi-light-switch-example) or a [Matter over Thread network](/matter/{build-docspace-version}/matter-light-switch-example/02-thread-light-switch-example).

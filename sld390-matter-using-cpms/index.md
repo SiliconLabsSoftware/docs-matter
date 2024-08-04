@@ -38,7 +38,7 @@ CPMS will ask for various attributes about your device, but these are the primar
 
 1. Choose a Matter-capable part to develop your Matter application on.
 
-2. Become a [Connectivity Standards Alliance member](https://csa-iot.org/become-member/) if your organization is not already a member. An associate-level membership or higher is required to obtain membership perks, certification, and a Vendor ID. See [Device Development Prerequisites](/matter/<docspace-docleaf-version>/matter-device-dev-prereqs). If you have not been through these steps, please ensure ample time to get this step done before you are ready to go to production.
+2. Become a [Connectivity Standards Alliance member](https://csa-iot.org/become-member/) if your organization is not already a member. An associate-level membership or higher is required to obtain membership perks, certification, and a Vendor ID. See [Device Development Prerequisites](/matter/{build-docspace-version}/matter-device-dev-prereqs). If you have not been through these steps, please ensure ample time to get this step done before you are ready to go to production.
 
 3. If you are already a Connectivity Standards Alliance member, make sure that you have been supplied a VID from Connectivity Standards Alliance. If not, contact Connectivity Standards Alliance to obtain a VID. The VID should also have been added to the [Distributed Compliance Ledger (DCL)](https://webui.dcl.csa-iot.org/).
 

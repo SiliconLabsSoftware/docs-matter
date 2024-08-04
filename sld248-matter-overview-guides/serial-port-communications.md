@@ -4,17 +4,17 @@ The matter-shell exposes the configuration and the management APIs via the matte
 
 ## Hardware Requirements
 
-To run matter shell on the Silicon Labs Platform, refer to the [Hardware Requirements](/matter/<docspace-docleaf-version>/matter-prerequisites/hardware-requirements).
+To run matter shell on the Silicon Labs Platform, refer to the [Hardware Requirements](/matter/{build-docspace-version}/matter-prerequisites/hardware-requirements).
 
 ## Software Requirements
 
-To run matter shell on the Silicon Labs Platform, refer to the [Software Requirements](/matter/<docspace-docleaf-version>/matter-prerequisites/software-requirements).
+To run matter shell on the Silicon Labs Platform, refer to the [Software Requirements](/matter/{build-docspace-version}/matter-prerequisites/software-requirements).
 
 ## Execute Matter Shell on Silicon Labs Platform
 
 1. [Download](https://www.silabs.com/developers/simplicity-studio) and install Simplicity Studio.
 
-2. To install the software packages for Simplicity Studio, refer to [Software Package Installation](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/software-installation#installation-of-software-packages).
+2. To install the software packages for Simplicity Studio, refer to [Software Package Installation](/matter/{build-docspace-version}/matter-wifi-getting-started-example/software-installation#installation-of-software-packages).
 
 3. Log in to Simplicity Studio and connect the EFR32MG2x or SiWx917 SOC board to the computer.
 
@@ -50,7 +50,7 @@ To run matter shell on the Silicon Labs Platform, refer to the [Software Require
 
 11. Build the project after enabling the **Matter Shell** component.
 
-12. After a successful build, commission the device as described in [Commission Matter Platform](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/use-case-execution#creating-the-matter-network).
+12. After a successful build, commission the device as described in [Commission Matter Platform](/matter/{build-docspace-version}/matter-wifi-run-demo/use-case-execution#creating-the-matter-network).
 
 13. For SiWx917 SoC, connect the TTL cables with the Radio Board to execute **Matter Shell**.
 

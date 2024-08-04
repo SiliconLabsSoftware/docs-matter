@@ -2,7 +2,7 @@
 
 ## Setting up the Matter Hub/Chip-Tool
 
-This procedure prepares the Raspberry Pi 4B (RPi4B) to become a Matter hub. You should have downloaded the Matter Hub Raspberry Pi image and Raspberry Pi Imager as described in the [Overview](/matter/<docspace-docleaf-version>/matter-overview). The Raspberry Pi image contains software called chip-tool, which provides a command-line interface into the Matter protocol.
+This procedure prepares the Raspberry Pi 4B (RPi4B) to become a Matter hub. You should have downloaded the Matter Hub Raspberry Pi image and Raspberry Pi Imager as described in the [Overview](/matter/{build-docspace-version}/matter-overview). The Raspberry Pi image contains software called chip-tool, which provides a command-line interface into the Matter protocol.
 
 1. Install the Raspberry Pi Imager and insert the SD card into the PC to flash the image.
 
@@ -16,7 +16,7 @@ This procedure prepares the Raspberry Pi 4B (RPi4B) to become a Matter hub. You 
 
 2. Insert the SD card into Raspberry Pi 4B (RPi4B).
 
-3. Power-up the RPi4B. Once it is booted up, check the Raspberry Pi's IP address. Refer to [Finding Raspberry Pi IP address](/matter/<docspace-docleaf-version>/matter-references/find-raspi) in the Resources section to get the IP address or enter the Hostname directly in PuTTY.
+3. Power-up the RPi4B. Once it is booted up, check the Raspberry Pi's IP address. Refer to [Finding Raspberry Pi IP address](/matter/{build-docspace-version}/matter-references/find-raspi) in the Resources section to get the IP address or enter the Hostname directly in PuTTY.
 
 4. Use PuTTY to connect to RPi4B.
 
@@ -40,7 +40,7 @@ Matter hub/chip-tool are ready and working. Keep the PuTTY session open for the 
 
 ### Software Requirements
 
-To run the Light and Switch Example on SiWx917 SOC, software must be installed. Refer to [Software Requirements](/matter/<docspace-docleaf-version>/matter-prerequisites/software-requirements).
+To run the Light and Switch Example on SiWx917 SOC, software must be installed. Refer to [Software Requirements](/matter/{build-docspace-version}/matter-prerequisites/software-requirements).
 
 **Note**: Switch application is not supported for NCP devices.
 
