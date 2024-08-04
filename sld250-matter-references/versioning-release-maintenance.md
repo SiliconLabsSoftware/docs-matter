@@ -42,7 +42,7 @@ Update digits based on the following criteria:
 
 - **Pre-Release**
 
-  - As needed, e.g. release after TE1 can be called v2.3.0-1.2-alpha.1
+  - As needed, e.g. release after TE1 can be called v2.3.1-1.2-alpha.1
 
     - To identify targeted feature requests/SQA quality level testing
 
@@ -65,4 +65,5 @@ Update digits based on the following criteria:
 | v2.1.1-1.1 | 9-Oct-23   | v4.3.2, v4.3.3 | v3.1.0 | Maintained |
 | v2.2.0-1.2 | 13-Dec-23  | v4.4.0, v4.4.1 | v3.1.1 | Obsolete |
 | v2.2.1-1.2 | 10-Apr-24  | v4.4.1, v4.4.2 | v3.1.4 | Maintained |
-| v2.3.0-1.3 | 18-June-24  | 2024.6.0 | v3.3.0 | Active |
+| v2.3.0-1.3 | 18-June-24  | 2024.6.0 | v3.3.0 | Maintained |
+| v2.3.1-1.3 | 14-August-24  | 2024.6.1 | v3.3.1 | Active |
