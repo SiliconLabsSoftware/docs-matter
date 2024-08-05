@@ -48,3 +48,4 @@ A Matter device can be controlled by single Ecosystem controller and is also int
 
 - Follow [Single Controller Setup and Execution](./singlecontroller-ecosystem.md) to operate with single controller
 - Follow [Multiple Controller Setup and Execution](./multicontroller-ecosystem.md) to interoperate with multiple controllers
+
