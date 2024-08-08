@@ -58,33 +58,16 @@ A hands-on example of these provisioning flows will be provided in the following
 
 ## Initial Setup
 
-Using your PC for development, including:
+The provisioning code resides under `extension/matter_extension` in the SiSDK directory tree for the SDK used in your Studio project, for example `SimplicityStudio/SDKs/sisdk_release_2/extension/matter_extension/provision`. 
 
-- Studio with Matter Extension or SMG - *preferably the latest SiSDK version.*
-- Clone the matter repo
-
-```bash
-git clone https://github.com/SiliconLabs/matter.git
-cd matter
-git submodule update --init
-```
-
-In the matter repo directory:
-
-```bash
-source ./scripts/bootstrap.sh
-source ./scripts/activate.sh
-gn gen out/tools
-ninja -C out/tools
-cd provision/
-```
+Within the Studio installation, the chip-cert binary can found at <studio_installation>/v5/developer/adapter_packs/cpms/applications.
 
 ## Generating Matter Certificates (CD, PAA,PAI,DAC) - Provisioning Script
 
 Reference and detailed explanation of the different processes that take place in the provisioning script are detailed in [https://github.com/SiliconLabs/matter_extension/tree/v2.3.1/provision](https://github.com/SiliconLabs/matter_extension/tree/v2.3.1/provision). The following is an example on how to generate certificates using the chip-cert tool. Start with generating the Certification Declaration as follows:
 
 ```bash
-./out/tools/chip-cert gen-cd -K credentials/test/certification-declaration/Chip-Test-CD-Signing-Key.pem -C credentials/test/certification-declaration/Chip-Test-CD-Signing-Cert.pem -O credentials/test/certification-declaration/Chip-Test-CD-1049-8005.der -f 1 -V 0x1049 -p 0x8005 -c ZIG20142ZB330001-24 -l 0 -i 0 -n 257 -t 0 -o 0x1049 -r 0x8005
+chip-cert gen-cd -K credentials/test/certification-declaration/Chip-Test-CD-Signing-Key.pem -C credentials/test/certification-declaration/Chip-Test-CD-Signing-Cert.pem -O credentials/test/certification-declaration/Chip-Test-CD-1049-8005.der -f 1 -V 0x1049 -p 0x8005 -c ZIG20142ZB330001-24 -l 0 -i 0 -n 257 -t 0 -o 0x1049 -r 0x8005
 ```
 
 This chip-cert command uses the Chip-Test-CD-Signing-Key.pem and Chip-Test-CD-Signing-Cert.pem to sign the output CD which is Chip-Test-CD-1049-8005.der with **Vendor ID:**  0x1049 and **Product ID:** 0x8005.
@@ -92,19 +75,19 @@ This chip-cert command uses the Chip-Test-CD-Signing-Key.pem and Chip-Test-CD-Si
 The next step is to generate the Product Attestation Intermediate (PAI) and Device Attestation Certificate (DAC) using a test Product Attestation Authority (PAA) provided by the Connectivity Standards Alliance and can be found in ~/matter/credentials/test/attestation/Chip-Test-PAA-NoVID-Cert.pem. This PAA will be the root certificate to sign the PAI which will then sign the DAC and we will obtain our Public Key Infrastructure Matter Certificate Chain:
 
 ```bash
-./out/tools/chip-cert gen-att-cert -t i -l 3660 -c "Matter PAI" -V 0x1049 -P 0x8005 -C ./credentials/test/attestation/Chip-Test-PAA-NoVID-Cert.pem -K ./credentials/test/attestation/Chip-Test-PAA-NoVID-Key.pem -o ./credentials/test/attestation/pai_cert.pem -O ./credentials/test/attestation/pai_key.pem
+chip-cert gen-att-cert -t i -l 3660 -c "Matter PAI" -V 0x1049 -P 0x8005 -C ./credentials/test/attestation/Chip-Test-PAA-NoVID-Cert.pem -K ./credentials/test/attestation/Chip-Test-PAA-NoVID-Key.pem -o ./credentials/test/attestation/pai_cert.pem -O ./credentials/test/attestation/pai_key.pem
 ```
 
 If you plan on using different PID for different Matter devices you can remove the -P 0x8005 from the PAI and this will provide more flexibility to generate DACs with different PIDs under the same PAI. You can use the following command to generate a DAC using the PAI Cert and the PAI key:
 
 ```bash
-./out/tools/chip-cert gen-att-cert -t d -l 3660 -c "Matter DAC" -V 0x1049 -P 0x8005 -C ./credentials/test/attestation/pai_cert.pem -K ./credentials/test/attestation/pai_key.pem -o ./credentials/test/attestation/dac_cert.pem -O ./credentials/test/attestation/dac_key.pem
+chip-cert gen-att-cert -t d -l 3660 -c "Matter DAC" -V 0x1049 -P 0x8005 -C ./credentials/test/attestation/pai_cert.pem -K ./credentials/test/attestation/pai_key.pem -o ./credentials/test/attestation/dac_cert.pem -O ./credentials/test/attestation/dac_key.pem
 ```
 
 To verify the Certificate Chain you can also use chip-cert:
 
 ```bash
-./out/tools/chip-cert validate-att-cert --dac credentials/test/attestation/dac_cert.pem --pai credentials/test/attestation/pai_cert.pem --paa credentials/test/attestation/Chip-Test-PAA-NoVID-Cert.pem
+chip-cert validate-att-cert --dac credentials/test/attestation/dac_cert.pem --pai credentials/test/attestation/pai_cert.pem --paa credentials/test/attestation/Chip-Test-PAA-NoVID-Cert.pem
 ```
 
 If the chain is correctly verified, no errors should be output from this command.
