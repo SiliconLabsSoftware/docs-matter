@@ -72,7 +72,7 @@ chip-cert gen-cd -K credentials/test/certification-declaration/Chip-Test-CD-Sign
 
 This chip-cert command uses the Chip-Test-CD-Signing-Key.pem and Chip-Test-CD-Signing-Cert.pem to sign the output CD which is Chip-Test-CD-1049-8005.der with **Vendor ID:**  0x1049 and **Product ID:** 0x8005.
 
-The next step is to generate the Product Attestation Intermediate (PAI) and Device Attestation Certificate (DAC) using a test Product Attestation Authority (PAA) provided by the Connectivity Standards Alliance and can be found in ~/matter_extension/credentials/test/attestation/Chip-Test-PAA-NoVID-Cert.pem. This PAA will be the root certificate to sign the PAI which will then sign the DAC and we will obtain our Public Key Infrastructure Matter Certificate Chain:
+The next step is to generate the Product Attestation Intermediate (PAI) and Device Attestation Certificate (DAC) using a test Product Attestation Authority (PAA) provided by the Connectivity Standards Alliance and can be found in ./matter_extension/credentials/test/attestation/Chip-Test-PAA-NoVID-Cert.pem. This PAA will be the root certificate to sign the PAI which will then sign the DAC and we will obtain our Public Key Infrastructure Matter Certificate Chain:
 
 ```bash
 chip-cert gen-att-cert -t i -l 3660 -c "Matter PAI" -V 0x1049 -P 0x8005 -C ./credentials/test/attestation/Chip-Test-PAA-NoVID-Cert.pem -K ./credentials/test/attestation/Chip-Test-PAA-NoVID-Key.pem -o ./credentials/test/attestation/pai_cert.pem -O ./credentials/test/attestation/pai_key.pem
@@ -136,7 +136,7 @@ Once you have finished generating you Certificates, you can proceed with install
 
 Once you have generated the PAA, PAI and DAC and have installed the provisioning tool you can use it to write the Commissionable Data and the Device Attestation Data. As previously mentioned, there are two provisioning flows possible, following are the necessary steps to correctly provision your device.
 
-Go to the ~/matter_extension/provision/directory:
+Go to the ./matter_extension/provision/directory:
 
 ### Generator Firmware
 
@@ -225,11 +225,11 @@ python3 ./provision.py --inputs defaults.json ---pai_cert ../credentials/test/at
   + dac_cert: ../credentials/test/attestation/dac_cert.pem
   + dac_key: ../credentials/test/attestation/dac_key.pem
 
-  > openssl x509 -inform pem -outform der -in /Users/username/matter_extension/provision/temp/pai_cert.pem -out /Users/username/matter_extension/provision/temp/pai_cert.der
+  > openssl x509 -inform pem -outform der -in ./matter_extension/provision/temp/pai_cert.pem -out ./matter_extension/provision/temp/pai_cert.der
 
-  > openssl x509 -inform pem -outform der -in /Users/username/matter_extension/provision/temp/dac_cert.pem -out /Users/username/matter_extension/provision/temp/dac_cert.der
+  > openssl x509 -inform pem -outform der -in ./matter_extension/provision/temp/dac_cert.pem -out ./matter_extension/provision/temp/dac_cert.der
 
-  > openssl ec -inform pem -in /Users/username/matter_extension/provision/temp/dac_key.pem -outform der -out /Users/username/matter_extension/provision/temp/dac_key.der
+  > openssl ec -inform pem -in ./matter_extension/provision/temp/dac_key.pem -outform der -out ./matter_extension/provision/temp/dac_key.der
 
 * Open BLUETOOTH channel to 0CA515E1-8159-AF32-FA9C-FA2F51913CC1
 
@@ -358,17 +358,17 @@ python3 ./provision.py --vendor_id 0x1049 --product_id 0x8005 --certification ./
   + dac_cert: ./samples/light/1/dac_cert.der
   + dac_key: ./samples/light/1/dac_key.der
 
-  > openssl x509 -inform der -outform pem -in /Users/username/matter_extension/provision/temp/pai_cert.der -out /Users/username/matter_extension/provision/temp/pai_cert.pem
+  > openssl x509 -inform der -outform pem -in ./matter_extension/provision/temp/pai_cert.der -out ./matter_extension/provision/temp/pai_cert.pem
 
-  > openssl x509 -inform der -outform pem -in /Users/username/matter_extension/provision/temp/dac_cert.der -out /Users/username/matter_extension/provision/temp/dac_cert.pem
+  > openssl x509 -inform der -outform pem -in ./matter_extension/provision/temp/dac_cert.der -out ./matter_extension/provision/temp/dac_cert.pem
 
-  > openssl ec -inform der -in /Users/username/matter_extension/provision/temp/dac_key.der -outform pem -out /Users/username/matter_extension/provision/temp/dac_key.pem
+  > openssl ec -inform der -in ./matter_extension/provision/temp/dac_key.der -outform pem -out ./matter_extension/provision/temp/dac_key.pem
 
   > commander device info
 
-Device: (efr32mg24) ram:0x20000000, flash:0x08000000|0x00180000, stack:0x8000, image:/Users/username/matter_extension/provision/images/efr32mg24_psa123_nvm3k2.s37
+Device: (efr32mg24) ram:0x20000000, flash:0x08000000|0x00180000, stack:0x8000, image:./matter_extension/provision/images/efr32mg24_psa123_nvm3k2.s37
 
-  > commander flash /Users/username/matter_extension/provision/images/efr32mg24_psa123_nvm3k2.s37 --device efr32mg24b020f1536im48
+  > commander flash ./matter_extension/provision/images/efr32mg24_psa123_nvm3k2.s37 --device efr32mg24b020f1536im48
 
   > commander device reset --device efr32mg24b020f1536im48
 
