@@ -58,53 +58,36 @@ A hands-on example of these provisioning flows will be provided in the following
 
 ## Initial Setup
 
-Using your PC for development, including:
+The provisioning code resides under `extension/matter_extension` in the SiSDK directory tree for the SDK used in your Studio project, for example `SimplicityStudio/SDKs/sisdk_release_2/extension/matter_extension/provision`. 
 
-- Studio with Matter Extension or SMG - *preferably the latest SiSDK version.*
-- Clone the matter repo
-
-```bash
-git clone https://github.com/SiliconLabs/matter.git
-cd matter
-git submodule update --init
-```
-
-In the matter repo directory:
-
-```bash
-source ./scripts/bootstrap.sh
-source ./scripts/activate.sh
-gn gen out/tools
-ninja -C out/tools
-cd provision/
-```
+Within the Studio installation, the chip-cert binary can found at <studio_installation>/v5/developer/adapter_packs/cpms/applications.
 
 ## Generating Matter Certificates (CD, PAA,PAI,DAC) - Provisioning Script
 
-Reference and detailed explanation of the different processes that take place in the provisioning script are detailed in [https://github.com/SiliconLabs/matter_extension/tree/v2.3.1/provision](https://github.com/SiliconLabs/matter_extension/tree/v2.3.1/provision). The following is an example on how to generate certificates using the chip-cert tool. Start with generating the Certification Declaration as follows:
+Reference and detailed explanation of the different processes that take place in the provisioning script are detailed in [https://github.com/SiliconLabs/matter_extension/tree/main/provision](https://github.com/SiliconLabs/matter_extension/tree/main/provision). The following is an example on how to generate certificates using the chip-cert tool. Start with generating the Certification Declaration as follows:
 
 ```bash
-./out/tools/chip-cert gen-cd -K credentials/test/certification-declaration/Chip-Test-CD-Signing-Key.pem -C credentials/test/certification-declaration/Chip-Test-CD-Signing-Cert.pem -O credentials/test/certification-declaration/Chip-Test-CD-1049-8005.der -f 1 -V 0x1049 -p 0x8005 -c ZIG20142ZB330001-24 -l 0 -i 0 -n 257 -t 0 -o 0x1049 -r 0x8005
+chip-cert gen-cd -K credentials/test/certification-declaration/Chip-Test-CD-Signing-Key.pem -C credentials/test/certification-declaration/Chip-Test-CD-Signing-Cert.pem -O credentials/test/certification-declaration/Chip-Test-CD-1049-8005.der -f 1 -V 0x1049 -p 0x8005 -c ZIG20142ZB330001-24 -l 0 -i 0 -n 257 -t 0 -o 0x1049 -r 0x8005
 ```
 
 This chip-cert command uses the Chip-Test-CD-Signing-Key.pem and Chip-Test-CD-Signing-Cert.pem to sign the output CD which is Chip-Test-CD-1049-8005.der with **Vendor ID:**  0x1049 and **Product ID:** 0x8005.
 
-The next step is to generate the Product Attestation Intermediate (PAI) and Device Attestation Certificate (DAC) using a test Product Attestation Authority (PAA) provided by the Connectivity Standards Alliance and can be found in ~/matter/credentials/test/attestation/Chip-Test-PAA-NoVID-Cert.pem. This PAA will be the root certificate to sign the PAI which will then sign the DAC and we will obtain our Public Key Infrastructure Matter Certificate Chain:
+The next step is to generate the Product Attestation Intermediate (PAI) and Device Attestation Certificate (DAC) using a test Product Attestation Authority (PAA) provided by the Connectivity Standards Alliance and can be found in ./matter_extension/credentials/test/attestation/Chip-Test-PAA-NoVID-Cert.pem. This PAA will be the root certificate to sign the PAI which will then sign the DAC and we will obtain our Public Key Infrastructure Matter Certificate Chain:
 
 ```bash
-./out/tools/chip-cert gen-att-cert -t i -l 3660 -c "Matter PAI" -V 0x1049 -P 0x8005 -C ./credentials/test/attestation/Chip-Test-PAA-NoVID-Cert.pem -K ./credentials/test/attestation/Chip-Test-PAA-NoVID-Key.pem -o ./credentials/test/attestation/pai_cert.pem -O ./credentials/test/attestation/pai_key.pem
+chip-cert gen-att-cert -t i -l 3660 -c "Matter PAI" -V 0x1049 -P 0x8005 -C ./credentials/test/attestation/Chip-Test-PAA-NoVID-Cert.pem -K ./credentials/test/attestation/Chip-Test-PAA-NoVID-Key.pem -o ./credentials/test/attestation/pai_cert.pem -O ./credentials/test/attestation/pai_key.pem
 ```
 
 If you plan on using different PID for different Matter devices you can remove the -P 0x8005 from the PAI and this will provide more flexibility to generate DACs with different PIDs under the same PAI. You can use the following command to generate a DAC using the PAI Cert and the PAI key:
 
 ```bash
-./out/tools/chip-cert gen-att-cert -t d -l 3660 -c "Matter DAC" -V 0x1049 -P 0x8005 -C ./credentials/test/attestation/pai_cert.pem -K ./credentials/test/attestation/pai_key.pem -o ./credentials/test/attestation/dac_cert.pem -O ./credentials/test/attestation/dac_key.pem
+chip-cert gen-att-cert -t d -l 3660 -c "Matter DAC" -V 0x1049 -P 0x8005 -C ./credentials/test/attestation/pai_cert.pem -K ./credentials/test/attestation/pai_key.pem -o ./credentials/test/attestation/dac_cert.pem -O ./credentials/test/attestation/dac_key.pem
 ```
 
 To verify the Certificate Chain you can also use chip-cert:
 
 ```bash
-./out/tools/chip-cert validate-att-cert --dac credentials/test/attestation/dac_cert.pem --pai credentials/test/attestation/pai_cert.pem --paa credentials/test/attestation/Chip-Test-PAA-NoVID-Cert.pem
+chip-cert validate-att-cert --dac credentials/test/attestation/dac_cert.pem --pai credentials/test/attestation/pai_cert.pem --paa credentials/test/attestation/Chip-Test-PAA-NoVID-Cert.pem
 ```
 
 If the chain is correctly verified, no errors should be output from this command.
@@ -113,7 +96,7 @@ Once you have finished generating you Certificates, you can proceed with install
 
 ## Provisioning Tool
 
->Important: Please review the required installations in the [Provision Script](https://github.com/SiliconLabs/matter/tree/release_2.3.1-1.3/provision#provision-script) section.
+>Important: Please review the required installations in the [Provision Script]https://github.com/SiliconLabs/matter_extension/tree/main/provision#provision-script) section.
 
 ### Required Installation
 
@@ -153,7 +136,7 @@ Once you have finished generating you Certificates, you can proceed with install
 
 Once you have generated the PAA, PAI and DAC and have installed the provisioning tool you can use it to write the Commissionable Data and the Device Attestation Data. As previously mentioned, there are two provisioning flows possible, following are the necessary steps to correctly provision your device.
 
-Go to the ~/matter/provision/directory:
+Go to the ./matter_extension/provision/directory:
 
 ### Generator Firmware
 
@@ -188,7 +171,7 @@ python3 ./provision.py --inputs defaults.json ---pai_cert ../credentials/test/at
    
    ```
 
-3. From the ```matter/provision``` directory, get the BLE UUID via the bluet.py tool:
+3. From the ```matter_extension/provision``` directory, get the BLE UUID via the bluet.py tool:
 
     ```bash
     
@@ -242,11 +225,11 @@ python3 ./provision.py --inputs defaults.json ---pai_cert ../credentials/test/at
   + dac_cert: ../credentials/test/attestation/dac_cert.pem
   + dac_key: ../credentials/test/attestation/dac_key.pem
 
-  > openssl x509 -inform pem -outform der -in /Users/username/matter/provision/temp/pai_cert.pem -out /Users/username/matter/provision/temp/pai_cert.der
+  > openssl x509 -inform pem -outform der -in ./matter_extension/provision/temp/pai_cert.pem -out ./matter_extension/provision/temp/pai_cert.der
 
-  > openssl x509 -inform pem -outform der -in /Users/username/matter/provision/temp/dac_cert.pem -out /Users/username/matter/provision/temp/dac_cert.der
+  > openssl x509 -inform pem -outform der -in ./matter_extension/provision/temp/dac_cert.pem -out ./matter_extension/provision/temp/dac_cert.der
 
-  > openssl ec -inform pem -in /Users/username/matter/provision/temp/dac_key.pem -outform der -out /Users/username/matter/provision/temp/dac_key.der
+  > openssl ec -inform pem -in ./matter_extension/provision/temp/dac_key.pem -outform der -out ./matter_extension/provision/temp/dac_key.der
 
 * Open BLUETOOTH channel to 0CA515E1-8159-AF32-FA9C-FA2F51913CC1
 
@@ -327,21 +310,6 @@ Incoming(4):
 
 >Note: If using RTT and you have connected more than one device, provide the --serial_number \<j-link no\>. If using bluetooth use --channel bt:\<bluetooth UUID\>.
 
->Note: Invalid chip-cert path (--cert_tool): '../out/tools/chip-cert' (The provisioning script uses the cert-tool. If the activate.sh script has not been successfully run, this error will occur.)
-
-### Building a Sample Application - SMG
-
-To build a lighting app using SMG, you can run these commands for an MG24. This example is using a BRD4787C. Go to the matter directory and execute the following command (in the matter directory):
-
-```bash
-cd ..
-./scripts/examples/gn_silabs_example.sh ./examples/lighting-app/silabs/ ./out/lighting-app/ BRD4187C chip_build_platform_attestation_credentials_provider = true
-```
-
-**chip\_build\_platform\_attestation\_credentials\_provider = true** instructs the software to use the credentials that have been provided by the provisioning tool in the last page of flash.
-
-Your application will be in /out/lighting-app/BRD4187C.
-
 ### Building a Sample Application - Studio - Matter Extension
 
 #### Create a New Lighting Over Thread Project
@@ -358,7 +326,9 @@ Once this is completed, you can build your image and flash the \<image\>.s37 usi
 
 ### Store Commissionable Data (NVM3), Attestation Data CD,PAI, DAC (Main Flash)
 
-To use the provisioning tool to store commissionable data and the attestation data in the device, see the following usage of the provisioning script. For more information on the arguments, refer to the [Provisioning Script readme](https://github.com/SiliconLabs/matter/tree/release_2.3.1-1.3/provision#readme).
+To use the provisioning tool to store commissionable data and the attestation data in the device, see the following usage of the provisioning script. For more information on the arguments, refer to the [Provisioning Script readme](https://github.com/SiliconLabs/matter_extension/blob/main/provision/README.md).
+
+Run ```pip3 install -r provision/requirements.txt`` to get the required python packages for provision tool. 
 
 ```bash
 python3 ./provision.py --vendor_id 0x1049 --product_id 0x8005 --certification ./samples/light/1/cd.bin --pai_cert ./samples/light/1/pai_cert.der --dac_cert ./samples/light/1/dac_cert.der -dk ./samples/light/1/dac_key.der --spake2p_passcode 62034001 --spake2p_salt 95834coRGvFhCB69IdmJyr5qYIzFgSirw6Ja7g5ySYA= --spake2p_iterations 15000 --discriminator 0xf01 --prod_fw ../out/lighting-app/BRD4187C/matter-silabs-lighting-example.s37
@@ -388,17 +358,17 @@ python3 ./provision.py --vendor_id 0x1049 --product_id 0x8005 --certification ./
   + dac_cert: ./samples/light/1/dac_cert.der
   + dac_key: ./samples/light/1/dac_key.der
 
-  > openssl x509 -inform der -outform pem -in /Users/username/matter/provision/temp/pai_cert.der -out /Users/username/matter/provision/temp/pai_cert.pem
+  > openssl x509 -inform der -outform pem -in ./matter_extension/provision/temp/pai_cert.der -out ./matter_extension/provision/temp/pai_cert.pem
 
-  > openssl x509 -inform der -outform pem -in /Users/username/matter/provision/temp/dac_cert.der -out /Users/username/matter/provision/temp/dac_cert.pem
+  > openssl x509 -inform der -outform pem -in ./matter_extension/provision/temp/dac_cert.der -out ./matter_extension/provision/temp/dac_cert.pem
 
-  > openssl ec -inform der -in /Users/username/matter/provision/temp/dac_key.der -outform pem -out /Users/username/matter/provision/temp/dac_key.pem
+  > openssl ec -inform der -in ./matter_extension/provision/temp/dac_key.der -outform pem -out ./matter_extension/provision/temp/dac_key.pem
 
   > commander device info
 
-Device: (efr32mg24) ram:0x20000000, flash:0x08000000|0x00180000, stack:0x8000, image:/Users/username/matter/provision/images/efr32mg24_psa123_nvm3k2.s37
+Device: (efr32mg24) ram:0x20000000, flash:0x08000000|0x00180000, stack:0x8000, image:./matter_extension/provision/images/efr32mg24_psa123_nvm3k2.s37
 
-  > commander flash /Users/username/matter/provision/images/efr32mg24_psa123_nvm3k2.s37 --device efr32mg24b020f1536im48
+  > commander flash ./matter_extension/provision/images/efr32mg24_psa123_nvm3k2.s37 --device efr32mg24b020f1536im48
 
   > commander device reset --device efr32mg24b020f1536im48
 
