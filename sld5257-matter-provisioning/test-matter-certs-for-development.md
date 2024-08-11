@@ -58,13 +58,13 @@ A hands-on example of these provisioning flows will be provided in the following
 
 ## Initial Setup
 
-The provisioning code resides under `extension/matter_extension` in the SiSDK directory tree for the SDK used in your Studio project, for example `SimplicityStudio/SDKs/sisdk_release_2/extension/matter_extension/provision`. 
+The provisioning code resides under `extension/matter_extension` in the SiSDK directory tree for the SDK used in your Studio project, for example `SimplicityStudio/SDKs/sisdk_release_2/extension/matter_extension/provision`.
 
 Within the Studio installation, the chip-cert binary can found at <studio_installation>/v5/developer/adapter_packs/cpms/applications.
 
 ## Generating Matter Certificates (CD, PAA,PAI,DAC) - Provisioning Script
 
-Reference and detailed explanation of the different processes that take place in the provisioning script are detailed in [https://github.com/SiliconLabs/matter_extension/tree/main/provision](https://github.com/SiliconLabs/matter_extension/tree/main/provision). The following is an example on how to generate certificates using the chip-cert tool. Start with generating the Certification Declaration as follows:
+Reference and detailed explanation of the different processes that take place in the provisioning script are detailed in [https://github.com/SiliconLabs/matter_extension/tree/main/provision](https://github.com/SiliconLabs/matter_extension/tree/main/provision). The following is an example of how to generate certificates using the chip-cert tool. Start with generating the Certification Declaration as follows:
 
 ```bash
 chip-cert gen-cd -K credentials/test/certification-declaration/Chip-Test-CD-Signing-Key.pem -C credentials/test/certification-declaration/Chip-Test-CD-Signing-Cert.pem -O credentials/test/certification-declaration/Chip-Test-CD-1049-8005.der -f 1 -V 0x1049 -p 0x8005 -c ZIG20142ZB330001-24 -l 0 -i 0 -n 257 -t 0 -o 0x1049 -r 0x8005
@@ -96,7 +96,7 @@ Once you have finished generating you Certificates, you can proceed with install
 
 ## Provisioning Tool
 
->Important: Please review the required installations in the [Provision Script]https://github.com/SiliconLabs/matter_extension/tree/main/provision#provision-script) section.
+>Important: Review the required installations in the [Provision Script](https://github.com/SiliconLabs/matter_extension/tree/main/provision#provision-script) section.
 
 ### Required Installation
 
@@ -328,7 +328,7 @@ Once this is completed, you can build your image and flash the \<image\>.s37 usi
 
 To use the provisioning tool to store commissionable data and the attestation data in the device, see the following usage of the provisioning script. For more information on the arguments, refer to the [Provisioning Script readme](https://github.com/SiliconLabs/matter_extension/blob/main/provision/README.md).
 
-Run ```pip3 install -r provision/requirements.txt`` to get the required python packages for provision tool. 
+Run ```pip3 install -r provision/requirements.txt`` to get the required python packages for provision tool.
 
 ```bash
 python3 ./provision.py --vendor_id 0x1049 --product_id 0x8005 --certification ./samples/light/1/cd.bin --pai_cert ./samples/light/1/pai_cert.der --dac_cert ./samples/light/1/dac_cert.der -dk ./samples/light/1/dac_key.der --spake2p_passcode 62034001 --spake2p_salt 95834coRGvFhCB69IdmJyr5qYIzFgSirw6Ja7g5ySYA= --spake2p_iterations 15000 --discriminator 0xf01 --prod_fw ../out/lighting-app/BRD4187C/matter-silabs-lighting-example.s37

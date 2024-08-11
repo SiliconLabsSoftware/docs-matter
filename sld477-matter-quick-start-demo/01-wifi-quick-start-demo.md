@@ -103,4 +103,3 @@ After successfully running the Matter Lighting app to the ecosystem, the next st
 6. Click **Flash** to flash the device.
 
 Once the device is flashed, it will be ready for commissioning and further testing.
-

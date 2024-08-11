@@ -6,4 +6,3 @@ You should have obtained hardware and installed software as described in the [Ov
 
 - [**Wi-Fi**](./01-wifi-quick-start-demo.md)
 - [**Thread**](./02-thread-quick-start-demo.md)
-

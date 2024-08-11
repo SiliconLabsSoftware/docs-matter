@@ -55,7 +55,7 @@ The GFW performs the following tasks:
 - Stores the Attestation Data on the main flash (CD, PAI, DAC)
 - Stores the size and offsets used to store the Attestation Data, along with the KeyId used to store the private-key.
 
-The provisioning code resides under `extension/matter_extension` in the SiSDK directory tree for the SDK used in your Studio project, for example `SimplicityStudio/SDKs/sisdk_release_2/extension/matter_extension/provision`. 
+The provisioning code resides under `extension/matter_extension` in the SiSDK directory tree for the SDK used in your Studio project, for example `SimplicityStudio/SDKs/sisdk_release_2/extension/matter_extension/provision`.
 
 The main source code of the GFW is located under `./generator`, while the board support is located under `./support`.
 Pre-compiled images for the supported chips can be found in `./images`.
@@ -415,7 +415,7 @@ By default, `provision.py` uses the Matter Test PAA [Chip-Test-PAA-NoVID-Cert.de
 
 ### Example
 
-Build any sample application. 
+Build any sample application.
 
 Set up the device with key generation:
 
