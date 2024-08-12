@@ -91,7 +91,7 @@ python3 slc/sl_create_new_app.py MyNewApp slc/workspaces/lighting-app/series-2/l
 For Windows:
 
 ```C
-python3 slc\sl_create_new_app.py MyNewApp slc\workspaces\lighting-app\series-2\lighting-app-thread-bootloader.slcw brd4187c
+python slc\sl_create_new_app.py MyNewApp slc\workspaces\lighting-app\series-2\lighting-app-thread-bootloader.slcw brd4187c
 ```
 
 ## Building an Application Project
