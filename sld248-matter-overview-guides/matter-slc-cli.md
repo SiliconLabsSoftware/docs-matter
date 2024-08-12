@@ -111,7 +111,7 @@ For Windows:
 python slc\sl_build.py MyNewApp\lighting-app-thread.slcp brd4187c
 ```
 
-Sample-App Example:
+Workspaces Examples:
 For Mac and Linux:
 
 ```C
