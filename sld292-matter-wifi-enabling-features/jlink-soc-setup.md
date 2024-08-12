@@ -6,12 +6,14 @@
 
 ## Steps to Configure the SiWx917 SoC on the JLink-RTT Logging
 
-1. Update the **JlinkDevices.xml** and **.elf** files found on the [Matter Artifacts Page](/matter/{build-docspace-version}/matter-prerequisites/matter-artifacts).
+1. Update the **JlinkDevices.xml** and **RS9117_SF_4MB_42bsp.elf** files found on the [Matter Artifacts Page](/matter/{build-docspace-version}/matter-prerequisites/matter-artifacts).
     - Download the JLinkDevices.xml file and copy it in your **JLink RTT** installation path shown in this [JlinkDevices Folder](https://wiki.segger.com/J-Link_Device_Support_Kit#JLinkDevices_folder). If there is no JLinkDevices Folder, create a `JLinkDevices` folder and copy the `JlinkDevices.xml` file into it.
     - In the `JLinkDevices` folder, create a `Devices` folder and then create a sub-folder named `SiliconLabs`.
-    - Download the **.elf** file (Flash driver) and copy it in the created `SiliconLabs` folder.
+    - Download the **RS9117_SF_4MB_42bsp.elf** file (Flash driver) and copy it in the created `SiliconLabs` folder.
 
-2. Launch **JLink RTT**. The SiWx917 Common Flash SoC device should be visible in the Device field’s selection list.
+    **Note**:- **RS9117_SF_4MB_42bsp.elf** flash driver file is used to download the application using the Ozone debugger.
+
+2. Launch **J-Link RTT Viewer**. The SiWx917 Common Flash SoC device should be visible in the Device field’s selection list.
 
     ![Search SOC](./images/search-soc-jlink.png)
 

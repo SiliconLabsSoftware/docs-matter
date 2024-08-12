@@ -68,6 +68,6 @@ SiWx917 SoC boards need to be flashed with proper firmware as mentioned below:
 
 In order to check device logs for the Matter Application on the SiWx917 SoC, the **JLink RTT** must be configured for the SiWx917 SoC device by following the instructions on the [JLink RTT SOC Support](/matter/{build-docspace-version}/matter-wifi-enabling-features/jlink-soc-setup) for SiWx917 SoC.
 
-The [JLinkDevices.xml](https://github.com/SiliconLabs/matter_extension/releases/download/v2.3.1/JLinkDevices.xml) and **.elf** files referenced in the instructions may be found in the Assets section of this page.
+The [JLinkDevices.xml](https://github.com/SiliconLabs/matter_extension/releases/download/v2.3.1/JLinkDevices.xml.zip) and [RS9117_SF_4MB_42bsp.elf](https://github.com/SiliconLabs/matter_extension/releases/download/v2.3.1/RS9117_SF_4MB_42bsp.elf.zip) files referenced in the instructions may be found in the Assets section of this page.
 
 **Note**:- For EFR32MG2x devices, JLink RTT Logging support is already enabled.
