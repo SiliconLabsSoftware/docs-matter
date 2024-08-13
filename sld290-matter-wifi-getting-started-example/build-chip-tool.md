@@ -1,5 +1,7 @@
 # Building the Chip-Tool
 
+NOTE: The chip-tool binary is a part of the software artifacts package provided with the Matter release. See the "Assets" section at the bottom of this page:  https://github.com/SiliconLabs/matter_extension/releases/tag/v2.3.1. In most cases, it should not be necessary to build chip-tool from scratch.
+
 This page covers:
 
 - Building the chip-tool for Linux
@@ -40,10 +42,10 @@ To build the chip-tool environment, first set up the software and then compile t
 
 If you have not downloaded or cloned the repository, you can run the following commands on a Linux terminal running on either Linux machine, WSL or Virtual Machine to clone the repository and run bootstrap to prepare to build the sample application images.
 
-1. To download the [SiliconLabs Matter codebase](https://github.com/SiliconLabs/matter.git), run the following commands.
+1. To download the [Matter codebase](https://github.com/project-chip/connectedhomeip.git), run the following commands.
 
     ```shell
-     $ git clone https://github.com/SiliconLabs/matter.git
+     $ git clone https://github.com/project-chip/connectedhomeip.git
     ```
 
 2. Bootstrapping:
@@ -80,7 +82,7 @@ This will build chip-tool in `out/standalone`.
 
      Note: Flash the latest version of Ubuntu Server (64-bit server OS for arm64 architecture).
 
-   - Download the Matter Hub Raspberry Pi Image provided on the [Matter Artifacts page](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts), then click **Choose OS > Use custom** and then select the Matter Hub Raspberry Pi Image that you downloaded.
+   - Download the Matter Hub Raspberry Pi Image provided on the [Matter Artifacts page](/matter/{build-docspace-version}/matter-prerequisites/matter-artifacts), then click **Choose OS > Use custom** and then select the Matter Hub Raspberry Pi Image that you downloaded.
 
 4. Click **Storage** and select the **SD card detect**.
 5. This Raspberry Pi 4's console can be accessed in multiple ways. In [this guide](https://www.raspberrypi.com/documentation/computers/remote-access.html), Raspberry Pi 4 is being accessed using PuTTY.
@@ -95,7 +97,7 @@ On powering up the board, the red and green lights should start blinking.
 
 ### Start Using the Raspberry Pi
 
-1. Power-up the RPi4B. Once it is booted up, check the Raspberry Pi's IP address. Refer to [Finding Raspberry Pi IP address](/matter/<docspace-docleaf-version>/matter-references/find-raspi) in the Resources section to get the IP address or enter the Hostname directly in PuTTY.
+1. Power-up the RPi4B. Once it is booted up, check the Raspberry Pi's IP address. Refer to [Finding Raspberry Pi IP address](/matter/{build-docspace-version}/matter-references/find-raspi) in the Resources section to get the IP address or enter the Hostname directly in PuTTY.
 
 2. Once you find the IP address, launch PuTTY, select **Session**, enter the IP address of the Raspberry Pi, and click **Open**.
 
@@ -128,7 +130,7 @@ On powering up the board, the red and green lights should start blinking.
 
 1. Follow the instructions in [the Project CHIP GitHub Site](https://github.com/project-chip/connectedhomeip/blob/master/docs/guides/BUILDING.md), in the section "Installing prerequisites on Raspberry Pi 4".
 
-2. To build the environment, follow the steps in the [Light and Switch Step-by-Step Example](/matter/<docspace-docleaf-version>/matter-light-switch-example/01-wifi-light-switch-example).
+2. To build the environment, follow the steps in the [Light and Switch Step-by-Step Example](/matter/{build-docspace-version}/matter-light-switch-example/01-wifi-light-switch-example).
 
 ### Bluetooth Setup
 

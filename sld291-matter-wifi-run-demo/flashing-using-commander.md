@@ -61,7 +61,7 @@ Bootloader binaries are available in the respective path of codebase **third_par
 
 ## Flashing the SiWx917 SOC Matter Binary using Simplicity Commander
 
-SiWx917 SoC device support is available in the latest [Simplicity Commander](https://community.silabs.com/s/article/simplicity-commander?language=en_US). Download can be found [here](/matter/<docspace-docleaf-version>/matter-references/flash-silabs-device#simplicity-commander) The SiWx917 SOC board will support **.rps** as the only file to flash. Follow these steps to create and flash the **.rps** file using **.s37**.
+SiWx917 SoC device support is available in the latest [Simplicity Commander](https://community.silabs.com/s/article/simplicity-commander?language=en_US). Download can be found [here](/matter/{build-docspace-version}/matter-references/flash-silabs-device#simplicity-commander) The SiWx917 SOC board will support **.rps** as the only file to flash. Follow these steps to create and flash the **.rps** file using **.s37**.
 
 1. Locate Simplicity Commander on your PC/Laptop where it is installed through command prompt(cmd).
 

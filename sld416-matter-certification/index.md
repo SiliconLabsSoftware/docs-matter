@@ -4,7 +4,7 @@
 
 ## Why Certify
 
-Matter Certification is required for all Matter devices. Unlike other networking protocols, non-certified Matter devices are prevented from commissioning into Matter networks. Matter's secure design requires that every joining device proves they are Matter Certified. This is part of the commissioning process called Device Attestation. Refer to [**Device Attestation**](/matter/<docspace-docleaf-version>/matter-device-attestation) for more information on how the various Matter Certificates and Credentials are used in the Matter Commissioning Process.
+Matter Certification is required for all Matter devices. Unlike other networking protocols, non-certified Matter devices are prevented from commissioning into Matter networks. Matter's secure design requires that every joining device proves they are Matter Certified. This is part of the commissioning process called Device Attestation. Refer to [**Device Attestation**](/matter/{build-docspace-version}/matter-device-attestation) for more information on how the various Matter Certificates and Credentials are used in the Matter Commissioning Process.
 
 ## Matter Certification Paths
 
@@ -100,7 +100,7 @@ This group of certification is for Matter Software Components, like App-based de
 
 8. **Certified Product Record Added to the Distributed Compliance Ledger**.
 
-    More information on the DCL can be found in the next section, [**Distributed Compliance Ledger**](/matter/<docspace-docleaf-version>/matter-dcl).
+    More information on the DCL can be found in the next section, [**Distributed Compliance Ledger**](/matter/{build-docspace-version}/matter-dcl).
 
 ## Memberships
 

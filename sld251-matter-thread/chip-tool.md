@@ -49,7 +49,7 @@ $ mattertool levelcontrol read current-level 106 1
 
 ## Open Thread Border Router (OTBR)
 
-For information on what commits to use for the OTBR and RCP, see the [Matter Repositories and Commit Hashes page](/matter/<docspace-docleaf-version>/matter-references/commit-hashes).
+For information on what commits to use for the OTBR and RCP, see the [Matter Repositories and Commit Hashes page](/matter/{build-docspace-version}/matter-references/commit-hashes).
 
 The pre-installed OTBR is configured for the infrastructure interface eth0.
 
@@ -99,7 +99,7 @@ $ otbrsetup -u
 
 ## Upgrading the Matter Chip-Tool
 
-For more information on the commit hashes used for this demo, consult the following page: [Matter Repositories and Commit Hashes](/matter/<docspace-docleaf-version>/matter-references/commit-hashes).
+For more information on the commit hashes used for this demo, consult the following page: [Matter Repositories and Commit Hashes](/matter/{build-docspace-version}/matter-references/commit-hashes).
 
 To change the chip-tool commit reference/version, follow these steps:
 

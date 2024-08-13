@@ -19,25 +19,27 @@ Refer to Apple's [Set up HomePod or HomePod mini](https://support.apple.com/en-i
 
 ## Matter Demo Execution using Apple HomePod
 
-1. Refer to [Getting Started with Matter over Wi-Fi](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example) for instructions on setting up Silicon Labs Matter Accessory Device.
+1. Refer to [Getting Started with Matter over Wi-Fi](/matter/{build-docspace-version}/matter-wifi-getting-started-example) for instructions on setting up Silicon Labs Matter Accessory Device.
 
 2. Connect a board to a computer.
 
-   - For Wi-Fi NCP Mode Boards, see [Connect EFR32 Board to Computer](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/getting-started-efx32-ncp#connect-the-boards-to-a-computer).
-   - For Wi-Fi SoC Mode Boards, see [Connect SiWx917 SoC to Computer](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/getting-started-with-soc#connect-siwx917-soc-to-computer).
+   - For Wi-Fi NCP Mode Boards, see [Connect EFR32 Board to Computer](/matter/{build-docspace-version}/matter-wifi-getting-started-example/getting-started-efx32-ncp#connect-the-boards-to-a-computer).
+   - For Wi-Fi SoC Mode Boards, see [Connect SiWx917 SoC to Computer](/matter/{build-docspace-version}/matter-wifi-getting-started-example/getting-started-with-soc#connect-siwx917-soc-to-computer).
 
-3. Flash the bootloader binary for your device along with the application (for example, lighting, lock, thermostat, window covering, or light-switch) using [Simplicity Commander](/matter/<docspace-docleaf-version>/matter-wifi-run-demo/flashing-using-commander).
+3. Flash the bootloader binary for your device along with the application (for example, lighting, lock, thermostat, window covering, or light-switch) using [Simplicity Commander](/matter/{build-docspace-version}/matter-wifi-run-demo/flashing-using-commander).
 
 4. In the Apple Home app, tap the "+" button.
-![Apple Home App](./images/apple-home-app.png?width=40%&height=40%)
+   ![Apple Home App](./images/apple-home-app.png?width=40%&height=40%)
 
 5. Select **Add Accessory**.
-![Add accessory](./images/apple-home-app-add-accessory.png?width=40%&height=40%)
+   ![Add accessory](./images/apple-home-app-add-accessory.png?width=40%&height=40%)
 
 6. It will prompt you to scan the QR Code using a smartphone camera.
-![scan QR code](./images/apple-home-app-scan-qr-code.png?width=40%&height=40%)
+   ![scan QR code](./images/apple-home-app-scan-qr-code.png?width=40%&height=40%)
 
 7. Connect the device to a computer and scan the QR code within the Home app.
+
+   **NOTE:** If the device is running a development version of the application, a prompt will appear stating that "Uncertified device". Proceed to set up the device anyway.
 
 8. Proceed to add the device to your home. You should see **LED0** fast blinking when commissioning happens.
 
