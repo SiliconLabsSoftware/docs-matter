@@ -4,7 +4,7 @@
 
 1. Prepare a compatible development board to become your Matter hub's ot-rcp:
 
-   1. Start Simplicity Studio 5 with the latest SiSDK and Silicon Labs Matter SiSDK Extension installed (see details in the [Overview](/matter/<docspace-docleaf-version>/matter-overview#software-requirements)).
+   1. Start Simplicity Studio 5 with the latest SiSDK and Silicon Labs Matter SiSDK Extension installed (see details in the [Overview](/matter/{build-docspace-version}/matter-overview#software-requirements)).
 
       ![the Matter extension](./resources/image1.png)
 
@@ -22,7 +22,7 @@
 
 2. Prepare the Raspberry Pi 4B (RPi4B) to become a Matter hub:
 
-   1. Download and extract the Matter hub Raspberry Pi image (see details under [Software requirements](/matter/<docspace-docleaf-version>/matter-overview#software-requirements)).
+   1. Download and extract the Matter hub Raspberry Pi image (see details under [Software requirements](/matter/{build-docspace-version}/matter-overview#software-requirements)).
 
    2. Flash the image to the desired SD card. Note that this will erase all existing content on that SD card:
 
@@ -88,7 +88,7 @@ You now have a working Matter hub. Keep the PuTTY session open for the following
 
       ![Upload application](resources/image13.png)
 
-   8. Select the **Application image path** for your newly compiled solution application. The resulting application image will be within the **artifact** directory inside the project workspace. This image has both the bootloader and application binaries combined into one image. Check **Erase chip before uploading image**. Bootloader images are also provided in the zip file referenced on the [Silicon Labs Matter Artifacts page](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts). Unzip and reference the extracted location if electing to use these default bootloader images.
+   8. Select the **Application image path** for your newly compiled solution application. The resulting application image will be within the **artifact** directory inside the project workspace. This image has both the bootloader and application binaries combined into one image. Check **Erase chip before uploading image**. Bootloader images are also provided in the zip file referenced on the [Silicon Labs Matter Artifacts page](/matter/{build-docspace-version}/matter-prerequisites/matter-artifacts). Unzip and reference the extracted location if electing to use these default bootloader images.
 
        ![Application image upload](resources/image-upload.png)
 

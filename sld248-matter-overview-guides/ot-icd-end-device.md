@@ -51,6 +51,6 @@ Matter exposes some defines to configure the polling intervals of the OpenThread
 | SlowPollInterval | CHIP_DEVICE_CONFIG_ICD_SLOW_POLL_INTERVAL (`SL_OT_IDLE_INTERVAL`) | Interval, in milliseconds, at which the thread radio will poll its network in idle mode. | 15000 ms | <= IdleModeInterval |
 | FastPollInterval | CHIP_DEVICE_CONFIG_ICD_FAST_POLL_INTERVAL (`SL_OT_ACTIVE_INTERVAL`) | Interval, in milliseconds, at which the thread radio will poll its network in active mode. | 200 ms | < ActiveModeInterval |
 
-For Matter configuration, see the [Matter ICD](/matter/<docspace-docleaf-version>/matter-overview-guides/matter-icd#configuration) documentation.
+For Matter configuration, see the [Matter ICD](/matter/{build-docspace-version}/matter-overview-guides/matter-icd#configuration) documentation.
 
-To build an ICD example application within Simplicity Studio, see [Matter ICD Example Guide](/matter/<docspace-docleaf-version>/matter-overview-guides/matter-icd#enabling-building).
+To build an ICD example application within Simplicity Studio, see [Matter ICD Example Guide](/matter/{build-docspace-version}/matter-overview-guides/matter-icd#enabling-building).

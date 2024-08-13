@@ -64,7 +64,7 @@ Amazon Web Services offers reliable, scalable, and inexpensive cloud computing s
     - If the **gbl or rps** file is custom modified, then select **Use my custom signed file**.
 
 10. In **Existing code signing profile**, select **dic_ota_codesign**. Refer to [AWS Code Signing Certificate Creation](https://docs.aws.amazon.com/freertos/latest/userguide/ota-code-sign-cert.html).
-11. For uploading the **gbl or rps** file, follow step 9 above. To create a **gbl** refer to [Matter OTA](/matter/<docspace-docleaf-version>/matter-ota) and for **rps** file, refer to [Matter OTA Software Update](/matter/<docspace-docleaf-version>/matter-ota/04-ota-software-update-soc).
+11. For uploading the **gbl or rps** file, follow step 9 above. To create a **gbl** refer to [Matter OTA](/matter/{build-docspace-version}/matter-ota) and for **rps** file, refer to [Matter OTA Software Update](/matter/{build-docspace-version}/matter-ota/04-ota-software-update-soc).
 12. In the File upload location in S3 select, S3 URL as ota_demo. Refer to [AWS S3 Bucket Creation](https://docs.aws.amazon.com/freertos/latest/userguide/dg-ota-bucket.html).
 13. In **Path name of file on device**, give any file name (file.txt).
 14. Select **ota_demo** as **IAM role** and click **Next**.

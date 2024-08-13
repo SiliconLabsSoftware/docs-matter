@@ -15,11 +15,11 @@ The following diagram illustrates the end-to-end flow for Direct Internet Connec
 
 ### Hardware Requirements
 
-For the hardware required for the DIC feature to run on the Silicon Labs Platform, refer to [Matter Hardware Requirements](/matter/<docspace-docleaf-version>/matter-prerequisites/hardware-requirements).
+For the hardware required for the DIC feature to run on the Silicon Labs Platform, refer to [Matter Hardware Requirements](/matter/{build-docspace-version}/matter-prerequisites/hardware-requirements).
 
 ### Software Requirements
 
-To run the DIC feature, refer to [Software Requirements](/matter/<docspace-docleaf-version>/matter-prerequisites/software-requirements).
+To run the DIC feature, refer to [Software Requirements](/matter/{build-docspace-version}/matter-prerequisites/software-requirements).
 
 ## End-to-End Set-Up Bring Up
 
@@ -52,8 +52,8 @@ A remote user is used to check the state of a Matter device. In this context, MQ
 
 4. After refreshing the Matter extension, create and build a project for the Silicon Labs Device Platform. Refer to the following:
 
-    - [Creating and Building Project for NCP Board](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/getting-started-efx32-ncp#building-and-flashing-an-application)
-    - [Creating and Building Project for SoC Board](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/getting-started-with-soc#building-the-917-soc-matter-accessory-devices-using-simplicity-studio)
+    - [Creating and Building Project for NCP Board](/matter/{build-docspace-version}/matter-wifi-getting-started-example/getting-started-efx32-ncp#building-and-flashing-an-application)
+    - [Creating and Building Project for SoC Board](/matter/{build-docspace-version}/matter-wifi-getting-started-example/getting-started-with-soc#building-the-917-soc-matter-accessory-devices-using-simplicity-studio)
 
 **Note**: Matter extension code is located at the following location: `C:\Users\system_name\SimplicityStudio\SDKs\simplicity_sdk\extension`.
 
@@ -68,7 +68,7 @@ User Setup (MQTT Explorer):
 
   **Note**: For reference, Lighting App commands are given in the above image. Other application commands also can be passed.
 
-- For the end-to-end commands to be executed from chip-tool, refer to [Running the Matter Demo Over Wi-Fi](/matter/<docspace-docleaf-version>/matter-wifi-run-demo).
+- For the end-to-end commands to be executed from chip-tool, refer to [Running the Matter Demo Over Wi-Fi](/matter/{build-docspace-version}/matter-wifi-run-demo).
 - Below are the application-specific attributes or states shared to the cloud:
   - For Lighting App, On/Off Attributes
   - For Lock App, lock/unlock Attributes
@@ -86,7 +86,7 @@ User Setup (MQTT Explorer):
 
     **Note**: For reference, Lighting App commands are shown in the above image. Similarly, other application commands also can be passed.
 
-  - Make sure the Matter device is up and commissioned successfully. Refer to [Running the Matter Demo Over Wi-Fi](/matter/<docspace-docleaf-version>/matter-wifi-run-demo).
+  - Make sure the Matter device is up and commissioned successfully. Refer to [Running the Matter Demo Over Wi-Fi](/matter/{build-docspace-version}/matter-wifi-run-demo).
   - For controlling the device, set topic name and the commands to be executed in the mqtt_explorer for the following applications.
 
 ```shell
@@ -130,7 +130,7 @@ User Setup (MQTT Explorer):
 
   ![Silicon Labs - DIC design](images/dic-aws-ota.png)
 
-  - Make sure the Matter device is up and commissioned successfully. Refer to [Running the Matter Demo Over Wi-Fi](/matter/<docspace-docleaf-version>/matter-wifi-run-demo).
+  - Make sure the Matter device is up and commissioned successfully. Refer to [Running the Matter Demo Over Wi-Fi](/matter/{build-docspace-version}/matter-wifi-run-demo).
   
   - Make sure the device is connected to the MQTT Server successfully.
   

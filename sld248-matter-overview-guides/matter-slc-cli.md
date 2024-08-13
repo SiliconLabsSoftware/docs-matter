@@ -64,10 +64,11 @@ The script will ask you for permission to trust simplicity_sdk, matter_extension
 
 ## Creating an Application Project
 
-Run the `sl_create_new_app.py` script to create a BRD4161A project with name `MyNewApp` starting from the `lighting-app-thread.slcp` example application project file:
+Run the `sl_create_new_app.py` script to create a BRD4187C project with name `MyNewApp` starting from the `lighting-app-thread.slcp` example or from the `lighting-app-thread-bootloader.slcw` [solution](../sld248-matter-overview-guides/matter-solutions.md) application project file:
 
 The script will ask user permission to trust the `simplicity_sdk` and `matter_extension` before generating.
 
+Sample-App Example:
 For Mac and Linux:
 
 ```C
@@ -80,10 +81,24 @@ For Windows:
 python slc\sl_create_new_app.py MyNewApp slc\sample-app\lighting-app\efr32\lighting-app-thread.slcp brd4187c
 ```
 
+Workspaces Examples: 
+For Mac and Linux:
+
+```C
+python3 slc/sl_create_new_app.py MyNewApp slc/workspaces/lighting-app/series-2/lighting-app-thread-bootloader.slcw brd4187c
+```
+
+For Windows:
+
+```C
+python slc\sl_create_new_app.py MyNewApp slc\workspaces\lighting-app\series-2\lighting-app-thread-bootloader.slcw brd4187c
+```
+
 ## Building an Application Project
 
 After a project is created the `sl_build.py` script can be used to re-generate the `MyNewApp` project and build it:
 
+Sample-App Example:
 For Mac and Linux:
 
 ```C
@@ -95,6 +110,20 @@ For Windows:
 ```C
 python slc\sl_build.py MyNewApp\lighting-app-thread.slcp brd4187c
 ```
+
+Workspaces Examples:
+For Mac and Linux:
+
+```C
+python3 slc/sl_build.py MyNewApp/lighting-app-thread-bootloader.slcw brd4187c
+```
+
+For Windows:
+
+```C
+python slc\sl_build.py MyNewApp\lighting-app-thread-bootloader.slcw brd4187c
+```
+
 
 Alternately, one can use SLC-CLI commands directly to generate the project and then use `make` to build it.
 

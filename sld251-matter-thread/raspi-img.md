@@ -12,7 +12,7 @@ In short, the Matter Controller sends IPv6 packets to the OTBR, which converts t
 
 The provided Raspberry Pi image is used as a Matter Controller with the OTBR.
 
-The image can be downloaded from the [Matter Artifacts page](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts).
+The image can be downloaded from the [Matter Artifacts page](/matter/{build-docspace-version}/matter-prerequisites/matter-artifacts).
 
 Note that this image, even when zipped up, is quite large ~5GB so this download will take a while if you are on a slow connection. This image includes both the Ubuntu operating system as well as the OTBR and chip-tool, hence the size.
 
@@ -32,7 +32,7 @@ The Raspberry Pi should be connected to a network; this can be Ethernet or a Wi-
 
 The preference here is to use Ethernet; however, if you are using Wi-Fi for your connection to the Raspberry Pi, see [Connecting Raspberry Pi to Wi-Fi](https://www.raspberrypi.com/documentation/computers/configuration.html#configuring-networking) for instructions on how to connect your Raspberry Pi to a Wi-Fi network.
 
-Once you have connected your Raspberry Pi to the network, you need to connect to your Raspberry Pi over SSH. This requires the IP address of your Raspberry Pi. See [Finding Your Raspberry Pi](/matter/<docspace-docleaf-version>/matter-references/find-raspi) for more information on finding the IP address and connecting to the Raspberry Pi by SSH.
+Once you have connected your Raspberry Pi to the network, you need to connect to your Raspberry Pi over SSH. This requires the IP address of your Raspberry Pi. See [Finding Your Raspberry Pi](/matter/{build-docspace-version}/matter-references/find-raspi) for more information on finding the IP address and connecting to the Raspberry Pi by SSH.
 
 #### Raspberry Pi Login Credentials
 

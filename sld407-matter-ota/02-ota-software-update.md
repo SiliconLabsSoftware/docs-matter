@@ -48,7 +48,7 @@ See the following page for detailed steps: [build OTA application using studio](
 
 - Build or download the Gecko Bootloader binary which can be obtained in one of the following ways:
   - Follow the instructions in [Creating the Bootloader for Use in Matter OTA](01-ota-bootloader.md).
-  - Pre-built binaries (only valid for the external SPI-flash storage OTA update) are available on the [Matter Artifacts page](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts).
+  - Pre-built binaries (only valid for the external SPI-flash storage OTA update) are available on the [Matter Artifacts page](/matter/{build-docspace-version}/matter-prerequisites/matter-artifacts).
   - Bootloader (only valid for the external SPI-flash storage OTA update) is built as a part of any Matter Solution in Simplicity Studio.
 
 - Using the Commander tool or Simplicity Studio, upload the bootloader to the device running the application.

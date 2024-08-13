@@ -239,9 +239,9 @@ Follow these steps to provision certificates onto a device.
 
       ![Provisioning Device](images/provisioning-device6c.png)
 
-7. When the operation completes successfully, you will need to add the **Matter Device Attestation Credential** software component to your project to enable the Matter Device Attestation Credentials.
+7. When the operation completes successfully, confirm that the **Attestation Certificate provisioning configuration** software component is present in your project. The component is installed in all projects by default.
 
-   - To add the software component, double-click the project's SLCP file to open it in an editor, and then select **Software Components**, search for the keyword "attestation", select **Matter Device Attestation Credential**, and then click **Install**. Example:
+   - Double-click the project's SLCP file to open it in an editor, select **Software Components**, search for the keyword "attestation" and select **Attestation Certificate provisioning configuration**. Example:
 
      ![Provisioning Device](images/provisioning-device7.png)
 
@@ -253,7 +253,7 @@ Follow these steps to generate a CPMS file to prepare for the production process
 
 1. Specify values for Required Fields.
     - Note: When selecting the Default options for the Certificate Declaration field and Matter PAA/PAI/DAC fields, the Vendor ID (VID) and Product ID (PID) are NOT editable and are set to default values 0x1049 and 0x8005 (Silicon Labs' VID & PID), respectively. This is to ensure that the Vendor ID and Product ID values match the ones in the default certificate files used.  
-    - When selecting the Upload options for hte Certificate Declaration field and Matter PAA/PAI/DAC fields, fields Vendor ID and Product ID are editable and the user must specify the values. This is to ensure that the Vendor ID and Product ID values match the ones in the uploaded certificate files.
+    - When selecting the Upload options for the Certificate Declaration field and Matter PAA/PAI/DAC fields, fields Vendor ID and Product ID are editable and the user must specify the values. This is to ensure that the Vendor ID and Product ID values match the ones in the uploaded certificate files.
 
     ![Generating CPMS Files](images/generating-cpms-files1.png)  
 

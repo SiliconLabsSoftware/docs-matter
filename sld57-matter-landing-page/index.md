@@ -22,12 +22,12 @@ The [Silicon Labs Matter GitHub repo](https://github.com/SiliconLabs/matter) wil
 
 ## Other Resources
 
-**To see release notes** containing a list of features and knowns issues, go to [Matter Release Notes on Silicon Labs Matter Extension](https://github.com/SiliconLabs/matter_extension/releases/tag/v2.3.0).
+**To see release notes** containing a list of features and knowns issues, go to [Matter Release Notes on Silicon Labs Matter Extension](https://github.com/SiliconLabs/matter_extension/releases/tag/v2.3.1).
 
 **If you are new to Matter** or would like more information about Silicon Labs Matter-based products, see the [Matter content on silabs.com](https://www.silabs.com/wireless/matter).
 
 **For background information on the Matter standard**, see the [Connectivity Standard Alliance page](https://csa-iot.org/all-solutions/matter/).
 
-**To quickly make a simple Matter network**, see the [quick-start guides](/matter/<docspace-docleaf-version>/matter-overview).
+**To quickly make a simple Matter network**, see the [quick-start guides](/matter/{build-docspace-version}/matter-overview).
 
-**To develop your own customized applications** with Matter over Thread and Matter over Wi-Fi, see the [Matter Developer's Guide](/matter/<docspace-docleaf-version>/matter-developers-guide-overview).
+**To develop your own customized applications** with Matter over Thread and Matter over Wi-Fi, see the [Matter Developer's Guide](/matter/{build-docspace-version}/matter-developers-guide-overview).

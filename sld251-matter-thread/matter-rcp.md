@@ -2,7 +2,7 @@
 
 The Radio Co-Processor is a 15.4 stack image flashed onto a Silicon Labs development kit or Thunderboard Sense 2. The 15.4 stack on the development kit communicates with the higher layers of the Thread stack running on the Raspberry Pi over a USB connection.
 
-A complete list of supported hardware for the RCP is provided on the [Matter Hardware Requirements](/matter/<docspace-docleaf-version>/matter-prerequisites/hardware-requirements) page.
+A complete list of supported hardware for the RCP is provided on the [Matter Hardware Requirements](/matter/{build-docspace-version}/matter-prerequisites/hardware-requirements) page.
 
 First, in order to flash the RCP, connect it to your laptop directly by USB.
 
@@ -12,11 +12,11 @@ Use one of the following options to get the required image to flash the RCP:
 
 1. Use the pre-built 'ot-rcp' image file.
 2. Build the image file from Simplicity Studio.
-3. Build the image file from the 'ot-efr32' repository, which is listed on the [Matter Repositories and Commit Hashes page](/matter/<docspace-docleaf-version>/matter-references/commit-hashes).
+3. Build the image file from the 'ot-efr32' repository, which is listed on the [Matter Repositories and Commit Hashes page](/matter/{build-docspace-version}/matter-references/commit-hashes).
 
 ### Using a Pre-built Image File
 
-RCP image files for all demo boards are accessible through the [Matter Artifacts page](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts). If you are using a pre-built image file, you can skip to [Step #2: Flash the RCP](#step-2-flash-the-rcp).
+RCP image files for all demo boards are accessible through the [Matter Artifacts page](/matter/{build-docspace-version}/matter-prerequisites/matter-artifacts). If you are using a pre-built image file, you can skip to [Step #2: Flash the RCP](#step-2-flash-the-rcp).
 
 ### Building the Image File from Simplicity Studio
 
@@ -45,7 +45,7 @@ $ git submodule update --init
 ```
 
 You can check the current branch and commit hash used here:
-[Matter Branches and Commit Hashes](/matter/<docspace-docleaf-version>/matter-references/commit-hashes):
+[Matter Branches and Commit Hashes](/matter/{build-docspace-version}/matter-references/commit-hashes):
 
 ```shell
 $ git checkout <commit hash>

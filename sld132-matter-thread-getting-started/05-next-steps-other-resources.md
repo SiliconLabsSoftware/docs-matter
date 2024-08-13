@@ -1,7 +1,7 @@
 # Next Steps
 
 Now that you have gotten a sense of what goes into making a Matter network, you can 
-begin to customize MADs and other features for your own purposes. The [Developers' Guide](/matter/<docspace-docleaf-version>/matter-developers-guide-overview) contains more detail than was provided in this Quick-Start guide,
+begin to customize MADs and other features for your own purposes. The [Developers' Guide](/matter/{build-docspace-version}/matter-developers-guide-overview) contains more detail than was provided in this Quick-Start guide,
 and also contains information on a number of special development topics. Your Matter
 Extension package contains a number of other Matter examples that you can use as a starting point, the first two
 of which were used in this example.
