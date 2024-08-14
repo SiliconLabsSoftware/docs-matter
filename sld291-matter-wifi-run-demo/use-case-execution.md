@@ -15,7 +15,7 @@ This procedure uses the chip-tool installed on the Matter Hub. The commissioning
 Commissioning can be done using chip-tool running either on Linux or Raspberry Pi.
 
 1. Get the SSID and PSK of the Wi-Fi network (WPA2 - Security) you are connected to.
-2. Navigate to the directory of `chip-tool` and execute the following:
+2. Navigate to the directory where the `chip-tool` is located and execute the following:
 
 ```shell
 $ ./chip-tool pairing ble-wifi nodeID SSID PSK PINCODE DISCRIMINATOR
