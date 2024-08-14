@@ -22,7 +22,7 @@ When using a Raspberry Pi as a controller in your Matter network, you have two o
 
 4. Click **Storage** and select the **SD card detect**.
 5. This Raspberry Pi 4's console can be accessed in multiple ways.
-    In [this guide](https://www.raspberrypi.com/documentation/computers/remote-access.html), Raspberry Pi 4 is being accessed using PuTTY.
+   In [this guide](https://www.raspberrypi.com/documentation/computers/remote-access.html), Raspberry Pi 4 is being accessed using PuTTY.
 6. Enter the details like User name, Password, SSID, and its password to connect to the network. Click **Save**.
 7. Click **Write** and then **Yes** when you are asked for permission to erase data on the SD card. It will then start flashing the OS onto the SD card.
 8. When it is done, click **Continue**.
@@ -47,14 +47,14 @@ On powering up the board, the red and green lights should start blinking.
 5. If you are building the chip-tool from scratch, update the latest packages by running following commands in the terminal:
 
    ```shell
-   $ sudo apt update 
+   $ sudo apt update
    $ sudo apt install
 
    ```
 
 6. Install the required packages using the following commands:
 
-    ```shell
+   ```shell
    $ sudo apt-get install git gcc g++ pkg-config libssl-dev libdbus-1-dev libglib2.0-dev libavahi-client-dev ninja-build python3-venv python3-dev python3-pip unzip libgirepository1.0-dev libcairo2-dev libreadline-dev
    ```
 
@@ -63,7 +63,7 @@ On powering up the board, the red and green lights should start blinking.
 ## Build Environment
 
 1. Installing prerequisites on Raspberry Pi 4. Follow the instructions in [the Project CHIP GitHub Site](https://github.com/project-chip/connectedhomeip/blob/master/docs/guides/BUILDING.md),
-in the section "Installing prerequisites on Raspberry Pi 4".
+   in the section "Installing prerequisites on Raspberry Pi 4".
 
 2. To build the environment, follow the steps in the [Light and Switch Step-by-Step Example](/matter/{build-docspace-version}/matter-light-switch-example/01-wifi-light-switch-example).
 
