@@ -21,6 +21,7 @@ This page provides a detailed description on how to create an Wi-Fi NCP project 
    ![Overview tab](images/overview-tab-efx32.png)
 
 7. Verify the following in the General Information section:
+
    - The Debug Mode is Onboard Device (MCU).
    - The Preferred SDK is the version you selected earlier.
 

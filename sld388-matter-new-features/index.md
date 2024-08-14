@@ -1,5 +1,15 @@
 # New Features
 
+## New Features for v2.3.1-1.3
+
+- Quality-tested Matter 1.3 GA solution for Thread MG24 / MG26, Wi-Fi 917 SoC, Wi-Fi MG24/WF200, Wi-Fi 917 NCP (non-sleepy) and Wi-Fi MG24/RS9116 (non-sleepy) platforms. Beta solution for Wi-Fi 917 NCP (sleepy) and Wi-Fi MG24/RS9116 (sleepy) platforms.
+- Works with Simplicity SDK v2024.6.1 and WiSeConnect SDK v3.3.1.
+- WiseConnect 2 SDK is updated to v2.10.0 for RS9116.
+- Improved sleepy stability and power numbers with the Wi-Fi 917 SoC.
+- BRD2605A board support is enabled for the lighting, lock, and dishwasher Matter Wi-Fi applications - beta quality.
+- Introduced the Air Quality Sensor example application. The app also works with SparkFun SGP40 air quality sensor - alpha quality.
+- Miscellaneous bug fixes and improvements.
+
 ## New Features for v2.3.0-1.3
 
 - Quality-tested Matter 1.3 GA solution for Thread, Wi-Fi MG24/WF200, and Wi-Fi MG24/RS9116 (non-sleepy) platforms. Beta solution for Wi-Fi SiWx917 and Wi-Fi MG24/RS9116 (sleepy) platforms.
