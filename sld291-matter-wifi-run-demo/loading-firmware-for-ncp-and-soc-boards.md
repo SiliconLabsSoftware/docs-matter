@@ -16,7 +16,7 @@ The SiWx917 NCP or RS9116 EVK connectivity firmware can be upgraded using Tera T
 
 1. Connect the EVK to PC using the USB interface labeled **UART** as identified below.
 
-    ![Switch Position before firmware flash](./images/rs916-board.png)
+   ![Switch Position before firmware flash](./images/rs916-board.png)
 
 2. If this is the first time connecting the EVK to your PC, verify that it is properly detected by the PC. The EVK will appear to the PC as a COM port labeled **USB Serial Port (COMx)**.
 
@@ -28,9 +28,9 @@ The SiWx917 NCP or RS9116 EVK connectivity firmware can be upgraded using Tera T
 
 4. Refer to [Setup Tera Term and Updating the Firmware](https://docs.silabs.com/rs9116/wiseconnect/2.0/tera-term-setup).
 
-    ```shell
-    Instructions are the same for both SiWx917 NCP and RS9116 EVK.
-    ```
+   ```shell
+   Instructions are the same for both SiWx917 NCP and RS9116 EVK.
+   ```
 
 5. Once firmware flashing is done, the console displays **Loading...** followed by **Loading Done**.
 
@@ -38,11 +38,11 @@ The SiWx917 NCP or RS9116 EVK connectivity firmware can be upgraded using Tera T
 
 1. Connect USB-UART Cable to Machine and WPK board as well with SOC Mounted on it.
 
-    ![Connect NCP Board](./images/ncp-board-connect.png)
+   ![Connect NCP Board](./images/ncp-board-connect.png)
 
 2. Connect USB-UART cable 2 (Yellow) to **F9** and 3 (Green) to **F8** on WPK Board shown below.
 
-    ![Connect Port Wires](./images/connect-board-port.png)
+   ![Connect Port Wires](./images/connect-board-port.png)
 
 3. Configure your terminal application with the following settings:
 
@@ -52,9 +52,9 @@ The SiWx917 NCP or RS9116 EVK connectivity firmware can be upgraded using Tera T
 
 4. Refer to [Setup Tera Term and Updating the Firmware](https://docs.silabs.com/rs9116/wiseconnect/2.0/tera-term-setup).
 
-    ```shell
-    Instructions are the same for both SiWx917 NCP and RS9116 EVK.
-    ```
+   ```shell
+   Instructions are the same for both SiWx917 NCP and RS9116 EVK.
+   ```
 
 5. Once firmware flashing is done, the console displays **Loading...** followed by **Loading Done**.
 
@@ -72,32 +72,32 @@ If the firmware update fails, try the following:
 - SiWx917 SOC connectivity firmware can be upgraded using Simplicity Commander.
 
 ### Connectivity Firmware Upgrade Using Simplicity Commander
-  
+
 1. On the Simplicity Studio home page, click **Tools**.
-  
+
 2. In the Tools dialog, select **Simplicity Commander** and click **OK**.
 
-    ![Silicon Labs - design](./images/select-commander.png)
+   ![Silicon Labs - design](./images/select-commander.png)
 
 3. In the Simplicity Commander window, click **Select Kit** and choose your radio board.
 
-    ![Silicon Labs - design](./images/commander-select-board.png)
+   ![Silicon Labs - design](./images/commander-select-board.png)
 
 4. In the navigation pane, go to the **Flash** section.
 
 5. Click **Browse** next to the **Binary File** field.
 
-    ![Silicon Labs - design](./images/select-flash-option-in-commander.png)
+   ![Silicon Labs - design](./images/select-flash-option-in-commander.png)
 
 6. Refer to [Firmware for SiWx917 SoC](/matter/{build-docspace-version}/matter-prerequisites/matter-artifacts#siwx917-firmware-for-siwx917-so-c) to identify the correct firmware to be flashed into the specific hardware. Locate and select the firmware file to flash.
-  
+
 7. Click **Flash**.
 
-    ![Silicon Labs - design](./images/commander-click-flash-button.png)
+   ![Silicon Labs - design](./images/commander-click-flash-button.png)
 
 8. The firmware will be flashed, and the Log Window will display a "Resetting" message.
 
-    ![Silicon Labs - design](./images/commander-flash-success.png)
+   ![Silicon Labs - design](./images/commander-flash-success.png)
 
 ### Troubleshoot SiWx917 SOC Firmware Update Failure
 
@@ -107,4 +107,3 @@ If the firmware update fails, try the following:
 - Perform the following steps and try the firmware update again
   - Press the **RESET** button on the WSTK board.
   - Retry the firmware upgrade.
-  

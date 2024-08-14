@@ -1,4 +1,3 @@
-
 # Running a Matter over Wi-Fi Application
 
 To run a Matter over Wi-Fi application, you must first create a Matter network using the chip-tool, and then control the Matter device from the chip-tool.
@@ -16,10 +15,10 @@ This procedure uses the chip-tool installed on the Matter Hub. The commissioning
 Commissioning can be done using chip-tool running either on Linux or Raspberry Pi.
 
 1. Get the SSID and PSK of the Wi-Fi network (WPA2 - Security) you are connected to.
-2. Go to **$MATTER_WORKDIR/matter** directory and run the following:
+2. Navigate to the directory of `chip-tool` and execute the following:
 
 ```shell
-$ out/standalone/chip-tool pairing ble-wifi <node_id> <ssid> <password> <pin_code> <discriminator>
+$ ./chip-tool pairing ble-wifi nodeID SSID PSK PINCODE DISCRIMINATOR
 ```
 
 In this command:
@@ -46,10 +45,10 @@ If you are having difficulty getting the chip-tool to commission the device succ
 
 1. In a PuTTY session to the Matter hub, use the chip-tool to test the Matter light device.
 
-   1. Control the light status of the light MAD Using `./chip-tool onoff on nodeID  1`. You can also use  `chip-tool toggle nodeID 1`.
+   1. Control the light status of the light MAD Using `./chip-tool onoff on nodeID 1`. You can also use `chip-tool toggle nodeID 1`.
    2. For dev board with buttons available, use **BTN1** to toggle the light status locally.
 
 ## Factory Reset the Device
 
 As the device remembers the Access Point credentials given for commissioning, if you want to run the demo multiple times, do a factory reset by pressing **BTN0**
-on the WSTK for about 6-7 seconds. The **LED0** will flash 3 times.
+on the WSTK or WPK for about 6-7 seconds. The **LED0** will flash 3 times.

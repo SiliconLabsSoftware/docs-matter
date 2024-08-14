@@ -37,7 +37,7 @@ This procedure uses the chip-tool installed on the Matter Hub. The commissioning
 - Future communications (tests) will then happen over Wi-Fi.
 
 ```shell
-$ ./out/standalone/chip-tool pairing ble-wifi <node_id> <ssid> <password> <pin_code> <discriminator>
+$ ./chip-tool pairing ble-wifi <node_id> <ssid> <password> <pin_code> <discriminator>
 ```
 In this command:
 pairing is the cluster to be used for connection; here, BLE is used for provisioning, and Wi-Fi is used for controlling the MAD.
@@ -51,7 +51,7 @@ The node ID used here is 1122. This will be used in future commands. '\$SSID' is
 
 Ex:
 ```shell
- ./out/standalone/chip-tool pairing ble-wifi 1122 test test@123 20202021 3840
+ ./chip-tool pairing ble-wifi 1122 SlWifi 12345678 20202021 3840
  ```
 
 ## Controlling the Matter Accessory Device
@@ -61,7 +61,7 @@ This sections gives information about how to control the commissioned Matter dev
 
 In a PuTTY session to the Matter hub, use the chip-tool to test the Matter light device.
 
-   1. Control the light status of the light MAD using `./chip-tool onoff on <nodeID>  1`. You can also use  `chip-tool toggle <nodeID> 1`.
+   1. Control the light status of the light MAD using `./chip-tool onoff on <node_id> 1`. You can also use  `chip-tool toggle <node_id> 1`.
 
    Ex:
 
@@ -77,7 +77,7 @@ In a PuTTY session to the Matter hub, use the chip-tool to test the Matter light
 
 In a PuTTY session to the Matter hub, use the chip-tool to test the Matter lock device.
 
-   1. Control the lock status of the lock MAD using `./chip-tool doorlock unlock-door <nodeID> 1 --timedInteractionTimeoutMs 1000`. Lock status can be checked by using `./chip-tool doorlock read lock-state <nodeID> 1`
+   1. Control the lock status of the lock MAD using `./chip-tool doorlock unlock-door <node_id> 1 --timedInteractionTimeoutMs 1000`. Lock status can be checked by using `./chip-tool doorlock read lock-state <node_id> 1`
 
    Ex:
 
@@ -96,7 +96,7 @@ In a PuTTY session to the Matter hub, use the chip-tool to test the Matter lock 
 
 In a PuTTY session to the Matter hub, use the chip-tool to test the Matter window device.
 
-   1. Control the window status of the window MAD using `./chip-tool windowcovering down-or-close <nodeID> 1`. Window status can be checked by using `./chip-tool  windowcovering read current-position-tilt-percent100ths <nodeID> 1`
+   1. Control the window status of the window MAD using `./chip-tool windowcovering down-or-close <node_id> 1`. Window status can be checked by using `./chip-tool  windowcovering read current-position-tilt-percent100ths <node_id> 1`
 
    Ex:
 
@@ -110,7 +110,7 @@ In a PuTTY session to the Matter hub, use the chip-tool to test the Matter windo
 
 ### Controlling Matter Thermostat device
 
-In a PuTTY session to the Matter hub, use the chip-tool to test the Matter thermostat device.Control the status of the thermostat MAD using `./chip-tool thermostat write min-heat-setpoint-limit 1100 <nodeID> 1`. The status can be checked by using `./chip-tool thermostat read min-heat-setpoint-limit <nodeID> 1`
+In a PuTTY session to the Matter hub, use the chip-tool to test the Matter thermostat device.Control the status of the thermostat MAD using `./chip-tool thermostat write min-heat-setpoint-limit 1100 <node_id> 1`. The status can be checked by using `./chip-tool thermostat read min-heat-setpoint-limit <node_id> 1`
 
    Ex:
 
