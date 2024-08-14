@@ -2,7 +2,7 @@
 
 ## Matter Certificate Overview
 
-For Matter devices to be commissioned into a Matter network, a Matter commissioner must verify that the devices are certified by the Connectivity Standards Alliance, this step in the Commissioning process is called Device Attestation. Each certified device must be configured with a unique Device Attestation Certificate (DAC) and its corresponding DAC private key, which will be checked by a commissioner to add this device to its Matter fabric. For a more conceptual overview of the Matter Certificates and Device Attestation Procedure, refer to [Matter Security](/matter/<docspace-docleaf-version>/matter-fundamentals-security/).
+For Matter devices to be commissioned into a Matter network, a Matter commissioner must verify that the devices are certified by the Connectivity Standards Alliance, this step in the Commissioning process is called Device Attestation. Each certified device must be configured with a unique Device Attestation Certificate (DAC) and its corresponding DAC private key, which will be checked by a commissioner to add this device to its Matter fabric. For a more conceptual overview of the Matter Certificates and Device Attestation Procedure, refer to [Matter Security](/matter/{build-docspace-version}/matter-fundamentals-security/).
 
 ## Device Attestation Public Key Infrastructure and Certification Declaration
 
@@ -10,7 +10,7 @@ Device Attestation Certificates or DACs must be included in all commissionable M
 
 - Certify your Matter Product. The Connectivity Standards Alliance will issue a CD with a corresponding VID and PID.
 
-- Select a Certification Authority where you will request your DACs. At Silicon Labs, we have partnered with Kudelski to offer the [Custom Manufacturing Service](/matter/<docspace-docleaf-version>/matter-using-cpms/) to facilitate this process.
+- Select a Certification Authority where you will request your DACs. At Silicon Labs, we have partnered with Kudelski to offer the [Custom Manufacturing Service](/matter/{build-docspace-version}/matter-using-cpms/) to facilitate this process.
 
 The PAA are root certificates (certificates of a Root Certificate Authority) and are used to sign PAIs (intermediate certificates). For the attestation process to succeed, the certificate chain must start from a trusted Root Certificate; for this purpose, Matter has a database, called [Distributed Compliance Ledger (DCL)](https://webui.dcl.csa-iot.org/), where the PAAs will reside.
 

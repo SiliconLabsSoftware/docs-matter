@@ -32,11 +32,11 @@ Below are the software tools both optional and required for developing Matter ov
 
 ## Software Packages Required for Wi-Fi EFR32 NCP Devices
 
-1. [SiSDK package](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/software-installation#installation-of-gecko-sdk-extension), which can be installed as part of the Simplicity Studio tool installation.
+1. [SiSDK package](/matter/{build-docspace-version}/matter-wifi-getting-started-example/software-installation#installation-of-gecko-sdk-extension), which can be installed as part of the Simplicity Studio tool installation.
 
-2. [WiSeConnect SDK v2.x for RS9116 NCP](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/software-installation#installation-of-wiseconnect-sdk-v2x-or-v3x-extension), which can be installed as part of the Simplicity Studio tool installation.
+2. [WiSeConnect SDK v2.x for RS9116 NCP](/matter/{build-docspace-version}/matter-wifi-getting-started-example/software-installation#installation-of-wiseconnect-sdk-v2x-or-v3x-extension), which can be installed as part of the Simplicity Studio tool installation.
 
-3. [WiSeConnect SDK v3.x for SiWx917 NCP](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/software-installation#installation-of-wiseconnect-sdk-v2x-or-v3x-extension), which can be installed as part of the Simplicity Studio tool installation.
+3. [WiSeConnect SDK v3.x for SiWx917 NCP](/matter/{build-docspace-version}/matter-wifi-getting-started-example/software-installation#installation-of-wiseconnect-sdk-v2x-or-v3x-extension), which can be installed as part of the Simplicity Studio tool installation.
 
 4. [Firmware for RS9116 NCP](./matter-artifacts.md#rs9116-firmware)
 
@@ -44,8 +44,8 @@ Below are the software tools both optional and required for developing Matter ov
 
 ## Software Packages Required for Wi-Fi SiWx917 SoC Devices
 
-1. [SiSDK package](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/software-installation#installation-of-gecko-sdk-extension), which can be installed as part of the Simplicity Studio tool installation.
+1. [SiSDK package](/matter/{build-docspace-version}/matter-wifi-getting-started-example/software-installation#installation-of-gecko-sdk-extension), which can be installed as part of the Simplicity Studio tool installation.
 
-2. [WiSeConnect SDK v3.x](/matter/<docspace-docleaf-version>/matter-wifi-getting-started-example/software-installation#installation-of-wiseconnect-sdk-v2x-or-v3x-extension), which can be installed as part of the Simplicity Studio tool installation.
+2. [WiSeConnect SDK v3.x](/matter/{build-docspace-version}/matter-wifi-getting-started-example/software-installation#installation-of-wiseconnect-sdk-v2x-or-v3x-extension), which can be installed as part of the Simplicity Studio tool installation.
 
 3. [Firmware for SoC](./matter-artifacts.md#siwx917-firmware-for-siwx917-soc)

@@ -61,7 +61,7 @@ For Matter devices to ensure the utmost security, the Matter Commissionee and Co
 
 ## Device Attestation
 
-Once the PASE has occurred, the Commissioner needs to check that the Commissionee is a certified Matter device. This process is called Device Attestation. First, the Commissioner will request the Commissionee to provide device information required in the Device Attestation process. The Commissioner will validate that the information it received from the Commissionee is accurate. The Commissioner will do this by retrieving the Commissionee's PAA (Product Attestation Authority) certificate from the [Distributed Compliance Ledger (DCL)](/matter/<docspace-docleaf-version>/matter-dcl) and the the Commissioner will validate the Commissionee credentials. For more information on Device Attestation pleas, see [Device Attestation](/matter/<docspace-docleaf-version>/matter-device-attestation).
+Once the PASE has occurred, the Commissioner needs to check that the Commissionee is a certified Matter device. This process is called Device Attestation. First, the Commissioner will request the Commissionee to provide device information required in the Device Attestation process. The Commissioner will validate that the information it received from the Commissionee is accurate. The Commissioner will do this by retrieving the Commissionee's PAA (Product Attestation Authority) certificate from the [Distributed Compliance Ledger (DCL)](/matter/{build-docspace-version}/matter-dcl) and the the Commissioner will validate the Commissionee credentials. For more information on Device Attestation pleas, see [Device Attestation](/matter/{build-docspace-version}/matter-device-attestation).
 
 ## Node Operational Credentials (NOC)
 

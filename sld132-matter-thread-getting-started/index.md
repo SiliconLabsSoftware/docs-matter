@@ -2,7 +2,7 @@
 
 These pages describe how to create a simple Matter network in which you can use a switch to control a light, described in more detail below under [A Typical Setup](#a-typical-setup).
 
-You should have obtained hardware and installed software as described in the [Quick-Start Guide Overview](/matter/<docspace-docleaf-version>/matter-overview). The Matter over Thread demo requires an additional device to be used as the Hub's radio co-processor (RCP). You will therefore need some additional hardware and software.
+You should have obtained hardware and installed software as described in the [Quick-Start Guide Overview](/matter/{build-docspace-version}/matter-overview). The Matter over Thread demo requires an additional device to be used as the Hub's radio co-processor (RCP). You will therefore need some additional hardware and software.
 
 ## Radio Co-Processor Prerequisites
 
@@ -14,7 +14,7 @@ You should have obtained hardware and installed software as described in the [Qu
 
 ### Software
 
-The Matter hub OpenThread RCP (ot-rcp) must be programmed with a bootloader and firmware image to act as the ot-rcp for the Raspberry Pi. You can obtain a copy of the latest version here: [Silicon Labs Matter Artifacts](/matter/<docspace-docleaf-version>/matter-prerequisites/matter-artifacts).
+The Matter hub OpenThread RCP (ot-rcp) must be programmed with a bootloader and firmware image to act as the ot-rcp for the Raspberry Pi. You can obtain a copy of the latest version here: [Silicon Labs Matter Artifacts](/matter/{build-docspace-version}/matter-prerequisites/matter-artifacts).
 
 ## A Typical Setup
 

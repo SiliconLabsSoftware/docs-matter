@@ -4,11 +4,11 @@ The scope of this page describes the MATTER OTA upgrade on 917 SoC mode for comb
 
 ## Hardware Requirements
 
-- To run matter ota on Silicon Labs Platform, refer to [Hardware Requirements](/matter/<docspace-docleaf-version>/matter-prerequisites/hardware-requirements).
+- To run matter ota on Silicon Labs Platform, refer to [Hardware Requirements](/matter/{build-docspace-version}/matter-prerequisites/hardware-requirements).
 
 ## Software Requirements
 
-To run matter ota on Silicon Labs Platform, refer to [Software Requirements](/matter/<docspace-docleaf-version>/matter-prerequisites/software-requirements).
+To run matter ota on Silicon Labs Platform, refer to [Software Requirements](/matter/{build-docspace-version}/matter-prerequisites/software-requirements).
 
 ## Setting up OTA Environment
 

@@ -22,9 +22,9 @@ Become a member at [Connectivity Standards Alliance Membership](https://csa-iot.
 
 ## Develop Your Matter Application
 
-Creating a Matter Application is an exciting journey. To start your journey, you need to understand the [Matter Fundamentals - Silabs](/matter/<docspace-docleaf-version>/matter-fundamentals). We also provide two development paths that you can choose from. Refer to [Developing with Silicon Labs Matter](/matter/<docspace-docleaf-version>/matter-start#two-paths-for-development/) to help you choose these paths.
+Creating a Matter Application is an exciting journey. To start your journey, you need to understand the [Matter Fundamentals - Silabs](/matter/{build-docspace-version}/matter-fundamentals). We also provide two development paths that you can choose from. Refer to [Developing with Silicon Labs Matter](/matter/{build-docspace-version}/matter-start#two-paths-for-development/) to help you choose these paths.
 
-Once you are ready to develop your Matter Application, you should review the [Matter Developer's Guide](/matter/<docspace-docleaf-version>/matter-developers-guide-overview/), which provides detailed background and instructions for Matter developers working in either the Thread or Wi-Fi models. The Developer's Guide contains a deeper dive into development.
+Once you are ready to develop your Matter Application, you should review the [Matter Developer's Guide](/matter/{build-docspace-version}/matter-developers-guide-overview/), which provides detailed background and instructions for Matter developers working in either the Thread or Wi-Fi models. The Developer's Guide contains a deeper dive into development.
 
 Additionally, Silicon Labs recommends that you become familiar with the Matter Specification documents:
 
