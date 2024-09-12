@@ -11,7 +11,7 @@ For the hardware required for an Amazon EcoSystem, refer to the [Ecosystem Prere
 
 ## Amazon Alexa and Android Smartphone Setup
 
-### Amazon Alexa MSS (Matter Simple Setup)
+### Amazon Alexa MSS (Matter Simple Setup) - Wi-Fi
 
 As part of partnership with Amazon, the following link contains information required for Matter device certification with Amazon.
 
@@ -29,6 +29,24 @@ In the context of MSS for Wi-Fi, the provisionee, or commissionee, is the device
 
 5. Complete Frustration-Free Setup certification and Amazon ASIN onboarding. Review the certification section below for more information.
 
+### Amazon Alexa MSS (Matter Simple Setup) - Thread
+
+As part of partnership with Amazon, the following link contains information required for Matter device certification with Amazon.
+
+[https://developer.amazon.com/docs/frustration-free-setup/matter-simple-setup-for-thread-overview.html](https://developer.amazon.com/docs/frustration-free-setup/matter-simple-setup-for-thread-overview.html)
+
+In the context of MSS for Thread, the provisionee, or commissionee, is the device that is to be automatically set up. If you want to make your device eligible to be an MSS commissionee, you must satisfy the following:
+
+1. Configure your device to beacon over BLE with specific fields needed for MSS for Thread (detailed below)
+
+2. Onboard your device via the FFS developer portal by creating a Matter new device type. On the developer portal, you will manage your FFS onboarding lifecycle tasks, like managing your test devices and manufacturing data and submitting for certification.
+
+3. Integrate a unique barcode on your device packaging. You can also use an existing unique barcode on your packaging, such as a serial number, or MAC address.
+
+4. Share your device control log data with Amazon services. Control Logs are a mechanism that allows manufacturers to provide Amazon with unique device identifiers and authentication material, such as the Matter passcode, that are critical to ensure a frictionless customer setup. The unique package barcode is associated with your device identifier through the control logs. See the Matter Control Logs section for more details.
+
+5. Complete Frustration-Free Setup certification and Amazon ASIN onboarding. Review the certification section below for more information.
+
 ### Amazon Alexa Setup
 
 Refer to [Set up Alexa in a Few Easy Steps](https://www.amazon.com/alexa-setup-guide/b?ie=UTF8&node=17978645011).
@@ -37,8 +55,7 @@ Refer to [Set up Alexa in a Few Easy Steps](https://www.amazon.com/alexa-setup-g
 
 1. Refer to the [Getting Started Overview Guide](/matter/{build-docspace-version}/matter-wifi-getting-started-example) for setting up a Silicon Labs Matter Accessory Device.
 
-2. Connect a board to a computer.
-
+2. Connect a board to a computer.<br>**Wi-Fi**
    - For Wi-Fi NCP Mode Boards, see [Connect EFR32 Board to Computer](/matter/{build-docspace-version}/matter-wifi-getting-started-example/getting-started-efx32-ncp#connect-the-boards-to-a-computer).
    - For Wi-Fi SoC Mode Boards, see [Connect SiWx917 SoC to Computer](/matter/{build-docspace-version}/matter-wifi-getting-started-example/getting-started-with-soc#connect-siwx917-soc-to-computer).
 
