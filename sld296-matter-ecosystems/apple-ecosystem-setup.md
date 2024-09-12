@@ -21,7 +21,7 @@ Refer to Apple's [Set up HomePod or HomePod mini](https://support.apple.com/en-i
 
 1. Refer to [Getting Started with Matter over Wi-Fi](/matter/{build-docspace-version}/matter-wifi-getting-started-example) for instructions on setting up Silicon Labs Matter Accessory Device.
 
-2. Connect a board to a computer.<br>**Wi-Fi**
+2. Connect a board to a computer.
    - For Wi-Fi NCP Mode Boards, see [Connect EFR32 Board to Computer](/matter/{build-docspace-version}/matter-wifi-getting-started-example/getting-started-efx32-ncp#connect-the-boards-to-a-computer).
    - For Wi-Fi SoC Mode Boards, see [Connect SiWx917 SoC to Computer](/matter/{build-docspace-version}/matter-wifi-getting-started-example/getting-started-with-soc#connect-siwx917-soc-to-computer).
 
