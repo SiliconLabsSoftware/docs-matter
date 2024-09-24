@@ -10,11 +10,11 @@ Matter Certification is required for all Matter devices. Unlike other networking
 
 There are two different types of products that can apply for Matter Certification:
 
-**Matter Hardware Certification**
+### Matter Hardware Certification
 
 This group of certification is for embedded devices and end products, like a Matter Light or Matter Switch, that include both the software and hardware together. Typically, this is the main type of Matter Certification.
 
-**Matter Software Component Certification**
+### Matter Software Component Certification
 
 This group of certification is for Matter Software Components, like App-based devices or a Matter Controller, where the Matter Software Component runs on a Connectivity Standards Alliance Supported Operating Environment.
 
@@ -23,6 +23,10 @@ This group of certification is for Matter Software Components, like App-based de
 **Authorized Test Lab (ATL)**: This is the most common testing option where you can choose a Connectivity Standards Alliance approved test house to perform Matter Certification Testing ([https://csa-iot.org/certification/testing-providers/](https://csa-iot.org/certification/testing-providers/)).
 
 **Specification Validation Event (SVE)**: The Connectivity Standards Alliance will host certification events where Matter Products can be tested. If a Matter product successfully completes the full phase testing series, then this product will be deemed eligible for certification and will not require additional testing.
+
+### Pre-Testing using the Matter Test Harness
+
+It is highly reccomended to pre-test new Matter products using the Matter Test Harness (TH) before sending it to an ATL or SVE to ensure the process is smooth and any errors are caught in advance. The Matter TH is a comprehensive test tool used for certification testing of Matter devices in accordance with the Matter protocol as defined in the Matter specification. The Matter TH is available for download at: [Matter_TH_User_Guide/Matter_TH_User_Guide.adoc](https://github.com/project-chip/certification-tool/blob/main/docs/Matter_TH_User_Guide/Matter_TH_User_Guide.adoc). A user guide for the Matter TH is available at [Matter_TH_User_Guide/Matter_TH_User_Guide.adoc#introduction](https://github.com/project-chip/certification-tool/blob/main/docs/Matter_TH_User_Guide/Matter_TH_User_Guide.adoc#introduction).
 
 ## Possible Matter Certification Paths
 
@@ -46,7 +50,7 @@ This group of certification is for Matter Software Components, like App-based de
 
     Once you are a member, you will need to request a Vendor ID. Once issued, the Vendor ID will be listed in the Manufacturer code database in the Connectivity Standards Alliance which is updated monthly. For certification, you will also need to decide on a Product ID (PID) to make up your own unique 16-bit number to identify your distinct Matter products. You may have as many PIDs as you want, but each has to have its own unique certification ID. For development purposes, Silicon Labs provides 'test' VID and PID for our Sample Applications.
 
-3. **Finalize Product, Select a Network Transport, and Develop Your Product**.
+3. **Finalize Product & Select a Network Transport Layer**.
 
     You need to determine what Network Transport Layers you will be using. Typically this is a choice between Wi-Fi and OpenThread. In this stage, it is a good idea to pre-test your products before sending out for certification testing.
 
@@ -104,4 +108,6 @@ This group of certification is for Matter Software Components, like App-based de
 
 ## Memberships
 
-The minimum membership level required for Matter Certification is the Adopter level. For more information on Connectivity Standards Alliance Memberships, see [https://csa-iot.org/become-member/](https://csa-iot.org/become-member/).
+The minimum membership level required for Matter Certification when developing your own product is the Adopter level. For more information on Connectivity Standards Alliance Memberships, see [https://csa-iot.org/become-member/](https://csa-iot.org/become-member/).
+
+## FAQ & Common Mistakes
