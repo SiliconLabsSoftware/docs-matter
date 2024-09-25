@@ -28,6 +28,8 @@ This group of certification is for Matter Software Components, like App-based de
 
 It is highly reccomended to pre-test new Matter products using the Matter Test Harness (TH) before sending it to an ATL or SVE to ensure the process is smooth and any errors are caught in advance. The Matter TH is a comprehensive test tool used for certification testing of Matter devices in accordance with the Matter protocol as defined in the Matter specification. The Matter TH is available for download at: [Matter_TH_User_Guide/Matter_TH_User_Guide.adoc](https://github.com/project-chip/certification-tool/blob/main/docs/Matter_TH_User_Guide/Matter_TH_User_Guide.adoc). A user guide for the Matter TH is available at [Matter_TH_User_Guide/Matter_TH_User_Guide.adoc#introduction](https://github.com/project-chip/certification-tool/blob/main/docs/Matter_TH_User_Guide/Matter_TH_User_Guide.adoc#introduction).
 
+<!-- We may want to include any Silabs specific pre-testing customers can do -->
+
 ## Possible Matter Certification Paths
 
 **Certification by Testing a Single Product**: This is full testing at an ATL or SVE and is intended for newly designed products.
@@ -67,6 +69,8 @@ It is highly reccomended to pre-test new Matter products using the Matter Test H
      4. Ethernet Transport Protocol: This certification can be received by showing evidence of successfully passing self-defined / self-testing of IEEE PMA.
 
 5. **Test your Product**.
+
+    *Note: You should always pre-test your product **before** going to a test house.*
 
     As mentioned above, there are a few certification paths to take:
 
@@ -111,3 +115,4 @@ It is highly reccomended to pre-test new Matter products using the Matter Test H
 The minimum membership level required for Matter Certification when developing your own product is the Adopter level. For more information on Connectivity Standards Alliance Memberships, see [https://csa-iot.org/become-member/](https://csa-iot.org/become-member/).
 
 ## FAQ & Common Mistakes
+<!-- Waiting on feedback from other teams for this section -->
