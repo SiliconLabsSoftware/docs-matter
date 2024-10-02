@@ -26,9 +26,20 @@ This group of certification is for Matter Software Components, like App-based de
 
 ### Pre-Testing using the Matter Test Harness
 
-It is highly reccomended to pre-test new Matter products using the Matter Test Harness (TH) before sending it to an ATL or SVE to ensure the process is smooth and any errors are caught in advance. The Matter TH is a comprehensive test tool used for certification testing of Matter devices in accordance with the Matter protocol as defined in the Matter specification. The Matter TH is available for download at: [Matter_TH_User_Guide/Matter_TH_User_Guide.adoc](https://github.com/project-chip/certification-tool/blob/main/docs/Matter_TH_User_Guide/Matter_TH_User_Guide.adoc). A user guide for the Matter TH is available at [Matter_TH_User_Guide/Matter_TH_User_Guide.adoc#introduction](https://github.com/project-chip/certification-tool/blob/main/docs/Matter_TH_User_Guide/Matter_TH_User_Guide.adoc#introduction).
+The Matter Test Harness (TH) is a comprehensive tool used for certification testing of Matter devices in accordance with the Matter protocol as defined in the Matter specification.
 
-<!-- We may want to include any Silabs specific pre-testing customers can do -->
+- **Download**: The Matter TH can be downloaded from the [Matter TH User Guide](https://github.com/project-chip/certification-tool/blob/main/docs/Matter_TH_User_Guide/Matter_TH_User_Guide.adoc).
+- **User Guide**: A detailed user guide is available [here](https://github.com/project-chip/certification-tool/blob/main/docs/Matter_TH_User_Guide/Matter_TH_User_Guide.adoc#introduction).
+- **Official Documents**: The Connectivity Standards Alliance (CSA) posts the official release documents on the [Matter Specifications and Test Plans](https://groups.csa-iot.org/wg/members-all/document/folder/2269) causeway link.
+
+It is recommended to always cross-reference the Matter TH User Guide with these official documents.
+
+Pre-testing new Matter products using the Matter Test Harness (TH) before sending them to an ATL is highly recommended. This ensures a smoother process and catches any errors in advance. Some benefits of pre-testing include:
+
+- **Cost Efficiency**: Testing is expensive. Pre-testing reduces the risk of re-testing by catching potential issues early.
+- **Firmware Updates**: If the ATL requires new firmware due to issues, they may need to rerun more than just the failed test, leading to additional costs.
+- **Support**: If issues are encountered during pre-testing, Silicon Labs can provide more efficient support.
+- **Test Accuracy**: Occasionally, issues can arise from the test itself rather than the Device Under Test (DUT) firmware. In such cases, additional parameters might be needed to run certain tests successfully. Pre-testing helps identify and address these issues ahead of time.
 
 ## Possible Matter Certification Paths
 
