@@ -66,5 +66,5 @@ Update digits based on the following criteria:
 | v2.2.0-1.2 | 13-Dec-23  | v4.4.0, v4.4.1 | v3.1.1 | Obsolete |
 | v2.2.1-1.2 | 10-Apr-24  | v4.4.1, v4.4.2 | v3.1.4 | Maintained |
 | v2.3.0-1.3 | 18-June-24  | 2024.6.0 | v3.3.0 | Maintained |
-| v2.3.1-1.3 | 14-Aug-24  | 2024.6.1 | v3.3.1 | Maintained |
+| v2.3.1-1.3 | 14-Aug-24  | 2024.6.1 | v3.3.1 | Obsolete |
 | v2.3.2-1.3 | 10-Oct-24  | 2024.6.2 | v3.3.3 | Active |
