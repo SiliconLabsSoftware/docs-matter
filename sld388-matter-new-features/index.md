@@ -2,9 +2,9 @@
 
 ## New Features for v2.3.2-1.3
 
-- Quality-tested Matter 1.3 GA solution for Thread MG24 / MG26, Wi-Fi 917 SoC, Wi-Fi MG24/WF200, Wi-Fi 917 NCP (non-sleepy) and Wi-Fi MG24/RS9116 (non-sleepy) platforms. Beta solution for Wi-Fi 917 NCP (sleepy) and Wi-Fi MG24/RS9116 (sleepy) platforms.
+- Quality-tested Matter 1.3 GA solution for Thread MG24 / MG26, Wi-Fi SiWx917 SoC and DevKit(BRD2605A), Wi-Fi MG24/WF200, Wi-Fi SiWx917 NCP and Wi-Fi MG24/RS9116 (non-sleepy) platforms. Beta solution for Wi-Fi MG24/RS9116 (sleepy) platforms.
 - Works with Simplicity SDK v2024.6.2 and WiSeConnect SDK v3.3.3
-- BRD4342A board support is enabled for all the Matter Wi-Fi applications - beta quality.
+- BRD4342A PSRAM board support is enabled for all the Matter Wi-Fi applications - beta quality.
 - Miscellaneous bug fixes and improvements.
 
 ## New Features for v2.3.1-1.3
