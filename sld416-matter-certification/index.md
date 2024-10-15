@@ -125,5 +125,5 @@ Pre-testing new Matter products using the Matter Test Harness (TH) before sendin
 
 The minimum membership level required for Matter Certification when developing your own product is the Adopter level. For more information on Connectivity Standards Alliance Memberships, see [https://csa-iot.org/become-member/](https://csa-iot.org/become-member/).
 
-## FAQ & Common Mistakes
-<!-- Waiting on feedback from other teams for this section -->
+<!-- TODO:  -->
+<!-- ## FAQ & Common Mistakes -->
