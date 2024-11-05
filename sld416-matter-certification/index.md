@@ -41,6 +41,17 @@ Pre-testing new Matter products using the Matter Test Harness (TH) before sendin
 - **Support**: If issues are encountered during pre-testing, Silicon Labs can provide more efficient support.
 - **Test Accuracy**: Occasionally, issues can arise from the test itself rather than the Device Under Test (DUT) firmware. In such cases, additional parameters might be needed to run certain tests successfully. Pre-testing helps identify and address these issues ahead of time.
 
+If your Matter ceritifcation process includes inheritance of our OpenThread Certification Libraries for an SoC product, you will need to provide proof of the use of those libraries using the linker output. To ensure your project generates this, make sure during your pre-testing to do the following (these steps assume the use of Simplicity Studio v5):
+- Add the **OpenThread Certification Libraries** component to your project.
+- Add the "-WL,-verbose" linker option through gcc (see screenshot below):
+    - Open the project properties by either right-clicking the project and selecting **Properties** from the **Project Explorer** or from the **Project** menu at the top while the project is selected.
+    - On the left side, browse to **C/C++ Build** > **Settings**.
+    - Under **Tool Settings**, browse to **GNU ARM C++ Linker** > **Miscellaneous**.
+    - Under **Linker Flags**, add a new entry containing "*-Wl,--verbose*" and click **Apply** and **Apply and Close**.
+    - Finally, from the **Project** menu choose **Clean...** and perform a clean and fresh build.
+  
+  ![Matter Project SSv5 Wl verbose steps](resources/matter-certification-ssv5-wlverbose-steps.png)
+
 ## Possible Matter Certification Paths
 
 **Certification by Testing a Single Product**: This is full testing at an ATL or SVE and is intended for newly designed products.
