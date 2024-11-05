@@ -49,7 +49,8 @@ If your Matter ceritifcation process includes inheritance of our OpenThread Cert
     - Under **Tool Settings**, browse to **GNU ARM C++ Linker** > **Miscellaneous**.
     - Under **Linker Flags**, add a new entry containing "*-Wl,--verbose*" and click **Apply** and **Apply and Close**.
     - Finally, from the **Project** menu choose **Clean...** and perform a clean and fresh build.
-    - ![Matter Project SSv5 Wl verbose steps](resources/matter-certification-ssv5-wlverbose-steps-no-annotations.png)
+  
+  ![Matter Project SSv5 Wl verbose steps](resources/matter-certification-ssv5-wlverbose-steps.png)
 
 ## Possible Matter Certification Paths
 
