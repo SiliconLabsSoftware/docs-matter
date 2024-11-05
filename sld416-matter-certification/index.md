@@ -43,7 +43,7 @@ Pre-testing new Matter products using the Matter Test Harness (TH) before sendin
 
 If your Matter ceritifcation process includes inheritance of our OpenThread Certification Libraries for an SoC product, you will need to provide proof of the use of those libraries using the linker output. To ensure your project generates this, make sure during your pre-testing to do the following (these steps assume the use of Simplicity Studio v5):
 - Add the **OpenThread Certification Libraries** component to your project.
-- Add the "-WL,-verbose" linker option through gcc (see screenshot below or detailed steps [here](resources/matter-certification-ssv5-wlverbose-steps-no-annotations.png)):
+- Add the "-WL,-verbose" linker option through gcc (see screenshot below):
     - Open the project properties by either right-clicking the project and selecting **Properties** from the **Project Explorer** or from the **Project** menu at the top while the project is selected.
     - On the left side, browse to **C/C++ Build** > **Settings**.
     - Under **Tool Settings**, browse to **GNU ARM C++ Linker** > **Miscellaneous**.
