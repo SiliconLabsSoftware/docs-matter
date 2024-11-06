@@ -2,7 +2,7 @@
 
 Device logs are enabled by default on UART instead of JLink RTT, and will be fully captured on the Serial Terminal.
 
-To configure the Serial Terminal, follow steps 14 to 18 in the [Serial Port Settings](/matter/{build-docspace-version}/matter-overview-guides/serial-port-communications).
+To configure the Serial Terminal, follow steps 13 to 17 in the [Serial Port Settings](/matter/{build-docspace-version}/matter-overview-guides/serial-port-communications).
 
 After flashing the device and setting up the Serial Terminal, you will see the device logs displayed on the Serial Terminal.
 
