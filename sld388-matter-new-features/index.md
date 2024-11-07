@@ -2,11 +2,11 @@
 
 ## New Features for v2.4.0-1.4
 
-- Quality-tested Matter 1.4 GA solution for Thread MG24 / MG26, Wi-Fi 917 SoC and DevKit (BRD2605A), Wi-Fi MG24/WF200 (non-sleepy), Wi-Fi 917 NCP platforms. Beta support for Wi Fi 917 SoC BRD4342A module and Alpha support for Wi-Fi MG24/RS9116 platforms.
-- LIT-ICD Support and Quiet Reporting Support is provided
-- Sensor App is refactored to be more generic for easier usage and maintenance
-- Fan Control App support is added for SiWx917
-- Works with Simplicity SDK v2024.6.2 and WiSeConnect SDK v3.3.4
+- Quality-tested Matter 1.4 GA solution for Thread MG24 / MG26, Wi-Fi 917 SoC and DevKit (BRD2605A), Wi-Fi MG24/WF200 (non-sleepy), Wi-Fi 917 NCP platforms. Beta support for Wi-Fi 917 SoC BRD4342A module and Alpha support for Wi-Fi MG24/RS9116 platforms.
+- LIT-ICD Support and Quiet Reporting Support is provided.
+- Sensor App is refactored to be more generic for easier usage and maintenance.
+- Fan Control App support is added for SiWx917.
+- Works with Simplicity SDK v2024.6.2 and WiSeConnect SDK v3.3.4.
 - Miscellaneous bug fixes and improvements.
 
 ## New Features for v2.3.1-1.3
