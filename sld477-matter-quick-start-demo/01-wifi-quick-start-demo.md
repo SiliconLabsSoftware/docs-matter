@@ -104,4 +104,4 @@ After successfully running the Matter Lighting app to the ecosystem, the next st
 
 Once the device is flashed, it will be ready for commissioning and further testing.
 
-> **Note:** By default, device logs are enabled on UART (serial terminal). Refer to [Logging Configuration](/matter/{build-docspace-version}/matter-overview-guides/matter-logging-configuration.md) to configure the logging destination to JLink or UART.
+> **Note:** By default, device logs are enabled on UART (serial terminal). Refer to [Logging Configurations](/matter/{build-docspace-version}/matter-overview-guides/matter-logging-configuration) to configure the logging destination to JLink or UART.
