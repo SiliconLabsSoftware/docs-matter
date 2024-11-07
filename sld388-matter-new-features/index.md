@@ -6,6 +6,7 @@
 - LIT-ICD Support and Quiet Reporting Support is provided
 - Sensor App is refactored to be more generic for easier usage and maintenance
 - Fan Control App support is added for SiWx917
+- Works with Simplicity SDK v2024.6.2 and WiSeConnect SDK v3.3.4
 - Miscellaneous bug fixes and improvements.
 
 ## New Features for v2.3.1-1.3
