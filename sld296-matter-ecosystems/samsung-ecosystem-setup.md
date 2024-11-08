@@ -18,7 +18,6 @@ See the Aeotec instructions on [How to Set Up a Smart Home Hub](https://aeotec.f
 1. Refer to the [Getting Started Overview Guide](/matter/{build-docspace-version}/matter-wifi-getting-started-example) for setting up a Silicon Labs Matter Accessory Device.
 
 2. Connect a board to a computer.
-
    - For Wi-Fi NCP Mode Boards, see [Connect EFR32 Board to Computer](/matter/{build-docspace-version}/matter-wifi-getting-started-example/getting-started-efx32-ncp#connect-the-boards-to-a-computer).
    - For Wi-Fi SoC Mode Boards, see [Connect SiWx917 SoC to Computer](/matter/{build-docspace-version}/matter-wifi-getting-started-example/getting-started-with-soc#connect-siwx917-soc-to-computer).
 

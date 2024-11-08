@@ -4,7 +4,7 @@ This Quick-Start Guide will demo the out-of-box experience for adding an SiWx917
 
 ## Software Requirements
 
-- Simplicity Studio v5 with SiSDK - 2024.06 + Silicon Labs Matter - 2.3.0 + WiSeConnect - 3.3.0
+- Simplicity Studio v5 with SiSDK - 2024.06 + Silicon Labs Matter - 2.4.0 + WiSeConnect - 3.3.4
 - Simplicity Connect mobile App on Smartphone
 
 ## Hardware Requirements
@@ -103,3 +103,5 @@ After successfully running the Matter Lighting app to the ecosystem, the next st
 6. Click **Flash** to flash the device.
 
 Once the device is flashed, it will be ready for commissioning and further testing.
+
+> **Note:** By default, device logs are enabled on UART (serial terminal). Refer to [Logging Configurations](/matter/{build-docspace-version}/matter-overview-guides/matter-logging-configuration) to configure the logging destination to JLink or UART.

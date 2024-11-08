@@ -1,6 +1,6 @@
 # Sharing Multi-Control over Wi-Fi Light from Apple Home Pod to Google Home Ecosystem
 
-This phase is very similar to the [Single Controller](./singlecontroller-ecosystem). The difference is that the Matter Over Wi-Fi device will be controlled using the Apple Home Ecosystem. The process will be almost identical, with some minor difference related to Apple Home App UI.
+This phase is very similar to the [Single Controller](./singlecontroller-ecosystem). The difference is that the Matter device will be controlled using the Apple Home Ecosystem. The process will be almost identical, with some minor difference related to Apple Home App UI.
 
 See [How to Set Up an Apple Home Ecosystem](./apple-ecosystem-setup). Then use the following procedure to share multi-control from Apple Home to Google Home.
 
@@ -21,4 +21,4 @@ See [How to Set Up an Apple Home Ecosystem](./apple-ecosystem-setup). Then use t
     ![Add setup code](./images/matter-google-add-setup-code.png)
 
 8. Commissioning will start and proceed in the same way as explained in [Google Ecosystem Setup and Demo Execution](./google-ecosystem-setup).
-9. Once the commissioning is done, the new Matter Wi-Fi device should be visible in the Room view of the Google Home app.
+9. Once the commissioning is done, the new Matter device should be visible in the Room view of the Google Home app.

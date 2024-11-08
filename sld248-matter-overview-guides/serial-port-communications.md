@@ -52,21 +52,15 @@ To run matter shell on the Silicon Labs Platform, refer to the [Software Require
 
 12. After a successful build, commission the device as described in [Commission Matter Platform](/matter/{build-docspace-version}/matter-wifi-run-demo/use-case-execution#creating-the-matter-network).
 
-13. For SiWx917 SoC, connect the TTL cables with the Radio Board to execute **Matter Shell**.
-
-    ![Connect TTL Cable](./images/shell-ttl-cable-soc.png)
-
-    **Note**: For EFR32MG2x devices, TTL Cable support is not required.
-
-14. Open Tera Term and under **New connection**, select **Serial**, and in the dropdown, select the **JLink** port, and click **OK**.
+13. Open Tera Term and under **New connection**, select **Serial**, and in the dropdown, select the **JLink** port, and click **OK**.
 
     ![Silicon Labs - design](./images/tera-term-select-jlink-port.png)
 
-15. In the menu bar, click **Setup > Terminal**.
+14. In the menu bar, click **Setup > Terminal**.
 
     ![Silicon Labs - design](./images/tera-term-selection-in-terminal.png)
 
-16. Inside **Terminal**, set the values below and click **OK**.
+15. Inside **Terminal**, set the values below and click **OK**.
 
     - Terminal Size : 80 * 24
     - New-Line
@@ -75,23 +69,23 @@ To run matter shell on the Silicon Labs Platform, refer to the [Software Require
 
     ![Silicon Labs - design](./images/tera-term-terminal-setup.png)
 
-17. In the menu bar, click **Setup > Serial port**.
+16. In the menu bar, click **Setup > Serial port**.
 
     ![Silicon Labs - design](./images/tera-term-select-serial-port.png)
 
-18. Increase the speed to **115200** and click **New setting**.
+17. Increase the speed to **115200** and click **New setting**.
 
     ![Silicon Labs - design](./images/tera-term-select-speed.png)
 
-19. In the menu bar, click **File > TTY Record**. Create any empty file with extension ".tty" and click **Save**.
+18. In the menu bar, click **File > TTY Record**. Create any empty file with extension ".tty" and click **Save**.
 
     ![Silicon Labs - design](./images/tera-term-tty-record.png)
 
-20. After creating the tty file, press **Enter** to open the **matterCli** terminal.
+19. After creating the tty file, press **Enter** to open the **matterCli** terminal.
 
     ![Silicon Labs - design](./images/tera-term-matter-cli.png)
 
-21. Send any command through the **matterCli** terminal, from the below list of commands:
+20. Send any command through the **matterCli** terminal, from the below list of commands:
 
     - doorlock event door-state-change "DoorState"
         - Door State List
@@ -115,7 +109,7 @@ To run matter shell on the Silicon Labs Platform, refer to the [Software Require
 
       ![Silicon Labs - design](./images/matter-shell-command-send.png)
 
-22. After changing DoorState and AlarmCode in **matterCli**, run the commands below using chip-tool on Raspberry PI to verify the event.
+21. After changing DoorState and AlarmCode in **matterCli**, run the commands below using chip-tool on Raspberry PI to verify the event.
   
     - To Read Door State
   
