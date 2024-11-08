@@ -40,7 +40,7 @@ Update digits based on the following criteria:
 
 - **Pre-Release**
 
-  - As needed, e.g. release after TE1 can be called v2.3.1-1.2-alpha.1
+  - As needed, e.g. release after TE1 can be called v2.3.2-1.2-alpha.1
 
     - To identify targeted feature requests/SQA quality level testing
 
