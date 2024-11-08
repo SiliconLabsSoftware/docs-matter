@@ -2,7 +2,7 @@
 
 The following commands show how to commission a 917 SoC Matter End Device (Matter Accessory Device), and then send the on/off commands with the `mattertool` automated script. The `mattertool` script provides an interface into various chip-tool commands used to create and interact with a Matter network.
 
-## Prerequistes
+## Prerequisites
 
 - Download the raspi image and flash the image onto pi using with default '**ubuntu**' username and enable ssh in the options.
 

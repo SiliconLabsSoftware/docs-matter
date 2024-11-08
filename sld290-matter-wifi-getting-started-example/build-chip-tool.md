@@ -1,10 +1,7 @@
 # Building the Chip-Tool
 
-<<<<<<< HEAD
-=======
-NOTE: The chip-tool binary is a part of the software artifacts package provided with the Matter release. See the "Assets" section at the bottom of this page:  https://github.com/SiliconLabs/matter_extension/releases/tag/v2.3.2. In most cases, it should not be necessary to build chip-tool from scratch.
+NOTE: The chip-tool binary is a part of the software artifacts package provided with the Matter release. See the "Assets" section at the bottom of this page: https://github.com/SiliconLabs/matter_extension/releases/tag/v2.4.0. In most cases, it should not be necessary to build chip-tool from scratch.
 
->>>>>>> 3fc8ec7d2079067b282f56b7250b940e61ed98f2
 This page covers:
 
 - Building the chip-tool for Linux
