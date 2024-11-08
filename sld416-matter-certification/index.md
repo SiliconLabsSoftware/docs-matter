@@ -10,11 +10,11 @@ Matter Certification is required for all Matter devices. Unlike other networking
 
 There are two different types of products that can apply for Matter Certification:
 
-**Matter Hardware Certification**
+### Matter Hardware Certification
 
 This group of certification is for embedded devices and end products, like a Matter Light or Matter Switch, that include both the software and hardware together. Typically, this is the main type of Matter Certification.
 
-**Matter Software Component Certification**
+### Matter Software Component Certification
 
 This group of certification is for Matter Software Components, like App-based devices or a Matter Controller, where the Matter Software Component runs on a Connectivity Standards Alliance Supported Operating Environment.
 
@@ -23,6 +23,34 @@ This group of certification is for Matter Software Components, like App-based de
 **Authorized Test Lab (ATL)**: This is the most common testing option where you can choose a Connectivity Standards Alliance approved test house to perform Matter Certification Testing ([https://csa-iot.org/certification/testing-providers/](https://csa-iot.org/certification/testing-providers/)).
 
 **Specification Validation Event (SVE)**: The Connectivity Standards Alliance will host certification events where Matter Products can be tested. If a Matter product successfully completes the full phase testing series, then this product will be deemed eligible for certification and will not require additional testing.
+
+### Pre-Testing using the Matter Test Harness
+
+The Matter Test Harness (TH) is a comprehensive tool used for certification testing of Matter devices in accordance with the Matter protocol as defined in the Matter specification.
+
+- **Download**: The Matter TH can be downloaded from the [Matter TH User Guide](https://github.com/project-chip/certification-tool/blob/main/docs/Matter_TH_User_Guide/Matter_TH_User_Guide.adoc).
+- **User Guide**: A detailed user guide is available [here](https://github.com/project-chip/certification-tool/blob/main/docs/Matter_TH_User_Guide/Matter_TH_User_Guide.adoc#introduction).
+- **Official Documents**: The Connectivity Standards Alliance (CSA) posts the official release documents on the [Matter Specifications and Test Plans](https://groups.csa-iot.org/wg/members-all/document/folder/2269) causeway link.
+
+It is recommended to always cross-reference the Matter TH User Guide with these official documents.
+
+Pre-testing new Matter products using the Matter Test Harness (TH) before sending them to an ATL is highly recommended. This ensures a smoother process and catches any errors in advance. Some benefits of pre-testing include:
+
+- **Cost Efficiency**: Testing is expensive. Pre-testing reduces the risk of re-testing by catching potential issues early.
+- **Firmware Updates**: If the ATL requires new firmware due to issues, they may need to rerun more than just the failed test, leading to additional costs.
+- **Support**: If issues are encountered during pre-testing, Silicon Labs can provide more efficient support.
+- **Test Accuracy**: Occasionally, issues can arise from the test itself rather than the Device Under Test (DUT) firmware. In such cases, additional parameters might be needed to run certain tests successfully. Pre-testing helps identify and address these issues ahead of time.
+
+If your Matter ceritifcation process includes inheritance of our OpenThread Certification Libraries for an SoC product, you will need to provide proof of the use of those libraries using the linker output. To ensure your project generates this, make sure during your pre-testing to do the following (these steps assume the use of Simplicity Studio v5):
+- Add the **OpenThread Certification Libraries** component to your project.
+- Add the "-WL,-verbose" linker option through gcc (see screenshot below):
+    - Open the project properties by either right-clicking the project and selecting **Properties** from the **Project Explorer** or from the **Project** menu at the top while the project is selected.
+    - On the left side, browse to **C/C++ Build** > **Settings**.
+    - Under **Tool Settings**, browse to **GNU ARM C++ Linker** > **Miscellaneous**.
+    - Under **Linker Flags**, add a new entry containing "*-Wl,--verbose*" and click **Apply** and **Apply and Close**.
+    - Finally, from the **Project** menu choose **Clean...** and perform a clean and fresh build.
+  
+  ![Matter Project SSv5 Wl verbose steps](resources/matter-certification-ssv5-wlverbose-steps.png)
 
 ## Possible Matter Certification Paths
 
@@ -46,7 +74,7 @@ This group of certification is for Matter Software Components, like App-based de
 
     Once you are a member, you will need to request a Vendor ID. Once issued, the Vendor ID will be listed in the Manufacturer code database in the Connectivity Standards Alliance which is updated monthly. For certification, you will also need to decide on a Product ID (PID) to make up your own unique 16-bit number to identify your distinct Matter products. You may have as many PIDs as you want, but each has to have its own unique certification ID. For development purposes, Silicon Labs provides 'test' VID and PID for our Sample Applications.
 
-3. **Finalize Product, Select a Network Transport, and Develop Your Product**.
+3. **Finalize Product & Select a Network Transport Layer**.
 
     You need to determine what Network Transport Layers you will be using. Typically this is a choice between Wi-Fi and OpenThread. In this stage, it is a good idea to pre-test your products before sending out for certification testing.
 
@@ -63,6 +91,8 @@ This group of certification is for Matter Software Components, like App-based de
      4. Ethernet Transport Protocol: This certification can be received by showing evidence of successfully passing self-defined / self-testing of IEEE PMA.
 
 5. **Test your Product**.
+
+    *Note: You should always pre-test your product **before** going to a test house.*
 
     As mentioned above, there are a few certification paths to take:
 
@@ -104,4 +134,4 @@ This group of certification is for Matter Software Components, like App-based de
 
 ## Memberships
 
-The minimum membership level required for Matter Certification is the Adopter level. For more information on Connectivity Standards Alliance Memberships, see [https://csa-iot.org/become-member/](https://csa-iot.org/become-member/).
+The minimum membership level required for Matter Certification when developing your own product is the Adopter level. For more information on Connectivity Standards Alliance Memberships, see [https://csa-iot.org/become-member/](https://csa-iot.org/become-member/).
