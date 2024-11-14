@@ -81,17 +81,17 @@ For Windows:
 python slc\sl_create_new_app.py MyNewApp slc\sample-app\lighting-app\efr32\lighting-app-thread.slcp brd4187c
 ```
 
-Workspaces Examples: 
+Solutions Examples: 
 For Mac and Linux:
 
 ```C
-python3 slc/sl_create_new_app.py MyNewApp slc/workspaces/lighting-app/series-2/lighting-app-thread-bootloader.slcw brd4187c
+python3 slc/sl_create_new_app.py MyNewApp slc/solutions/lighting-app/series-2/lighting-app-thread-bootloader.slcw brd4187c
 ```
 
 For Windows:
 
 ```C
-python slc\sl_create_new_app.py MyNewApp slc\workspaces\lighting-app\series-2\lighting-app-thread-bootloader.slcw brd4187c
+python slc\sl_create_new_app.py MyNewApp slc\solutions\lighting-app\series-2\lighting-app-thread-bootloader.slcw brd4187c
 ```
 
 ## Building an Application Project
@@ -111,7 +111,7 @@ For Windows:
 python slc\sl_build.py MyNewApp\lighting-app-thread.slcp brd4187c
 ```
 
-Workspaces Examples:
+Solutions Examples:
 For Mac and Linux:
 
 ```C
