@@ -81,7 +81,8 @@ For Windows:
 python slc\sl_create_new_app.py MyNewApp slc\sample-app\lighting-app\efr32\lighting-app-thread.slcp brd4187c
 ```
 
-Solutions Examples: 
+Solutions Examples:
+
 For Mac and Linux:
 
 ```C
@@ -112,6 +113,7 @@ python slc\sl_build.py MyNewApp\lighting-app-thread.slcp brd4187c
 ```
 
 Solutions Examples:
+
 For Mac and Linux:
 
 ```C
@@ -123,7 +125,6 @@ For Windows:
 ```C
 python slc\sl_build.py MyNewApp\lighting-app-thread-bootloader.slcw brd4187c
 ```
-
 
 Alternately, one can use SLC-CLI commands directly to generate the project and then use `make` to build it.
 

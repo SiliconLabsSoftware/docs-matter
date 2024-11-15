@@ -94,7 +94,7 @@ You now have a working Matter hub. Keep the PuTTY session open for the following
 
        ![Application image upload](resources/image14.png)
 
-      **Note**: If you are unsure of the path for the newly created binary, you can find the project’s path in the project’s *Properties* window under *Resource*. The binary is typically located inside the *{solution folder}\|{project name folder}\|{GNU ARM v??? folder}\|{project name binary}.s37*. For example, you would find the binary for a Matter light over Thread project with the default name here: *{solution folder}\|MatterLightOverThread\|GNU ARM v10.3.1 - Default\|MatterLightOverThread.s37*
+      **Note**: If you are unsure of the path for the newly created binary, you can find the project’s path in the project’s *Properties* window under *Resource*. The binary is typically located inside the *{solution folder}\|{project name folder}\|{GNU ARM v??? folder}\|{project name binary}.s37*. For example, you would find the binary for a Matter light over Thread project with the default name here: *{solution folder}\|MatterLightOverThread\|GNU ARM v10.3.1 - Default\|MatterLightOverThread.s37*.
 
       **Note**: You should only need to upload a bootloader image and erase the chip once. Subsequent application uploads do not need the bootloader image or chip erasure.
 
