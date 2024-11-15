@@ -46,7 +46,7 @@ Matter hub/chip-tool are ready and working. Keep the PuTTY session open for the 
 
    7. Once the project has compiled, in the Debug Adapters view right-click the board and select _Upload application_.
 
-   8. Select the _Application image path_ (Select the path for .s37 file in the path '\<workspace\>\project*name\GNU ARM v12.2.1 - Default') for the newly compiled project and a \_Bootloader image*. The EFR32MG24 devices must be programmed with a bootloader. Obtain those here: [Silicon Labs Matter Artifacts](/matter/{build-docspace-version}/matter-prerequisites/matter-artifacts).
+   8. Select the _Application image path_ (Select the path for .s37 file in the path '\<solution\>\project*name\GNU ARM v12.2.1 - Default') for the newly compiled project and a \_Bootloader image*. The EFR32MG24 devices must be programmed with a bootloader. Obtain those here: [Silicon Labs Matter Artifacts](/matter/{build-docspace-version}/matter-prerequisites/matter-artifacts).
 
    9. Disconnect the dev board from development computer.
 
