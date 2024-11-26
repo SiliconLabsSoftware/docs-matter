@@ -2,7 +2,7 @@
 
 Each Cluster is either a Client, Server, or both​. A Cluster is a collection of Attributes and Commands that are logically related.
 
-- Client: Stateless. Interacts with a server cluster by Reading, Writing or Subscribing to an attribute​
+- Client: Stateless. Interacts with a server cluster by Reading, Writing, or Subscribing to an attribute​
 - Server: Holds the State of Data or Attribute
 
 Clusters contain: Attributes, Events, Commands​.

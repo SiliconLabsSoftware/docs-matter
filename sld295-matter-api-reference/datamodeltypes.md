@@ -6,7 +6,7 @@ For an review of what the Matter Data Model is and how it is used, see the [Matt
 
 ## APIs
 
-The directory [```/src/app/util```](https://github.com/SiliconLabs/matter_extension/tree/main/third_party/matter_sdk/src/app/util) contains various utilities and some of the external API headers for interacting with the data model layer. In particular the various data type definitions and the public APIs to the data model are declared in the headers here.
+The directory [```/src/app/util```](https://github.com/SiliconLabs/matter_extension/tree/main/third_party/matter_sdk/src/app/util) contains various utilities and some of the external API headers for interacting with the data model layer. In particular, the various data type definitions and the public APIs to the data model are declared in the headers here.
 
 ## Header File
 

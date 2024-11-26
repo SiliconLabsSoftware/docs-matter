@@ -1,6 +1,6 @@
 # Matter API Reference
 
-This section covers the various Application Programming Interfaces (APIs) that a developper might use when developping a new Matter Application.  
+This section covers the various Application Programming Interfaces (APIs) that a developper might use when developing a new Matter Application.  
 
 - [**DataModel**](./datamodeltypes.md)
 - [**Attributes**](./attributes.md)
