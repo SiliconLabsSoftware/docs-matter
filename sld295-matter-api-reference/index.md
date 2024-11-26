@@ -19,4 +19,4 @@ The application 'Init' sequence lives in the ```AppTask.cpp``` file, and is call
 CHIP_ERROR AppTask::Init()
 ```
 
-The ```AppTask.cpp``` file may also contain event handlers and helper code useful to the application
+The ```AppTask.cpp``` file may also contain event handlers and helper code useful to the application.
