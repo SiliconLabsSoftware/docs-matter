@@ -12,4 +12,4 @@ The directory [```/src/app/util```](https://github.com/SiliconLabs/matter_extens
 
 This file contains definitions and constants for various data types and identifiers used in Matter.
 
-- [DataModelTypes](https://github.com/SiliconLabs/matter_extension/blob/main/src/lib/core/DataModelTypes.h)
+- [DataModelTypes](https://github.com/SiliconLabs/matter_extension/blob/main/third_party/matter_sdk/src/lib/core/DataModelTypes.h)
