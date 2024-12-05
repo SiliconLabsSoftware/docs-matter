@@ -7,7 +7,7 @@ Each Cluster is either a Client, Server, or both​. A Cluster is a collection o
 
 Clusters contain: Attributes, Events, Commands​.
 
-For more details see: [Matter Data Model](../sld119-matter-fundamentals/index.md).
+For more details see: [Matter Data Model](../sld288-matter-fundamentals-data-model/index.md).
 
 ## Header File
 
