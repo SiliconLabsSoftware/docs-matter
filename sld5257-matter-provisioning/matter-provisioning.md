@@ -11,7 +11,11 @@ Matter defines three interfaces to access the provisioned data during runtime:
 - [CommissionableDataProvider](https://github.com/SiliconLabs/matter_extension/blob/main/third_party/matter_sdk/src/include/platform/CommissionableDataProvider.h)
 - [DeviceAttestationCredentialsProvider](https://github.com/SiliconLabs/matter_extension/blob/main/third_party/matter_sdk/src/credentials/DeviceAttestationCredsProvider.h)
 
+<<<<<<< HEAD
 In Silicon Labs devices, all three interfaces are implemented by the [ProvisionStorage](https://github.com/SiliconLabs/matter_extension/blob/v2.3.2/examples/platform/silabs/provision/ProvisionStorage.h).
+=======
+In Silicon Labs devices, all three interfaces are implemented by the [ProvisionStorage](https://github.com/SiliconLabs/matter_extension/blob/main/third_party/matter_sdk/src/platform/silabs/provision/ProvisionStorage.h).
+>>>>>>> fb0ebe2 (Fixed link in matter-provisioning.md)
 
 The provisioning script on this folder now supercedes the following tools:
 
