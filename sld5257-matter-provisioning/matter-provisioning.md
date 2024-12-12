@@ -89,7 +89,7 @@ The Provisioner Script executes the following steps:
 
 1. Gathers the parameter definitions from the internal `./modules/parameters.yaml` file, local `parameters.yaml`, and the file indicated by the `--params` option.
 2. Parses the inputs from the local `default.json` file, the file indicated by the `--inputs` option, and command-line arguments.
-3. Generates test certificates (if the `--generate` option is used). This step requires an external [`chip-cert`](https://github.com/SiliconLabs/matter_extension/blob/main/src/tools/chip-cert/README.md) tool binary.
+3. Generates test certificates (if the `--generate` option is used). This step requires an external [`chip-cert`](https://github.com/SiliconLabs/matter_extension/tree/main/third_party/matter_sdk/src/tools/chip-cert#readme) tool binary.
 4. If a PKCS#12 file is provided, extracts the PAI, DAC, and DAC key files in DER format.
 5. Generates default values for the SPAKE2+ arguments, if necessary.
 6. Saves the input parameters as a JSON file (`latest.json` in the local folder, or the file indicated by `--output`).
