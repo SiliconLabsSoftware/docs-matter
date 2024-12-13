@@ -60,7 +60,7 @@ To enable ICD functionality for Wi-Fi, the `ICD Management` cluster/component ne
 
     ![ICD Component](images/icd-install-icd-component.png)
 
-- For SiWx917 SOC, click on **Replace Subscription Timeout Resumption**. Sleepy support is enabled; build the project. Additional sleep support can be enabled by installing `matter_siwx917_m4_sleep`.
+- For SiWx917 SOC, click on **Replace Subscription Timeout Resumption**. Sleepy support is enabled; build the project. Sleep support on M4 and TA can be enabled by installing `matter_icd_core` component.
 
 - For rs9116 and WF200: `matter_icd_management` component is installed by default for lock-app. For thermostat and window, you need to install the mentioned cluster/component to enable sleepy.
 - For 917NCP: `matter_icd_management` component is installed by default for lock-app. For thermostat and window, you need to install the mentioned cluster/component to enable sleepy.
