@@ -4,7 +4,7 @@ This guide describes how to get started developing a Matter Linux application wi
 
 ## Check Prerequisites
 
-To run Matter over Wi-Fi, check for the following prerequisites:
+To run this Matter over Wi-Fi example, check for the following prerequisites:
 
 ### Hardware Requirements
 
