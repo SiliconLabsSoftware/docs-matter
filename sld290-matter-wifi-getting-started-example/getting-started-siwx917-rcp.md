@@ -8,7 +8,7 @@ To run this Matter over Wi-Fi example, check for the following prerequisites:
 
 ### Hardware Requirements
 
-The following hardware devices are required for executing Matter over Wi-Fi:
+The following hardware devices are required for this example:
 
 - SiWx917 WiFi 6 and Bluetooth LE Co-processor Radio Board
   - BRD4346A
