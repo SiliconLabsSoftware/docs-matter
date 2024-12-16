@@ -1,6 +1,6 @@
 # Getting Started with Matter SiW917 RCP Linux Host
 
-This guide describes how to get started developing a Matter Linux application with Linux host device and SiWx917 running in RCP mode, where the application is running on the Linux host i.e., RaspberryPi and the networking stack run on the SiWx917 RCP.
+This guide describes how to get started developing a Matter Linux application with a Linux host device and a SiWx917 running in RCP mode. The application is running on the Linux host i.e., RaspberryPi and the networking stack run on the SiWx917 RCP.
 
 ## Check Prerequisites
 
