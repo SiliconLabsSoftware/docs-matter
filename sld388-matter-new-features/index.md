@@ -13,7 +13,7 @@
   - Improved power numbers for the Wi-Fi SiWx917 SoC with the Selective Listening feature.
   - Refrigerator application and Dimmer switch application support has been added for SiWx917.
   - SiWx917 SoC module board support is enabled for BRD4343A, BRD2708A, BRD2911A.
-  - SiWx917 NCP board support is enabled for BRD4357A.
+  - SiWx917 NCP board support is enabled for BRD4357A. Matter uses this board as an RCP; LwIP task runs on the EFR32.
   - Matter SiWx917 RCP Linux Host support has been added.
   - The mbedTLS library has been upgraded from 2.x to 3.x for the SiWx917.
 - DX Improvement: Added conformance data to Matter XML files and a 'Device Type Features' page in ZAP. Toggling a feature auto-updates the featureMap and aligns attributes, commands, and events to correct conformance plus shows detailed conformance warnings for them if their enabled state conflicts with conformance value.
