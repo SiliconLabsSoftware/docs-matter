@@ -64,6 +64,12 @@ SiWx917 SoC boards need to be flashed with proper firmware as mentioned below:
 
 - `SiWG917-B.2.x.X.X.X.rps - This firmware image is valid for BRD4338A(B0 common flash v2.0) board`
 
+## Matter SiWx917 RCP Linux app and Configuration file
+
+The SiWx917 RCP folder (siwx917_rcp_files.zip) contains the Matter Linux all-cluster-app, which can be run on a Raspberry Pi, and the wfx-sdio-overlay.dts file, a Device Tree Source file used to configure the SDIO interface on the Raspberry Pi to detect and communicate with the SiWx917 RCP.
+
+https://github.com/SiliconLabs/matter_extension/releases/download/v2.4.0/siwx917_rcp_files.zip
+
 ## SiWx917 SoC Configuration Files For JLink RTT Logging
 
 To check device logs on JLink RTT for the Matter Application on the SiWx917 SoC, the **JLink RTT** must be configured for the SiWx917 SoC device by following the instructions on the [JLink RTT SOC Support](/matter/{build-docspace-version}/matter-wifi-enabling-features/jlink-soc-setup) for SiWx917 SoC.
