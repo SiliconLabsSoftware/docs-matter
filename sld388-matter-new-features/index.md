@@ -2,7 +2,7 @@
 
 ## New Features for v2.5.0-1.4
 - Quality-tested Matter 1.4 GA solution for Thread MG24 / MG26, Wi-Fi MG24/WF200 and Wi-Fi MG24/RS9116 (non-sleepy). 
-  - For Wi-Fi SiWx917 SoC and NCP platforms, this is an Alpha. Basic functionality works but there are issues with stress testing, see the Known Issues section for details. If GA quality is desired, use v2.4.0 release until the v2.5.1 patch is available.
+  - For Wi-Fi SiWx917 SoC and NCP platforms, this is an Alpha. Basic functionality works but there are issues with stress testing, for deatils see the Known Issues section of the [Release Notes](https://github.com/SiliconLabs/matter_extension/releases/tag/v2.5.0). If GA quality is desired, use v2.4.0 release until the v2.5.1 patch is available.
 - Works with Simplicity SDK v2024.12.0 and WiSeConnect SDK v3.4.0.
 - Expands Matter support for Thread. 
   - The xG26 module support is enabled for brd4350a, brd4351a, brd2709a. 
