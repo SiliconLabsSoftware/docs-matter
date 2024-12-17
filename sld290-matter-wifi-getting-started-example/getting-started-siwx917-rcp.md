@@ -138,7 +138,7 @@ The following hardware devices are required for this example:
       ```shell
       $ ./chip-all-cluster-app --wifi --ble-device 0
       ```
-    - Now the application is running with the help of another pi/linux setup running chip-tool, the commissioning can be performed
+    - Now the application is running on the Raspberry Pi with the SiWx917 RCP connected. With the help of another Pi/Linux setup (Matter Hub/Controller) running chip-tool, the commissioning can be performed
       ```shell
       $ ./chip-tool pairing ble-wifi <node-id> <ssid> <psk> 20202021 3840
       $ ./chip-tool onoff on <node-id> 1
