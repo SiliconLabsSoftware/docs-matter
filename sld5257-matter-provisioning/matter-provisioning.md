@@ -482,7 +482,7 @@ commissioner, which can be done using a debugger.
 
 ### Flash Dump
 
-The `--creds_address` option controls the location of the attestation credentials. By default, these files are located at the beggining of the last page of flash (0x817E000 for EFR32MG24, and 0x831E000 for EFR32MG26). These addresses can be found in the memory map of the board's datasheet. For instance, for a MG24 board:
+The `--creds_address` option controls the location of the attestation credentials. By default, these files are located at the beginning of the last page of flash (0x817E000 for EFR32MG24, and 0x831E000 for EFR32MG26). These addresses can be found in the memory map of the board's datasheet. For instance, for a MG24 board:
 
 ```shell
 commander readmem --range 0x0817E000:+1536 --serialno 440266330
