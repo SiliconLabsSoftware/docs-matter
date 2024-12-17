@@ -18,7 +18,7 @@ The following hardware devices are required for this example:
 
 ### Firmware Images
 
-- Download the firmware images from [Matter Artifacts page](/matter/{build-docspace-version}/matter-prerequisites/matter-artifacts#siwx917-firmware-for-siwx917-soc).
+- Download the application and configuration files from [Matter Artifacts page](/matter/{build-docspace-version}/matter-prerequisites/matter-artifacts).
 
 ## Building and running the Matter Linux with RCP App
 
