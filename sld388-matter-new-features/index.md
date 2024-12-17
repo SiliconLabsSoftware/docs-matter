@@ -7,7 +7,8 @@
 - Expands Matter support for Thread. 
   - The xG26 module support is enabled for brd4350a, brd4351a, brd2709a. 
   - SixG301 Alpha support is enabled for BRD1019A. 
-  - GA support of the Matter Zigbee CMP (concurrent multi-protocol) Lighting example application. Some limitations exist, see the Known Issues section for details.
+  - GA support of the Matter Zigbee CMP (concurrent multi-protocol) Lighting example application. 
+    - Some limitations exist, for details see the Known Issues section of the [Release Notes](https://github.com/SiliconLabs/matter_extension/releases/tag/v2.5.0).
 - Expands Matter support for Wi-Fi SiWx917.
   - Improved power numbers for the Wi-Fi SiWx917 SoC with the Selective Listening feature.
   - Refrigerator application and Dimmer switch application support has been added for SiWx917.
