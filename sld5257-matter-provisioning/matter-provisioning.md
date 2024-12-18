@@ -7,16 +7,16 @@ is stored once during the manufacturing process, and do not change during the li
 
 Matter defines three interfaces to access the provisioned data during runtime:
 
-- [DeviceInstanceInfoProvider](https://github.com/SiliconLabs/matter_extension/blob/main/src/include/platform/DeviceInstanceInfoProvider.h)
-- [CommissionableDataProvider](https://github.com/SiliconLabs/matter_extension/blob/main/src/include/platform/CommissionableDataProvider.h)
-- [DeviceAttestationCredentialsProvider](https://github.com/SiliconLabs/matter_extension/blob/main/src/credentials/DeviceAttestationCredentialsProvider.h)
+- [DeviceInstanceInfoProvider](https://github.com/SiliconLabs/matter_extension/blob/main/third_party/matter_sdk/src/include/platform/DeviceInstanceInfoProvider.h)
+- [CommissionableDataProvider](https://github.com/SiliconLabs/matter_extension/blob/main/third_party/matter_sdk/src/include/platform/CommissionableDataProvider.h)
+- [DeviceAttestationCredentialsProvider](https://github.com/SiliconLabs/matter_extension/blob/main/third_party/matter_sdk/src/credentials/DeviceAttestationCredsProvider.h)
 
-In Silicon Labs devices, all three interfaces are implemented by the [ProvisionStorage](https://github.com/SiliconLabs/matter_extension/blob/main/examples/platform/silabs/provision/ProvisionStorage.h).
+In Silicon Labs devices, all three interfaces are implemented by the [ProvisionStorage](https://github.com/SiliconLabs/matter_extension/blob/main/third_party/matter_sdk/src/platform/silabs/provision/ProvisionStorage.h).
 
 The provisioning script on this folder now supercedes the following tools:
 
 - [Credentials Example](https://github.com/SiliconLabs/matter/tree/release_1.1.0-1.1/silabs_examples/credentials)
-- [Factory Data Provider](https://github.com/SiliconLabs/matter_extension/blob/main/scripts/tools/silabs/README.md)
+- [Factory Data Provider](https://github.com/SiliconLabs/matter_extension/tree/main/third_party/matter_sdk/scripts/tools/silabs)
 
 ## Provisioned Data
 
@@ -72,7 +72,9 @@ The directory structure is as follows:
   - support
     - efr32mg24
     - efr32mg26
-
+    - mgm24
+    - si917
+  
 ## Provision Script
 
 The `provision.py` file is the main script used to load all the required data on the Matter device. This script requires:
@@ -87,12 +89,12 @@ The Provisioner Script executes the following steps:
 
 1. Gathers the parameter definitions from the internal `./modules/parameters.yaml` file, local `parameters.yaml`, and the file indicated by the `--params` option.
 2. Parses the inputs from the local `default.json` file, the file indicated by the `--inputs` option, and command-line arguments.
-3. Generates test certificates (if the `--generate` option is used). This step requires an external [`chip-cert`](https://github.com/SiliconLabs/matter_extension/blob/main/src/tools/chip-cert/README.md) tool binary.
+3. Generates test certificates (if the `--generate` option is used). This step requires an external [`chip-cert`](https://github.com/SiliconLabs/matter_extension/tree/main/third_party/matter_sdk/src/tools/chip-cert#readme) tool binary.
 4. If a PKCS#12 file is provided, extracts the PAI, DAC, and DAC key files in DER format.
 5. Generates default values for the SPAKE2+ arguments, if necessary.
 6. Saves the input parameters as a JSON file (`latest.json` in the local folder, or the file indicated by `--output`).
 7. Flashes the Generator Firmware (GFW) onto the device, if required.
-8. Sends the provisioned data to the targed device using the selected channel and protocol.
+8. Sends the provisioned data to the target device using the selected channel and protocol.
 9. Flashes the Production Firmware (PFW), if provided the inputs.
 
 ## Provision Protocol
@@ -138,7 +140,7 @@ The Provision Tool can transfer the arguments to the device in two ways:
 This method can be used both in development and factory environments. This method works with the legacy Protocol version 1.x or
 the new protocol version 2.x.
 - Bluetooth: The provision script can transmit the data directly to applications running in provision-mode. While in this mode,
-Silicon Labs' example applications use the bluetooth communication to receive provisionning data. The Bluetooh channel requires
+Silicon Labs' example applications use the bluetooth communication to receive provisioning data. The Bluetooh channel requires
 Provision Protocol v2.x.
 
 ### Parameters
@@ -176,7 +178,7 @@ file defines the well-known (default) parameters used by the automatic provision
 | -hv, --hw_version         | optional             | dec/hex            | The hardware version value (Max 2 bytes).                                       |
 | -hs, --hw_version_str     | optional             | string             | The hardware version string (Max 64 char).                                      |
 | -md, --manufacturing_date | optional             | string             | Manufacturing date.                |
-| -ui, --unique_id         | optional^5 | hex string         | A 128 bits hex string unique id (without 0x).                                           |
+| -ui, --unique_id         | optional^5 | hex string         | Rotating Device ID's UniqueID (128-bits hex string). Not to be confused with the Basic Information cluster's UniqueId.                                |
 | -sd,  --discriminator     | optional^2 | dec/hex            | BLE pairing discriminator. e.g: 3840 or 0xF00. (12-bit)                                 |
 | -sp, --spake2p_passcode   | required             | dec/hex            | Session passcode used to generate the SPAKE2+ verifier.        |
 | -si, --spake2p_iterations | required             | dec/hex            | Iteration count used to generate the SPAKE2+ verifier.                  |
@@ -186,6 +188,7 @@ file defines the well-known (default) parameters used by the automatic provision
 | -sf, --commissioning_flow | optional             | dec/hex            | Commissioning Flow 0=Standard, 1=User Action, 2=Custom.                         |
 | -sr, --rendezvous_flags   | optional             | dec/hex            | Rendez-vous flag: 1=SoftAP, 2=BLE 4=OnNetwork (Can be combined).                |
 | -fi, --firmware_info      | optional             | string             | Firmware Information            |
+| -ca, --creds_address      | optional             | string             | Credentials base address            |
 | -cd, --certification      | required             | string             | Path to the Certification Declaration (CD) file.                |
 | -cc, --cd_cert            | optional             | string             | Certification Declaration Signing Cert            |
 | -ck, --cd_key             | optional             | string             | Certification Declaration Signing Key            |
@@ -396,7 +399,7 @@ Which will generate the test certificates using `chip-cert`, and provide the dev
 ## Attestation Files
 
 The `--generate` option instructs the `provider.py` script to generate test attestation files with the given _Vendor ID_, and _Product ID_.
-These files are generated using [the chip-cert tool](https://github.com/SiliconLabs/matter_extension/blob/main/src/tools/chip-cert/README.md),
+These files are generated using [the chip-cert tool](https://github.com/SiliconLabs/matter_extension/blob/main/third_party/matter_sdk/src/tools/chip-cert/README.md),
 and stored under the `./temp` folder (or the folder selected with `--temp` option).
 
 To generate the certificates manually (check chip-cert help for details):
@@ -411,11 +414,15 @@ chip-cert gen-att-cert -t i -l 3660 -c "Matter PAI" -V 0xfff1 -P 0x8005 -C ./tem
 chip-cert gen-att-cert -t d -l 3660 -c "Matter DAC" -V 0xfff1 -P 0x8005 -C ./temp/pai_cert.pem -K ./temp/pai_key.pem -o ./temp/dac_cert.pem -O ./temp/dac_key.pem
 ```
 
-By default, `provision.py` uses the Matter Test PAA [Chip-Test-PAA-NoVID-Cert.der](https://github.com/SiliconLabs/matter_extension/blob/main/credentials/test/attestation/Chip-Test-PAA-NoVID-Cert.der) and its key [Chip-Test-PAA-NoVID-Key.der](../credentials/test/attestation/Chip-Test-PAA-NoVID-Key.der), which are recognized by [chip-tool](../examples/chip-tool). So when using `chip-tool`, no `--paa-trust-store-path` argument is required.
+By default, `provision.py` uses the Matter Test PAA [Chip-Test-PAA-NoVID-Cert.der](https://github.com/SiliconLabs/matter_extension/blob/main/third_party/matter_sdk/credentials/test/attestation/Chip-Test-PAA-NoVID-Cert.der) and its key [Chip-Test-PAA-NoVID-Key.der](https://github.com/SiliconLabs/matter_extension/blob/main/third_party/matter_sdk/credentials/test/attestation/Chip-Test-PAA-NoVID-Key.der), which are recognized by [chip-tool](https://github.com/SiliconLabs/matter_extension/tree/main/third_party/matter_sdk/examples/chip-tool). So when using `chip-tool`, no `--paa-trust-store-path` argument is required.
 
 ### Example
 
-Build any sample application.
+From the root of the Silicon Labs Matter repo, build an sample application. For instance:
+```shell
+./scripts/examples/gn_silabs_example.sh ./examples/lighting-app/silabs ./out/lighting-app/ BRD4187C
+```
+
 
 Set up the device with key generation:
 
@@ -475,8 +482,7 @@ commissioner, which can be done using a debugger.
 
 ### Flash Dump
 
-On EFR32MG24, the last page is located at 0x0817E000. These addresses can be found in
-the memory map of the board's datasheet. For instance, for a MG24 board:
+The `--creds_address` option controls the location of the attestation credentials. By default, these files are located at the beginning of the last page of flash (0x817E000 for EFR32MG24, and 0x831E000 for EFR32MG26). These addresses can be found in the memory map of the board's datasheet. For instance, for a MG24 board:
 
 ```shell
 commander readmem --range 0x0817E000:+1536 --serialno 440266330
@@ -610,6 +616,4 @@ must match the contents of `cd.der`, `pai_cert.der`, and `dac.der`, respectively
 
 ## Board Support
 
-Pre-compiled images of the Generator Firmware can be found under ./images. The source
-code of these images is found under ./support. A single image is provided for the EFR32MG24 family and another one for the EFR32MG26 family. To cope with the different flash sizes, the `provision.py` script reads the device information using `commander`, and send it to the GFW,
-which configures the NVM3 during the initialization step.
+Pre-compiled images of the Generator Firmware can be found under ./images. The source code of these images is found under ./support. A single image is provided for each family (EFR32MG24, EFR32MG26, etc.). To cope with the different flash sizes, the `provision.py` script reads the device information using `commander`, and send it to the GFW, which configures the NVM3 during the initialization step.

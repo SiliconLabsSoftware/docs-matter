@@ -62,7 +62,7 @@ To run the Light and Switch Example on SiWx917 SOC, software must be installed. 
 
    7. Once the project has compiled, in the Debug Adapters view, right-click the board and select **Upload application**.
 
-   8. Select the **Application image path** (Select the path for the `.rps` or `_isp.bin` file for soc in the path _\<workspace\>\project_name\GNU ARM v12.x.x - Default_).
+   8. Select the **Application image path** (Select the path for the `.rps` or `_isp.bin` file for soc in the path _\<solution\>\project_name\GNU ARM v12.x.x - Default_).
 
    9. Disconnect the dev board from development computer.
 
