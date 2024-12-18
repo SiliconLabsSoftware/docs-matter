@@ -1,5 +1,24 @@
 # New Features
 
+## New Features for v2.5.0-1.4
+- Quality-tested Matter 1.4 GA solution for Thread MG24 / MG26, Wi-Fi MG24/WF200 and Wi-Fi MG24/RS9116 (non-sleepy). 
+  - For Wi-Fi SiWx917 SoC and RCP mode, this is an Alpha. Basic functionality works but there are issues with stress testing, for details see the Known Issues section of the [Release Notes](https://github.com/SiliconLabs/matter_extension/releases/tag/v2.5.0). If GA quality is desired, use v2.4.0 release until the v2.5.1 patch is available.
+- Works with Simplicity SDK v2024.12.0 and WiSeConnect SDK v3.4.0.
+- Expands our existing Matter support in Thread with new hardware and software capabilities.
+  - xG26 support is enabled for BRD4350A module, BRD4351A module, and BRD2709A Explorer Kit.
+  - SixG301 Alpha support is enabled for BRD1019A. 
+  - GA support of the Matter Zigbee CMP (concurrent multi-protocol) Lighting example application. 
+    - Some limitations exist, for details see the Known Issues section of the [Release Notes](https://github.com/SiliconLabs/matter_extension/releases/tag/v2.5.0).
+- Expands our existing Matter support in Wi-Fi with new hardware and software capabilities.
+  - Improved power numbers for the Wi-Fi SiWx917 SoC with the Selective Listening feature.
+  - Refrigerator application and Dimmer switch application support has been added for SiWx917.
+  - SiWx917 SoC module board support is enabled for BRD4343A, BRD2708A, BRD2911A.
+  - SiWx917 NCP board support is enabled for BRD4357A. Matter uses this board as an RCP; LwIP task runs on the EFR32.
+  - Matter SiWx917 RCP Linux Host support has been added.
+  - The mbedTLS library has been upgraded from 2.x to 3.x for the SiWx917.
+- DX Improvement: Added conformance data to Matter XML files and a 'Device Type Features' page in ZAP. Toggling a feature auto-updates the featureMap and aligns attributes, commands, and events to correct conformance plus shows detailed conformance warnings for them if their enabled state conflicts with conformance value.
+- Miscellaneous bug fixes and improvements.
+
 ## New Features for v2.4.0-1.4
 
 - Quality-tested Matter 1.4 GA solution for Thread MG24 / MG26, Wi-Fi 917 SoC and DevKit (BRD2605A), Wi-Fi MG24/WF200 (non-sleepy), Wi-Fi 917 NCP platforms. Beta support for Wi-Fi 917 SoC BRD4342A module and Alpha support for Wi-Fi MG24/RS9116 platforms.
