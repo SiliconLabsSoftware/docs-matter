@@ -40,15 +40,15 @@ These specifications can be downloaded from the [Specifications Download Request
 
 Once a device/product is ready for production, you must have your product certified by a Connectivity Standards Alliance approved testing facility to certify compliance with the Matter Standard. Review the [Certification Process](https://csa-iot.org/certification/why-certify/) to ensure a smooth and prompt Matter product certification.
 
-By becoming a member of the Connectivity Standards Alliance, access to their [Matter Certification Tool](https://csa-iot.org/certification/tools/certification-tool/) is granted. The Matter Certification Tool facilitates applying to certify your Matter product, after which you can create your application and upload your images and required documents. For additional resources on the certification process, refer to the [Certifying your Matter Product, an Overview](https://community.silabs.com/s/article/Certifying-your-Matter-Product-an-Overview?language=en_US) KBA. This KBA provides information on:
+By becoming a member of the Connectivity Standards Alliance, access to their [Matter Certification Tool](https://csa-iot.org/certification/tools/certification-tool/) is granted. The Matter Certification Tool facilitates applying to certify your Matter product, after which you can create your application and upload your images and required documents. For additional resources on the certification process, refer to the [Matter Certification](../sld416-matter-certification/index.md) section. This page provides information on:
 
 - Overview of Matter Certification Steps and milestones
 
-- Thread Certification
+- Transport layer Certification
 
-- Matter Test Harness Guide
+- The Matter Test Harness
 
-- Important Matter Resources and a Q&A
+- Important Matter and CSA Resources
 
 Once your device is approved, your organization will be issued an official Certification Declaration (CD). This CD is a cryptographic document issued by Connectivity Standards Alliance  that confirms that your device has been certified. The CD is included in the attestation process sent by the Commissionee during device attestation. To view a list of authorized test facilities, check out the [Authorized Testing Providers](https://csa-iot.org/certification/testing-providers/) summary. This CD is required to be injected during the manufacturing process if you are using the Silicon Labs CPMS process. This certification process can take some time to complete. You should ensure that this time is accounted for during your development lifecycle to keep your product on schedule.
 
@@ -70,7 +70,7 @@ Once your device is approved, your organization will be issued an official Certi
 
 ## Standards Development Organizations (SDO) Membership
 
-Matter is an application layer that works on top of other proven network technologies. Your organization may also be required to be a member of an SDO and be able to pass the certification processes that these organizations require. Examples of these SDOs are Bluetooth, WiFi, Thread, and others. Be sure to take these organizational requirements into account when planning your products. Refer to the [Certifying your Matter Product, an Overview](https://community.silabs.com/s/article/Certifying-your-Matter-Product-an-Overview?language=en_US) KBA.
+Matter is an application layer that works on top of other proven network technologies. Your organization may also be required to be a member of an SDO and be able to pass the certification processes that these organizations require. Examples of these SDOs are Bluetooth, WiFi, Thread, and others. Be sure to take these organizational requirements into account when planning your products. Refer to the [Matter Certification](../sld416-matter-certification/index.md) section for more details.
 
 ## Ready for Production
 
