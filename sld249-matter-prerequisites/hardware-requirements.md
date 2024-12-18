@@ -33,6 +33,11 @@ Over 60 Silicon Labs boards support running the RCP firmware. To build an image 
   - BRD4117A / 2.4GHz@20dBm
   - BRD4118A / 2.4GHz@20dBm
   - BRD2608A
+  - BRD2709A
+
+- **MGM26 boards:**
+  - BRD4350A
+  - BRD4351A
 
 ## Matter Over Thread Accessory Device Requirements
 
@@ -62,6 +67,11 @@ The Matter Accessory Device (MAD) is the actual device that the Matter applicati
   - BRD4117A / 2.4GHz@20dBm
   - BRD4118A / 2.4GHz@20dBm
   - BRD2608A
+  - BRD2709A
+
+- **MGM26 boards:**
+  - BRD4350A
+  - BRD4351A
 
 ## Matter Over Wi-Fi Accessory Device Requirements
 
@@ -114,12 +124,11 @@ Pre-built images for the SiWx917 connectivity firmware are available as per the 
 
 - **Wi-Fi SoC boards**
 
-  - SiWx917 / BRD4002A / Wireless Starter Kit
-  - SiWx917 SoC Mode
-    - SiWx917 SoC / Common Flash Radio Board / 2.4GHz
-      - BRD4338A - SiWx917 Wi-Fi 6 and Bluetooth LE 8MB Flash Radio Board
+  - BRD4338A / SiWx917 Wi-Fi 6 and Bluetooth LE 8 MB Flash SoC Pro Kit - SiWx917-PK6031A
+  - BRD2605A / SiWx917 Wi-Fi 6 and Bluetooth LE Dev Kit - SiWx917-DK2605A  
+  - BRD4342A / SiWx917 Wi-Fi 6 and Bluetooth LE 8 MB Flash + 8 MB ext PSRAM Radio Board with an internal RF switch - SiWx91x-RB4342A
 
-    **Note**: Refer to [SiWx917 SoC](https://www.silabs.com/development-tools/wireless/wi-fi/siwx917-pro-kit?tab=techdocs) for more details.
+  **Note**: Refer to [SiWx917 SoC](https://www.silabs.com/development-tools/wireless/wi-fi/siwx917-pro-kit?tab=techdocs) for more details.
 
 ### Additional Matter Over Wi-Fi Hardware Requirements
 

@@ -6,7 +6,7 @@ The following commands show how to commission a 917 SoC Matter End Device (Matte
 
 - Download the raspi image and flash the image onto pi using with default '**ubuntu**' username and enable ssh in the options.
 
-https://www.silabs.com/documents/public/software/SilabsMatterPi_2.4.0-1.4-extension.zip
+https://www.silabs.com/documents/public/software/SilabsMatterPi_2.5.0-1.4-extension.zip
 
 - Erase 917 SoC (brd4338a) and Flash the lighting app on 917 SoC and flash the connectivity firmware image.
 - command for commission using mattertool :

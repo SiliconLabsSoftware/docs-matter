@@ -9,28 +9,7 @@ This guide lists the steps to create and build a Silicon Labs Matter SLC project
 Clone Simplicity SDK:
 
 ```C
-git clone https://github.com/SiliconLabs/simplicity_sdk
-```
-
-Create a directory named `extension` inside the SiSDK directory.
-
-Clone the  Matter SiSDK Extension inside the `extension` directory:
-
-```C
-git clone https://github.com/SiliconLabs/matter_extension.git
-```
-
-To use SiWx91x Wi-Fi applications, clone the WiSeConnect SDK inside the extension directory.
-
-```C
-git clone https://github.com/SiliconLabs/wiseconnect.git
-```
-
-Your path to the Matter extension and WiSeConnect extension should look like:
-
-```C
-<Path/To/Sdk/Download>/extension/matter_extension
-<Path/To/Sdk/Download>/extension/wiseconnect
+https://github.com/SiliconLabsSoftware/matter_extension.git
 ```
 
 Install the following python packages:
@@ -40,8 +19,9 @@ pip3 install dload
 pip3 install python-dotenv  
 ```
 
-Change directory to cloned extension directory and run the `sl_setup.py` script. This will install the ARM gcc toolchain, SLC-CLI, ZAP, Simplicity Commander, Ninja, and Java.
+The `sl_setup_env.py` script creates an `.env` file which contains all the relevant virtual environment paths to be use by `sl_create_new_app.py` and `sl_build.py` scripts. The file is not meant to be used directly and is mentioned here only for reference.
 
+It will also create `environment_variables_vscode.txt`. This file can be referenced to add environment variables for VS Code-based builds.
 For Mac and Linux:
 
 ```C
@@ -55,18 +35,16 @@ For Windows:
 cd extension\matter_extension
 python slc\sl_setup_env.py
 ```
+The `sl_setup_env.py` script syncs and checkouts the submodules and creates symlinks for matter_extension. Windows users may need to enable long paths in the system and run the terminal with admin privileges to create the symlinks. 
 
-The `sl_setup_env.py` script creates an .env file to be used to set the environment variables needed for the installed tools, ARM toolchain, SLC-CLI, Java ZAP, Simplicity Commander, Ninja, and Java.
-
-It will also create `environment_variables_vscode.txt`. This file can be referred to add environment variables for VS Code based builds.
-
-The script will ask you for permission to trust simplicity_sdk, matter_extension, and wiseconnect.
+Users may enable long paths for git by running
+```
+git config --system core.longpaths true  
+```
 
 ## Creating an Application Project
 
 Run the `sl_create_new_app.py` script to create a BRD4187C project with name `MyNewApp` starting from the `lighting-app-thread.slcp` example or from the `lighting-app-thread-bootloader.slcw` [solution](../sld248-matter-overview-guides/matter-solutions.md) application project file:
-
-The script will ask user permission to trust the `simplicity_sdk` and `matter_extension` before generating.
 
 Sample-App Example:
 For Mac and Linux:
@@ -81,17 +59,18 @@ For Windows:
 python slc\sl_create_new_app.py MyNewApp slc\sample-app\lighting-app\efr32\lighting-app-thread.slcp brd4187c
 ```
 
-Workspaces Examples: 
+Solutions Examples:
+
 For Mac and Linux:
 
 ```C
-python3 slc/sl_create_new_app.py MyNewApp slc/workspaces/lighting-app/series-2/lighting-app-thread-bootloader.slcw brd4187c
+python3 slc/sl_create_new_app.py MyNewApp slc/solutions/lighting-app/series-2/lighting-app-thread-bootloader.slcw brd4187c
 ```
 
 For Windows:
 
 ```C
-python slc\sl_create_new_app.py MyNewApp slc\workspaces\lighting-app\series-2\lighting-app-thread-bootloader.slcw brd4187c
+python slc\sl_create_new_app.py MyNewApp slc\solutions\lighting-app\series-2\lighting-app-thread-bootloader.slcw brd4187c
 ```
 
 ## Building an Application Project
@@ -111,7 +90,8 @@ For Windows:
 python slc\sl_build.py MyNewApp\lighting-app-thread.slcp brd4187c
 ```
 
-Workspaces Examples:
+Solutions Examples:
+
 For Mac and Linux:
 
 ```C
@@ -123,7 +103,6 @@ For Windows:
 ```C
 python slc\sl_build.py MyNewApp\lighting-app-thread-bootloader.slcw brd4187c
 ```
-
 
 Alternately, one can use SLC-CLI commands directly to generate the project and then use `make` to build it.
 

@@ -88,18 +88,18 @@ You now have a working Matter hub. Keep the PuTTY session open for the following
 
       ![Upload application](resources/image13.png)
 
-   8. Select the **Application image path** for your newly compiled solution application. The resulting application image will be within the **artifact** directory inside the project workspace. This image has both the bootloader and application binaries combined into one image. Check **Erase chip before uploading image**. Bootloader images are also provided in the zip file referenced on the [Silicon Labs Matter Artifacts page](/matter/{build-docspace-version}/matter-prerequisites/matter-artifacts). Unzip and reference the extracted location if electing to use these default bootloader images.
+   8. Select the **Application image path** for your newly compiled solution application. The resulting application image will be within the **artifact** directory inside the solution project. This image has both the bootloader and application binaries combined into one image. Check **Erase chip before uploading image**. Bootloader images are also provided in the zip file referenced on the [Silicon Labs Matter Artifacts page](/matter/{build-docspace-version}/matter-prerequisites/matter-artifacts). Unzip and reference the extracted location if electing to use these default bootloader images.
 
        ![Application image upload](resources/image-upload.png)
 
       **Note**: If you are unsure of the path for the newly created binary, you can find the project’s path in the project’s *Properties* window under *Resource*. The binary is typically located in:
-      >*{workspace folder}\|{project name folder}\|{GNU ARM v??? folder}\|{project name binary}.s37*
+      >*{solution folder}\|{project name folder}\|{GNU ARM v??? folder}\|{project name binary}.s37*
 
       For example, you will find the binary for a Matter light over Thread project with the default name here:
-      >*{workspace folder}/MatterLightOverThread/GNU ARM v12.2.1 - Default/MatterLightOverThread.s37*
+      >*{solution folder}/MatterLightOverThread/GNU ARM v12.2.1 - Default/MatterLightOverThread.s37*
 
       The combined binary (bootloader and application image) will be located in:
-      >*{workspace folder}/MatterLightOverThread/artifact/MatterLightOverThreadSolution-full.s37*
+      >*{solution folder}/MatterLightOverThread/artifact/MatterLightOverThreadSolution-full.s37*
 
       **Note**: You should only need to upload a bootloader image and erase the chip once. Subsequent application uploads do not need the bootloader image or chip erasure.
 
