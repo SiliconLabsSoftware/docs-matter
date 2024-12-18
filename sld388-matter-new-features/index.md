@@ -1,13 +1,14 @@
 # New Features
 
 ## New Features for v2.5.0-1.4
+
 - Quality-tested Matter 1.4 GA solution for Thread MG24 / MG26, Wi-Fi MG24/WF200 and Wi-Fi MG24/RS9116 (non-sleepy). 
   - For Wi-Fi SiWx917 SoC and RCP mode, this is an Alpha. Basic functionality works but there are issues with stress testing, for details see the Known Issues section of the [Release Notes](https://github.com/SiliconLabs/matter_extension/releases/tag/v2.5.0). If GA quality is desired, use v2.4.0 release until the v2.5.1 patch is available.
 - Works with Simplicity SDK v2024.12.0 and WiSeConnect SDK v3.4.0.
 - Expands our existing Matter support in Thread with new hardware and software capabilities.
   - xG26 support is enabled for BRD4350A module, BRD4351A module, and BRD2709A Explorer Kit.
-  - SixG301 Alpha support is enabled for BRD1019A. 
-  - GA support of the Matter Zigbee CMP (concurrent multi-protocol) Lighting example application. 
+  - SixG301 Alpha support is enabled for BRD1019A.
+  - GA support of the Matter Zigbee CMP (concurrent multi-protocol) Lighting example application.
     - Some limitations exist, for details see the Known Issues section of the [Release Notes](https://github.com/SiliconLabs/matter_extension/releases/tag/v2.5.0).
 - Expands our existing Matter support in Wi-Fi with new hardware and software capabilities.
   - Improved power numbers for the Wi-Fi SiWx917 SoC with the Selective Listening feature.
