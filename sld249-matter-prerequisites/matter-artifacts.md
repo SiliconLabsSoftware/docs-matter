@@ -68,7 +68,7 @@ SiWx917 SoC boards need to be flashed with proper firmware as mentioned below:
 
 The SiWx917 RCP folder (siwx917_rcp_files.zip) contains the Matter Linux all-cluster-app, which can be run on a Raspberry Pi, and the wfx-sdio-overlay.dts file, a Device Tree Source file used to configure the SDIO interface on the Raspberry Pi to detect and communicate with the SiWx917 RCP.
 
-https://github.com/SiliconLabs/matter_extension/releases/download/v2.4.0/siwx917_rcp_files.zip
+https://github.com/SiliconLabs/matter_extension/releases/download/v2.5.1/siwx917_rcp_files.zip
 
 ## SiWx917 SoC Configuration Files For JLink RTT Logging
 
