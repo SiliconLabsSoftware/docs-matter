@@ -18,7 +18,7 @@ These pages are for developing Matter applications with the Matter Extension. Th
 
 Simplicity Studio is a GUI-based development experience in which you can create production-ready projects from a well-tested library. The Simplicity Studio development path also natively supports development on the Windows operating system. As a result, Windows users should use Simplicity Studio for their development environment. SLC-CLI offers command-line access to application configuration and generation of the Matter Extension.
 
-The [Silicon Labs Matter GitHub repo](https://github.com/SiliconLabs/matter) will no longer be updated to reflect newer Matter versions **after Matter 1.3**. As a result, this is no longer a recommended path for Matter Development of **new products**.
+The [Silicon Labs Matter GitHub repo](https://github.com/SiliconLabs/matter) will no longer be updated to reflect newer Matter versions **after Matter 1.3**. As a result, it is no longer a recommended path for Matter Development of **new products**.
 
 ## Other Resources
 
