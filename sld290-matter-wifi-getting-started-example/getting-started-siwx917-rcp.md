@@ -73,10 +73,8 @@ The following hardware devices are required for this example:
  
       # Disable UART, Broadcom integrated Bluetooth and Wi-Fi
       dtoverlay=disable-uart
-      # The below two lines to be uncommented once the RCP driver
-      # is upgraded with the latest Kernel to resolve the BLE issue
-      # dtoverlay=disable-bt
-      # dtoverlay=disable-bt-pi5
+      dtoverlay=disable-bt
+      dtoverlay=disable-bt-pi5
       dtoverlay=disable-wifi
       dtoverlay=disable-wifi-pi5
  
@@ -110,11 +108,8 @@ The following hardware devices are required for this example:
       $ ./start_SiWT917.sh <mode>
 
       For example,
-      $ ./start_SiWT917.sh STA
+      $ ./start_SiWT917.sh STA_BLE
       ```
-      Note: mode to be selected STA or STA_BLE
-    
-      For now, STA to be used due to BLE issue which will be resolved in the upcoming 917 RCP release.
     - Now the remaining steps can be run without root privileges.
 
 6. Check if there is a wlan0 interface is created via
