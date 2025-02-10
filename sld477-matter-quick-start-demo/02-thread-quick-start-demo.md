@@ -4,7 +4,7 @@ This Quick-Start Guide will demo the out-of-box experience for adding an EFR32MG
 
 ## Software Requirements
 
-- Simplicity Studio v5 with SiSDK - 2024.12.1 + Silicon Labs Matter - 2.5.1 + WiSeConnect - 3.4.1
+- Simplicity Studio v5 with SiSDK - 2024.12.1 + Silicon Labs Matter - 2.5.1
 - Simplicity Connect mobile App on Smartphone
 
 ## Hardware Requirements
