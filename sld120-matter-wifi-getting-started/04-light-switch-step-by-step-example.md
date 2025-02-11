@@ -137,6 +137,6 @@ Now two Matter accessory devices (MADs) are on the network and ready to be used.
         - **BTN1 short press**: To toggle the light on the Matter light device.
 
       - **Level Control Binding**
-        - By default, Step direction is UP.
+        - By default, step direction is UP.
         - **BTN0 short press + BTN1 short press**: Inverts the Step direction (i.e., UP to DOWN and vice versa).
         - **BTN1 long press**: Moves the level UP or DOWN according to the step direction
