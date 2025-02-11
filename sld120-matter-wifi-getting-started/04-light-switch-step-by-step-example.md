@@ -138,5 +138,5 @@ Now two Matter accessory devices (MADs) are on the network and ready to be used.
 
       - **Level Control Binding**
         - By default, step direction is UP.
-        - **BTN0 short press + BTN1 short press**: Inverts the Step direction (i.e., UP to DOWN and vice versa).
+        - **BTN0 short press + BTN1 short press**: Inverts the step direction (i.e., UP to DOWN and vice versa).
         - **BTN1 long press**: Moves the level UP or DOWN according to the step direction
