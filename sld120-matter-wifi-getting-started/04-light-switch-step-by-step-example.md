@@ -131,7 +131,7 @@ Now two Matter accessory devices (MADs) are on the network and ready to be used.
 
       - **1**: The application endpoint in the switch that holds the binding table. This is always 1.
 
-3. With the binding complete, a button press (BTN1) on Matter light_switch device should now toggle the light or control the level of Matter light device. The Button functionality is as follows:
+3. With the binding complete, a button press (BTN1) on Matter light switch device should now toggle the light or control the level of Matter light device. The button functionality is as follows:
 
       - **On/Off Binding**
         - **BTN1 short press**: To toggle the light on the Matter light device.
