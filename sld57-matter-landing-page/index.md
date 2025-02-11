@@ -4,8 +4,6 @@ The Matter protocol leverages existing IP technologies, including Wi-Fi and Thre
 
 Silicon Labs supports Matter on both 802.15.4 (Thread) and 802.11 (Wi-Fi) transport protocols. The Thread development use case differs from Wi-Fi because the Thread protocol requires an OpenThread Border Router (OTBR).
 
-The Unify Matter Bridge is an application that makes legacy devices, such as Z-Wave and Zigbee devices, accessible on a Matter fabric. It does so by acting as an *IoT Service* in a Unify Framework.
-
 ![Silicon Labs Matter Summary](resources/silicon-labs-matter.png)
 
 Device: SiWx917 SoC
