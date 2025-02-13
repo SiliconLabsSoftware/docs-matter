@@ -8,8 +8,8 @@
 
 1. Update the **JlinkDevices.xml** and **RS9117_SF_4MB_42bsp.elf** files found on the [Matter Artifacts Page](/matter/{build-docspace-version}/matter-prerequisites/matter-artifacts).
     - Download the JLinkDevices.xml file and copy it in your **JLink RTT** installation path shown in this [JlinkDevices Folder](https://wiki.segger.com/J-Link_Device_Support_Kit#JLinkDevices_folder). If there is no JLinkDevices Folder, create a `JLinkDevices` folder and copy the `JlinkDevices.xml` file into it.
-    - In the `JLinkDevices` folder, create a `Devices` folder and then create a sub-folder named `SiliconLabs`.
-    - Download the **RS9117_SF_4MB_42bsp.elf** file (Flash driver) and copy it in the created `SiliconLabs` folder.
+    - In the `JLinkDevices` folder, create an `si917` folder.
+    - Download the **RS9117_SF_4MB_42bsp.elf** file (Flash driver) and copy it in the created `si917` folder.
 
     **Note**:- **RS9117_SF_4MB_42bsp.elf** flash driver file is used to download the application using the Ozone debugger.
 

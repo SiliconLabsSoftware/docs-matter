@@ -113,13 +113,13 @@ Now two Matter accessory devices (MADs) are on the network and ready to be used.
 
       - **0**: The endpoint in the Matter device that holds the ACL. This is always 0.
 
-   2. Second, bind the switch's write command to the light. This is done by updating the binding table of the Matter light_switch device. This can be done using the command: `./chip-tool binding write binding '[ { "fabricIndex" : 1 , "node" :`**`nodeID-light`**,`"endpoint" :`**`1`**,`"cluster" :`**`6`**`} ]'`**`nodeID-switch 1`**, where the highlighted parameters are:
+   2. Second, bind the switch's write command to the light. This is done by updating the binding table of the Matter light_switch device. This can be done using the command: `./chip-tool binding write binding '[ { "fabricIndex" : 1 , "node" :`**`nodeID-light`**,`"endpoint" :`**`1`**,`"cluster" :`**`cluster-ID`**`} ]'`**`nodeID-switch 1`**, where the highlighted parameters are:
 
       - **nodeID-light**: The node ID of the Matter light device.
 
       - **1**: The application endpoint in the light. This is always 1.
 
-      - **6**: The on/off cluster in the light. This is always 6.
+      - **cluster-ID**: The ID of the cluster to be controlled. Currently supported clusters are on/off(ID: 6) and level control(ID: 8).
 
       - **nodeID-switch**: The node ID of the switch.
 
@@ -131,4 +131,12 @@ Now two Matter accessory devices (MADs) are on the network and ready to be used.
 
       - **1**: The application endpoint in the switch that holds the binding table. This is always 1.
 
-3. With the binding complete, a button press (BTN1) on Matter light_switch device should now toggle the light status of Matter light device.
+3. With the binding complete, a button press (BTN1) on Matter light switch device should now toggle the light or control the level of Matter light device. The button functionality is as follows:
+
+      - **On/Off Binding**
+        - **BTN1 short press**: To toggle the light on the Matter light device.
+
+      - **Level Control Binding**
+        - By default, step direction is UP.
+        - **BTN0 short press + BTN1 short press**: Inverts the step direction (i.e., UP to DOWN and vice versa).
+        - **BTN1 long press**: Moves the level UP or DOWN according to the step direction

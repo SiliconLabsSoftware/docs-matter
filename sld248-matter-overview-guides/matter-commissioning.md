@@ -20,7 +20,7 @@ The Onboarding payload can come in a variety of different formats:
 - QR Code Payload which is the string outputted when scanning the QR Code which will be in the format MT:Y.K9042C00KA0648G00
 - Manual Pairing Code which would look something like this: 749701123365521327694
 
-The ConnectedhomeIP's CHIP-TOOL has some added commands that can help you parse the setup payload: ./chip-tool payload parse-setup-payload (https://github.com/project-chip/connectedhomeip/blob/master/docs/guides/chip_tool_guide.md).
+The ConnectedhomeIP's CHIP-TOOL has some added commands that can help you parse the setup payload: ./chip-tool payload parse-setup-payload [chip_tool_guide.md](https://github.com/project-chip/connectedhomeip/blob/master/docs/guides/chip_tool_guide.md).
 
 ## Initiate the Commissioning Process
 
