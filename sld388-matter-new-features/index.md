@@ -3,10 +3,10 @@
 ## New Features for v2.5.1-1.4
 
 - Quality-tested Matter 1.4 GA solution for Thread MG24 / MG26, Wi-Fi SiWx917 SoC and RCP mode, Wi-Fi MG24/WF200 and Wi-Fi MG24/RS9116 (non-sleepy).
-  - For Wi-Fi SiWx917 SoC and RCP mode, there are known timeout issues in certain stress test conditions, which have not been observed with ecosystems under normal conditions. For details see the Known Issues section of the [Release Notes](https://github.com/SiliconLabs/matter_extension/releases/tag/v2.5.1).
+  - For Wi-Fi SiWx917 SoC and RCP mode, there are known timeout issues in certain stress test conditions, which have not been observed with ecosystems under normal conditions. For details, see the Known Issues section of the [Release Notes](https://github.com/SiliconLabs/matter_extension/releases/tag/v2.5.1).
 - Works with Simplicity SDK v2024.12.1 and WiSeConnect SDK v3.4.1.
 - GA support of the Matter Zigbee CMP (concurrent multi-protocol) Light example application.
-  - Some limitations exist, for details see the Known Issues section of the [Release Notes](https://github.com/SiliconLabs/matter_extension/releases/tag/v2.5.1).
+  - Some limitations exist. For details, see the Known Issues section of the [Release Notes](https://github.com/SiliconLabs/matter_extension/releases/tag/v2.5.1).
 - Implemented button switch functionality for the Dimmer Switch application.
 - Fixed compatibility issue related to provisioning storage changes following the mbedTLS version upgrade.
 - Resolved commissioning issues in the Multi Sensor App on the SiWx917.
