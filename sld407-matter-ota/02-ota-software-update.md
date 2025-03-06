@@ -198,7 +198,7 @@ The OTA Multi Image Requestor Encryption component should be added to the projec
 
 **Hint**: it can be useful to compress this image to reduce the size needed to OTA. This can be done via the optional flag ```--compress lzma```. If you use LZMA compression for creating the OTA file, make sure that the bootloader has been built with the LZMA compress component.
 
-To create the .ota file, simply follow the method discuessed above using the combined image: 
+To create the .ota file, simply follow the method discuessed above using the combined image:
 
 ```shell
 commander ota create --type matter --input combined_image.gbl --vendorid 0xFFF1 --productid 0x8005 --swstring "2.0" --swversion 2 --digest sha256 -o MatterApp.ota
@@ -291,6 +291,7 @@ If your version provides Multi-chip OTA functionality. The following command com
 ```shell
 commander gbl create --bootloader <bootloader_image>.s37 --app <application_image>.s37 <combined_image>.gbl
 ```
+
 For either of these cases the ```--compress lzma``` option can be used to reduce the size of the resulting image, just ensure that the bootloader has been built with the LZMA compress component.
 
 Then, run the following command to create the .ota file.
@@ -326,7 +327,7 @@ After completing this step, the ProviderNodeID is 1.
 
 ### Step 4: Commission the Matter device and config the default OTA Provider
 
-To commission the Matter device, hold Button 0 on the board for 6 seconds to factory-reset the device. After that, run the following command to start the commissioning process and assign the device with the NodeID = 2. 
+To commission the Matter device, hold Button 0 on the board for 6 seconds to factory-reset the device. After that, run the following command to start the commissioning process and assign the device with the NodeID = 2.
 
 ```mattertool bleThread -n 2```
 
