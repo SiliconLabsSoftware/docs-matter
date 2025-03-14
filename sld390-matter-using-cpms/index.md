@@ -56,7 +56,7 @@ CPMS will ask for various attributes about your device, but these are the primar
 
 10. Ensure that you have the CD in hand. This will need to be uploaded to CPMS. For a production device, this will need to be the fully accredited CD from an approved test facility.
 
-11. You're ready to order samples with [CPMS](https://cpms.silabs.com/)!
+11. You're ready to order samples with [CPMS](https://console.silabs.com/cpms)!
 
 ## CPMS Matter Production Guide (Do's and Don'ts)
 
@@ -65,7 +65,7 @@ Producing products for Matter can be a challenge. Here are a few suggestions to 
 1. Your Matter application should be built to work on the device that you are specifically targeting. For example, an application built for a 10dBm power output part will not work on a 20dBm part. You will need to build and test your application on the specific target device to ensure that your application will work properly.
 2. CPMS stores Matter attestation data in the last six pages of flash. Of those six pages, Matter certificates and the CD are stored in the last page of flash. Other Matter attestation data is located in the NVM3 block. Below is an example memory map describing how Matter attestation data is programmed.
 
-    ![screenshot](resources/image8.png)
+    ![CPMS Flash diagram screenshot](resources/cpms-flash-diagram.png)
 
 3. If a part has been programmed in CPMS with standard debug lock, this **MUST NOT** be unlocked if you are expecting to commission this device in the future.  By unlocking this, **all pages in flash will be erased**, including the Matter device attestation data and certificates.  We recommend using Secure Debug Lock in production so that you will have access to debug if required.
 
@@ -97,57 +97,62 @@ You've completed all of the items in the pre-production checklist and are ready 
 
 1. To access CPMS, you need to register for an account with Silicon Labs. If you are using Simplicity Studio or other Silicon Labs tools, you probably already have this. If not, [register for a Silicon Labs account](https://community.silabs.com/SL_CommunitiesSelfReg).
 
-2. [Login to CPMS](https://cpms.silabs.com/login).
+2. [Login to CPMS](https://console.silabs.com/cpms).
 
-3. Create a new Custom Part.
+    ![CPMS Console Landing Page screenshot](resources/cpms-console-landing.png)
 
-4. Select the part on which you have built your Matter application. You will be asked a couple of questions about your future order. This helps Silicon Labs prepare for your eventual order and ensure that the factories are ready to go in the timeframe expected.
+3. Create a new Custom Part by giving your part a name.
 
-    ![screenshot](resources/image1.png)
+4. Select the part on which you have built your Matter application.
 
-5. Click **Customize** to start configuring your device. With CPMS, you have a wide range of options to work with to customize your device. Matter is only one component of this. You have full control over other features of the part itself such as debug lock/unlock, secure boot, and many other security features depending on the part selected.
+    ![Create New Customization screenshot](resources/cpms-create-new-customization.png)
+
+5. Click **Create New Customization** to start configuring your device. With CPMS, you have a wide range of options to work with to customize your device. Matter is only one component of this. You have full control over other features of the part itself such as debug lock/unlock, secure boot, and many other security features depending on the part selected.
 
 6. The Matter-specific configurations can be found in the Ecosystem Identities toggle. Select the toggle to view the available ecosystems supported by your device.
 
-    ![screenshot](resources/image2.png)
+    ![CPMS Add Matter Ecosystem screenshot](resources/cpms-add-matter.jpg)
 
 7. Add the Matter Ecosystem to your part and you will be presented with the required Matter inputs to help secure the proper PAA/PAI/DAC certificates from Kudelski. CPMS will automatically obtain the PAIs from Kudelski based on your email address domain. Any PAIs setup with Kudelski will be available for you to choose. This includes both Test and Production PAIs. You will need to select a PAI to continue.
 
     **Example Test DCL PAIs**
-    ![screenshot](resources/csa-dcl-test.jpg)
+    ![CPMS Matter Test PAI selection screenshot](resources/cpms-matter-test-pai.jpg)
 
     **Example Production DCL PAIs**
-    ![screenshot](resources/csa-dcl-production.jpg)
+    ![CPMS Matter Production PAI selection screenshot](resources/cpms-matter-production-pai.jpg)
+
+    **Example of a missing set of PAIs (test or production)**
+    ![CPMS missing specific DCL PAI information screenshot](resources/cpms-matter-missing-pai.jpg)
 
     Upon selecting a PAI from the list, the VID (and PID if applicable) will be automatically set for you further down in the customization.
 
     **Note:** A condition can exist where CPMS is unable to obtain PAIs from Kudelski for your company and an error is presented. This is most likely due to the system not being able to obtain PAIs from Kudelski IoT. This could be that the account has not been setup yet or the PAIs have not yet been finalized. There are a series of steps that need to complete before these are available to CPMS. Please reach out to [Kudelski IoT](https://www.kudelski-iot.com/) to check on this status and work through any remaining items.
 
-    ![screenshot](resources/missing-pais.jpg)
+    ![CPMS missing all PAI information screenshot](resources/cpms-matter-no-pai-records.jpg)
 
 8. Upload your Certification Declaration. This is the file in .der format that you should have received after successful certification from a Connectivity Standards Alliance approved testing facility. Note: If you are creating a sample for the Production DCL, the VID (and PID if applicable) in the CD must match that of the PAI. If a mismatch occurs, the sample will not be able to properly attest to the Matter network.
 
-    ![screenshot](resources/image3.png)
+    ![CPMS Matter Certification Declaration upload screenshot](resources/cpms-matter-certification-declaration.jpg)
 
 9. (optional) If you used Simplicity Studio, use the Provisioning Tool to output your Matter information directly from the application. This tool outputs a cpms.json file that can be uploaded to help you quickly fill out this information.
 
-    ![screenshot](resources/image4.png)
+    ![CPMS configuration file upload screenshot](resources/cpms-configuration-file-upload.jpg)
 
 10. Fill out the required Matter fields. This includes the VID, PID, and several additional inputs to help Silicon Labs generate the appropriate certificate chain to generate and sign the DACs for your parts. If you use the cpms.json file that is generated through the Silicon Labs Matter provisioning tool, these will be automatically filled in for you. Depending on the type of PAI chosen prior to this step, the VID or the VID & PID will be automatically filled in for you and disabled to prevent any manual changes of these values. Any mismatch in VID/PID values will cause attestation problems when trying to attest to the Matter network. It is crucially important that the VID/PID in the PAI, CD, and any input values from CPMS all match when they are provisioned to the device for a production build.
 
-    ![screenshot](resources/image5.png)
+    ![CPMS Matter required fields screenshot](resources/cpms-matter-required-fields.jpg)
 
     **Note:** The PAI that you selected previously will autofill the VID and PID inputs and disable these to prevent a mismatch between the PAI and the VID/PID combination that could get entered manually. Depending on the PAI, you could have a VID-only scoped PAI which would fill only the VID value and leave the PID input open for you to fill in. If your PAI is VID & PID scoped, both of these values will be automatically filled in for you, as is the case for the scenario presented below.
 
-    ![screenshot](resources/vid-pid-autofill.png)
+    ![CPMS autofills VID and PID screenshot](resources/cpms-matter-vid-pid-autofill.jpg)
 
 11. (optional) Fill out the Matter Optional Fields. These fields will also be automatically filled out for you if you use the cpms.json file referenced above.
 
-    ![screenshot](resources/image6.png)
+    ![CMS Matter optional fields screenshot](resources/cpms-matter-optional-fields.jpg)
 
 12. Once you have satisfied all of the required fields, you will be prompted to **Proceed to Review** to review the selections in your order.
 
-    ![screenshot](resources/image7.png)
+    ![CPMS review order button screenshot](resources/cpms-review-order.jpg)
 
 13. Review your customizations and pricing information. You may also be asked for the shipping information if this is not on file with us already. The sample orders will be shipped to this address.
 
