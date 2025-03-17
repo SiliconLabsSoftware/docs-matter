@@ -178,7 +178,7 @@ Multi-Chip OTA is implemented only for EFR32 devices. Multi-chip OTA uses an enh
 
 The script can be obtained from the Matter Extension github repository.
 
-For more information on creating a Multi-Chip .ota file, see the README.md.
+For more information on creating a Multi-Chip .ota file, see the [README.md](https://github.com/SiliconLabs/matter/blob/latest/scripts/tools/silabs/ota/README.md).
 
 Applications must be built with the OTA Multi Image Requestor component added to the project in Simplicity Studio to enable them to process the TLVs.
 
@@ -198,7 +198,7 @@ The OTA Multi Image Requestor Encryption component should be added to the projec
 
 **Hint**: it can be useful to compress this image to reduce the size needed to OTA. This can be done via the optional flag ```--compress lzma```. If you use LZMA compression for creating the OTA file, make sure that the bootloader has been built with the LZMA compress component.
 
-To create the .ota file, simply follow the method discuessed above using the combined image:
+To create the .ota file, simply follow the method discussed above using the combined image:
 
 ```shell
 commander ota create --type matter --input combined_image.gbl --vendorid 0xFFF1 --productid 0x8005 --swstring "2.0" --swversion 2 --digest sha256 -o MatterApp.ota
@@ -280,13 +280,13 @@ Then build the application and save the binary file in a known directory.
 
 ### Step 2: Creating the OTA file
 
-To create the OTA file, if your version not provides Multi-chip OTA functionality or if you are only upgrading the application image, run the following steps: the file out.s37 -> out.gbl -> out.ota by running the following command:
+If your version does not support Multi-chip OTA functionality or if you are **only** upgrading the application image, then we only need to convert the following files; app.s37 -> app.gbl -> app.ota by running this command:
 
 ```shell
 commander gbl create MatterLightOverThread.gbl --app MatterLightOverThread.s37
 ```
 
-If your version provides Multi-chip OTA functionality. The following command combines the bootloader and application image into a single .gbl file with lzma compression enabled.
+If your version supports Multi-chip OTA functionality. The following command combines the bootloader and application image into a single .gbl file with lzma compression enabled.
 
 ```shell
 commander gbl create --bootloader <bootloader_image>.s37 --app <application_image>.s37 <combined_image>.gbl
