@@ -541,6 +541,154 @@ There are many more commands that can be used from the Scenes Management cluster
 
 Finally, in this example we will toggle between two scenes comrpising a set of two Matter Light devices to demonstrate everything discussed above. We have made the following script which combines everything into a single tool. Assuming that steps 1-4 are complete:
 
+```c
+/*
+	AUTOMATION SCRIPT FOR SCENES Demo
+
+	This script is used to automate the process of:
+		1) setting up the group keys of a new matter device to be added to a group
+		2) add the new matter device to a specified group
+		3) setup groupcasting capabilities (note that this only needs to be executed once)
+		4) convert RGB values to CurrentX and CurrentY attributes of the Color Control Cluster, to then:
+			a) directly add the scene to the device
+			b) parse the command to be copy-pasted
+		5) recall the newly created scene, either by:
+			a) groupcast. Requires extra option [-groupcast]
+			b) unicast. Default option, Requires no extra option
+*/
+
+#include <stdint.h>
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define MAX 65536.0
+
+int main(int argc, char *argv[]) {
+
+	// Check if required amount of arguments were given
+	if (argc < 9) {
+		printf("Usage: %s <groupID> <sceneID> <transitionTime> <sceneName> <R> <G> <B> <nodeID> [-setupGroupKeys] [-addGroup] [-setupGroupcast] [-addScene] [-recallScene] [-groupCast]\n", argv[0]);
+		printf("IMPORTANT: Please ensure that the options are listed in the order above.\n");
+		printf("Default: If no options are provided, the script will only return the parsed addScene command as a string.\n");
+	    return 1;
+	}
+	
+    // Access the arguments
+	int groupID = atoi(argv[1]);
+	int sceneID = atoi(argv[2]);
+	int transitionTime = atoi(argv[3]);
+	
+	char *sceneName = argv[4];
+	
+    int r = atoi(argv[5]);
+    int g = atoi(argv[6]);
+   	int b = atoi(argv[7]);
+	int nodeID = atoi(argv[8]);
+	
+	
+	// Check if arguments passed are integers
+	if (sscanf(argv[1], "%d", &groupID) != 1 ||
+	    sscanf(argv[2], "%d", &sceneID) != 1 ||
+	    sscanf(argv[3], "%d", &transitionTime) != 1 ||
+	    sscanf(argv[5], "%d", &r) != 1 ||
+	    sscanf(argv[6], "%d", &g) != 1 ||
+	    sscanf(argv[7], "%d", &b) != 1 ||
+	    sscanf(argv[8], "%d", &nodeID) != 1) {
+	    printf("Error: Invalid integer argument(s). <groupID> <sceneID> <transitionTime> <R> <G> <B> <nodeID> must be integers\n");
+	    return 1;
+	}
+	
+	// Check if RGB values are in proper range
+	if (!(r >= 0 && r <= 255 && g >= 0 && g <= 255 && b >= 0 && b <= 255)) {
+		printf("Error: RGB values must be in the range [0, 255].\n");
+		return 1;
+	}
+  
+  	// Convert RGB to xy, then from xy to CurrentX and CurrentY
+	float R = r/255.0;
+	float G = g/255.0;
+	float B = b/255.0;
+	
+	float X = R * 0.4124564 + G * 0.3575761 + B * 0.1804375;
+	float Y = R * 0.2126729 + G * 0.7151522 + B * 0.0721750;
+	float Z = R * 0.0193339 + G * 0.1191920 + B * 0.9503041;
+	
+	float sum = X + Y + Z;
+	
+	float x = X/sum;
+	float y = Y/sum;
+
+	float currentX = (int)(x*MAX);
+	float currentY = (int)(y*MAX);
+	
+	// command buffer
+	char command[512];
+
+	// Go through all options
+	int options = argc - 9;
+	if (options >= 1) {
+		for (int i = 9; i < argc; i++) {
+			char * option = argv[i];
+			if (strcmp(option,"-setupGroupKeys") == 0) {
+				// command 1
+				snprintf(command, sizeof(command), "$HOME/scripts/matterTool.sh accesscontrol write acl \'[{\"fabricIndex\": 1, \"privilege\": 5, \"authMode\": 2, \"subjects\": [112233], \"targets\": null },{\"fabricIndex\": 1, \"privilege\": 4, \"authMode\": 3, \"subjects\": [1], \"targets\": null }]\' %d 0", nodeID);
+				system(command);
+				
+				// command 2
+				snprintf(command, sizeof(command), "$HOME/scripts/matterTool.sh groupkeymanagement key-set-write \'{\"groupKeySetID\": 42, \"groupKeySecurityPolicy\": 0, \"epochKey0\": \"d0d1d2d3d4d5d6d7d8d9dadbdcdddedf\", \"epochStartTime0\": 2220000,\"epochKey1\": \"d1d1d2d3d4d5d6d7d8d9dadbdcdddedf\", \"epochStartTime1\": 2220001,\"epochKey2\": \"d2d1d2d3d4d5d6d7d8d9dadbdcdddedf\", \"epochStartTime2\": 2220002 }\' %d 0", nodeID);
+				system(command);
+				
+				// command 3
+				snprintf(command, sizeof(command), "$HOME/scripts/matterTool.sh groupkeymanagement write group-key-map \'[{\"groupId\": %d, \"groupKeySetID\": 42, \"fabricIndex\": 1}]\' %d 0", groupID, nodeID);
+				system(command);
+			}
+			
+			else if (strcmp(option,"-addGroup") == 0) {
+				// command 1
+				snprintf(command, sizeof(command), "$HOME/scripts/matterTool.sh groups add-group %d \"LightGroup\" %d 1", groupID, nodeID);
+				system(command);
+				
+			} 
+			else if (strcmp(option,"-setupGroupcast") == 0) {
+				// command 1
+				snprintf(command, sizeof(command), "$HOME/scripts/matterTool.sh groupsettings add-keysets 0x0042 0 0x000000000021dfe0 hex:d0d1d2d3d4d5d6d7d8d9dadbdcdddedf");
+				system(command);
+				
+				// command 2
+				snprintf(command, sizeof(command), "$HOME/scripts/matterTool.sh groupsettings bind-keyset 0x0001 0x0042");
+				system(command);
+				
+			}
+			else if (strcmp(option,"-addScene") == 0) {
+				// command 1
+				snprintf(command, sizeof(command), "$HOME/scripts/matterTool.sh scenesmanagement add-scene %d %d %d \"%s\" '[{\"clusterID\": \"0x0006\", \"attributeValueList\":[{\"attributeID\": \"0x0000\", \"attributeValue\": \"0x01\"}]},{\"clusterID\": \"0x0008\", \"attributeValueList\":[{\"attributeID\": \"0x0000\", \"attributeValue\": \"0xfe\"}]},{\"clusterID\": \"0x0300\",\"attributeValueList\":[{\"attributeID\": \"0x0003\", \"attributeValue\": \"0x%04x\"},{\"attributeID\": \"0x0004\", \"attributeValue\": \"0x%04x\"},{\"attributeID\": \"0x4001\",\"attributeValue\": \"0x01\"}]}]' %d 1\n", groupID, sceneID, transitionTime, sceneName, (unsigned int)currentX, (unsigned int)currentY, nodeID);
+				system(command);
+			} 
+			else if (strcmp(option,"-recallScene") == 0) {
+				// options
+				if (strcmp(option,"-groupCast") == 0) {
+					// command 1
+					snprintf(command, sizeof(command), "$HOME/scripts/matterTool.sh scenesmanagement recall-scene %d %d 0xFFFFFFFFFFFF%04x 1", groupID, sceneID, (unsigned int)groupID);
+					system(command);
+				} else { // assume unicast
+					// command 1
+					snprintf(command, sizeof(command), "$HOME/scripts/matterTool.sh scenesmanagement recall-scene %d %d %d 1", groupID, sceneID, nodeID);
+					system(command);
+				}
+			}
+		}
+	} else {
+		//default option: parse add scene to string
+		printf("mattertool scenesmanagement add-scene %d %d %d \"%s\" '[{\"clusterID\": \"0x0006\", \"attributeValueList\":[{\"attributeID\": \"0x0000\", \"attributeValue\": \"0x01\"}]},{\"clusterID\": \"0x0008\", \"attributeValueList\":[{\"attributeID\": \"0x0000\", \"attributeValue\": \"0xfe\"}]},{\"clusterID\": \"0x0300\",\"attributeValueList\":[{\"attributeID\": \"0x0003\", \"attributeValue\": \"0x%04x\"},{\"attributeID\": \"0x0004\", \"attributeValue\": \"0x%04x\"},{\"attributeID\": \"0x4001\",\"attributeValue\": \"0x01\"}]}]' %d 1\n", groupID, sceneID, transitionTime, sceneName, (unsigned int)currentX, (unsigned int)currentY, nodeID);
+	}
+	
+	return 0;
+    
+}
+```
+
 ```sh
 ./automateScenes <groupID> <sceneID> <transitionTime> <sceneName> <R> <G> <B> <nodeID> [-setupGroupKeys] [-addGroup] [-setupGroupcast] [-addScene] [-recallScene] [-groupCast]
 ```
