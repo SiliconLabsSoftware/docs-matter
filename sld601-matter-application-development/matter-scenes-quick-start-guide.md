@@ -279,9 +279,13 @@ Build the project and flash the binary to as many matter devices as you wish to 
 
 ### Step 5: Set up Group Keys
 
-Setting up the group keys can become tedious as the number of devices increases, as such the process can be scripted to allieviate this:
+Setting up the group keys can become tedious as the number of devices increases, as such the process can be scripted to allieviate this. This script can be used on the Matterhub to quckly set up the group keys:
 
 ```sh
+# setUpGroupKeys.sh
+# usage:    ./setUpGroupKeys.sh -groupID -nodeID
+# ex:       ./groupKeySetup.sh 1 1
+
 #!/bin/bash
 
 # check valid format
@@ -304,15 +308,17 @@ $HOME/scripts/matterTool.sh groupkeymanagement write group-key-map '[{"groupId":
 
 It is important to set up the group keys in groupkeymanagement before adding groups because devices need an associated keyset in order to receive and decrypt encrypted multicast commands that are sent to groups. Without a properly configured keyset, devices will not be able to join the group and receive groupcast messages. The server will return an error (status code 139 = 0x8b: UNSUPPORTED_ACCESS) if a group is added without a corresponding keyset. Setting the keys first allows groups to be encrypted and devices to listen for and decrypt group commands.
 
-Access Control List (ACL) entries define the access rights of different subjects (devices) on a fabric. Each entry includes a fabric index, privilege level, authentication mode, subjects, and targets. These fields are configurable depending on your setup. More info on accesscontrol commands can be found [here](https://github.com/project-chip/connectedhomeip/blob/master/docs/guides/access-control-guide.md). 
+Access Control List (ACL) entries define the access rights of different subjects (devices) on a fabric. Each entry includes a fabric index, privilege level, authentication mode, subjects, and targets. These fields are configurable depending on your setup. More info on accesscontrol commands can be found [here](https://github.com/project-chip/connectedhomeip/blob/master/docs/guides/access-control-guide.md).
 
-This command is used to write Access Control List (ACL) entries:
+If not using the script, the following commands are used to set up the group keys.
+
+To write Access Control List (ACL) entries:
 
 ```sh
 mattertool accesscontrol write acl '[{"fabricIndex": 1, "privilege": 5, "authMode": 2, "subjects": [112233], "targets": null },{"fabricIndex": 1, "privilege": 4, "authMode": 3, "subjects": [1], "targets": null }]' <NodeID> <Endpoint>
 ```
 
-The following  command is used to write a group key set to enable secure communication within a group. The group key set includes a group key set ID, security policy, and epoch keys with their start times.
+The group key set includes a group key set ID, security policy, and epoch keys with their start times. To write a group key:
 
 ```sh
 mattertool groupkeymanagement key-set-write '{"groupKeySetID": 42, "groupKeySecurityPolicy": 0, "epochKey0": "d0d1d2d3d4d5d6d7d8d9dadbdcdddedf", "epochStartTime0": 2220000,"epochKey1": "d1d1d2d3d4d5d6d7d8d9dadbdcdddedf", "epochStartTime1": 2220001,"epochKey2": "d2d1d2d3d4d5d6d7d8d9dadbdcdddedf", "epochStartTime2": 2220002 }' <NodeID> <Endpoint>
@@ -324,7 +330,7 @@ The following command is used to map a group key set to a group. The mapping inc
 $ mattertool groupkeymanagement write group-key-map '[{"groupId": <GroupID>, "groupKeySetID": 42, "fabricIndex": 1}]' <NodeID> <Endpoint>
 ```
 
-For the commands above, replace **NodeID*** with the NodeID of your matter device and **GroupID** for the Group you wish to add. The **Endpoint** corresponds to the endpoint that contains the Group Key Management cluster; this is Endpoint 0 by default.
+For the commands above, replace **NodeID** with the NodeID of your matter device and **GroupID** for the Group you wish to add. The **Endpoint** corresponds to the endpoint that contains the Group Key Management cluster; this is Endpoint 0 by default.
 
 ### Step 6: Add groups to the group table
 
@@ -383,6 +389,7 @@ For example the Level Control Cluster has a clusterID 0x0008, the attribute is C
 ```
 
 For a more realistic example, suppose we wish to add a scene with the following attributes configured:
+
 * On/Off (Cluster ID: 0x0006):
   * OnOff (Attribute ID: 0x0000, attributeValue: 0x01)
 * Level Control (Cluster ID: 0x0008):
@@ -408,3 +415,185 @@ mattertool scenesmanagement add-scene 1 2 1000 "Off" '[{"clusterID": "0x0006", "
 
 After executing an add-scene command, a response is returned with status: 0 in the CHIP TOOL logs. This indicates that a scene has been successfully created.
 
+The following helper script takes the following arguments: _groupID_, _sceneID_, _transitionTime_, _R_, _G_, _B_, _nodeID_ and outputs the appropriately formatted add-scene command. This can be copied and pasted directly into the CLI to run the Mattertool command to add the scene.
+
+```c
+#include <stdint.h>
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+
+#define MAX 65536.0
+
+int main(int argc, char *argv[]) {
+
+    // Verify arguments
+    if (argc != 9) {
+        printf("Usage: %s <groupID> <sceneID> <transitionTime> <sceneName> <R> <G> <B> <nodeID>\n", argv[0]);
+        return 1;
+    }
+
+    int groupID = atoi(argv[1]);
+    int sceneID = atoi(argv[2]);
+    int transitionTime = atoi(argv[3]);
+
+    char *sceneName = argv[4];
+
+    int r = atoi(argv[5]);
+    int g = atoi(argv[6]);
+    int b = atoi(argv[7]);
+    int nodeID = atoi(argv[8]);
+
+    // Check argument datatype
+    if (sscanf(argv[1], "%d", &groupID) != 1 ||
+    sscanf(argv[2], "%d", &sceneID) != 1 ||
+    sscanf(argv[3], "%d", &transitionTime) != 1 ||
+    sscanf(argv[5], "%d", &r) != 1 ||
+    sscanf(argv[6], "%d", &g) != 1 ||
+    sscanf(argv[7], "%d", &b) != 1 ||
+    sscanf(argv[8], "%d", &nodeID) != 1) {
+    printf("Error: Invalid integer argument(s). <groupID> <sceneID> <transitionTime> <R> <G> <B> <nodeID> must be integers\n");
+    return 1;
+    }
+
+    // Check range of RGB values
+    if (!(r >= 0 && r <= 255 && g >= 0 && g <= 255 && b >= 0 && b <= 255)) {
+        printf("Error: RGB values must be in the range [0, 255].\n");
+        return 1;
+    }
+  
+    // Convert RGB to xy, then from xy to CurrentX and CurrentY
+    float R = r/255.0;
+    float G = g/255.0;
+    float B = b/255.0;
+
+    float X = R * 0.4124564 + G * 0.3575761 + B * 0.1804375;
+    float Y = R * 0.2126729 + G * 0.7151522 + B * 0.0721750;
+    float Z = R * 0.0193339 + G * 0.1191920 + B * 0.9503041;
+
+    float sum = X + Y + Z;
+
+    float x = X/sum;
+    float y = Y/sum;
+
+    float currentX = (int)round(x*MAX);
+    float currentY = (int)round(y*MAX);
+
+    // Return command format
+    printf("mattertool scenesmanagement add-scene %d %d %d \"%s\" '[{\"clusterID\": \"0x0006\", \"attributeValueList\":[{\"attributeID\": \"0x0000\", \"attributeValue\": \"0x01\"}]}, \
+    {\"clusterID\": \"0x0008\", \"attributeValueList\":[{\"attributeID\": \"0x0000\", \"attributeValue\": \"0xfe\"}]},{\"clusterID\": \"0x0300\", \
+    \"attributeValueList\":[{\"attributeID\": \"0x0003\", \"attributeValue\": \"0x%04x\"},{\"attributeID\": \"0x0004\", \"attributeValue\": \"0x%04x\"},{\"attributeID\": \"0x4001\", \
+    \"attributeValue\": \"0x01\"}]}]' %d 1\n", groupID, sceneID, transitionTime, sceneName, (unsigned int)currentX, (unsigned int)currentY, nodeID);
+
+    return 0;
+}
+```
+
+#### Storing a Scene
+
+Instead of adding a new scene from scratch, we can also store the current state of the group as its own scene. This will save the ExtensionFieldSet which contains all the clusters and attribute-value pairs that associate it with a scene.
+
+```sh
+mattertool scenesmanagement store-scene <GroupID> <SceneID> <NodeID> <Endpoint>
+```
+
+F or example:
+
+```sh
+mattertool scenesmanagement store-scene 1 2 1 1
+```
+
+To verify the scene in the CHIP-TOOL logs you can use a ViewScene command:
+
+```sh
+mattertool scenesmanagement view-scene <GroupID> <SceneID> <NodeID> <Endpoint>
+```
+
+![viewScene logs](./images/viewScene-logs.png)
+
+### Step 8: Recalling a Scene
+
+Recalling a scenes will write the attributes stored in the scenes table to the requested endpoint attributes.
+
+#### Unicast Recall
+
+```sh
+mattertool scenesmanagement recall-scene <GroupID> <SceneID> <NodeID> <Endpoint>
+```
+
+#### Groupcast recall
+
+```sh
+mattertool scenesmanagement recall-scene <GroupID> <SceneID> 0xFFFFFFFFFFFF+<GroupID> <Endpoint>
+```
+
+Example:
+
+```sh
+mattertool scenesmanagement recall-scene 1 1 0xFFFFFFFFFFFF0001 1
+```
+
+There are many more commands that can be used from the Scenes Management cluster. To see these commands simply do `mattertool scenesmanagement` on the matterhub.
+
+![scene management commands](./images/scenes-commands.png)
+
+### Demo
+
+Finally, in this example we will toggle between two scenes comrpising a set of two Matter Light devices to demonstrate everything discussed above. We have made the following script which combines everything into a single tool. Assuming that steps 1-4 are complete:
+
+```sh
+./automateScenes <groupID> <sceneID> <transitionTime> <sceneName> <R> <G> <B> <nodeID> [-setupGroupKeys] [-addGroup] [-setupGroupcast] [-addScene] [-recallScene] [-groupCast]
+```
+
+Where the supplied arguments are:
+
+* groupeID = minimum value of 1
+* sceneID = (uint8)
+* transitionTime = (uint32) (ms)
+* sceneName = (string) (max 16)
+* R = (uint8) Red value of RGB
+* G = (uint8) Green value of RGB
+* B = (uint8) Blue value of RGB
+* nodeID = node ID you want the scene to apply to (this is determined when the node is commissioned)
+
+The options are
+
+* -setupGroupKeys   : prints the command to set up the group keys
+* -addGroup         : prints the command to add the nodes to the group
+* -setupGroupcast   : prints the command to set up the groupcast
+* -addScene         : prints the command to add the scene
+* -recallScene      : prints the command to recall the added scene
+
+Using this tool with groupeID = 1, two scenes (sceneID 1 and 2), two nodes (nodeID 1 and 2) the tool gives us the following commands:
+
+```sh
+mattertool scenesmanagement add-scene 1 1 1 "Blue" '[{"clusterID": "0x0006", "attributeValueList":[{"attributeID": "0x0000", "attributeValue": "0x01"}]},{"clusterID": "0x0008", "attributeValueList":[{"attributeID": "0x0000", "attributeValue": "0xfe"}]},{"clusterID": "0x0300", "attributeValueList":[{"attributeID": "0x0003", "attributeValue": "0x2666"},{"attributeID": "0x0004", "attributeValue": "0x0f5c"},{"attributeID": "0x4001", "attributeValue": "0x01"}]}]' 1 1
+ 
+mattertool scenesmanagement add-scene 1 2 1 "Red" '[{"clusterID": "0x0006", "attributeValueList":[{"attributeID": "0x0000", "attributeValue": "0x01"}]},{"clusterID": "0x0008", "attributeValueList":[{"attributeID": "0x0000", "attributeValue": "0xfe"}]},{"clusterID": "0x0300", "attributeValueList":[{"attributeID": "0x0003", "attributeValue": "0xa3d7"},{"attributeID": "0x0004", "attributeValue": "0x547b"},{"attributeID": "0x4001", "attributeValue": "0x01"}]}]' 1 1
+```
+
+This sets up node 1 to be Blue in Scene 1 and Red in Scene 2.
+
+```sh
+mattertool scenesmanagement add-scene 1 2 1 "Blue" '[{"clusterID": "0x0006", "attributeValueList":[{"attributeID": "0x0000", "attributeValue": "0x01"}]},{"clusterID": "0x0008", "attributeValueList":[{"attributeID": "0x0000", "attributeValue": "0xfe"}]},{"clusterID": "0x0300", "attributeValueList":[{"attributeID": "0x0003", "attributeValue": "0x2666"},{"attributeID": "0x0004", "attributeValue": "0x0f5c"},{"attributeID": "0x4001", "attributeValue": "0x01"}]}]' 2 1
+ 
+mattertool scenesmanagement add-scene 1 1 1 "Red" '[{"clusterID": "0x0006", "attributeValueList":[{"attributeID": "0x0000", "attributeValue": "0x01"}]},{"clusterID": "0x0008", "attributeValueList":[{"attributeID": "0x0000", "attributeValue": "0xfe"}]},{"clusterID": "0x0300", "attributeValueList":[{"attributeID": "0x0003", "attributeValue": "0xa3d7"},{"attributeID": "0x0004", "attributeValue": "0x547b"},{"attributeID": "0x4001", "attributeValue": "0x01"}]}]' 2 1
+```
+
+This sets node 2 to be Red in Scene 1 and Blue in Scene 2.
+
+To recall scene 1 we can use:
+
+```sh
+mattertool scenesmanagement recall-scene 1 1 0xFFFFFFFFFFFF0001 1
+```
+
+![scene 1 demo](./images/scene1.png)
+
+To recall scene 2 we can use:
+
+```sh
+mattertool scenesmanagement recall-scene 1 2 0xFFFFFFFFFFFF0001 1
+```
+
+![scene 2 demo](./images/scene2.png)
