@@ -199,7 +199,7 @@ When this happens, perform the following steps to run the OTA Update successfull
 
 4. Re-run the OTA Update process from the beginning.
 
-### 12. Connectivity Issues with SiWX917 SoC with Low-Power Applications while flashing firmware/application image
+### 13. Connectivity Issues with SiWX917 SoC with Low-Power Applications while flashing firmware/application image
 
 Sometimes, firmware/application updates fail while flashing, and the logs display "Could not connect debugger. Could not connect to target device," indicating that the application processor is in a low power state with no flash access. Try one of the following solutions, then retry the firmware/application update:
 
