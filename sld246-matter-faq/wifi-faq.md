@@ -216,4 +216,4 @@ Perform the following sequence of steps:
    
 5. Press the RESET button on the WPK/WSTK board again.
 
-6. Retry flashing the application.
+6. Retry flashing the firmware/application.
