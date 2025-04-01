@@ -198,3 +198,22 @@ When this happens, perform the following steps to run the OTA Update successfull
 3. Reconnect the WF200 Expansion Board to the EFR32MG24 and reset the device.
 
 4. Re-run the OTA Update process from the beginning.
+
+### 12. Connectivity Issues with SiWX917 SoC with Low-Power Applications while flashing firmware/application image
+
+Sometimes, firmware/application updates fail while flashing, and the logs display "Could not connect debugger. Could not connect to target device," indicating that the application processor is in a low power state with no flash access. Try one of the following solutions, then retry the firmware/application update:
+
+Toggle the power switch towards AEM (Advanced Energy Monitoring) on the WPK/WSTK board, or
+
+Perform the following sequence of steps:
+1. Press and hold the ISP button on the radio board and the RESET button on the WPK/WSTK board simultaneously.
+   
+2. Release the RESET button on the WPK/WSTK board.
+   
+3. Release the ISP button on the radio board.
+   
+4. Click "Erase chip" to erase the flash.
+   
+5. Press the RESET button on the WPK/WSTK board again.
+
+6. Retry flashing the application.
