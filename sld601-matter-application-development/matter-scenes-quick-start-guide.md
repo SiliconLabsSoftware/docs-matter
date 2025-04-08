@@ -20,7 +20,7 @@ A common use case for using the scenes cluster would is in lighting. A combinati
 
 ![scenes lighting example](./images/scenes-lighting-example.png)
 
-## Hands-On Turorial - Thread
+## Hands-On Tutorial - Thread
 
 The following hands-on tutorial will walk through the process of storing and recalling a scene for a group of Matter lighting over Thread devices.
 
