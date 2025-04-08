@@ -16,7 +16,7 @@ The Scene Table stores Fabric-Scoped IDs which contain all the information assoc
 
 ![scenes cluster data model](./images/scenes-data-model.png)
 
-A common use case for using the scenes cluster would is in lighting. A combination of colors accross a group of Matter light bulbs can be configured as a scene and recalled on demand.
+A common use case for using the scenes cluster would is in lighting. A combination of colors across a group of Matter light bulbs can be configured as a scene and recalled on demand.
 
 ![scenes lighting example](./images/scenes-lighting-example.png)
 
