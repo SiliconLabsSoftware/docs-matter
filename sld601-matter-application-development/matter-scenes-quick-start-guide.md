@@ -26,7 +26,7 @@ The following hands-on tutorial will walk through the process of storing and rec
 
 ### Prerequisites
 
-* Familiarity with the Simplicty Studio Matter Extenion
+* Familiarity with the Simplicity Studio Matter Extension
 * Understanding of how to use the [Matterhub](../sld406-matter-light-switch-example/02-thread-light-switch-example.md)
 
 ### Requirements
