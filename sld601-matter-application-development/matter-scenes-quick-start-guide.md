@@ -8,7 +8,7 @@ The Scenes Management Cluster is defined by the CSA in the Matter Application Cl
 
 The Scene Table stores Fabric-Scoped IDs which contain all the information associated with a given scene, in particular:
 
-* **GroupID:** identifier for the group the scene applies to, this is 0 if there is no group accosiated
+* **GroupID:** identifier for the group the scene applies to, this is 0 if there is no group associated
 * **SceneID:** unique identifier for a particular scene
 * **SceneName:** name of the scene
 * **SceneTransitionTime:** The amount of time (in milliseconds) that it will take a cluster to change from the current state to the requested state
