@@ -63,7 +63,7 @@ On Endpoint 1:
 The BRD2601B has RGB PWM LED capabilities. To make use of the drivers and APIs, you will have to follow the following steps.
 
 1. uninstall the WSTK LED Support component in Software Components > Silicon Labs Matter v2.3.0 > Platform > WSTK LED. This will automatically remove the Simple LED driver under Platform > Driver > LED, and prevent Pin Tool conflicts.
-2. Install the RGB PWM LED component under Software Components > Platform > Driver > LED > Simple RGB PWM LED. This will generate the APIs and drivers for the RBG PWM LED.
+2. Install the RGB PWM LED component under Software Components > Platform > Driver > LED > Simple RGB PWM LED. This will generate the APIs and drivers for the RGB PWM LED.
 
 The component should look like this:
 
