@@ -12,7 +12,7 @@ This Quick-Start Guide will demo the out-of-box experience for adding an EFR32MG
 - Android smartphone OR iPhone
 - 1 x Silabs WSTK + EFR32MG24 2.4 GHz 20 dBm RB (BRD4161A)
 
-> **Note:** Refer to [EFR32MG24 Tech Docs](https://www.silabs.com/development-tools/wireless/efr32xg24-pro-kit-20-dbm?tab=techdocs) for more details.
+>**Note:** Refer to [EFR32MG24 Tech Docs](https://www.silabs.com/development-tools/wireless/efr32xg24-pro-kit-20-dbm?tab=techdocs) for more details.
 
 ### (Optional) Ecosystem requirements
 

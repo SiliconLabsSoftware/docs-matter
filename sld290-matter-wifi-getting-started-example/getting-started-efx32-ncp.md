@@ -27,7 +27,7 @@ The following hardware devices are required for executing Matter over Wi-Fi:
     - [XG24-RB4187C](https://www.silabs.com/development-tools/wireless/xg24-rb4187c-efr32xg24-wireless-gecko-radio-board)
     - MG24 with WSTK : [xG24-PK6010A](https://www.silabs.com/development-tools/wireless/efr32xg24-pro-kit-20-dbm?tab=overview)
   
-    **Note:** A custom board binary can also be generated. The configuration file `sl_spidrv_eusart_exp_config` for RS9116 and `sl_spidrv_exp_config` for 917NCP and WF200 should have the SPI pin and port defines enabled. The configuration file `sl_custom_board.h` file contains the SPI pins, which should be updated according to the custom board's pin configuration.
+    >**Note:** A custom board binary can also be generated. The configuration file `sl_spidrv_eusart_exp_config` for RS9116 and `sl_spidrv_exp_config` for 917NCP and WF200 should have the SPI pin and port defines enabled. The configuration file `sl_custom_board.h` contains the SPI pins, which should be updated according to the custom board's pin configuration.
 
 - **Wi-Fi Dev Kits & boards**
 
@@ -65,7 +65,7 @@ Below are the software tools, packages, and images required for executing Matter
 - Simplicity Commander for flashing bootloader on EFR32 Boards and Siwx917 NCP.
 - Tera Term for flashing firmware on EFR32 NCP Boards.
 - Simplicity Studio
-- Putty for controling EFR32 hardware using chip-tool controller
+- Putty for controlling EFR32 hardware using chip-tool controller
 - Ozone Debugger for logging and debugging (Optional)
 - JLink RTT for logging only (Optional)
 

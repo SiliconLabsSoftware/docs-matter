@@ -32,11 +32,11 @@ Note: In a production environment the Announce OTA Provider command is not used.
 
 ### Setting up the chip-tool
 
-The chip-tool binary is a part of the Silicon Labs' Matter Hub Raspberry Pi Image available as a part of the Release Artifacts page. For building the chip-tool for Linux or Mac consult the documentation in <https://github.com/project-chip/connectedhomeip>.
+The chip-tool binary is a part of the Silicon Labs' Matter Hub Raspberry Pi Image available as a part of the Release Artifacts page. For building the chip-tool for Linux or Mac, consult the documentation in <https://github.com/project-chip/connectedhomeip>.
 
 ### Setting up the OTA-Provider
 
-The chip-ota-provider-app binary for a Raspberry Pi is a part of the Artifacts package available with the Matter Extension release. For building the chip-ota-provider-app for Linux or Mac consult the documentation in <https://github.com/project-chip/connectedhomeip>.
+The chip-ota-provider-app binary for a Raspberry Pi is a part of the Artifacts package available with the Matter Extension release. For building the chip-ota-provider-app for Linux or Mac, consult the documentation in <https://github.com/project-chip/connectedhomeip>.
 
 ### Building Application Images Using Simplicity Studio
 
@@ -170,11 +170,11 @@ Example provider configuration file:
         }
 ```
 
-For more info see the documentation for the ota-provider-app example in <https://github.com/project-chip/connectedhomeip>.
+For more information, see the documentation for the ota-provider-app example in <https://github.com/project-chip/connectedhomeip>.
 
 ## Multi-Chip OTA Images
 
-Multi-Chip OTA is implemented only for EFR32 devices. Multi-chip OTA uses an enhanced script, ota_multi_image_tool.py, which creates .ota files that contain additional TLV headers. These TLV headers describe the binaries to be sent over the air. The enhanced script is located here. It is a wrapper to the original src/app/ota_image_tool.py. Multiple binaries can be packaged in the .ota file. Some Tags are reserved for specific Silicon Labs binaries, and other Tags are available to be used for arbitrary TLVs. The payloads can be encrypted.
+Multi-Chip OTA is implemented only for EFR32 devices. Multi-chip OTA uses an enhanced script, ota_multi_image_tool.py, which creates .ota files that contain additional TLV headers. These TLV headers describe the binaries to be sent over the air. The enhanced script is located here. It is a wrapper to the original src/app/ota_image_tool.py. Multiple binaries can be packaged in the .ota file. Some tags are reserved for specific Silicon Labs binaries, and other tags are available to be used for arbitrary TLVs. The payloads can be encrypted.
 
 The script can be obtained from the Matter Extension github repository.
 
@@ -196,7 +196,7 @@ The OTA Multi Image Requestor Encryption component should be added to the projec
 
 3. Application upgrade only. This should be a standalone as described in the sections above.
 
-**Hint**: it can be useful to compress this image to reduce the size needed to OTA. This can be done via the optional flag ```--compress lzma```. If you use LZMA compression for creating the OTA file, make sure that the bootloader has been built with the LZMA compress component.
+>**Hint**: It can be useful to compress this image to reduce the size needed to OTA. This can be done via the optional flag `--compress lzma`. If you use LZMA compression for creating the OTA file, make sure that the bootloader has been built with the LZMA compress component.
 
 To create the .ota file, simply follow the method discussed above using the combined image:
 
@@ -222,19 +222,19 @@ To showcase all of this together, the following tutorial will outline the steps 
 
 If your version provides Multi-chip OTA functionality and you want to upgrade the bootloader, then you will need to perform this step. Otherwise, you can skip it and proceed to the application image step. You will be using the Bootloader - SoC SPI Flash Storage (single image with slot size of 1024kB) from Simplicity Studio.
 
-To distinguish between different builds of the Gecko Bootloader, it is useful to set a version number. To perform a bootloader upgrade, not only must the running bootloader pass its integrity checks (see UG489 section [4.1.1 Downloading and Applying a Bootloader GBL Upgrade File](https://www.silabs.com/documents/public/user-guides/ug489-gecko-bootloader-user-guide-gsdk-4.pdf)), but the bootloader upgrade image must also have a higher version number than the running bootloader image. A version number can be set using Simplicity Studio by configuring the Bootloader Version Main Customer option of the Bootloader Core component. This macro will be picked up by the config file btl_config.h, where it is combined with the version number of the Gecko Bootloader files provided by Silicon Labs.
+To distinguish between different builds of the Gecko Bootloader, it is useful to set a version number. To perform a bootloader upgrade, not only must the running bootloader pass its integrity checks (see UG489 section [4.1.1 Downloading and Applying a Bootloader GBL Upgrade File](https://www.silabs.com/documents/public/user-guides/ug489-gecko-bootloader-user-guide-gsdk-4.pdf)), but the bootloader upgrade image must also have a higher version number than the running bootloader image. A version number can be set using Simplicity Studio by configuring the Bootloader Version Main Customer option of the Bootloader Core component. This macro will be picked up by the config file *btl_config.h*, where it is combined with the version number of the Gecko Bootloader files provided by Silicon Labs.
 
-**Note**: Ensure your bootloader has the LZMA Compression option installed before building if you are creating the .gbl and .ota files with LZMA Compression enabled.
+>**Note**: Ensure that your bootloader has the LZMA Compression option installed before building if you are creating the .gbl and .ota files with LZMA Compression enabled.
 
 #### Bootloader Update Verification (Optional)
 
-To verify that your bootloader has been successfully updated, you will have to modify the source code of the project in Simplicity Studio in the "OTAImageProcessorImpl.cpp" file [here](https://github.com/SiliconLabsSoftware/matter_sdk/blob/main/src/platform/silabs/efr32/OTAImageProcessorImpl.cpp#L53). Add the following lines of code:
+To verify that your bootloader has been successfully updated, you will have to modify the source code of the project in Simplicity Studio in the OTAImageProcessorImpl.cpp file [here](https://github.com/SiliconLabsSoftware/matter_sdk/blob/main/src/platform/silabs/efr32/OTAImageProcessorImpl.cpp#L53). Add the following lines of code:
 
 ```c++
 BootloaderInformation_t info
 ```
 
-Then in the beginning of [OTAImageProcessorImpl::IsFirstImageRun](https://github.com/SiliconLabsSoftware/matter_sdk/blob/01a2d4aafaa0b124123caac067831809a1a86720/src/platform/silabs/efr32/OTAImageProcessorImpl.cpp#L115) add:
+Then, in the beginning of [OTAImageProcessorImpl::IsFirstImageRun](https://github.com/SiliconLabsSoftware/matter_sdk/blob/01a2d4aafaa0b124123caac067831809a1a86720/src/platform/silabs/efr32/OTAImageProcessorImpl.cpp#L115), add:
 
 ```c++
 bootloader_getInfo(&info); // LINE ADDED: for Multi-OTA test
@@ -244,11 +244,11 @@ ChipLogProgress(SoftwareUpdate, "Bootloader type: %d\n", info.type);
 
 This will allow you to inspect the logs provided through the [JLinkRTTViewer](https://www.segger.com/products/debug-probes/j-link/tools/rtt-viewer/#:~:text=J-Link%20RTT%20Viewer%20is%20the%20main%20GUI%20application%20to%20use) for the verification during OTA.
 
-**Note**: Connect the matter device with JLinkRTTViewer before commissioning to view all the logs.
+>**Note**: Connect the Matter device with JLinkRTTViewer before commissioning to view all the logs.
 
 #### Bootloader (Initial)
 
-The original bootloader must have a lower version number than the new image, so we will set this to 1. The choice of bootloader depends on the target device, in this case ```bootloader-single-internal-storage-1536``` for BRD4187C.
+The original bootloader must have a lower version number than the new image, so set this to 1. The choice of bootloader depends on the target device, in this case ```bootloader-single-internal-storage-1536``` for BRD4187C.
 
 ![old bootloader](./images/ota-tutorial-old-bl.png)
 
@@ -256,7 +256,7 @@ Then build the image and flash the binary file onto the device.
 
 #### Bootloader (New)
 
-Now bump the version number so that is higher than the inital Bootloader Version. For example here the Bootloader Version Main Customer is set to 2.
+Now bump the version number so that it is higher than the initial Bootloader Version. For example, here the Bootloader Version Main Customer is set to 2.
 
 ![new bootloader](./images/ota-tutorial-new-bl.png)
 
@@ -264,7 +264,7 @@ Now build and save the binary to a known directory.
 
 #### Application Image (Initial)
 
-Verify that your current application image is of a software version you want by inspecting the Device software version and Device software version string number in Matter > Stack > Matter Core Components. Or you can directly inspect these values in "sl_matter_config.h".
+Verify that your current application image is of a software version you want by inspecting the Device software version and Device software version string number in Matter > Stack > Matter Core Components. Or you can directly inspect these values in *sl_matter_config.h*.
 
 Build the project, and flash the binary file to your matter device.
 
@@ -286,13 +286,13 @@ If your version does not support Multi-chip OTA functionality or if you are **on
 commander gbl create MatterLightOverThread.gbl --app MatterLightOverThread.s37
 ```
 
-If your version supports Multi-chip OTA functionality. The following command combines the bootloader and application image into a single .gbl file with lzma compression enabled.
+If your version supports Multi-chip OTA functionality, the following command combines the bootloader and application image into a single .gbl file with LMZA compression enabled.
 
 ```shell
 commander gbl create --bootloader <bootloader_image>.s37 --app <application_image>.s37 <combined_image>.gbl
 ```
 
-For either of these cases the ```--compress lzma``` option can be used to reduce the size of the resulting image, just ensure that the bootloader has been built with the LZMA compress component.
+For either of these cases, the `--compress lzma` option can be used to reduce the size of the resulting image. Just ensure that the bootloader has been built with the LZMA compress component.
 
 Then, run the following command to create the .ota file.
 
@@ -353,7 +353,7 @@ The application device will connect to the Provider and start the image download
 
 ```mattertool basicinformation read software-version-string 2 0```
 
-As output the logs should display: ```SoftwareVersion: 2```.
+As output, the logs should display: ```SoftwareVersion: 2```.
 
 To verify that the bootloader has been successfully updated, look for the following in the JlinkRTTViewer logs:
 

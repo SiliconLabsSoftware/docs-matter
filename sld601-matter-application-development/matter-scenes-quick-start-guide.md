@@ -1,86 +1,85 @@
 # Matter Scenes Quick Start Guide
 
-This quick-start guide will walk through a simple application example of a Matter network with two lighting devices. It will be used to create and manage a simple scene using the Scenes cluster for Matter.
+This quick start guide walks through a simple application example of a Matter network with two lighting devices. It will be used to create and manage a simple scene using the Scenes cluster for Matter.
 
-## What is the Scenes cluster?
+## What is the Scenes Cluster?
 
-The Scenes Management Cluster is defined by the CSA in the Matter Application Cluster Specification. It  allows for us to store a set of attribute-value pairs pertaining to one or more clusters on the same endpoint as the Scenes Management Cluster. The Matter controller can recall a stored scene which will result in these values being written to the specified attributes in order to express the desired scene.  
+The Scenes Management Cluster is defined by the CSA in the Matter Application Cluster Specification. It allows you to store a set of attribute-value pairs pertaining to one or more clusters on the same endpoint as the Scenes Management Cluster. The Matter controller can recall a stored scene which results in these values being written to the specified attributes to express the desired scene.  
 
-The Scene Table stores Fabric-Scoped IDs which contain all the information associated with a given scene, in particular:
+The Scene Table stores Fabric-Scoped IDs, which contain all the information associated with a given scene, in particular:
 
-* **GroupID:** identifier for the group the scene applies to, this is 0 if there is no group associated
-* **SceneID:** unique identifier for a particular scene
-* **SceneName:** name of the scene
-* **SceneTransitionTime:** The amount of time (in milliseconds) that it will take a cluster to change from the current state to the requested state
-* **ExtensionFields:** This is a struct containing the ClusterIDs and Attribute Values for a clusters which participate in a scene
+- **GroupID**: identifier for the group the scene applies to; this is 0 if there is no group associated
+- **SceneID**: unique identifier for a particular scene
+- **SceneName**: name of the scene
+- **SceneTransitionTime**: the amount of time (in milliseconds) that it takes a cluster to change from the current state to the requested state
+- **ExtensionFields**: a struct containing the ClusterIDs and Attribute Values for a cluster that participate in a scene
 
 ![scenes cluster data model](./images/scenes-data-model.png)
 
-A common use case for using the scenes cluster would is in lighting. A combination of colors across a group of Matter light bulbs can be configured as a scene and recalled on demand.
+A common use case for using the scenes cluster is in lighting. A combination of colors across a group of Matter light bulbs can be configured as a scene and recalled on demand.
 
 ![scenes lighting example](./images/scenes-lighting-example.png)
 
 ## Hands-On Tutorial - Thread
 
-The following hands-on tutorial will walk through the process of storing and recalling a scene for a group of Matter lighting over Thread devices.
+The following hands-on tutorial walks through the process of storing and recalling a scene for a group of Matter lighting over Thread devices.
 
 ### Prerequisites
 
-* Familiarity with the Simplicity Studio Matter Extension
-* Understanding of how to use the [Matterhub](../sld406-matter-light-switch-example/02-thread-light-switch-example.md)
+- Familiarity with the Simplicity Studio Matter Extension
+- Understanding of how to use the [Matterhub](/matter/{build-docspace-version}/matter-light-switch-example)
 
 ### Requirements
 
-* Gecko SDK 4.4.2 + Matter extension 2.3.0 (or newer)
-* Raspberry Pi 4 + MatterHub Image
-* 1x Silabs WTSK EFR32xG21 (BRD4108B) in RCP configuration
-* 2x [EFR32xG24-DK2601B Dev Kit](https://www.silabs.com/development-tools/wireless/efr32xg24-dev-kit?tab=overview)
+- Gecko SDK 4.4.2 + Matter extension 2.3.0 (or newer)
+- Raspberry Pi 4 + MatterHub Image
+- 1x Silabs WTSK EFR32xG21 (BRD4108B) in RCP configuration
+- 2x [EFR32xG24-DK2601B Dev Kit](https://www.silabs.com/development-tools/wireless/efr32xg24-dev-kit?tab=overview)
 
-> **Note**: The procedure is largely the same if WPK + MG24 radio boards are used as the Matter lighting devices, however the drivers for the LED and handler code may change depending on the board.
+> **Note**: The procedure is largely the same if WPK + MG24 radio boards are used as the Matter lighting devices; however, the drivers for the LED and handler code may change depending on the board.
 
 ### Overview
 
 ![scenes demo overview](./images/scenes-demo-overview.png)
 
-### Step 1: Create & configure the Lighting Project
+### Step 1: Create and Configure the Lighting Project
 
 #### ZAP Configuration
 
-In Simplicity Studio, create a new MatterLightOverThread application. From the application .slcp file and navigate to _Configuration Tools_ > _ZCL Advanced Platform (ZAP)_.
+In Simplicity Studio, create a new MatterLightOverThread application. From the application .slcp file, navigate to _Configuration Tools_ > _ZCL Advanced Platform (ZAP)_.
 
 The Group Key Management cluster (under General) should already be enabled as a server on Endpoint 0.
 
 On Endpoint 1:
 
-* Enable Scenes Management cluster (under General) as a Server
-* Ensure Color Control cluster (under Lighting) is enabled
-* Ensure the Groups cluster (under General) is enabled as a server on Endpoint 1
+- Enable Scenes Management cluster (under General) as a Server
+- Ensure Color Control cluster (under Lighting) is enabled
+_*_ Ensure the Groups cluster (under General) is enabled as a server on Endpoint 1
 
 > **NOTE:** Any ZCL attribute that is to be included in a scene must be marked with the Scenes ("S") designation in the Quality column of the cluster specification.
 
 #### RGB PWM Configuration
 
-The BRD2601B has RGB PWM LED capabilities. To make use of the drivers and APIs, you will have to follow the following steps.
+The BRD2601B has RGB PWM LED capabilities. To make use of the drivers and APIs, you must follow these steps.
 
-1. uninstall the WSTK LED Support component in Software Components > Silicon Labs Matter v2.3.0 > Platform > WSTK LED. This will automatically remove the Simple LED driver under Platform > Driver > LED, and prevent Pin Tool conflicts.
-2. Install the RGB PWM LED component under Software Components > Platform > Driver > LED > Simple RGB PWM LED. This will generate the APIs and drivers for the RGB PWM LED.
+1. Uninstall the WSTK LED Support component in Software Components > Silicon Labs Matter v2.3.0 > Platform > WSTK LED. This automatically removes the Simple LED driver under Platform > Driver > LED, and prevent Pin Tool conflicts.
+2. Install the RGB PWM LED component under Software Components > Platform > Driver > LED > Simple RGB PWM LED. This generates the APIs and drivers for the RGB PWM LED.
 
 The component should look like this:
 
 ![scenes RGB PWM LED config](./images/scenes-RGB-PWM-LED-config.png)
 
-The RGB PWM LED instance that has been created can be found in _MatterLightOverThread/autogen/sl_simple_rgb_pwm_led_instances.h._
+The RGB PWM LED instance that has been created can be found in _MatterLightOverThread/autogen/sl_simple_rgb_pwm_led_instances.h_.
 
 The documentation for the APIs that have been generated can be found here: [Simple RGB PWM LED Driver](https://docs.silabs.com/gecko-platform/5.0.0/platform-driver/simple-rgb-pwm-led#simple-rgb-pwm-led-driver). The file that contains these APIs can be found in the directory: _MatterLightOverThread/simplicity_sdk_xxxx/platform/driver/leddrv/inc/sl_simple_rgb_pwm_led.h_.
 
-### Step 2: Add the ColorTransformer class
+### Step 2: Add the ColorTransformer Class
 
-The RGB PWM LED operates in the RGB color space, however the Matter Color Control Cluster does not operate in the RGB color space, so a transformation is required to convert the RGB values into something that can be recognized by Matter. In this example we will use the xyY color space as defined by the Commission Internationale de l’Éclairage (CIE) specification which is also recognized in the Matter specification.
+The RGB PWM LED operates in the RGB color space; however, the Matter Color Control Cluster does not operate in the RGB color space, so a transformation is required to convert the RGB values into something that can be recognized by Matter. In this example, use the xyY color space as defined by the Commission Internationale de l’Éclairage (CIE) specification which is also recognized in the Matter specification.
 
-Inside of the src/ directory of the MatterLightOverThread project, create a new class called _ColorTransformer_ with the corresponding .cpp and .h files. Copy and paste the following to the ColorTransformer.h file.
+Inside the src/ directory of the MatterLightOverThread project, create a new class called _ColorTransformer_ with the corresponding .cpp and .h files. Copy and paste the following to the *ColorTransformer.h* file.
 
 :::collapsed{summary="Click to expand and view the ColorTransformer.h file"}
-
 ```c++
 /*
  * ColorTransformer.h
@@ -156,7 +155,6 @@ public:
  
 #endif /* SRC_COLORTRANSFORMER_H_ */
 ```
-
 :::
 
 ### Step 3 Implement Callbacks
@@ -164,7 +162,6 @@ public:
 Make the following additions to the src/ZclCallbacks.cpp file:
 
 :::collapsed{summary="Click to expand and view the ZclCallbacks.cpp file"}
-
 ```c++
 // Color Transformer
 #include "ColorTransformer.h"
@@ -187,10 +184,9 @@ uint16_t b = 0xFFFF;
 // Initialize xy color mode flag
 bool xyFlag = false;
 ```
-
 :::
 
-Then, inside `MatterPostAttributeChangeCallback` in _src/ZclCallbacks.cpp_ implement the on/off functionality of the LED:
+Then, inside `MatterPostAttributeChangeCallback` in _src/ZclCallbacks.cpp_, implement the on/off functionality of the LED:
 
 ```c++
 if (clusterId == OnOff::Id && attributeId == OnOff::Attributes::OnOff::Id)
@@ -245,7 +241,7 @@ else if (clusterId == ColorControl::Id)
     }
 ```
 
-Lastly, it is necessary to initialize the LED. Head over to src/AppTask.cpp and add the following:
+Lastly, it is necessary to initialize the LED. In src/AppTask.cpp, add the following:
 
 ```c++
 #include "sl_simple_rgb_pwm_led.h"
@@ -279,15 +275,15 @@ CHIP_ERROR AppTask::Init()
 }
 ```
 
-This will initialize the LED to be white.
+This initializes the LED to be white.
 
-### Step 4: Build and Flash 
+### Step 4: Build and Flash
 
-Build the project and flash the binary to as many matter devices as you wish to have in your scene. in this demo we will have 2 lighting devices. Ensure that the devices have been flashed with a  bootloader prior to flashing the application for the first time.
+Build the project and flash the binary to as many Matter devices as you wish to have in your scene. This demo includes two lighting devices. Ensure that the devices have been flashed with a bootloader prior to flashing the application for the first time.
 
 ### Step 5: Set up Group Keys
 
-Setting up the group keys can become tedious as the number of devices increases, as such the process can be scripted to allieviate this. This script can be used on the Matterhub to quckly set up the group keys:
+Setting up the group keys can become tedious as the number of devices increases. As such, the process can be scripted to alleviate this. This script can be used on the Matterhub to quickly set up the group keys:
 
 ```sh
 # setUpGroupKeys.sh
@@ -338,9 +334,9 @@ The following command is used to map a group key set to a group. The mapping inc
 $ mattertool groupkeymanagement write group-key-map '[{"groupId": <GroupID>, "groupKeySetID": 42, "fabricIndex": 1}]' <NodeID> <Endpoint>
 ```
 
-For the commands above, replace **NodeID** with the NodeID of your matter device and **GroupID** for the Group you wish to add. The **Endpoint** corresponds to the endpoint that contains the Group Key Management cluster; this is Endpoint 0 by default.
+For the commands above, replace **NodeID** with the NodeID of your Matter device and **GroupID** for the Group you wish to add. The **Endpoint** corresponds to the endpoint that contains the Group Key Management cluster; this is Endpoint 0 by default.
 
-### Step 6: Add groups to the group table
+### Step 6: Add Groups to the Group Table
 
 Before adding any scenes to a device, you must first add the device to a group.
 
@@ -366,7 +362,7 @@ A status of 0 indicates success. To further verify this, you can read the group 
 mattertool groupkeymanagement read group-table <NodeID> <Endpoint>
 ```
 
-In order to allow groupcasting, we must add and bind the keyset:
+To allow groupcasting, we must add and bind the keyset:
 
 ```sh
 mattertool groupsettings add-keysets 0x0042 0 0x000000000021dfe0 hex:d0d1d2d3d4d5d6d7d8d9dadbdcdddedf
@@ -382,7 +378,7 @@ mattertool groupsettings bind-keyset 0x0001 0x0042
 mattertool scenesmanagement add-scene <GroupID> <SceneID> <TransitionTime> <SceneName> <ExtensionFieldSets> <NodeID> <Endpoint>
 ```
 
->Note: The ExtensionFieldSet can take on one or more cluster(s) with each cluster taking on one or more attribute(s)
+>Note: The ExtensionFieldSet can take on one or more cluster(s) with each cluster taking on one or more attribute(s).
 
 The format of the ExtensionFieldSets argument is as follows:
 
@@ -390,7 +386,7 @@ The format of the ExtensionFieldSets argument is as follows:
 '[{"clusterID": "<ClusterID1>", "attributeValueList":[{"attributeID": <AttributeID1>, "attributeValue": <AttributeValue1>}, {attributeID": <AttributeID2>, "attributeValue": <AttributeValue2>}]}]'
 ```
 
-For example the Level Control Cluster has a clusterID 0x0008, the attribute is CurrentLevel with attributeID 0x0000. The type value is INT8U. For maximum illumination, the value should be set to 0xFE. The ExtensionFieldSets for this would then look like:
+For example, the Level Control Cluster has a clusterID 0x0008. The attribute is CurrentLevel with attributeID 0x0000. The type value is INT8U. For maximum illumination, the value should be set to 0xFE. The ExtensionFieldSets for this would then look like:
 
 ```sh
 '[{"clusterID": "0x0300", "attributeValueList":[{"attributeID": "0x0001", "attributeValue": "0xFE"}]}]'
@@ -398,24 +394,24 @@ For example the Level Control Cluster has a clusterID 0x0008, the attribute is C
 
 For a more realistic example, suppose we wish to add a scene with the following attributes configured:
 
-* On/Off (Cluster ID: 0x0006):
-  * OnOff (Attribute ID: 0x0000, attributeValue: 0x01)
-* Level Control (Cluster ID: 0x0008):
-  * CurrentLevel (Attribute ID: 0x0000, attributeValue: 0xFE)
-* Color Control (Cluster ID: 0x0300):
-  * CurrentX (AttributeID: 0x0003, attributeValue: 0x45a2)
-  * CurrentY (AttributeID: 0x0004, attributeValue: 0x1be7)
-  * EnhancedColorMode (AttributeID: 0x4001, attributeValue: 0x01)
+- On/Off (Cluster ID: 0x0006):
+  - OnOff (Attribute ID: 0x0000, attributeValue: 0x01)
+- Level Control (Cluster ID: 0x0008):
+  - CurrentLevel (Attribute ID: 0x0000, attributeValue: 0xFE)
+- Color Control (Cluster ID: 0x0300):
+  - CurrentX (AttributeID: 0x0003, attributeValue: 0x45a2)
+  - CurrentY (AttributeID: 0x0004, attributeValue: 0x1be7)
+  - EnhancedColorMode (AttributeID: 0x4001, attributeValue: 0x01)
 
-> Note: The EnhancedColorMode attribute must have a value 0x01 when using the XY color space as per the specification.
+>Note: The EnhancedColorMode attribute must have a value 0x01 when using the XY color space as per the specification.
 
-The resulting add-scene command would look as follows:
+The resulting add-scene command is as follows:
 
 ```sh
 mattertool scenesmanagement add-scene 1 1 1 "Purple" '[{"clusterID": "0x0006", "attributeValueList":[{"attributeID": "0x0000", "attributeValue": "0x01"}]},{"clusterID": "0x0008", "attributeValueList":[{"attributeID": "0x0000", "attributeValue": "0xfe"}]},{"clusterID": "0x0300", "attributeValueList":[{"attributeID": "0x0003", "attributeValue": "0x45a2"},{"attributeID": "0x0004", "attributeValue": "0x1be7"},{"attributeID": "0x4001", "attributeValue": "0x01"}]}]' 1 1
 ```
 
-You might also want a scene that simple turns off all the lights:
+You might also want a scene that simply turns off all the lights:
 
 ```sh
 mattertool scenesmanagement add-scene 1 2 1000 "Off" '[{"clusterID": "0x0006", "attributeValueList":[{"attributeID": "0x0000", "attributeValue": "0x00"}]},{"clusterID": "0x0008", "attributeValueList":[{"attributeID": "0x0000", "attributeValue": "0x00"}]}]' 1 1
@@ -426,7 +422,6 @@ After executing an add-scene command, a response is returned with status: 0 in t
 The following helper script takes the following arguments: _groupID_, _sceneID_, _transitionTime_, _R_, _G_, _B_, _nodeID_ and outputs the appropriately formatted add-scene command. This can be copied and pasted directly into the CLI to run the Mattertool command to add the scene.
 
 :::collapsed{summary="Click to expand and view the createColorScene.c file"}
-
 ```c
 #include <stdint.h>
 #include <stdio.h>
@@ -514,7 +509,7 @@ For example:
 mattertool scenesmanagement store-scene 1 2 1 1
 ```
 
-To verify the scene in the CHIP-TOOL logs you can use a ViewScene command:
+To verify the scene in the CHIP-TOOL logs, you can use a ViewScene command:
 
 ```sh
 mattertool scenesmanagement view-scene <GroupID> <SceneID> <NodeID> <Endpoint>
@@ -524,7 +519,7 @@ mattertool scenesmanagement view-scene <GroupID> <SceneID> <NodeID> <Endpoint>
 
 ### Step 8: Recalling a Scene
 
-Recalling a scenes will write the attributes stored in the scenes table to the requested endpoint attributes.
+Recalling a scene will write the attributes stored in the scenes table to the requested endpoint attributes.
 
 #### Unicast Recall
 
@@ -532,7 +527,7 @@ Recalling a scenes will write the attributes stored in the scenes table to the r
 mattertool scenesmanagement recall-scene <GroupID> <SceneID> <NodeID> <Endpoint>
 ```
 
-#### Groupcast recall
+#### Groupcast Recall
 
 ```sh
 mattertool scenesmanagement recall-scene <GroupID> <SceneID> 0xFFFFFFFFFFFF+<GroupID> <Endpoint>
@@ -544,16 +539,15 @@ Example:
 mattertool scenesmanagement recall-scene 1 1 0xFFFFFFFFFFFF0001 1
 ```
 
-There are many more commands that can be used from the Scenes Management cluster. To see these commands simply do `mattertool scenesmanagement` on the matterhub.
+There are many more commands that can be used from the Scenes Management cluster. To see these commands, simply do `mattertool scenesmanagement` on the matterhub.
 
 ![scene management commands](./images/scenes-commands.png)
 
 ### Demo
 
-Finally, in this example we will toggle between two scenes comprising a set of two Matter Light devices to demonstrate everything discussed above. We have made the following script which combines everything into a single tool. Assuming that steps 1-4 are complete:
+Finally, in this example, toggle between two scenes comprising a set of two Matter Light devices to demonstrate everything discussed above. The following script combines everything into a single tool. Assuming that steps 1-4 are complete:
 
 :::collapsed{summary="Click to expand and view the automateScenes.c file"}
-
 ```c
 /*
 	AUTOMATION SCRIPT FOR SCENES Demo
@@ -709,24 +703,24 @@ int main(int argc, char *argv[]) {
 
 Where the supplied arguments are:
 
-* groupID = minimum value of 1
-* sceneID = (uint8)
-* transitionTime = (uint32) (ms)
-* sceneName = (string) (max 16)
-* R = (uint8) Red value of RGB
-* G = (uint8) Green value of RGB
-* B = (uint8) Blue value of RGB
-* nodeID = node ID you want the scene to apply to (this is determined when the node is commissioned)
+- groupID = minimum value of 1
+- sceneID = (uint8)
+- transitionTime = (uint32) (ms)
+- sceneName = (string) (max 16)
+- R = (uint8) Red value of RGB
+- G = (uint8) Green value of RGB
+- B = (uint8) Blue value of RGB
+- nodeID = node ID you want the scene to apply to (this is determined when the node is commissioned)
 
 The options are
 
-* -setupGroupKeys   : prints the command to set up the group keys
-* -addGroup         : prints the command to add the nodes to the group
-* -setupGroupcast   : prints the command to set up the groupcast
-* -addScene         : prints the command to add the scene
-* -recallScene      : prints the command to recall the added scene
+- -setupGroupKeys   : prints the command to set up the group keys
+- -addGroup         : prints the command to add the nodes to the group
+- -setupGroupcast   : prints the command to set up the groupcast
+- -addScene         : prints the command to add the scene
+- -recallScene      : prints the command to recall the added scene
 
-Using this tool with groupeID = 1, two scenes (sceneID 1 and 2), two nodes (nodeID 1 and 2) the tool gives us the following commands:
+Using this tool with groupID = 1, two scenes (sceneID 1 and 2), and two nodes (nodeID 1 and 2), the tool provides the following commands:
 
 ```sh
 mattertool scenesmanagement add-scene 1 1 1 "Blue" '[{"clusterID": "0x0006", "attributeValueList":[{"attributeID": "0x0000", "attributeValue": "0x01"}]},{"clusterID": "0x0008", "attributeValueList":[{"attributeID": "0x0000", "attributeValue": "0xfe"}]},{"clusterID": "0x0300", "attributeValueList":[{"attributeID": "0x0003", "attributeValue": "0x2666"},{"attributeID": "0x0004", "attributeValue": "0x0f5c"},{"attributeID": "0x4001", "attributeValue": "0x01"}]}]' 1 1
@@ -744,7 +738,7 @@ mattertool scenesmanagement add-scene 1 1 1 "Red" '[{"clusterID": "0x0006", "att
 
 This sets node 2 to be Red in Scene 1 and Blue in Scene 2.
 
-To recall scene 1 we can use:
+To recall scene 1, use:
 
 ```sh
 mattertool scenesmanagement recall-scene 1 1 0xFFFFFFFFFFFF0001 1
@@ -752,7 +746,7 @@ mattertool scenesmanagement recall-scene 1 1 0xFFFFFFFFFFFF0001 1
 
 ![scene 1 demo](./images/scene1.png)
 
-To recall scene 2 we can use:
+To recall scene 2, use:
 
 ```sh
 mattertool scenesmanagement recall-scene 1 2 0xFFFFFFFFFFFF0001 1
