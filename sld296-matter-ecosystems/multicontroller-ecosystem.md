@@ -4,7 +4,7 @@ Matter devices can participate in multiple Matter ecosystems simulatenously thro
 Multi-admin allows you to join the Matter device to several Matter fabrics and administer it by several different Matter controllers.
 
 Any Matter Accessory Devices (MAD) can be shared between two or more Matter fabrics by first commissioning to one Matter fabric and then sharing control of them to other Matter controllers, typically a Matter ecosystem hub.
-For more details on commissiong your MAD to a Matter network, please first follow the steps in [Single Controller](./singlecontroller-ecosystem.md) for your ecosystem. If you are testing an MAD using CHIP-Tool, please see our guides for using [CHIP-Tool over Thread](/matter/{build-docspace-version}/matter-thread/index.md) or [CHIP-Tool over Wi-Fi](/matter/{build-docspace-version}/matter-wifi-run-demo/use-case-execution.md) instead.
+For more details on commissiong your MAD to a Matter network, please first follow the steps in [Single Controller](./singlecontroller-ecosystem) for your ecosystem. If you are testing an MAD using CHIP-Tool, please see our guides for using [CHIP-Tool over Thread](/matter/{build-docspace-version}/matter-thread/index) or [CHIP-Tool over Wi-Fi](/matter/{build-docspace-version}/matter-wifi-run-demo/use-case-execution) instead.
 
 Once your MAD is commissioned to a Matter fabric, you must then use the Matter controller of that fabric to open a commissioning window for your MAD.
 This will allow another Matter controller to commission the Matter node and make it part of their own Matter fabric. The next step is commissioning the Matter device to the new fabric using the special pairing code generated when opening the commissioning window.
@@ -12,7 +12,7 @@ Please see below some examples on how this is done with the Silabs Matter hub an
 
 ## Sharing MAD from CHIP-Tool to any Matter Ecosystem
 
-Note: these steps assume you've followed the [Matter over Thread Example](/matter/{build-docspace-version}/matter-thread/index.md) or the [Matter over Wi-Fi Example](/matter/{build-docspace-version}/matter-wifi/index.md) and already commissioned your MAD to your CHIP-Tool-based Matter hub.
+Note: these steps assume you've followed the [Matter over Thread Example](/matter/{build-docspace-version}/matter-thread/index) or the [Matter over Wi-Fi Example](/matter/{build-docspace-version}/matter-wifi/index) and already commissioned your MAD to your CHIP-Tool-based Matter hub.
 
 1. From your Matter hub CLI, open a commissioning window for your MAD.
 ```shell
@@ -38,7 +38,7 @@ Example: the code here is 00320849359.
 $ [1671488142.041249][341258:341263] CHIP:CTL: Manual pairing code: [00320849359]
 ```
 
-3. Commissiong your MAD with your other Matter ecosystem as normal - see the steps at [Single Controller](./singlecontroller-ecosystem.md) for your Matter ecosystem - with one change to the procedure: instead of scanning a QR code you'll use the pairing code from step #2.
+3. Commissiong your MAD with your other Matter ecosystem as normal - see the steps at [Single Controller](./singlecontroller-ecosystem) for your Matter ecosystem - with one change to the procedure: instead of scanning a QR code you'll use the pairing code from step #2.
 
 ## Sharing MAD from Apple Home Pod to Google Home Ecosystem
 
