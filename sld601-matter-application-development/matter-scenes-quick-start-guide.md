@@ -12,7 +12,7 @@ The Scene Table stores Fabric-Scoped IDs which contain all the information assoc
 * **SceneID:** unique identifier for a particular scene
 * **SceneName:** name of the scene
 * **SceneTransitionTime:** The amount of time (in milliseconds) that it will take a cluster to change from the current state to the requested state
-* **ExtensionFields:** This is a struct containing the ClusterIDs and Attribute Values for a clusters which participate in a scene.
+* **ExtensionFields:** This is a struct containing the ClusterIDs and Attribute Values for a clusters which participate in a scene
 
 ![scenes cluster data model](./images/scenes-data-model.png)
 
@@ -78,6 +78,9 @@ The documentation for the APIs that have been generated can be found here: [Simp
 The RGB PWM LED operates in the RGB color space, however the Matter Color Control Cluster does not operate in the RGB color space, so a transformation is required to convert the RGB values into something that can be recognized by Matter. In this example we will use the xyY color space as defined by the Commission Internationale de l’Éclairage (CIE) specification which is also recognized in the Matter specification.
 
 Inside of the src/ directory of the MatterLightOverThread project, create a new class called _ColorTransformer_ with the corresponding .cpp and .h files. Copy and paste the following to the ColorTransformer.h file.
+
+<details>
+<summary>ColorTransformer.h</summary>
 
 ```c++
 /*
@@ -155,9 +158,14 @@ public:
 #endif /* SRC_COLORTRANSFORMER_H_ */
 ```
 
+</details>
+
 ### Step 3 Implement Callbacks
 
-Within the src/ZclCallbacks.cpp file, include the ColorTransformer.h file, and initialize the following variables:
+Make the following additions to the src/ZclCallbacks.cpp file:
+
+<details>
+<summary>ZclCallbacks.cpp</summary>
 
 ```c++
 // Color Transformer
@@ -181,6 +189,8 @@ uint16_t b = 0xFFFF;
 // Initialize xy color mode flag
 bool xyFlag = false;
 ```
+</details>
+
 
 Then, inside `MatterPostAttributeChangeCallback` in _src/ZclCallbacks.cpp_ implement the on/off functionality of the LED:
 
@@ -417,6 +427,9 @@ After executing an add-scene command, a response is returned with status: 0 in t
 
 The following helper script takes the following arguments: _groupID_, _sceneID_, _transitionTime_, _R_, _G_, _B_, _nodeID_ and outputs the appropriately formatted add-scene command. This can be copied and pasted directly into the CLI to run the Mattertool command to add the scene.
 
+<details>
+<summary>createColorScene.c</summary>
+
 ```c
 #include <stdint.h>
 #include <stdio.h>
@@ -488,6 +501,7 @@ int main(int argc, char *argv[]) {
     return 0;
 }
 ```
+</details>
 
 #### Storing a Scene
 
@@ -540,6 +554,9 @@ There are many more commands that can be used from the Scenes Management cluster
 ### Demo
 
 Finally, in this example we will toggle between two scenes comprising a set of two Matter Light devices to demonstrate everything discussed above. We have made the following script which combines everything into a single tool. Assuming that steps 1-4 are complete:
+
+<details>
+<summary>automateScenes.c</summary>
 
 ```c
 /*
@@ -688,6 +705,8 @@ int main(int argc, char *argv[]) {
     
 }
 ```
+</details>
+
 
 ```sh
 ./automateScenes <groupID> <sceneID> <transitionTime> <sceneName> <R> <G> <B> <nodeID> [-setupGroupKeys] [-addGroup] [-setupGroupcast] [-addScene] [-recallScene] [-groupCast]
