@@ -1,4 +1,4 @@
-# Using Multi-Admin to Share Matter Accessory Devices (MAD) with Matter over Wi-Fi or Thread to a multiple Matter controllers
+# Using Multi-Admin to Share Matter Accessory Devices (MAD) across Multiple Controllers
 
 Matter devices can participate in multiple Matter ecosystems simulatenously through a feature called Multi-Admin.
 Multi-admin allows you to join the Matter device to several Matter fabrics and administer it by several different Matter controllers.
