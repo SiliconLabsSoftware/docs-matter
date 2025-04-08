@@ -539,7 +539,7 @@ There are many more commands that can be used from the Scenes Management cluster
 
 ### Demo
 
-Finally, in this example we will toggle between two scenes comrpising a set of two Matter Light devices to demonstrate everything discussed above. We have made the following script which combines everything into a single tool. Assuming that steps 1-4 are complete:
+Finally, in this example we will toggle between two scenes comprising a set of two Matter Light devices to demonstrate everything discussed above. We have made the following script which combines everything into a single tool. Assuming that steps 1-4 are complete:
 
 ```c
 /*
