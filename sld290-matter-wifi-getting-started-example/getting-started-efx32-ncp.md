@@ -26,6 +26,8 @@ The following hardware devices are required for executing Matter over Wi-Fi:
   - BRD4187C / SLWSTK6006A / Wireless Starter Kit / 2.4GHz@20dBm
     - [XG24-RB4187C](https://www.silabs.com/development-tools/wireless/xg24-rb4187c-efr32xg24-wireless-gecko-radio-board)
     - MG24 with WSTK : [xG24-PK6010A](https://www.silabs.com/development-tools/wireless/efr32xg24-pro-kit-20-dbm?tab=overview)
+  
+    **Note:** A custom board binary can also be generated. The configuration file `sl_spidrv_eusart_exp_config` for RS9116 and `sl_spidrv_exp_config` for 917NCP and WF200 should have the SPI pin and port defines enabled. The configuration file `sl_custom_board.h` file contains the SPI pins, which should be updated according to the custom board's pin configuration.
 
 - **Wi-Fi Dev Kits & boards**
 
