@@ -497,7 +497,7 @@ Instead of adding a new scene from scratch, we can also store the current state 
 mattertool scenesmanagement store-scene <GroupID> <SceneID> <NodeID> <Endpoint>
 ```
 
-F or example:
+For example:
 
 ```sh
 mattertool scenesmanagement store-scene 1 2 1 1
