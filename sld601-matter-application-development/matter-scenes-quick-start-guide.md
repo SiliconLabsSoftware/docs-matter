@@ -275,7 +275,7 @@ This will initialize the LED to be white.
 
 ### Step 4: Build and Flash 
 
-Build the project and flash the binary to as many matter devices as you wish to have in your scene. in this demo we will have 2 lighting devices. Ensure that the devices have been flashed with a  bootloader prior flashing the application for the first time.
+Build the project and flash the binary to as many matter devices as you wish to have in your scene. in this demo we will have 2 lighting devices. Ensure that the devices have been flashed with a  bootloader prior to flashing the application for the first time.
 
 ### Step 5: Set up Group Keys
 
