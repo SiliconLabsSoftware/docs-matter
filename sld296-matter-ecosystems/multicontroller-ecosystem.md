@@ -71,9 +71,11 @@ See [How to Set Up an Apple Home Ecosystem](./apple-ecosystem-setup.md). Then us
 2. Select the MAD to be shared from your devices.
 3. Press the vertical ... at the top right.
 4. Select Share with other services.
+
 Option A:
    - 5. Press Share on the available service for the Matter ecosystem you wish to commission your device to.
    - 6. Follow the steps on screen to complete the commissioning.
+
 Option B:
    - 5. Press QR Code.
    - 6. Either use the QR Code or the provided pairing code (11-digits) with your other Matter ecosystem app.
@@ -86,9 +88,11 @@ Option B:
 3. Press the gear icon at the top right.
 4. Press Linked Matter apps & services.
 5. Press Link apps & services.
+
 Option A:
    - 6. Press the Matter ecossytem app you wish to share the MAD with.
    - 7. Follow the steps on screen to complete the commissioning.
+
 Option B:
    - 6. Press Use pairing code or Share with QR code.
    - 7. Either use the QR Code or the provided pairing code (11-digits) with your other Matter ecosystem app.
