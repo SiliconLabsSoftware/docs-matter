@@ -695,7 +695,7 @@ int main(int argc, char *argv[]) {
 
 Where the supplied arguments are:
 
-* groupeID = minimum value of 1
+* groupID = minimum value of 1
 * sceneID = (uint8)
 * transitionTime = (uint32) (ms)
 * sceneName = (string) (max 16)
