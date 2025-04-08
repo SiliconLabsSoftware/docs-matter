@@ -143,7 +143,13 @@ the new protocol version 2.x.
 Silicon Labs' example applications use the bluetooth communication to receive provisioning data. The Bluetooh channel requires
 Provision Protocol v2.x.
 
-### Parameters
+## Storage
+
+[The ProvisionStorage interface](https://github.com/SiliconLabsSoftware/matter_support/blob/main/provision/headers/ProvisionStorage.h) contains the individual functions used to write into, or read from non-volatile memory. Applications may implement this interface in many different ways, using different device drivers, memory addresses, encoding formats, etc.
+Silicon Labs provides a couple of examples illustrating different storage strategies: The [Default Storage implementation](https://github.com/project-chip/connectedhomeip/blob/master/examples/platform/silabs/provision/ProvisionStorageDefault.cpp) stores most of the data using the NVM3 facilities, and uses the last page of flash to store the device credentials (CD, PAI, DAC). [The Flash-Only implementation](https://github.com/project-chip/connectedhomeip/blob/master/examples/platform/silabs/provision/ProvisionStorageFlash.cpp) stores all the data in a contiguous block of memory, in a single page of flash.
+By default, SLC-based projects recommend the `matter_provision_default` component, which uses `ProvisionStorageDefault`. To use `ProvisionStorageFlash` instead, applications must explicitly include the `matter_provision_flash` component.
+
+## Parameters
 
 Parameter files define the name, type, and restrictions of the arguments recognized by the target device. The `modules/parameters.yaml`
 file defines the well-known (default) parameters used by the automatic provisioning action.
