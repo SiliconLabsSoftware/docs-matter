@@ -35,7 +35,7 @@ This page provides a detailed description on how to create an Wi-Fi NCP project 
 
    ![Finish project](images/ncp-proj-config.png)
 
-10. After creating an application for BRD4357a NCP board, open the project slcp file -> Select Software components -> Search for "siwx917 NCP Extension" -> Click on Install
+10. If you are creating an application for a BRD4357a NCP board, open the project slcp file -> Select Software components -> Search for "siwx917 NCP Extension" -> Click on Install
    
    ![Install software component](images/ncp-brd4357a-component.png)
 
