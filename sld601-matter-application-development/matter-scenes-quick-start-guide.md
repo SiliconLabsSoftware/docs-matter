@@ -79,8 +79,7 @@ The RGB PWM LED operates in the RGB color space, however the Matter Color Contro
 
 Inside of the src/ directory of the MatterLightOverThread project, create a new class called _ColorTransformer_ with the corresponding .cpp and .h files. Copy and paste the following to the ColorTransformer.h file.
 
-<details>
-<summary>ColorTransformer.h</summary>
+:::collapsed{summary="Click to expand and view the ColorTransformer.h file"}
 
 ```c++
 /*
@@ -158,14 +157,13 @@ public:
 #endif /* SRC_COLORTRANSFORMER_H_ */
 ```
 
-</details>
+:::
 
 ### Step 3 Implement Callbacks
 
 Make the following additions to the src/ZclCallbacks.cpp file:
 
-<details>
-<summary>ZclCallbacks.cpp</summary>
+:::collapsed{summary="Click to expand and view the ZclCallbacks.cpp file"}
 
 ```c++
 // Color Transformer
@@ -189,8 +187,8 @@ uint16_t b = 0xFFFF;
 // Initialize xy color mode flag
 bool xyFlag = false;
 ```
-</details>
 
+:::
 
 Then, inside `MatterPostAttributeChangeCallback` in _src/ZclCallbacks.cpp_ implement the on/off functionality of the LED:
 
@@ -427,8 +425,7 @@ After executing an add-scene command, a response is returned with status: 0 in t
 
 The following helper script takes the following arguments: _groupID_, _sceneID_, _transitionTime_, _R_, _G_, _B_, _nodeID_ and outputs the appropriately formatted add-scene command. This can be copied and pasted directly into the CLI to run the Mattertool command to add the scene.
 
-<details>
-<summary>createColorScene.c</summary>
+:::collapsed{summary="Click to expand and view the createColorScene.c file"}
 
 ```c
 #include <stdint.h>
@@ -501,7 +498,7 @@ int main(int argc, char *argv[]) {
     return 0;
 }
 ```
-</details>
+:::
 
 #### Storing a Scene
 
@@ -555,8 +552,7 @@ There are many more commands that can be used from the Scenes Management cluster
 
 Finally, in this example we will toggle between two scenes comprising a set of two Matter Light devices to demonstrate everything discussed above. We have made the following script which combines everything into a single tool. Assuming that steps 1-4 are complete:
 
-<details>
-<summary>automateScenes.c</summary>
+:::collapsed{summary="Click to expand and view the automateScenes.c file"}
 
 ```c
 /*
@@ -705,8 +701,7 @@ int main(int argc, char *argv[]) {
     
 }
 ```
-</details>
-
+:::
 
 ```sh
 ./automateScenes <groupID> <sceneID> <transitionTime> <sceneName> <R> <G> <B> <nodeID> [-setupGroupKeys] [-addGroup] [-setupGroupcast] [-addScene] [-recallScene] [-groupCast]
