@@ -1,5 +1,10 @@
 # New Features
 
+## New Features for v2.5.2-1.4
+
+- Updated to work with Simplicity SDK v2024.12.2 and WiSeConnect SDK v3.4.2.
+- Miscellaneous bug fixes.
+
 ## New Features for v2.5.1-1.4
 
 - Quality-tested Matter 1.4 GA solution for Thread MG24 / MG26, Wi-Fi SiWx917 SoC and RCP mode, Wi-Fi MG24/WF200 and Wi-Fi MG24/RS9116 (non-sleepy).
