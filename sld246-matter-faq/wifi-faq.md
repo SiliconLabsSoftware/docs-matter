@@ -71,21 +71,20 @@ Where `mySSID` is **your AP's SSID** and `mypassword` is **your AP's password**.
 
 **Procedure:**
 
--   Delete the existing certificates on your laptop with the following command
+- Delete the existing certificates on your laptop with the following command
     run from the `/connectedhomeip` directory:
 
     ```shell
     $ /bin/rm /tmp/chip_*
     ```
 
--   Issue the commissioning command
+- Issue the commissioning command
 
 ### 3. WLAN connection fails from RS9116 during commissioning when channel 13 is selected on the AP
 
-The required channel becomes available for connection when the WLAN connection region is configured during compilation to one that supports the channel, such as for Japan for channel 13. 
+The required channel becomes available for connection when the WLAN connection region is configured during compilation to one that supports the channel, such as for Japan for channel 13.
 
-In order to use the desired channel, before building, make sure the WLAN connection region is configured correctly by reviewing/modifying the following lines in 
-**/examples/platform/silabs/efr32/rs911x/rsi_wlan_config.h**:
+In order to use the desired channel, before building, make sure the WLAN connection region is configured correctly by reviewing/modifying the following lines in **/examples/platform/silabs/efr32/rs911x/rsi_wlan_config.h**:
 
 ```c
 //Make sure this is set to RSI_ENABLE
@@ -114,14 +113,13 @@ You will get appropriate firmware in the above mentioned path.
 
 Note:
 
-1.  How to check the current firmware version?
+1. How to check the current firmware version?
 
-    > You can find the currently used firmware version in the DUT log.
+   > You can find the currently used firmware version in the DUT log.
 
-2.  How to check whether you are using correct firmware version or not?
+2. How to check whether you are using correct firmware version or not?
 
-    > Compare last 5 digits of firmware version mentioned in the above path with
-    > the currently used firmware version.
+   > Compare last 5 digits of firmware version mentioned in the above path with the currently used firmware version.
 
 ### 5. Apple HomePod associated failures
 
@@ -143,22 +141,20 @@ Verify the access point settings, SSID, PSK, security type, REGION, CHANNEL.
 
 Verify external power is supplied to rs911x
 
-### 9. To enable different security options on AP/Router 
+### 9. To enable different security options on AP/Router
 
 1. Get the router address by entering `route -n` or ifconfig of ipconfig.
 2. Enter the router address in the browser and enter the appropriate username and password.
 3. Select the appropriate band.
-4. In security, select type (WPA / WPA2 / WPA3). 
+4. In security, select type (WPA / WPA2 / WPA3).
 
 ### 10. CHIP Logs are not available on MG12 + WF200 due to image size constraints
 
-Due to apps taking up more space than available flash on the MG12 + WF200 device combination, `chip_logging=false` needs to be included on the command line while building the app image, 
-to disable CHIP logs and thereby reduce the image size.
+Due to apps taking up more space than available flash on the MG12 + WF200 device combination, `chip_logging=false` needs to be included on the command line while building the app image, to disable CHIP logs and thereby reduce the image size.
 
 This prevents debugging the code on the MG12 + WF200 device combination.
 
-In order to work around this constraint, disable either the LCD or the use of QR codes, depending on your debugging needs. Disabling one of these will sufficiently reduce the image size to allow 
-CHIP Logging to be enabled. 
+In order to work around this constraint, disable either the LCD or the use of QR codes, depending on your debugging needs. Disabling one of these will sufficiently reduce the image size to allow CHIP Logging to be enabled.
 
 If you disabled QR Codes, you may use the `chip-tool` for commissioning the device.
 
@@ -182,8 +178,7 @@ There are two possible workarounds to this:
 
 ### 12. MG24 device sometimes fails to bootload with the new image during OTA Update with WF200
 
-While performing an OTA Update with the EFR32MG24 + WF200 device combination using the external flash, when the device is reset and bootloading begins with the new image, the device sometimes starts up 
-with the existing image instead of the newly downloaded one.
+While performing an OTA Update with the EFR32MG24 + WF200 device combination using the external flash, when the device is reset and bootloading begins with the new image, the device sometimes starts up with the existing image instead of the newly downloaded one.
 
 When this happens, perform the following steps to run the OTA Update successfully:
 
@@ -198,3 +193,23 @@ When this happens, perform the following steps to run the OTA Update successfull
 3. Reconnect the WF200 Expansion Board to the EFR32MG24 and reset the device.
 
 4. Re-run the OTA Update process from the beginning.
+
+### 13. Connectivity Issues with SiWX917 SoC with Low-Power Applications while flashing firmware/application image
+
+Sometimes, firmware/application updates fail while flashing, and the logs display "Could not connect debugger. Could not connect to target device," indicating that the application processor is in a low power state with no flash access. Try one of the following solutions, then retry the firmware/application update:
+
+Toggle the power switch towards **AEM** (Advanced Energy Monitoring) on the WPK/WSTK board, or
+
+Perform the following sequence of steps:
+
+1. Press and hold the **ISP** button on the radio board and the **RESET** button on the WPK/WSTK board simultaneously.
+
+2. Release the **RESET** button on the WPK/WSTK board.
+
+3. Release the **ISP** button on the radio board.
+
+4. Click **Erase chip** to erase the flash.
+
+5. Press the **RESET** button on the WPK/WSTK board again.
+
+6. Retry flashing the firmware/application.
