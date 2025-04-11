@@ -35,20 +35,24 @@ This page provides a detailed description on how to create an Wi-Fi NCP project 
 
    ![Finish project](images/ncp-proj-config.png)
 
-10. Once the solution is created, right-click the project and select **Build Project** in the Project Explorer tab.
+10. If you are creating an application for a BRD4357a NCP board, open the project slcp file, and then select **Software Components**, search for "siwx917 NCP Extension", and click **Install**.
+
+    ![Install software component](images/ncp-brd4357a-component.png)
+
+11. Once the solution is created, right-click the project and select **Build Project** in the Project Explorer tab.
 
     ![Build project](images/ncp-build-proj.png)
 
-11. Once the project is compiled successfully, go to the Project Explorer view and expand the binaries folder to flash the binary.
+12. Once the project is compiled successfully, go to the Project Explorer view and expand the binaries folder to flash the binary.
 
     ![Select binary](images/ncp-binary-selection.png)
 
-12. Right-click the selected '.s37' binary and click **flash to device**.
+13. Right-click the selected '.s37' binary and click **flash to device**.
 
     ![flash to device](images/ncp-flash-binary.png)
 
-13. The Flash programmer window opens. Click **Erase** and then **Program** to start flashing.
+14. The Flash programmer window opens. Click **Erase** and then **Program** to start flashing.
 
     ![Flash binary](images/ncp-flash-binary-efr32.png)
 
-**Note:** Output of the EFR32 NCP Host application will be displayed on the J-Link RTT Viewer.
+>**Note:** Output of the EFR32 NCP Host application will be displayed on the J-Link RTT Viewer.

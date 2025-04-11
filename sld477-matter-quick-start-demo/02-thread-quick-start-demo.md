@@ -4,7 +4,7 @@ This Quick-Start Guide will demo the out-of-box experience for adding an EFR32MG
 
 ## Software Requirements
 
-- Simplicity Studio v5 with SiSDK - 2024.12.1 + Silicon Labs Matter - 2.5.1
+- Simplicity Studio v5 with SiSDK - 2024.12.2 + Silicon Labs Matter - 2.5.2
 - Simplicity Connect mobile App on Smartphone
 
 ## Hardware Requirements
@@ -12,7 +12,7 @@ This Quick-Start Guide will demo the out-of-box experience for adding an EFR32MG
 - Android smartphone OR iPhone
 - 1 x Silabs WSTK + EFR32MG24 2.4 GHz 20 dBm RB (BRD4161A)
 
-> **Note:** Refer to [EFR32MG24 Tech Docs](https://www.silabs.com/development-tools/wireless/efr32xg24-pro-kit-20-dbm?tab=techdocs) for more details.
+>**Note:** Refer to [EFR32MG24 Tech Docs](https://www.silabs.com/development-tools/wireless/efr32xg24-pro-kit-20-dbm?tab=techdocs) for more details.
 
 ### (Optional) Ecosystem requirements
 
