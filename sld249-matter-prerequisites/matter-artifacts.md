@@ -42,25 +42,19 @@ RS9116 chip/module needs to be flashed with proper firmware as mentioned below:
 - `RS916.x.x.x.x.x.rps - This firmware image is valid for RS9116 1.5 revision chip/module`
 - `RS9116.x.x.x.x.x.rps - This firmware image is valid for RS9116 1.4/1.3 revision chip/module`
 
-## SiWx917 Firmware for SiWx917 NCP
+## SiWx917 Firmware for SiWN917 NCP and SiWG917 SOC
 
-The SiWx917 firmware(SiWx917NCP_firmware_files.zip) is used to update the SiWx917 NCP which can be found in the Assets section of this page:
+The SiWx917 firmware(SiWx917_firmware_files.zip) is used to update the SiWN917 NCP and SiWG917 SOC which can be found in the Assets section of this page:
 
 https://github.com/SiliconLabs/matter_extension/releases/download/v2.5.2/SiWx917NCP_firmware_files_2.5.2-1.4.zip
 
 **Note**:
-SiWx917 NCP board need to be flashed with proper firmware as mentioned below:
+
+SiWN917 NCP board need to be flashed with proper firmware as mentioned below:
 
 - `SiWG917-B.2.x.X.X.X.rps - This firmware image is valid for BRD8045A (B0 Expansion v2.0) board`
 
-## SiWx917 Firmware for SiWx917 SoC
-
-The SiWx917 firmware (SiWx917SOC_firmware_files.zip) along with WiSeConnect 3 SDK is used to update the SiWx917 SoC which can be found in the Assets section of this page:
-
-https://github.com/SiliconLabs/matter_extension/releases/download/v2.5.2/SiWx917SOC_firmware_files_2.5.2-1.4.zip
-
-**Note**:
-SiWx917 SoC boards need to be flashed with proper firmware as mentioned below:
+SiWG917 SoC boards need to be flashed with proper firmware as mentioned below:
 
 - `SiWG917-B.2.x.X.X.X.rps - This firmware image is valid for BRD4338A(B0 common flash v2.0) board`
 

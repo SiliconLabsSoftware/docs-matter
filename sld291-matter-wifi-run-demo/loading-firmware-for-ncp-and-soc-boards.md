@@ -89,7 +89,7 @@ If the firmware update fails, try the following:
 
    ![Silicon Labs - design](./images/select-flash-option-in-commander.png)
 
-6. Refer to [Firmware for SiWx917 SoC](/matter/{build-docspace-version}/matter-prerequisites/matter-artifacts#siwx917-firmware-for-siwx917-so-c) to identify the correct firmware to be flashed into the specific hardware. Locate and select the firmware file to flash.
+6. Refer to [Firmware for SiWx917 SoC](/matter/{build-docspace-version}/matter-prerequisites/matter-artifacts#siwx917-firmware-for-siwn917-ncp-and-siwx917-soc) to identify the correct firmware to be flashed into the specific hardware. Locate and select the firmware file to flash.
 
 7. Click **Flash**.
 
