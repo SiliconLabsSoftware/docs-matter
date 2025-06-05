@@ -36,25 +36,37 @@ The SiWx917 NCP or RS9116 EVK connectivity firmware can be upgraded using Tera T
 
 ### Connectivity Firmware Upgrade Using Simplicity Commander
 
-1. On the Simplicity Studio home page, click **Tools**.
+1. Plug the SiWx917 radio board into the radio board connectors of the adapter board as shown below.
 
-2. In the Tools dialog, select **Simplicity Commander** and click **OK**.
+2. Make sure the UART switch on the adapter board is in the USB position.
+
+3. Make sure the PWR MODE switch on the adapter board is in either the BUF or HOST position.
+
+4. Connect the adapter board to the EFR32 WPK board.
+
+5. Connect the EFR32 WPK board to your computer using a type C USB cable.
+
+6. Connect the USB port of the adapter board to your computer's USB port using a type C USB cable.
+
+7. On the Simplicity Studio home page, click **Tools**.
+
+8. In the Tools dialog, select **Simplicity Commander** and click **OK**.
 
     ![Silicon Labs - design](./images/select-commander.png)
 
-3. The Simplicity Commander window is displayed.
+9. The Simplicity Commander window is displayed.
    
-4. In the Simplicity Commander window, select Utilities > Load RPS Image Over UART...
+10. In the Simplicity Commander window, select Utilities > Load RPS Image Over UART...
 
     ![Silicon Labs - design](./images/ncp_click-load-rps-image.png)
 
-5. The Load RPS Image Over UART window is displayed.
+11. The Load RPS Image Over UART window is displayed.
 
     ![Silicon Labs - design](./images/ncp_load-rps-window.png)
 
-6. Click Browse next to the Select RPS Image field.
+12. Click Browse next to the Select RPS Image field.
 
-7. Locate and select the firmware file to flash from within the connectivity_firmware/standard sub-folder of the WiSeConnect 3 extension path.
+13. Locate and select the firmware file to flash from within the connectivity_firmware/standard sub-folder of the WiSeConnect 3 extension path.
    
     **Note**: The connectivity_firmware/lite sub-folder can be ignored since the Lite OPN is not supported in NCP mode.
     The WiSeConnect 3 extension path is where the extension was downloaded during installation. If you're not sure what the path is, refer to the location in the Preferences > SDKs page shown on clicking Manage SDKs.
@@ -63,27 +75,27 @@ The SiWx917 NCP or RS9116 EVK connectivity firmware can be upgraded using Tera T
 
     ![Silicon Labs - design](./images/ncp_selected-sdk.png)
 
-8. Under Select COM Port, select the COM port for the connected adapter board.
-   
-9. Under Load RPS Image, make sure High-speed transfer is selected.
+14. Under Select COM Port, select the COM port for the connected adapter board.
+
+15. Under Load RPS Image, make sure High-speed transfer is selected.
 
     ![Silicon Labs - design](./images/ncp_set-up-fw-update.png)
 
     **Note**: When High-speed transfer is selected, Simplicity Commander sets the baud rate to 921600 before performing the firmware update.
 
-10. Press the RST button on the adapter board.
+16. Press the RST button on the adapter board.
 
     ![Silicon Labs - design](./images/host-adapter-board-efr32-reset.png)
 
-11. Click Load RPS to update firmware.
+17. Click Load RPS to update firmware.
 
     ![Silicon Labs - design](./images/ncp_uploading-file.png)
 
-    ![Silicon Labs - design](./images/ncp_rps-image-loaded.png)
-
     **Note**: It takes around 2 minutes to perform a firmware update.
 
-12. On successful firmware update, the following message is displayed: "RPS image loaded successfully!".
+18. On successful firmware update, the following message is displayed: "RPS image loaded successfully!".
+
+    ![Silicon Labs - design](./images/ncp_rps-image-loaded.png)
 
 ### Troubleshooting an NCP Firmware Update Failure
 
