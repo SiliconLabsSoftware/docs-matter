@@ -46,7 +46,7 @@ RS9116 chip/module needs to be flashed with proper firmware as mentioned below:
 
 The SiWx917 firmware(SiWx917_firmware_files.zip) is used to update the SiWN917 NCP and SiWG917 SOC which can be found in the Assets section of this page:
 
-https://github.com/SiliconLabs/matter_extension/releases/download/v2.5.2/SiWx917NCP_firmware_files_2.5.2-1.4.zip
+https://github.com/SiliconLabs/matter_extension/releases/download/v2.5.2/SiWx917_firmware_files_2.5.2-1.4.zip
 
 **Note**:
 
