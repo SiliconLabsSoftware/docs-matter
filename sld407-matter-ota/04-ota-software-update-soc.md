@@ -114,7 +114,7 @@ For a combined image upgrade, the first step is to create a single image that co
     ```shell
      ./out/chip-tool pairing ble-wifi <node_id> "SSID" "PSK" 20202021 3840
      # Example:
-     ./out/chip-tool pairing ble-wifi 1 my_ap m my_psk 20202021 3840   
+     ./out/chip-tool pairing ble-wifi 1 my_ap my_psk 20202021 3840   
     ```
 
     where SSID and PSK are AP username and password.
