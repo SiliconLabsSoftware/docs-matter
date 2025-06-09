@@ -66,14 +66,7 @@ The SiWx917 NCP or RS9116 EVK connectivity firmware can be upgraded using Tera T
 
 12. Click Browse next to the Select RPS Image field.
 
-13. Locate and select the firmware file to flash from within the connectivity_firmware/standard sub-folder of the WiSeConnect 3 extension path.
-   
-    **Note**: The connectivity_firmware/lite sub-folder can be ignored since the Lite OPN is not supported in NCP mode.
-    The WiSeConnect 3 extension path is where the extension was downloaded during installation. If you're not sure what the path is, refer to the location in the Preferences > SDKs page shown on clicking Manage SDKs.
-
-    ![Silicon Labs - design](./images/ncp_click-manage-sdks.png)
-
-    ![Silicon Labs - design](./images/ncp_selected-sdk.png)
+13. Refer to [Firmware for SiWx917 SoC](/matter/{build-docspace-version}/matter-prerequisites/matter-artifacts#siwx917-firmware-for-siwx917-so-c) to identify the correct firmware to be flashed into the specific hardware. Locate and select the firmware file to flash.
 
 14. Under Select COM Port, select the COM port for the connected adapter board.
 
