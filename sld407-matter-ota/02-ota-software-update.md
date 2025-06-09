@@ -174,7 +174,7 @@ For more information, see the documentation for the ota-provider-app example in 
 
 ## Multi-Chip OTA Images
 
-Multi-Chip OTA is implemented only for EFR32 devices. Multi-chip OTA uses an enhanced script, ota_multi_image_tool.py, which creates .ota files that contain additional TLV headers. These TLV headers describe the binaries to be sent over the air. The enhanced script is located here. It is a wrapper to the original src/app/ota_image_tool.py. Multiple binaries can be packaged in the .ota file. Some tags are reserved for specific Silicon Labs binaries, and other tags are available to be used for arbitrary TLVs. The payloads can be encrypted.
+Multi-Chip OTA is implemented for EFR32 and 917 NCP/SoC devices. Multi-chip OTA uses an enhanced script, ota_multi_image_tool.py, which creates .ota files that contain additional TLV headers. These TLV headers describe the binaries to be sent over the air. The enhanced script is located here. It is a wrapper to the original src/app/ota_image_tool.py. Multiple binaries can be packaged in the .ota file. Some tags are reserved for specific Silicon Labs binaries, and other tags are available to be used for arbitrary TLVs. The payloads can be encrypted.
 
 The script can be obtained from the Matter Extension github repository.
 
