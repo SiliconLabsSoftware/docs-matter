@@ -176,7 +176,7 @@ Multi-OTA on 917 NCP supports application image upgrade, Wi-Fi(TA) image upgrade
 ./scripts/tools/silabs/ota/ota_multi_image_tool.py create -v 0xFFF1 -p 0x8005 -vn 2 -vs "2.0" -da sha256 --app-input-file SiWx917-lock-example.rps SiWx917-lock-example.ota
 ```
 
-**TA(Wi-Fi) Image Upgrade**
+**Wi-Fi(TA) Image Upgrade**
 
 ```shell
 ./scripts/tools/silabs/ota/ota_multi_image_tool.py create -v 0xFFF1 -p 0x8005 -vn 2 -vs "2.0" -da sha256 --app-input-file SiWG917-B.2.14.5.0.0.10.rps SiWG917-B.2.14.5.0.0.10.ota
