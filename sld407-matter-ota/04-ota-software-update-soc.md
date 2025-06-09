@@ -142,7 +142,7 @@ For a combined image upgrade, the first step is to create a single image that co
 
 Multi-OTA images can be created using `ota_multi_image_tool.py` which creates .ota files that contain additional TLV headers.
 
-**Note:** 917 NCP uses TLV tag 4 for TA(Wi-Fi) image upgrade
+**Note:** 917 NCP uses TLV tag 4 for Wi-Fi(TA) image upgrade.
 
 #### Multi-OTA image creation on 917 NCP
 
