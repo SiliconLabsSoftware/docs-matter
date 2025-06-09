@@ -80,7 +80,7 @@ For a combined image upgrade, the first step is to create a single image that co
      # Example for M4 alone application ota file
      ./src/app/ota_image_tool.py create -v 0xFFF1 -p 0x8005 -vn 2 -vs "2.0" -da sha256 SiWx917-lock-example.rps SiWx917-lock-example.ota
      # Example for TA alone application ota file
-     ./src/app/ota_image_tool.py create -v 0xFFF1 -p 0x8005 -vn 2 -vs "2.0" -da sha256 SiWx917-lock-example.rps SiWx917-lock-example.ota
+     ./src/app/ota_image_tool.py create -v 0xFFF1 -p 0x8005 -vn 2 -vs "2.0" -da sha256 SiWG917-B.2.14.5.0.0.9.rps SiWG917-B.2.14.5.0.0.9.ota
         ```
 
 #### Running OTA Provider
@@ -102,6 +102,7 @@ For a combined image upgrade, the first step is to create a single image that co
      ./out/chip-tool pairing onnetwork <node_id> 20202021
      # Example:
      ./out/chip-tool pairing onnetwork 4 20202021
+
      ./out/chip-tool accesscontrol write acl '[{"fabricIndex": 1, "privilege": 5, "authMode": 2, "subjects": [112233], "targets": null}, {"fabricIndex": 1, "privilege": 3, "authMode": 2, "subjects": null, "targets": null}]' <node_id> 0
      # Example:
      ./out/chip-tool accesscontrol write acl '[{"fabricIndex": 1, "privilege": 5, "authMode": 2, "subjects": [112233], "targets": null}, {"fabricIndex": 1, "privilege": 3, "authMode": 2, "subjects": null, "targets": null}]' 4 0
