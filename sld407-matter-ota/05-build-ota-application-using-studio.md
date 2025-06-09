@@ -46,8 +46,9 @@ In the Matter OTA Software Update scenario, the running image (OTA-A) and the up
   
     ![Silicon Labs - design](images/select-binary-to-flash-efx32.png)
 
-12. Right-click the selected _.rps_ binary and click **Flash to Device**.
-  
+12. Right-click the selected _.s37_ binary and click **Flash to Device**.
+**Note:** In case of SiWx917 SOC select _.rps_ binary and click **Flash to Device**.
+
     ![Silicon Labs - design](images/siwx917-soc-flashtodevice.png)
 
 13. The Flash programmer window opens. Click **Erase** and then **Program** to start the flashing.
