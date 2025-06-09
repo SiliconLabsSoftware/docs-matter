@@ -146,7 +146,7 @@ Multi-OTA images can be created using `ota_multi_image_tool.py`  which creates .
 
 #### Multi-OTA image creation on 917 NCP
 
-Multi-OTA on 917 NCP supports application image upgrade, TA(Wi-Fi) image upgrade and combined image upgrade.
+Multi-OTA on 917 NCP supports application image upgrade, Wi-Fi(TA) image upgrade and combined image upgrade.
 
 **Application Image Upgrade**
 
