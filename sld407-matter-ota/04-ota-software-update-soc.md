@@ -183,7 +183,7 @@ Multi-OTA on 917 NCP supports application image upgrade, Wi-Fi(TA) image upgrade
 ```
 
 **Combined Image Upgrade**
-First combined image is formed from M4 and TA images using combined image TA+M4 Creation section above. 
+First combined image is formed from M4 and TA images using combined image TA + M4 Creation section above. 
 
 ```shell
 ./scripts/tools/silabs/ota/ota_multi_image_tool.py create -v 0xFFF1 -p 0x8005 -vn 2 -vs "2.0" -da sha256 --app-input-file combined_image.rps combined_image.ota
