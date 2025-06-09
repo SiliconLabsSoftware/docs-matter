@@ -191,7 +191,7 @@ First combined image is formed from M4 and TA images using combined image TA+M4 
 
 **Encrypted Image Upgrade**
 
-The TLV encryption will be controlled by the --enc_enable and --input_ota_key parameters passed to the ota_multi_image_tool.py script. The AES key will be programmed to the device by the Silicon Labs Matter Provisioning Tool (see https://docs.silabs.com/matter/2.2.0/matter-overview-guides/matter-provisioning and https://confluence.silabs.com/display/MATTER/Matter+Provisioning). The ota_key argument to the provision script should be used to provision the AES key to the device for decrypting OTA payload.
+The TLV encryption will be controlled by the `--enc_enable` and `--input_ota_key` parameters passed to the `ota_multi_image_tool.py` script. The AES key will be programmed to the device by the Silicon Labs Matter Provisioning Tool (see https://docs.silabs.com/matter/2.2.0/matter-overview-guides/matter-provisioning and https://confluence.silabs.com/display/MATTER/Matter+Provisioning). The ota_key argument to the provision script should be used to provision the AES key to the device for decrypting OTA payload.
 
 ```shell
 Example command:./provision.py write -ok <ota_key>
