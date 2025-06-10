@@ -83,7 +83,7 @@ For a combined image upgrade, the first step is to create a single image that co
      ./src/app/ota_image_tool.py create -v 0xFFF1 -p 0x8005 -vn 2 -vs "2.0" -da sha256 SiWG917-B.2.14.5.0.0.9.rps SiWG917-B.2.14.5.0.0.9.ota
         ```
 
-#### Running OTA Provider
+#### Running OTA-Provider
 
 - Locate **ota-provider** terminal. Run the Provider app along with the Matter OTA file created in the previous step.
 
