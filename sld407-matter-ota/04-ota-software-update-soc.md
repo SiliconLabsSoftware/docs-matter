@@ -142,11 +142,11 @@ For a combined image upgrade, the first step is to create a single image that co
 
 Multi-OTA images can be created using `ota_multi_image_tool.py` which creates .ota files that contain additional TLV headers.
 
-**Note:** SiWx917 NCP uses TLV tag 4 for Wi-Fi(TA) image upgrade.
+**Note:** SiWN917 NCP uses TLV tag 4 for Wi-Fi(TA) image upgrade.
 
-#### Multi-OTA image creation on SiWx917 NCP
+#### Multi-OTA image creation on SiWN917 NCP
 
-Multi-OTA on SiWx917 NCP supports application image upgrade, Wi-Fi(TA) image upgrade and combined image upgrade.
+Multi-OTA on SiWN917 NCP supports application image upgrade, Wi-Fi(TA) image upgrade and combined image upgrade.
 
 **Application Image Upgrade**
 
@@ -166,9 +166,9 @@ Multi-OTA on SiWx917 NCP supports application image upgrade, Wi-Fi(TA) image upg
 ./scripts/tools/silabs/ota/ota_multi_image_tool.py create -v 0xFFF1 -p 0x8005 -vn 2 -vs "2.0" -da sha256 --app-input-file SiWx917-lock-example.gbl --wifi_ta_input_file SiWG917-B.2.14.5.0.0.10.rps combined_image.ota
 ```
 
-#### Multi-OTA image creation on SiWx917 SoC
+#### Multi-OTA image creation on SiWG917 SoC
 
-**Note:** SiWx917 SoC uses TLV tag 1 for all image upgrades M4 alone, TA alone and combined image upgrade.
+**Note:** SiWG917 SoC uses TLV tag 1 for all image upgrades M4 alone, TA alone and combined image upgrade.
 
 **Application(M4) Image Upgrade**
 
