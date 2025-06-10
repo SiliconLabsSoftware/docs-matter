@@ -1,6 +1,6 @@
-# Matter OTA For 917 SOC
+# Matter OTA For SiWx917 SOC
 
-The scope of this page describes the Matter OTA upgrade on 917 SoC mode for combined image(TA+M4),M4(application) alone and TA(NWP firmware) alone image upgrade.
+The scope of this page describes the Matter OTA upgrade on SiWx917 SoC mode for combined image(TA+M4),M4(application) alone and TA(NWP firmware) alone image upgrade.
 
 ## Hardware Requirements
 
@@ -33,7 +33,7 @@ To run OTA on Matter over Wi-Fi, need to build two different applications below:
 
 ### Building OTA Application
 
-To create and build Matter OTA using Simplicity Studio For 917 SOC, refer to [build OTA application using Simplicity Studio](./05-build-ota-application-using-studio.md).
+To create and build Matter OTA using Simplicity Studio For SiWx917 SOC, refer to [build OTA application using Simplicity Studio](./05-build-ota-application-using-studio.md).
 
 ### Creating Images
 
