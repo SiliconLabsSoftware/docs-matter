@@ -3,9 +3,9 @@
 
 # Event handler
 
-The matter event handler use FreeRTOS queue to transport a message from the producer to the consumer area. Event can be use to create an asynchrone message processing or an inter-task message communication.
+The Matter event handler uses the FreeRTOS queue to transport a message from the producer to the consumer area. Events can be used to create an asynchronous message processing or an inter-task message communication.
 
-Step to make the event work:
+Steps to make the event work:
 
 - Make sure the queue is initialize
 - Create an AppEventType for your application
@@ -14,7 +14,7 @@ Step to make the event work:
 
 ## Event definition enum
 
-__AppEvent__ contain event types and event structure that is use for specific application, if that application needed it. __Handler__ is use to store the callback for the event.
+__AppEvent__ contains event types and event structures that are used for specific applications, if needed. __Handler__ is used to store the callback for the event.
 
 ```C
 struct AppEvent
@@ -53,7 +53,7 @@ struct AppEvent
 
 ## Queue posting
 
-Creating an event and push it to the event queue. For that event to work, we need a minimum, __Handler__ and __Type___ to be define.
+Creating an event and push it to the event queue. For that event to work, we need a minimum, __Handler__ and __Type___ to be defined.
 
 ```C
 void AppTask::CreateObserverEvent(void)
@@ -79,7 +79,7 @@ void SilabsSensors::SendSensorsValues(AppEvent * aEvent)
 
 ## Dispatcher
 
-__AppTaskMain__ is dispatching all the event from the event list.
+__AppTaskMain__ is dispatching all the events from the event list.
 
 ```C
 void AppTask::AppTaskMain(void * pvParameter)
@@ -118,7 +118,7 @@ void AppTask::AppTaskMain(void * pvParameter)
 
 ## Start
 
-Enable a one shot timer to trig in 10 seconds with __TestCallback__ as a callback.
+Enable a one shot timer to trigger in 10 seconds with __TestCallback__ as a callback.
 
 ```C
 System::Clock::Timeout Timeout = System::Clock::Seconds32(10);
