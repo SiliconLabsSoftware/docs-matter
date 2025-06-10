@@ -48,7 +48,7 @@ In the Matter OTA Software Update scenario, the running image (OTA-A) and the up
 
 12. Right-click the selected _.s37_ binary and click **Flash to Device**.
 
-**Note:** For EFR32 devices, __.s37__ binary is used and for SiWx917 SOC, select _.rps_ binary and click **Flash to Device**.
+**Note:** For EFR32 devices, _.s37_ binary is used and for SiWx917 SOC, select _.rps_ binary and click **Flash to Device**.
 
     ![Silicon Labs - design](images/siwx917-soc-flashtodevice.png)
 
