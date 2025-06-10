@@ -40,7 +40,7 @@ Below are the software tools both optional and required for developing Matter ov
 
 4. [Firmware for RS9116 NCP](./matter-artifacts.md#rs9116-firmware)
 
-5. [Firmware for SiWx917 NCP](./matter-artifacts.md#siwx917-firmware-for-siwx917-ncp)
+5. [Firmware for SiWx917 NCP](./matter-artifacts.md#siwx917-firmware-for-siwn917-ncp-and-siwg917-soc)
 
 ## Software Packages Required for Wi-Fi SiWx917 SoC Devices
 
@@ -48,4 +48,4 @@ Below are the software tools both optional and required for developing Matter ov
 
 2. [WiSeConnect SDK v3.x](/matter/{build-docspace-version}/matter-wifi-getting-started-example/software-installation#installation-of-wiseconnect-sdk-v2x-or-v3x-extension), which can be installed as part of the Simplicity Studio tool installation.
 
-3. [Firmware for SoC](./matter-artifacts.md#siwx917-firmware-for-siwx917-soc)
+3. [Firmware for SoC](./matter-artifacts.md#siwx917-firmware-for-siwn917-ncp-and-siwg917-soc)
