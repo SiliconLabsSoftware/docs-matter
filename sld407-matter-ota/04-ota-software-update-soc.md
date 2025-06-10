@@ -137,3 +137,73 @@ For a combined image upgrade, the first step is to create a single image that co
 # Example:
 ./chip-tool basicinformation read software-version 1 0
 ```
+
+### Multi-OTA images for SiWx917 NCP/SoC
+
+Multi-OTA images can be created using `ota_multi_image_tool.py` which creates .ota files that contain additional TLV headers.
+
+**Note:** SiWN917 NCP uses TLV tag 4 for Wi-Fi(TA) image upgrade.
+
+#### Multi-OTA image creation on SiWN917 NCP
+
+Multi-OTA on SiWN917 NCP supports application image upgrade, Wi-Fi(TA) image upgrade and combined image upgrade.
+
+**Application Image Upgrade**
+
+Create a bootable image file from _.s37_ (using the lock application image as an example):
+
+```shell
+commander gbl create SiWx917-lock-example.gbl --app SiWx917-lock-example.s37 --compress lzma
+```
+
+```shell
+./scripts/tools/silabs/ota/ota_multi_image_tool.py create -v 0xFFF1 -p 0x8005 -vn 2 -vs "2.0" -da sha256 --app-input-file SiWx917-lock-example.gbl SiWx917-lock-example.ota
+```
+
+**Wi-Fi(TA) Image Upgrade**
+
+```shell
+./scripts/tools/silabs/ota/ota_multi_image_tool.py create -v 0xFFF1 -p 0x8005 -vn 2 -vs "2.0" -da sha256 --wifi_ta_input_file SiWG917-B.2.14.5.0.0.10.rps SiWG917-B.2.14.5.0.0.10.ota
+```
+
+**Combined Image Upgrade**
+
+```shell
+./scripts/tools/silabs/ota/ota_multi_image_tool.py create -v 0xFFF1 -p 0x8005 -vn 2 -vs "2.0" -da sha256 --app-input-file SiWx917-lock-example.gbl --wifi_ta_input_file SiWG917-B.2.14.5.0.0.10.rps combined_image.ota
+```
+
+#### Multi-OTA image creation on SiWG917 SoC
+
+**Note:** SiWG917 SoC uses TLV tag 1 for all image upgrades M4 alone, TA alone and combined image upgrade.
+
+**Application(M4) Image Upgrade**
+
+```shell
+./scripts/tools/silabs/ota/ota_multi_image_tool.py create -v 0xFFF1 -p 0x8005 -vn 2 -vs "2.0" -da sha256 --app-input-file SiWx917-lock-example.rps SiWx917-lock-example.ota
+```
+
+**Wi-Fi(TA) Image Upgrade**
+
+```shell
+./scripts/tools/silabs/ota/ota_multi_image_tool.py create -v 0xFFF1 -p 0x8005 -vn 2 -vs "2.0" -da sha256 --app-input-file SiWG917-B.2.14.5.0.0.10.rps SiWG917-B.2.14.5.0.0.10.ota
+```
+
+**Combined(TA+M4) Image Upgrade**
+First combined image is formed from M4 and TA images using **Combined Image(TA+M4) Creation** section above.
+
+```shell
+./scripts/tools/silabs/ota/ota_multi_image_tool.py create -v 0xFFF1 -p 0x8005 -vn 2 -vs "2.0" -da sha256 --app-input-file combined_image.rps combined_image.ota
+```
+
+**Encrypted Image Upgrade**
+
+The TLV encryption will be controlled by the `--enc_enable` and `--input_ota_key` parameters passed to the `ota_multi_image_tool.py` script. The AES key will be programmed to the device by the Silicon Labs Matter Provisioning Tool (see https://docs.silabs.com/matter/2.2.0/matter-overview-guides/matter-provisioning and https://confluence.silabs.com/display/MATTER/Matter+Provisioning). The ota_key argument to the provision script should be used to provision the AES key to the device for decrypting OTA payload.
+
+```shell
+Example command:./provision.py write -ok <ota_key>
+```
+
+```shell
+./scripts/tools/silabs/ota/ota_multi_image_tool.py create -v 0xFFF1 -p 0x8005 -vn 2 -vs "2.0" -da sha256 --enc_enable --input_ota_key "<ota_key>" --app-input-file  SiWx917-lock-example.rps SiWx917-lock-example.ota
+```
+
