@@ -1,8 +1,8 @@
 # Building Matter applications for OTA Software Update
 
-In the Matter OTA Software Update scenario, the running image (OTA-A) and the update image (OTA-B) are regular Matter application images and are built using the standard procedure. The only additional configuration required is the use of a higher software version in the update image. This page provides information about creation of OTA-A and OTA-B Application for EFR32 and 917 SOC Boards.
+In the Matter OTA Software Update scenario, the running image (OTA-A) and the update image (OTA-B) are regular Matter application images and are built using the standard procedure. The only additional configuration required is the use of a higher software version in the update image. This page provides information about creation of OTA-A and OTA-B application for EFR32 and SiWx917 SOC Boards.
 
-**Note:** Examples used are for EFR32. Select BRD4338A Board to create OTA-A and OTA-B application for 917 SOC.
+**Note:** Examples used are for EFR32. Select BRD4338A Board to create OTA-A and OTA-B application for SiWx917 SOC.
 
 ## Create and Build Project for Matter OTA-A Application
 
@@ -47,14 +47,16 @@ In the Matter OTA Software Update scenario, the running image (OTA-A) and the up
     ![Silicon Labs - design](images/select-binary-to-flash-efx32.png)
 
 12. Right-click the selected _.s37_ binary and click **Flash to Device**.
-  
-    ![Silicon Labs - design](images/siwx917-soc-flashtodevice.png)
+
+**Note:** For EFR32 devices, _.s37_ binary is used and for SiWx917 SOC, select _.rps_ binary and click **Flash to Device**.
+
+   ![Silicon Labs - design](images/siwx917-soc-flashtodevice.png)
 
 13. The Flash programmer window opens. Click **Erase** and then **Program** to start the flashing.
   
     ![Silicon Labs - design](images/flash-binary-to-efx32-device.png)
 
-**Note:** Output of the EFR32 NCP Host application will be displayed on the J-Link RTT Viewer.
+**Note:** By default, device logs are enabled on UART (serial terminal).
 
 ## Create and build Project for matter OTA-B application
 
