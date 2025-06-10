@@ -66,7 +66,7 @@ The SiWx917 NCP or RS9116 EVK connectivity firmware can be upgraded using Tera T
 
 12. Click Browse next to the Select RPS Image field.
 
-13. Refer to [Firmware for SiWx917 SoC](/matter/{build-docspace-version}/matter-prerequisites/matter-artifacts#siwx917-firmware-for-siwx917-so-c) to identify the correct firmware to be flashed into the specific hardware. Locate and select the firmware file to flash.
+13. Refer to [Firmware for SiWx917 NCP](/matter/{build-docspace-version}/matter-prerequisites/matter-artifacts#siwx917-firmware-for-siwx917-so-c) to identify the correct firmware to be flashed into the specific hardware. Locate and select the firmware file to flash.
 
 14. Under Select COM Port, select the COM port for the connected adapter board.
 
@@ -121,7 +121,7 @@ If the firmware update fails, try the following:
 
    ![Silicon Labs - design](./images/select-flash-option-in-commander.png)
 
-6. Refer to [Firmware for SiWx917 NCP](/matter/{build-docspace-version}/matter-prerequisites/matter-artifacts#siwx917-firmware-for-siwx917-so-c) to identify the correct firmware to be flashed into the specific hardware. Locate and select the firmware file to flash.
+6. Refer to [Firmware for SiWx917 SoC](/matter/{build-docspace-version}/matter-prerequisites/matter-artifacts#siwx917-firmware-for-siwx917-so-c) to identify the correct firmware to be flashed into the specific hardware. Locate and select the firmware file to flash.
 
 7. Click **Flash**.
 
