@@ -150,6 +150,12 @@ Multi-OTA on SiWN917 NCP supports application image upgrade, Wi-Fi(TA) image upg
 
 **Application Image Upgrade**
 
+Create a bootable image file from _.s37_ (using the lock application image as an example):
+
+```shell
+commander gbl create SiWx917-lock-example.gbl --app SiWx917-lock-example.s37 --compress lzma
+```
+
 ```shell
 ./scripts/tools/silabs/ota/ota_multi_image_tool.py create -v 0xFFF1 -p 0x8005 -vn 2 -vs "2.0" -da sha256 --app-input-file SiWx917-lock-example.gbl SiWx917-lock-example.ota
 ```
@@ -182,8 +188,8 @@ Multi-OTA on SiWN917 NCP supports application image upgrade, Wi-Fi(TA) image upg
 ./scripts/tools/silabs/ota/ota_multi_image_tool.py create -v 0xFFF1 -p 0x8005 -vn 2 -vs "2.0" -da sha256 --app-input-file SiWG917-B.2.14.5.0.0.10.rps SiWG917-B.2.14.5.0.0.10.ota
 ```
 
-**Combined Image Upgrade**
-First combined image is formed from M4 and TA images using combined image TA + M4 Creation section above. 
+**Combined(TA+M4) Image Upgrade**
+First combined image is formed from M4 and TA images using **Combined Image(TA+M4) Creation** section above.
 
 ```shell
 ./scripts/tools/silabs/ota/ota_multi_image_tool.py create -v 0xFFF1 -p 0x8005 -vn 2 -vs "2.0" -da sha256 --app-input-file combined_image.rps combined_image.ota
