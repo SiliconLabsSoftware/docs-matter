@@ -28,35 +28,67 @@ The SiWx917 NCP or RS9116 EVK connectivity firmware can be upgraded using Tera T
 
 4. Refer to [Setup Tera Term and Updating the Firmware](https://docs.silabs.com/rs9116/wiseconnect/2.0/tera-term-setup).
 
-   ```shell
-   Instructions are the same for both SiWx917 NCP and RS9116 EVK.
-   ```
-
 5. Once firmware flashing is done, the console displays **Loading...** followed by **Loading Done**.
 
 #### Firmware Upgrade On SIWx917 NCP
 
-1. Connect USB-UART Cable to Machine and WPK board as well with SOC Mounted on it.
+- SiWx917 NCP connectivity firmware can be upgraded using Simplicity Commander.
 
-   ![Connect NCP Board](./images/ncp-board-connect.png)
+### Connectivity Firmware Upgrade Using Simplicity Commander
 
-2. Connect USB-UART cable 2 (Yellow) to **F9** and 3 (Green) to **F8** on WPK Board shown below.
+1. Plug the SiWx917 radio board into the radio board connectors of the adapter board as shown below.
 
-   ![Connect Port Wires](./images/connect-board-port.png)
+2. Make sure the UART switch on the adapter board is in the USB position.
 
-3. Configure your terminal application with the following settings:
+3. Make sure the PWR MODE switch on the adapter board is in either the BUF or HOST position.
 
-   - Configure the serial port settings to 115200 baud / 8-bit data / No parity / 1 stop bit
-   - Enable local echo
-   - Set receive and transmit new-line characters to CR+LF
+4. Connect the adapter board to the EFR32 WPK board.
 
-4. Refer to [Setup Tera Term and Updating the Firmware](https://docs.silabs.com/rs9116/wiseconnect/2.0/tera-term-setup).
+5. Connect the EFR32 WPK board to your computer using a type C USB cable.
 
-   ```shell
-   Instructions are the same for both SiWx917 NCP and RS9116 EVK.
-   ```
+6. Connect the USB port of the adapter board to your computer's USB port using a type C USB cable.
 
-5. Once firmware flashing is done, the console displays **Loading...** followed by **Loading Done**.
+7. On the Simplicity Studio home page, click **Tools**.
+
+8. In the Tools dialog, select **Simplicity Commander** and click **OK**.
+
+    ![Silicon Labs - design](./images/select-commander.png)
+
+9. The Simplicity Commander window is displayed.
+   
+10. In the Simplicity Commander window, select Utilities > Load RPS Image Over UART...
+
+    ![Silicon Labs - design](./images/ncp_click-load-rps-image.png)
+
+11. The Load RPS Image Over UART window is displayed.
+
+    ![Silicon Labs - design](./images/ncp_load-rps-window.png)
+
+12. Click Browse next to the Select RPS Image field.
+
+13. Refer to [Firmware for SiWx917 NCP](/matter/{build-docspace-version}/matter-prerequisites/matter-artifacts#siwx917-firmware-for-siwx917-so-c) to identify the correct firmware to be flashed into the specific hardware. Locate and select the firmware file to flash.
+
+14. Under Select COM Port, select the COM port for the connected adapter board.
+
+15. Under Load RPS Image, make sure High-speed transfer is selected.
+
+    ![Silicon Labs - design](./images/ncp_set-up-fw-update.png)
+
+    **Note**: When High-speed transfer is selected, Simplicity Commander sets the baud rate to 921600 before performing the firmware update.
+
+16. Press the RST button on the adapter board.
+
+    ![Silicon Labs - design](./images/host-adapter-board-efr32-reset.png)
+
+17. Click Load RPS to update firmware.
+
+    ![Silicon Labs - design](./images/ncp_uploading-file.png)
+
+    **Note**: It takes around 2 minutes to perform a firmware update.
+
+18. On successful firmware update, the following message is displayed: "RPS image loaded successfully!".
+
+    ![Silicon Labs - design](./images/ncp_rps-image-loaded.png)
 
 ### Troubleshooting an NCP Firmware Update Failure
 
