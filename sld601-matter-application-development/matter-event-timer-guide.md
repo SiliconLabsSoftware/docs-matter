@@ -1,15 +1,15 @@
 
-# Event and timer (Matter)
+# Using Events and Timers with the Silicon Labs Matter Extension
 
 # Event handler
 
 The Matter event handler uses the FreeRTOS queue to transport a message from the producer to the consumer area. Events can be used to create an asynchronous message processing or an inter-task message communication.
 
-Steps to make the event work:
+Steps to make an event work:
 
-- Make sure the queue is initialize
+- Make sure the queue is initialized
 - Create an AppEventType for your application
-- Populate the Type and Handler variable
+- Populate the Type and Handler variables
 - Post the message to the queue
 
 ## Event definition enum
@@ -53,7 +53,7 @@ struct AppEvent
 
 ## Queue posting
 
-Creating an event and push it to the event queue. For that event to work, we need a minimum, __Handler__ and __Type___ to be defined.
+When creating an event and pushing it to the event queue at minimum, __Handler__ and __Type___ must be defined in order for the event to work.
 
 ```C
 void AppTask::CreateObserverEvent(void)
@@ -118,7 +118,7 @@ void AppTask::AppTaskMain(void * pvParameter)
 
 ## Start
 
-Enable a one shot timer to trigger in 10 seconds with __TestCallback__ as a callback.
+Initialize a one-shot timer to expire in 10 seconds and invoke __TestCallback__ upon expiration.
 
 ```C
 System::Clock::Timeout Timeout = System::Clock::Seconds32(10);
