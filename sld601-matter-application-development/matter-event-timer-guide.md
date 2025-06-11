@@ -16,7 +16,7 @@ Steps to make an event work:
 
 __AppEvent__ contains event types and event structures that are used for specific applications, if needed. __Handler__ is used to store the callback for the event.
 
-```C
+```C++
 struct AppEvent
 {
     enum AppEventTypes
@@ -55,7 +55,7 @@ struct AppEvent
 
 When creating an event and pushing it to the event queue at minimum, __Handler__ and __Type___ must be defined in order for the event to work.
 
-```C
+```C++
 void AppTask::CreateObserverEvent(void)
 {
     AppEvent active_mode_event = {};
@@ -70,7 +70,7 @@ void AppTask::CreateObserverEvent(void)
 
 Observer event callback
 
-```C
+```C++
 void SilabsSensors::SendSensorsValues(AppEvent * aEvent)
 {
     // Do something
@@ -81,7 +81,7 @@ void SilabsSensors::SendSensorsValues(AppEvent * aEvent)
 
 __AppTaskMain__ is dispatching all the events from the event list.
 
-```C
+```C++
 void AppTask::AppTaskMain(void * pvParameter)
 {
     AppEvent event;
@@ -120,7 +120,7 @@ void AppTask::AppTaskMain(void * pvParameter)
 
 Initialize a one-shot timer to expire in 10 seconds and invoke __TestCallback__ upon expiration.
 
-```C
+```C++
 System::Clock::Timeout Timeout = System::Clock::Seconds32(10);
 
 chip::DeviceLayer::PlatformMgr().LockChipStack();
@@ -132,7 +132,7 @@ chip::DeviceLayer::PlatformMgr().UnlockChipStack();
 
 Timer callback
 
-```C
+```C++
 void AppTask::TestCallback(System::Layer * layer, void * aAppState)
 {
 	// Do something
