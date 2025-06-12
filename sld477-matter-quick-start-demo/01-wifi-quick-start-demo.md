@@ -4,7 +4,7 @@ This Quick-Start Guide will demo the out-of-box experience for adding an SiWx917
 
 ## Software Requirements
 
-- Simplicity Studio v5 with SiSDK - 2024.12.2 + Silicon Labs Matter - 2.5.2 + WiSeConnect - 3.4.2
+- Simplicity Studio v5 with SiSDK - 2024.12.2 + Silicon Labs Matter - 2.6.0 + WiSeConnect - 3.5.0
 - Simplicity Connect mobile App on Smartphone
 
 ## Hardware Requirements
