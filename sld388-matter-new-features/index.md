@@ -4,7 +4,7 @@
 
 - Quality-tested Matter 1.4.1 solution for Thread MG24 / MG26, Wi-Fi SiWx917 SoC and NCP mode, Wi-Fi MG24/WF200 and Wi-Fi MG24/RS9116 (non-sleepy).
   - For Wi-Fi SiWx917 SoC and NCP mode, there are known timeout issues in certain stress test conditions, which have not been observed with ecosystems under normal conditions. For details see the Known Issues section of the [Release Notes](https://github.com/SiliconLabs/matter_extension/releases/tag/v2.6.0).
-- Works with Simplicity SDK v2024.6.0 and WiSeConnect SDK v3.5.0
+- Works with Simplicity SDK v2025.6.0 and WiSeConnect SDK v3.5.0
 - Added the ability to run a concurrent BLE connection with Matter OT+BLE DMP or Matter ZB+OT+BLE CMP
 - Added Multi-OTA alpha support for SiWx917 SoC and NCP.
 - Enable an experimental option to use the TCP/IP NetX stack instead of lwip for SiWx917 for both SoC and NCP.
