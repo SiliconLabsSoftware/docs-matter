@@ -1,3 +1,5 @@
 # Introduction
 
-This section covers application development topics. Silicon Labs will build out this section over time. For Matter v2.5.2, we provide the [Matter Scenes Quick Start Guide](./matter-scenes-quick-start-guide).
+This section covers application development topics. Silicon Labs will build out this section over time. For Matter v2.5.2, we provide:
+- [Matter Scenes Quick Start Guide](./matter-scenes-quick-start-guide).
+- [Matter Event and Timer Guide](./matter-event-timer-guide.md)
