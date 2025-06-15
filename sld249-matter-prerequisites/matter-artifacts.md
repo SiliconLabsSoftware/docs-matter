@@ -4,7 +4,7 @@ This page provides links to pre-built software image "artifacts" that can be use
 
 Images for the items listed below are available under the "Assets" section at the bottom of this page:
 
-https://github.com/SiliconLabs/matter_extension/releases/tag/v2.5.2
+https://github.com/SiliconLabs/matter_extension/releases/tag/v2.6.0
 
 ## Matter Hub Raspberry Pi Image
 
@@ -16,25 +16,25 @@ https://www.silabs.com/documents/public/software/SilabsMatterPi_2.5.0-1.4-extens
 
 The Radio Co-Processor firmware is used to turn an EFR into an RCP that can be used with a Raspberry Pi to allow the Raspberry Pi's Open Thread Border Router to access the Thread network. Radio Co-Processor (RCP) images are available in the Assets section of this page:
 
-https://github.com/SiliconLabs/matter_extension/releases/download/v2.5.2/ot-rcp-binaries-2.5.2-1.4.zip
+https://github.com/SiliconLabs/matter_extension/releases/download/v2.6.0/ot-rcp-binaries-2.6.0-1.4.zip
 
 ## Matter Accessory Device Images
 
 The Matter Accessory Device Images are used to turn an EFR into a Matter device. These are pre-built binary images for the Matter Demo. Matter Accessory Device Images are located in the Assets section of this page:
 
-https://github.com/SiliconLabs/matter_extension/releases/download/v2.5.2/matter-accessory-device-images_2.5.2-1.4.zip
+https://github.com/SiliconLabs/matter_extension/releases/download/v2.6.0/matter-accessory-device-images_2.6.0-1.4.zip
 
 ## Matter Bootloader Binaries
 
 All Silicon Labs board supporting Matter require that a bootloader binary is flashed to the device along with the application image. Bootloader binaries for all of the Matter supported devices are available here:
 
-https://github.com/SiliconLabs/matter_extension/releases/download/v2.5.2/bootloader_binaries_matter_extension_v2.5.2-1.4.zip
+https://github.com/SiliconLabs/matter_extension/releases/download/v2.6.0/bootloader_binaries_matter_extension_v2.6.0-1.4.zip
 
 ## RS9116 Firmware
 
 The RS9116 firmware (`rs9116_firmware_files_with_rev.zip`) is used to update the RS9116 which can be found in the Assets section of this page:
 
-https://github.com/SiliconLabs/matter_extension/releases/download/v2.5.2/rs9116_firmware_files_with_rev_2.5.2-1.4.zip
+https://github.com/SiliconLabs/matter_extension/releases/download/v2.6.0/rs9116_firmware_files_with_rev_2.6.0-1.4.zip
 
 **Note**:
 RS9116 chip/module needs to be flashed with proper firmware as mentioned below:
@@ -46,7 +46,7 @@ RS9116 chip/module needs to be flashed with proper firmware as mentioned below:
 
 The SiWx917 firmware(SiWx917_firmware_files.zip) is used to update the SiWN917 NCP and SiWG917 SOC which can be found in the Assets section of this page:
 
-https://github.com/SiliconLabs/matter_extension/releases/download/v2.5.2/SiWx917_firmware_files_2.5.2-1.4.zip
+https://github.com/SiliconLabs/matter_extension/releases/download/v2.6.0/SiWx917_firmware_files_2.6.0-1.4.zip
 
 **Note**:
 
@@ -62,12 +62,12 @@ SiWG917 SoC boards need to be flashed with proper firmware as mentioned below:
 
 The SiWx917 RCP folder (siwx917_rcp_files.zip) contains the Matter Linux all-cluster-app, which can be run on a Raspberry Pi, and the wfx-sdio-overlay.dts file, a Device Tree Source file used to configure the SDIO interface on the Raspberry Pi to detect and communicate with the SiWx917 RCP.
 
-https://github.com/SiliconLabs/matter_extension/releases/download/v2.5.2/siwx917_rcp_files.zip
+https://github.com/SiliconLabs/matter_extension/releases/download/v2.6.0/siwx917_rcp_files.zip
 
 ## SiWx917 SoC Configuration Files For JLink RTT Logging
 
 To check device logs on JLink RTT for the Matter Application on the SiWx917 SoC, the **JLink RTT** must be configured for the SiWx917 SoC device by following the instructions on the [JLink RTT SOC Support](/matter/{build-docspace-version}/matter-wifi-enabling-features/jlink-soc-setup) for SiWx917 SoC.
 
-The [JLinkDevices.xml](https://github.com/SiliconLabs/matter_extension/releases/download/v2.5.2/JLinkDevices.xml.zip) and [RS9117_SF_4MB_42bsp.elf](https://github.com/SiliconLabs/matter_extension/releases/download/v2.5.2/RS9117_SF_4MB_42bsp.elf.zip) files referenced in the instructions may be found in the Assets section of this page.
+The [JLinkDevices.xml](https://github.com/SiliconLabs/matter_extension/releases/download/v2.6.0/JLinkDevices.xml.zip) and [RS9117_SF_4MB_42bsp.elf](https://github.com/SiliconLabs/matter_extension/releases/download/v2.6.0/RS9117_SF_4MB_42bsp.elf.zip) files referenced in the instructions may be found in the Assets section of this page.
 
 **Note**:- For EFR32MG2x devices, JLink RTT Logging support is already enabled.
