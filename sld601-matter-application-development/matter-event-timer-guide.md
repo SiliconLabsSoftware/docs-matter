@@ -1,7 +1,7 @@
 
 # Using Events and Timers with the Silicon Labs Matter Extension
 
-# Event handler
+## Event Handler
 
 The Matter event handler uses the FreeRTOS queue to transport a message from the producer to the consumer area. Events can be used to create an asynchronous message processing or an inter-task message communication.
 
@@ -14,7 +14,7 @@ Steps to make an event work:
 
 ## Event definition enum
 
-__AppEvent__ contains event types and event structures that are used for specific applications, if needed. __Handler__ is used to store the callback for the event.
+**AppEvent** contains event types and event structures that are used for specific applications, if needed. **Handler** is used to store the callback for the event.
 
 ```C++
 struct AppEvent
@@ -51,9 +51,9 @@ struct AppEvent
 };
 ```
 
-## Queue posting
+## Queue Posting
 
-When creating an event and pushing it to the event queue at minimum, __Handler__ and __Type___ must be defined in order for the event to work.
+When creating an event and pushing it to the event queue at minimum, **Handler** and **Type** must be defined in order for the event to work.
 
 ```C++
 void AppTask::CreateObserverEvent(void)
@@ -79,7 +79,7 @@ void SilabsSensors::SendSensorsValues(AppEvent * aEvent)
 
 ## Dispatcher
 
-__AppTaskMain__ is dispatching all the events from the event list.
+**AppTaskMain** is dispatching all the events from the event list.
 
 ```C++
 void AppTask::AppTaskMain(void * pvParameter)
@@ -114,11 +114,11 @@ void AppTask::AppTaskMain(void * pvParameter)
 }
 ```
 
-# Matter Timer
+## Matter Timer
 
-## Start
+### Start
 
-Initialize a one-shot timer to expire in 10 seconds and invoke __TestCallback__ upon expiration.
+Initialize a one-shot timer to expire in 10 seconds and invoke **TestCallback** upon expiration.
 
 ```C++
 System::Clock::Timeout Timeout = System::Clock::Seconds32(10);
@@ -128,9 +128,9 @@ err = DeviceLayer::SystemLayer().StartTimer(Timeout, TestCallback, this);
 chip::DeviceLayer::PlatformMgr().UnlockChipStack();
 ```
 
-## Callback
+### Callback
 
-Timer callback
+Timer callback.
 
 ```C++
 void AppTask::TestCallback(System::Layer * layer, void * aAppState)
@@ -139,4 +139,4 @@ void AppTask::TestCallback(System::Layer * layer, void * aAppState)
 }
 ```
 
-If you need a periodic timer, you can recall __StarTimer()__ in the callback.
+If you need a periodic timer, you can recall `StartTimer()` in the callback.

@@ -115,7 +115,7 @@ See the following page for detailed steps: [build OTA application using studio](
 
 - The application device will connect to the Provider and start the image download. Once the image is downloaded, the device will reboot into the downloaded image.
 
-Note: In a production environment the Announce OTA Provider command is not used. Instead, the OTA Provider address is configured on the device by the Matter Controller, for example:
+>**Note**: In a production environment the Announce OTA Provider command is not used. Instead, the OTA Provider address is configured on the device by the Matter Controller, for example:
 
 ```shell
     chip-tool otasoftwareupdaterequestor write default-otaproviders '[{"fabricIndex": 1, "providerNodeID": 1, "endpoint": 0}]' 2 0

@@ -2,7 +2,7 @@
 
 In the Matter OTA Software Update scenario, the running image (OTA-A) and the update image (OTA-B) are regular Matter application images and are built using the standard procedure. The only additional configuration required is the use of a higher software version in the update image. This page provides information about creation of OTA-A and OTA-B application for EFR32 and SiWx917 SOC Boards.
 
-**Note:** Examples used are for EFR32. Select BRD4338A Board to create OTA-A and OTA-B application for SiWx917 SOC.
+>**Note**: Examples used are for EFR32. Select BRD4338A Board to create OTA-A and OTA-B application for SiWx917 SOC.
 
 ## Create and Build Project for Matter OTA-A Application
 
@@ -46,11 +46,11 @@ In the Matter OTA Software Update scenario, the running image (OTA-A) and the up
   
     ![Silicon Labs - design](images/select-binary-to-flash-efx32.png)
 
-12. Right-click the selected _.s37_ binary and click **Flash to Device**.
+12. Right-click the selected *.s37* binary and click **Flash to Device**.
 
-**Note:** For EFR32 devices, _.s37_ binary is used and for SiWx917 SOC, select _.rps_ binary and click **Flash to Device**.
+    >**Note**: For EFR32 devices, *.s37* binary is used and for SiWx917 SOC, select *.rps* binary and click **Flash to Device**.
 
-   ![Silicon Labs - design](images/siwx917-soc-flashtodevice.png)
+    ![Silicon Labs - design](images/siwx917-soc-flashtodevice.png)
 
 13. The Flash programmer window opens. Click **Erase** and then **Program** to start the flashing.
   
@@ -60,8 +60,8 @@ In the Matter OTA Software Update scenario, the running image (OTA-A) and the up
 
 ## Create and build Project for matter OTA-B application
 
-- Matter OTA-B application will be used to create gbl for EFR32MG2x & .rps for SiWx917 SOC OTA file and OTA-A will be used to flash to the matter device.
-- For Matter OTA-B application need to change Version in sl_matter_config.h file before building.
+- Matter OTA-B application will be used to create gbl for EFR32MG2x & *.rps* for SiWx917 SOC OTA file and OTA-A will be used to flash to the matter device.
+- For Matter OTA-B application need to change Version in *sl_matter_config.h* file before building.
 
 1. [Download](https://www.silabs.com/developers/simplicity-studio) and Install Simplicity Studio.
   
@@ -101,6 +101,6 @@ In the Matter OTA Software Update scenario, the running image (OTA-A) and the up
   
     ![Silicon Labs - design](images/project-created-efx32.png)
 
-12. Once the project is compiled successfully, go to the Project Explorer view and expand the OTA-B project binaries folder. Using the application _.s37_ file, create a .gbl file using Simplicity commander.
+12. Once the project is compiled successfully, go to the Project Explorer view and expand the OTA-B project binaries folder. Using the application *.s37*_ file, create a .gbl file using Simplicity commander.
 
 13. After Creation of OTA-B application, run the OTA Scenario.

@@ -18,7 +18,7 @@ The Scene Table stores Fabric-Scoped IDs, which contain all the information asso
 
 ### Fabric Consumption of the SceneTable
 
-Another crucial aspect to consider is how Fabrics interact with the SceneTable. Each endpoint must have it's own SceneTable. Fabrics are only allowed to consume half of the SceneTable. For example, if an endpoint has the standard maximum value of 16 scenes, a single fabric can only utilize up to 8 of those scenes. This limitation is in place to prevent a single fabric from monopolizing all the available slots. It serves as a compromise to avoid the scenario where the maximum number of fabrics, multiplied by the number of endpoints and the maximum scenes per endpoint, would consume excessive flash memory.
+Another crucial aspect to consider is how Fabrics interact with the SceneTable. Each endpoint must have its own SceneTable. Fabrics are only allowed to consume half of the SceneTable. For example, if an endpoint has the standard maximum value of 16 scenes, a single fabric can only utilize up to 8 of those scenes. This limitation is in place to prevent a single fabric from monopolizing all the available slots. It serves as a compromise to avoid the scenario where the maximum number of fabrics, multiplied by the number of endpoints and the maximum scenes per endpoint, would consume excessive flash memory.
 
 ### Use Cases
 

@@ -50,13 +50,13 @@ https://github.com/SiliconLabs/matter_extension/releases/download/v2.6.0/SiWx917
 
 **Note**:
 
-SiWN917 NCP board need to be flashed with proper firmware as mentioned below:
+- SiWN917 NCP board need to be flashed with proper firmware as mentioned below:
 
-- `SiWG917-B.2.x.X.X.X.rps - This firmware image is valid for BRD8045A (B0 Expansion v2.0) board`
+  - `SiWG917-B.2.x.X.X.X.rps - This firmware image is valid for BRD8045A (B0 Expansion v2.0) board`
 
-SiWG917 SoC boards need to be flashed with proper firmware as mentioned below:
+- SiWG917 SoC boards need to be flashed with proper firmware as mentioned below:
 
-- `SiWG917-B.2.x.X.X.X.rps - This firmware image is valid for BRD4338A(B0 common flash v2.0) board`
+  - `SiWG917-B.2.x.X.X.X.rps - This firmware image is valid for BRD4338A(B0 common flash v2.0) board`
 
 ## Matter SiWx917 RCP Linux app and Configuration file
 
@@ -70,4 +70,4 @@ To check device logs on JLink RTT for the Matter Application on the SiWx917 SoC,
 
 The [JLinkDevices.xml](https://github.com/SiliconLabs/matter_extension/releases/download/v2.6.0/JLinkDevices.xml.zip) and [RS9117_SF_4MB_42bsp.elf](https://github.com/SiliconLabs/matter_extension/releases/download/v2.6.0/RS9117_SF_4MB_42bsp.elf.zip) files referenced in the instructions may be found in the Assets section of this page.
 
-**Note**:- For EFR32MG2x devices, JLink RTT Logging support is already enabled.
+>**Note**: For EFR32MG2x devices, JLink RTT Logging support is already enabled.
