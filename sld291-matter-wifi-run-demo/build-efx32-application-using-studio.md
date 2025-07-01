@@ -1,6 +1,6 @@
 # Create a Project for an EFR32 Application
 
-This page provides a detailed description on how to create an Wi-Fi NCP project for EFR32 boards.
+This page provides a detailed description on how to create a Wi-Fi NCP project for EFR32 boards.
 
 1. [Download](https://www.silabs.com/developers/simplicity-studio) and Install Simplicity Studio.
 
