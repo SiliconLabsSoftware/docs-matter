@@ -1,6 +1,6 @@
 # Matter OTA Software Update with Silicon Labs Example Applications
 
-This page outlines the steps for a scenario that demonstrates the The Over The Air (OTA) Software Update functionality in Matter.
+This page outlines the steps for a scenario that demonstrates the Over The Air (OTA) Software Update functionality in Matter.
 
 The Over The Air (OTA) Software Update functionality is enabled by default for all Silicon Labs example applications. Its inclusion in an application is controlled by the OTA Requestor component in a Matter project in Simplicity Studio.
 
@@ -138,7 +138,7 @@ Installing the Lower Power Mode component in the project's Software Components t
 
 Disabling logging in the configuration of the Matter Core Components component also helps to reduce the image size.
 
-Using LZMA compression when building the .gbl file ( passing `--compress lzma` parameter to the `commander gbl create` command) further reduces the downloaded image size.
+Using LZMA compression when building the .gbl file (passing `--compress lzma` parameter to the `commander gbl create` command) further reduces the downloaded image size.
 
 When building an internal storage bootloader, the two key configuration parameters are the Slot Start Address and Slot Size in the Bootloader Storage Slot component. The storage slot must not overlap with the running image and the NVM section of the flash. In other words, the slot start address must be greater than the end of the running image address and the sum of the start address and the slot size must be less than the address of the NVM section. The simplest way to get the relevant addresses for the running image and NVM is by using the Silicon Labs `Simplicity Commander` (**Device Info > Main Flash > Flash Map**).
 
