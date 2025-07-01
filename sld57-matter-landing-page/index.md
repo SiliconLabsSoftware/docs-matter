@@ -8,7 +8,7 @@ Silicon Labs supports Matter on both 802.15.4 (Thread) and 802.11 (Wi-Fi) transp
 
 Device: SiWx917 SoC
 
-![Silicon Labs - SiWx917 soc](resources/silabs-matter-siwx917.png)
+![Silicon Labs - SiWx917 SoC](resources/silabs-matter-siwx917.png)
 
 ## Path for Development
 
