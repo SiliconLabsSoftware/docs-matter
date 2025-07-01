@@ -50,13 +50,15 @@ https://github.com/SiliconLabs/matter_extension/releases/download/v2.6.0/SiWx917
 
 **Note**:
 
-- SiWN917 NCP board need to be flashed with proper firmware as mentioned below:
+- SiWN917 NCP boards need to be flashed with proper firmware as mentioned below:
 
   - `SiWG917-B.2.x.X.X.X.rps - This firmware image is valid for BRD8045A (B0 Expansion v2.0) board`
 
 - SiWG917 SoC boards need to be flashed with proper firmware as mentioned below:
 
   - `SiWG917-B.2.x.X.X.X.rps - This firmware image is valid for BRD4338A(B0 common flash v2.0) board`
+
+[Both the points in the Note refer to the same file]: #
 
 ## Matter SiWx917 RCP Linux app and Configuration file
 
