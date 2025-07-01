@@ -1,21 +1,21 @@
 # Firmware Upgrades with Matter applications
 
-The Over The Air (OTA) Software Update functionality provides WiFi firmware upgrades within the matter environment.
+The Over The Air (OTA) Software Update functionality provides Wi-Fi firmware upgrades within the Matter environment.
 
 ## Hardware Requirements
 
-- To run matter ota on Silicon Labs Platform, refer [Hardware Requirements](/matter/{build-docspace-version}/matter-prerequisites/hardware-requirements).
+- To run Matter OTA on Silicon Labs Platform, refer [Hardware Requirements](/matter/{build-docspace-version}/matter-prerequisites/hardware-requirements).
 
 ## Software Requirements
 
-- To run matter ota on Silicon Labs Platform, refer [Software Requirements](/matter/{build-docspace-version}/matter-prerequisites/software-requirements).
+- To run Matter OTA on Silicon Labs Platform, refer [Software Requirements](/matter/{build-docspace-version}/matter-prerequisites/software-requirements).
 
 ## Setting up OTA Environment
 
-- To run OTA on Matter over Wi-Fi, Need to build two different application below:
+- To run OTA on Matter over Wi-Fi, Need to build two different applications below:
   - **OTA-A** is a normal application with default or older software version. It acts as **ota-requestor** where it needs to update latest software version.
-  - **OTA-B is** a normal application with updated software version.
-  - **Chip-tool** is a controller for sending commands to ota-requestor to update the software version and receving commands from device.
+  - **OTA-B** is a normal application with updated software version.
+  - **Chip-tool** is a controller for sending commands to ota-requestor to update the software version and receiving commands from device.
   - **OTA-Provider** is the server who has the latest software version and from which ota-requestor will download the updated software.
 
 ### Setting up Chip-tool Controller
@@ -61,7 +61,7 @@ This will build chip-tool in `out/standalone`.
 
 ### Building OTA Images Using Simplicity Studio
 
-- To create and build matter OTA using Simplicity studio, refer following link [build OTA application using studio](./05-build-ota-application-using-studio.md).
+- To create and build Matter OTA using Simplicity Studio, refer to the following link [build OTA application using studio](./05-build-ota-application-using-studio.md).
 
 ## Executing OTA Scenario
 
