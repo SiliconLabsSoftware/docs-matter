@@ -73,9 +73,9 @@ These configurations are independent from the underlying transport configuration
 These configurations can be changed by modifying the configuration of the `ICD Server Configuration` component or directly by setting values in `sl_matter_icd_config.h`.
 
 ```cpp
-    #define SL_IDLE_MODE_DURATION_S = 600     // 10min Idle Mode Interval
-    #define SL_ACTIVE_MODE_INTERVAL = 1000  // 1s Active Mode Interval
-    #define SL_ACTIVE_MODE_THRESHOLD = 500  // 500ms Active Mode Threshold
+    #define SL_IDLE_MODE_DURATION_S 600     // 10min Idle Mode Interval
+    #define SL_ACTIVE_MODE_INTERVAL 1000  // 1s Active Mode Interval
+    #define SL_ACTIVE_MODE_THRESHOLD 500  // 500ms Active Mode Threshold
 ```
 
 ### ICD Check-In Protocol Use-Case
@@ -305,9 +305,9 @@ The recommended configurations are likely to change with the Matter 1.4 release.
 Configuration parameters of the ICD Server Configuration component (sl_matter_icd_config.h):
 
 ```cpp
-    #define SL_IDLE_MODE_DURATION_S  = 600    // 10min Idle Mode Interval
-    #define SL_ACTIVE_MODE_INTERVAL  = 10000  // 10s Active Mode Interval
-    #define SL_ACTIVE_MODE_THRESHOLD = 1000   // 1s Active Mode Threshold
+    #define SL_IDLE_MODE_DURATION_S  600    // 10min Idle Mode Interval
+    #define SL_ACTIVE_MODE_INTERVAL  10000  // 10s Active Mode Interval
+    #define SL_ACTIVE_MODE_THRESHOLD 1000   // 1s Active Mode Threshold
 ```
 
 **Openthread Configuration flags**
@@ -370,9 +370,9 @@ The last three parameters are configuration parameters in the Matter Core Compon
 Configuration parameters of the ICD Server Configuration component (`sl_matter_icd_config.h`):
 
 ```cpp
-    #define SL_IDLE_MODE_DURATION_S  = 3600   // 60min Idle Mode Interval
-    #define SL_ACTIVE_MODE_INTERVAL  = 0      // 0s Active Mode Interval
-    #define SL_ACTIVE_MODE_THRESHOLD = 5000   // 5s Active Mode Threshold
+    #define SL_IDLE_MODE_DURATION_S  3600   // 60min Idle Mode Interval
+    #define SL_ACTIVE_MODE_INTERVAL  0      // 0s Active Mode Interval
+    #define SL_ACTIVE_MODE_THRESHOLD 5000   // 5s Active Mode Threshold
 ```
 
 **Openthread Configuration flags**
