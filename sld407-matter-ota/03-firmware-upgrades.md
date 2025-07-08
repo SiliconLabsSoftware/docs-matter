@@ -25,10 +25,10 @@ commands on a Linux terminal running on either Linux machine, WSL or Virtual
 Machine to clone the repository and run bootstrap to prepare to build the sample
 application images.
 
-1. To download the [SiliconLabs Matter codebase](https://github.com/SiliconLabs/matter.git) run the following commands.
+1. To download the [SiliconLabs Matter codebase](https://github.com/project-chip/connectedhomeip.git) run the following commands.
 
     ```shell
-     $ git clone https://github.com/SiliconLabs/matter.git
+     $ git clone https://github.com/project-chip/connectedhomeip.git
     ```
 
 2. Bootstrapping:

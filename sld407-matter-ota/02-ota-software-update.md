@@ -178,7 +178,7 @@ Multi-Chip OTA is implemented for EFR32 and SiWx917 NCP/SoC devices. Multi-chip 
 
 The script can be obtained from the Matter Extension github repository.
 
-For more information on creating a Multi-Chip .ota file, see the [README.md](https://github.com/SiliconLabs/matter/blob/latest/scripts/tools/silabs/ota/README.md).
+For more information on creating a Multi-Chip .ota file, see the [README.md](https://github.com/project-chip/connectedhomeip/blob/master/scripts/tools/silabs/ota/README.md).
 
 Applications must be built with the OTA Multi Image Requestor component added to the project in Simplicity Studio to enable them to process the TLVs.
 
