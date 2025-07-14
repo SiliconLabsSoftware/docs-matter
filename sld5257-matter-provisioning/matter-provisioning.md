@@ -11,7 +11,7 @@ Matter defines three interfaces to access the provisioned data during runtime:
 - [CommissionableDataProvider](https://github.com/SiliconLabs/matter_extension/blob/main/third_party/matter_sdk/src/include/platform/CommissionableDataProvider.h)
 - [DeviceAttestationCredentialsProvider](https://github.com/SiliconLabs/matter_extension/blob/main/third_party/matter_sdk/src/credentials/DeviceAttestationCredsProvider.h)
 
-In Silicon Labs devices, all three interfaces are implemented by the [ProvisionStorage](https://github.com/SiliconLabs/matter_extension/blob/main/third_party/matter_sdk/src/platform/silabs/provision/ProvisionStorage.h).
+In Silicon Labs devices, all three interfaces are implemented by the [ProvisionStorage](https://github.com/SiliconLabs/matter_extension/blob/main/third_party/matter_support/provision/headers/ProvisionStorage.h).
 
 The provisioning script on this folder now supercedes the following tools:
 
@@ -55,16 +55,14 @@ The GFW performs the following tasks:
 - Stores the Attestation Data on the main flash (CD, PAI, DAC)
 - Stores the size and offsets used to store the Attestation Data, along with the KeyId used to store the private-key.
 
-The provisioning code resides under `extension/matter_extension` in the SiSDK directory tree for the SDK used in your Studio project, for example `SimplicityStudio/SDKs/sisdk_release_2/extension/matter_extension/provision`.
+The provisioning code resides under `extension/matter_extension` in the SiSDK directory tree for the SDK used in your Studio project, for example `SimplicityStudio/SDKs/sisdk_release/extension/matter_extension/provision`.
 
-The main source code of the GFW is located under `./generator`, while the board support is located under `./support`.
-Pre-compiled images for the supported chips can be found in `./images`.
+The board support is located under `./support`. Pre-compiled images for the supported chips can be found in `./images`.
 Backwards-compatibility script files are stored under `./modules/vX_Y` where X.Y matches the targeted version.
 
 The directory structure is as follows:
 
 - provision
-  - generator
   - images
   - modules
     - v1_0
