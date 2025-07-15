@@ -1,6 +1,6 @@
 # Building the Chip-Tool
 
-NOTE: The chip-tool binary is a part of the mattertool utility provided with the Silicon Labs Matter Hub RaspberryPi image. It is not necessary to build chip-tool from scratch if using Matter Hub.
+NOTE: The chip-tool binary is a part of the mattertool utility provided with the Silicon Labs Matter Hub Raspberry Pi image. It is not necessary to build chip-tool from scratch if using Matter Hub.
 
 This page covers:
 
