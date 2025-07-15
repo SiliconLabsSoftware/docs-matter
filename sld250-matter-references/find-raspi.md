@@ -17,7 +17,7 @@ Use nmap with the following command:
     $ sudo nmap -sn <subnet>.0/24`
 ```
 
-Example: `sudo nmap -sn 1-.4.148.0/24`, Among other returned values, you will see something: 
+Example: `sudo nmap -sn 10.4.148.0/24`, Among other returned values, you will see something: 
 
 ```shell
    $ Nmap scan report for ubuntu.silabs.com (10.4.148.44)
@@ -37,7 +37,7 @@ Alternatively, use Arp with the following command:
 
 ### Windows
 
-In the command prompt, use `nslookup` to fnd your Raspberry Pi.
+In the command prompt, use `nslookup` to find your Raspberry Pi.
 
 Example: `nslookup ubuntu`
 

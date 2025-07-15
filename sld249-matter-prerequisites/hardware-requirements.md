@@ -112,7 +112,6 @@ The following boards are supported for the Matter over Wi-Fi demos and developme
     - WF200 / Single Band Wi-Fi Expansion Board / 2.4GHz
       - [SLEXP8023A](https://www.silabs.com/development-tools/wireless/wi-fi/wfm200-wifi-expansion-kit)
 - Interconnect board (included in the Wi-Fi kits)
-- Interconnect board (included in the Wi-Fi kits)
 - SPI Cable (included in the RS9116 kit)
 - Jumper Cables (included in the RS9116 kit)
 

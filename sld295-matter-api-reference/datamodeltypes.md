@@ -1,6 +1,6 @@
 # Data Models
 
-The Data Model defines namespaces for endpoints, clusters, and attributes in the application. From a developper standpoint, this is handled by the ZAP tool. For Multi-Fabric devices, the data model is shared between the Fabrics.
+The Data Model defines namespaces for endpoints, clusters, and attributes in the application. From a developer standpoint, this is handled by the ZAP tool. For Multi-Fabric devices, the data model is shared between the Fabrics.
 
 For a review of what the Matter Data Model is and how it is used, see the [Matter Data Model](../sld288-matter-fundamentals-data-model/index.md).
 

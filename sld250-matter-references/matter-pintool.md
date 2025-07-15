@@ -25,9 +25,9 @@ When creating a configuration for a custom board do the following:
    to start the project wizard. Choose your development board type, and the
    latest Gecko SDK you'll be working from. Click **Next**.
 
-1. Select the `Empty C++ Project` example and click **Next**.
+2. Select the `Empty C++ Project` example and click **Next**.
 
-1. Click **Finish** to create your project.
+3. Click **Finish** to create your project.
 
 ## 3. Customize your Components and Pin configuration in Simplicity Studio
 

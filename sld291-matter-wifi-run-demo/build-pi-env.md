@@ -12,7 +12,7 @@ When using a Raspberry Pi as a controller in your Matter network, you have two o
 1. Insert the flashed SD card (directly or using a card reader) into the
    laptop/PC that will run the Raspberry Pi Imager tool.
 2. Launch the Raspberry Pi 4 Imager.
-3. Flash the Pi image using any one of the following procedure:
+3. Flash the Pi image using any one of the following procedures:
 
    - Click **Choose OS > Other General-purpose OS > Ubuntu >Ubuntu xx.xx 64-bit server OS**.
 
@@ -44,7 +44,7 @@ On powering up the board, the red and green lights should start blinking.
    Password: ubuntu
 
 4. Switch to root mode and navigate to path _/home/ubuntu/connectedhomeip/out/standalone_ to find the chip-tool. On the pre-built Matter Hub image, the chip-tool will be ready and working. Keep the PuTTY session open for the further steps.
-5. If you are building the chip-tool from scratch, update the latest packages by running following commands in the terminal:
+5. If you are building the chip-tool from scratch, update the latest packages by running the following commands in the terminal:
 
    ```shell
    $ sudo apt update

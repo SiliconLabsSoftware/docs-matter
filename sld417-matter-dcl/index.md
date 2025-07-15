@@ -30,7 +30,7 @@ Below are the DCL Schemas that can be stored in the DCL and who is responsible f
 
 ## Access DCL
 
-The Connectivity Standards Alliance offers two ways to access the DCL. You can access via a Web UI that can be found at [https://webui.dcl.csa-iot.org/](https://webui.dcl.csa-iot.org/), or you can install the latest version and use the CLI Client, [https://github.com/zigbee-alliance/distributed-compliance-ledger/releases](https://github.com/zigbee-alliance/distributed-compliance-ledger/releases). Note that the CLI Client is platform specific to either Linux or Mac OSX.
+The Connectivity Standards Alliance offers two ways to access the DCL. You can access via a Web UI that can be found at [https://webui.dcl.csa-iot.org/](https://webui.dcl.csa-iot.org/), or you can install the latest version and use the CLI Client, [https://github.com/zigbee-alliance/distributed-compliance-ledger/releases](https://github.com/zigbee-alliance/distributed-compliance-ledger/releases). Note that the CLI Client is platform specific to either Linux or Mac OS.
 
 You will need to create an account with the DCL and wait for Connectivity Standards Alliance approval. Once approved for Vendor level access, you can enter your vendor information and add product information. **Silicon Labs recommends that you create a DCL Account sometime before Matter Certification Process is complete.**
 

@@ -92,7 +92,7 @@ A Timed Write Transaction consists of the following sequence of actions:
 
 ### Untimed Write Transactions
 
-An Untimed Write Transaction requires only the Write Request Action and the Write Response Action Timed Write Transaction since there is no time interval that needs to be set or confirmed.
+An Untimed Write Transaction requires only the Write Request Action, unlike a Timed Write Transaction since there is no time interval that needs to be set or confirmed.
 
 ### Write Transaction Restrictions
 

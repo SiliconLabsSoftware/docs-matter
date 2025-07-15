@@ -1,6 +1,6 @@
 # Flashing the Matter Binaries Using Simplicity Commander
 
-To flash the application for EFR32 and SiWx917 SOC Board Simplicity Commander software will be used.
+To flash the application for EFR32 and SiWx917 SoC Board Simplicity Commander software will be used.
 
 Before flashing the application for EFR32 Boards, flash **bootloader images** as per board variants:
 
@@ -61,7 +61,7 @@ Bootloader binaries are available in the respective path of codebase **third_par
 
 ## Flashing the SiWx917 SOC Matter Binary using Simplicity Commander
 
-SiWx917 SoC device support is available in the latest [Simplicity Commander](https://community.silabs.com/s/article/simplicity-commander?language=en_US). Download can be found [here](/matter/{build-docspace-version}/matter-references/flash-silabs-device#simplicity-commander) The SiWx917 SOC board will support **.rps** as the only file to flash. Follow these steps to create and flash the **.rps** file using **.s37**.
+SiWx917 SoC device support is available in the latest [Simplicity Commander](https://community.silabs.com/s/article/simplicity-commander?language=en_US). Download can be found [here](/matter/{build-docspace-version}/matter-references/flash-silabs-device#simplicity-commander) The SiWx917 SoC board will support **.rps** as the only file to flash. Follow these steps to create and flash the **.rps** file using **.s37**.
 
 1. Locate Simplicity Commander on your PC/Laptop where it is installed through command prompt(cmd).
 

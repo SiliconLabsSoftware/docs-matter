@@ -31,7 +31,7 @@ Below are the software tools, packages, and images required for executing Matter
 - Simplicity Commander for flashing firmware/binary
 - Tera Term
 - Simplicity Studio
-- Putty for controlling EFR32 hardware using chip-tool controller
+- PuTTY for controlling EFR32 hardware using chip-tool controller
 - JLink RTT for logging only
 
 ### Software Packages
@@ -49,7 +49,7 @@ Below are the software tools, packages, and images required for executing Matter
 
 Refer to the [Wi-Fi Software Installation page](./software-installation).
 
-## Connect SiWx917 SOC to Computer
+## Connect SiWx917 SoC to Computer
 
 1. Mount the SiWx917 radio board onto the SiWx917 WSTK board.
 

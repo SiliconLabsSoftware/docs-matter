@@ -1,10 +1,10 @@
-# Openssl Certificate Creation
+# OpenSSL Certificate Creation
 
 An SSL certificate is an important way to secure user information and protect against hackers.
 
-## Openssl Installation (In ubuntu)
+## OpenSSL Installation (In ubuntu)
 
-1. To install openssl, run `sudo apt install openssl`.
+1. To install OpenSSL, run `sudo apt install openssl`.
 
 ## Certificates Creation
 
@@ -22,12 +22,12 @@ The following commands are used to generate certificates:
 
    - `openssl ecparam -name prime256v1 -genkey -noout -out device.key`
 
-4. To generate Client certificate (ex: `device.crt` and `device.key`) using CA certficate:
+4. To generate Client certificate (ex: `device.crt` and `device.key`) using CA certificate:
 
    - `openssl req -new -out device.csr -key device.key`
    - `openssl x509 -req -in device.csr -CA CA.crt -CAkey CA.key -CAcreateserial -out device.crt -days 360`
 
-5. To generate CA verification certification key:
+5. To generate CA verification certificate key:
 
    - `openssl genrsa -out verification_cert.key 2048`
 
