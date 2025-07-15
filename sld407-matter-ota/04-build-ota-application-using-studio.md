@@ -1,4 +1,4 @@
-# Building Matter applications for OTA Software Update
+# Getting Started with OTA Updates in Matter Applications Using Simplicity Studio
 
 In the Matter OTA Software Update scenario, the running image (OTA-A) and the update image (OTA-B) are regular Matter application images and are built using the standard procedure. The only additional configuration required is the use of a higher software version in the update image. This page provides information about creation of OTA-A and OTA-B application for EFR32 and SiWx917 SOC Boards.
 
