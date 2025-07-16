@@ -2,7 +2,7 @@
 
 This page outlines the steps for a scenario that demonstrates the Over The Air (OTA) Software Update functionality in Matter.
 
-The Over The Air (OTA) Software Update functionality is enabled by default for all Silicon Labs example applications. It's inclusion in an application is controlled by the OTA Requestor component in a Matter project in Simplicity Studio.
+The Over The Air (OTA) Software Update functionality is enabled by default for all Silicon Labs example applications. Its inclusion in an application is controlled by the OTA Requestor component in a Matter project in Simplicity Studio.
 
 ## Overview
 
