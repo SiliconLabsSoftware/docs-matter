@@ -174,17 +174,18 @@ For more information, see the documentation for the ota-provider-app example in 
 
 ## Multi-Chip OTA Images
 
-Multi-Chip OTA is implemented for EFR32 and SiWx917 NCP/SoC devices. Multi-chip OTA uses an enhanced script, ota_multi_image_tool.py, which creates .ota files that contain additional TLV headers. These TLV headers describe the binaries to be sent over the air. The enhanced script is located here. It is a wrapper to the original src/app/ota_image_tool.py. Multiple binaries can be packaged in the .ota file. Some tags are reserved for specific Silicon Labs binaries, and other tags are available to be used for arbitrary TLVs. The payloads can be encrypted.
+Multi-Chip OTA is implemented for EFR32 and SiWx917 NCP/SoC devices. Multi-Chip OTA uses an enhanced script, ota_multi_image_tool.py, which creates .ota files that contain additional TLV headers. These TLV headers describe the binaries to be sent over the air. The enhanced script is located here. It is a wrapper to the original src/app/ota_image_tool.py. Multiple binaries can be packaged in the .ota file. Some tags are reserved for specific Silicon Labs binaries, and other tags are available to be used for arbitrary TLVs. The payloads can be encrypted.
 
 The script can be obtained from the Matter Extension github repository.
 
 For more information on creating a Multi-Chip .ota file, see the [README.md](https://github.com/project-chip/connectedhomeip/blob/master/scripts/tools/silabs/ota/README.md).
 
-Applications must be built with the OTA Multi Image Requestor component added to the project in Simplicity Studio to enable them to process the TLVs.
+Applications must be built with the Multi-Chip OTA Image Requestor component added to the project in Simplicity Studio to enable them to process the TLVs.
 
-The OTA Multi Image Requestor Encryption component should be added to the project if the requestor is meant to process encrypted payloads.
+The Multi-Chip OTA Image Requestor Encryption component should be added to the project if the requestor is meant to process encrypted payloads.
 
-**Combined OTA images are also supported:**
+**Combined OTA Images in Regular and Multi-Chip OTA Implementations:**
+Combined OTA images are supported in both regular OTA and Multi-Chip OTA implementations. These images can contain the bootloader, application, or both, depending on your upgrade scenario.
 
 1. Bootloader + application upgrade. This requires a combined image.
 
@@ -237,7 +238,7 @@ BootloaderInformation_t info
 Then, in the beginning of [OTAImageProcessorImpl::IsFirstImageRun](https://github.com/SiliconLabsSoftware/matter_sdk/blob/01a2d4aafaa0b124123caac067831809a1a86720/src/platform/silabs/efr32/OTAImageProcessorImpl.cpp#L115), add:
 
 ```c++
-bootloader_getInfo(&info); // LINE ADDED: for Multi-OTA test
+bootloader_getInfo(&info); // LINE ADDED: for Multi-Chip OTA test
 ChipLogProgress(SoftwareUpdate, "Bootloader version: 0x%lx\n", info.version);
 ChipLogProgress(SoftwareUpdate, "Bootloader type: %d\n", info.type);
 ```
