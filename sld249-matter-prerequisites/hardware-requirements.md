@@ -28,10 +28,20 @@ Over 60 Silicon Labs boards support running the RCP firmware. To build an image 
   - BRD4187C / SLWSTK6006A / Wireless Starter Kit / 2.4GHz@20dBm
     - [XG24-RB4187C](https://www.silabs.com/development-tools/wireless/xg24-rb4187c-efr32xg24-wireless-gecko-radio-board)
 
+- **MGM24 boards:**
+  - BRD4316A / SLWSTK6006A / Wireless Start Kit / 2.4GHz@10dBm -  xGM240-RB4316A
+  - BRD4317A / SLWSTK6006A / Wireless Starter Kit/ 2.4GHz@20dBm -  xGM240-RB4317A
+  - BRD4318A / SLWSTK6006A / Wireless Starter Kit/ 2.4GHz@20dBm -  xGM240-RB4318A
+  - BRD4319A (Rev A00 only) / SLWSTK6006A / Wireless Starter Kit/ 2.4GHz@20dBm
+  - BRD2704A / Sparkfun Thing Plus MGM240P 
+  - BRD4337A / SLWSTK6006A / Wireless Starter Kit / 2.4GHz@20dBm -  xGM240-RB4337A
+
 - **MG26 boards:**
   - BRD4116A / 2.4GHz@10dBm
   - BRD4117A / 2.4GHz@20dBm
   - BRD4118A / 2.4GHz@20dBm
+  - BRD4120A
+  - BRD4121A
   - BRD2608A
   - BRD2709A
 
@@ -53,25 +63,33 @@ The Matter Accessory Device (MAD) is the actual device that the Matter applicati
   - BRD2703A / MG24 Explorer Kit
   - BRD2601B / MG24 Explorer Kit
     - [XG24-DK2601B](https://www.silabs.com/development-tools/wireless/efr32xg24-dev-kit?tab=overview)
-  - BRD4319A / SLWSTK6006A / Wireless Starter Kit/ 2.4GHz@20dBm
+  
 
-    **Note**:  Only the A00 revision of this board is supported, other revisions do not have enough RAM to run Matter.
-
-  - BRD4316A / SLWSTK6006A / Wireless Start Kit / 2.4GHz@10dBm
-    - [XGM240-RB4316A](https://www.silabs.com/development-tools/wireless/xgm240-rb4316a-xgm240p-module-radio-board?tab=overview)
-  - BRD4317A / SLWSTK6006A / Wireless Starter Kit/ 2.4GHz@20dBm
-    - [XGM240-RB4317A](https://www.silabs.com/development-tools/wireless/xgm240-rb4317a-xgm240p-module-radio-board?tab=overview)
+- **MGM24 boards:**
+  - BRD4316A / SLWSTK6006A / Wireless Start Kit / 2.4GHz@10dBm -  xGM240-RB4316A
+  - BRD4317A / SLWSTK6006A / Wireless Starter Kit/ 2.4GHz@20dBm -  xGM240-RB4317A
+  - BRD4318A / SLWSTK6006A / Wireless Starter Kit/ 2.4GHz@20dBm -  xGM240-RB4318A
+  - BRD4319A (Rev A00 only) / SLWSTK6006A / Wireless Starter Kit/ 2.4GHz@20dBm
+  - BRD2704A / Sparkfun Thing Plus MGM240P 
+  - BRD4337A / SLWSTK6006A / Wireless Starter Kit / 2.4GHz@20dBm -  xGM240-RB4337A
 
 - **MG26 boards**
   - BRD4116A / 2.4GHz@10dBm
   - BRD4117A / 2.4GHz@20dBm
   - BRD4118A / 2.4GHz@20dBm
+  - BRD4120A
+  - BRD4121A
   - BRD2608A
   - BRD2709A
 
 - **MGM26 boards:**
   - BRD4350A
   - BRD4351A
+
+- **MGM301 boards:**
+  - BRD2719A
+  - BRD4407A
+  - BRD4408A
 
 ## Matter Over Wi-Fi Accessory Device Requirements
 
