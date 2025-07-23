@@ -33,7 +33,7 @@ To run OTA on Matter over Wi-Fi, you need to build two different applications be
 
 ### Building OTA Application
 
-To create and build Matter OTA using Simplicity Studio For SiWx917 SoC, refer to [build OTA application using Simplicity Studio](./05-build-ota-application-using-studio.md).
+To create and build Matter OTA using Simplicity Studio For SiWx917 SoC, refer to [build OTA application using Simplicity Studio](./04-build-ota-application-using-studio.md).
 
 ### Creating Images
 

@@ -42,7 +42,7 @@ The chip-ota-provider-app binary for a Raspberry Pi is a part of the Artifacts p
 
 The running image and the update image are regular Matter application images and are built using the standard procedure. The only additional configuration required is the use of a higher software version in the update image. The software version is configured in a Studio Matter project by navigating to Software Components -> Silicon Labs Matter -> Stack -> Matter Core Components, clicking "Configure" and setting the "Device software version" and "Device software version string" parameters.  
 
-See the following page for detailed steps: [build OTA application using studio](./05-build-ota-application-using-studio.md).
+See the following page for detailed steps: [build OTA application using studio](./04-build-ota-application-using-studio.md).
 
 ### Obtaining the Bootloader binary
 
