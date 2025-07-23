@@ -33,7 +33,7 @@ In the Legacy power save mode, when the Wi-Fi station receives a beacon with its
 The AP acknowledges the PS-Poll frame and responds with a single buffered frame.
 
 In this mode, the Wi-Fi station stays active and retrieves a single buffered frame at a time. The AP also indicates that there are more buffered frames for the station using the More Data subfield.
-The Wi-Fi station continues to retrieve buffered frames using the PS-Poll frame until there are no more buffered frames and the More Data subfield is set to 0. The Wi-Fi station goes back into the sleep afterwards.
+The Wi-Fi station continues to retrieve buffered frames using the PS-Poll frame until there are no more buffered frames and the More Data subfield is set to 0. The Wi-Fi station goes back into sleep afterwards.
 
 A Wi-Fi station can enter sleep mode after sending a Null frame to the AP with the power management (PM) bit set. From then on, the AP will store all packets destined to the Wi-Fi station in a per-device queue and sets the TIM field in the beacon frame to indicate that packets destined for the Wi-Fi station have been queued.
 
@@ -68,7 +68,7 @@ To enable ICD functionality for Wi-Fi, the `ICD Management` cluster/component ne
 ### EFR32 + RS9116 Setup for ICDs (Sleepy Devices)
 
 - The following GPIO pins should be connected for 9116 and Host handshakes.
-pin 7 and 9 to UULP_2 and UULP_0 respectively.
+pin 7 and pin 9 to UULP_2 and UULP_0 respectively.
 
 ![Power measurement GPIO pin connection for 9116](./images/wifi-9116-gpio-connections.png)
 

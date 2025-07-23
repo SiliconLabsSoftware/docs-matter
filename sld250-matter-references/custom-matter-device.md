@@ -120,7 +120,7 @@ $ mattertool levelcontrol move-to-level {desired_level} 0 1 1 {node_ID} 1
 $ mattertool levelcontrol read current-level 1 1 // Returns 10
 ```
 
-For more information on running a Silicon Labs lighting example on a Thunderboard Sense 2 see you can view documentation in the Silicon Labs Matter GitHub Repo.
+For more information on running a Silicon Labs lighting example on a Thunderboard Sense 2 you can view documentation in the Silicon Labs Matter GitHub Repo.
 
 ## Defining a Custom Cluster
 

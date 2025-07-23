@@ -9,7 +9,7 @@ When manufacturing a Matter product you must follow the Matter Security Requirem
 What should your Matter device include?
 
 - Device Attestation Credential (DAC) and private key unique to your device. This private key must be protected from unauthorized access.
-- Onboarding Payload (Vendor ID (VID), and Product ID (PID) discriminator and passcode)
+- Onboarding Payload (Vendor ID (VID), Product ID (PID), discriminator, and passcode)
 - Certification Declaration (CD)
 - Product Attestation Intermediate (PAI)
 

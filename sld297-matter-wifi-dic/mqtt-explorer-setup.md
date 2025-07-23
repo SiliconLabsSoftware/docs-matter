@@ -38,7 +38,7 @@ Download and install the MQTT Explorer from https://mqtt-explorer.com/.
   
 ### Connecting to Mosquitto Connection
 
-- Host : Your Mosquitto ip address
+- Host : Your Mosquitto IP address
 - Port : 8883
 - Make sure you enable Validate Certificate and Encryption
 - Click **Advanced Settings**

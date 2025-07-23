@@ -36,7 +36,7 @@ If you are coming from Simplicity Studio, you may have already installed the dem
 There are two ways to build a Matter Accessory Device image file. You can build it using the Silicon Labs Matter GitHub Repo or you can build it using Simplicity Studio. The entire build process for Simplicity Studio is covered in the [Matter Over Thread Quick Start Guide](/matter/{build-docspace-version}/matter-light-switch-example/02-thread-light-switch-example).
 There are two ways to build a Matter Accessory Device image file. You can build it using the Silicon Labs Matter GitHub Repo or you can build it using Simplicity Studio. The entire build process for Simplicity Studio is covered in the [Matter Over Thread Quick Start Guide](/matter/{build-docspace-version}/matter-light-switch-example/02-thread-light-switch-example).
 
-- [Build Using the Matter GitHub Repo](https://github.com/SiliconLabs/matter/blob/latest/examples/lighting-app/silabs/efr32/README.md)
+- [Build Using the Matter GitHub Repo](https://github.com/project-chip/connectedhomeip/tree/master/examples/lighting-app/silabs)
 - [Build Using Simplicity Studio](/matter/{build-docspace-version}/matter-light-switch-example/02-thread-light-switch-example)
 
 ## Step 2: Flash the Matter Accessory Device

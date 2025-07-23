@@ -184,7 +184,7 @@ When this happens, perform the following steps to run the OTA Update successfull
 
 1. Disconnect the WF200 Expansion Board from the EFR32MG24.
 
-2. Go To the Simplicity Commander's folder path in the command prompt and run this command:
+2. Go to the Simplicity Commander's folder path in the command prompt and run this command:
 
    ```shell
    commander.exe extflash read --range 0x00:+<total size to read>

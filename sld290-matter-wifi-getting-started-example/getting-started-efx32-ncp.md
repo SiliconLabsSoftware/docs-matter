@@ -38,7 +38,7 @@ The following hardware devices are required for executing Matter over Wi-Fi:
       - [RS9116X-SB-EVK2](https://www.silabs.com/development-tools/wireless/wi-fi/rs9116x-sb-evk2-development-kit)
     - DB-EVK1 / Dual Band Wi-Fi Development Kit / 2.4GHz & 5GHz
       - [RS9116X-DB-EVK1](https://www.silabs.com/development-tools/wireless/wi-fi/rs9116x-db-evk-development-kit)
-        **Note:** Matter only supported over 2.4GHz on this Dev kit.
+        **Note:** Matter is only supported over 2.4GHz on this Dev kit.
   - **SiWx917**
     - SiWx917 NCP Mode / Wi-Fi Expansion Board / 2.4GHz
       - BRD8045A (B0 Expansion v2.0)
@@ -65,7 +65,7 @@ Below are the software tools, packages, and images required for executing Matter
 - Simplicity Commander for flashing bootloader on EFR32 Boards and Siwx917 NCP.
 - Tera Term for flashing firmware on EFR32 NCP Boards.
 - Simplicity Studio
-- Putty for controlling EFR32 hardware using chip-tool controller
+- PuTTY for controlling EFR32 hardware using chip-tool controller
 - Ozone Debugger for logging and debugging (Optional)
 - JLink RTT for logging only (Optional)
 

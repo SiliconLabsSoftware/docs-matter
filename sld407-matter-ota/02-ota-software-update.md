@@ -1,6 +1,6 @@
 # Matter OTA Software Update with Silicon Labs Example Applications
 
-This page outlines the steps for a scenario that demonstrates the The Over The Air (OTA) Software Update functionality in Matter.
+This page outlines the steps for a scenario that demonstrates the Over The Air (OTA) Software Update functionality in Matter.
 
 The Over The Air (OTA) Software Update functionality is enabled by default for all Silicon Labs example applications. Its inclusion in an application is controlled by the OTA Requestor component in a Matter project in Simplicity Studio.
 
@@ -42,7 +42,7 @@ The chip-ota-provider-app binary for a Raspberry Pi is a part of the Artifacts p
 
 The running image and the update image are regular Matter application images and are built using the standard procedure. The only additional configuration required is the use of a higher software version in the update image. The software version is configured in a Studio Matter project by navigating to Software Components -> Silicon Labs Matter -> Stack -> Matter Core Components, clicking "Configure" and setting the "Device software version" and "Device software version string" parameters.  
 
-See the following page for detailed steps: [build OTA application using studio](./05-build-ota-application-using-studio.md).
+See the following page for detailed steps: [build OTA application using studio](./04-build-ota-application-using-studio.md).
 
 ### Obtaining the Bootloader binary
 
@@ -138,7 +138,7 @@ Installing the Lower Power Mode component in the project's Software Components t
 
 Disabling logging in the configuration of the Matter Core Components component also helps to reduce the image size.
 
-Using LZMA compression when building the .gbl file ( passing `--compress lzma` parameter to the `commander gbl create` command) further reduces the downloaded image size.
+Using LZMA compression when building the .gbl file (passing `--compress lzma` parameter to the `commander gbl create` command) further reduces the downloaded image size.
 
 When building an internal storage bootloader, the two key configuration parameters are the Slot Start Address and Slot Size in the Bootloader Storage Slot component. The storage slot must not overlap with the running image and the NVM section of the flash. In other words, the slot start address must be greater than the end of the running image address and the sum of the start address and the slot size must be less than the address of the NVM section. The simplest way to get the relevant addresses for the running image and NVM is by using the Silicon Labs `Simplicity Commander` (**Device Info > Main Flash > Flash Map**).
 
@@ -174,17 +174,18 @@ For more information, see the documentation for the ota-provider-app example in 
 
 ## Multi-Chip OTA Images
 
-Multi-Chip OTA is implemented for EFR32 and SiWx917 NCP/SoC devices. Multi-chip OTA uses an enhanced script, ota_multi_image_tool.py, which creates .ota files that contain additional TLV headers. These TLV headers describe the binaries to be sent over the air. The enhanced script is located here. It is a wrapper to the original src/app/ota_image_tool.py. Multiple binaries can be packaged in the .ota file. Some tags are reserved for specific Silicon Labs binaries, and other tags are available to be used for arbitrary TLVs. The payloads can be encrypted.
+Multi-Chip OTA is implemented for EFR32 and SiWx917 NCP/SoC devices. Multi-Chip OTA uses an enhanced script, ota_multi_image_tool.py, which creates .ota files that contain additional TLV headers. These TLV headers describe the binaries to be sent over the air. The enhanced script is located here. It is a wrapper to the original src/app/ota_image_tool.py. Multiple binaries can be packaged in the .ota file. Some tags are reserved for specific Silicon Labs binaries, and other tags are available to be used for arbitrary TLVs. The payloads can be encrypted.
 
 The script can be obtained from the Matter Extension github repository.
 
-For more information on creating a Multi-Chip .ota file, see the [README.md](https://github.com/SiliconLabs/matter/blob/latest/scripts/tools/silabs/ota/README.md).
+For more information on creating a Multi-Chip .ota file, see the [README.md](https://github.com/project-chip/connectedhomeip/blob/master/scripts/tools/silabs/ota/README.md).
 
-Applications must be built with the OTA Multi Image Requestor component added to the project in Simplicity Studio to enable them to process the TLVs.
+Applications must be built with the Multi-Chip OTA Image Requestor component added to the project in Simplicity Studio to enable them to process the TLVs.
 
-The OTA Multi Image Requestor Encryption component should be added to the project if the requestor is meant to process encrypted payloads.
+The Multi-Chip OTA Image Requestor Encryption component should be added to the project if the requestor is meant to process encrypted payloads.
 
-**Combined OTA images are also supported:**
+**Combined OTA Images in Regular and Multi-Chip OTA Implementations:**
+Combined OTA images are supported in both regular OTA and Multi-Chip OTA implementations. These images can contain the bootloader, application, or both, depending on your upgrade scenario.
 
 1. Bootloader + application upgrade. This requires a combined image.
 
@@ -237,7 +238,7 @@ BootloaderInformation_t info
 Then, in the beginning of [OTAImageProcessorImpl::IsFirstImageRun](https://github.com/SiliconLabsSoftware/matter_sdk/blob/01a2d4aafaa0b124123caac067831809a1a86720/src/platform/silabs/efr32/OTAImageProcessorImpl.cpp#L115), add:
 
 ```c++
-bootloader_getInfo(&info); // LINE ADDED: for Multi-OTA test
+bootloader_getInfo(&info); // LINE ADDED: for Multi-Chip OTA test
 ChipLogProgress(SoftwareUpdate, "Bootloader version: 0x%lx\n", info.version);
 ChipLogProgress(SoftwareUpdate, "Bootloader type: %d\n", info.type);
 ```

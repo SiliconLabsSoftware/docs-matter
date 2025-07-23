@@ -2,7 +2,7 @@
 
 Amazon Web Services offers reliable, scalable, and inexpensive cloud computing services. Refer to [AWS Documentation](https://aws.amazon.com/what-is-aws/) for more details.
 
-## AWS CA Certitifcate Registration
+## AWS CA Certificate Registration
 
 1. Create a CA certificate, a CA verification certificate, a client certificate, and a client key using the [Openssl Certificate Creation](./openssl-certificate-creation.md) documentation.
 2. Open [AWS](https://aws.amazon.com/).
