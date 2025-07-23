@@ -11,7 +11,7 @@ For the Hardware required for an Apple EcoSystem, refer to the [Ecosystem overvi
 - Apple Account
 - Apple Home App on Smartphone
 
-**Note:** Apple only has Matter support with IOS version-16.1 or higher.
+**Note:** Apple only has Matter support within iOS version-16.1 or higher.
 
 ## Set Up Apple HomePod and Apple Phone
 

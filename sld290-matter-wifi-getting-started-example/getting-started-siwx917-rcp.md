@@ -80,7 +80,7 @@ The following hardware devices are required for this example:
  
       # Enable Silabs Wi-Fi (only one bus may be enabled at a time)
       # Notes:
-      #   -SDIO frequency is limited to 25MHz to ensure compatiblity with all
+      #   -SDIO frequency is limited to 25MHz to ensure compatibility with all
       #    Raspberry Pi versions
       #   -If using a Raspberry Pi 4B with SPI, please limit frequency to 25000000
       #   -For more information, please contact Silabs support

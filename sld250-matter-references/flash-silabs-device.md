@@ -7,10 +7,10 @@ Once you have an image built, you can flash it onto your EFR or SiWx917 device (
 Simplicity Studio is a complete development environment and tool suite. It has the ability to discover USB-connected development boards and flash them.
 
 - [Download Simplicity Studio](https://www.silabs.com/developers/simplicity-studio).
-- Building application Using Simplicity Studio:
+- Building Application Using Simplicity Studio:
   - [Build Application for EFR32](/matter/{build-docspace-version}/matter-wifi-run-demo/build-efx32-application-using-studio)
   - [Build Application for SoC](/matter/{build-docspace-version}/matter-wifi-run-demo/build-soc-application-using-studio)
-- Flash application Using Simplicity Studio:
+- Flash Application Using Simplicity Studio:
   - [Build Application for EFR32 Step 9](/matter/{build-docspace-version}/matter-wifi-run-demo/build-efx32-application-using-studio)
   - [Build Application for SoC Step 9](/matter/{build-docspace-version}/matter-wifi-run-demo/build-soc-application-using-studio)
 - [Simplicity Studio Reference Guide](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-building-and-flashing/flashing)

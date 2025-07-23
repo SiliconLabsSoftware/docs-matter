@@ -1,14 +1,14 @@
-# Matter OTA For SiWx917 SOC
+# Matter OTA For SiWx917 SoC
 
 The scope of this page describes the Matter OTA upgrade on SiWx917 SoC mode for combined image(TA+M4), application(M4) alone, and Wi-Fi(TA) alone image upgrade.
 
 ## Hardware Requirements
 
-- To run matter OTA on Silicon Labs Platform, refer to [Hardware Requirements](/matter/{build-docspace-version}/matter-prerequisites/hardware-requirements).
+- To run Matter OTA on Silicon Labs Platform, refer to [Hardware Requirements](/matter/{build-docspace-version}/matter-prerequisites/hardware-requirements).
 
 ## Software Requirements
 
-- To run matter OTA on Silicon Labs Platform, refer to [Software Requirements](/matter/{build-docspace-version}/matter-prerequisites/software-requirements).
+- To run Matter OTA on Silicon Labs Platform, refer to [Software Requirements](/matter/{build-docspace-version}/matter-prerequisites/software-requirements).
 
 ## Setting up OTA Environment
 
@@ -33,7 +33,7 @@ To run OTA on Matter over Wi-Fi, you need to build two different applications be
 
 ### Building OTA Application
 
-To create and build Matter OTA using Simplicity Studio For SiWx917 SOC, refer to [build OTA application using Simplicity Studio](./05-build-ota-application-using-studio.md).
+To create and build Matter OTA using Simplicity Studio For SiWx917 SoC, refer to [build OTA application using Simplicity Studio](./04-build-ota-application-using-studio.md).
 
 ### Creating Images
 
@@ -143,15 +143,15 @@ Before running **ota-requestor** app, flash the **OTA-A** application(M4) and Wi
     ./chip-tool basicinformation read software-version 1 0
     ```
 
-### Multi-OTA images for SiWx917 NCP/SoC
+### Multi-Chip OTA images for SiWx917 NCP/SoC
 
-Multi-OTA images can be created using `ota_multi_image_tool.py` which creates .ota files that contain additional TLV headers.
+Multi-Chip OTA images can be created using `ota_multi_image_tool.py` which creates .ota files that contain additional TLV headers.
 
 >**Note**: SiWN917 NCP uses TLV tag 4 for Wi-Fi(TA) image upgrade.
 
-#### Multi-OTA image creation on SiWN917 NCP
+#### Multi-Chip OTA image creation on SiWN917 NCP
 
-Multi-OTA on SiWN917 NCP supports application image upgrade, Wi-Fi(TA) image upgrade and combined image upgrade.
+Multi-Chip OTA on SiWN917 NCP supports application image upgrade, Wi-Fi(TA) image upgrade and combined image upgrade.
 
 **Application Image Upgrade**
 
@@ -177,7 +177,7 @@ commander gbl create SiWx917-lock-example.gbl --app SiWx917-lock-example.s37 --c
 ./scripts/tools/silabs/ota/ota_multi_image_tool.py create -v 0xFFF1 -p 0x8005 -vn 2 -vs "2.0" -da sha256 --app-input-file SiWx917-lock-example.gbl --wifi_ta_input_file SiWG917-B.2.14.5.0.0.10.rps combined_image.ota
 ```
 
-#### Multi-OTA image creation on SiWG917 SoC
+#### Multi-Chip OTA image creation on SiWG917 SoC
 
 >**Note**: SiWG917 SoC uses TLV tag 1 for all image upgrades M4 alone, TA alone and combined image upgrade.
 

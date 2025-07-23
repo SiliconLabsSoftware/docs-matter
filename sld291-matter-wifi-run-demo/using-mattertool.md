@@ -37,7 +37,7 @@ $ mattertool levelcontrol read current-level 106 1
 | **Command**  | **Description**                                                                                   |
 | ------------ | ------------------------------------------------------------------------------------------------- |
 | help         | Prints help options                                                                               |
-| bleWifi      | For Matter Bluetooth LE Wi-FI commissioning with 917 SoC device                                   |
+| bleWifi      | For Matter Bluetooth LE Wi-Fi commissioning with 917 SoC device                                   |
 | buildCT      | Clean build of the chip-tool                                                                      |
 | cleanVars    | Erase every Set variable used in the script. They will be set back to default or randomized value |
 | off          | Turn off the Light on the already-commissioned 917 SoC device                                     |

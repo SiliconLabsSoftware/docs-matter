@@ -1,6 +1,6 @@
 # Matter API Reference
 
-This section covers the various Application Programming Interfaces (APIs) that a developper might use when developing a new Matter Application.  
+This section covers the various Application Programming Interfaces (APIs) that a developer might use when developing a new Matter Application.  
 
 - [**DataModel**](./datamodeltypes.md)
 - [**Attributes**](./attributes.md)
@@ -11,7 +11,7 @@ This section covers the various Application Programming Interfaces (APIs) that a
 
 ## Application APIs
 
-### Initializaton
+### Initialization
 
 The application 'Init' sequence lives in the ```AppTask.cpp``` file, and is called at the beginning of the application to ensure that all components are properly initialized and ready to operate. It sets up necessary callbacks, initializes hardware components, and handles any errors that may occur during the process. This function is crucial for the stable operation of the application.
 

@@ -21,7 +21,7 @@ This procedure prepares the Raspberry Pi 4B (RPi4B) to become a Matter Hub. You 
 4. Use PuTTY to connect to RPi4B.
 
    1. The first time connecting to RPi4B, PuTTY will warn about a new host key or key fingerprint. Accept the key.
-   2. The credentials (username: password) are the same given Step 1.
+   2. The credentials (username: password) are the same as those given in Step 1.
    3. Switch to root mode and navigate to path "/home/ubuntu/connectedhomeip/out/standalone" to find the chip-tool.
 
 Matter hub/chip-tool are ready and working. Keep the PuTTY session open for the following steps.
@@ -92,8 +92,8 @@ Now two Matter accessory devices (MADs) are on the network and ready to be used.
 
 1. In a PuTTY session to the Matter hub, use the chip-tool to test the Matter light device.
 
-   1. Control the light status of the light MAD Using `./chip-tool onoff on nodeID 1`. You can also use `chip-tool onoff off` and `chip-tool toggle`.
-   2. For dev board with buttons available, you can use BTN1 to toggle the light status locally.
+   1. Control the light status of the light MAD using `./chip-tool onoff on nodeID 1`. You can also use `chip-tool onoff off` and `chip-tool toggle`.
+   2. For dev boards with buttons available, you can use BTN1 to toggle the light status locally.
 
 2. In a PuTTY session to the Matter hub, use the chip-tool to bind the light_switch MAD to the light MAD, thus allowing the switch to control the light.
 
