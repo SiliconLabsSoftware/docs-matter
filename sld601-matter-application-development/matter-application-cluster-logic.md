@@ -98,7 +98,9 @@ void AppTask::OnOffAttributeWriteStartTimer()
 
 This function will have to be defined in AppTask.h as well as part of the AppTask class.
 
-Now locate the MatterPostAttributeChangeCallback() function in the src/ZclCallbacks.cpp file. This function is called by the application framework after it changes an attribute value. Since we are modifying OnOff attribute in the OnOffTmrExpiryHandler(), this callback will be used to re-initiate the timer such that the attribute is continuously being toggled. To do this, the AppTask::OnOffAttributeWriteStartTimer() can be called. OnOffAttributeWriteStartTimer() is part of the AppTask context. In order to implement this function in the we must first get the AppTask instance with AppTask::GetAppTask(). To do this, modify the MatterPostAttributeChangeCallback() as shown below:
+Now, locate the MatterPostAttributeChangeCallback() function in the src/ZclCallbacks.cpp file. This function is invoked by the application framework after an attribute value has been changed. Since we are modifying the OnOff attribute in the OnOffTmrExpiryHandler(), this callback will be used to re-initiate the timer so that the attribute continues to toggle. To achieve this, you can call AppTask::OnOffAttributeWriteStartTimer(), which is part of the AppTask context.
+
+To implement this functionality, you must first obtain the AppTask instance using AppTask::GetAppTask(). Then, modify the MatterPostAttributeChangeCallback() function as shown below:
 
 ```C++
 void MatterPostAttributeChangeCallback(const chip::app::ConcreteAttributePath & attributePath, uint8_t type, uint16_t size,
