@@ -42,7 +42,7 @@ Enable the On/Off cluster (0x0006) as both a Server and a Client. This should ad
 
 By configuring both a client and server for the On/Off cluster, the device should be able to transmit On/Off commands and store On/Off attributes. For this guide, we will mainly focus on the attribute storing and manipulation.
 
-Save the .zap file. The tool will automatically generate the necessary code files for your application, reflecting the new cluster configuration. For more information, reference [ZCL Advanced Platform (ZAP) Tool for Matter](https://docs.silabs.com/matter/2.3.1/matter-references/matter-zap).
+Save the .zap file. The tool will automatically generate the necessary code files for your application, reflecting the new cluster configuration. For more information, reference [ZCL Advanced Platform (ZAP) Tool for Matter](https://docs.silabs.com/matter/latest/matter-references/matter-zap).
 
 
 ## Step 3: Analyze the Auto-generated Code
@@ -58,7 +58,7 @@ You will also notice that following the cluster enablement, a corresponding comp
 
 ## Step 4: Add Application Logic 
 
-Locate your projects src/AppTask.cpp file. This file acts as the central hub for application-specific logic, initialization, and event processing in a Matter application on Silicon Labs platforms. We will begin by creating two helper functions, one that starts a one-shot timer to expire in 10 seconds and invokes a handler, **OnOffTmrExpiryHandler**.
+Locate your projects src/AppTask.cpp file. This file acts as the central hub for application-specific logic, initialization, and event processing in a Matter application on Silicon Labs platforms. We will begin by creating two helper functions, one that starts a one-shot timer to expire in 10 seconds and the handler function, **OnOffTmrExpiryHandler**.
 
 ```C++
 #include "app-common/zap-generated/attributes/Accessors.h"
@@ -66,20 +66,22 @@ Locate your projects src/AppTask.cpp file. This file acts as the central hub for
 TimerHandle_t OnOffAttributeChangeTimer;
 
 void OnOffTmrExpiryHandler(TimerHandle_t xTimer){
-    static bool current_state = 1; //initialize as on
-    current_state ^= 1;
-    chip::app::Clusters::OnOff::Attributes::OnOff::Set(1, current_state);
+    static bool current_state = 1; // Initialize as on
+    current_state ^= 1; // Toggle the current state of OnOff on timer expiry
+    SILABS_LOG("OnOff attribute toggled to %d", current_state);
+    chip::app::Clusters::OnOff::Attributes::OnOff::Set(1, current_state); // Modify the attribute
 }
 
 void OnOffTmrStart(){
 
+    // Initiate timer
     OnOffAttributeChangeTimer = xTimerCreate("OnOffTmr",   // timer name
                                   pdMS_TO_TICKS(10000),   // == default timer period (mS)
-                                  true,                    // no timer reload (==one-shot)
+                                  false,                    // no timer reload (==one-shot)
                                   nullptr,                 // init timer id = app task obj context
                                   OnOffTmrExpiryHandler);  // timer callback handler
 
-    xTimerStart(OnOffAttributeChangeTimer, 1);
+    xTimerStart(OnOffAttributeChangeTimer, 1); // Start timer
 }
 ```
 
@@ -94,10 +96,9 @@ void AppTask::OnOffAttributeWriteStartTimer()
 }
 ```
 
-This function will have to be defined in AppTask.h as well.
+This function will have to be defined in AppTask.h as well as part of the AppTask class.
 
-Now locate the MatterPostAttributeChangeCallback() function in the src/ZclCallbacks.cpp file. This function is called by the application framework after it changes an attribute value.
-Modify it as below:
+Now locate the MatterPostAttributeChangeCallback() function in the src/ZclCallbacks.cpp file. This function is called by the application framework after it changes an attribute value. Since we are modifying OnOff attribute in the OnOffTmrExpiryHandler(), this callback will be used to re-initiate the timer such that the attribute is continuously being toggled. To do this, the AppTask::OnOffAttributeWriteStartTimer() can be called. OnOffAttributeWriteStartTimer() is part of the AppTask context. In order to implement this function in the we must first get the AppTask instance with AppTask::GetAppTask(). To do this, modify the MatterPostAttributeChangeCallback() as shown below:
 
 ```C++
 void MatterPostAttributeChangeCallback(const chip::app::ConcreteAttributePath & attributePath, uint8_t type, uint16_t size,
@@ -106,7 +107,7 @@ void MatterPostAttributeChangeCallback(const chip::app::ConcreteAttributePath & 
     ClusterId clusterId     = attributePath.mClusterId;
     AttributeId attributeId = attributePath.mAttributeId;
     
-    // More auto-generated code 
+    // Auto-generated code 
 
     if (clusterId == OnOff::Id && attributeId == OnOff::Attributes::OnOff::Id){
       AppTask::GetAppTask().OnOffAttributeWriteStartTimer();
@@ -114,9 +115,13 @@ void MatterPostAttributeChangeCallback(const chip::app::ConcreteAttributePath & 
 
 }
 ```
-Make sure to #include "AppTask.h" at the top of ZclCallbacks.cpp to call the AppTask:: function. 
+Make sure to #include "AppTask.h" at the top of ZclCallbacks.cpp to call the AppTask::GetAppTask() function. For more information on the AppTask, reference AppTask.h.
 
-The last step is to add a call to OnOffTmrStart() at the end of the AppTask::AppInit() function to start the attribute write sequence. 
+The last step is to add a call to OnOffTmrStart() at the end of the AppTask::AppInit() function to start the attribute write sequence. Below is the code flow:
+
+![Code Flow](./images/ClusterLogic6.jpg)
+
+In the flow chart above, OnOffAttributeWriteStartTimer() calls OnOffTmrStart() to restart the timer.
 
 ## Step 5: Interact with the On/Off Cluster 
 
