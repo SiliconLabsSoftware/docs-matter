@@ -36,11 +36,11 @@ This opens up the project's .zap configuration file. There should be two endpoin
 
 ![Endpoint 1 Clusters](./images/ClusterLogic4.png)
 
-Enable the On/Off cluster (0x0006) as both a Server and a Client. This should add mandatory attributes and commands as required by the spec for this cluster, these can be viewed by selecting the "Configure" icon.
+Enable the On/Off cluster (0x0006) as both a Server and Client. This should add mandatory attributes and commands as required by the spec for this cluster, these can be viewed by selecting the "Configure" icon.
 
 ![On/Off Client & Server](./images/ClusterLogic5.png)
 
-By configuring both a client and server for the On/Off cluster, the device should be able to transmit On/Off commands and store On/Off attributes. For this guide, we will mainly focus on the attribute storing and manipulation.
+By configuring both a client and server for the On/Off cluster, the device should be able to transmit On/Off commands and store On/Off attributes. Normally, a light bulb acts as a server because it holds the On/Off state and responds to commands to change it. A light switch acts as a client because it sends commands to the bulb to turn it on or off, but doesn't store the state itself. For this guide, we will mainly focus on the attribute storing and manipulation.
 
 Save the .zap file. The tool will automatically generate the necessary code files for your application, reflecting the new cluster configuration. For more information, reference [ZCL Advanced Platform (ZAP) Tool for Matter](https://docs.silabs.com/matter/latest/matter-references/matter-zap).
 
@@ -54,11 +54,11 @@ Now that the new On/Off cluster has been added to the Sample Door Lock project, 
 - Callback stubs are generated for you to implement application-specific behavior.
 - You interact with the cluster by filling in these stubs and using the generated data structures.
 
-You will also notice that following the cluster enablement, a corresponding component is automatically added to your project. This happens because enabling a cluster in ZAP updates your project configuration to include the necessary software components and libraries required to support that cluster’s functionality. For clusters, this functionality is implemented in the <matter_extension>/third_party/matter_sdk/src/app/clusters directory. For the On/Off cluster, the server command handlers and related logic can be found in te /on-off-server/on-off-server.cpp file.
+You will also notice that following the cluster enablement, a corresponding component is automatically added to your project. This happens because enabling a cluster in ZAP updates your project configuration to include the necessary software components and libraries required to support that cluster’s functionality. For clusters, this functionality is implemented in the <matter_extension>/third_party/matter_sdk/src/app/clusters directory. For the On/Off cluster, the server command handlers and related logic can be found in the /on-off-server/on-off-server.cpp file.
 
 ## Step 4: Add Application Logic 
 
-Locate your projects src/AppTask.cpp file. This file acts as the central hub for application-specific logic, initialization, and event processing in a Matter application on Silicon Labs platforms. We will begin by creating two helper functions, one that starts a one-shot timer to expire in 10 seconds and the handler function, **OnOffTmrExpiryHandler**.
+Locate your project's src/AppTask.cpp file. This file acts as the central hub for application-specific logic, initialization, and event processing in a Matter application on Silicon Labs platforms. We will begin by creating two helper functions, one that starts a one-shot timer to expire in 10 seconds and the handler function, **OnOffTmrExpiryHandler**.
 
 ```C++
 #include "app-common/zap-generated/attributes/Accessors.h"
@@ -100,7 +100,7 @@ This function will have to be defined in AppTask.h as well as part of the AppTas
 
 Now, locate the MatterPostAttributeChangeCallback() function in the src/ZclCallbacks.cpp file. This function is invoked by the application framework after an attribute value has been changed. Since we are modifying the OnOff attribute in the OnOffTmrExpiryHandler(), this callback will be used to re-initiate the timer so that the attribute continues to toggle. To achieve this, you can call AppTask::OnOffAttributeWriteStartTimer(), which is part of the AppTask context.
 
-To implement this functionality, you must first obtain the AppTask instance using AppTask::GetAppTask(). Then, modify the MatterPostAttributeChangeCallback() function as shown below:
+To implement this functionality, you must first obtain the AppTask instance using AppTask::GetAppTask(). Modify the MatterPostAttributeChangeCallback() function as shown below:
 
 ```C++
 void MatterPostAttributeChangeCallback(const chip::app::ConcreteAttributePath & attributePath, uint8_t type, uint16_t size,
@@ -133,6 +133,8 @@ The next step is to commission the device to a Matter hub and begin interacting 
 
 Once the custom Door Lock node is successfully commissioned to the network, you can read the value of the OnOff attribute using the following command:
 
+```
 mattertool onoff read on-off <node_id> 1
+```
 
 Replace <node_id> with the actual node ID assigned to your device during commissioning.
