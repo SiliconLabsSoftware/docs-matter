@@ -1,5 +1,6 @@
 ## Description
 <!-- Provide a brief description of the changes in this pull request. -->
+<!-- Note that the pull requests must be merged into the doccurator branches corresponding to the Matter release the change applies to, for example doccurator/2.6.2 . -->
 
 ## Related Issue
 <!-- If this pull request addresses an issue, link to it here. -->
