@@ -92,7 +92,7 @@ Please follow the official GitHub [guide](https://opensource.guide/how-to-contri
 When you created an issue and based on the discussion you want to contribute with your source-code.
 Branching is disabled on the public Silicon Labs repositories. You need to fork your own repo first.
 Please follow the official GitHub [guide](https://docs.github.com/en/get-started/exploring-projects-on-github/contributing-to-a-project).
-You can create your branch on your own forked repo now. Pull requests must be merged into the doccurator branches corresponding to the Matter release the change applies to, for example `doccurator/2.6.2`.
+You can create your branch on your own forked repo now. Pull requests must be merged into the doccurator branches corresponding to the Matter release the change applies to (for example, `doccurator/2.6.2`.
 
 ### Branch Naming Convention
 Branch naming shall follow the following template: *IssueNumber-issue-title-goes-here*  
