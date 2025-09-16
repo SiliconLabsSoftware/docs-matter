@@ -18,7 +18,7 @@ As a contributor, you'll want to be familiar with the Silicon Labs tooling:
 
 Read the Silicon Labs [coding guidelines](https://github.com/SiliconLabsSoftware/agreements-and-guidelines/blob/main/coding_standard.md).  
 ## Git Setup
-We need to know who you are, and how to contact you. Please ass the following information to your Git installation:
+We need to know who you are, and how to contact you. Please add the following information to your Git installation:
 ```
 git config --global user.name "FirstName LastName"
 git config --global user.email "firstname.lastname@example.com"
@@ -92,7 +92,7 @@ Please follow the official GitHub [guide](https://opensource.guide/how-to-contri
 When you created an issue and based on the discussion you want to contribute with your source-code.
 Branching is disabled on the public Silicon Labs repositories. You need to fork your own repo first.
 Please follow the official GitHub [guide](https://docs.github.com/en/get-started/exploring-projects-on-github/contributing-to-a-project).
-You can create your branch on your own forked repo now.
+You can create your branch on your own forked repo now. Pull requests must be merged into the doccurator branches corresponding to the Matter release the change applies to (for example, `doccurator/2.6.2`.
 
 ### Branch Naming Convention
 Branch naming shall follow the following template: *IssueNumber-issue-title-goes-here*  
@@ -115,7 +115,7 @@ Another line of really good description
 ```
 
 ## Pull Request Guideline
-Okay you finished your work committed all your changes to your branch. Time to create a pull request.  
+Okay you finished your work committed all your changes to your branch. Time to create a pull request. Pull requests must be merged into the doccurator branches corresponding to the Matter release the change applies to (for example, `doccurator/2.6.2`). 
 Refer to the general pull request [guideline](https://opensource.guide/how-to-contribute/#opening-a-pull-request) from GitHub.  
 What to consider when raising a Pull Request:  
 1. **Pull Request Naming**  
