@@ -18,7 +18,7 @@ As a contributor, you'll want to be familiar with the Silicon Labs tooling:
 
 Read the Silicon Labs [coding guidelines](https://github.com/SiliconLabsSoftware/agreements-and-guidelines/blob/main/coding_standard.md).  
 ## Git Setup
-We need to know who you are, and how to contact you. Please ass the following information to your Git installation:
+We need to know who you are, and how to contact you. Please add the following information to your Git installation:
 ```
 git config --global user.name "FirstName LastName"
 git config --global user.email "firstname.lastname@example.com"
@@ -115,7 +115,7 @@ Another line of really good description
 ```
 
 ## Pull Request Guideline
-Okay you finished your work committed all your changes to your branch. Time to create a pull request. Pull requests must be merged into the doccurator branches corresponding to the Matter release the change applies to, for example `doccurator/2.6.2`. 
+Okay you finished your work committed all your changes to your branch. Time to create a pull request. Pull requests must be merged into the doccurator branches corresponding to the Matter release the change applies to (for example, `doccurator/2.6.2`). 
 Refer to the general pull request [guideline](https://opensource.guide/how-to-contribute/#opening-a-pull-request) from GitHub.  
 What to consider when raising a Pull Request:  
 1. **Pull Request Naming**  
