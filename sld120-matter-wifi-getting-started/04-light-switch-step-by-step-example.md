@@ -40,7 +40,7 @@ Matter hub/chip-tool are ready and working. Keep the PuTTY session open for the 
 
    4. Open the Example Projects and Demos tab, select the **Matter** filter and enter "_Wi-Fi_" in **Filter on keywords**.
 
-   5. Select the _Matter - SoC Lighting over Wi-Fi_ example for RS9116, click **Create**, rename the project if you wish, and click **Finish**.
+   5. Select the _Matter - SoC Lighting over Wi-Fi_ example for SiWx917, click **Create**, rename the project if you wish, and click **Finish**.
 
    6. Once the project is created, the perspective changes to the Simplicity IDE perspective. In the Project Explorer view, right-click the project and select _Build Project_.
 
