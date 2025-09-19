@@ -14,6 +14,8 @@ The SiWx917 NCP or RS9116 EVK connectivity firmware can be upgraded using Tera T
 
 #### Firmware Upgrade On RS9116
 
+**Note**: RS9116 is deprecated and no longer supported on Matter.
+
 1. Connect the EVK to PC using the USB interface labeled **UART** as identified below.
 
    ![Switch Position before firmware flash](./images/rs916-board.png)

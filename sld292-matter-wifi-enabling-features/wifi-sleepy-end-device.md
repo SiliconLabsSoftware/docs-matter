@@ -63,9 +63,14 @@ To enable ICD functionality for Wi-Fi, the `ICD Management` cluster/component ne
 - For SiWx917 SOC, click on **Replace Subscription Timeout Resumption**. Sleepy support is enabled; build the project. Sleep support on M4 and TA can be enabled by installing `matter_icd_core` component.
 
 - For rs9116 and WF200: `matter_icd_management` component is installed by default for lock-app. For thermostat and window, you need to install the mentioned cluster/component to enable sleepy.
+
+**Note:** RS9116 is deprecated and no longer supported on Matter.
+
 - For 917NCP: `matter_icd_management` component is installed by default for lock-app. For thermostat and window, you need to install the mentioned cluster/component to enable sleepy.
 
 ### EFR32 + RS9116 Setup for ICDs (Sleepy Devices)
+
+**Note:** RS9116 is deprecated and no longer supported on Matter.
 
 - The following GPIO pins should be connected for 9116 and Host handshakes.
 pin 7 and pin 9 to UULP_2 and UULP_0 respectively.
