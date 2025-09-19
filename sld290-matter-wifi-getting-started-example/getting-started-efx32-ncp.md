@@ -18,6 +18,9 @@ The following hardware devices are required for executing Matter over Wi-Fi:
       - RS9116 development kit
       - WF200 expansion board
       - SiWx917 NCP expansion board
+
+  **Note:** RS9116 is deprecated and no longer supported on Matter.
+
 - **MG24 boards**
 
   - BRD4186C / SLWSTK6006A / Wireless Starter Kit / 2.4GHz@10dBm
@@ -27,11 +30,13 @@ The following hardware devices are required for executing Matter over Wi-Fi:
     - [XG24-RB4187C](https://www.silabs.com/development-tools/wireless/xg24-rb4187c-efr32xg24-wireless-gecko-radio-board)
     - MG24 with WSTK : [xG24-PK6010A](https://www.silabs.com/development-tools/wireless/efr32xg24-pro-kit-20-dbm?tab=overview)
   
-    >**Note:** A custom board binary can also be generated. The configuration file `sl_spidrv_eusart_exp_config` for RS9116 and `sl_spidrv_exp_config` for 917NCP and WF200 should have the SPI pin and port defines enabled. The configuration file `sl_custom_board.h` contains the SPI pins, which should be updated according to the custom board's pin configuration.
+    >**Note:** A custom board binary can also be generated. The configuration file `sl_spidrv_eusart_exp_config` for RS9116 and `sl_spidrv_exp_config` for 917NCP and WF200 should have the SPI pin and port defines enabled. The configuration file `sl_custom_board.h` contains the SPI pins, which should be updated according to the custom board's pin configuration. RS9116 is deprecated and no longer supported on Matter.
 
 - **Wi-Fi Dev Kits & boards**
 
   - **RS9116**
+
+    **Note** : RS9116 is deprecated and no longer supported on Matter.
     - SB-EVK1 / Single Band Wi-Fi Development Kit / 2.4GHz
       - [RS9116X-SB-EVK1](https://www.silabs.com/development-tools/wireless/wi-fi/rs9116x-sb-evk-development-kit)
     - SB-EVK2 / Single Band Wi-Fi Development Kit / 2.4GHz
