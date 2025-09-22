@@ -26,7 +26,7 @@ Amazon Web Services offers reliable, scalable, and inexpensive cloud computing s
 
 5. Create client CSR certificate, and a client key using the [Openssl Certificate Creation](./openssl-certificate-creation.md) documentation.
 
-6. Steps to generate the create a thing and create certifcates for your Matter application to use in the `MatterAwsNvmCert.cpp` source file:
+6. Steps to create a thing and generate certificates for your Matter application to use in the `MatterAwsNvmCert.cpp` source file:
 
     - Go to **All Devices > Things** and select **Create Things**.
     - Select **Create Single Thing** and click **Next**.
@@ -34,7 +34,7 @@ Amazon Web Services offers reliable, scalable, and inexpensive cloud computing s
     - Configure the device certificate (optional) in **Info > Upload CSR**.
     - In **Certificate > Choose file** (Choose Client CSR generated in Openssl Certificate Creation ex: `device.csr`). Click **Next**. 
     - Use the policy (ex: MATTER_AWS_POLICY_) created in AWS Certificate creation.
-    - Upon succesful creation, Activate the Certificate and download the certificate.
+    - Upon successful creation, Activate the Certificate and download the certificate.
 
 8. Copy the contents of [AWS_CA CERT](https://www.amazontrust.com/repository/AmazonRootCA3.pem) and add it as CA certificate in `MatterAwsNvmCert.cpp`. 
 

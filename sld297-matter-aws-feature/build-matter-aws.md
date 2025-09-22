@@ -10,7 +10,7 @@ To add the Matter + AWS component, modify the corresponding app specific .slcp f
   - id: matter_aws
     from: matter
 ```
-To add component in Simplicty Studio, add below components.
+To add component in Simplicity Studio, add below components.
 
 - Go to Software components, search for Matter_Wifi. Click on Settings symbol beside Matter Wifi component in the left panel and enable IPV4 configuration.
     ![IPV4 Component](images/matter_aws_ipv4_enable_1.png)
@@ -18,7 +18,7 @@ To add component in Simplicty Studio, add below components.
 
 - Go to Software Components, search for aws and install matter aws component.
 
-- Next select the dependecies for matter aws component.
+- Next select the dependencies for matter aws component.
  ![Default Entropy Source for Matter + AWS](images/matter_aws_dependency_1.png)
  ![Public-Key Abstaction Layer for Matter + AWS](images/matter_aws_dependency_2.png)
 
