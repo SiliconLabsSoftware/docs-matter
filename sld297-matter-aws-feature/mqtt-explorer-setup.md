@@ -13,7 +13,7 @@ Download and install the MQTT Explorer from https://mqtt-explorer.com/.
 - Make sure you enable **Validate Certificate and Encryption**
 - Click **Advanced Settings**
   
-![Silicon Labs - DIC design](./images/mqtt-explorer-2.png)
+![Silicon Labs - MATTER + AWS design](./images/mqtt-explorer-2.png)
 
 - Add application specific topics as shown below
   - For Lighting app, topic to be added (light/*)
@@ -30,11 +30,11 @@ Download and install the MQTT Explorer from https://mqtt-explorer.com/.
 - MQTT Client ID depends on the certificate set that you will use.
 - Add the Certificate, following step 7 in [AWS installation](./aws-configuration-registration.md).
 
-![Silicon Labs - DIC design](./images/mqtt-explorer-5.png)
+![Silicon Labs - MATTER + AWS design](./images/mqtt-explorer-5.png)
 
 - Once the above steps are done, try connecting to AWS.
 
-![Silicon Labs - DIC design](./images/mqtt-explorer-3.png)
+![Silicon Labs - MATTER + AWS design](./images/mqtt-explorer-3.png)
   
 ### Connecting to Mosquitto Connection
 
@@ -43,7 +43,7 @@ Download and install the MQTT Explorer from https://mqtt-explorer.com/.
 - Make sure you enable Validate Certificate and Encryption
 - Click **Advanced Settings**
 
-![Silicon Labs - DIC design](./images/mqtt-explorer-2.png)
+![Silicon Labs - MATTER + AWS design](./images/mqtt-explorer-2.png)
 
 - Add application specific topics as shown below
   - For Lighting app, topic to be added (light/*)
@@ -60,4 +60,4 @@ Download and install the MQTT Explorer from https://mqtt-explorer.com/.
   - MQTT Client ID depends on the certificate set that you will use.
   - Add the Certificate, following step 5 in [Openssl Certificate Creation](./openssl-certificate-creation.md).
 
-![Silicon Labs - DIC design](./images/mqtt-explorer-5.png)
+![Silicon Labs - MATTER + AWS design](./images/mqtt-explorer-5.png)
