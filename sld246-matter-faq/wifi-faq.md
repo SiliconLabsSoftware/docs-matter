@@ -82,6 +82,8 @@ Where `mySSID` is **your AP's SSID** and `mypassword` is **your AP's password**.
 
 ### 3. WLAN connection fails from RS9116 during commissioning when channel 13 is selected on the AP
 
+**Note:** RS9116 is deprecated and no longer supported on Matter.
+
 The required channel becomes available for connection when the WLAN connection region is configured during compilation to one that supports the channel, such as for Japan for channel 13.
 
 In order to use the desired channel, before building, make sure the WLAN connection region is configured correctly by reviewing/modifying the following lines in **/examples/platform/silabs/efr32/rs911x/rsi_wlan_config.h**:
@@ -167,6 +169,8 @@ Disable QR Code and enable CHIP Logging:
 `./scripts/examples/gn_efr32_example.sh examples/lock-app/efr32 out/wf200_lock_app BRD4161A is_debug=false show_qr_code=false --wifi wf200 |& tee out/wf200_lock.log`
 
 ### 11. MG24 device sometimes loses its connection to Ozone during OTA Update with RS9116
+
+**Note:** RS9116 is deprecated and no longer supported on Matter.
 
 While performing an OTA Update with the EFR32MG24 + RS9116 device combination, when the device is reset and bootloading begins with the new image, the Ozone Debugger sometimes loses its connection.
 
