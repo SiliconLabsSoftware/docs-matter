@@ -32,11 +32,11 @@ https://github.com/SiliconLabs/matter_extension/releases/download/v2.6.1/bootloa
 
 ## RS9116 Firmware
 
+**Note**: RS9116 is deprecated and no longer supported on Matter.
+
 The RS9116 firmware (`rs9116_firmware_files_with_rev.zip`) is used to update the RS9116 which can be found in the Assets section of this page:
 
 https://github.com/SiliconLabs/matter_extension/releases/download/v2.6.1/rs9116_firmware_files_with_rev_2.6.1-1.4.zip
-
-**Note**: RS9116 is deprecated and no longer supported on Matter.
 
 **Note**:
 RS9116 chip/module needs to be flashed with proper firmware as mentioned below:

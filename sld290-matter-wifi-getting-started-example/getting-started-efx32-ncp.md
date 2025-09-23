@@ -36,7 +36,7 @@ The following hardware devices are required for executing Matter over Wi-Fi:
 
   - **RS9116**
 
-    **Note** : RS9116 is deprecated and no longer supported on Matter.
+    **Note:** RS9116 is deprecated and no longer supported on Matter.
     - SB-EVK1 / Single Band Wi-Fi Development Kit / 2.4GHz
       - [RS9116X-SB-EVK1](https://www.silabs.com/development-tools/wireless/wi-fi/rs9116x-sb-evk-development-kit)
     - SB-EVK2 / Single Band Wi-Fi Development Kit / 2.4GHz
