@@ -42,7 +42,7 @@ Below are the software tools both optional and required for developing Matter ov
 
 4. [Firmware for RS9116 NCP](./matter-artifacts.md#rs9116-firmware)
 
-   **Note**: RS9116 is deprecated and no longer supported on Matter.
+   **Note:** RS9116 is deprecated and no longer supported on Matter.
 
 5. [Firmware for SiWx917 NCP](./matter-artifacts.md#siwx917-firmware-for-siwn917-ncp-and-siwg917-soc)
 
