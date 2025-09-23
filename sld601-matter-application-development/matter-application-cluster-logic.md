@@ -100,7 +100,7 @@ void AppTask::OnOffAttributeWriteStartTimer()
 
 This function will have to be defined in AppTask.h as well as part of the AppTask class.
 
-Now, locate the `MatterPostAttributeChangeCallback()` function in the `src/ZclCallbacks.cpp` file. This function is invoked by the application framework after an attribute value has been changed. Because you are modifying the OnOff attribute in the `OnOffTmrExpiryHandler()` function, use this callback to re-initiate the timer so that the attribute continues to toggle. To achieve this, call `AppTask::OnOffAttributeWriteStartTimer()`, which is part of the AppTask context.
+Now, locate the `MatterPostAttributeChangeCallback()` function in the `src/DataModelCallbacks.cpp` file. This function is invoked by the application framework after an attribute value has been changed. Because you are modifying the OnOff attribute in the `OnOffTmrExpiryHandler()` function, use this callback to re-initiate the timer so that the attribute continues to toggle. To achieve this, call `AppTask::OnOffAttributeWriteStartTimer()`, which is part of the AppTask context.
 
 To implement this functionality, first obtain the AppTask instance using `AppTask::GetAppTask()`. Modify the `MatterPostAttributeChangeCallback()` function as shown below:
 
@@ -119,7 +119,7 @@ void MatterPostAttributeChangeCallback(const chip::app::ConcreteAttributePath & 
 
 }
 ```
-Make sure to #include "AppTask.h" at the top of the `ZclCallbacks.cpp` file to call the `AppTask::GetAppTask()` function. For more information on the AppTask, refer to AppTask.h.
+Make sure to #include "AppTask.h" at the top of the `DataModelCallbacks.cpp` file to call the `AppTask::GetAppTask()` function. For more information on the AppTask, refer to AppTask.h.
 
 Finally, add a call to `OnOffTmrStart()` at the end of the `AppTask::AppInit()` function to start the attribute write sequence. The following image illustrates the code flow:
 
