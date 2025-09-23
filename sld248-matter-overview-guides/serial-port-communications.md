@@ -121,4 +121,4 @@ To run matter shell on the Silicon Labs Platform, refer to the [Software Require
 
   **Note**: Type **help** in matterCli terminal for more information about supported features.
 
-  **Note**: For 917SoC ICD-enabled devices, only 5 UULP pins are supported. As a result, the matter shell is not functional with sleepy applications since they are not mapped to UULP pins. To enable the Matter shell for Sleepy 917SoC devices, the P37 pin must be pulled up. Additionally, the boards BRD2708A, BRD2911A, and BRD4343A have only 3 UULP GPIO pins, which prevents the shell from functioning. To make it work, users should repurpose existing UULP GPIO pins.
+  **Note**: For 917SoC ICD-enabled devices, only five UULP pins are supported. As a result, the Matter shell is not functional with sleepy applications because they are not mapped to UULP pins. To enable the Matter shell for sleepy 917SoC devices, the P37 pin must be pulled up. Additionally, boards BRD2708A, BRD2911A, and BRD4343A have only three UULP GPIO pins, which prevents the shell from functioning. To enable the shell on these boards, users must repurpose existing UULP GPIO pins.
