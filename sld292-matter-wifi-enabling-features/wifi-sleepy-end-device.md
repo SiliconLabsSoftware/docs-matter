@@ -68,7 +68,7 @@ To enable ICD functionality for Wi-Fi, the `ICD Management` cluster/component ne
 
 ### EFR32 + RS9116 Setup for ICDs (Sleepy Devices)
 
-**Note:** RS9116 is deprecated and no longer supported on Matter.
+**Note**: RS9116 is deprecated and no longer supported on Matter.
 
 - The following GPIO pins should be connected for 9116 and Host handshakes.
 pin 7 and pin 9 to UULP_2 and UULP_0 respectively.
