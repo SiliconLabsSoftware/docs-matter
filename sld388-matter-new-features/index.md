@@ -1,5 +1,20 @@
 # New Features
 
+## New Features for v2.7.0-1.4
+
+- Quality-tested Matter 1.4.2 solution for Thread MG24 / MG26, Wi-Fi SiWx917 SoC and NCP mode, Wi-Fi MG24/WF200 and Wi-Fi MG24/RS9116 (non-sleepy).
+- Provides GA support for Matter Wi-Fi SiWx917
+- Enabled Matter + AWS (previously known as DIC) support (Alpha Quality).
+- Provides support for Matter Thread and CMP with SiMG301x.
+- Support for Scenes in Matter added with Matter 1.4.2.
+- Fixed the mDNS and CASE session timeouts seen on Wi-Fi SiWx917.
+- Added Optimized LwIP package in the Matter Extension for Power Improvement in WiFi Devices.
+- Deprecation notice for Wi-Fi MG24/RS9116.
+- Removal of the Experimental option to use the TCP/IP NetX stack.
+- Works with Simplicity SDK v2025.6.2 and WiSeConnect SDK v3.5.2.
+- RGB LED support with the SiWG917 DevKit.
+- Miscellaneous bug fixes and improvements.
+
 ## New Features for v2.6.1-1.4
 
 - Quality-tested Matter 1.4.1 solution for Thread MG24 / MG26, Wi-Fi SiWx917 SoC and NCP mode, Wi-Fi MG24/WF200 and Wi-Fi MG24/RS9116 (non-sleepy).
