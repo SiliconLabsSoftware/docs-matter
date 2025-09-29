@@ -120,3 +120,5 @@ To run matter shell on the Silicon Labs Platform, refer to the [Software Require
       ./chip-tool doorlock read-event door-lock-alarm "node_id" "endpoint"
 
   **Note**: Type **help** in matterCli terminal for more information about supported features.
+
+  **Note**: For 917SoC ICD-enabled devices, only five UULP pins are supported. As a result, the Matter shell is not functional with sleepy applications because they are not mapped to UULP pins. To enable the Matter shell for sleepy 917SoC devices, the P37 pin must be pulled up. Additionally, boards BRD2708A, BRD2911A, and BRD4343A have only three UULP GPIO pins, which prevents the shell from functioning. To enable the shell on these boards, users must repurpose existing UULP GPIO pins.
