@@ -21,14 +21,14 @@ The following diagram shows end-to-end flow for Direct Internet Connectivity.
 
 For a list of hardware requirements for the Matter + AWS feature, see the
 official
-[Silicon Labs Matter hardware requirements](https://siliconlabs.github.io/matter/latest/general/HARDWARE_REQUIREMENTS.html)
+[Silicon Labs Matter hardware requirements](/matter/{build-docspace-version}/matter-prerequisites/hardware-requirements)
 documentation.
 
 ### Software Requirements
 
 For a list of software requirements for the Matter + AWS feature, see the
 official
-[Silicon Labs Matter Software requirements](https://siliconlabs.github.io/matter/latest/general/SOFTWARE_REQUIREMENTS.html)
+[Silicon Labs Matter Software requirements](/matter/{build-docspace-version}/matter-prerequisites/software-requirements)
 documentation.
 
 ## End-to-End Set-up bring up

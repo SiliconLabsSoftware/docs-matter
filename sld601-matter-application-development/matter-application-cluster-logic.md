@@ -12,7 +12,7 @@ The following sections demonstrate how to extend the functionality of an existin
 
 ## Step 1: Create the Application
 
-Before you begin, ensure that Simplicity Studio is installed on your PC and you have downloaded the Simplicity SDK and the Matter extension. For more information on these requirements, see [here](https://docs.silabs.com/matter/1.0.5/matter-studio/).
+Before you begin, ensure that Simplicity Studio is installed on your PC and you have downloaded the Simplicity SDK and the Matter extension. For more information on these requirements, see [here](https://docs.silabs.com/matter/{build-docspace-version}/matter-overview/).
 
 To create the Matter Door Lock App, launch Simplicity Studio and connect a supported Silicon Labs development board (for example, EFR32MG2x) to your computer via USB. This guide uses MG24 as the platform. Next, navigate to the **Launcher** tab, select your connected device, and select the correct SDK.
 
@@ -131,7 +131,7 @@ In the flowchart above, `OnOffAttributeWriteStartTimer()` calls `OnOffTmrStart()
 
 After building your project, flash the compiled firmware onto your target board. Once the device is running, you should observe log messages approximately every 10 seconds indicating that the OnOff cluster's OnOff attribute is being written to. This confirms that the cluster is active and functioning as expected.
 
-Next, commission the device to a Matter hub and begin interacting with the OnOff cluster. To do this, follow the instructions in the **Creating the Matter Network** section of the [Silicon Labs Matter Light Switch Example Guide](https://docs.silabs.com/matter/2.6.0/matter-light-switch-example/02-thread-light-switch-example#creating-the-matter-network).
+Next, commission the device to a Matter hub and begin interacting with the OnOff cluster. To do this, follow the instructions in the **Creating the Matter Network** section of the [Silicon Labs Matter Light Switch Example Guide](https://docs.silabs.com/matter/{build-docspace-version}/matter-light-switch-example/02-thread-light-switch-example#creating-the-matter-network).
 
 Once the custom Door Lock node is successfully commissioned to the network, you can read the value of the OnOff attribute using the following command:
 

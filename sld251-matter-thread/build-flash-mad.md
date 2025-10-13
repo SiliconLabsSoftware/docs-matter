@@ -6,8 +6,8 @@ The Matter Accessory Device, such as the lighting-app, is the actual Matter devi
 
 Use one of the following options to get the required image to flash the MAD:
 
-1. Use the pre-built image file from either Simplicity Studio or Silicon Labs Matter GitHub.
-2. Build the image file from Simplicity Studio or out of the Silicon Labs Matter GitHub `matter` repository.
+1. Use the pre-built image file from either Simplicity Studio or [Matter Artifacts page](/matter/{build-docspace-version}/matter-prerequisites/matter-artifacts).
+2. Build the image file from Simplicity Studio or out of the CSA Matter GitHub repository.
 
 ### Using the Pre-Built Image File
 
@@ -33,10 +33,9 @@ If you are coming from Simplicity Studio, you may have already installed the dem
 
 ### Building the Matter Image File
 
-There are two ways to build a Matter Accessory Device image file. You can build it using the Silicon Labs Matter GitHub Repo or you can build it using Simplicity Studio. The entire build process for Simplicity Studio is covered in the [Matter Over Thread Quick Start Guide](/matter/{build-docspace-version}/matter-light-switch-example/02-thread-light-switch-example).
-There are two ways to build a Matter Accessory Device image file. You can build it using the Silicon Labs Matter GitHub Repo or you can build it using Simplicity Studio. The entire build process for Simplicity Studio is covered in the [Matter Over Thread Quick Start Guide](/matter/{build-docspace-version}/matter-light-switch-example/02-thread-light-switch-example).
+There are two ways to build a Matter Accessory Device image file. You can build it using the CSA Matter Github Repo or you can build it using Simplicity Studio. The entire build process for Simplicity Studio is covered in the [Matter Over Thread Quick Start Guide](/matter/{build-docspace-version}/matter-light-switch-example/02-thread-light-switch-example).
 
-- [Build Using the Matter GitHub Repo](https://github.com/project-chip/connectedhomeip/tree/master/examples/lighting-app/silabs)
+- [Build Using the CSA Matter GitHub Repo](https://github.com/project-chip/connectedhomeip/tree/master/examples/lighting-app/silabs)
 - [Build Using Simplicity Studio](/matter/{build-docspace-version}/matter-light-switch-example/02-thread-light-switch-example)
 
 ## Step 2: Flash the Matter Accessory Device

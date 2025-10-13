@@ -41,4 +41,4 @@ follows:
 
     Copy the BLE GATT db header files out of your project and into the Matter
     project. BLE GATT db header and `.c` files are located in
-    `./src/platform/EFR32` in the Silicon Labs Matter GitHub repo.
+    `./src/platform/silabs/efr32` in the CSA Matter GitHub Repo.

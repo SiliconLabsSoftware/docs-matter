@@ -139,4 +139,4 @@ The following hardware devices are required for this example:
       $ ./chip-tool onoff on <node-id> 1
       ```
 
-For more information about the RCP documentation, refer to the [RCP driver documentation]( https://docs.silabs.com/wifi91xrcp/2.10.1/wifi91xrcp-getting-started/).
+For more information about the RCP documentation, refer to the [RCP driver documentation]( https://docs.silabs.com/wifi91xrcp/{build-docspace-version}/wifi91xrcp-getting-started/).
