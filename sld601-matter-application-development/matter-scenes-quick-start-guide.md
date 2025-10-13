@@ -165,9 +165,9 @@ public:
 
 ### Step 3 Implement Callbacks
 
-Make the following additions to the src/ZclCallbacks.cpp file:
+Make the following additions to the src/DataModelCallbacks.cpp file:
 
-:::collapsed{summary="Click to expand and view the ZclCallbacks.cpp file"}
+:::collapsed{summary="Click to expand and view the DataModelCallbacks.cpp file"}
 ```c++
 // Color Transformer
 #include "ColorTransformer.h"
@@ -192,7 +192,7 @@ bool xyFlag = false;
 ```
 :::
 
-Then, inside `MatterPostAttributeChangeCallback` in _src/ZclCallbacks.cpp_, implement the on/off functionality of the LED:
+Then, inside `MatterPostAttributeChangeCallback` in _src/DataModelCallbacks.cpp_, implement the on/off functionality of the LED:
 
 ```c++
 if (clusterId == OnOff::Id && attributeId == OnOff::Attributes::OnOff::Id)

@@ -4,7 +4,7 @@ Attributes represent the current state of a device. For instance if the device i
 
 ## Attribute Changes
 
-When a ZCL attribute is updated in the data model, the framework will call the `postAttributeChangeCallback`. If this callback is implemented by the device it will be informed of the attribute change. The device may react to the attribute change. For example, in the [MatterPostAttributeChangeCallback](https://github.com/SiliconLabs/matter_extension/blob/main/examples/onoff-plug-app/src/ZclCallbacks.cpp#L38), say we want to add some custom handler code to control an RGB LED when on/off attribute in the `On-Off` Cluster changes:
+When a ZCL attribute is updated in the data model, the framework will call the `postAttributeChangeCallback`. If this callback is implemented by the device it will be informed of the attribute change. The device may react to the attribute change. For example, in `MatterPostAttributeChangeCallback` in `DataModelCallbacks.cpp` in [onoff-plug-app/src](https://github.com/SiliconLabs/matter_extension/tree/main/examples/onoff-plug-app/src), say we want to add some custom handler code to control an RGB LED when on/off attribute in the `On-Off` Cluster changes:
 
 ```cpp
 void MatterPostAttributeChangeCallback(const chip::app::ConcreteAttributePath & attributePath, 
