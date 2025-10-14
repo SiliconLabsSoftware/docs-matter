@@ -8,22 +8,22 @@ The following repositories, branches, and commit hashes are to be used together 
 
 | Repo                                       | Branch | Commit Hash                              |
 | ------------------------------------------ | ------ | ---------------------------------------- |
-| https://github.com/SiliconLabs/ot-br-posix | main   | 42f98b27b |
+| https://github.com/SiliconLabs/ot-br-posix | main   |  622f5ecf |
 
 ### Radio Co-Processor (RCP)
 
 | Repo                                    | Branch | Commit Hash                              |
 | --------------------------------------- | ------ | ---------------------------------------- |
-| https://github.com/SiliconLabs/ot-efr32 | main   | e75c76737 |
+| https://github.com/SiliconLabs/ot-efr32 | main   |  0b2bcd9 |
 
 ### Matter chip-tool
 
 | Repo                                            | Branch | Commit Hash                              |
 | ----------------------------------------------- | ------ | ---------------------------------------- |
-| https://github.com/openthread/openthread | main  | 7074a43e4 |
+| https://github.com/openthread/openthread        | main   | fb0446f53 |
 
 ### Connectivity Standards Alliance connectedhomeip (Matter)
 
 | Repo                                            | Branch | Commit Hash                              |
 | ----------------------------------------------- | ------ | ---------------------------------------- |
-| https://github.com/project-chip/connectedhomeip | master | d140d5c8775 |
+| https://github.com/project-chip/connectedhomeip | master |  39f0764 |
