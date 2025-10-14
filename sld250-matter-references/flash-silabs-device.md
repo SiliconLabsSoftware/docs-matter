@@ -1,6 +1,6 @@
 # How to Flash a Silicon Labs Device
 
-Once you have an image built, you can flash it onto your EFR or SiWx917 device (either a development board or the Thunderboard Sense 2) over USB connected to your development machine. This can be done using either Simplicity Studio or the standalone Simplicity Commander.
+Once you have an image built, you can flash it onto your EFR or SiWx917 device over USB connected to your development machine. This can be done using either Simplicity Studio or the standalone Simplicity Commander.
 
 ## Simplicity Studio
 
