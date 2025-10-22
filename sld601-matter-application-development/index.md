@@ -4,3 +4,4 @@ This section covers application development topics. Silicon Labs will build out 
 
 - [Matter Scenes Quick Start Guide](./matter-scenes-quick-start-guide)
 - [Matter Event and Timer Guide](./matter-event-timer-guide.md)
+- [Matter Zigbee Lighting Example (Concurrent Multiprotocol)](https://docs.silabs.com/multiprotocol/latest/concurrent-mp-soc/03-concurrent-multiprotocol-cmp-sample-application-matter-zigbee-light)
