@@ -25,9 +25,16 @@ To enable the component in Simplicity Studio, add the following components.
 ## How to Add the Matter + AWS Server, Client, Cluster Details.
 
 - Update the definitions for the server ID, client ID and cluster in `MatterAwsConfig.h`:    
-    - Update the AWS server name at `#define MATTER_AWS_SERVER_HOST ""`.
-    - Update the client ID at `#define MATTER_AWS_CLIENT_ID ""`.
-    - Update the cluster information at `#define ZCL_USING_THERMOSTAT_CLUSTER_SERVER`.
+    - Update the AWS server name at `#define MATTER_AWS_SERVER_HOST ""`.
+    - Update the client ID at `#define MATTER_AWS_CLIENT_ID ""`.
+    - Update the cluster information based on your app, with reference to the below table:
+
+| Application Type | Cluster Definition |
+|------------------|--------------------|
+| Matter Thermostat | `#define ZCL_USING_THERMOSTAT_CLUSTER_SERVER` |
+| Matter Light | `#define ZCL_USING_ON_OFF_CLUSTER_SERVER` |
+| Matter Lock | `#define ZCL_USING_DOOR_LOCK_CLUSTER_SERVER` |
+| Matter Window Covering | `#define ZCL_USING_WINDOW_COVERING_CLUSTER_SERVER` |
 
 
 ## Building Matter + AWS Application
