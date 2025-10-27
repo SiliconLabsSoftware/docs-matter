@@ -9,4 +9,3 @@ The Overview pages offer a general review of Matter topics including:
 - [Matter SLC CLI Setup and Build Instructions](matter-slc-cli.md)
 - [Matter Solutions](matter-solutions.md)
 - [Code Size Savings](code-size-savings.md)
-- [SMG to Matter Extension (SLC/Simplicity Studio) Project Migration Guide](matter-smg-migration-guide.md)

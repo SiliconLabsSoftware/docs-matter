@@ -1,6 +1,6 @@
 # How to Build and Flash the Radio Co-Processor (RCP)
 
-The Radio Co-Processor is a 15.4 stack image flashed onto a Silicon Labs development kit or Thunderboard Sense 2. The 15.4 stack on the development kit communicates with the higher layers of the Thread stack running on the Raspberry Pi over a USB connection.
+The Radio Co-Processor is a 15.4 stack image flashed onto a Silicon Labs development kit. The 15.4 stack on the development kit communicates with the higher layers of the Thread stack running on the Raspberry Pi over a USB connection.
 
 A complete list of supported hardware for the RCP is provided on the [Matter Hardware Requirements](/matter/{build-docspace-version}/matter-prerequisites/hardware-requirements) page.
 
