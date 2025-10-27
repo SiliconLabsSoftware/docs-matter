@@ -1,7 +1,5 @@
 # Matter Versioning and Release Maintenance
 
-**Silicon Labs Matter GitHub is being phased out in favor of using the Matter SiSDK Extension that is available through Simplicity Studio and standalone via SLC-CLI.**
-
 ## Versioning Scheme
 
 - **FORMAT: vMAJOR.MINOR.PATCH\_VERSION-PRE\_RELEASE**
