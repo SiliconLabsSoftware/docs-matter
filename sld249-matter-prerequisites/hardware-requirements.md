@@ -122,9 +122,6 @@ The following boards are supported for the Matter over Wi-Fi demos and developme
       - [SLEXP8022A](https://www.silabs.com/development-tools/wireless/wi-fi/wf200-wifi-expansion-kit)
     - WF200 / Single Band Wi-Fi Expansion Board / 2.4GHz
       - [SLEXP8023A](https://www.silabs.com/development-tools/wireless/wi-fi/wfm200-wifi-expansion-kit)
-- Interconnect board (included in the Wi-Fi kits)
-- SPI Cable (included in the RS9116 kit)
-- Jumper Cables (included in the RS9116 kit)
 
 ### Matter over Wi-Fi Accessory Device Requirements for SoC Mode
 
@@ -150,6 +147,3 @@ In addition to your Matter over Wi-Fi Accessory Device, you need the following f
 - Access point with Internet access
 - microSD card (>=32GB) (if using Raspberry Pi)
 - **[Optional]** Android Mobile phone (If using the chip-tool on Android)
-- Interconnect board (included in the RS9116 kit)
-- SPI Cable (included in the RS9116 kit)
-- Jumper Cables (included in the RS9116 kit)
