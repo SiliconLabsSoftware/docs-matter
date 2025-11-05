@@ -82,9 +82,10 @@ Where `mySSID` is **your AP's SSID** and `mypassword` is **your AP's password**.
 
 ### 3. Apple HomePod associated failures
 
-If there is an Apple HomePod on the network paired with a Thread device, and a commissioning failure is seen with error `3000001`:
+If there is an Apple HomePod on the network paired with a Thread device, and a commissioning failure is seen with error 3000001:
 
-> Either remove the Apple HomePod from the network, or unpair it from all Thread devices, before re-trying the commissioning.
+- Remove the Apple HomePod from the network or unpair it from all Thread devices.
+- Retry commissioning
 
 ### 4. Commissioning failure at step 18
 
