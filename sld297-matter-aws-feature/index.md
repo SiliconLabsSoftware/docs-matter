@@ -24,7 +24,7 @@ official
 [Silicon Labs Matter hardware requirements](https://siliconlabs.github.io/matter/latest/general/HARDWARE_REQUIREMENTS.html)
 documentation.
 
-`Note: This feature is only supported for 917SOC`
+> Note: This feature is only supported for 917SOC
 
 ### Software Requirements
 
