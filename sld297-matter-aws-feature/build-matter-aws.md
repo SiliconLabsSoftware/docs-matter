@@ -1,15 +1,8 @@
 # Build Procedure For Matter + AWS
 
-The following components are common for all apps and should be modified in the corresponding application-specific `.slcp` file.
+The following components are common for all apps and should be modified in the corresponding application-specific `.slcp` file using the Studio Project Configurator tool.
 
 ## How to Add the Matter + AWS Component
-
-To add the Matter + AWS component, modify the corresponding application-specific `.slcp` file.
-
-```shell
-  - id: matter_aws
-    from: matter
-```
 To enable the component in Simplicity Studio, add the following components.
 
 - Go to **Software** components, search for `Matter_Wifi`. Click on **Settings** symbol beside Matter Wi-fi component in the left panel and enable IPV4 configuration.
@@ -23,16 +16,23 @@ To enable the component in Simplicity Studio, add the following components.
  ![Public-Key Abstaction Layer for Matter + AWS](images/matter_aws_dependency_2.png)
 
 ## How to Add the Matter + AWS Server, Client, Cluster Details.
-
+- Go to the `matter_<version>/third_party/matter_sdk/examples/platform/silabs/matter_aws/matter_aws_interface/include/` folder from Project Explorer.
 - Update the definitions for the server ID, client ID and cluster in `MatterAwsConfig.h`:    
-    - Update the AWS server name at `#define MATTER_AWS_SERVER_HOST ""`.
-    - Update the client ID at `#define MATTER_AWS_CLIENT_ID ""`.
-    - Update the cluster information at `#define ZCL_USING_THERMOSTAT_CLUSTER_SERVER`.
+    - Update the AWS server name at `#define MATTER_AWS_SERVER_HOST ""`.
+    - Update the client ID at `#define MATTER_AWS_CLIENT_ID ""`.
+    - Update the cluster information based on your app, with reference to the below table:
+
+| Application Type | Cluster Definition |
+|------------------|--------------------|
+| Matter Thermostat | `#define ZCL_USING_THERMOSTAT_CLUSTER_SERVER` |
+| Matter Light | `#define ZCL_USING_ON_OFF_CLUSTER_SERVER` |
+| Matter Lock | `#define ZCL_USING_DOOR_LOCK_CLUSTER_SERVER` |
+| Matter Window Covering | `#define ZCL_USING_WINDOW_COVERING_CLUSTER_SERVER` |
 
 
 ## Building Matter + AWS Application
 
-- After you finish modifying the **.slcp** project file as described above, refresh the `matter-extension` in Simplicity Studio.
+- After adding the Matter + AWS component as described above, refresh the `matter-extension` in Simplicity Studio.
 
 -  On the **Launcher** tab, select **Preferences**.
 
