@@ -30,20 +30,6 @@ All Silicon Labs board supporting Matter require that a bootloader binary is fla
 
 https://github.com/SiliconLabs/matter_extension/releases/download/v2.7.0/bootloader_binaries_matter_extension_v2.7.0-1.4.zip
 
-## RS9116 Firmware
-
-**Note**: RS9116 is deprecated and no longer supported on Matter.
-
-The RS9116 firmware (`rs9116_firmware_files_with_rev.zip`) is used to update the RS9116 which can be found in the Assets section of this page:
-
-https://github.com/SiliconLabs/matter_extension/releases/download/v2.7.0/rs9116_firmware_files_with_rev_2.7.0-1.4.zip
-
-**Note**:
-RS9116 chip/module needs to be flashed with proper firmware as mentioned below:
-
-- `RS916.x.x.x.x.x.rps - This firmware image is valid for RS9116 1.5 revision chip/module`
-- `RS9116.x.x.x.x.x.rps - This firmware image is valid for RS9116 1.4/1.3 revision chip/module`
-
 ## SiWx917 Firmware for SiWN917 NCP and SiWG917 SOC
 
 The SiWx917 firmware(SiWx917_firmware_files.zip) is used to update the SiWN917 NCP and SiWG917 SOC which can be found in the Assets section of this page:

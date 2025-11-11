@@ -15,11 +15,8 @@ The following hardware devices are required for executing Matter over Wi-Fi:
   - For Network Co-Processor (NCP) variants,
     - Silicon Labs EFR32 - is used as a host processor and, with the WF200, provides Bluetooth LE capabilities
     - Silicon Labs Wi-Fi Processor
-      - RS9116 development kit
       - WF200 expansion board
       - SiWx917 NCP expansion board
-
-  **Note:** RS9116 is deprecated and no longer supported on Matter.
 
 - **MG24 boards**
 
@@ -30,20 +27,10 @@ The following hardware devices are required for executing Matter over Wi-Fi:
     - [XG24-RB4187C](https://www.silabs.com/development-tools/wireless/xg24-rb4187c-efr32xg24-wireless-gecko-radio-board)
     - MG24 with WSTK : [xG24-PK6010A](https://www.silabs.com/development-tools/wireless/efr32xg24-pro-kit-20-dbm?tab=overview)
   
-    >**Note:** A custom board binary can also be generated. The configuration file `sl_spidrv_eusart_exp_config` for RS9116 and `sl_spidrv_exp_config` for 917NCP and WF200 should have the SPI pin and port defines enabled. The configuration file `sl_custom_board.h` contains the SPI pins, which should be updated according to the custom board's pin configuration. RS9116 is deprecated and no longer supported on Matter.
+  >**Note**: A custom board binary can also be generated. The configuration file `sl_spidrv_exp_config` for 917NCP and WF200 should have the SPI pin and port defines enabled. The configuration file `sl_custom_board.h` contains the SPI pins, which should be updated according to the custom board's pin configuration.
 
 - **Wi-Fi Dev Kits & boards**
 
-  - **RS9116**
-
-    **Note:** RS9116 is deprecated and no longer supported on Matter.
-    - SB-EVK1 / Single Band Wi-Fi Development Kit / 2.4GHz
-      - [RS9116X-SB-EVK1](https://www.silabs.com/development-tools/wireless/wi-fi/rs9116x-sb-evk-development-kit)
-    - SB-EVK2 / Single Band Wi-Fi Development Kit / 2.4GHz
-      - [RS9116X-SB-EVK2](https://www.silabs.com/development-tools/wireless/wi-fi/rs9116x-sb-evk2-development-kit)
-    - DB-EVK1 / Dual Band Wi-Fi Development Kit / 2.4GHz & 5GHz
-      - [RS9116X-DB-EVK1](https://www.silabs.com/development-tools/wireless/wi-fi/rs9116x-db-evk-development-kit)
-        **Note:** Matter is only supported over 2.4GHz on this Dev kit.
   - **SiWx917**
     - SiWx917 NCP Mode / Wi-Fi Expansion Board / 2.4GHz
       - BRD8045A (B0 Expansion v2.0)
@@ -58,8 +45,6 @@ The following hardware devices are required for executing Matter over Wi-Fi:
 - Raspberry Pi with a >32 GB SD Card
 - Access Point with Internet Access
 - Interconnect board (included in the Wi-Fi kits)
-- SPI Cable (included in the RS9116 kit)
-- Jumper Cables (included in the RS9116 kit)
   
 ### Software Requirements
 
@@ -78,7 +63,6 @@ Below are the software tools, packages, and images required for executing Matter
 
 - Simplicity SDK v2024.x
 - WiSeConnect SDK
-  - For RS9116 use WiSeConnect SDK v2.x
   - For SiWx917 use WiSeConnect SDK v3.x
 
 ### Firmware Images

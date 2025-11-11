@@ -26,7 +26,7 @@ two EFR32MG24-based development boards, and a Raspberry Pi used as a Matter hub.
 
 **Matter Over Wi-Fi Accessory Device Requirements for NCP Mode**
 
-The Silicon Labs Matter over Wi-Fi NCP mode demo and development requires two boards: the Silicon Labs EFR32 Radio board to run the Matter code and either the RS9116, SiWx917, or WF200 to run the Wi-Fi protocol stack.
+The Silicon Labs Matter over Wi-Fi NCP mode demo and development requires two boards: the Silicon Labs EFR32 Radio board to run the Matter code and either the SiWx917 or WF200 to run the Wi-Fi protocol stack.
 
 The following boards are supported for the Matter over Wi-Fi demos and development:
 
@@ -38,14 +38,6 @@ The following boards are supported for the Matter over Wi-Fi demos and developme
     - [XG24-RB4187C](https://www.silabs.com/development-tools/wireless/xg24-rb4187c-efr32xg24-wireless-gecko-radio-board)
     - MG24 with WSTK: [xG24-PK6010A](https://www.silabs.com/development-tools/wireless/efr32xg24-pro-kit-20-dbm?tab=overview)
 - **Wi-Fi NCP Dev Kits & boards**
-  - **RS9116**
-    (**Note:** RS9116 is deprecated and no longer supported on Matter.)
-    - SB-EVK1 / Single Band Wi-Fi Development Kit / 2.4GHz
-      - [RS9116X-SB-EVK1](https://www.silabs.com/development-tools/wireless/wi-fi/rs9116x-sb-evk-development-kit)
-    - SB-EVK2 / Single Band Wi-Fi Development Kit / 2.4GHz
-      - [RS9116X-SB-EVK2](https://www.silabs.com/development-tools/wireless/wi-fi/rs9116x-sb-evk2-development-kit)
-    - DB-EVK1 / Dual Band Wi-Fi Development Kit / 2.4GHz & 5GHz
-      - [RS9116X-DB-EVK1](https://www.silabs.com/development-tools/wireless/wi-fi/rs9116x-db-evk-development-kit)
   - **SiWx917 NCP**
     - SiWx917 NCP Mode / Wi-Fi Expansion Board / 2.4GHz
       - BRD8045A (B0 Expansion v2.0)
@@ -55,8 +47,6 @@ The following boards are supported for the Matter over Wi-Fi demos and developme
       - WF200 / Single Band Wi-Fi Expansion Board / 2.4GHz
       - [SLEXP8023A](https://www.silabs.com/development-tools/wireless/wi-fi/wfm200-wifi-expansion-kit)
   - Interconnect board (included in the Wi-Fi kits)
-  - SPI Cable (included in the RS9116 kit)
-  - Jumper Cables (included in the RS9116 kit)
 
 **Matter Over Wi-Fi Accessory Device Requirements for SoC Mode**
 
