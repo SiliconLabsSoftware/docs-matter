@@ -21,20 +21,22 @@ When creating a configuration for a custom board do the following:
 
 ## 2. Create a sample "Empty C++ project" in Simplicity Studio
 
-1. In Simplicity Studio click `Create a New Project`
-   to start the project wizard. Choose your development board type, and the
-   latest Gecko SDK you'll be working from. Click **Next**.
+1. In Simplicity Studio click `Start a New Project > all projects & demos`
+   to start the project wizard. Choose your development board type via the `+ Select Device` button, and the
+   latest Simplicity SDK you'll be working from
 
-2. Select the `Empty C++ Project` example and click **Next**.
+2. Select the `Empty C++ Project` example and click **Create**.
 
-3. Click **Finish** to create your project.
+3. Select a compatible device then click **Next**.
+
+4. Click **Finish** to create your project.
 
 ## 3. Customize your Components and Pin configuration in Simplicity Studio
 
 Once you have your project created you will see your project and project
 configuration in Simplicity Studio's Project Configurator. Full documentation on
 the use of the Project Configurator and Pin Tool are located here:
-[Simplicity Studio 5 User's Guide](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-developing-with-project-configurator/)
+[Simplicity Studio User's Guide](https://docs.silabs.com/ssv6ug/latest/ssv6-configure-project/pin-tool)
 
 ## 4. Generate your Component and Pin configuration in Simplicity Studio
 
