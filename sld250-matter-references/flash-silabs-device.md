@@ -8,12 +8,9 @@ Simplicity Studio is a complete development environment and tool suite. It has t
 
 - [Download Simplicity Studio](https://www.silabs.com/developers/simplicity-studio).
 - Building Application Using Simplicity Studio:
-  - [Build Application for EFR32](/matter/{build-docspace-version}/matter-wifi-run-demo/build-efx32-application-using-studio)
-  - [Build Application for SoC](/matter/{build-docspace-version}/matter-wifi-run-demo/build-soc-application-using-studio)
-- Flash Application Using Simplicity Studio:
-  - [Build Application for EFR32 Step 9](/matter/{build-docspace-version}/matter-wifi-run-demo/build-efx32-application-using-studio)
-  - [Build Application for SoC Step 9](/matter/{build-docspace-version}/matter-wifi-run-demo/build-soc-application-using-studio)
-- [Simplicity Studio Reference Guide](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-building-and-flashing/flashing)
+  - [Build Application for EFR32](../sld477-matter-quick-start-demo/02-thread-quick-start-demo.md#step-2-build-the-project-in-the-silicon-labs-extension-for-the-visual-studio-code-ide)
+- [Flash Application](../sld251-matter-thread/build-flash-mad.md#step-2-flash-the-matter-accessory-device)
+- [Simplicity Studio Reference Guide](https://docs.silabs.com/ssv6ug/latest/ssv6ug-overview/)
 
 ## Simplicity Commander
 

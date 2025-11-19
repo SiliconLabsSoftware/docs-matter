@@ -20,7 +20,7 @@ RCP image files for all demo boards are accessible through the [Matter Artifacts
 
 ### Building the Image File from Simplicity Studio
 
-RCP Images can be built from Simplicity Studio. Select **File > New > Silicon Labs Project Wizard**, look through the **Example Projects**, and then select the **Openthread - RCP Project**. Once the project is generated, you can build and flash the RCP. You can follow along in the [Simplicity Studio Getting Started Guide](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-getting-started/start-a-project) for more information.
+RCP Images can be built from Simplicity Studio. Select **Home > all projects & demos**, look through the **Example Projects**, and then select the **Openthread - RCP Project**. Once the project is generated, you can build and flash the RCP. You can follow along in the [Matter QuickStart Guide](../sld477-matter-quick-start-demo/02-thread-quick-start-demo.md#step-1-create-a-matter-sample-project) for more information.
 
 ### Building the Image File from the ot-efr32 Repository
 
@@ -63,7 +63,7 @@ The output of the build process puts all the image files in the following locati
 
 ## Step 2: Flash the RCP
 
-Once you get the RCP image, either by downloading a prebuilt image or building the image file, you can flash it to your device. This is done directly from your laptop and not through the Raspberry Pi, so make sure that the device is connected directly over USB to your laptop. You can flash your RCP using Simplicity Studio or using standalone Simplicity Commander.
+Once you get the RCP image, either by downloading a prebuilt image or building the image file, you can flash it to your device. This is done directly from your laptop and not through the Raspberry Pi, so make sure that the device is connected directly over USB to your laptop. You can flash your RCP using Simplicity Studio or using standalone Simplicity Commander (see [How to Build and Flash the Matter Accessory Device](../sld251-matter-thread/build-flash-mad.md#step-2-flash-the-matter-accessory-device)).
 
 Once you have flashed the image, the device becomes the RCP. Disconnect it from you laptop and connect it via USB to the Raspberry Pi.
 
