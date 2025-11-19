@@ -20,7 +20,7 @@ RCP image files for all demo boards are accessible through the [Matter Artifacts
 
 ### Building the Image File from Simplicity Studio
 
-RCP Images can be built from Simplicity Studio. Select **Home > all projects & demos**, look through the **Example Projects**, and then select the **Openthread - RCP Project**. Once the project is generated, you can build and flash the RCP. You can follow along in the [Matter QuickStart Guide](../sld477-matter-quick-start-demo/02-thread-quick-start-demo.md#step-1-create-a-matter-sample-project) for more information.
+RCP Images can be built from Simplicity Studio. Select **Home > all projects & demos**, look through the **Example Projects**, and then select the **Openthread - RCP Project**. Once the project is generated, you can build and flash the RCP. You can follow along in the [Light Switch Example](../sld406-matter-light-switch-example/02-thread-light-switch-example.md#setting-up-the-matter-hub) for more information.
 
 ### Building the Image File from the ot-efr32 Repository
 

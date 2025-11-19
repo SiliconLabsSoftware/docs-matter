@@ -18,7 +18,7 @@
 
       ![Example projects and demos view](resources/ssv6-ot-rcp-demo.png)
 
-   5. Now build & flash the ot-rcp project using the Simplicity Studio VS Code Extension (for a detailed breakdown of these steps, see the [Matter over Thread QuickStart Demo](../sld477-matter-quick-start-demo/02-thread-quick-start-demo.md#step-1-create-a-matter-sample-project)).
+   5. Now build & flash the ot-rcp project using the Simplicity Studio VS Code Extension (for a detailed breakdown of these steps, see the [Matter over Thread QuickStart Demo](../sld477-matter-quick-start-demo/02-thread-quick-start-demo.md#step-1-create-a-matter-sample-project). This example shows a Matter Lighting device but the steps are identical for an RCP project).
    6. Once the RCP firmware has been built and flashes, disconnect the dev board and connect it to your RPi.
 
    > Note: The Matter hub OpenThread RCP (ot-rcp) must be programmed with a bootloader and firmware image to act as the ot-rcp for the Raspberry Pi. You can obtain a copy of the latest version here: [Silicon Labs Matter Artifacts](/matter/{build-docspace-version}/matter-prerequisites/matter-artifacts).
