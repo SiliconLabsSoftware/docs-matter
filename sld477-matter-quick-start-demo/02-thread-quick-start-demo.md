@@ -38,15 +38,15 @@ Click on the Matter section and the **Example Projects & Demos** tab will appear
 
 Click **Select Device** and the connected devices should appear.
 
-![Simplicity Studio Example Projects & Demos](./images/ssv6-select-device.png)
+![Simplicity Studio Example Projects & Demos](./images/studio-6-select-device.png)
 
 Select the appropriate device, in this case BRD4187C.
 
-![Simplicity Studio Select Device](./images/studio-matter-thread-demo-6-board-selector.png)
+![Simplicity Studio Select Device](./images/studio-6-matter-thread-demo-board-selector.png)
 
 Type **lighting** into the keyword search and you will see the following screen.
 
-![Simplicity Studio Example Projects & Demos](./images/studio-matter-thread-demo-lighting-projects.png)
+![Simplicity Studio Example Projects & Demos](./images/studio-6-matter-thread-demo-lighting-projects.png)
 
 For this quick start guide, select the **Matter - SoC Lighting over Thread** demo. A number of other apps are also available including a Lock, Thermostat, Appliance, and Window Covering. When ready, click **Run** to flash the device. When the device is flashed, a QR code will appear on the WSTK screen.
 
