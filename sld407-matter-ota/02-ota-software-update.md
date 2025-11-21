@@ -42,7 +42,7 @@ The chip-ota-provider-app binary for a Raspberry Pi is a part of the Artifacts p
 
 The running image and the update image are regular Matter application images and are built using the standard procedure. The only additional configuration required is the use of a higher software version in the update image. The software version is configured in a Studio Matter project by navigating to Software Components -> Silicon Labs Matter -> Stack -> Matter Core Components, clicking "Configure" and setting the "Device software version" and "Device software version string" parameters.  
 
-See the following page for detailed steps: [build OTA application using studio](./04-build-ota-application-using-studio.md).
+See the following page for detailed steps for WiFi: [Matter WiFi OTA application using studio](./04-build-ota-application-using-studio.md). For Matter over Thread, see [Matter Thread OTA application using studio](#matter-ota-tutorial).
 
 ### Obtaining the Bootloader binary
 
@@ -57,15 +57,27 @@ See the following page for detailed steps: [build OTA application using studio](
 
 - Create a bootable image file (using the Lighting application image as an example):
 
+    For series 2 & below:
+
     ```shell
-    commander gbl create chip-efr32-lighting-example.gbl --app chip-efr32-lighting-example.s37
+    commander gbl3 create artifact/matter-light-update.gbl --app MatterLightOverThread/artifact/MatterLightOverThread.s37 --compress lzma
     ```
+
+    For series 3 & above:
+
+    ```shell
+    commander gbl4 create artifact/series3-matter-light.gbl --data MatterLightOverThread_301/artifact/MatterLightOverThread_301.s37 --device SiMG301 --compress lzma
+    ```
+
+> Note: Series 3 devices can also use a YAML configuration file to create the gbl4 file. For more info on this process refer to [GBL4 Commands](https://docs.silabs.com/simplicity-commander/latest/simplicity-commander-commands/gbl4-commands#gbl4-commands) and [Silicon Labs Gecko Bootloader User’s Guide for Series 3 and Higher](https://docs.silabs.com/shared-content/latest/bootloader-user-guide-series3-and-higher/)
 
 - Create the Matter OTA file from the bootable image file:
 
     ```shell
-    commander ota create --type matter --input chip-efr32-lighting-example.gbl --vendorid 0xFFF1 --productid 0x8005 --swstring "2.0" --swversion 2 --digest sha256 -o chip-efr32-lighting-example.ota
+    commander ota create --type matter --input artifact/matter-light-update.gbl --vendorid 0xFFF1 --productid 0x8005 --swstring "2.0" --swversion 2 --digest sha256 -o artifact/matter-light-update.ota
     ```
+
+- Transfer the OTA file to the Raspberry Pi running the OTA-Provider
 
 - In a terminal, start the Provider app and pass to it the path to the Matter OTA file created in the previous step:
 
@@ -74,7 +86,7 @@ See the following page for detailed steps: [build OTA application using studio](
     ```
 
     ```shell
-    chip-ota-provider-app  --KVS /tmp/chip_kvs_provider -f chip-efr32-lighting-example.ota
+    chip-ota-provider-app  --KVS /tmp/chip_kvs_provider -f matter-light-update.ota
     ```
 
 - In a separate terminal, run the chip-tool commands to provision the Provider:
@@ -189,8 +201,16 @@ Combined OTA images are supported in both regular OTA and Multi-Chip OTA impleme
 
 1. Bootloader + application upgrade. This requires a combined image.
 
+    Series 2 & below
+
     ```shell
-    commander gbl create --bootloader <bootloader_image>.s37 --app <new_application_image>.s37 <combined_image>.gbl
+    commander gbl3 create --bootloader <bootloader_image>.s37 --app <new_application_image>.s37 <combined_image>.gbl
+    ```
+
+    Series 3 & above:
+
+    ```shell
+    commander gbl4 create --data <bootloader_image>.s37 --data <new_application_image>.s37 <combined_image>.gbl
     ```
 
 2. Bootloader upgrade only. This still requires a combined image so an unchanged application image should be used with the above command.
@@ -284,13 +304,13 @@ Then build the application and save the binary file in a known directory.
 If your version does not support Multi-chip OTA functionality or if you are **only** upgrading the application image, then we only need to convert the following files; app.s37 -> app.gbl -> app.ota by running this command:
 
 ```shell
-commander gbl create MatterLightOverThread.gbl --app MatterLightOverThread.s37
+commander gbl3 create MatterLightOverThread.gbl --app MatterLightOverThread.s37
 ```
 
 If your version supports Multi-chip OTA functionality, the following command combines the bootloader and application image into a single .gbl file with LMZA compression enabled.
 
 ```shell
-commander gbl create --bootloader <bootloader_image>.s37 --app <application_image>.s37 <combined_image>.gbl
+commander gbl3 create --bootloader <bootloader_image>.s37 --app <application_image>.s37 <combined_image>.gbl
 ```
 
 For either of these cases, the `--compress lzma` option can be used to reduce the size of the resulting image. Just ensure that the bootloader has been built with the LZMA compress component.
