@@ -137,9 +137,11 @@ With this configuration the device will query the OTA-Provider for an available 
 
 ## Internal Storage Bootloader
 
-Internal storage bootloader for Matter OTA software update is supported on MG24/MG26 boards. In this use case, both the running image and the downloadable update image must fit on the internal flash at the same time. This in turn requires that both images are built with a reduced feature set, such as disabled logging and Matter shell. See [Creating the Bootloader for Use in Matter OTA](01-ota-bootloader.md) for more details. See [Code Savings Guide](/matter/{build-docspace-version}/matter-overview-guides/code-size-savings) for a general guide on reducing the application image size.
+Internal storage bootloader for Matter OTA software update is supported on MG24/MG26/SixG301 boards. In this use case, both the running image and the downloadable update image must fit on the internal flash at the same time. This in turn requires that both images are built with a reduced feature set, such as disabled logging and Matter shell. See [Creating the Bootloader for Use in Matter OTA](01-ota-bootloader.md) for more details. See [Code Savings Guide](/matter/{build-docspace-version}/matter-overview-guides/code-size-savings) for a general guide on reducing the application image size.
 
-Installing the Lower Power Mode component in the project's Software Components tool in Simplicity Studio will uninstall the following optional components and reduce the image size:
+Adding the `Enable Link time optimization` component in the project's Software Components tool in Simplicity Studio will reduce the image size.
+
+Further, installing the Lower Power Mode component in the project's Software Components tool in Simplicity Studio will uninstall the following optional components and reduce the image size:
 
 ```shell
     Matter QR Code Display, 
@@ -150,7 +152,7 @@ Installing the Lower Power Mode component in the project's Software Components t
 
 Disabling logging in the configuration of the Matter Core Components component also helps to reduce the image size.
 
-Using LZMA compression when building the .gbl file (passing `--compress lzma` parameter to the `commander gbl create` command) further reduces the downloaded image size.
+Finally, using LZMA compression when building the .gbl file (passing `--compress lzma` parameter to the `commander gbl create` command) further reduces the downloaded image size.
 
 When building an internal storage bootloader, the two key configuration parameters are the Slot Start Address and Slot Size in the Bootloader Storage Slot component. The storage slot must not overlap with the running image and the NVM section of the flash. In other words, the slot start address must be greater than the end of the running image address and the sum of the start address and the slot size must be less than the address of the NVM section. The simplest way to get the relevant addresses for the running image and NVM is by using the Silicon Labs `Simplicity Commander` (**Device Info > Main Flash > Flash Map**).
 
