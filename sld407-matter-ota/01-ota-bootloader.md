@@ -8,13 +8,15 @@ The Gecko Bootloader is built with Silicon Labs Simplicity Studio. These instruc
 
 ### Creating the Project
 
+Each Matter Sample Application Solution in Simplicity Studio contains a bootloader project pre-configured for Matter OTA Software Updates, generally for external storage. The stand-alone bootloader project for internal or external storage can be found in the Examples & Demos view in Simplicity Studio.
+
 In Simplicity Studio, click **Home > all projects & demos** to create a new project. Select the correct Target Board via the **+ Select Device** button and SDK from the dropdown menu of the Example & Demos view.
 
 From there the list of projects can be easily filtered, in this case, for an SoC Bootloader
 
 ![Bootloader projects](./images/studio-6-bootloader-projects.png)
 
-In the next screen, select the example project the bootloader will be based on. For a bootloader using external storage, select **Bootloader SoC SPI Flash Storage(single image with slot size of 1024K)**. For a bootloader using internal storage, select **Bootloader - SoC Internal Storage (single image on 512kB device)**.
+In the next screen, select the example project the bootloader will be based on. For a bootloader using external storage, select **Bootloader SoC SPI Flash Storage(single image with slot size of 1024K)**. For a bootloader using internal storage, select **Bootloader - SoC Internal Storage (single image on 1536kB device)**.
 
 ### Configuring Storage Components and Parameters
 
@@ -35,7 +37,7 @@ Build the project by clicking on the hammer icon in the Project Solution in the 
 
 ## Internal Bootloader: Image Size, Selecting Storage Slot Address and Size
 
-The internal storage bootloader for Matter OTA Software Update is supported on MG24/MG26/SixG301 boards. In this use case, both the running image and the downloadable update image must fit on the internal flash at the same time. This in turn requires that both images are built with a reduced feature set such as disabled logging and Matter shell (see [here](./02-ota-software-update.md#Internal-Storage-Bootloader) for the list of features). See [Code Savings Guide](/matter/{build-docspace-version}/matter-overview-guides/code-size-savings) for a general guide on reducing the application image size. Using LZMA compression when building the GBL file further reduces the downloaded image size.
+The internal storage bootloader for Matter OTA Software Update is supported on MG24/MG26/SixG301 boards. In this use case, both the running image and the downloadable update image must fit on the internal flash at the same time. This in turn requires that both images are built with a reduced feature set such as disabled logging and display ([see here](./02-ota-software-update.md#Internal-Storage-Bootloader) for the list of features). See [Code Savings Guide](/matter/{build-docspace-version}/matter-overview-guides/code-size-savings) for a general guide on reducing the application image size. Using LZMA compression when building the GBL file further reduces the downloaded image size.
 
 When building an internal storage bootloader, the two key configuration parameters are the **Slot Start Address** and **Slot Size** in the **Bootloader Storage Slot** component. The storage slot must not overlap with the running image and the NVM section of the flash. In other words, the slot start address must be greater than the end of the running image address and the sum of the start address and the slot size must be less than the address of the NVM section.
 
@@ -54,13 +56,15 @@ Another way to calculate the Storage Slot parameters is by examining the applica
 - Build the running image for the Matter application.
 - In the application .map file, find the highest address preceding the .data section, round it up to align on the 8K page boundary (e.g. 0x00000000080f1704 would round up to 0x00000000080f2000), and then add 0x2000 to get the next page block address. The result would be the Slot Start Address. The address of the .nvm section in the .map file is the end of the space available for the Storage Slot. The Slot Size is the difference of the .nvm address and the Slot Start Address.
 
-## Example
+## Internal Bootloader Example
 
-This example is for an internal storage bootloader for the Matter lighting app on BRD4187C. As this board is a series 2 device (MG24), it uses the GBL3 (previously known simply as GBL) bootloader as do all series 2 and older devices. Series 3 & newer devices use the GBL4 format.
+This example is for an internal storage bootloader for the Matter lighting app on BRD4187C. As this board is a Series 2 device (MG24), it uses the GBL3 (previously known simply as GBL) bootloader as do all series 2 and older devices. Series 3 & newer devices use the GBL4 format.
 
 - Add the `matter_platform_low_power` component, choose the replace options when presented. This will remove the Matter Shell, Matter CLI, QR Code, and LCD which will reduce the resulting image size. Build the application.
 
-- Build the GBL file for the update image and note its size. For more info on GBL3 refer to [GBL3 Commands](https://docs.silabs.com/simplicity-commander/latest/simplicity-commander-commands/gbl-commands)
+- Add the `Enable Link time optimization` component and build the project.
+
+- Create the GBL file for the update image and note its size. For more info on GBL3 refer to [GBL3 Commands](https://docs.silabs.com/simplicity-commander/latest/simplicity-commander-commands/gbl-commands)
 
     ```shell
     ~/SimplicityStudio/v6_test_workspace/MatterLightOverThreadSolution $ commander gbl3 create artifact/matter-light-update.gbl --app MatterLightOverThread/artifact/MatterLightOverThread.s37 --compress lzma
@@ -73,7 +77,7 @@ This example is for an internal storage bootloader for the Matter lighting app o
     DONE
 
     ~/SimplicityStudio/v6_test_workspace/MatterLightOverThreadSolution $ ls -lh artifact/matter-light-update.gbl  
-    536K artifact/matter-light-update.gbl
+    518K artifact/matter-light-update.gbl
     ```
 
 - For Series 3 devices using GBL4 the process is similar, but you will use the `commander gbl4 create` command instead. For more info on GBL4 refer to [GBL4 Commands](https://docs.silabs.com/simplicity-commander/latest/simplicity-commander-commands/gbl4-commands#gbl4-commands) and [Silicon Labs Gecko Bootloader User’s Guide for Series 3 and Higher](https://docs.silabs.com/shared-content/latest/bootloader-user-guide-series3-and-higher/)
@@ -92,18 +96,18 @@ This example is for an internal storage bootloader for the Matter lighting app o
 - Erase the flash, then flash the application image and bootloader. In this example, there is only one board connected so the `serialno` option is not needed.
 
     ```shell
-    commander device masserase; commander flash artifact/MatterLightOverThreadSolution-full.s37
+    commander flash ../bootloader-storage-internal-single-1536k/artifact/bootloader-storage-internal-single-1536k.s37; commander flash artifact/matter-light-update.gbl;
     ```
 
 - In Simplicity Commander, display the flash map.
 
     ![Flash Map](./images/simplicity-commander-flash-map.png)
 
-- The address of the first available page is 0x080e0000. The end address of the last available block is 0x08174000. This means you can set the Slot Start Address to 0x080e0000 and the Slot Size to 0x94000 or 606208B (606208 = 0x08174000 - 0x080e0000). The slot size is sufficient for our GBL file (606KB > 536KB).
-- Within the MatterLightOverThreadSolution, there will be a bootloader project called  **Matter-Bootloader**. Configure the Bootloader Storage Slot component and set Slot Address and Slot Size according to what was determined in the previous step.
+- The address of the next page block address is 0x080d0000. The end address of the last available block before the NVM3 region (blue) is 0x08174000. This means we can set the Slot Start Address to 0x080d0000 and the Slot Size to 0xa4000 or 671744 (671744 = 0x08174000 - 0x080d0000). The slot size is sufficient for our GBL file (671kB > 518KB).
+- As discussed [above](#creating-the-project), we need to create an Internal Storage Bootloader project, in this case we are targeting BRD4187C which has a 1.5MB of flash, **Bootloader - SoC Internal Storage (single image on 1536kB device)** is an appropriate choice. Configure the Bootloader Storage Slot component and set Slot Address and Slot Size according to what was determined in the previous step.
 
     ![StudioProject](./images/studio-6-matter-bootloader-storage-slot.png)
 
 - Enable the "GBL Compression (LZMA)" component.
 - Build the project.
-- Once flashed onto the board, this bootloader is ready to execute OTA updates on upgrade images it receives. This is covered in the next section.
+- Once flashed onto the board, this bootloader is ready to execute OTA updates on upgrade images it receives. This is covered in the [next section](./02-ota-software-update.md).

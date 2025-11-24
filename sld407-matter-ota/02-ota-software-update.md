@@ -21,12 +21,12 @@ The demo scenario requires the use of the Silicon Labs Simplicity Commander tool
 - Create the running image.
 - Create the update image with software version value incremented.
 - Create the OTA file from the update image.
-- Create/obtain a bootloader that supports Matter OTA Software Update.
-- Start the OTA-Provider passing to it the OTA file. Commission the OTA-Provider.
+- Create/obtain a bootloader that supports Matter OTA Software Updates.
+- Start the OTA-Provider, passing to it the OTA file. Commission the OTA-Provider.
 - Bring up your device with the running image, commission the device.
 - Use the chip-tool to issue the Announce OTA Provider command to the device and trigger the OTA Software Update Process.
 
-Note: In a production environment the Announce OTA Provider command is not used. Instead, the OTA Provider address is configured on the device by the Matter Controller and the device queries the Provider for an available image every 24 hours.
+> Note: In a production environment the Announce OTA Provider command is not used. Instead, the OTA Provider address is configured on the device by the Matter Controller and the device queries the Provider for an available image every 24 hours.
 
 ## Setting up the OTA Environment
 
@@ -40,7 +40,7 @@ The chip-ota-provider-app binary for a Raspberry Pi is a part of the Artifacts p
 
 ### Building Application Images Using Simplicity Studio
 
-The running image and the update image are regular Matter application images and are built using the standard procedure. The only additional configuration required is the use of a higher software version in the update image. The software version is configured in a Studio Matter project by navigating to Software Components -> Silicon Labs Matter -> Stack -> Matter Core Components, clicking "Configure" and setting the "Device software version" and "Device software version string" parameters.  
+The running image and the update image are regular Matter application images and are built using the standard procedure. The only additional configuration required is the use of a higher software version in the update image. The software version is configured in a Studio Matter project by navigating to `Software Components -> Silicon Labs Matter -> Stack -> Matter Core Components, clicking "Configure" and setting the "Device software version" and "Device software version string" parameters.`
 
 See the following page for detailed steps for WiFi: [Matter WiFi OTA application using studio](./04-build-ota-application-using-studio.md). For Matter over Thread, see [Matter Thread OTA application using studio](#matter-ota-tutorial).
 
