@@ -8,7 +8,7 @@ The Gecko Bootloader is built with Silicon Labs Simplicity Studio. These instruc
 
 ### Creating the Project
 
-Each Matter Sample Application Solution in Simplicity Studio contains a bootloader project pre-configured for Matter OTA Software Updates, generally for external storage. The stand-alone bootloader project for internal or external storage can be found in the Examples & Demos view in Simplicity Studio.
+Each Matter Sample Application Solution in Simplicity Studio contains a bootloader project pre-configured for Matter OTA Software Updates, generally configured for external storage. The stand-alone bootloader project for internal or external storage can be found in the Examples & Demos view in Simplicity Studio.
 
 In Simplicity Studio, click **Home > all projects & demos** to create a new project. Select the correct Target Board via the **+ Select Device** button and SDK from the dropdown menu of the Example & Demos view.
 
@@ -93,7 +93,7 @@ This example is for an internal storage bootloader for the Matter lighting app o
     616K artifact/series3-matter-light.gbl
     ```
 
-- Erase the flash, then flash the application image and bootloader. In this example, there is only one board connected so the `serialno` option is not needed.
+- Erase the flash and flash the application and bootloader image. In this example, there is only one board connected so the `serialno` option is not needed.
 
     ```shell
     commander flash ../bootloader-storage-internal-single-1536k/artifact/bootloader-storage-internal-single-1536k.s37; commander flash artifact/matter-light-update.gbl;
