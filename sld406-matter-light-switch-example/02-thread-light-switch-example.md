@@ -10,16 +10,21 @@
 
    2. Connect the dev board to your development computer.
 
-   3. Once it shows up in the Devices view, select it.
+   3. Once it displays in the **Devices** panel, select it.
 
       ![Devices view](resources/matter-ssv6-connected-devices.png)
 
-   4. The device page will open. From here select **Create New Project**. This will bring up the Example Projects and Demos tab. Enter *openthread rcp* in the **Filter on keywords** box. Select the **OpenThread - RCP** example and click **Create**.
+      The device page opens.
+   4. Click **Create New Project**.
+      The **Example Projects & Demos** tab displays.
+   5. Enter *openthread rcp* in the **Filter on keywords** box.
+   6. Select the **OpenThread - RCP** example and click **Create**.
 
       ![Example projects and demos view](resources/ssv6-ot-rcp-demo.png)
 
-   5. Now build & flash the ot-rcp project using the Simplicity Studio VS Code Extension (for a detailed breakdown of these steps, see the [Matter over Thread QuickStart Demo](../sld477-matter-quick-start-demo/02-thread-quick-start-demo.md#step-1-create-a-matter-sample-project). This example shows a Matter Lighting device but the steps are identical for an RCP project).
-   6. Once the RCP firmware has been built and flashes, disconnect the dev board and connect it to your RPi.
+   7. Now build & flash the ot-rcp project using the Simplicity Studio VS Code Extension (for a detailed breakdown of these steps, see the [Matter over Thread QuickStart Demo](/matter/{build-docspace-version}/-matter-quick-start-demo/02-thread-quick-start-demo.md#step-1-create-a-matter-sample-project).
+   This example shows a Matter Lighting device but the steps are identical for an RCP project).
+   8. Once the RCP firmware has been built and flashes, disconnect the dev board and connect it to your Raspberry Pi.
 
    > Note: The Matter hub OpenThread RCP (ot-rcp) must be programmed with a bootloader and firmware image to act as the ot-rcp for the Raspberry Pi. You can obtain a copy of the latest version here: [Silicon Labs Matter Artifacts](/matter/{build-docspace-version}/matter-prerequisites/matter-artifacts).
 
@@ -71,7 +76,7 @@ You now have a working Matter hub. Keep the PuTTY session open for the following
 
    1. Connect one compatible dev board to your development computer. This example uses a BRD4187C.
 
-   2. Once it shows up in the Devices view, select it.
+   2. Once it displays in the **Devices** panel, select it.
 
    3. This will bring up the Example Projects and Demos tab, check the **Matter** filter under **Wireless Technology**, and enter *lighting* in the **Filter on keywords** box. Select the **Matter - SoC Lighting over Thread with external Bootloader Solution** and click **Create**.
 
@@ -83,7 +88,7 @@ You now have a working Matter hub. Keep the PuTTY session open for the following
 
       ![Build the project](resources/studio-6-matter-project-demo.png)
 
-   6. Building & flashing is done in Visual Studio Code using the Silicon Labs extension. For a detailed breakdown of these steps, see the [Matter over Thread QuickStart Demo](../sld477-matter-quick-start-demo/02-thread-quick-start-demo.md#step-1-create-a-matter-sample-project).
+   6. Building & flashing is done in Visual Studio Code using the Silicon Labs extension. For a detailed breakdown of these steps, see the [Matter over Thread QuickStart Demo](/matter/{build-docspace-version}/matter-quick-start-demo/02-thread-quick-start-demo.md#step-1-create-a-matter-sample-project).
 
    7. If you are using a dev board with a WSTK, you should now see a QR code displayed on the WSTK's LCD.
 

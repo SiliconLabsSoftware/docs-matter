@@ -17,8 +17,12 @@ Prebuilt image files are available both on GitHub and inside Simplicity Studio.
 
 To find the demos within Simplicity Studio, even if you do not have a device connected:
 
-1. In Simplicity Studio, click the Home tab in the upper left hand corner.
-2. Under **Start a New Project**, choose the **all projects & demos** link.
+1. In Simplicity Studio, click the **Home** tab in the upper left corner.
+2. Next to **Start a New Project**, click **all projects & demos**.
+3. In the upper right, click **Select Device** to choose a connected board or search for a virtual board such as **BRD4187C**. This filters the window for that part.
+4. In the left navigation, check **Matter** to show all Matter demos.
+   The demos are marked as **Demo** and allow you to **Run** them. Projects can be *created*.
+5. Choose a demo, and click **Run** to flash it onto your board.
 3. Choose a board to by clicking on **Select Device**, you can choose from a connected board or search for one such as **BRD4187C** and on the board. This will filter the window for that part.
 4. In the left hand navigation, choose **Matter** to show all the Matter demos.
 5. The demos are marked as "demo" and allow you to "run" them. Projects can be "created".
@@ -32,15 +36,17 @@ If you are coming from Simplicity Studio, you may have already installed the dem
 
 ### Building the Matter Image File
 
- The entire build process for Simplicity Studio is covered in the [Matter over Thread QuickStart Demo](../sld477-matter-quick-start-demo/02-thread-quick-start-demo.md#step-1-create-a-matter-sample-project).
+ The entire build process for Simplicity Studio is covered in the [Matter over Thread QuickStart Demo](/matter/{build-docspace-version}/matter-quick-start-demo/02-thread-quick-start-demo.md#step-1-create-a-matter-sample-project).
 
 ## Step 2: Flash the Matter Accessory Device
 
 There are a few ways to flash a device using Simplicity Studio.
 
-1. [Flash from VS Code](../sld477-matter-quick-start-demo/02-thread-quick-start-demo.md#step-3-flash-the-device)
+1. [Flash from VS Code](/matter/{build-docspace-version}/matter-quick-start-demo/02-thread-quick-start-demo.md#step-3-flash-the-device)
 2. Flash from Commander GUI: 
-   1. In Simplicity Studio, open the Tools view by clickin on the icon in the left side-bar. Select *Open Tool*
+   1. In Simplicity Studio, click **Tools**, click **Commander**, and then click **Open Tool**.
+      The stand-alone Commander GUI opens.
+   2. Select the board, click **Flash**, and then click **Browse** to find the image file and flash it.
 
    ![Commander GUI](./resources/studio-6-commander-gui.png)
    2. This will open the stand alone Commander GUI. From here select the board and then click on the flash tab. Browse to the image file and flash it.

@@ -1,6 +1,6 @@
 # Matter over Thread Quick-Start Demo
 
-This Quick-Start Guide will demo the out-of-box experience for adding an EFR32MG24 Matter Accessory Device to ecosystems. Other boards are also supported, for the full list of Matter capable hardware please refer to the [Silicon Labs Matter Selector Guide](https://www.silabs.com/wireless/matter/selector-guide). This demo uses the **Matter - SoC Lighting over Thread** example application available in Simplicity Studio. The guide will walk through flashing the EFR32 SoC device, commissioning it to an ecosystem using the Simplicity Connect mobile app, and controlling it from either Google Home or Apple Home apps.
+This Quick-Start Guide demonstrates the out-of-box experience for adding an EFR32MG24 Matter Accessory Device to ecosystems. Other boards are also supported. For the full list of Matter capable hardware, refer to the [Silicon Labs Matter Selector Guide](https://www.silabs.com/wireless/matter/selector-guide). This demo uses the **Matter - SoC Lighting over Thread** example application available in Simplicity Studio. The guide walks through flashing the EFR32 SoC device, commissioning it to an ecosystem using the Simplicity Connect mobile app, and controlling it from either Google Home or Apple Home apps.
 
 ## Software Requirements
 
@@ -12,7 +12,7 @@ This Quick-Start Guide will demo the out-of-box experience for adding an EFR32MG
 - Android smartphone OR iPhone
 - 1 x Silabs WSTK + EFR32MG24 2.4 GHz 20 dBm RB (BRD4187C)
 
->**Note:** Refer to [EFR32MG24 Tech Docs](https://www.silabs.com/development-tools/wireless/efr32xg24-pro-kit-20-dbm?tab=techdocs) for more details.
+>**Note**: Refer to [EFR32MG24 Tech Docs](https://www.silabs.com/development-tools/wireless/efr32xg24-pro-kit-20-dbm?tab=techdocs) for more details.
 
 ### (Optional) Ecosystem requirements
 
@@ -30,9 +30,9 @@ This Quick-Start Guide will demo the out-of-box experience for adding an EFR32MG
 
 ### Step 2: Launch Simplicity Studio
 
-If the following screen does not appear automatically, select the home icon on the top left of the window. If the Matter extension is installed, you should see the Matter section like in the image below. 
+If the following screen does not appear automatically, click the **Home** icon If the Matter extension is installed, you should see the Matter tile like in the image below. 
 
-Click on the Matter section and the **Example Projects & Demos** tab will appear already filtered for Matter.
+Click the Matter tile. The **Example Projects & Demos** tab will appear already filtered for Matter.
 
 ![Simplicity Studio Launcher](./images/studio-6-matter-launcher.png)
 
@@ -100,21 +100,21 @@ Once commissioning completes, the Apple Home app prompts you to select one room
 
 ## Taking it Further
 
-After successfully running the Matter Lighting app to the ecosystem, the next step is to create, build, and flash a Matter sample project from Simplicity Studio. This section will walk through creating a new Matter project, building it in the Silicon Labs Extension for the Visual Studio Code IDE, and flashing it to the EFR32 SoC device. 
+After successfully running the Matter Lighting app to the ecosystem, the next step is to create, build, and flash a Matter sample project from Simplicity Studio. This section describes creating a new Matter project, building it in the Silicon Labs Extension for the Visual Studio Code IDE, and flashing it to the EFR32 SoC device. 
 
 For instructions on installing Simplicity Studio and the Silicon Labs Extension for the Visual Studio Code IDE, refer to the [Simplicity Studio 6 Getting Started Guide](https://docs.silabs.com/ssv6ug/latest/ssv6ug-overview/) and [Simplicity Studio Extension for VS Code](https://docs.silabs.com/ss-vscode/latest/ss-vscode-start/).
 
 ### Step 1: Create a Matter Sample Project
 
 1. Open Simplicity Studio and repeat the same steps as [above](#flashing-the-efr32-soc-matter-accessory-device).
-2. Instead of selecting **Run** for the demo we will instead slect **Create** on the **Matter - SoC Lughting over Thread with external Bootloader**.
-3. Review the Project Configuration & Click **Finish**. Simplicity Studio will create a new Solution called MatterLightOverThreadSolution with the MatterLightOverThread project inside the workspace.
+2. Instead of selecting **Run** for the demo, click **Create** for the **Matter - SoC Lighting over Thread with external Bootloader** example.
+3. Review the Project Configuration and click **Finish**. Simplicity Studio creates a new Solution called MatterLightOverThreadSolution with the MatterLightOverThread project inside the workspace.
    ![Creating a project](./images/studio-6-matter-project-demo.png)
-4. After the project is created, press the **Open in VS Code** button to open the project in the Silicon Labs Extension for the Visual Studio Code IDE.
+4. After the project is created, click the **Open in VS Code** button to open the project in the Silicon Labs Extension for the Visual Studio Code IDE.
 
 ### Step 2: Build the Project in the Silicon Labs Extension for the Visual Studio Code IDE
 
-1. Once the MatterLightOverThreadSolution is open, hover over the solution andclick the **Build** button.
+1. Once the MatterLightOverThreadSolution is open, hover over the solution and click the **Build** button.
 
    ![Building the project](./images/studio-6-build.png)
 
@@ -124,13 +124,13 @@ For instructions on installing Simplicity Studio and the Silicon Labs Extension 
 
 1. After building the project, the output will include an `.s37` file in the Binaries folder.
 2. Connect the Silabs WSTK + EFR32 SoC to the PC via USB.
-3. Hovering over either of the Binaries in the Binaries folder will reveal the flash button. One of these is only the application while the other includes the application and the external bootloader. Click **Flash** to flash the device
+3. Hover over either of the binaries in the Binaries folder to reveal the Flash button. One of these is only the application while the other includes the application and the external bootloader. Click **Flash** to flash the device.
 
    ![flashing the binary](./images/flashing-studio-6.png)
 4. A successful flash will looks like the image below.
 
    ![successful flash](./images/successful-flash.png)
 
-Once the device is flashed, it will be ready for commissioning and further testing.
+Once the device is flashed, it is ready for commissioning and further testing.
 
 > **Note:** By default, device logs are enabled on UART (serial terminal). Refer to [Logging Configurations](/matter/{build-docspace-version}/matter-overview-guides/matter-logging-configuration) to configure the logging destination to JLink or UART.
