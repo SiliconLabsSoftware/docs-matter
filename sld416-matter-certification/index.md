@@ -41,9 +41,12 @@ Pre-testing new Matter products using the Matter Test Harness (TH) before sendin
 - **Support**: If issues are encountered during pre-testing, Silicon Labs can provide more efficient support.
 - **Test Accuracy**: Occasionally, issues can arise from the test itself rather than the Device Under Test (DUT) firmware. In such cases, additional parameters might be needed to run certain tests successfully. Pre-testing helps identify and address these issues ahead of time.
 
-If your Matter ceritifcation process includes inheritance of our OpenThread Certification Libraries for an SoC product, you will need to provide proof of the use of those libraries using the linker output. To ensure your project generates this, make sure during your pre-testing to do the following (these steps assume the use of Simplicity Studio v6):
+If your Matter certification process includes inheritance of our OpenThread Certification Libraries for an SoC product, you will need to provide proof of the use of those libraries using the linker output. To ensure your project generates this, make sure during your pre-testing to do the following (these steps assume the use of Simplicity Studio v6):
+
 - Add the **OpenThread Certification Libraries** component to your project.
+
     ![OpenThread Certification Libraries Component](./resources/studio-6-ot-cert-libs-component.png)
+
 - Add the "-WL,-verbose" linker option through gcc (see screenshot below):
   
   ![Matter Project SSv6 Wl verbose steps](resources/vs-code-verbose-linker-option.png)

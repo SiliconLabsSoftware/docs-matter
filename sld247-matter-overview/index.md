@@ -96,7 +96,7 @@ Pre-built images for the SiWx917 connectivity firmware are available per the ins
 
 ### Visual Studio Code Development
 
-Once a Matter project is created and any components or ZCL clusters modified in Simplicity Studio, Silicon Labs provides a Visual Studio Code (VS Code) IDE extension where code changes can be made. Simplicity Studio 6 (SSv6) does not provide an IDE, instead VS Code is used. Projects can be built, flashed and debugged directly from VS Code.
+Once a Matter project is created and any components or ZCL clusters modified in Simplicity Studio, Silicon Labs provides a Visual Studio Code (VS Code) IDE extension where code changes can be made. Simplicity Studio 6 (SSv6) does not provide an IDE; instead, VS Code is used. Projects can be built, flashed and debugged directly from VS Code.
 
 For more information on development with Visual Studio Code, please visit [Visual Studio Code Enablement](https://docs.silabs.com/ss-vscode/latest/ss-vscode-start/).
 
