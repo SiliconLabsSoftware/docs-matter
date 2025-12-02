@@ -26,7 +26,7 @@ The demo scenario requires the use of the Silicon Labs Simplicity Commander tool
 - Bring up your device with the running image, commission the device.
 - Use the chip-tool to issue the Announce OTA Provider command to the device and trigger the OTA Software Update Process.
 
-> Note: In a production environment the Announce OTA Provider command is not used. Instead, the OTA Provider address is configured on the device by the Matter Controller and the device queries the Provider for an available image every 24 hours.
+> **Note**: In a production environment, the Announce OTA Provider command is not used. Instead, the OTA Provider address is configured on the device by the Matter Controller and the device queries the Provider for an available image every 24 hours.
 
 ## Setting up the OTA Environment
 
@@ -40,7 +40,7 @@ The chip-ota-provider-app binary for a Raspberry Pi is a part of the Artifacts p
 
 ### Building Application Images Using Simplicity Studio
 
-The running image and the update image are regular Matter application images and are built using the standard procedure. The only additional configuration required is the use of a higher software version in the update image. The software version is configured in a Studio Matter project by navigating to `Software Components -> Silicon Labs Matter -> Stack -> Matter Core Components, clicking "Configure" and setting the "Device software version" and "Device software version string" parameters.`
+The running image and the update image are regular Matter application images and are built using the standard procedure. The only additional configuration required is the use of a higher software version in the update image. The software version is configured in a Studio Matter project by navigating to **Software Components > Silicon Labs Matter -> Stack -> Matter Core Components**, clicking **Configure**, and setting the **Device software version** and **Device software version string** parameters.
 
 See the following page for detailed steps for WiFi: [Matter WiFi OTA application using studio](./04-build-ota-application-using-studio.md). For Matter over Thread, see [Matter Thread OTA application using studio](#matter-ota-tutorial).
 
@@ -63,13 +63,13 @@ See the following page for detailed steps for WiFi: [Matter WiFi OTA application
     commander gbl3 create artifact/matter-light-update.gbl --app MatterLightOverThread/artifact/MatterLightOverThread.s37 --compress lzma
     ```
 
-    For series 3 & above:
+    For series 3 and above:
 
     ```shell
     commander gbl4 create artifact/series3-matter-light.gbl --data MatterLightOverThread_301/artifact/MatterLightOverThread_301.s37 --device SiMG301 --compress lzma
     ```
 
-> Note: Series 3 devices can also use a YAML configuration file to create the gbl4 file. For more info on this process refer to [GBL4 Commands](https://docs.silabs.com/simplicity-commander/latest/simplicity-commander-commands/gbl4-commands#gbl4-commands) and [Silicon Labs Gecko Bootloader User’s Guide for Series 3 and Higher](https://docs.silabs.com/shared-content/latest/bootloader-user-guide-series3-and-higher/)
+> **Note**: Series 3 devices can also use a YAML configuration file to create the gbl4 file. For more info on this process, refer to [GBL4 Commands](https://docs.silabs.com/simplicity-commander/latest/simplicity-commander-commands/gbl4-commands#gbl4-commands) and [Silicon Labs Gecko Bootloader User’s Guide for Series 3 and Higher](https://docs.silabs.com/shared-content/latest/bootloader-user-guide-series3-and-higher/).
 
 - Create the Matter OTA file from the bootable image file:
 
@@ -77,7 +77,7 @@ See the following page for detailed steps for WiFi: [Matter WiFi OTA application
     commander ota create --type matter --input artifact/matter-light-update.gbl --vendorid 0xFFF1 --productid 0x8005 --swstring "2.0" --swversion 2 --digest sha256 -o artifact/matter-light-update.ota
     ```
 
-- Transfer the OTA file to the Raspberry Pi running the OTA-Provider
+- Transfer the OTA file to the Raspberry Pi running the OTA-Provider.
 
 - In a terminal, start the Provider app and pass to it the path to the Matter OTA file created in the previous step:
 
@@ -139,9 +139,9 @@ With this configuration the device will query the OTA-Provider for an available 
 
 Internal storage bootloader for Matter OTA software update is supported on MG24/MG26/SixG301 boards. In this use case, both the running image and the downloadable update image must fit on the internal flash at the same time. This in turn requires that both images are built with a reduced feature set, such as disabled logging and Matter shell. See [Creating the Bootloader for Use in Matter OTA](01-ota-bootloader.md) for more details. See [Code Savings Guide](/matter/{build-docspace-version}/matter-overview-guides/code-size-savings) for a general guide on reducing the application image size.
 
-Adding the `Enable Link time optimization` component in the project's Software Components tool in Simplicity Studio will reduce the image size.
+Adding the **Enable Link time optimization** component in the project's Software Components tool in Simplicity Studio will reduce the image size.
 
-Further, installing the Lower Power Mode component in the project's Software Components tool in Simplicity Studio will uninstall the following optional components and reduce the image size:
+Further, installing the **Lower Power Mode** component in the project's Software Components tool in Simplicity Studio will uninstall the following optional components and reduce the image size:
 
 ```shell
     Matter QR Code Display, 
@@ -203,13 +203,13 @@ Combined OTA images are supported in both regular OTA and Multi-Chip OTA impleme
 
 1. Bootloader + application upgrade. This requires a combined image.
 
-    Series 2 & below
+    Series 2 and below
 
     ```shell
     commander gbl3 create --bootloader <bootloader_image>.s37 --app <new_application_image>.s37 <combined_image>.gbl
     ```
 
-    Series 3 & above:
+    Series 3 and above:
 
     ```shell
     commander gbl4 create --data <bootloader_image>.s37 --data <new_application_image>.s37 <combined_image>.gbl
