@@ -35,35 +35,34 @@ In the context of MSS for Wi-Fi, the provisionee, or commissionee, is the device
 
    a. Generate Control Logs
    
-   Follow Option 1 in the Amazon documentation: https://developer.amazon.com/docs/frustration-free-setup/matter-simple-setup-getting-started.html#generating-control-logs
-   
-   1. Install Gradle.
-   2. Run the following command (replace placeholder values with your actual values):
+      Follow Option 1 in the Amazon documentation: https://developer.amazon.com/docs/frustration-free-setup/matter-simple-setup-getting-started.html#generating-control-logs
+      
+      1. Install Gradle.
+      2. Run the following command (replace placeholder values with your actual values):
 
-   ```bash
-   gradle run --args="-apid APID -dsn DeviceSerialNumber -vid MatterVendorID -pid MatterProductID -p MatterDevicePasscode -a MATTER_V0 -d MatterDeviceDiscriminator -udid Base64EncodedUniqueDeviceId -pk "PublicKeyOfProduct"
-   ```
+      ```bash
+      gradle run --args="-apid APID -dsn DeviceSerialNumber -vid MatterVendorID -pid MatterProductID -p MatterDevicePasscode -a MATTER_V0 -d MatterDeviceDiscriminator -udid Base64EncodedUniqueDeviceId -pk "PublicKeyOfProduct"
+      ```
 
-   Command Inputs:ts:
+      Command Inputs:
 
-   - `-apid`: Amazon-provided Advertised Product ID (Go to FFS Console → Products -> <your_product> -> Advertised Product ID)
-   - `-dsn`: Serial Number of the Amazon Echo Device
-   - `-vid`: Vendor ID
-   - `-pid`: Product ID
-   - `-p`: Matter device passcode
-   - `-a`: Matter encryption algorithm
-   - `-d`: Device discriminator
-   - `-udid`: Base64-encoded Unique Device ID
-   - `-pk`: Public key of your Amazon product (FFS Console → Products → <your_product> → Device Cryptographic Material)
+      - `-apid`: Amazon-provided Advertised Product ID (Go to FFS Console → Products -> <your_product> -> Advertised Product ID)
+      - `-dsn`: Serial Number of the Amazon Echo Device
+      - `-vid`: Vendor ID
+      - `-pid`: Product ID
+      - `-p`: Matter device passcode
+      - `-a`: Matter encryption algorithm
+      - `-d`: Device discriminator
+      - `-udid`: Base64-encoded Unique Device ID
+      - `-pk`: Public key of your Amazon product (FFS Console → Products → <your_product> → Device Cryptographic Material)
 
    b. Upload Control Logs to Amazon
    
-   Follow the documentation steps to upload the generated control logs:
-   https://developer.amazon.com/docs/frustration-free-setup/matter-simple-setup-getting-started.html#uploading-control-logs
+      - Follow the documentation steps to upload the generated control logs : https://developer.amazon.com/docs/frustration-free-setup/matter-simple-setup-getting-started.html#uploading-control-logs
 
    c. Download Feedback logs from Amazon
    
-   Follow the steps given in: https://developer.amazon.com/docs/frustration-free-setup/matter-simple-setup-getting-started.html#getting-control-log-feedback-files
+      - Follow the steps given in : https://developer.amazon.com/docs/frustration-free-setup/matter-simple-setup-getting-started.html#getting-control-log-feedback-files
 
 
 4. Pre-Register Test Devices
@@ -99,7 +98,7 @@ In the context of MSS for Wi-Fi, the provisionee, or commissionee, is the device
 
 **Changes that should be made in the application:**
 
-Amazon FFS requires use of an optional feature in Matter called additional advertising. This can be enabled in a Matter Studio project by adding the **matter_gatt_additional_advertising** component to the project. In a GN based build, it can be included by adding the two optional build arguments to the GN build:
+Amazon FFS requires use of an optional feature in Matter called additional advertising. This can be enabled in a Matter Studio project by adding the **GATT Additional Advertising** component to the project. In a GN based build, it can be included by adding the two optional build arguments to the GN build:
 
 ```
 chip_enable_additional_data_advertising=true
