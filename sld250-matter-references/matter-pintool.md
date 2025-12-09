@@ -28,11 +28,11 @@ When creating a configuration for a custom board do the following:
    to start the project wizard. Choose your development board type via the `+ Select Device` button, and the
    latest Simplicity SDK you'll be working from
 
-2. Select the `Empty C++ Project` example and click **Create**.
+5. Select the `Empty C++ Project` example and click **Create**.
 
-3. Select a compatible device then click **Next**.
+6. Select a compatible device then click **Next**.
 
-4. Click **Finish** to create your project.
+7. Click **Finish** to create your project.
 
 ## 3. Customize your Components and Pin configuration in Simplicity Studio
 

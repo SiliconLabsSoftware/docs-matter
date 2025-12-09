@@ -23,10 +23,10 @@ To find the demos within Simplicity Studio, even if you do not have a device con
 4. In the left navigation, check **Matter** to show all Matter demos.
    The demos are marked as **Demo** and allow you to **Run** them. Projects can be *created*.
 5. Choose a demo, and click **Run** to flash it onto your board.
-3. Choose a board to by clicking on **Select Device**, you can choose from a connected board or search for one such as **BRD4187C** and on the board. This will filter the window for that part.
-4. In the left hand navigation, choose **Matter** to show all the Matter demos.
-5. The demos are marked as "demo" and allow you to "run" them. Projects can be "created".
-6. Choose the demo you wish to use, and click **Run** to flash it onto your board.
+6. Choose a board to by clicking on **Select Device**, you can choose from a connected board or search for one such as **BRD4187C** and on the board. This will filter the window for that part.
+7. In the left hand navigation, choose **Matter** to show all the Matter demos.
+8. The demos are marked as "demo" and allow you to "run" them. Projects can be "created".
+9. Choose the demo you wish to use, and click **Run** to flash it onto your board.
 
 #### Silicon Labs GitHub
 
