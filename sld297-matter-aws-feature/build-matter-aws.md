@@ -5,13 +5,14 @@ The following components are common for all apps and should be modified in the c
 ## How to Add the Matter + AWS Component
 To enable the component in Simplicity Studio, add the following components.
 
-- Go to **Software** components, search for `Matter_Wifi`. Click on **Settings** symbol beside Matter Wi-fi component in the left panel and enable IPV4 configuration.
-    ![IPV4 Component](images/matter_aws_ipv4_enable_1.png)
+- Go to **Software** components, search for `Matter_Wifi`. Click on **Settings** symbol beside Matter Wi-fi component in the left panel or the **Configure** option and enable IPV4 configuration.
+    ![IPV4 Component](images/matter_aws_component_2.png)
     ![IPV4 Settings Enable](images/matter_aws_ipv4_enable_2.png)
 
 - In **Software Components**, search for `aws` and install the Matter AWS component.
-
+    ![Matter + AWS Component](images/matter-aws-component_1.png)
 - Next, select the dependencies for the Matter AWS component.
+> Note: The order can vary, but in every case select the option with "+ AWS"
  ![Default Entropy Source for Matter + AWS](images/matter_aws_dependency_1.png)
  ![Public-Key Abstaction Layer for Matter + AWS](images/matter_aws_dependency_2.png)
 
@@ -55,7 +56,7 @@ To enable the component in Simplicity Studio, add the following components.
     your second connection.
 -   While using AWS, update the following information:
     -   Add your AWS certificates in file
-        `examples/platform/silabs/matter_aws/matter_aws_interface/include/MatterAwsNvmCert.h`
+        `examples/platform/silabs/matter_aws/matter_aws_interface/include/MatterAwsNvmCert.cpp`
         -   Provide the AWS Root CA key
             (https://www.amazontrust.com/repository/AmazonRootCA3.pem)
         -   Provide `device_certificate` and `device_key` with your device certificate and
