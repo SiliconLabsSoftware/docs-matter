@@ -53,6 +53,14 @@ To enable the component in Simplicity Studio, add the following components.
 
 - Build the Matter + AWS application using Simplicity Studio as described in
   - [Build SOC Application Using Studio](/matter/{build-docspace-version}/matter-wifi-run-demo/build-soc-application-using-studio).
+- After building and flashing the app, the user can see [MATTER_AWS] logs after device bootup - 
+    ```console
+    [00:00:23.400][info  ][SVR] [MATTER_AWS] connection callback started
+    [00:00:23.690][info  ][SVR] [MATTER_AWS] MQTT connection status: 0
+    [00:00:23.995][info  ][SVR] [MATTER_AWS] MQTT sub request callback: 0
+    ```
+    - After subscribing to a topic in AWS IoT, the user can see the publish logs -
+    ![Device Logs AWS](./images/aws_device_logs_thermostat_app.png)
 
 ## Compile using new/different certificates
 
