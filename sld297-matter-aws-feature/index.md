@@ -24,8 +24,6 @@ official
 [Silicon Labs Matter hardware requirements](/matter/{build-docspace-version}/matter-prerequisites/hardware-requirements)
 documentation.
 
-> Note: This feature is only supported for 917SOC
-
 ### Software Requirements
 
 For a list of software requirements for the Matter + AWS feature, see the

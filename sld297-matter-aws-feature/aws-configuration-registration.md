@@ -26,7 +26,7 @@ Enter the policy name (e.g., `MATTER_AWS_POLICY_`). In the policy statements, se
 
 5. Once done, select **Create**.
 
-6. Create a client CSR certificate and a client key by following the steps in the [OpenSSL Certificate Creation](./openssl-certificate-creation.md) documentation.
+6. Create a client CSR certificate and a device key by following the steps in the [OpenSSL Certificate Creation](./openssl-certificate-creation.md) documentation.
 
 7. Complete the following steps to create a thing and generate certificates for your Matter application to use in the `MatterAwsNvmCert.cpp` source file:
 
@@ -41,7 +41,9 @@ Enter the policy name (e.g., `MATTER_AWS_POLICY_`). In the policy statements, se
        ![Attach Policy](./images/thing-attach-policy.png)
     - Once the thing is successfully created, click on view certificate - 
        ![View Certificate](./images/thing-view-certificate.png)
-       Next, activate and download the certificate.
+    - Next:
+         - Activate the certificate
+         - Download the certificate.
        ![Activate and Download Certificate](./images/thing-activate-download-certificate.png)
 
 8. Copy the contents of [AWS_CA CERT](https://www.amazontrust.com/repository/AmazonRootCA3.pem) and add it as CA certificate in `examples/platform/silabs/matter_aws/matter_aws_interface/include/MatterAwsNvmCert.cpp`. 
@@ -62,6 +64,11 @@ Enter the policy name (e.g., `MATTER_AWS_POLICY_`). In the policy statements, se
     };
    ```
 
-1.  Repeat Step 6 to create a new thing for use in MQTT Explorer, using the certificate generated for MQTT Explorer during OpenSLL certificate creation (e.g., `explorer.csr`). Create a `.pem` file from the CA certificate in step 8 and use it as the server certificate in MQTT Explorer.
+   - In `MatterAwsNvmCert.cpp` file, there will be -
+      - char ca_certificate[] - Fill it with AWS_CA CERT (mentioned above).
+      - char device_certificate[] - Fill it with Device Certificate downloaded from AWS in Step 7.
+      - char device_key[] - Fill it with Device Key generated in Step 6.
 
-    **Note**: The thing name must be unique as it will be used as the client ID.
+9.  Repeat Step 6 to create a new thing for use in MQTT Explorer, using the certificate generated for MQTT Explorer during OpenSLL certificate creation (e.g., `explorer.csr`). Create a `.pem` file from the CA certificate in step 8 and use it as the server certificate in MQTT Explorer.
+
+   > **Note**: The thing name must be unique as it will be used as the client ID.

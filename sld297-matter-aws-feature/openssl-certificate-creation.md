@@ -2,15 +2,18 @@
 
 An SSL certificate is an important way to secure user information and protect against hackers.
 
-## Openssl Installation (In ubuntu 22.04)
+## Openssl Installation 
 
-1. To install OpenSSL (v 3.0.2), issue the following command:  `sudo apt install openssl`
+1. In Debian/Linux
+   - To install OpenSSL, issue the following command:  `sudo apt install openssl`
+2. In Windows
+   - To install OpenSSL, either download precompiled [OpenSSL](https://slproweb.com/products/Win32OpenSSL.html) binaries for Windows or install via WSL using the command: `sudo apt install openssl`
 
 ## Certificates Creation
 
 Use the following commands to generate certificates:
 
-1. **Generate the client key:**
+1. **Generate the device key:**
     - `openssl ecparam -name prime256v1 -genkey -noout -out device.key`
 2. **Generate the client certificate** (e.g., `device.crt` and `device.key`) using a CA
    certficate:

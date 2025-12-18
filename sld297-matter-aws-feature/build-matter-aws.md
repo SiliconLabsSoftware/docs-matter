@@ -12,9 +12,13 @@ To enable the component in Simplicity Studio, add the following components.
 - In **Software Components**, search for `aws` and install the Matter AWS component.
     ![Matter + AWS Component](images/matter-aws-component_1.png)
 - Next, select the dependencies for the Matter AWS component.
-> Note: The order can vary, but in every case select the option with "+ AWS"
+    > Note: The order can vary, but in every case select the option with "+ AWS"
  ![Default Entropy Source for Matter + AWS](images/matter_aws_dependency_1.png)
  ![Public-Key Abstaction Layer for Matter + AWS](images/matter_aws_dependency_2.png)
+
+### Added Step for 917 NCP
+ - In **Software Components**, search for `TLS 1.2 PRF` and install the TLS 1.2 PRF component.
+    ![TLS 1.2 PRF Component](images/tls_prf_component_install.png)
 
 ## How to Add the Matter + AWS Server, Client, Cluster Details.
 - Go to the `matter_<version>/third_party/matter_sdk/examples/platform/silabs/matter_aws/matter_aws_interface/include/` folder from Project Explorer.
