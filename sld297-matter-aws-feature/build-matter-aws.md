@@ -62,6 +62,9 @@ To enable the component in Simplicity Studio, add the following components.
     - After subscribing to a topic in AWS IoT, the user can see the publish logs -
     ![Device Logs AWS](./images/aws_device_logs_thermostat_app.png)
 
+    - The user can see the same data in AWS IoT - 
+    ![AWS IoT App Data](./images/matter_aws_iot_app_data.png)
+
 ## Compile using new/different certificates
 
 -   Two devices should not use the same client ID. Use a different client ID for
