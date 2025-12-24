@@ -34,7 +34,7 @@ When creating a configuration for a custom board do the following:
 Once you have your project created you will see your project and project
 configuration in Simplicity Studio's Project Configurator. Full documentation on
 the use of the Project Configurator and Pin Tool are located here:
-[Simplicity Studio 5 User's Guide](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-developing-with-project-configurator/)
+[Simplicity Studio 6 User's Guide](https://docs.silabs.com/ssv6ug/latest/ssv6-configure-project/project-configurator)
 
 ## 4. Generate your Component and Pin configuration in Simplicity Studio
 

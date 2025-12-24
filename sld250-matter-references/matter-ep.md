@@ -11,4 +11,4 @@ Matter project will not have been created inside Simplicity Studio.
 
 Complete documentation on using the Simplicity Studio Energy Profiler is
 provided in the
-[Simplicity Studio 5 Energy Profiler User's Guide](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-tools-energy-profiler/).
+[Simplicity Studio 6 Energy Profiler User's Guide](https://docs.silabs.com/energy-profiler/latest/energy-profiler-start/).

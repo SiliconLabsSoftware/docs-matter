@@ -30,7 +30,7 @@ follows:
 4. Change your GATT settings as you wish for your project
 
     More information on using the
-    [BLE GATT Configurator is provided here.](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-developing-with-project-configurator/bluetooth-gatt-configurator)
+    [BLE GATT Configurator is provided here.](https://docs.silabs.com/ssv6ug/latest/ssv6-configure-project/bluetooth-gatt-configurator)
 
 5. Save your project, which will force the generation of your BLE GATT
    Configuration

@@ -62,7 +62,7 @@ Pre-built images for the SiWx917 connectivity firmware are available per the ins
 
 ### Software Requirements
 
-**Simplicity Studio 5**: Download and install Simplicity Studio 5 for your operating system from the Silicon Labs [Simplicity Studio page](https://www.silabs.com/developers/simplicity-studio). While the installation process is easy to follow, instructions are provided in the Simplicity Studio v5 [Getting Started section](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-getting-started/install-ss-5-and-software).
+**Simplicity Studio 6**: Download and install Simplicity Studio 6 for your operating system from the Silicon Labs [Simplicity Studio page](https://www.silabs.com/developers/simplicity-studio). While the installation process is easy to follow, instructions are provided in the Simplicity Studio v6 [Getting Started section](https://docs.silabs.com/ssv6ug/latest/ssv6ug-getting-started-overview/).
 
 **Ozone - The J-Link Debugger**: [Ozone](https://www.segger.com/products/development-tools/ozone-j-link-debugger/) is a full-featured graphical debugger for embedded applications. With Ozone, it is possible to debug any embedded application on C/C++ source and assembly level.
 
@@ -70,7 +70,7 @@ Pre-built images for the SiWx917 connectivity firmware are available per the ins
 
 **Tera Term**: [Tera Term](https://github.com/TeraTermProject/osdn-download) is the terminal emulator for Microsoft Windows that supports serial port, telnet, and SSH connections.
 
-**Silicon Labs Matter SiSDK Extension**: Once Simplicity Studio 5 is installed, you will be prompted to install the Simplicity SDK, formerly released as Gecko SDK (GSDK). Here you should also install the Matter Enablement Package by making sure the extension is checked, as shown.
+**Silicon Labs Matter SiSDK Extension**: Once Simplicity Studio 6 is installed, you will be prompted to install the Simplicity SDK, formerly released as Gecko SDK (GSDK). Here you should also install the Matter Enablement Package by making sure the extension is checked, as shown.
 
 ![Installing the Matter Extension](./resources/install-package-advanced-device.png)
 
@@ -85,12 +85,6 @@ Pre-built images for the SiWx917 connectivity firmware are available per the ins
 **SSH Client**: Managing the Matter hub often requires connecting to it remotely. An SSH client is needed to follow the step-by-step example in this document (PuTTY is used). Install software such as [PuTTY](https://www.putty.org/), Terminal, or a similar application for access to the Raspberry Pi-based Matter hub.
 
 **SD Card-Flashing Software**: Many different applications can be used to prepare an SD card for the Raspberry Pi, such as the [Raspberry Pi Imager](https://www.raspberrypi.com/documentation/computers/getting-started.html#install-using-imager) and [balenaEtcher](https://www.balena.io/etcher). The step-by-step example in this document uses the Raspberry Pi Imager.
-
-### Visual Studio Code Development
-
-In addition to creating and building your Matter project within Simplicity Studio, Silicon Labs also provides Visual Studio Code (VSCode) IDE integration. 
-
-For more information on development within Visual Studio Code, please visit [Visual Studio Code Enablement](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-vscode-ide/).
 
 ## Next Steps
 

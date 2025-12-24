@@ -58,7 +58,7 @@ A hands-on example of these provisioning flows will be provided in the following
 
 ## Initial Setup
 
-The provisioning code resides under `extension/matter_extension` in the SiSDK directory tree for the SDK used in your Studio project, for example `SimplicityStudio/SDKs/sisdk_release_2/extension/matter_extension/provision`.
+The provisioning code resides under `provision` folder in the matter extension of the SDK used in your Studio project, for example `C:\Users\<username>\.silabs\slt\installs\conan\p\matte2e08d48896d06\p\provision`.
 
 Within the Studio installation, the chip-cert binary can found at <studio_installation>/v5/developer/adapter_packs/cpms/applications.
 

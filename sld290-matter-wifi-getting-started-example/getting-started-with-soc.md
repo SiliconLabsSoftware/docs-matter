@@ -68,9 +68,9 @@ If Simplicity Studio does not detect the SiWx917 SoC board, try the following:
 
 ## Building the 917 SoC Matter Accessory Devices Using Simplicity Studio
 
-In Simplicity Studio 5, create the Light Matter Accessory Devices (MAD):
+In Simplicity Studio 6, create the Light Matter Accessory Devices (MAD):
 
-1. [Download](https://www.silabs.com/developers/simplicity-studio) and Install Simplicity Studio 5.
+1. [Download](https://www.silabs.com/developers/simplicity-studio) and Install Simplicity Studio 6.
 2. To install the software packages for Simplicity Studio, refer to the [Software Package Installation Section](/matter/{build-docspace-version}/matter-wifi-getting-started-example/software-installation#installation-of-software-packages).
 
 3. Switch to the Launcher view (if not already in it).

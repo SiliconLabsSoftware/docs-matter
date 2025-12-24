@@ -4,7 +4,7 @@
 
 1. Prepare a compatible development board to become your Matter hub's ot-rcp:
 
-   1. Start Simplicity Studio 5 with the latest SiSDK and Silicon Labs Matter SiSDK Extension installed (see details in the [Overview](/matter/{build-docspace-version}/matter-overview#software-requirements)).
+   1. Start Simplicity Studio 6 with the latest SiSDK and Silicon Labs Matter SiSDK Extension installed (see details in the [Overview](/matter/{build-docspace-version}/matter-overview#software-requirements)).
 
       ![the Matter extension](./resources/image1.png)
 
@@ -64,7 +64,7 @@ You now have a working Matter hub. Keep the PuTTY session open for the following
 
 ## Creating the Matter Accessory Devices (MADs)
 
-1. In Simplicity Studio 5, create the light MAD:
+1. In Simplicity Studio 6, create the light MAD:
 
    1. Switch to the Launcher view (if not already in it).
 

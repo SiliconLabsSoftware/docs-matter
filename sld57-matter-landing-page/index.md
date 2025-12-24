@@ -30,7 +30,7 @@ Want to get a Matter application up and running quickly? Here's a high-level ove
     > **Note**: If you plan on implementing custom app behavior, proceed to step 4 after generating project and before building and flashing
 
 4. **[Optional] Customize Matter App Behavior and Logic**
-   - Use Project Configurator and other Studio tools to customize your app logic: [Developing with Project Configurator](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-developing-with-project-configurator/)
+   - Use Project Configurator and other Studio tools to customize your app logic: [Developing with Project Configurator](https://docs.silabs.com/ssv6ug/latest/ssv6-configure-project/)
    - If necessary, add custom source files for your application logic
    - Follow documentation to develop a custom matter device with ZAP and corresponding callbacks: [Custom Matter Device Development](/matter/{build-docspace-version}/matter-references/custom-matter-device) 
 

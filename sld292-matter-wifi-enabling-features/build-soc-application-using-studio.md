@@ -1,8 +1,8 @@
 # Building the 917 SoC Matter Accessory Devices (MADs) using Simplicity Studio
 
-In Simplicity Studio 5, create the Light MAD:
+In Simplicity Studio 6, create the Light MAD:
 
-1. [Download](https://www.silabs.com/developers/simplicity-studio) and Install Simplicity Studio 5.
+1. [Download](https://www.silabs.com/developers/simplicity-studio) and Install Simplicity Studio 6.
 
 2. To install the software packages for Simplicity Studio, refer to the [Software Package Installation Section](/matter/{build-docspace-version}/matter-wifi-getting-started-example/software-installation#installation-of-software-packages).
 
