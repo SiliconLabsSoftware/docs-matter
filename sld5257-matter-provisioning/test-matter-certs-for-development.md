@@ -314,7 +314,7 @@ Incoming(4):
 
 #### Create a New Lighting Over Thread Project
 
-![Lighting over Thread example](images/lighting-over-thread-example.png)
+![Lighting over Thread example](images/studio-thread-light.png)
 
 #### Install Matter Device Attestation Credentials Component
 

@@ -14,13 +14,13 @@ The following sections demonstrate how to extend the functionality of an existin
 
 Before you begin, ensure that Simplicity Studio is installed on your PC and you have downloaded the Simplicity SDK and the Matter extension. For more information on these requirements, see [here](matter/{build-docspace-version}/matter-overview/).
 
-To create the Matter Door Lock App, launch Simplicity Studio and connect a supported Silicon Labs development board (for example, EFR32MG2x) to your computer via USB. This guide uses MG24 as the platform. Next, navigate to the **Launcher** tab, select your connected device, and select the correct SDK.
+To create the Matter Door Lock App, launch Simplicity Studio and connect a supported Silicon Labs development board (for example, EFR32MG2x) to your computer via USB. This guide uses MG24 as the platform. Next, navigate to the **Devices** tab, select your connected device, and select the correct SDK.
 
-![Studio Launcher Window](./images/ClusterLogic1.png)
+![Studio Launcher Window](./images/studio-device-create-project.jpeg)
 
 Select **Create New Project**, then use the filter to search for "Matter". Locate the "Matter - SoC Lock over Thread with External Bootloader" project. Click **Next**, then select **Finish**. 
 
-![Matter SoC Lock over Thread Project](./images/ClusterLogic2.png)
+![Matter SoC Lock over Thread Project](./images/studio-lock-thread.png)
 
 The sample application has been successfully created in Simplicity Studio. You can now proceed to Step 2.
 

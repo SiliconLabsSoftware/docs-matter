@@ -30,17 +30,15 @@ This Quick-Start Guide will demo the out-of-box experience for adding an EFR32MG
 
 ### Step 2: Launch Simplicity Studio
 
-If the following screen does not appear automatically, select the Launcher icon on the top right of the window. The EFR32MG24 will appear in the **Connected Devices** tab.
+The EFR32MG24 will appear in the **Devices** tab.
 
-![Simplicity Studio Launcher](./images/studio-launcher-thread.png)
+![Simplicity Studio Launcher](./images/studio-device-brd4186c.png)
 
-Click the start button and the following screen will appear. Navigate to the **Example Projects & Demos** tab and filter for *Matter*.
+Click the **Example Projects & Demos** tab and filter for *Matter*.
 
-![Simplicity Studio Example Projects & Demos](./images/studio-demos-thread.png)
+![Simplicity Studio Example Projects & Demos](./images/thread-lighting-demo.png)
 
 For this quick start guide, select the **Matter - SoC Lighting over Thread** demo. A number of other apps are also available including a Lock, Thermostat, Appliance, and Window Covering. When ready, click **Run** to flash the device. When the device is flashed, a QR code will appear on the WSTK screen.
-
-![Simplicity Studio Run Demo](./images/studio-run-demo-thread.png)
 
 ### Step 3: Prepare the Device for Commissioning
 

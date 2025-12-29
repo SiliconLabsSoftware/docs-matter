@@ -6,17 +6,17 @@
 
    1. Start Simplicity Studio 6 with the latest SiSDK and Silicon Labs Matter SiSDK Extension installed (see details in the [Overview](/matter/{build-docspace-version}/matter-overview#software-requirements)).
 
-      ![the Matter extension](./resources/image1.png)
+      ![the Matter extension](./resources/studio-sdk-install.png)
 
    2. Connect the dev board to your development computer.
 
-   3. Once it shows up in the Debug Adapters view, select it.
+   3. Once it shows up in the Devices view, select it and click on **Create New Project**.
 
-      ![Debug Adapters view](resources/image2.png)
+      ![Devices view](resources/studio-connect-device-brd4186c.png)
 
-   4. Go to the Example Projects and Demos tab. Select the **OpenThread** filter and enter *openthread rcp* in the **Filter on keywords** box. Select the **OpenThread - RCP** example and click **Run**.
+   4. In the Example Projects and Demos tab. Select the **OpenThread** filter and enter *openthread rcp* in the **Filter on keywords** box. Select the **OpenThread - RCP** example and click **Run**.
 
-      ![Example projects and demos view](resources/image3.png)
+      ![Example projects and demos view](resources/studio-create-project-thread-rcp.jpeg)
 
    5. Disconnect the dev board and connect it to your RPi4B.
 

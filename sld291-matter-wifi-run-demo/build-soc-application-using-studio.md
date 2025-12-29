@@ -2,56 +2,33 @@
 
 In Simplicity Studio 6, create the Light MAD:
 
-1. [Download](https://www.silabs.com/developers/simplicity-studio) and Install Simplicity Studio 6.
-2. To install the software packages for Simplicity Studio, refer to the [Software Package Installation section](/matter/{build-docspace-version}/matter-wifi-getting-started-example/software-installation#installation-of-software-packages).
+1. In Simplicity Studio, click on **Matter**, under **Example Projects and Demos**, select a project, and click **Create**.
 
-3. Switch to the Launcher view (if not already in it).
+   ![Example Projects and Demos](images/studio-home-tab.png)
+   ![Example Projects and Demos](images/studio-create-project.jpeg)  
 
-   ![Silicon Labs - design](images/siwx917-launcher.png)
+2. In the Project Configuration window, Select the board and click **Next**.
+   ![Select Board](images/studio-select-board.png)
+   - Set -
+      - Solution and Project Name.
+      - Select Target IDE.
+      - Click **Finish**.
 
-4. Go to **All Products** in the **Launcher** tab and select a compatible board from the supported SiWx917 SOC dev boards.
+   ![Finish project](images/studio-project-configuration.jpeg)
 
-   ```shell
-     BRD4338A (Common Flash)
-   ```
+3. Once the project is created, click the **Open in VS Code** option on the top right corner.
+    ![Open project in VS Code](images/studio-open-vscode.png)
 
-   ![Silicon Labs - design](images/siwx917-board.png)
+4. In VS Code, click on the Studio Extension on the left panel and select **Build** option (Hammer Icon) in the Workspace tab.
 
-5. Once it shows up in the **Debug Adapters** view, select it.
+    ![Project Created](images/vscode-build-flash.png)
 
-   ![Silicon Labs - design](images/siwx917-soc-debugadapter.png)
+5. Once the project is compiled successfully, the binaries can be flashed either using the **Simplicity Commander** from the tools or using the **Flash** option beside the **Build**.
 
-6. Open the **Example Projects and Demos** tab, select the **Matter** filter, and enter _Wi-Fi_ in **Filter on keywords** and click **CREATE**.
+    ![Flash Project](images/vscode-flash.jpeg)
 
-   ![Silicon Labs - design](images/siwx917-project-create.png)
+6. When using Commander, select the kit and click on the **Flash** option in the left panel. Click on **Erase chip**.
 
-7. Rename the Project Name if you wish, and click **Finish**.
+7. Select the path for the project's *.s37* binary and click **Flash**.
 
-   ![Silicon Labs - design](images/siwx917-proj-config.png)
-
-8. Once the project is created, right-click on the project and select **Build Project** in the **Project Explorer** tab.
-
-   ![Silicon Labs - design](images/siwx917-build-proj.png)
-
-9. To flash the application, connect the compatible dev board to the machine or PC if not yet done.
-
-10. Once the project is compiled successfully, go to the Project Explorer view and select the binary to be flashed.
-
-    ![Silicon Labs - design](images/siwx917-binary-selection.png)
-
-11. Right-click the selected _\_isp.bin_ or _.rps_ binary file and click on **Flash to Device**.
-
-    ![Silicon Labs - design](images/siwx917-flash.png)
-
-    **Note**: SiWX917 SoC device will support both **\_isp.bin** and **.rps** file format to flash.
-    Users must not use **.s37** files for flashing.
-
-12. The Flash programmer window will open. Click the **Program** button to start the flashing.
-
-    ![Silicon Labs - design](images/siwx917-flash-programmer.png)
-
-    **Note**: Output of the SiWX917 SoC application will be displayed on the J-Link RTT Viewer.
-
-13. In order to debug Matter Application, right-click the selected _\_isp.bin_ binary and click on **Debug As**.
-
-    ![Silicon Labs - design](images/siwx917-debug-page.png)
+    ![Flash to Device](images/commander-flash-project.png)

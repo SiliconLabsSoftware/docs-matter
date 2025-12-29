@@ -76,9 +76,9 @@ After flashing the Matter application to the module, Energy profiler or a power 
 
 ![Power measurement connection overview](./images/wifi-powersave-overview.png)
 
-In Simplicity Studio, click **Tools** on the toolbar, select **Energy Profiler**, and click **OK**.
+In Simplicity Studio, click **Tools** on the left panel, select **Energy Profiler**, and click **Open Tool**.
 
-![Power measurement PowerProfiler](./images/wifi-powerprofiler.png)
+![Power measurement PowerProfiler](./images/studio-tools-energy-profiler.jpeg)
 
 From the Quick Access or Profiler menu, select **Start Energy Capture**.
 

@@ -30,17 +30,15 @@ This Quick-Start Guide will demo the out-of-box experience for adding an SiWx917
 
 ### Step 2: Launch Simplicity Studio
 
-If the following screen does not appear automatically, select the Launcher icon on the top right of the window. The SiWx917 SoC will appear in the **Connected Devices** tab.
+The SiWx917 SoC will appear in the **Devices** tab.
 
-![Simplicity Studio Launcher](./images/studio-launcher-wifi.png)
+![Studio Devices](./images/studio-device-brd4338a.jpeg)
 
-Click the start button and the following screen will appear. Navigate to the **Example Projects & Demos** tab and filter for *Matter*.
+Click the **Example Projects & Demos** tab and filter for *Matter*.
 
-![Simplicity Studio Example Projects & Demos](./images/studio-demos-wifi.png)
+![Simplicity Studio Example Projects & Demos](./images/wifi-light-demo.png)
 
 For this quick start guide, select the **Matter - SoC Siwx917 Lighting Example over Wi-Fi** demo. A number of other apps are also available including a Lock, Thermostat, Appliance, and Window Covering. When ready, click **Run** to flash the device. When the device is flashed, a QR code will appear on the WSTK screen. If no QR appears on the screen, the connectivity firmware may need to be updated. Follow the steps here for [Upgrading the Connectivity Firmware on SoC Devices](https://docs.silabs.com/matter/latest/matter-wifi-run-demo/loading-firmware-for-ncp-and-soc-boards#upgrading-the-connectivity-firmware-on-so-c-devices).
-
-![Simplicity Studio Run Demo](./images/studio-run-demo-wifi.png)
 
 ### Step 3: Prepare the Device for Commissioning
 
