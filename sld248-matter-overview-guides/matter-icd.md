@@ -14,7 +14,7 @@ To begin creating an OpenThread ICD example, create a generic Matter over Thread
 
 1. Create project.
 
-    ![Project Generation](images/icd-project-generation.png)
+    ![Project Generation](images/icd-project-generation.jpeg)
 
 2. Navigate to the **Configuration Tools** section and open the **ZCL Advanced Platform (ZAP)**.
 
@@ -112,7 +112,7 @@ The User Active Mode Trigger feature in the ICD Management cluster indicates whe
 
 To change default values corresponding to Matter ICD examples, modify them in either:
 
-1. `config/sl_matter_icd_config.h`
+1. `config/sl_matter_icd_config.h` in VS Code
 2. ICD component configurator
 
 ![ICD Configuration](images/icd-config.png)

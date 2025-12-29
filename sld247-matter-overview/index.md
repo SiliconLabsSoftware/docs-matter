@@ -70,11 +70,9 @@ Pre-built images for the SiWx917 connectivity firmware are available per the ins
 
 **Tera Term**: [Tera Term](https://github.com/TeraTermProject/osdn-download) is the terminal emulator for Microsoft Windows that supports serial port, telnet, and SSH connections.
 
-**Silicon Labs Matter SiSDK Extension**: Once Simplicity Studio 6 is installed, you will be prompted to install the Simplicity SDK, formerly released as Gecko SDK (GSDK). Here you should also install the Matter Enablement Package by making sure the extension is checked, as shown.
+**Silicon Labs Matter SiSDK Extension**: Once Simplicity Installer is installed, you will be prompted to install the Simplicity SDK, formerly released as Gecko SDK (GSDK). Here you should also install the Matter and WiseConnect Enablement Package by making sure the extension is checked, as shown.
 
-![Installing the Matter Extension](./resources/install-package-advanced-device.png)
-
-**Installation of Wi-Fi SDK and WiSeConnect Packages**: The following packages will be installed during the installation of Simplicity Studio. Refer to [Package Installation](/matter/{build-docspace-version}/matter-wifi-getting-started-example/software-installation).
+![Installing the Matter Extension](./resources/install-package-advanced-device.jpeg)
 
 **Matter Hub Raspberry Pi Image**: A copy of the pre-built image from the Silicon Labs web services can be downloaded in this [zipfile](https://www.silabs.com/documents/public/software/SilabsMatterPi_2.6.0-1.4-extension.zip). **Note** this is a large file and will take some time to download.
 
