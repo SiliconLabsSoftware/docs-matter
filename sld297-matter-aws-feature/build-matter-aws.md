@@ -21,7 +21,9 @@ To enable the component in Simplicity Studio, add the following components.
     ![TLS 1.2 PRF Component](images/tls_prf_component_install.png)
 
 ## How to Add the Matter + AWS Server, Client, Cluster Details.
-- Go to the `matter_<version>/third_party/matter_sdk/examples/platform/silabs/matter_aws/matter_aws_interface/include/` folder from Project Explorer.
+- Go to the `third_party/matter_sdk/examples/platform/silabs/matter_aws/matter_aws_interface/include/` folder from **Browse to Location** option by right-clicking on the **Silicon Labs Matter** in `Settings > SDKs`.
+![Matter Extension Browse to Location](images/aws-sdk-location.png)
+
 - Update the definitions for the server ID, client ID and cluster in `MatterAwsConfig.h`:    
     - Update the AWS server name at `#define MATTER_AWS_SERVER_HOST ""`.
     - Update the client ID at `#define MATTER_AWS_CLIENT_ID ""`.
@@ -39,17 +41,13 @@ To enable the component in Simplicity Studio, add the following components.
 
 - After adding the Matter + AWS component as described above, refresh the `matter-extension` in Simplicity Studio.
 
--  On the **Launcher** tab, select **Preferences**.
+-  In the **Home** tab, from the left panel, select **Settings**.
 
- ![Select Preferences](images/select-preferences.png)
+ ![Select Settings](images/aws-build-settings.jpg)
 
-- Expand the **Simplicity Studio** section, and click the **SDKs** tab.
+- Click on **SDKs**, ensure the correct version of the SDK is selected, and then click **Refresh** in the right side menu.
 
- ![Select SDK](images/select-studio-sdk-option.png)
-
-- Expand **Simplicity SDK**, and click **Refresh** in the side menu.
-
- ![Select Refresh](images/select-refresh-option.png)
+ ![Select Refresh](images/aws-build-sdk-refresh.jpg)
 
 - Build the Matter + AWS application using Simplicity Studio as described in
   - [Build SOC Application Using Studio](/matter/{build-docspace-version}/matter-wifi-run-demo/build-soc-application-using-studio).
