@@ -100,18 +100,18 @@ After successfully running the Matter Lighting app to the ecosystem, the next st
    Simplicity Studio will create a new Solution called MatterLightOverWiFiSolution with the MatterLightOverThreadSolution project inside.
 4. Open the project.
 
-   ![Creating a project](./images/studio-project.png)
+   ![Creating a project](./images/studio-lighting-thread.jpeg)
 
 ### Step 2: Build the Project
 
-1. Once the project is open, click the **Build** button in the toolbar.
+1. Once the project is generated, select **Open in VS Code** and click the **Build** button.
 2. Ensure that the build completes successfully without any errors.
 
-   ![Creating a project](./images/studio-build.png)
+   ![Creating a project](./images/vscode-build-flash.png)
 
 ### Step 3: Flash the Device
 
-1. After building the project, the output will include an `.s37` file in the GNU ARM v12.2.1 - Default folder.
+1. After building the project, the output will include an `.s37` file in the artifacts folder.
 2. Connect the Silabs WSTK + EFR32 SoC to the PC via USB.
 3. Navigate to **Tools** and open Simplicity Commander.
 4. Select the desired board according to its serial number and navigate to the **Flash** tab.
