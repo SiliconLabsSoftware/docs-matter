@@ -21,39 +21,31 @@ These are the generic software tools required for both NCP and SoC devices.
 
 The following packages will be installed during the installation of Simplicity Studio:
 
-### Gecko SDK Extension
+### Simplicity SDK Extension
 
-If you already selected the Gecko SDK extension while installing Studio, you may skip this section. You may install Gecko SDK by following these steps:
+While installing Simplicity Studio, the Simplicity Installer by default installs the latest Simplicity SDK and extensions.
 
-- Installation Manager (recommended)
-- Manage SDKs Window
+**Note:** Version numbers mentioned in the screenshots might be outdated. Install the latest packages available with the studio.
 
-**Note:** Version numbers mentioned in the screenshot might be outdated. Install the latest packages available with the studio.
+#### Install Simplicity SDK Through the Simplicity Installer
 
-#### Install Gecko SDK Through the Installation Manager
+1. In the Simplicity Studio home page, select **Packages** from the left panel. The Simplicity Installer will open.
 
-1. Log in to Simplicity Studio.
+2. Select the **Package Manager** option.
+![Manage installed packages](images/simplicity-installer.png)
 
-2. In the Simplicity Studio home page, select **Install > Manage installed packages**.
-![Manage installed packages](images/install-gecko-sdk-step-1.png)
+3. Select the Simplicity SDKs option and click on **Add new SDK**. Ensure to check the Simplicity SDK, Matter Extension and WiseConnect boxes.
+![Installation step 2](images/studio-sdk-install.png)
 
-3. Select the **SDKs** tab.
+#### Install the Simplicity SDK Through the "Manage SDK" Window
 
-4. Next to the Gecko SDK version, click the three dots button.
-![Installation step 2](images/install-gecko-sdk-step-2.png)
-
-5. Select **Change Version** and select **New Version** from the dropdown to install, and click **Finish**.
-![Installation step 3](images/install-gecko-sdk-step-3.png)
-
-#### Install the Gecko SDK Through the "Manage SDK" Window
-
-1. Download the Gecko SDK v4.x source code from the following URL after substituting 4.x.x with the desired release version:
+1. Download the Simplicity SDK v4.x source code from the following URL after substituting 4.x.x with the desired release version:
 
    [https://github.com/SiliconLabs/gecko_sdk.git](https://github.com/SiliconLabs/gecko_sdk.git)
 
    If you don't know the release version, go to the GitHub releases page and select the version to download.
 
-2. Unzip the downloaded Gecko SDK-4.x.x.zip file.
+2. Unzip the downloaded Simplicity SDK-4.x.x.zip file.
 
 3. Launch Simplicity Studio and log in.
 
@@ -73,9 +65,9 @@ If you already selected the Gecko SDK extension while installing Studio, you may
 
     ![Browse](images/click-browse.png)
 
-9. Locate and select the Gecko SDK sub-folder extracted in step 2 above, which contains the source code.
+9. Locate and select the Simplicity SDK sub-folder extracted in step 2 above, which contains the source code.
 
-10. Studio will detect the Gecko SDK extension.
+10. Studio will detect the Simplicity SDK extension.
 
 11. Select the detected extension and click **OK**.
 
@@ -136,7 +128,7 @@ Install WiSeConnect SDK v2.x or v3.x through one of the following alternative pa
 
 6. The **Preferences** window will be opened in the **SDKs** section.
 
-7. Select Gecko SDK Suite vx.x.x and click **Add Extension**.
+7. Select Simplicity SDK Suite vx.x.x and click **Add Extension**.
 
     ![Add Extension](images/click-add-extensions.png)
 
