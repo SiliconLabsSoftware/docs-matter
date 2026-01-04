@@ -10,11 +10,11 @@
 
    2. Connect the dev board to your development computer.
 
-   3. Once it shows up in the Devices view, select it and click on **Create New Project**.
+   3. Once it shows up in the Devices view, select it and click **Create New Project**.
 
       ![Devices view](resources/studio-connect-device-brd4186c.png)
 
-   4. In the Example Projects and Demos tab. Select the **OpenThread** filter and enter *openthread rcp* in the **Filter on keywords** box. Select the **OpenThread - RCP** example and click **Run**.
+   4. In the Example Projects and Demos tab, Select the **OpenThread** filter and enter *openthread rcp* in the **Filter on keywords** box. Select the **OpenThread - RCP** example and click **Run**.
 
       ![Example projects and demos view](resources/studio-create-project-thread-rcp.jpeg)
 

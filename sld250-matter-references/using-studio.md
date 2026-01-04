@@ -15,4 +15,4 @@ Complete documentation on using the Simplicity Studio Energy Profiler is provide
 
 ## Custom Hardware Configuration
 
-At some point during product development you may need to move your project over to your custom hardware. In this case, you will likely need to change the pinout and hardware configuration in the example project to reflect your own custom project. You can do this using the Pin Tool. The Simplicity Studio 6 User's Guide contains full documentation on using the [Pin Tool](https://docs.silabs.com/ssv6ug/latest/ssv6-configure-project/pin-tool).
+At some point during product development, you may need to move your project over to your custom hardware. In this case, you will likely need to change the pinout and hardware configuration in the example project to reflect your own custom project. You can do this using the Pin Tool. The Simplicity Studio 6 User's Guide contains full documentation on using the [Pin Tool](https://docs.silabs.com/ssv6ug/latest/ssv6-configure-project/pin-tool).

@@ -38,7 +38,7 @@ After disabling network security, you need to capture the specific network traff
 
 For example, if you use Matter over Thread, you need a Thread sniffer, and if you use Matter over Wi-Fi, you need to capture Wi-Fi traffic.
 
-With Matter over Thread, you can sniff Thread traffic using a Silicon Labs WSTK and the Network Analyzer from Simplicity Studio v6. For this, you can refer to section 5.4 of [QSG170: Silicon Labs OpenThread QuickStart Guide](https://www.silabs.com/documents/public/quick-start-guides/qsg170-openthread-sdk-quick-start-guide.pdf).
+With Matter over Thread, you can sniff Thread traffic using a Silicon Labs WSTK and the Network Analyzer from Simplicity Studio v6. For this, you can refer to section 5.4 of [QSG170: Silicon Labs OpenThread QuickStart Guide](https://docs.silabs.com/openthread/latest/openthread-quick-start-guide/).
 
 After capturing Thread network traffic, export it as a PCAPNG file, which is a file format that can be read by Wireshark. At this point, you can only see Thread traffic since Wireshark currently cannot decode the Matter layer of the network packet yet:
 

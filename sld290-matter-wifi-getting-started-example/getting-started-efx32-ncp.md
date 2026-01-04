@@ -100,7 +100,7 @@ If Simplicity Studio does not detect the EFR32 radio board, try the following:
 
 This section describes how to create a project for the EFR32 boards.
 
-1. In Simplicity Studio, click on **Matter**, under **Example Projects and Demos**, select a project, and click **Create**.
+1. In Simplicity Studio, click **Matter**, under **Example Projects and Demos**, select a project, and click **Create**.
 
    ![Example Projects and Demos](images/studio-home-tab.png)
    ![Example Projects and Demos](images/studio-create-project.jpeg)  
@@ -112,7 +112,7 @@ This section describes how to create a project for the EFR32 boards.
 3. Once the project is created, click the **Open in VS Code** option on the top right corner.
     ![Open project in VS Code](images/studio-open-vscode.png)
 
-4. In VS Code, click on the Studio Extension on the left panel and select **Build** option (Hammer Icon) in the Workspace tab.
+4. In VS Code, click the Studio Extension on the left panel and select **Build** option (Hammer Icon) in the Workspace tab.
 
     ![Project Created](images/vscode-build-flash.png)
 

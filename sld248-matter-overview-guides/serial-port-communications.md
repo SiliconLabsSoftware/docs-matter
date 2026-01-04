@@ -28,7 +28,7 @@ To run matter shell on the Silicon Labs Platform, refer to the [Software Require
    - The Debug Mode is **Onboard Device (MCU)**.
    - The Preferred SDK is the version you selected earlier.
 
-7. Click on the **Create New Project** option and create a project for the Matter Lock Application.
+7. Click the **Create New Project** option and create a project for the Matter Lock Application.
 
    ![Silicon Labs - design](./images/matter-shell-lock-app.jpeg)
 

@@ -25,7 +25,7 @@ The following packages will be installed during the installation of Simplicity S
 
 While installing Simplicity Studio, the Simplicity Installer by default installs the latest Simplicity SDK and extensions.
 
-**Note:** Version numbers mentioned in the screenshots might be outdated. Install the latest packages available with the studio.
+>**Note:** Version numbers mentioned in the screenshots might be outdated. Install the latest packages available with the studio.
 
 #### Install Simplicity SDK Through the Simplicity Installer
 
@@ -34,7 +34,7 @@ While installing Simplicity Studio, the Simplicity Installer by default installs
 2. Select the **Package Manager** option.
 ![Manage installed packages](images/simplicity-installer.png)
 
-3. Select the Simplicity SDKs option and click on **Add new SDK**. Ensure to check the Simplicity SDK, Matter Extension and WiseConnect boxes.
+3. Select the Simplicity SDKs option and click **Add new SDK**. Ensure to check the Simplicity SDK, Matter Extension and WiseConnect boxes.
 ![Installation step 2](images/studio-sdk-install.png)
 
 #### Install the Simplicity SDK Through the "Manage SDK" Window
