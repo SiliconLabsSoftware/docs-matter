@@ -36,8 +36,8 @@ Below are the software tools, packages, and images required for executing Matter
 
 ### Software Packages
 
-- Simplicity SDK v2024.x
-- WiSeConnect SDK v3.x
+- Simplicity SDK v2025.x
+- WiSeConnect SDK v4.x
 
 ### Firmware Images
 

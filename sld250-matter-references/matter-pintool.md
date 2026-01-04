@@ -23,7 +23,7 @@ When creating a configuration for a custom board do the following:
 
 1. In Simplicity Studio click `Create a New Project`
    to start the project wizard. Choose your development board type, and the
-   latest Gecko SDK you'll be working from. Click **Next**.
+   latest Simplicity SDK you'll be working from. Click **Next**.
 
 2. Select the `Empty C++ Project` example and click **Next**.
 

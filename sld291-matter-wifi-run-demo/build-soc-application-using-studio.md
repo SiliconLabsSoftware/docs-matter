@@ -29,6 +29,6 @@ In Simplicity Studio 6, create the Light MAD:
 
 6. When using Commander, select the kit and click the **Flash** option in the left panel. Click **Erase chip**.
 
-7. Select the path for the project's *.s37* binary and click **Flash**.
+7. Select the path for the project's *.rps* binary and click **Flash**.
 
     ![Flash to Device](images/commander-flash-project.png)

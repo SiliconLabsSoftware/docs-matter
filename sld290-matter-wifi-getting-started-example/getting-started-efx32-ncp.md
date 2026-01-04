@@ -61,9 +61,9 @@ Below are the software tools, packages, and images required for executing Matter
 
 ### Software Packages
 
-- Simplicity SDK v2024.x
+- Simplicity SDK v2025.x
 - WiSeConnect SDK
-  - For SiWx917 use WiSeConnect SDK v3.x
+  - For SiWx917 use WiSeConnect SDK v4.x
 
 ### Firmware Images
 
@@ -105,7 +105,11 @@ This section describes how to create a project for the EFR32 boards.
    ![Example Projects and Demos](images/studio-home-tab.png)
    ![Example Projects and Demos](images/studio-create-project.jpeg)  
 
-2. In the Project Configuration window, after selecting the board, click **Finish**.
+2. In the Project Configuration window, after selecting the board, click **Next**.
+    - Set -
+      - Solution and Project Name.
+      - Select Target IDE.
+      - Click **Finish**.
 
    ![Finish project](images/studio-project-configuration.jpeg)
 

@@ -11,7 +11,11 @@ This page provides a detailed description on how to create a Wi-Fi NCP project f
    ![Example Projects and Demos](images/studio-home-tab.png)
    ![Example Projects and Demos](images/studio-create-project.jpeg)  
 
-4. In the Project Configuration window, after selecting the board, click **Finish**.
+4. In the Project Configuration window, after selecting the board, click **Next**.
+    - Set -
+      - Solution and Project Name.
+      - Select Target IDE.
+      - Click **Finish**.
 
    ![Finish project](images/studio-project-configuration.jpeg)
 
