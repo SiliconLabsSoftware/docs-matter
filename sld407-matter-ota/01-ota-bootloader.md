@@ -110,7 +110,7 @@ This example is for an internal storage bootloader for the Matter lighting app o
 
     ![Flash Map](./images/simplicity-commander-flash-map.png)
 
-- The address of the next page block address is 0x080d0000. The end address of the last available block before the NVM3 region (blue) is 0x08174000. This means you can set the **Start Address** to 0x080d0000 and the **Slot Size** to 0xa4000 or 671744 (671744 = 0x08174000 - 0x080d0000). The slot size is sufficient for this GBL file (671kB > 518KB).
+- The address of the next page block is 0x080d0000. The end address of the last available block before the NVM3 region (blue) is 0x08174000. This means you can set the **Start Address** to 0x080d0000 and the **Slot Size** to 0xa4000 or 671744 (671744 = 0x08174000 - 0x080d0000). The slot size is sufficient for this GBL file (671kB > 518KB).
 - As discussed [above](#creating-the-project), you need to create an Internal Storage Bootloader project. In this case, targeting BRD4187C which has a 1.5MB of flash, **Bootloader - SoC Internal Storage (single image on 1536kB device)** is an appropriate choice. Configure the Bootloader Storage Slot component and set **Slot Address** and **Slot Size** according to what was determined in the previous step.
 
     ![StudioProject](./images/studio-6-matter-bootloader-storage-slot.png)
