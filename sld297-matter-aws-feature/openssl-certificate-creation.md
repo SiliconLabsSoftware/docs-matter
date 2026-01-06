@@ -45,7 +45,9 @@ Use the following commands to generate certificates:
 3. **Upload CSR to AWS**: While creating the AWS IoT thing, use the **Upload CSR** option in the configure device
    certificate step. Once the CSR generated in step 2 is uploaded, AWS will
    generate an AWS CA-authenticated `device.crt`.
-   ![AWS CSR Upload ](./images/matter_aws_device_csr_certificate_generation.png)
+   ![AWS CSR Upload ](./images/matter-aws-device-csr-certificate-generation.png)
 
 To use MQTT Explorer, repeat steps 1 and 2 to create an additional set of certificates 
 (e.g., `explorer.crt` and `explorer.key`). Use a different name to uniquely identify the certificates.
+
+> **Note:** The supported certificate type to be used in this PoC is ECDSA.

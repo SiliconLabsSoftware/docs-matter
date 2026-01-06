@@ -1,8 +1,8 @@
 # Build Procedure For Matter + AWS
 
-The following components are common for all apps and should be modified in the corresponding application-specific `.slcp` file using the Studio Project Configurator tool.
+The following steps are common for all apps and should be modified using the Studio Project Configurator tool.
 
-## How to Add the Matter + AWS Component
+## Adding the Matter + AWS Component
 To enable the component in Simplicity Studio, add the following components.
 
 - Go to **Software** components, search for `Matter_Wifi`. Click the **Settings** symbol beside Matter Wi-fi component in the left panel or the **Configure** option and enable IPV4 configuration.
@@ -16,25 +16,28 @@ To enable the component in Simplicity Studio, add the following components.
  ![Default Entropy Source for Matter + AWS](images/matter-aws-dependency-1.png)
  ![Public-Key Abstaction Layer for Matter + AWS](images/matter-aws-dependency-2.png)
 
-### Added Step for 917 NCP
+### Additional Step Needed Only For 917 NCP
  - In **Software Components**, search for `TLS 1.2 PRF` and install the TLS 1.2 PRF component.
     ![TLS 1.2 PRF Component](images/tls-prf-component-install.png)
 
-## How to Add the Matter + AWS Server, Client, Cluster Details.
+## Adding the AWS Server, Client ID and Cluster Details
 - Go to the `third_party/matter_sdk/examples/platform/silabs/matter_aws/matter_aws_interface/include/` folder from **Browse to Location** option by right-clicking **Silicon Labs Matter** in `Settings > SDKs`.
 ![Matter Extension Browse to Location](images/aws-sdk-location.png)
 
 - Update the definitions for the server ID, client ID and cluster in `MatterAwsConfig.h`:    
     - Update the AWS server name at `#define MATTER_AWS_SERVER_HOST ""`.
     - Update the client ID at `#define MATTER_AWS_CLIENT_ID ""`.
-    - Update the cluster information based on your app, with reference to the below table:
+    - Update the cluster server information from the below table, based on your app:
 
 | Application Type | Cluster Definition |
 |------------------|--------------------|
-| Matter Thermostat | `#define ZCL_USING_THERMOSTAT_CLUSTER_SERVER` |
-| Matter Light | `#define ZCL_USING_ON_OFF_CLUSTER_SERVER` |
-| Matter Lock | `#define ZCL_USING_DOOR_LOCK_CLUSTER_SERVER` |
-| Matter Window Covering | `#define ZCL_USING_WINDOW_COVERING_CLUSTER_SERVER` |
+| Thermostat | `#define ZCL_USING_THERMOSTAT_CLUSTER_SERVER` |
+| Lighting | `#define ZCL_USING_ON_OFF_CLUSTER_SERVER` |
+| Lock | `#define ZCL_USING_DOOR_LOCK_CLUSTER_SERVER` |
+| Window Covering | `#define ZCL_USING_WINDOW_COVERING_CLUSTER_SERVER` |
+
+**MatterAwsConfig.h File:**
+![MatterAwsConfig.h File](./images/matter-aws-config.png)
 
 
 ## Building Matter + AWS Application
@@ -63,6 +66,11 @@ To enable the component in Simplicity Studio, add the following components.
     - You can see the same data in AWS IoT.
     ![AWS IoT App Data](./images/matter-aws-iot-app-data.png)
 
+> **Note:** 
+> -   The supported certificate type to be used in this PoC is ECDSA.
+> -   AWS RootCA used in this PoC is
+    https://www.amazontrust.com/repository/AmazonRootCA3.pem
+
 ## Compile Using New/Different Certificates
 
 -   Two devices should not use the same client ID. Use a different client ID for
@@ -79,8 +87,5 @@ To enable the component in Simplicity Studio, add the following components.
         `examples/platform/silabs/matter_aws/matter_aws_interface/include/MatterAwsConfig.h` file.
         -   Provide `MATTER_AWS_SERVER_HOST` with your AWS Server name.
         -   Provide `MATTER_AWS_CLIENT_ID` with your device/thing ID.
-        -   Provide  `ZCL_USING_THERMOSTAT_CLUSTER_SERVER` with the cluster details.
--   The preferred certificate type to use in the application is ECDSA.
--   AWS RootCA used in this PoC is
-    https://www.amazontrust.com/repository/AmazonRootCA3.pem
+        -   Update `ZCL_USING_ON_OFF_CLUSTER_SERVER` with the cluster server details based on your app.
 
