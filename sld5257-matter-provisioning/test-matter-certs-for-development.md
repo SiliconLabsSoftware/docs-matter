@@ -14,7 +14,7 @@
 
 - **Commissionee**
 
-  - WSTK with MG24A or MG24B (Initial boards supported for Matter CPMS Alpha program). The provisioning script currently supports MG12 devices but will no longer do so moving forward. In this tutorial, you will build an application with a BRD4187C.
+  - WSTK with a Matter compatible development board (see the [Silicon Labs Matter Selector Guide](https://www.silabs.com/wireless/matter/selector-guide). The provisioning script currently supports the devices listed in [Generator Firmware Images](http://github.com/SiliconLabs/matter_extension/tree/main/provision/images). In this tutorial, you build an application with a BRD4187C.
 
 ## Introduction to Provisioning
 
@@ -58,13 +58,12 @@ A hands-on example of these provisioning flows will be provided in the following
 
 ## Initial Setup
 
-The provisioning code resides under `extension/matter_extension` in the SiSDK directory tree for the SDK used in your Studio project, for example `SimplicityStudio/SDKs/sisdk_release_2/extension/matter_extension/provision`.
+The provisioning code resides under `extension/matter_extension` in the SiSDK directory tree for the SDK used in your Studio project, for example `SimplicityStudio/SDKs/sisdk_release/extension/matter_extension/provision`.
 
-Within the Studio installation, the chip-cert binary can found at <studio_installation>/v5/developer/adapter_packs/cpms/applications.
 
 ## Generating Matter Certificates (CD, PAA,PAI,DAC) - Provisioning Script
 
-Reference and detailed explanation of the different processes that take place in the provisioning script are detailed in [https://github.com/SiliconLabs/matter_extension/tree/main/provision](https://github.com/SiliconLabs/matter_extension/tree/main/provision). The following is an example of how to generate certificates using the chip-cert tool. Start with generating the Certification Declaration as follows:
+Reference and detailed explanation of the different processes that take place in the provisioning script are detailed in [Silicon Labs Matter Extension Repository Github](https://github.com/SiliconLabs/matter_extension/tree/main/provision). The following is an example of how to generate certificates using the chip-cert tool. Start with generating the Certification Declaration as follows:
 
 ```bash
 chip-cert gen-cd -K credentials/test/certification-declaration/Chip-Test-CD-Signing-Key.pem -C credentials/test/certification-declaration/Chip-Test-CD-Signing-Cert.pem -O credentials/test/certification-declaration/Chip-Test-CD-1049-8005.der -f 1 -V 0x1049 -p 0x8005 -c ZIG20142ZB330001-24 -l 0 -i 0 -n 257 -t 0 -o 0x1049 -r 0x8005
@@ -102,7 +101,7 @@ Once you have finished generating you Certificates, you can proceed with install
 
 - Simplicity Commander:
 
-  - Please install Simplicity Commander and add it to you environment variables.
+  - Install [Simplicity Commander](https://www.silabs.com/software-and-tools/simplicity-studio/simplicity-commander?tab=getting-started) and add it to your environment variables.
 
   - example for Mac:
 
@@ -136,11 +135,11 @@ Once you have finished generating you Certificates, you can proceed with install
 
 Once you have generated the PAA, PAI and DAC and have installed the provisioning tool you can use it to write the Commissionable Data and the Device Attestation Data. As previously mentioned, there are two provisioning flows possible, following are the necessary steps to correctly provision your device.
 
-Go to the ./matter_extension/provision/directory:
+Go to the `./matter_extension/provision/directory`.
 
 ### Generator Firmware
 
-To choose different provisioning flows, the provisioning script has the argument option -gf to direct the script:
+The [Generator Firmware (GFW)](https://github.com/SiliconLabs/matter_extension/tree/main/provision#generator-firmware) is a FreeRTOS application that runs on the targeted device, and assists with the provisioning of the device. To choose a specific Generator Firmware, the provisioning script has the argument option `-gf` to direct the script:
 
 ```bash
 python3 ./provision.py --inputs defaults.json ---pai_cert ../credentials/test/attestation/pai_cert.pem --dac_cert ../credentials/test/attestation/dac_cert.pem --dac_key ../credentials/test/attestation/dac_key.pem --certification ../credentials/test/certification-declaration/Chip-Test-CD-1049-8005.der --discriminator 0xab2 --gen_fw images/efr32mg24_psa123_nvm3k2.s37 
@@ -314,15 +313,8 @@ Incoming(4):
 
 #### Create a New Lighting Over Thread Project
 
-![Lighting over Thread example](images/lighting-over-thread-example.png)
+![Lighting over Thread example](images/lighting-over-thread-example-ss6.png)
 
-#### Install Matter Device Attestation Credentials Component
-
-![Example project selection](images/install-credentials-component.png)
-
-This component is meant for the firmware to refer to the credentials injected by the provisioning tool.
-
-Once this is completed, you can build your image and flash the \<image\>.s37 using Simplicity Studio.
 
 ### Store Commissionable Data (NVM3), Attestation Data CD,PAI, DAC (Main Flash)
 
