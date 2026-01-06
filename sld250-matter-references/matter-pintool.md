@@ -19,24 +19,29 @@ When creating a configuration for a custom board do the following:
 3. Copy the generated output config files into a custom board support directory
    within the Matter repository.
 
-## 2. Create a sample "Empty C++ project" in Simplicity Studio
+## 2. Create a Sample "Empty C++ project" in Simplicity Studio
 
-1. In Simplicity Studio click `Create a New Project`
-   to start the project wizard. Choose your development board type, and the
-   latest Simplicity SDK you'll be working from. Click **Next**.
+1. In Simplicity Studio, next to **Start a New Project**, click **all projects & demos** to start the project wizard. 
+2. In the upper right, click **Select Device** to choose your development board, and in the dropdown, select the appropriate Simplicity SDK.
+3. Scroll to the **Empty C++ Project** example, and click **Create**.
+4. Click **Finish** to create your project.
+   to start the project wizard. Choose your development board type via the `+ Select Device` button, and the
+   latest Simplicity SDK you'll be working from
 
-2. Select the `Empty C++ Project` example and click **Next**.
+5. Select the `Empty C++ Project` example and click **Create**.
 
-3. Click **Finish** to create your project.
+6. Select a compatible device then click **Next**.
+
+7. Click **Finish** to create your project.
 
 ## 3. Customize your Components and Pin configuration in Simplicity Studio
 
-Once you have your project created you will see your project and project
-configuration in Simplicity Studio's Project Configurator. Full documentation on
+Once you have your project created, you will see your project and project
+configuration in Simplicity Studio's Project Configurator. For full documentation on the use of the Project Configurator and Pin Tool, see the [Simplicity Studio User's Guide](https://docs.silabs.com/ssv6ug/latest/ssv6-configure-project/pin-tool).
 the use of the Project Configurator and Pin Tool are located here:
-[Simplicity Studio 6 User's Guide](https://docs.silabs.com/ssv6ug/latest/ssv6-configure-project/project-configurator)
+[Simplicity Studio User's Guide](https://docs.silabs.com/ssv6ug/latest/ssv6-configure-project/pin-tool)
 
-## 4. Generate your Component and Pin configuration in Simplicity Studio
+## 4. Generate your Component and Pin Configuration in Simplicity Studio
 
 When you save your project configuration, Simplicity Studio
 saves all the generated header files out into a `config` directory in your

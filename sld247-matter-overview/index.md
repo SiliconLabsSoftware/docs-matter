@@ -13,16 +13,20 @@ The procedures here describe how to make a simple network of a light, a switch, 
 ## Initial Setup
 
 Both the Matter over Wi-Fi and Matter over Thread demos require that you have set up a simple development environment with Simplicity Studio,
-two EFR32MG24-based development boards, and a Raspberry Pi used as a Matter hub. The following requirements are common to both demos. The Thread demo also requires a radio co-processor (RCP) as part of the Matter hub. The requirements for this are provided in the [introduction to the Thread demo](/matter/{build-docspace-version}/matter-light-switch-example/02-thread-light-switch-example).
+two Matter compatible development boards (see the [Silicon Labs Matter Selector Guide](https://www.silabs.com/wireless/matter/selector-guide) for available boards and their capabilities), and a Raspberry Pi used as the Matter Controller. The following requirements are common to both demos. The Thread demo requires a radio co-processor (RCP) connected to the Matter Controller. The requirements for this are provided in the [introduction to the Thread demo](/matter/{build-docspace-version}/matter-light-switch-example/02-thread-light-switch-example).
 
 ### Hardware Requirements
 
 #### Matter Hub
 
-- 1 Raspberry Pi 4B
+- 1 Raspberry Pi 4B or newer
 - 1x high speed, 64 GB SD card
 
-#### Matter Devices
+
+**Matter Over Thread Devices**
+
+- SoC: EFR32x MG24, MG26, MG301
+- RCP: EFR32x MG21, MG24, MG26, MG301
 
 **Matter Over Wi-Fi Accessory Device Requirements for NCP Mode**
 
@@ -70,9 +74,15 @@ Pre-built images for the SiWx917 connectivity firmware are available per the ins
 
 **Tera Term**: [Tera Term](https://github.com/TeraTermProject/osdn-download) is the terminal emulator for Microsoft Windows that supports serial port, telnet, and SSH connections.
 
-**Silicon Labs Matter SiSDK Extension**: Once Simplicity Installer is installed, you will be prompted to install the Simplicity SDK, formerly released as Gecko SDK (GSDK). Here you should also install the Matter and WiseConnect Enablement Package by making sure the extension is checked, as shown.
+**Silicon Labs Matter SiSDK Extension**: Once Simplicity Studio is installed, you will be prompted to install the Simplicity SDK. Here you should also install the Matter Enablement Package by making sure the extension is checked, as shown.
 
-![Installing the Matter Extension](./resources/install-package-advanced-device.jpeg)
+![Installing the Matter Extension](./resources/ssv6-matter-install-guide-1.png)
+
+![Installing the Matter Extension](./resources/ssv6-matter-install-guide-2.png)
+
+![Installing the Matter Extension](./resources/ssv6-matter-install-guide-3.png)
+
+**Installation of Wi-Fi SDK and WiSeConnect Packages**: The following packages will be installed during the installation of Simplicity Studio. Refer to [Package Installation](/matter/{build-docspace-version}/matter-wifi-getting-started-example/software-installation).
 
 **Matter Hub Raspberry Pi Image**: A copy of the pre-built image from the Silicon Labs web services can be downloaded in this [zipfile](https://www.silabs.com/documents/public/software/SilabsMatterPi_2.6.0-1.4-extension.zip). **Note** this is a large file and will take some time to download.
 
@@ -83,6 +93,12 @@ Pre-built images for the SiWx917 connectivity firmware are available per the ins
 **SSH Client**: Managing the Matter hub often requires connecting to it remotely. An SSH client is needed to follow the step-by-step example in this document (PuTTY is used). Install software such as [PuTTY](https://www.putty.org/), Terminal, or a similar application for access to the Raspberry Pi-based Matter hub.
 
 **SD Card-Flashing Software**: Many different applications can be used to prepare an SD card for the Raspberry Pi, such as the [Raspberry Pi Imager](https://www.raspberrypi.com/documentation/computers/getting-started.html#install-using-imager) and [balenaEtcher](https://www.balena.io/etcher). The step-by-step example in this document uses the Raspberry Pi Imager.
+
+### Visual Studio Code Development
+
+Once a Matter project is created and any components or ZCL clusters modified in Simplicity Studio, Silicon Labs provides a Visual Studio Code (VS Code) IDE extension where code changes can be made. Simplicity Studio 6 (SSv6) does not provide an IDE; instead, VS Code is used. Projects can be built, flashed and debugged directly from VS Code.
+
+For more information on development with Visual Studio Code, please visit [Visual Studio Code Enablement](https://docs.silabs.com/ss-vscode/latest/ss-vscode-start/).
 
 ## Next Steps
 

@@ -1,10 +1,10 @@
 # Development Tools in Simplicity Studio
 
-Simplicity Studio contains a number of integrated tools that you can use with projects created within that environment.
+Simplicity Studio contains a number of integrated tools that you can use with projects created within that environment. Documentation on all of these tools can be found in the [Simplicity Studio 6 User's Guide](https://docs.silabs.com/ssv6ug/latest/ssv6ug-overview/).
 
 ## Bluetooth GATT Configurator
 
-The Simplicity Studio Bluetooth LE (BLE) GATT Configurator is an Advanced Configurator within the Simplicity Studio Project Configuration suite. You can add the BLE GATT configuration by adding the `Bluetooth > GATT > Configuration` component to your project. This will enable the BLE GATT Configurator under `Configuration Tools > Bluetooth GATT Configurator`. See the Simplicity Studio v6 User's Guide for more information on using the [BLE GATT Configurator](https://docs.silabs.com/ssv6ug/latest/ssv6-configure-project/bluetooth-gatt-configurator).
+The Simplicity Studio Bluetooth LE (BLE) GATT Configurator is an Advanced Configurator within the Simplicity Studio Project Configuration suite. You can add the BLE GATT configuration by adding the **Bluetooth > GATT > Configuration** component to your project. This will enable the BLE GATT Configurator under **Configuration Tools > Bluetooth GATT Configurator**. See the Simplicity Studio User's Guide for more information on using the [BLE GATT Configurator](https://docs.silabs.com/ssv6ug/latest/ssv6-configure-project/bluetooth-gatt-configurator).
 
 ## Energy Profiler
 
