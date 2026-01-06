@@ -14,7 +14,7 @@
 
 - **Commissionee**
 
-  - WSTK with a Matter compatible development board (see the [Silicon Labs Matter Selector Guide](https://www.silabs.com/wireless/matter/selector-guide). The provisioning script currently supports the devices listed in [Generator Firmware Images](http://github.com/SiliconLabs/matter_extension/tree/main/provision/images). In this tutorial, we will build an application with a BRD4187C.
+  - WSTK with a Matter compatible development board (see the [Silicon Labs Matter Selector Guide](https://www.silabs.com/wireless/matter/selector-guide). The provisioning script currently supports the devices listed in [Generator Firmware Images](http://github.com/SiliconLabs/matter_extension/tree/main/provision/images). In this tutorial, you build an application with a BRD4187C.
 
 ## Introduction to Provisioning
 
@@ -101,7 +101,7 @@ Once you have finished generating you Certificates, you can proceed with install
 
 - Simplicity Commander:
 
-  - Please install [Simplicity Commander](https://www.silabs.com/software-and-tools/simplicity-studio/simplicity-commander?tab=getting-started) and add it to you environment variables.
+  - Install [Simplicity Commander](https://www.silabs.com/software-and-tools/simplicity-studio/simplicity-commander?tab=getting-started) and add it to your environment variables.
 
   - example for Mac:
 
@@ -135,11 +135,11 @@ Once you have finished generating you Certificates, you can proceed with install
 
 Once you have generated the PAA, PAI and DAC and have installed the provisioning tool you can use it to write the Commissionable Data and the Device Attestation Data. As previously mentioned, there are two provisioning flows possible, following are the necessary steps to correctly provision your device.
 
-Go to the `./matter_extension/provision/directory:`
+Go to the `./matter_extension/provision/directory`.
 
 ### Generator Firmware
 
-The [Generator Firmware (GFW)](https://github.com/SiliconLabs/matter_extension/tree/main/provision#generator-firmware) is a FreeRTOS application that runs on the targeted device, and assists with the provisioning of the device. To choose a specific Generator Firmware, the provisioning script has the argument option -gf to direct the script:
+The [Generator Firmware (GFW)](https://github.com/SiliconLabs/matter_extension/tree/main/provision#generator-firmware) is a FreeRTOS application that runs on the targeted device, and assists with the provisioning of the device. To choose a specific Generator Firmware, the provisioning script has the argument option `-gf` to direct the script:
 
 ```bash
 python3 ./provision.py --inputs defaults.json ---pai_cert ../credentials/test/attestation/pai_cert.pem --dac_cert ../credentials/test/attestation/dac_cert.pem --dac_key ../credentials/test/attestation/dac_key.pem --certification ../credentials/test/certification-declaration/Chip-Test-CD-1049-8005.der --discriminator 0xab2 --gen_fw images/efr32mg24_psa123_nvm3k2.s37 
