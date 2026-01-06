@@ -76,30 +76,31 @@ Once commissioning completes, the Apple Home app prompts you to select one room
 
 ## Taking it Further
 
-After successfully running the Matter Lighting app to the ecosystem, the next step is to create, build, and flash a Matter sample project from Simplicity Studio.
+After successfully running the Matter Lighting app to the ecosystem, the next step is to create, build, and flash a Matter sample project from Simplicity Studio. This section describes creating a new Matter project, building it in the Silicon Labs Extension for the Visual Studio Code IDE, and flashing it to the EFR32 SoC device. 
+
+For instructions on installing Simplicity Studio and the Silicon Labs Extension for the Visual Studio Code IDE, refer to the [Simplicity Studio 6 Getting Started Guide](https://docs.silabs.com/ssv6ug/latest/ssv6ug-overview/) and [Simplicity Studio Extension for VS Code](https://docs.silabs.com/ss-vscode/latest/ss-vscode-start/).
 
 ### Step 1: Create a Matter Sample Project
 
-1. Open Simplicity Studio and select **Create New Project**.
-2. Filter for *Matter* and select the **Matter - SoC SiWx917 Lighting Example over Wi-Fi** sample application and select **Next**.
-3. Click **Finish**.
-   Simplicity Studio will create a new Solution called **MatterLightOverWiFiSolution** with the **MatterLightOverWiFi** project inside.
-4. Open the project.
+1. Open Simplicity Studio and repeat the same steps as [above](#flashing-the-siwx917-soc-matter-accessory-device).
+2. Instead of selecting **Run** for the demo, click **Create** for the **Matter - SoC Lighting over WiFi** example.
+3. Review the Project Configuration and click **Finish**. Simplicity Studio creates a new Solution called MatterLightOverWiFiolution with the MatterLightOverWiFi project inside the workspace.
+4. After the project is created, click the **Open in VS Code** button to open the project in the Silicon Labs Extension for the Visual Studio Code IDE.
 
-### Step 2: Build the Project
+### Step 2: Build the Project in the Silicon Labs Extension for the Visual Studio Code IDE
 
-1. Once the project is open, click the **Build** button in the toolbar.
+1. Once the MatterLightOverWiFiSolution is open, hover over the solution and click the **Build** button.
+
+   ![Building the project](./images/studio-6-build.png)
+
 2. Ensure that the build completes successfully without any errors.
 
 ### Step 3: Flash the Device
 
-1. After building the project, the output will include an `.rps` file in the GNU ARM v12.2.1 - Default folder.
-2. Connect the Silabs WSTK + SiWx917 SoC to the PC via USB.
-3. Navigate to **Tools** and open Simplicity Commander.
-4. Select the desired board according to its serial number and navigate to the **Flash** tab.
-5. Click **Browse** and select the `.rps` file from the build output.
-6. Click **Flash** to flash the device.
+1. After building the project, the output will include an `.rps` file in the artifact folder.
+2. Connect the Silabs WSTK + 917 SoC to the PC via USB.
+3. Hover over either of the binaries in the Binaries folder to reveal the Flash button. One of these is only the application while the other includes the application and the external bootloader. Click **Flash** to flash the device.
 
-Once the device is flashed, it will be ready for commissioning and further testing.
+Once the device is flashed, it is ready for commissioning and further testing.
 
 > **Note:** By default, device logs are enabled on UART (serial terminal). Refer to [Logging Configurations](/matter/{build-docspace-version}/matter-overview-guides/matter-logging-configuration) to configure the logging destination to JLink or UART.

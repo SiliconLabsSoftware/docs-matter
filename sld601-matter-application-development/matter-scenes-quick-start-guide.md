@@ -37,7 +37,7 @@ The following hands-on tutorial walks through the process of storing and recalli
 
 ### Requirements
 
-- Gecko SDK 4.4.2 + Matter extension 2.3.0 (or newer)
+- Simplicity SDK 2025.12.0 + Matter extension 2.8.0 (or newer)
 - Raspberry Pi 4 + MatterHub Image
 - 1x Silabs WTSK EFR32xG21 (BRD4108B) in RCP configuration
 - 2x [EFR32xG24-DK2601B Dev Kit](https://www.silabs.com/development-tools/wireless/efr32xg24-dev-kit?tab=overview)
