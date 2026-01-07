@@ -28,16 +28,16 @@ To enable the component in Simplicity Studio, add the following components.
     - Update the AWS server name at `#define MATTER_AWS_SERVER_HOST ""`.
     - Update the client ID at `#define MATTER_AWS_CLIENT_ID ""`.
     - Update the cluster server information from the below table, based on your app:
+        | Application Type | Cluster Definition |
+        |------------------|--------------------|
+        | Thermostat | `#define ZCL_USING_THERMOSTAT_CLUSTER_SERVER` |
+        | Lighting | `#define ZCL_USING_ON_OFF_CLUSTER_SERVER` |
+        | Lock | `#define ZCL_USING_DOOR_LOCK_CLUSTER_SERVER` |
+        | Window Covering | `#define ZCL_USING_WINDOW_COVERING_CLUSTER_SERVER` |
 
-| Application Type | Cluster Definition |
-|------------------|--------------------|
-| Thermostat | `#define ZCL_USING_THERMOSTAT_CLUSTER_SERVER` |
-| Lighting | `#define ZCL_USING_ON_OFF_CLUSTER_SERVER` |
-| Lock | `#define ZCL_USING_DOOR_LOCK_CLUSTER_SERVER` |
-| Window Covering | `#define ZCL_USING_WINDOW_COVERING_CLUSTER_SERVER` |
+    **MatterAwsConfig.h File:**
 
-**MatterAwsConfig.h File:**
-![MatterAwsConfig.h File](./images/matter-aws-config.png)
+    ![MatterAwsConfig.h File](./images/matter-aws-config.png)
 
 
 ## Building Matter + AWS Application
@@ -66,9 +66,9 @@ To enable the component in Simplicity Studio, add the following components.
     - You can see the same data in AWS IoT.
     ![AWS IoT App Data](./images/matter-aws-iot-app-data.png)
 
-> **Note:** 
-> -   The supported certificate type to be used in this PoC is ECDSA.
-> -   AWS RootCA used in this PoC is
+    > **Note:** 
+    > -   The supported certificate type to be used in this PoC is ECDSA.
+    > -   AWS RootCA used in this PoC is
     https://www.amazontrust.com/repository/AmazonRootCA3.pem
 
 ## Compile Using New/Different Certificates
