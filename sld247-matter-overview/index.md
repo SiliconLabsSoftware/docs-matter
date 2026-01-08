@@ -66,7 +66,7 @@ Pre-built images for the SiWx917 connectivity firmware are available per the ins
 
 ### Software Requirements
 
-**Simplicity Studio**: Download and install Simplicity Studio for your operating system from the Silicon Labs [Simplicity Studio page](https://www.silabs.com/developers/simplicity-studio). Detailed instructions are provided in the Simplicity Studio [User Guide](https://docs.silabs.com/ssv6ug/latest/ssv6ug-overview/).
+**Simplicity Studio 6**: Download and install Simplicity Studio 6 for your operating system from the Silicon Labs [Simplicity Studio page](https://www.silabs.com/developers/simplicity-studio). While the installation process is easy to follow, instructions are provided in the Simplicity Studio v6 [Getting Started section](https://docs.silabs.com/ssv6ug/latest/ssv6ug-getting-started-overview/).
 
 **Ozone - The J-Link Debugger**: [Ozone](https://www.segger.com/products/development-tools/ozone-j-link-debugger/) is a full-featured graphical debugger for embedded applications. With Ozone, it is possible to debug any embedded application on C/C++ source and assembly level.
 

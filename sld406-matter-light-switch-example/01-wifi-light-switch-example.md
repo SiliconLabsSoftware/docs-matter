@@ -46,7 +46,7 @@ To run the Light and Switch Example on SiWx917 SOC, software must be installed. 
 
 **Note**: Switch application is not supported for NCP devices.
 
-1. In Simplicity Studio 5, create the Light MAD:
+1. In Simplicity Studio 6, create the Light MAD:
 
    1. Switch to the Launcher view (if not already in it).
 

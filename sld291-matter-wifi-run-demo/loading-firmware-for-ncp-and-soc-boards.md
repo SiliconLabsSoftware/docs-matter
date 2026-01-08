@@ -28,9 +28,9 @@ SiWx917 NCP connectivity firmware can be upgraded using Simplicity Commander.
 
 7. On the Simplicity Studio home page, click **Tools**.
 
-8. In the Tools dialog, select **Simplicity Commander** and click **OK**.
+8. In the Tools tab, select **Commander** and click **Open Tool**.
 
-    ![Silicon Labs - design](./images/select-commander.png)
+   ![Select Commander](./images/studio-tools-commander.png)
 
     The Simplicity Commander window is displayed.
 
@@ -85,9 +85,9 @@ If the firmware update fails, try the following:
 
 1. On the Simplicity Studio home page, click **Tools**.
 
-2. In the Tools dialog, select **Simplicity Commander** and click **OK**.
+2. In the Tools tab, select **Commander** and click **Open Tool**.
 
-   ![Silicon Labs - design](./images/select-commander.png)
+   ![Select Commander](./images/studio-tools-commander.png)
 
 3. In the Simplicity Commander window, click **Select Kit** and choose your radio board.
 

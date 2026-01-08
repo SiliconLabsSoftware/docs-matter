@@ -18,9 +18,9 @@ Bootloader binaries are available in the respective path of codebase **third_par
 
 1. On the Simplicity Studio home page, click **Tools**.
 
-2. In the Tools dialog, select **Simplicity Commander** and click **OK**.
+2. In the Tools tab, select **Commander** and click **Open Tool**.
 
-   ![Select Commander](./images/select-commander.png)
+   ![Select Commander](./images/studio-tools-commander.png)
 
 3. In the Simplicity Commander window, click **Select Kit** and choose your radio board.
 
@@ -40,9 +40,9 @@ Bootloader binaries are available in the respective path of codebase **third_par
 
 1. On the Simplicity Studio home page, click **Tools**.
 
-2. In the **Tools** dialog, select **Simplicity Commander** and click **OK**.
+2. In the Tools tab, select **Commander** and click **Open Tool**.
 
-   ![Select Commander](./images/select-commander.png)
+   ![Select Commander](./images/studio-tools-commander.png)
 
 3. In the Simplicity Commander window, click **Select Kit** and choose your radio board.
 
@@ -82,9 +82,9 @@ SiWx917 SoC device support is available in the latest [Simplicity Commander](htt
 
 5. On the Simplicity Studio home page, click **Tools**.
 
-6. In the Tools dialog, select **Simplicity Commander** and click **OK**.
+6. In the Tools tab, select **Commander** and click **Open Tool**.
 
-   ![Select Commander](./images/select-commander.png)
+   ![Select Commander](./images/studio-tools-commander.png)
 
 7. In the Simplicity Commander window, click **Select Kit** and choose your radio board.
 

@@ -10,97 +10,66 @@ In the Matter OTA Software Update scenario, the running image (OTA-A) and the up
   
 2. To install the software packages for Simplicity Studio, refer  [Software Package Installation](/matter/{build-docspace-version}/matter-wifi-getting-started-example/software-installation#installation-of-software-packages)
 
-3. Log in to Simplicity Studio and connect the board to the computer.
+3. In Simplicity Studio, click on **Matter**, under **Example Projects and Demos**, select a project, and click **Create**.
 
-4. Go to the **All Products** section.
-  
-   ![Silicon Labs - design](images/all-products-selection.png)
+   ![Example Projects and Demos](images/studio-home-tab.png)
+   ![Example Projects and Demos](images/studio-create-project.jpeg)  
 
-5. Type and select the radio board from the displayed list and select **Start**.
-  
-   ![Silicon Labs - design](images/select-efx-board.png)
+4. In the Project Configuration window, Select the board and click **Next**.
+   ![Select Board](images/studio-select-board.png)
+   - Set -
+      - Solution and Project Name.
+      - Select Target IDE.
+      - Click **Finish**.
+      
+   ![Finish project](images/studio-project-configuration.jpeg)
 
-6. The Launcher page will display the selected radio board's details.
-  
-   ![Silicon Labs - design](images/overview-tab-efx32.png)
+5. Once the project is created, click the **Open in VS Code** option on the top right corner.
+    ![Open project in VS Code](images/studio-open-vscode.png)
 
-7. Verify the following in the **General Information** section:
-   - The Debug Mode is Onboard Device (MCU).
-   - The Preferred SDK is the version you selected earlier.
-  
-   ![Silicon Labs - design](images/create-project-verify-efx-general-information.png)
+6. In VS Code, click the Studio Extension on the left panel and select **Build** option (Hammer Icon) in the Workspace tab.
 
-8. Click **Example Projects and Demos**, select a project, and then click **Create**.
-  
-   ![Silicon Labs - design](images/create-project-select-efx-example.png)
+    ![Project Created](images/vscode-build-flash.png)
 
-9. In the **New Project Wizard** window, click **Finish**.
-  
-   ![Silicon Labs - design](images/create-project-click-finish.png)
+7. Once the project is compiled successfully, the binaries can be flashed either using the **Simplicity Commander** from the tools or using the **Flash** option beside the **Build**.
 
-10. Once the project is created, right-click the project and select **Build Project** in the Project Explorer tab.
-  
-    ![Silicon Labs - design](images/project-created-efx32.png)
+    ![Flash Project](images/vscode-flash.jpeg)
 
-11. Once the project is compiled successfully, go to the Project Explorer view and expand binaries folder to flash the binary.
-  
-    ![Silicon Labs - design](images/select-binary-to-flash-efx32.png)
+8. When using Commander, select the kit and click the **Flash** option in the left panel. Click **Erase chip**.
 
-12. Right-click the selected *.s37* binary and click **Flash to Device**.
+9. Select the path for the project's **.s37** or **.rps** binary and click **Flash**.
+    ![Flash to Device](images/commander-flash-project.png)
 
-    >**Note**: For EFR32 devices, *.s37* binary is used and for SiWx917 SOC, select *.rps* binary and click **Flash to Device**.
-
-    ![Silicon Labs - design](images/siwx917-soc-flashtodevice.png)
-
-13. The Flash programmer window opens. Click **Erase** and then **Program** to start the flashing.
-  
-    ![Silicon Labs - design](images/flash-binary-to-efx32-device.png)
-
-**Note:** By default, device logs are enabled on UART (serial terminal).
+> **Note:** By default, device logs are enabled on UART (serial terminal).
 
 ## Create and build Project for matter OTA-B application
 
 - Matter OTA-B application will be used to create gbl for EFR32MG2x & *.rps* for SiWx917 SOC OTA file and OTA-A will be used to flash to the matter device.
 - For Matter OTA-B application need to change Version in *sl_matter_config.h* file before building.
 
-1. [Download](https://www.silabs.com/developers/simplicity-studio) and Install Simplicity Studio.
-  
-2. To install the software packages for Simplicity Studio, refer  [Software Package Installation](/matter/{build-docspace-version}/software-installation.md#installation-of-software-packages)
+. In Simplicity Studio, click on **Matter**, under **Example Projects and Demos**, select a project, and click **Create**.
 
-3. Log in to Simplicity Studio and connect the board to the computer.
+   ![Example Projects and Demos](images/studio-home-tab.png)
+   ![Example Projects and Demos](images/studio-create-project.jpeg)  
 
-4. Click **All Products**.
-  
-   ![Silicon Labs - design](images/all-products-selection.png)
+2. In the Project Configuration window, Select the board and click **Next**.
+   ![Select Board](images/studio-select-board.png)
+   - Set -
+      - Solution and Project Name.
+      - Select Target IDE.
+      - Click **Finish**.
+      
+   ![Finish project](images/studio-project-configuration.jpeg)
 
-5. Type and select the radio board from the displayed list and click **Start**.
-  
-   ![Silicon Labs - design](images/select-efx-board.png)
+3. In the newly created project, navigate to **Software Components > Silicon Labs Matter > Stack > Matter Core Components**, click **Configure**, and set the **Device software version** and **Device software version string** parameters to **2**.  
 
-6. The Launcher page will display the selected radio board's details.
-  
-   ![Silicon Labs - design](images/overview-tab-efx32.png)
+4.  Once the modification is done for Software version, click the **Open in VS Code** option on the top right corner.
+    ![Open project in VS Code](images/studio-open-vscode.png)
 
-7. Verify the following in the General Information section:
-   - The Debug Mode is Onboard Device (MCU).
-   - The Preferred SDK is the version you selected earlier.
-  
-   ![Silicon Labs - design](images/create-project-verify-efx-general-information.png)
+5. In VS Code, click the Studio Extension on the left panel and select **Build** option (Hammer Icon) in the Workspace tab.
 
-8. Click **Example Projects and Demos**, select a project, and then click **Create**.
-  
-   ![Silicon Labs - design](images/create-project-select-efx-example.png)
+    ![Project Created](images/vscode-build-flash.png)
 
-9. In the N**ew Project Wizard** window, click **Finish**.
-  
-   ![Silicon Labs - design](images/create-project-click-finish.png)
+6. Once the project is compiled successfully, go to the Project Explorer view and expand the OTA-B project binaries folder. Using the application **.s37** file, create a **.gbl** file using Simplicity commander.
 
-10. In the newly created project, navigate to **Software Components > Silicon Labs Matter > Stack > Matter Core Components**, click **Configure**, and set the **Device software version** and **Device software version string** parameters to **2**.  
-
-11. Once the modification is done for Software version, right-click the project and select **Build Project** in the Project Explorer tab.
-  
-    ![Silicon Labs - design](images/project-created-efx32.png)
-
-12. Once the project is compiled successfully, go to the Project Explorer view and expand the OTA-B project binaries folder. Using the application *.s37*_ file, create a .gbl file using Simplicity commander.
-
-13. After Creation of OTA-B application, run the OTA Scenario.
+7. After Creation of OTA-B application, run the OTA Scenario.

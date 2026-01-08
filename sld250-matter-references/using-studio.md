@@ -11,8 +11,8 @@ The Simplicity Studio Bluetooth LE (BLE) GATT Configurator is an Advanced Config
 Simplicity Studio's Energy Profiler allows you to see a graphical view of your device's energy usage over time. This can be very useful when developing an energy-friendly device.
 
 Complete documentation on using the Simplicity Studio Energy Profiler is provided in the
-[Simplicity Energy Profiler User's Guide](https://docs.silabs.com/energy-profiler/latest/energy-profiler-start/).
+[Simplicity Studio 6 Energy Profiler User's Guide](https://docs.silabs.com/energy-profiler/latest/energy-profiler-start/).
 
 ## Custom Hardware Configuration
 
-At some point during product development, you may need to move your project over to your custom hardware. In this case, you will likely need to change the pinout and hardware configuration in the example project to reflect your own custom project. You can do this using the Pin Tool. The Simplicity Studio User's Guide contains full documentation on using the [Pin Tool](https://docs.silabs.com/ssv6ug/latest/ssv6-configure-project/pin-tool).
+At some point during product development, you may need to move your project over to your custom hardware. In this case, you will likely need to change the pinout and hardware configuration in the example project to reflect your own custom project. You can do this using the Pin Tool. The Simplicity Studio 6 User's Guide contains full documentation on using the [Pin Tool](https://docs.silabs.com/ssv6ug/latest/ssv6-configure-project/pin-tool).

@@ -61,9 +61,9 @@ Below are the software tools, packages, and images required for executing Matter
 
 ### Software Packages
 
-- Simplicity SDK v2024.x
+- Simplicity SDK v2025.x
 - WiSeConnect SDK
-  - For SiWx917 use WiSeConnect SDK v3.x
+  - For SiWx917 use WiSeConnect SDK v4.x
 
 ### Firmware Images
 
@@ -100,28 +100,35 @@ If Simplicity Studio does not detect the EFR32 radio board, try the following:
 
 This section describes how to create a project for the EFR32 boards.
 
-1. In Simplicity Studio, click **Example Projects and Demos**, select a project, and click **Create**.
+1. In Simplicity Studio, click **Matter**, under **Example Projects and Demos**, select a project, and click **Create**.
 
-   ![Example Projects and Demos](images/create-project-select-efx-example.png)
+   ![Example Projects and Demos](images/studio-home-tab.png)
+   ![Example Projects and Demos](images/studio-create-project.jpeg)  
 
-2. In the New Project Wizard window, click **Finish**.
+2. In the Project Configuration window, after selecting the board, click **Next**.
+    - Set -
+      - Solution and Project Name.
+      - Select Target IDE.
+      - Click **Finish**.
 
-   ![Finish project](images/create-project-click-finish.png)
+   ![Finish project](images/studio-project-configuration.jpeg)
 
-3. Once the project is created, right-click the project and select **Build Project** in the Project Explorer tab.
+3. Once the project is created, click the **Open in VS Code** option on the top right corner.
+    ![Open project in VS Code](images/studio-open-vscode.png)
 
-    ![Project Created](images/project-created-efx32.png)
+4. In VS Code, click the Studio Extension on the left panel and select **Build** option (Hammer Icon) in the Workspace tab.
 
-4. Once the project is compiled successfully, go to the Project Explorer view and expand the binaries folder to flash the binary.
+    ![Project Created](images/vscode-build-flash.png)
 
-    ![Binaries folder](images/select-binary-to-flash-efx32.png)
+4. Once the project is compiled successfully, the binaries can be flashed either using the **Simplicity Commander** from the tools or using the **Flash** option beside the **Build**.
 
-5. Right-click the selected *.s37* binary and click **Flash to Device**.
+    ![Flash Project](images/vscode-flash.jpeg)
 
-    ![Flash to Device](images/siwx917-soc-flashtodevice.png)
+5. When using Commander, select the kit and click on the **Flash** option in the left panel. Click on **Erase chip**.
 
-6. The Flash programmer window opens. Click **Erase** and then **Program** to start flashing.
+6. Select the path for the project's *.s37* binary and click **Flash**.
 
-    ![Flash binary](images/flash-binary-to-efx32-device.png)
+    ![Flash to Device](images/commander-flash-project.png)
+
 
 **Note:** Output of the EFR32 NCP Host application will be displayed on the J-Link RTT Viewer.

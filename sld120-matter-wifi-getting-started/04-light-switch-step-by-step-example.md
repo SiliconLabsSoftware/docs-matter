@@ -30,7 +30,7 @@ Matter hub/chip-tool are ready and working. Keep the PuTTY session open for the 
 
 > If using NCP hardware, make sure firmware is properly loaded to the NCP using instructions provided in: [Upgrading the Wi-Fi Connectivity Firmware](/matter/{build-docspace-version}/matter-wifi-run-demo/loading-firmware-for-ncp-and-soc-boards).
 
-1. In Simplicity Studio 5, create the Light MAD:
+1. In Simplicity Studio 6, create the Light MAD:
 
    1. Switch to the Launcher view (if not already in it).
 
