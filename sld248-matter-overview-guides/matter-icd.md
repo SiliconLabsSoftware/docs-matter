@@ -398,3 +398,37 @@ Configuration parameters of the ICD Server Configuration component (`sl_matter_i
 #define SL_OT_IDLE_INTERVAL   3600000  // 60mins Idle Polling Interval
 #define SL_OT_ACTIVE_INTERVAL 1000     // 1s Active Polling Interval
 ```
+
+## ICD Features
+
+### Dynamic SIT / LIT Support (DSLS)
+
+This feature is used when a Matter Accessory device needs to be able to decide when to change mode between SIT and LIT. LIT devices are, by design, capable of behaving like SITs and will default to behave as SIT if they cannot be LITs (e.g. controllers don't support LITs).
+
+Given that the intention when configuring a LIT is to optimize battery life, LITs are configured to behave like LIT whenever possible, hence the need for a feature that enables device vendor to dynamically decide when to change mode if defaulting into LIT is not preferred. For example a Smoke CO sensor might want to behave like a LIT only if it's power source changes from line-powered to battery powered.
+
+Per the Matter 1.5 Core Spec - 9.16 ICD Management Cluster: This feature is supported if and only if the device can switch between SIT and LIT operating modes even if it has a valid registered client.
+
+>Note: This feature is only availabe in Matter 1.4 and later.
+
+#### To enable DSLS
+
+- Configure the device as a LIT ICD
+- Enable the DynamicSitLitSupport feature in the ICD Management Cluster via ZAP
+
+#### Runtime Operation Mode Switching
+
+If the device supports switching between the SIT and LIT operation modes even with a registered client, it SHALL set the DynamicSitLitSupport feature in the ICD Management cluster.
+
+Each time a LIT ICD switches between operating modes, both the mDNS ICD key and OperatingMode attribute of the ICDM cluster must be updated:
+
+- ICD=0 and OperatingMode=SIT if "Long Idle Time ICD is operating as a Short Idle Time ICD"
+- ICD=1 and OperatingMode=LIT if "Long Idle Time ICD is operating as a Long Idle Time ICD"
+
+#### Configuration
+
+DSLS does not introduce new mandatory polling rates or timing requirements. LIT devices are already required to behave like SIT devices when LIT operation is not possible (e.g. controller limitations); DSLS simply allows overriding the default preference for LIT operation.
+
+The LIT slow poll is defined via the ICD_SLOW_POLL_INTERVAL configuration parameter. The SIT slow poll will automatically default to the maximum SIT slow poll (15 seconds) or to whatever is defined via the SIT_SLOW_POLL configuration parameter. The ICD_FAST_POLL_INTERVAL and ACTIVE_MODE_THRESHOLD parameters are used to define the fast poll and active mode threshold respectively regardless of LIT or SIT mode.
+
+The specific SIT and LIT parameters (poll intervals, idle times, etc.) are vendor-defined and should be chosen based on the use-case. The Matter sample applications provide examples of configurations depending on the use-case. For instance, the Light Switch sample app defaults to and idle time of 15s while the door lock app has and idle time of 5s so that it can be more responsive.
