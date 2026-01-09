@@ -403,7 +403,7 @@ Configuration parameters of the ICD Server Configuration component (`sl_matter_i
 
 ### Dynamic SIT / LIT Support (DSLS)
 
-This feature is used when a Matter Accessory device needs to be able to decide when to change mode between SIT and LIT. LIT devices are, by design, capable of behaving like SITs and will default to behave as SIT if they cannot be LITs (e.g. controllers don't support LITs).
+This feature is used when a Matter Accessory device needs to be able to decide when to change mode between SIT and LIT. LIT devices are, by design, capable of behaving like SITs and will default to SIT behavior if they cannot be LITs (e.g. controllers don't support LITs).
 
 Given that the intention when configuring a LIT is to optimize battery life, LITs are configured to behave like LIT whenever possible, hence the need for a feature that enables device vendors to dynamically decide when to change mode if defaulting into LIT is not preferred. For example a Smoke CO sensor might want to behave like a LIT only if its power source changes from line-powered to battery powered.
 
