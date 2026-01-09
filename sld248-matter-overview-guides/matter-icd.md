@@ -409,7 +409,7 @@ Given that the intention when configuring a LIT is to optimize battery life, LIT
 
 Per the Matter 1.5 Core Spec - 9.16 ICD Management Cluster: This feature is supported if and only if the device can switch between SIT and LIT operating modes even if it has a valid registered client.
 
->Note: This feature is only availabe in Matter 1.4 and later.
+>Note: This feature is only available in Matter 1.4 and later.
 
 #### To enable DSLS
 
