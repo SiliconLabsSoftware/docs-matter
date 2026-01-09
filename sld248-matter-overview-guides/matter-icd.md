@@ -414,7 +414,7 @@ Per the Matter 1.5 Core Spec - 9.16 ICD Management Cluster: This feature is supp
 #### To enable DSLS
 
 - Configure the device as a LIT ICD
-- Enable the DynamicSitLitSupport feature in the ICD Management Cluster via ZAP
+- Enable the DynamicSitLitSupport feature in the ICD Management Cluster (ICDM) via ZAP
 
 #### Runtime Operation Mode Switching
 
