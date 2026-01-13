@@ -2,18 +2,18 @@
 
 ## New Features for v2.8.0-1.5
 
-- Quality-tested Matter 1.5 solution for Thread MG24 / MG26 / MG30, Wi-Fi SiWG917 SoC and SiWN917 NCP mode, and Wi-Fi MG24/WF200.
-- Works with Simplicity SDK v2025.12.0 and WiseConnect SDK v4.0.0.
-- Added support for Amazon Matter Simple Setup (MSS) with 917SoC.
-- Enabled support for Matter + AWS (formerly DIC) on 917 NCP - Alpha Quality.
+- Quality-tested Matter 1.5 solution for Thread MG24 / MG26 / MG30, Wi-Fi SiWG917 SoC and SiWN917 NCP mode, and Wi-Fi MG24/WF200
+- Works with Simplicity SDK v2025.12.0 and WiseConnect SDK v4.0.0
+- Added support for Amazon Matter Simple Setup (MSS) with 917SoC
+- Enabled support for Matter + AWS (formerly DIC) on 917 NCP - Alpha Quality
 - Added Closure App for Thread and Wi-Fi (SiWG917 SoC)
-- Added Matter demo for an Oven and Range Hood App.
+- Added Matter demo for an Oven and Range Hood App
 - Added further optimizations in LwIP timers (both IPv4 and IPv6) for improved power efficiency for Wi-Fi Devices
 - Added Memory Manager support with SiWG917
 - Added RGB LED support for Thread
-- Removed the Matter Wi-Fi support for MG24 + RS9116.
+- Removed the Matter Wi-Fi support for MG24 + RS9116
 - Improved builds times for Matter projects
-- Miscellaneous bug fixes and improvements.
+- Miscellaneous bug fixes and improvements
 
 ## New Features for v2.7.0-1.4
 
