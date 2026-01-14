@@ -102,4 +102,3 @@ Two devices should not use the same client ID. Use a different client ID for you
    - Provide `MATTER_AWS_SERVER_HOST` with your AWS Server name.
    - Provide `MATTER_AWS_CLIENT_ID` with your device/thing ID.
    - Update `ZCL_USING_ON_OFF_CLUSTER_SERVER` with the cluster server details based on your app.
-   
