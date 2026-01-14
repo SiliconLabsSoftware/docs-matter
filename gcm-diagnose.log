@@ -1,0 +1,203 @@
+﻿Diagnose log at 2026-01-14T00:23:42Z
+
+AppPath: C:\Users\berush\AppData\Local\Programs\Git\mingw64\bin\git-credential-manager.exe
+InstallDir: C:\Users\berush\AppData\Local\Programs\Git\mingw64\bin\
+Version: 2.6.1+786ab03440ddc82e807a97c0e540f5247e44cec6
+
+------------
+Diagnostic: Environment
+Skipped: False
+Success: True
+Exception: None
+Log:
+OSType: Windows
+OSVersion: 10.0 (build 22631)
+Reading environment variables... OK
+ Variables:
+HOMEPATH=\Users\berush
+DriverData=C:\Windows\System32\Drivers\DriverData
+COMPUTERNAME=NB0019787
+GIT_TRACE2_PARENT_SID=e835e205-1d95-4952-9b9a-7c9ff7596b4e
+CommonProgramFiles(x86)=C:\Program Files (x86)\Common Files
+OneDrive=C:\Users\berush\OneDrive - Silicon Laboratories Inc
+SESSIONNAME=Console
+TMP=C:\Users\berush\AppData\Local\Temp
+PROCESSOR_REVISION=9a03
+PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+GIT_EXEC_PATH=C:/Users/berush/AppData/Local/Programs/Git/mingw64/libexec/git-core
+TEMP=C:\Users\berush\AppData\Local\Temp
+LOCALAPPDATA=C:\Users\berush\AppData\Local
+MSYSTEM=MINGW64
+TERM=xterm-256color
+GIT_SSH=C:\WINDOWS\System32\OpenSSH\ssh.exe
+COLORTERM=truecolor
+USERDNSDOMAIN=SILABS.COM
+USERDOMAIN=SILABS_AD
+ProgramFiles(x86)=C:\Program Files (x86)
+Path=C:/Users/berush/AppData/Local/Programs/Git/mingw64/libexec/git-core;C:\Users\berush\AppData\Local\Programs\Git\mingw64\bin;C:\Users\berush\AppData\Local\Programs\Git\usr\bin;C:\Users\berush\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\Berush\AppData\Local\Microsoft\WindowsApps;C:\Users\Berush\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\dotnet\;C:\ConvertMD-3rd-release\Tool\Release_3rd\software;C:\Users\berush\AppData\Local\Microsoft\WindowsApps;C:\Users\berush\AppData\Local\Programs\Microsoft VS Code\bin;C:\dsc;C:\Users\berush\AppData\Local\Programs\Git\cmd;
+PROCESSOR_LEVEL=6
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 154 Stepping 3, GenuineIntel
+TMPDIR=C:\Users\berush\AppData\Local\Temp
+PROMPT=$P$G
+PSModulePath=C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules;C:\Program Files\Thycotic\Powershell\
+PUBLIC=C:\Users\Public
+NUMBER_OF_PROCESSORS=16
+FPS_BROWSER_USER_PROFILE_STRING=Default
+CommonProgramFiles=C:\Program Files (x86)\Common Files
+__PSLockDownPolicy=0
+IGCCSVC_DB=AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAl/jOlO0N5ECVNEfNiJhD8wQAAAACAAAAAAAQZgAAAAEAACAAAABUvWxbRc9++9yMSIlFzrC+wcN6lAP2ndoCsUJymld6awAAAAAOgAAAAAIAACAAAAC03r5/jL2wz8+Pr8nCgrI5ysiHnDDpJwmIMlD3cn3E32AAAACvxuIOFBOeNNcWQC+1kCdPD4RuUaqRuC8+zPDnfJarBAXBbmKllAaHozDn0mZIh0SPX0mh6SuEypmZCY2vebSrkYPHcH/E6rGtbRrUXZO3WrqirDxSBvDJ0bzMPebKU+dAAAAAvLEpA8CPTbHw7Rv0bJfUzxPvaWF0TbttDaQTl2PhtlqykUgSdFe2DK8NednvuO8S0PWVm6KWcveKgdqvPUhG8w==
+PLINK_PROTOCOL=ssh
+ProgramData=C:\ProgramData
+ProgramW6432=C:\Program Files
+ProgramFiles=C:\Program Files (x86)
+EFC_20924=1
+SystemRoot=C:\WINDOWS
+HOME=C:\Users\berush
+LC_CTYPE=C.UTF-8
+CommonProgramW6432=C:\Program Files\Common Files
+ZES_ENABLE_SYSMAN=1
+LOGONSERVER=\\ADSAUS006
+USERPROFILE=C:\Users\berush
+USERDOMAIN_ROAMINGPROFILE=SILABS_AD
+APPDATA=C:\Users\berush\AppData\Roaming
+HOMEDRIVE=C:
+OneDriveCommercial=C:\Users\berush\OneDrive - Silicon Laboratories Inc
+USERNAME=berush
+PROCESSOR_ARCHITEW6432=AMD64
+FPS_BROWSER_APP_PROFILE_STRING=Internet Explorer
+PROCESSOR_ARCHITECTURE=x86
+OS=Windows_NT
+ComSpec=C:\WINDOWS\system32\cmd.exe
+SystemDrive=C:
+windir=C:\WINDOWS
+ALLUSERSPROFILE=C:\ProgramData
+
+
+------------
+Diagnostic: File system
+Skipped: False
+Success: True
+Exception: None
+Log:
+Temporary directory is 'C:\Users\berush\AppData\Local\Temp\'...
+Checking basic file I/O...
+Writing to temporary file 'C:\Users\berush\AppData\Local\Temp\ab264ea6a9cde37a14a97cb1'... OK
+Reading from temporary file 'C:\Users\berush\AppData\Local\Temp\ab264ea6a9cde37a14a97cb1'... OK
+Deleting temporary file 'C:\Users\berush\AppData\Local\Temp\ab264ea6a9cde37a14a97cb1'... OK
+Testing IFileSystem instance...
+UserHomePath: C:\Users\berush
+UserDataDirectoryPath: C:\Users\berush\.gcm
+GetCurrentDirectory(): c:\dsc-open\docs-matter
+
+------------
+Diagnostic: Networking
+Skipped: False
+Success: True
+Exception: None
+Log:
+Checking networking and HTTP stack...
+Creating HTTP client... OK
+IsNetworkAvailable: True
+Sending HEAD request to http://example.com...Sending HEAD request to https://example.com... OK
+ OK
+Acquiring free TCP port... OK
+Testing local HTTP loopback connections...
+Creating new HTTP listener for http://localhost:54885/... OK
+Waiting for loopback connection... OK
+Writing response... OK
+Waiting for response data... OK
+Loopback connection data OK
+
+------------
+Diagnostic: Git
+Skipped: False
+Success: True
+Exception: None
+Log:
+Getting Git version... OK
+Git version is '2.50.1.windows.1'
+Locating current repository...Git repository at 'C:/dsc-open/docs-matter/.git'
+ OK
+Listing all Git configuration... OK
+Git configuration:
+file:C:/Users/berush/AppData/Local/Programs/Git/etc/gitconfig	diff.astextplain.textconv=astextplain
+file:C:/Users/berush/AppData/Local/Programs/Git/etc/gitconfig	filter.lfs.clean=git-lfs clean -- %f
+file:C:/Users/berush/AppData/Local/Programs/Git/etc/gitconfig	filter.lfs.smudge=git-lfs smudge -- %f
+file:C:/Users/berush/AppData/Local/Programs/Git/etc/gitconfig	filter.lfs.process=git-lfs filter-process
+file:C:/Users/berush/AppData/Local/Programs/Git/etc/gitconfig	filter.lfs.required=true
+file:C:/Users/berush/AppData/Local/Programs/Git/etc/gitconfig	http.sslbackend=schannel
+file:C:/Users/berush/AppData/Local/Programs/Git/etc/gitconfig	core.autocrlf=true
+file:C:/Users/berush/AppData/Local/Programs/Git/etc/gitconfig	core.fscache=true
+file:C:/Users/berush/AppData/Local/Programs/Git/etc/gitconfig	core.symlinks=true
+file:C:/Users/berush/AppData/Local/Programs/Git/etc/gitconfig	pull.rebase=false
+file:C:/Users/berush/AppData/Local/Programs/Git/etc/gitconfig	credential.helper=manager
+file:C:/Users/berush/AppData/Local/Programs/Git/etc/gitconfig	credential.https://dev.azure.com.usehttppath=true
+file:C:/Users/berush/AppData/Local/Programs/Git/etc/gitconfig	init.defaultbranch=master
+file:C:/Users/berush/.gitconfig	core.editor="C:\Users\berush\AppData\Local\Programs\Microsoft VS Code\bin\code" --wait
+file:C:/Users/berush/.gitconfig	core.sshcommand=C:/Windows/System32/OpenSSH/ssh.exe
+file:C:/Users/berush/.gitconfig	user.name=Jay Rush
+file:C:/Users/berush/.gitconfig	user.email=jay.rush@silabs.com
+file:C:/Users/berush/.gitconfig	difftool.sourcetree.cmd='' 
+file:C:/Users/berush/.gitconfig	mergetool.sourcetree.cmd='' 
+file:C:/Users/berush/.gitconfig	mergetool.sourcetree.trustexitcode=true
+file:C:/Users/berush/.gitconfig	filter.lfs.clean=git-lfs clean -- %f
+file:C:/Users/berush/.gitconfig	filter.lfs.smudge=git-lfs smudge -- %f
+file:C:/Users/berush/.gitconfig	filter.lfs.process=git-lfs filter-process
+file:C:/Users/berush/.gitconfig	filter.lfs.required=true
+file:.git/config	core.repositoryformatversion=0
+file:.git/config	core.filemode=false
+file:.git/config	core.bare=false
+file:.git/config	core.logallrefupdates=true
+file:.git/config	core.symlinks=false
+file:.git/config	core.ignorecase=true
+file:.git/config	remote.origin.url=https://github.com/SiliconLabsSoftware/docs-matter.git
+file:.git/config	remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+file:.git/config	branch.main.remote=origin
+file:.git/config	branch.main.merge=refs/heads/main
+file:.git/config	branch.main.vscode-merge-base=origin/main
+file:.git/config	branch.doccurator/2.8.0.remote=origin
+file:.git/config	branch.doccurator/2.8.0.merge=refs/heads/doccurator/2.8.0
+file:.git/config	branch.doccurator/2.8.0.vscode-merge-base=origin/doccurator/2.8.0
+file:.git/config	branch.IOTPA_MESH-4858.remote=origin
+file:.git/config	branch.IOTPA_MESH-4858.merge=refs/heads/IOTPA_MESH-4858
+file:.git/config	branch.IOTPA_MESH-4858.vscode-merge-base=origin/IOTPA_MESH-4858
+file:.git/config	branch.task/Amazon_MSS_documentation.remote=origin
+file:.git/config	branch.task/Amazon_MSS_documentation.merge=refs/heads/task/Amazon_MSS_documentation
+file:.git/config	branch.task/Amazon_MSS_documentation.vscode-merge-base=origin/task/Amazon_MSS_documentation
+
+
+------------
+Diagnostic: Credential storage
+Skipped: False
+Success: True
+Exception: None
+Log:
+ICredentialStore instance is of type: CredentialStore
+Writing test credential... OK
+Reading test credential... OK
+Deleting test credential... OK
+
+------------
+Diagnostic: Microsoft authentication (AAD/MSA)
+Skipped: False
+Success: True
+Exception: None
+Log:
+Broker is not enabled.
+Flow type is: Auto
+Gathering MSAL token cache data... OK
+CacheDirectory: C:\Users\berush\AppData\Local\.IdentityService
+CacheFileName: msal.cache
+CacheFilePath: C:\Users\berush\AppData\Local\.IdentityService\msal.cache
+Creating cache helper... OK
+Verifying MSAL token cache persistence... OK
+
+------------
+Diagnostic: GitHub API
+Skipped: False
+Success: True
+Exception: None
+Log:
+Using 'https://github.com/' as API target.
+Querying '/meta' endpoint... OK
+
