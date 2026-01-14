@@ -11,9 +11,11 @@
 - Added further optimizations in LwIP timers (both IPv4 and IPv6) for improved power efficiency for Wi-Fi Devices
 - Added Memory Manager support with SiWG917
 - Added RGB LED support for Thread
+- Added Platform Template app
 - Removed the Matter Wi-Fi support for MG24 + RS9116
-- Improved builds times for Matter projects
+- Improved build times for Matter projects
 - Miscellaneous bug fixes and improvements
+- Added support for TrustZone for EFR32 MG2x for Matter projects
 
 ## New Features for v2.7.0-1.4
 
