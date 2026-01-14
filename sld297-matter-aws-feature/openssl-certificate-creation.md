@@ -2,7 +2,7 @@
 
 An SSL certificate is an important way to secure user information and protect against hackers.
 
-## Openssl Installation 
+## OpenSSL Installation
 
 1. In Debian/Linux
    - To install OpenSSL, issue the following command:  `sudo apt install openssl`
@@ -14,11 +14,15 @@ An SSL certificate is an important way to secure user information and protect ag
 Use the following commands to generate certificates:
 
 1. **Generate the device key:**
+
     - `openssl ecparam -name prime256v1 -genkey -noout -out device.key`
-2. **Generate the client certificate** (e.g., `device.crt` and `device.key`) using a CA
-   certficate:
+
+2. **Generate the client certificate** (e.g., `device.crt` and `device.key`) using a CA certificate:
+
     - `openssl req -new -out device.csr -key device.key`
-   > Note: Below is a sample for demonstration to generate "device.csr". Make sure to use the same Common Name provided here for Thing Name.
+
+   > **Note**: Below is a sample for demonstration to generate "device.csr". Make sure to use the same Common Name provided here for Thing Name.
+
     ```shell
     openssl req -new -out device.csr -key device.key
 
@@ -42,10 +46,11 @@ Use the following commands to generate certificates:
     A challenge password []:
     An optional company name []:
     ```
+
 3. **Upload CSR to AWS**: While creating the AWS IoT thing, use the **Upload CSR** option in the configure device
    certificate step. Once the CSR generated in step 2 is uploaded, AWS will
    generate an AWS CA-authenticated `device.crt`.
-   
+
    ![AWS CSR Upload ](./images/matter-aws-device-csr-certificate-generation.png)
 
 To use MQTT Explorer, repeat steps 1 and 2 to create an additional set of certificates 
