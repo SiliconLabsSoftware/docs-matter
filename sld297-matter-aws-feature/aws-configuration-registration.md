@@ -7,8 +7,10 @@ AWS IoT Core provides secure, bi-directional communication for Internet-connecte
 1. Open [AWS](https://aws.amazon.com/).
 2. Log in using your AWS credentials.
 3. Go to **AWS IoT**.
-4. In the left panel, go to **Security > Policies** and select **Create Policy**. 
-![Create Security Policy](./images/security-policy-create-policy.jpeg)
+4. In the left panel, go to **Security > Policies** and select **Create Policy**.
+
+   ![Create Security Policy](./images/security-policy-create-policy.jpeg)
+
    - Enter the policy name (e.g., `MATTER_AWS_POLICY`). In the policy statements, select **JSON** and replace the contents with the JSON provided below:
 
       ```shell
@@ -49,6 +51,7 @@ AWS IoT Core provides secure, bi-directional communication for Internet-connecte
 
 8. Copy the contents of [AWS_CA CERT](https://www.amazontrust.com/repository/AmazonRootCA3.pem) (We are using Amazon Root CA3) and add it as CA certificate in `examples/platform/silabs/matter_aws/matter_aws_interface/include/MatterAwsNvmCert.cpp`. 
 All the certificate should be added in below format:
+
    ```cpp
    char ca_certificate[]     = {
     "-----BEGIN CERTIFICATE-----\r\n"
@@ -71,6 +74,6 @@ All the certificate should be added in below format:
       - char device_certificate[] - Fill it with Device Certificate downloaded from AWS in Step 7.
       - char device_key[] - Fill it with Device Key generated in Step 6.
 
-1.  Repeat Step 6 to create a new thing for use in MQTT Explorer, using the certificate generated for MQTT Explorer during OpenSLL certificate creation (e.g., `explorer.csr`). Create a `.pem` file from the CA certificate in Step 8 and use it as the server certificate in MQTT Explorer.
+9.  Repeat Step 6 to create a new thing for use in MQTT Explorer, using the certificate generated for MQTT Explorer during OpenSLL certificate creation (e.g., `explorer.csr`). Create a `.pem` file from the CA certificate in Step 8 and use it as the server certificate in MQTT Explorer.
 
    > **Note**: The thing name must be unique as it will be used as the client ID.
