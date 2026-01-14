@@ -39,12 +39,12 @@ To enable the component in Simplicity Studio, add the following components.
   - Update the client ID at `#define MATTER_AWS_CLIENT_ID ""`.
   - Update the cluster server information from the below table, based on your app:
   
-        | Application Type | Cluster Definition |
-        |------------------|--------------------|
-        | Thermostat | `#define ZCL_USING_THERMOSTAT_CLUSTER_SERVER` |
-        | Lighting | `#define ZCL_USING_ON_OFF_CLUSTER_SERVER` |
-        | Lock | `#define ZCL_USING_DOOR_LOCK_CLUSTER_SERVER` |
-        | Window Covering | `#define ZCL_USING_WINDOW_COVERING_CLUSTER_SERVER` |
+    | Application Type | Cluster Definition |
+    |------------------|--------------------|
+    | Thermostat | `#define ZCL_USING_THERMOSTAT_CLUSTER_SERVER` |
+    | Lighting | `#define ZCL_USING_ON_OFF_CLUSTER_SERVER` |
+    | Lock | `#define ZCL_USING_DOOR_LOCK_CLUSTER_SERVER` |
+    | Window Covering | `#define ZCL_USING_WINDOW_COVERING_CLUSTER_SERVER` |
 
     **MatterAwsConfig.h File:**
 
