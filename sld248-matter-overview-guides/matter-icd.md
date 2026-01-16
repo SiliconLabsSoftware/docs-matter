@@ -418,16 +418,18 @@ More details of this feature can be found in the ICD Management Cluster descript
 
 #### Runtime Operation Mode Switching
 
-If the device supports switching between the SIT and LIT operation modes even with a registered client, it SHALL set the DynamicSitLitSupport feature in the ICD Management cluster.
+If the device supports switching between the SIT and LIT operation modes while it has at least one registered client, it must set the DynamicSitLitSupport feature in the ICD Management cluster in ZAP.
 
-Each time a LIT ICD switches between operating modes, both the mDNS ICD key and OperatingMode attribute of the ICDM cluster must be updated:
+Each time a LIT ICD switches between operating modes, both the mDNS ICD key and OperatingMode attribute of the ICDM cluster are updated by the Matter stack:
 
-- ICD=0 and OperatingMode=SIT if "Long Idle Time ICD is operating as a Short Idle Time ICD"
-- ICD=1 and OperatingMode=LIT if "Long Idle Time ICD is operating as a Long Idle Time ICD"
+- [ICDManager::OnSITModeRequest()](https://github.com/SiliconLabsSoftware/matter_sdk/blob/cf658552aac8a5821f63cc8495725058d2a647df/src/app/icd/server/ICDManager.cpp#L644): Sets
+  ICD=0 and OperatingMode=SIT if "Long Idle Time ICD is operating as a Short Idle Time ICD"
+- [ICDManager::OnSITModeRequestWithdrawal()](https://github.com/SiliconLabsSoftware/matter_sdk/blob/cf658552aac8a5821f63cc8495725058d2a647df/src/app/icd/server/ICDManager.cpp#L652): Sets ICD=1 and OperatingMode=LIT if "Long Idle Time ICD is operating as a Long Idle Time ICD"
+- In each case [ICDManager::UpdateICDMode()](https://github.com/SiliconLabsSoftware/matter_sdk/blob/cf658552aac8a5821f63cc8495725058d2a647df/src/app/icd/server/ICDManager.cpp#L377) is leveraged to update the ICD operating mode and mDNS ICD key.
 
 #### Configuration
 
-DSLS does not introduce new mandatory polling rates or timing requirements. LIT devices are already required to behave like SIT devices when LIT operation is not possible (e.g. controller limitations); DSLS simply allows overriding the default preference for LIT operation.
+DSLS does not introduce new mandatory polling rates or timing requirements. LIT devices are already required to behave like SIT devices when LIT operation is not possible (e.g. controller limitations); DSLS simply overrides the default preference for LIT operation so the ICD will default to SIT unless directed to become LIT by the application.
 
 The LIT slow poll is defined via the SL_TRANSPORT_IDLE_INTERVAL configuration parameter. The SIT slow poll will automatically default to the maximum SIT slow poll (15 seconds) or to whatever is defined via the CHIP_DEVICE_CONFIG_ICD_SIT_POLLING_INTERVAL configuration parameter. It can be further changed via the [SetSITPollingInterval](https://github.com/SiliconLabs/matter_extension/blob/63c8513144894fe991e2fbbe8998bc6b127adeee/third_party/matter_sdk/src/app/icd/server/ICDConfigurationData.h#L152) API. The SL_TRANSPORT_ACTIVE_INTERVAL defines the fast poll behavior regardless of LIT or SIT mode.
 
