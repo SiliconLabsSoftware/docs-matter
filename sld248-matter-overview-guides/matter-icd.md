@@ -330,8 +330,8 @@ Configuration parameters of the ICD Server Configuration component (sl_matter_ic
 Configuration parameters of the ICD Server Configuration component (sl_matter_icd_config.h):
 
 ```cpp
-#define SL_OT_IDLE_INTERVAL   5000 // 5s Idle Intervals
-#define SL_OT_ACTIVE_INTERVAL 500  // 500ms Active Intervals
+#define SL_TRANSPORT_IDLE_INTERVAL   5000 // 5s Idle Intervals
+#define SL_TRANSPORT_ACTIVE_INTERVAL 500  // 500ms Active Intervals
 ```
 
 > **Note**: Wi-Fi polling configuration are dictated by the Access Point and cannot be changed at the Matter level.
@@ -395,8 +395,8 @@ Configuration parameters of the ICD Server Configuration component (`sl_matter_i
 Configuration parameters of the ICD Server Configuration component (`sl_matter_icd_config.h`):
 
 ```cpp
-#define SL_OT_IDLE_INTERVAL   3600000  // 60mins Idle Polling Interval
-#define SL_OT_ACTIVE_INTERVAL 1000     // 1s Active Polling Interval
+#define SL_TRANSPORT_IDLE_INTERVAL   3600000  // 60mins Idle Polling Interval
+#define SL_TRANSPORT_ACTIVE_INTERVAL 1000     // 1s Active Polling Interval
 ```
 
 ## ICD Features
