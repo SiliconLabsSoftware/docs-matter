@@ -122,4 +122,18 @@ $ mattertool levelcontrol read current-level 1 1 // Returns 10
 
 ## Defining a Custom Cluster
 
-Create an XML file with custom cluster definitions. For an example, see [Sample MEI Cluster](https://github.com/project-chip/connectedhomeip/blob/master/src/app/zap-templates/zcl/data-model/chip/sample-mei-cluster.xml). In ZAP click 'Extensions' and add the XML file. The newly defined cluster can then be enabled in any endpoint under the domain for which it was defined (for example General), its Commands and Attributes can be managed like those of any other cluster.
+In order to use a custom cluster in an application, follow these steps:
+- Create an XML file with custom cluster definitions. For an example, see [Sample MEI Cluster](https://github.com/project-chip/connectedhomeip/blob/master/src/app/zap-templates/zcl/data-model/chip/sample-mei-cluster.xml). 
+- In ZAP, click **Extensions** and add the XML file. The newly defined cluster can then be enabled in any endpoint under the domain for which it was defined (for example General). Its Commands and Attributes can be managed like those of any other cluster. Click Ctrl+S to save the changes.
+- Manually edit the project's .zap file (located in config/zap/ in the project directory) to add the following block to the "keyValuePairs" array.
+  
+ ```xml  
+    {
+      "key": "generateStaticTemplates",
+      "value": "true"
+    }   
+ ```
+For an example, see [Sample ZAP file](https://github.com/SiliconLabsSoftware/matter_extension/blob/v2.8.0-rc3/slc/apps/performance-test-app/thread/performance-test-app.zap)
+- Install the **Custom ZAP generation** component under **Silicon Labs Matter -> Stack** in the project's Component Editor. 
+
+
