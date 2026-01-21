@@ -8,31 +8,7 @@ Silicon Labs recommends that an upgrade of the NCP combos connectivity firmware 
 
 ## Upgrading the Connectivity Firmware on NCP devices
 
-The SiWx917 NCP or RS9116 EVK connectivity firmware can be upgraded using Tera Term or kermit.
-
-### Connectivity Firmware Upgrade Using Tera Term
-
-#### Firmware Upgrade On RS9116
-
-**Note**: RS9116 is deprecated and no longer supported on Matter.
-
-1. Connect the EVK to PC using the USB interface labeled **UART** as identified below.
-
-   ![Switch Position before firmware flash](./images/rs916-board.png)
-
-2. If this is the first time connecting the EVK to your PC, verify that it is properly detected by the PC. The EVK will appear to the PC as a COM port labeled **USB Serial Port (COMx)**.
-
-3. Configure your terminal application with the following settings:
-
-   - Configure the serial port settings to 115200 baud / 8-bit data / No parity / 1 stop bit
-   - Enable local echo
-   - Set receive and transmit new-line characters to CR+LF
-
-4. Refer to [Setup Tera Term and Updating the Firmware](https://docs.silabs.com/rs9116/wiseconnect/2.0/tera-term-setup).
-
-5. Once firmware flashing is done, the console displays **Loading...** followed by **Loading Done**.
-
-#### Firmware Upgrade On SIWx917 NCP
+### Firmware Upgrade On SIWx917 NCP
 
 SiWx917 NCP connectivity firmware can be upgraded using Simplicity Commander.
 
@@ -52,9 +28,9 @@ SiWx917 NCP connectivity firmware can be upgraded using Simplicity Commander.
 
 7. On the Simplicity Studio home page, click **Tools**.
 
-8. In the Tools dialog, select **Simplicity Commander** and click **OK**.
+8. In the Tools tab, select **Commander** and click **Open Tool**.
 
-    ![Silicon Labs - design](./images/select-commander.png)
+   ![Select Commander](./images/studio-tools-commander.png)
 
     The Simplicity Commander window is displayed.
 
@@ -109,9 +85,9 @@ If the firmware update fails, try the following:
 
 1. On the Simplicity Studio home page, click **Tools**.
 
-2. In the Tools dialog, select **Simplicity Commander** and click **OK**.
+2. In the Tools tab, select **Commander** and click **Open Tool**.
 
-   ![Silicon Labs - design](./images/select-commander.png)
+   ![Select Commander](./images/studio-tools-commander.png)
 
 3. In the Simplicity Commander window, click **Select Kit** and choose your radio board.
 

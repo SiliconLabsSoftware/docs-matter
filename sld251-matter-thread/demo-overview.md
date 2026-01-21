@@ -1,2 +1,0 @@
-# Matter over Thread Example
-

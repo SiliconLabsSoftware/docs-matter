@@ -1,12 +1,12 @@
 # Matter + AWS Component
 
--   Matter + AWS is a Silicon Labs–specific feature that enables Matter devices to connect directly to 
+- Matter + AWS is a Silicon Labs–specific feature that enables Matter devices to connect directly to 
     proprietary cloud solutions, such as AWS Cloud.  As such, a Matter Wi-Fi device
     must support connecting locally on the Matter Fabric via IPv6 and
     connecting to the Internet via IPv4.
--   Matter devices can be controlled by chip-tool or a controller. The
+- Matter devices can be controlled by chip-tool or a controller. The
     status of the modified attributes will be published to the cloud.
--   Remote users can install a cloud-specific application to receive
+- Remote users can install a cloud-specific application to receive
     notifications about the attribute status.
 
 ## Matter + AWS Feature Diagram
@@ -21,14 +21,16 @@ The following diagram shows end-to-end flow for Direct Internet Connectivity.
 
 For a list of hardware requirements for the Matter + AWS feature, see the
 official
-[Silicon Labs Matter hardware requirements](https://siliconlabs.github.io/matter/latest/general/HARDWARE_REQUIREMENTS.html)
+[Silicon Labs Matter hardware requirements](/matter/{build-docspace-version}/matter-prerequisites/hardware-requirements)
 documentation.
+
+> **Note:** This is supported for 917 SoC and NCP boards only.
 
 ### Software Requirements
 
 For a list of software requirements for the Matter + AWS feature, see the
 official
-[Silicon Labs Matter Software requirements](https://siliconlabs.github.io/matter/latest/general/SOFTWARE_REQUIREMENTS.html)
+[Silicon Labs Matter Software requirements](/matter/{build-docspace-version}/matter-prerequisites/software-requirements)
 documentation.
 
 ## End-to-End Set-up bring up
@@ -55,7 +57,6 @@ Remote users are used to check the state of Matter devices. In this context, MQT
 
 Follow the instructions in [Build MATTER + AWS](./build-matter-aws.md) to enable the MATTER + AWS feature in your application code.
 
-
 ## End-to-End Test of Matter + AWS Application
 
 User Setup (MQTT Explorer):
@@ -65,7 +66,7 @@ User Setup (MQTT Explorer):
 
 ![Silicon Labs - Matter + AWS design](images/dic-status-sharing.png)
 
-  **Note**: For reference, the diagram shows Lighting App commands. Other application commands also can be passed.
+  >**Note**: For reference, the diagram shows Lighting App commands. Other application commands also can be passed.
 
 - For the end-to-end commands to be executed from chip-tool, refer to [Running the Matter Demo Over Wi-Fi](/matter/{build-docspace-version}/matter-wifi-run-demo).
 - The following application-specific attributes or states are shared to the cloud:
@@ -83,7 +84,7 @@ User Setup (MQTT Explorer):
   
       ![Silicon Labs - Matter + AWS design](images/dic-control-part.png)
 
-    **Note**: For reference, the diagram shows Lighting App commands. Other application commands also can be passed.
+    >**Note**: For reference, the diagram shows Lighting App commands. Other application commands also can be passed.
 
   - Ensure that the Matter device is running and successfully commissioned. For detailed steps, refer to [Running the Matter Demo Over Wi-Fi](/matter/{build-docspace-version}/matter-wifi-run-demo).
   - To control the device, set the topic name and the commands to be executed in the MQTT Explorer for the following applications.

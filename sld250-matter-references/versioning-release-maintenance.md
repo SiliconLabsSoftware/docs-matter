@@ -1,7 +1,5 @@
 # Matter Versioning and Release Maintenance
 
-**Silicon Labs Matter GitHub is being phased out in favor of using the Matter SiSDK Extension that is available through Simplicity Studio and standalone via SLC-CLI.**
-
 ## Versioning Scheme
 
 - **FORMAT: vMAJOR.MINOR.PATCH\_VERSION-PRE\_RELEASE**
@@ -73,4 +71,5 @@ Update digits based on the following criteria:
 |  v2.5.2-1.4  |  10-Apr-25     | 2024.12.2                      | v3.4.2   | 1.4 | Maintained     |
 |  v2.6.0-1.4  |  18-Jun-25     | 2025.6.0                       | v3.5.0   | 1.4 | Obsolete     |
 |  v2.6.1-1.4  |  23-Jul-25     | 2025.6.1                       | v3.5.1   | 1.4 | Maintained     |
-|  v2.7.0-1.4  |  25-Sep-25     | 2025.6.2                       | v3.5.1   | 1.4 | Active     |
+|  v2.7.0-1.4  |  25-Sep-25     | 2025.6.2                       | v3.5.2   | 1.4 | Maintained |
+|  v2.8.0-1.5  |  12-Jan-25     | 2025.12.0                      | v4.0.0   | 1.5 | Active     |

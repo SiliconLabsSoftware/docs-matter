@@ -14,7 +14,7 @@ To begin creating an OpenThread ICD example, create a generic Matter over Thread
 
 1. Create project.
 
-    ![Project Generation](images/icd-project-generation.png)
+    ![Project Generation](images/icd-project-generation.jpeg)
 
 2. Navigate to the **Configuration Tools** section and open the **ZCL Advanced Platform (ZAP)**.
 
@@ -40,11 +40,24 @@ ICD functionality should be installed and ready to build. Build the project as y
 
 ### **Minimal Power Consumption**
 
+The CLI/Display/Logging/Peripheral components are useful development tools but can be removed to save power when they are no longer needed.
+
 The Lower Power Mode is an optional component, installing it will disable:
 
-- Matter Shell
-- OpenThread CLI
-- LCD and QR Code
+- Silicon Labs Matter → Matter-Thread → OpenThread CLI
+- Silicon Labs Matter → Platform → Display → Matter Default LCD/Display Configuration
+- Silicon Labs Matter → Platform → Display → Matter Display
+- Silicon Labs Matter → Platform → Display → Matter QR Code Display
+- Silicon Labs Matter → Platform → UART → Matter UART
+- Silicon Labs Matter → Platform → Utils → Logging to UART
+- Silicon Labs Matter → Stack → Shell → Matter Shell
+
+Additionally, Matter Support for peripherals (such as LEDs or Buttons) can be removed if necessary. This will remove the appropriate Platform components.
+
+- Silicon Labs Matter → Platform → WSTK Button Support
+- Silicon Labs Matter → Platform → matter LED Support
+
+This will make debugging issues significantly more difficult so these components should only be removed at the end of development/testing when trying to optimize for power savings.
 
 ## ICD Configurations
 
@@ -77,6 +90,8 @@ These configurations can be changed by modifying the configuration of the `ICD S
     #define SL_ACTIVE_MODE_INTERVAL 1000  // 1s Active Mode Interval
     #define SL_ACTIVE_MODE_THRESHOLD 500  // 500ms Active Mode Threshold
 ```
+
+Power is inversely proportional to idle time: longer idle durations and shorter active periods yield lower average current draw and better battery life. However, excessive idle time increases latency and risks timeouts with the device's parent or Matter controller. A well-optimized configuration minimizes energy use while ensuring network reliability remains acceptable.
 
 ### ICD Check-In Protocol Use-Case
 
@@ -112,7 +127,7 @@ The User Active Mode Trigger feature in the ICD Management cluster indicates whe
 
 To change default values corresponding to Matter ICD examples, modify them in either:
 
-1. `config/sl_matter_icd_config.h`
+1. `config/sl_matter_icd_config.h` in VS Code
 2. ICD component configurator
 
 ![ICD Configuration](images/icd-config.png)

@@ -4,23 +4,31 @@
 
 1. Prepare a compatible development board to become your Matter hub's ot-rcp:
 
-   1. Start Simplicity Studio 5 with the latest SiSDK and Silicon Labs Matter SiSDK Extension installed (see details in the [Overview](/matter/{build-docspace-version}/matter-overview#software-requirements)).
+   1. Start Simplicity Studio with the latest SiSDK and Silicon Labs Matter SiSDK Extension installed (see details in the [Overview](/matter/{build-docspace-version}/matter-overview#software-requirements)).
 
-      ![the Matter extension](./resources/image1.png)
+      ![the Matter extension](./resources/matter-sdk-version.png)
 
    2. Connect the dev board to your development computer.
 
-   3. Once it shows up in the Debug Adapters view, select it.
+   3. Once it displays in the **Devices** panel, select it.
 
-      ![Debug Adapters view](resources/image2.png)
+      ![Devices view](resources/matter-ssv6-connected-devices.png)
 
-   4. Go to the Example Projects and Demos tab. Select the **OpenThread** filter and enter *openthread rcp* in the **Filter on keywords** box. Select the **OpenThread - RCP** example and click **Run**.
+      The device page opens.
+   4. Click **Create New Project**.
+      The **Example Projects & Demos** tab displays.
+   5. Enter *openthread rcp* in the **Filter on keywords** box.
+   6. Select the **OpenThread - RCP** example and click **Create**.
 
-      ![Example projects and demos view](resources/image3.png)
+      ![Example projects and demos view](resources/ssv6-ot-rcp-demo.png)
 
-   5. Disconnect the dev board and connect it to your RPi4B.
+   7. Now build & flash the ot-rcp project using the Simplicity Studio VS Code Extension (for a detailed breakdown of these steps, see the [Matter over Thread QuickStart Demo](/matter/{build-docspace-version}/-matter-quick-start-demo/02-thread-quick-start-demo.md#step-1-create-a-matter-sample-project).
+   This example shows a Matter Lighting device but the steps are identical for an RCP project).
+   8. Once the RCP firmware has been built and flashes, disconnect the dev board and connect it to your Raspberry Pi.
 
-2. Prepare the Raspberry Pi 4B (RPi4B) to become a Matter hub:
+   > Note: The Matter hub OpenThread RCP (ot-rcp) must be programmed with a bootloader and firmware image to act as the ot-rcp for the Raspberry Pi. You can obtain a copy of the latest version here: [Silicon Labs Matter Artifacts](/matter/{build-docspace-version}/matter-prerequisites/matter-artifacts).
+
+2. Prepare the Raspberry Pi (RPi4B in this example) to become a Matter hub:
 
    1. Download and extract the Matter hub Raspberry Pi image (see details under [Software requirements](/matter/{build-docspace-version}/matter-overview#software-requirements)).
 
@@ -64,52 +72,27 @@ You now have a working Matter hub. Keep the PuTTY session open for the following
 
 ## Creating the Matter Accessory Devices (MADs)
 
-1. In Simplicity Studio 5, create the light MAD:
+1. In Simplicity Studio, create the light MAD:
 
-   1. Switch to the Launcher view (if not already in it).
+   1. Connect one compatible dev board to your development computer. This example uses a BRD4187C.
 
-   2. Connect one compatible dev board to your development computer. This example uses a BRD4186C.
+   2. Once it displays in the **Devices** panel, select it.
 
-   3. Once it shows up in the Debug Adapters view, select it.
+   3. This will bring up the Example Projects and Demos tab, check the **Matter** filter under **Wireless Technology**, and enter *lighting* in the **Filter on keywords** box. Select the **Matter - SoC Lighting over Thread with external Bootloader Solution** and click **Create**.
 
-   4. Go to the Example Projects and Demos tab, turn off **Demos**, check the **Matter** filter under **Wireless Technology**, and enter *thread* in the **Filter on keywords** box. Select the **Matter - SoC Lighting over Thread with external Bootloader Solution** and click **Create**.
+       ![Select the example project](resources/studio-6-matter-thread-demo-lighting-projects.png)
 
-       ![Select the example project](resources/example-project.png)
+   4. Name your project and click **Finish** (no other changes are required at this time).
 
-   5. Name your project and click **Finish** (no other changes are required at this time).
+   5. Once the solution is created, you will be redirected to the Projects view with the MatterLightOverThread.slcp file open. If not simply open the file yourself.
 
-      ![Create the project](resources/create-project.png)
+      ![Build the project](resources/studio-6-matter-project-demo.png)
 
-   6. Once the solution is created, select it in the Project Explorer view and click the hammer icon to build. This will begin building both the bootloader and application images.
+   6. Building & flashing is done in Visual Studio Code using the Silicon Labs extension. For a detailed breakdown of these steps, see the [Matter over Thread QuickStart Demo](/matter/{build-docspace-version}/matter-quick-start-demo/02-thread-quick-start-demo.md#step-1-create-a-matter-sample-project).
 
-      ![Build the project](resources/build-project.png)
+   7. If you are using a dev board with a WSTK, you should now see a QR code displayed on the WSTK's LCD.
 
-   7. Once the compilation is done, right-click the dev board in the Debug Adapters view and select **Upload application**.
-
-      ![Upload application](resources/image13.png)
-
-   8. Select the **Application image path** for your newly compiled solution application. The resulting application image will be within the **artifact** directory inside the solution project. This image has both the bootloader and application binaries combined into one image. Check **Erase chip before uploading image**. Bootloader images are also provided in the zip file referenced on the [Silicon Labs Matter Artifacts page](/matter/{build-docspace-version}/matter-prerequisites/matter-artifacts). Unzip and reference the extracted location if electing to use these default bootloader images.
-
-       ![Application image upload](resources/image-upload.png)
-
-      **Note**: If you are unsure of the path for the newly created binary, you can find the project’s path in the project’s *Properties* window under *Resource*. The binary is typically located in:
-      >*{solution folder}\|{project name folder}\|{GNU ARM v??? folder}\|{project name binary}.s37*
-
-      For example, you will find the binary for a Matter light over Thread project with the default name here:
-      >*{solution folder}/MatterLightOverThread/GNU ARM v12.2.1 - Default/MatterLightOverThread.s37*
-
-      The combined binary (bootloader and application image) will be located in:
-      >*{solution folder}/MatterLightOverThread/artifact/MatterLightOverThreadSolution-full.s37*
-
-      **Note**: You should only need to upload a bootloader image and erase the chip once. Subsequent application uploads do not need the bootloader image or chip erasure.
-
-      ![Image location](resources/image-location.png)
-
-   9. If you are using a dev board with a WSTK, you should now see a QR code displayed on the WSTK's LCD.
-
-   10. Disconnect the dev board from your development computer.
-
-   11. **Optional**: you may want to label this device as your light or switch, as appropriate, to make it easier to identify later.
+   8. Disconnect the dev board from your development computer.
 
 2. Repeat the process above with the second dev board but selecting the *Matter - SoC Light Switch over Thread* example instead.
 

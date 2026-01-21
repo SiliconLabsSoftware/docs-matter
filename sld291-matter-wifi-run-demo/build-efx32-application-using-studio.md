@@ -6,53 +6,33 @@ This page provides a detailed description on how to create a Wi-Fi NCP project f
 
 2. To install the software packages for Simplicity Studio, refer to [Software Package Installation](/matter/{build-docspace-version}/matter-prerequisites/software-requirements#installation-of-software-packages).
 
-3. Log in to Simplicity Studio and connect the EFR32 WSTK board to the computer.
+3. In Simplicity Studio, click **Matter**, under **Example Projects and Demos**, select a project, and click **Create**.
 
-4. Go to the **All Products** section.
+   ![Example Projects and Demos](images/studio-home-tab.png)
+   ![Example Projects and Demos](images/studio-create-project.jpeg)  
 
-   ![All Products](images/ncp-all-products.png)
+4. In the Project Configuration window, after selecting the board, click **Next**.
+    - Set -
+      - Solution and Project Name.
+      - Select Target IDE.
+      - Click **Finish**.
 
-5. Search and select the radio board from the displayed list and select **Start**.
+   ![Finish project](images/studio-project-configuration.jpeg)
 
-   ![Select the radio board](images/ncp-board-selection.png)
+5. Once the project is created, click the **Open in VS Code** option on the top right corner.
+    ![Open project in VS Code](images/studio-open-vscode.png)
 
-6. The Launcher page will display the selected radio board's details.
+6. In VS Code, click the Studio Extension on the left panel and select **Build** option (Hammer Icon) in the Workspace tab.
 
-   ![Overview tab](images/overview-tab-efx32.png)
+    ![Project Created](images/vscode-build-flash.png)
 
-7. Verify the following in the General Information section:
+7. Once the project is compiled successfully, the binaries can be flashed either using the **Simplicity Commander** from the tools or using the **Flash** option beside the **Build**.
 
-   - The Debug Mode is Onboard Device (MCU).
-   - The Preferred SDK is the version you selected earlier.
+    ![Flash Project](images/vscode-flash.jpeg)
 
-   ![Verify SDK](images/create-project-verify-efx-general-information.png)
+8. When using Commander, select the kit and click the **Flash** option in the left panel. Click **Erase chip**.
 
-8. Open the **Example Projects and Demos** tab, select a project, and click **Create Project**.
+9. Select the path for the project's *.s37* binary and click **Flash**.
 
-   ![Create Project](images/ncp-proj-create.png)
+    ![Flash to Device](images/commander-flash-project.png)
 
-9. In the New Project Wizard window, click **Finish**.
-
-   ![Finish project](images/ncp-proj-config.png)
-
-10. If you are creating an application for a BRD4357a NCP board, open the project slcp file, and then select **Software Components**, search for "siwx917 NCP Extension", and click **Install**.
-
-    ![Install software component](images/ncp-brd4357a-component.png)
-
-11. Once the solution is created, right-click the project and select **Build Project** in the Project Explorer tab.
-
-    ![Build project](images/ncp-build-proj.png)
-
-12. Once the project is compiled successfully, go to the Project Explorer view and expand the binaries folder to flash the binary.
-
-    ![Select binary](images/ncp-binary-selection.png)
-
-13. Right-click the selected '.s37' binary and click **flash to device**.
-
-    ![flash to device](images/ncp-flash-binary.png)
-
-14. The Flash programmer window opens. Click **Erase** and then **Program** to start flashing.
-
-    ![Flash binary](images/ncp-flash-binary-efr32.png)
-
->**Note:** Output of the EFR32 NCP Host application will be displayed on the J-Link RTT Viewer.

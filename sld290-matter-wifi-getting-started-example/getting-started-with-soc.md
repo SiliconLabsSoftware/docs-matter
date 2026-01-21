@@ -36,8 +36,8 @@ Below are the software tools, packages, and images required for executing Matter
 
 ### Software Packages
 
-- Simplicity SDK v2024.x
-- WiSeConnect SDK v3.x
+- Simplicity SDK v2025.x
+- WiSeConnect SDK v4.x
 
 ### Firmware Images
 
@@ -68,52 +68,36 @@ If Simplicity Studio does not detect the SiWx917 SoC board, try the following:
 
 ## Building the 917 SoC Matter Accessory Devices Using Simplicity Studio
 
-In Simplicity Studio 5, create the Light Matter Accessory Devices (MAD):
+In Simplicity Studio 6, create the Light Matter Accessory Devices (MAD):
 
-1. [Download](https://www.silabs.com/developers/simplicity-studio) and Install Simplicity Studio 5.
-2. To install the software packages for Simplicity Studio, refer to the [Software Package Installation Section](/matter/{build-docspace-version}/matter-wifi-getting-started-example/software-installation#installation-of-software-packages).
 
-3. Switch to the Launcher view (if not already in it).
+1. In Simplicity Studio, click on **Matter**, under **Example Projects and Demos**, select a project, and click **Create**.
 
-    ![SoC Launcher tab](./images/siwx917-soc-launcher-tab.png)
+   ![Example Projects and Demos](images/studio-home-tab.png)
+   ![Example Projects and Demos](images/studio-create-project.jpeg)  
 
-4. Go to **All Products** in the Launcher tab, and select one compatible board from the following list of supported SiWx917 SOC dev boards.
+2. In the Project Configuration window, Select the board and click **Next**.
+   ![Select Board](images/studio-select-board.png)
+   - Set -
+      - Solution and Project Name.
+      - Select Target IDE.
+      - Click **Finish**.
+      
+   ![Finish project](images/studio-project-configuration.jpeg)
 
-   - BRD4338A (Common Flash)
+3. Once the project is created, click the **Open in VS Code** option on the top right corner.
+    ![Open project in VS Code](images/studio-open-vscode.png)
 
-   ![SoC board selection](images/siwx917-soc-boardselection.png)
+4. In VS Code, click the Studio Extension on the left panel and select **Build** option (Hammer Icon) in the Workspace tab.
 
-5. Once the board shows up in the Debug Adapters view, select it.
+    ![Project Created](images/vscode-build-flash.png)
 
-    ![SoC debug adapter](images/siwx917-soc-debugadapter.png)
+4. Once the project is compiled successfully, the binaries can be flashed either using the **Simplicity Commander** from the tools or using the **Flash** option beside the **Build**.
 
-6. Open the Example Projects and Demos tab, select the **Matter** filter, and enter *Wi-Fi* in **Filter on keywords**. Click **CREATE**.
+    ![Flash Project](images/vscode-flash.jpeg)
 
-    ![Create project](images/siwx917-soc-create-wifiprojects.png)
+5. When using Commander, select the kit and click the **Flash** option in the left panel. Click **Erase chip**.
 
-7. Optionally rename the project, and click **Finish**.
+6. Select the path for the project's *.s37* binary and click **Flash**.
 
-    ![Project wizard](images/siwx917-soc-projectwizard.png)
-
-8. Once the project is created, right-click the project and select **Build Project** in the Project Explorer tab.
-
-    ![Build project](images/siwx917-soc-build-wifiproject.png)
-
-9. To flash the application, connect the compatible dev board to the PC if not yet done.
-10. Once the project is compiled successfully, go to the Project Explorer view and select the binary to be flashed.
-
-    ![binary selection](images/siwx917-soc-isp-binaryselection.png)
-
-11. Right-click the selected *_isp.bin* binary and click **Flash to Device**.
-
-    ![Flash to device](images/siwx917-soc-flashtodevice.png)
-
-12. The Flash programmer window opens. Click **Program** to start flashing.
-
-    ![Flash program window](images/siwx917-soc-flashprogram.png)
-
-    **Note:** Output of the SiWX917 SoC application will be displayed on the J-Link RTT Viewer.
-
-13. In order to debug your Matter application, right-click the selected **Matter Project** and click **Debug As**.
-
-    ![Debug](images/siwx917-socdebug.png)
+    ![Flash to Device](images/commander-flash-project.png)
