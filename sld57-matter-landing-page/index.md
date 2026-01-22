@@ -20,22 +20,22 @@ Want to get a Matter application up and running quickly? Here's a high-level ove
    - Read documentation to undertsand the basics of Matter: [Matter Fundamentals](/matter/{build-docspace-version}/matter-fundamentals)
 
 2. **Install Studio and Setup Development Environment**
-   - Follow the quick-start guide for overview and setup: [Matter Overview](/matter/{build-docspace-version}/matter-overview) 
+   - Follow the quick-start guide for overview and setup: [Matter Overview](/matter/{build-docspace-version}/matter-overview)
    - Covers hardware and software requirements, Simplicity Studio installation, Matter Extension setup, and tools
 
 3. **Create Sample Application/Solution**
    - Choose Wi-Fi or Thread as desired protocol to create, build, and flash your Matter application
    - Follow the quick-start documentation for creating a demo for desired wireless protocol: [Quick-Start Demos](/matter/{build-docspace-version}/matter-quick-start-demo)
-   
+
     > **Note**: If you plan on implementing custom app behavior, proceed to step 4 after generating project and before building and flashing
 
 4. **[Optional] Customize Matter App Behavior and Logic**
    - Use Project Configurator and other Studio tools to customize your app logic: [Developing with Project Configurator](https://docs.silabs.com/ssv6ug/latest/ssv6-configure-project/)
    - If necessary, add custom source files for your application logic
-   - Follow documentation to develop a custom matter device with ZAP and corresponding callbacks: [Custom Matter Device Development](/matter/{build-docspace-version}/matter-references/custom-matter-device) 
+   - Follow documentation to develop a custom matter device with ZAP and corresponding callbacks: [Custom Matter Device Development](/matter/{build-docspace-version}/matter-references/custom-matter-device)
 
 5. **Build and Flash**
-   - Refer back to documentation for quick-start demo for your desired protocol, and complete steps for building and flashing app 
+   - Refer back to documentation for quick-start demo for your desired protocol, and complete steps for building and flashing app
      - [Thread Quick-Start Demo](/matter/{build-docspace-version}/matter-quick-start-demo/02-thread-quick-start-demo#step-2-build-the-project)
      - [WiFi Quick-Start Demo](/matter/{build-docspace-version}/matter-quick-start-demo/01-wifi-quick-start-demo#step-2-build-the-project)
    - Ensure bootloader is present on the device

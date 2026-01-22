@@ -55,7 +55,7 @@ Remote users are used to check the state of Matter devices. In this context, MQT
 
 ### Building Matter + AWS Application using Simplicity Studio
 
-Follow the instructions in [Build MATTER + AWS](./build-matter-aws.md) to enable the MATTER + AWS feature in your application code.
+Follow the instructions in [Build Procedure for Matter + AWS](./build-matter-aws.md) to enable the MATTER + AWS feature in your application code.
 
 ## End-to-End Test of Matter + AWS Application
 
