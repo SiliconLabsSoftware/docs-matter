@@ -27,18 +27,17 @@ follows:
     In the top menu of your project navigate to
     `Configuration Tools > Bluetooth GATT Configurator`
 
-4. Change your GATT settings as you wish for your project
+4. Change your GATT settings as you wish for your project.
 
-    More information on using the
-    [BLE GATT Configurator is provided here.](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-developing-with-project-configurator/bluetooth-gatt-configurator)
+    For more information, refer to
+    [BLE GATT Configurator is provided here.](https://docs.silabs.com/ssv6ug/latest/ssv6-configure-project/bluetooth-gatt-configurator)
 
-5. Save your project, which will force the generation of your BLE GATT
-   Configuration
+5. Save your project, which will force the generation of your BLE GATT Configuration.
 
-6. BLE GATT database is stored in the `autogen` folder in your project directory
+6. BLE GATT database is stored in the `autogen` folder in your project directory.
 
 7. Move the BLE GATT db into your Matter project
 
     Copy the BLE GATT db header files out of your project and into the Matter
     project. BLE GATT db header and `.c` files are located in
-    `./src/platform/EFR32` in the Silicon Labs Matter GitHub repo.
+    `./src/platform/silabs/efr32` in the CSA Matter GitHub Repo.

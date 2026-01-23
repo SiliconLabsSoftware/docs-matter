@@ -1,5 +1,7 @@
 # Provisioning GUI Tool
 
+> **Note:** This tool is not available in the latest Simplicity Studio v6 25Q4 release. It will be available in the future ones. 
+
 ## Background
 
 The Matter Provisioning Tool (MPT) allows you to:

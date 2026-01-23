@@ -1,6 +1,6 @@
 # How to Build and Flash the Radio Co-Processor (RCP)
 
-The Radio Co-Processor is a 15.4 stack image flashed onto a Silicon Labs development kit or Thunderboard Sense 2. The 15.4 stack on the development kit communicates with the higher layers of the Thread stack running on the Raspberry Pi over a USB connection.
+The Radio Co-Processor is a 15.4 stack image flashed onto a Silicon Labs development kit. The 15.4 stack on the development kit communicates with the higher layers of the Thread stack running on the Raspberry Pi over a USB connection.
 
 A complete list of supported hardware for the RCP is provided on the [Matter Hardware Requirements](/matter/{build-docspace-version}/matter-prerequisites/hardware-requirements) page.
 
@@ -20,7 +20,11 @@ RCP image files for all demo boards are accessible through the [Matter Artifacts
 
 ### Building the Image File from Simplicity Studio
 
-RCP Images can be built from Simplicity Studio. Select **File > New > Silicon Labs Project Wizard**, look through the **Example Projects**, and then select the **Openthread - RCP Project**. Once the project is generated, you can build and flash the RCP. You can follow along in the [Simplicity Studio Getting Started Guide](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-getting-started/start-a-project) for more information.
+RCP Images can be built from Simplicity Studio.
+
+Click **Home**. Next to **Start a New Project**, click **all projects & demos**, look through the **Example Projects & Demos**, and then select the **OpenThread - RCP** project.
+
+Once the project is generated, you can build and flash the RCP. You can follow along in the [Light Switch Example](/matter/{build-docspace-version}/matter-light-switch-example/02-thread-light-switch-example.md#setting-up-the-matter-hub) for more information.
 
 ### Building the Image File from the ot-efr32 Repository
 
@@ -63,7 +67,7 @@ The output of the build process puts all the image files in the following locati
 
 ## Step 2: Flash the RCP
 
-Once you get the RCP image, either by downloading a prebuilt image or building the image file, you can flash it to your device. This is done directly from your laptop and not through the Raspberry Pi, so make sure that the device is connected directly over USB to your laptop. You can flash your RCP using Simplicity Studio or using standalone Simplicity Commander.
+Once you get the RCP image, either by downloading a prebuilt image or building the image file, you can flash it to your device. This is done directly from your laptop and not through the Raspberry Pi, so make sure that the device is connected directly over USB to your laptop. You can flash your RCP using Simplicity Studio or using standalone Simplicity Commander (see [How to Build and Flash the Matter Accessory Device](/matter/{build-docspace-version}/matter-thread/build-flash-mad.md#step-2-flash-the-matter-accessory-device)).
 
 Once you have flashed the image, the device becomes the RCP. Disconnect it from you laptop and connect it via USB to the Raspberry Pi.
 

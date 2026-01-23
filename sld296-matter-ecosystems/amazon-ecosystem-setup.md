@@ -19,15 +19,96 @@ As part of partnership with Amazon, the following link contains information requ
 
 In the context of MSS for Wi-Fi, the provisionee, or commissionee, is the device that is to be automatically set up. If you want to make your device eligible to be an MSS commissionee, you must satisfy the following:
 
-1. Configure the device to beacon over Bluetooth LE (BLE) with specific fields needed for MSS for Wi-Fi (detailed below).
+1. Create an Amazon Developer Account
 
-2. Onboard your device via the FFS developer portal by creating a Matter new device type. On the developer portal, you will manage your FFS onboarding lifecycle tasks, like managing your test devices and manufacturing data and submitting for certification.
+   Sign up for an Amazon Developer account at https://developer.amazon.com/ if you don't already have one.
 
-3. Integrate a unique barcode on your device packaging. You can also use an existing unique barcode on your packaging, such as a serial number, or MAC address.
+2. Create a Test Product in the Developer Console
 
-4. Share your device control log data with Amazon services. Control Logs are a mechanism that allows manufacturers to provide Amazon with unique device identifiers and authentication material, such as the Matter passcode, that are critical to ensure a frictionless customer setup. The unique package barcode is associated with your device identifier through the control logs. See the Matter Control Logs section for more details.
+   In the Amazon Developer Console, create a new test product for Matter Simple Setup (MSS).
+   
+   Reference: https://developer.amazon.com/docs/frustration-free-setup/matter-simple-setup-getting-started.html#create-your-product
 
-5. Complete Frustration-Free Setup certification and Amazon ASIN onboarding. Review the certification section below for more information.
+3. Generate and Upload Control Logs
+
+   This step involves three parts: generating control logs, uploading them to Amazon and downloading the feedback form.
+
+   a. Generate Control Logs
+   
+      Follow Option 1 in the Amazon documentation: https://developer.amazon.com/docs/frustration-free-setup/matter-simple-setup-getting-started.html#generating-control-logs
+      
+      1. Install Gradle.
+      2. Run the following command (replace placeholder values with your actual values):
+
+      ```bash
+      gradle run --args="-apid APID -dsn DeviceSerialNumber -vid MatterVendorID -pid MatterProductID -p MatterDevicePasscode -a MATTER_V0 -d MatterDeviceDiscriminator -udid Base64EncodedUniqueDeviceId -pk "PublicKeyOfProduct"
+      ```
+
+      Command Inputs:
+
+      - `-apid`: Amazon-provided Advertised Product ID (Go to FFS Console → Products -> <your_product> -> Advertised Product ID)
+      - `-dsn`: Serial Number of the Amazon Echo Device
+      - `-vid`: Vendor ID
+      - `-pid`: Product ID
+      - `-p`: Matter device passcode
+      - `-a`: Matter encryption algorithm
+      - `-d`: Device discriminator
+      - `-udid`: Base64-encoded Unique Device ID
+      - `-pk`: Public key of your Amazon product (FFS Console → Products → <your_product> → Device Cryptographic Material)
+
+   b. Upload Control Logs to Amazon
+   
+      - Follow the documentation steps to upload the generated control logs : https://developer.amazon.com/docs/frustration-free-setup/matter-simple-setup-getting-started.html#uploading-control-logs
+
+   c. Download Feedback logs from Amazon
+   
+      - Follow the steps given in : https://developer.amazon.com/docs/frustration-free-setup/matter-simple-setup-getting-started.html#getting-control-log-feedback-files
+
+
+4. Pre-Register Test Devices
+
+   Pre-register your test devices by following the instructions here:
+   
+   https://developer.amazon.com/docs/frustration-free-setup/matter-simple-setup-getting-started.html#test-devices
+
+5. Verify Amazon Account Settings
+
+   - Open your account settings: https://www.amazon.com/hz/mycd/preferences/myx#/home/settings/payment
+   - Ensure Country/Region is set to United States (US).
+   - Confirm that Simple Sign-In and Frustration-Free Setup automations are enabled.
+
+
+6. Barcode Specification
+
+   Integrate a unique barcode on your device packaging. You can also use an existing unique barcode on your packaging, such as a serial number, or MAC address. Refer to this link for more details:
+   
+   https://developer.amazon.com/docs/frustration-free-setup/matter-simple-setup-for-wifi-overview.html#packaging-barcode
+
+7. Complete Frustration-Free Setup Certification
+
+   The certification process given by Amazon can be found here:
+   
+   https://developer.amazon.com/docs/frustration-free-setup/provisionee-certification.html
+
+8. Amazon ASIN Onboarding
+
+   For configuring the Amazon Standard Identification Number (ASIN), refer to the documentation given by Amazon here:
+   
+   https://developer.amazon.com/docs/frustration-free-setup/asin-configuration.html
+
+**Changes that should be made in the application:**
+
+Amazon FFS requires use of an optional feature in Matter called additional advertising. This can be enabled in a Matter Studio project by adding the **GATT Additional Advertising** component to the project. In a GN based build, it can be included by adding the two optional build arguments to the GN build:
+
+```
+chip_enable_additional_data_advertising=true
+chip_enable_rotating_device_id=true
+```
+
+Ensure that the device advertises the fields mentioned in this link over BLE:
+
+https://developer.amazon.com/docs/frustration-free-setup/matter-simple-setup-for-wifi-overview.html#ble-beaconing 
+
 
 ### Amazon Alexa MSS (Matter Simple Setup) - Thread
 

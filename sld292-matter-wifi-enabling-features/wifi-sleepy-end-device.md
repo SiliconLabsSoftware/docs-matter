@@ -62,18 +62,9 @@ To enable ICD functionality for Wi-Fi, the `ICD Management` cluster/component ne
 
 - For SiWx917 SOC, click on **Replace Subscription Timeout Resumption**. Sleepy support is enabled; build the project. Sleep support on M4 and TA can be enabled by installing `matter_icd_core` component.
 
-- For rs9116 and WF200: `matter_icd_management` component is installed by default for lock-app. For thermostat and window, you need to install the mentioned cluster/component to enable sleepy.
+- For WF200: `matter_icd_management` component is installed by default for lock-app. For thermostat and window, you need to install the mentioned cluster/component to enable sleepy.
 
 - For 917NCP: `matter_icd_management` component is installed by default for lock-app. For thermostat and window, you need to install the mentioned cluster/component to enable sleepy.
-
-### EFR32 + RS9116 Setup for ICDs (Sleepy Devices)
-
-**Note**: RS9116 is deprecated and no longer supported on Matter.
-
-- The following GPIO pins should be connected for 9116 and Host handshakes.
-pin 7 and pin 9 to UULP_2 and UULP_0 respectively.
-
-![Power measurement GPIO pin connection for 9116](./images/wifi-9116-gpio-connections.png)
 
 ## Power Measurements for Wi-Fi Devices
 
@@ -85,15 +76,15 @@ After flashing the Matter application to the module, Energy profiler or a power 
 
 ![Power measurement connection overview](./images/wifi-powersave-overview.png)
 
-In Simplicity Studio, click **Tools** on the toolbar, select **Energy Profiler**, and click **OK**.
+In Simplicity Studio, click **Tools** on the left panel, select **Energy Profiler**, and click **Open Tool**.
 
-![Power measurement PowerProfiler](./images/wifi-powerprofiler.png)
+![Power measurement PowerProfiler](./images/studio-tools-energy-profiler.jpeg)
 
 From the Quick Access or Profiler menu, select **Start Energy Capture**.
 
 ![Power measurement using PowerProfiler](./images/wifi-powerprofiler-start.png)
 
-**Note**: A quick-start guide on the Energy Profiler user interface is in the Simplicity Studio User's Guide's [Energy Profiler User Interface section](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-tools-energy-profiler/energy-profiler-user-interface).
+**Note**: A quick-start guide on the Energy Profiler user interface is in the Simplicity Studio User's Guide's [Energy Profiler User Interface section](https://docs.silabs.com/energy-profiler/latest/energy-profiler-start/).
 
 ### Power Consumption Measurement Using Energy Profiler for Wi-Fi Devices
 
@@ -103,10 +94,6 @@ Analyze the power values using Energy Profiler.
 
 ### Power Consumption Measurement Using a Power Meter
 
-Power consumption measurement pins for RS9116 Evk Boards:
-
-![Power measurement pins for NCP mode](./images/wifi-9116-powermeter-wifimodule.png)
-
 Power consumption measurement pins for EXP Boards:
 
 ![Power measurement pins for NCP mode](./images/siwx917-ncp-powermeasurement-pins.png)
@@ -114,5 +101,3 @@ Power consumption measurement pins for EXP Boards:
 The power meter's negative probe is used for pin-1 and the positive probe is used for pin-2.
 
 Analyze the power values using the power meter.
-
-![Power measurement for 9116/917 using power meter](./images/wifi-9116-powerprofiler.png)

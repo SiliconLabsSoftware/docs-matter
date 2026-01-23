@@ -37,7 +37,7 @@ The following hands-on tutorial walks through the process of storing and recalli
 
 ### Requirements
 
-- Gecko SDK 4.4.2 + Matter extension 2.3.0 (or newer)
+- Simplicity SDK 2025.12.0 + Matter extension 2.8.0 (or newer)
 - Raspberry Pi 4 + MatterHub Image
 - 1x Silabs WTSK EFR32xG21 (BRD4108B) in RCP configuration
 - 2x [EFR32xG24-DK2601B Dev Kit](https://www.silabs.com/development-tools/wireless/efr32xg24-dev-kit?tab=overview)
@@ -77,7 +77,7 @@ The component should look like this:
 
 The RGB PWM LED instance that has been created can be found in _MatterLightOverThread/autogen/sl_simple_rgb_pwm_led_instances.h_.
 
-The documentation for the APIs that have been generated can be found here: [Simple RGB PWM LED Driver](https://docs.silabs.com/gecko-platform/5.0.0/platform-driver/simple-rgb-pwm-led#simple-rgb-pwm-led-driver). The file that contains these APIs can be found in the directory: _MatterLightOverThread/simplicity_sdk_xxxx/platform/driver/leddrv/inc/sl_simple_rgb_pwm_led.h_.
+The documentation for the APIs that have been generated can be found here: [Simple RGB PWM LED Driver](https://docs.silabs.com/gecko-platform/latest/platform-driver/simple-rgb-pwm-led#simple-rgb-pwm-led-driver). The file that contains these APIs can be found in the directory: _MatterLightOverThread/simplicity_sdk_xxxx/platform/driver/leddrv/inc/sl_simple_rgb_pwm_led.h_.
 
 ### Step 2: Add the ColorTransformer Class
 
