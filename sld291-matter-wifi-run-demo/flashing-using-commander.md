@@ -10,6 +10,8 @@ Before flashing the application for EFR32 Boards, flash **bootloader images** as
 - **BRD4187C Board**
   - For MG24 + WF200: External Bootloader (bootloader-storage-spiflash-single-1024k-BRD4187C-gsdk4.1)
 
+**Note**: RS9116 is deprecated and no longer supported on Matter.
+
 Bootloader binaries are available in the respective path of codebase **third_party/silabs/matter_support/matter/efr32/bootloader_binaries** folder. Silicon Labs recommends always flashing the latest bootloader binaries from the codebase.
 
 **Note**: Bootloader binaries are flashed using Simplicity Commander only. It supports EFR32 Boards only.
