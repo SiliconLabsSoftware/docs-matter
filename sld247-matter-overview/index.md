@@ -13,20 +13,24 @@ The procedures here describe how to make a simple network of a light, a switch, 
 ## Initial Setup
 
 Both the Matter over Wi-Fi and Matter over Thread demos require that you have set up a simple development environment with Simplicity Studio,
-two EFR32MG24-based development boards, and a Raspberry Pi used as a Matter hub. The following requirements are common to both demos. The Thread demo also requires a radio co-processor (RCP) as part of the Matter hub. The requirements for this are provided in the [introduction to the Thread demo](/matter/{build-docspace-version}/matter-light-switch-example/02-thread-light-switch-example).
+two Matter compatible development boards (see the [Silicon Labs Matter Selector Guide](https://www.silabs.com/wireless/matter/selector-guide) for available boards and their capabilities), and a Raspberry Pi used as the Matter Controller. The following requirements are common to both demos. The Thread demo requires a radio co-processor (RCP) connected to the Matter Controller. The requirements for this are provided in the [introduction to the Thread demo](/matter/{build-docspace-version}/matter-light-switch-example/02-thread-light-switch-example).
 
 ### Hardware Requirements
 
 #### Matter Hub
 
-- 1 Raspberry Pi 4B
+- 1 Raspberry Pi 4B or newer
 - 1x high speed, 64 GB SD card
 
-#### Matter Devices
+
+**Matter Over Thread Devices**
+
+- SoC: EFR32x MG24, MG26, MG301
+- RCP: EFR32x MG21, MG24, MG26, MG301
 
 **Matter Over Wi-Fi Accessory Device Requirements for NCP Mode**
 
-The Silicon Labs Matter over Wi-Fi NCP mode demo and development requires two boards: the Silicon Labs EFR32 Radio board to run the Matter code and either the RS9116, SiWx917, or WF200 to run the Wi-Fi protocol stack.
+The Silicon Labs Matter over Wi-Fi NCP mode demo and development requires two boards: the Silicon Labs EFR32 Radio board to run the Matter code and either the SiWx917 or WF200 to run the Wi-Fi protocol stack.
 
 The following boards are supported for the Matter over Wi-Fi demos and development:
 
@@ -38,14 +42,6 @@ The following boards are supported for the Matter over Wi-Fi demos and developme
     - [XG24-RB4187C](https://www.silabs.com/development-tools/wireless/xg24-rb4187c-efr32xg24-wireless-gecko-radio-board)
     - MG24 with WSTK: [xG24-PK6010A](https://www.silabs.com/development-tools/wireless/efr32xg24-pro-kit-20-dbm?tab=overview)
 - **Wi-Fi NCP Dev Kits & boards**
-  - **RS9116**
-    (**Note:** RS9116 is deprecated and no longer supported on Matter.)
-    - SB-EVK1 / Single Band Wi-Fi Development Kit / 2.4GHz
-      - [RS9116X-SB-EVK1](https://www.silabs.com/development-tools/wireless/wi-fi/rs9116x-sb-evk-development-kit)
-    - SB-EVK2 / Single Band Wi-Fi Development Kit / 2.4GHz
-      - [RS9116X-SB-EVK2](https://www.silabs.com/development-tools/wireless/wi-fi/rs9116x-sb-evk2-development-kit)
-    - DB-EVK1 / Dual Band Wi-Fi Development Kit / 2.4GHz & 5GHz
-      - [RS9116X-DB-EVK1](https://www.silabs.com/development-tools/wireless/wi-fi/rs9116x-db-evk-development-kit)
   - **SiWx917 NCP**
     - SiWx917 NCP Mode / Wi-Fi Expansion Board / 2.4GHz
       - BRD8045A (B0 Expansion v2.0)
@@ -55,8 +51,6 @@ The following boards are supported for the Matter over Wi-Fi demos and developme
       - WF200 / Single Band Wi-Fi Expansion Board / 2.4GHz
       - [SLEXP8023A](https://www.silabs.com/development-tools/wireless/wi-fi/wfm200-wifi-expansion-kit)
   - Interconnect board (included in the Wi-Fi kits)
-  - SPI Cable (included in the RS9116 kit)
-  - Jumper Cables (included in the RS9116 kit)
 
 **Matter Over Wi-Fi Accessory Device Requirements for SoC Mode**
 
@@ -72,7 +66,7 @@ Pre-built images for the SiWx917 connectivity firmware are available per the ins
 
 ### Software Requirements
 
-**Simplicity Studio 5**: Download and install Simplicity Studio 5 for your operating system from the Silicon Labs [Simplicity Studio page](https://www.silabs.com/developers/simplicity-studio). While the installation process is easy to follow, instructions are provided in the Simplicity Studio v5 [Getting Started section](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-getting-started/install-ss-5-and-software).
+**Simplicity Studio 6**: Download and install Simplicity Studio 6 for your operating system from the Silicon Labs [Simplicity Studio page](https://www.silabs.com/developers/simplicity-studio). While the installation process is easy to follow, instructions are provided in the Simplicity Studio v6 [Getting Started section](https://docs.silabs.com/ssv6ug/latest/ssv6ug-getting-started-overview/).
 
 **Ozone - The J-Link Debugger**: [Ozone](https://www.segger.com/products/development-tools/ozone-j-link-debugger/) is a full-featured graphical debugger for embedded applications. With Ozone, it is possible to debug any embedded application on C/C++ source and assembly level.
 
@@ -80,9 +74,13 @@ Pre-built images for the SiWx917 connectivity firmware are available per the ins
 
 **Tera Term**: [Tera Term](https://github.com/TeraTermProject/osdn-download) is the terminal emulator for Microsoft Windows that supports serial port, telnet, and SSH connections.
 
-**Silicon Labs Matter SiSDK Extension**: Once Simplicity Studio 5 is installed, you will be prompted to install the Simplicity SDK, formerly released as Gecko SDK (GSDK). Here you should also install the Matter Enablement Package by making sure the extension is checked, as shown.
+**Silicon Labs Matter SiSDK Extension**: Once Simplicity Studio is installed, you will be prompted to install the Simplicity SDK. Here you should also install the Matter Enablement Package by making sure the extension is checked, as shown.
 
-![Installing the Matter Extension](./resources/install-package-advanced-device.png)
+![Installing the Matter Extension](./resources/ssv6-matter-install-guide-1.png)
+
+![Installing the Matter Extension](./resources/ssv6-matter-install-guide-2.png)
+
+![Installing the Matter Extension](./resources/ssv6-matter-install-guide-3.png)
 
 **Installation of Wi-Fi SDK and WiSeConnect Packages**: The following packages will be installed during the installation of Simplicity Studio. Refer to [Package Installation](/matter/{build-docspace-version}/matter-wifi-getting-started-example/software-installation).
 
@@ -98,9 +96,9 @@ Pre-built images for the SiWx917 connectivity firmware are available per the ins
 
 ### Visual Studio Code Development
 
-In addition to creating and building your Matter project within Simplicity Studio, Silicon Labs also provides Visual Studio Code (VSCode) IDE integration. 
+Once a Matter project is created and any components or ZCL clusters modified in Simplicity Studio, Silicon Labs provides a Visual Studio Code (VS Code) IDE extension where code changes can be made. Simplicity Studio 6 (SSv6) does not provide an IDE; instead, VS Code is used. Projects can be built, flashed and debugged directly from VS Code.
 
-For more information on development within Visual Studio Code, please visit [Visual Studio Code Enablement](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-vscode-ide/).
+For more information on development with Visual Studio Code, please visit [Visual Studio Code Enablement](https://docs.silabs.com/ss-vscode/latest/ss-vscode-start/).
 
 ## Next Steps
 

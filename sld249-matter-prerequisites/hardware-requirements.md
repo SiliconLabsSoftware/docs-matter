@@ -95,7 +95,7 @@ The Matter Accessory Device (MAD) is the actual device that the Matter applicati
 
 ### Matter Over Wi-Fi Accessory Device Requirements for NCP Mode
 
-The Silicon Labs Matter over Wi-Fi NCP mode demo and development requires two boards: the Silicon Labs EFR32 Radio board to run the Matter code and either the RS9116, SiWx917, or WF200 to run the Wi-Fi protocol stack. Pre-built images for the EFR32, and also for SiWx917 or RS9116 connectivity firmware, are provided on the [Matter Artifacts page](./matter-artifacts.md).
+The Silicon Labs Matter over Wi-Fi NCP mode demo and development requires two boards: the Silicon Labs EFR32 Radio board to run the Matter code and either the SiWx917 or WF200 to run the Wi-Fi protocol stack. Pre-built images for the EFR32, and also for SiWx917 connectivity firmware, are provided on the [Matter Artifacts page](./matter-artifacts.md).
 
 **Notes:**
 
@@ -114,13 +114,6 @@ The following boards are supported for the Matter over Wi-Fi demos and developme
     - MG24 with WSTK : [xG24-PK6010A](https://www.silabs.com/development-tools/wireless/efr32xg24-pro-kit-20-dbm?tab=overview)
 
 - **Wi-Fi NCP Dev Kits & boards**
-  - **RS9116**
-    - SB-EVK1 / Single Band Wi-Fi Development Kit / 2.4GHz
-      - [RS9116X-SB-EVK1](https://www.silabs.com/development-tools/wireless/wi-fi/rs9116x-sb-evk-development-kit)
-    - SB-EVK2 / Single Band Wi-Fi Development Kit / 2.4GHz
-      - [RS9116X-SB-EVK2](https://www.silabs.com/development-tools/wireless/wi-fi/rs9116x-sb-evk2-development-kit)
-    - DB-EVK1 / Dual Band Wi-Fi Development Kit / 2.4GHz & 5GHz
-      - [RS9116X-DB-EVK1](https://www.silabs.com/development-tools/wireless/wi-fi/rs9116x-db-evk-development-kit)
   - **SiWx917 NCP**
     - SiWx917 NCP Mode / Wi-Fi Expansion Board / 2.4GHz
       - BRD8045A (B0 Expansion v2.0)
@@ -129,9 +122,6 @@ The following boards are supported for the Matter over Wi-Fi demos and developme
       - [SLEXP8022A](https://www.silabs.com/development-tools/wireless/wi-fi/wf200-wifi-expansion-kit)
     - WF200 / Single Band Wi-Fi Expansion Board / 2.4GHz
       - [SLEXP8023A](https://www.silabs.com/development-tools/wireless/wi-fi/wfm200-wifi-expansion-kit)
-- Interconnect board (included in the Wi-Fi kits)
-- SPI Cable (included in the RS9116 kit)
-- Jumper Cables (included in the RS9116 kit)
 
 ### Matter over Wi-Fi Accessory Device Requirements for SoC Mode
 
@@ -157,6 +147,3 @@ In addition to your Matter over Wi-Fi Accessory Device, you need the following f
 - Access point with Internet access
 - microSD card (>=32GB) (if using Raspberry Pi)
 - **[Optional]** Android Mobile phone (If using the chip-tool on Android)
-- Interconnect board (included in the RS9116 kit)
-- SPI Cable (included in the RS9116 kit)
-- Jumper Cables (included in the RS9116 kit)

@@ -8,7 +8,7 @@ Your organization must be an associate member or better to get your product cert
 
 - Official resources to assist you in developing Matter products.
 
-- Authorization to contribute to the [Matter Github repository](https://github.com/project-chip/connectedhomeip).
+- Authorization to contribute to the [CSA Matter Github repository](https://github.com/project-chip/connectedhomeip).
 
 - Once approved, the Connectivity Standards Alliance will reserve a unique Vendor ID (VID) chosen by your organization. This VID will be needed to provision your device.
 

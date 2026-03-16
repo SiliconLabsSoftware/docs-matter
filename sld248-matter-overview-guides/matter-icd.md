@@ -14,7 +14,7 @@ To begin creating an OpenThread ICD example, create a generic Matter over Thread
 
 1. Create project.
 
-    ![Project Generation](images/icd-project-generation.png)
+    ![Project Generation](images/icd-project-generation.jpeg)
 
 2. Navigate to the **Configuration Tools** section and open the **ZCL Advanced Platform (ZAP)**.
 
@@ -40,11 +40,24 @@ ICD functionality should be installed and ready to build. Build the project as y
 
 ### **Minimal Power Consumption**
 
+The CLI/Display/Logging/Peripheral components are useful development tools but can be removed to save power when they are no longer needed.
+
 The Lower Power Mode is an optional component, installing it will disable:
 
-- Matter Shell
-- OpenThread CLI
-- LCD and QR Code
+- Silicon Labs Matter → Matter-Thread → OpenThread CLI
+- Silicon Labs Matter → Platform → Display → Matter Default LCD/Display Configuration
+- Silicon Labs Matter → Platform → Display → Matter Display
+- Silicon Labs Matter → Platform → Display → Matter QR Code Display
+- Silicon Labs Matter → Platform → UART → Matter UART
+- Silicon Labs Matter → Platform → Utils → Logging to UART
+- Silicon Labs Matter → Stack → Shell → Matter Shell
+
+Additionally, Matter Support for peripherals (such as LEDs or Buttons) can be removed if necessary. This will remove the appropriate Platform components.
+
+- Silicon Labs Matter → Platform → WSTK Button Support
+- Silicon Labs Matter → Platform → matter LED Support
+
+This will make debugging issues significantly more difficult so these components should only be removed at the end of development/testing when trying to optimize for power savings.
 
 ## ICD Configurations
 
@@ -77,6 +90,8 @@ These configurations can be changed by modifying the configuration of the `ICD S
     #define SL_ACTIVE_MODE_INTERVAL 1000  // 1s Active Mode Interval
     #define SL_ACTIVE_MODE_THRESHOLD 500  // 500ms Active Mode Threshold
 ```
+
+Power is inversely proportional to idle time: longer idle durations and shorter active periods yield lower average current draw and better battery life. However, excessive idle time increases latency and risks timeouts with the device's parent or Matter controller. A well-optimized configuration minimizes energy use while ensuring network reliability remains acceptable.
 
 ### ICD Check-In Protocol Use-Case
 
@@ -112,7 +127,7 @@ The User Active Mode Trigger feature in the ICD Management cluster indicates whe
 
 To change default values corresponding to Matter ICD examples, modify them in either:
 
-1. `config/sl_matter_icd_config.h`
+1. `config/sl_matter_icd_config.h` in VS Code
 2. ICD component configurator
 
 ![ICD Configuration](images/icd-config.png)
@@ -315,8 +330,8 @@ Configuration parameters of the ICD Server Configuration component (sl_matter_ic
 Configuration parameters of the ICD Server Configuration component (sl_matter_icd_config.h):
 
 ```cpp
-#define SL_OT_IDLE_INTERVAL   5000 // 5s Idle Intervals
-#define SL_OT_ACTIVE_INTERVAL 500  // 500ms Active Intervals
+#define SL_TRANSPORT_IDLE_INTERVAL   5000 // 5s Idle Intervals
+#define SL_TRANSPORT_ACTIVE_INTERVAL 500  // 500ms Active Intervals
 ```
 
 > **Note**: Wi-Fi polling configuration are dictated by the Access Point and cannot be changed at the Matter level.
@@ -380,6 +395,42 @@ Configuration parameters of the ICD Server Configuration component (`sl_matter_i
 Configuration parameters of the ICD Server Configuration component (`sl_matter_icd_config.h`):
 
 ```cpp
-#define SL_OT_IDLE_INTERVAL   3600000  // 60mins Idle Polling Interval
-#define SL_OT_ACTIVE_INTERVAL 1000     // 1s Active Polling Interval
+#define SL_TRANSPORT_IDLE_INTERVAL   3600000  // 60mins Idle Polling Interval
+#define SL_TRANSPORT_ACTIVE_INTERVAL 1000     // 1s Active Polling Interval
 ```
+
+## ICD Features
+
+### Dynamic SIT / LIT Support (DSLS)
+
+This feature is used when a Matter Accessory device needs to be able to decide when to change mode between SIT and LIT. LIT devices are, by design, capable of behaving like SITs and will default to SIT behavior if they cannot be LITs (e.g. controllers don't support LITs). For this feature to be supported, the device must be able to switch between the SIT and LIT operating modes even if it has a valid registered client.
+
+Given that the intention when configuring a LIT is to optimize battery life, they are configured to behave as LIT whenever possible, hence the need for a feature that enables device vendors to dynamically decide when to change mode if defaulting into LIT is not preferred. For example a Smoke CO sensor might want to behave like a LIT only if its power source changes from line-powered to battery powered.
+
+More details of this feature can be found in the ICD Management Cluster description of the Matter Core Specification [Specifications Download Request - IOT](https://csa-iot.org/developer-resource/specifications-download-request/).
+
+>Note: This feature is only available in Matter 1.4 and later.
+
+#### To Enable DSLS
+
+- Configure the device as a LIT ICD
+- Enable the DynamicSitLitSupport feature in the ICD Management Cluster (ICDM) via ZAP
+
+#### Runtime Operation Mode Switching
+
+If the device supports switching between the SIT and LIT operation modes while it has at least one registered client, it must set the DynamicSitLitSupport feature in the ICD Management cluster in ZAP.
+
+Each time a LIT ICD switches between operating modes, both the mDNS ICD key and OperatingMode attribute of the ICDM cluster are updated by the Matter stack:
+
+- [ICDManager::OnSITModeRequest()](https://github.com/SiliconLabsSoftware/matter_sdk/blob/cf658552aac8a5821f63cc8495725058d2a647df/src/app/icd/server/ICDManager.cpp#L644): Sets
+  ICD=0 and OperatingMode=SIT if "Long Idle Time ICD is operating as a Short Idle Time ICD"
+- [ICDManager::OnSITModeRequestWithdrawal()](https://github.com/SiliconLabsSoftware/matter_sdk/blob/cf658552aac8a5821f63cc8495725058d2a647df/src/app/icd/server/ICDManager.cpp#L652): Sets ICD=1 and OperatingMode=LIT if "Long Idle Time ICD is operating as a Long Idle Time ICD"
+- In each case [ICDManager::UpdateICDMode()](https://github.com/SiliconLabsSoftware/matter_sdk/blob/cf658552aac8a5821f63cc8495725058d2a647df/src/app/icd/server/ICDManager.cpp#L377) is leveraged to update the ICD operating mode and mDNS ICD key.
+
+#### Configuration
+
+DSLS does not introduce new mandatory polling rates or timing requirements. LIT devices are already required to behave like SIT devices when LIT operation is not possible (e.g. controller limitations); DSLS simply overrides the default preference for LIT operation so the ICD will default to SIT unless directed to become LIT by the application.
+
+The LIT slow poll is defined via the SL_TRANSPORT_IDLE_INTERVAL configuration parameter. The SIT slow poll will automatically default to the maximum SIT slow poll (15 seconds) or to whatever is defined via the CHIP_DEVICE_CONFIG_ICD_SIT_POLLING_INTERVAL configuration parameter. It can be further changed via the [SetSITPollingInterval](https://github.com/SiliconLabs/matter_extension/blob/63c8513144894fe991e2fbbe8998bc6b127adeee/third_party/matter_sdk/src/app/icd/server/ICDConfigurationData.h#L152) API. The SL_TRANSPORT_ACTIVE_INTERVAL defines the fast poll behavior regardless of LIT or SIT mode.
+
+The specific SIT and LIT parameters (poll intervals, idle times, etc.) are vendor-defined and should be chosen based on the use-case. The Matter sample applications provide examples of configurations depending on the use-case. For instance, the Light Switch sample app defaults to an idle time of 15s while the door lock app has and idle time of 5s so that it can be more responsive.

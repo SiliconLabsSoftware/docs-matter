@@ -16,51 +16,43 @@ To run matter shell on the Silicon Labs Platform, refer to the [Software Require
 
 2. To install the software packages for Simplicity Studio, refer to [Software Package Installation](/matter/{build-docspace-version}/matter-wifi-getting-started-example/software-installation#installation-of-software-packages).
 
-3. Log in to Simplicity Studio and connect the EFR32MG2x or SiWx917 SOC board to the computer.
+3. Connect the EFR32MG2x or SiWx917 SOC board to the computer.
 
-4. Go to the **All Products** section.
+4. Go to the **Devices** section on the left panel.
 
-   ![Silicon Labs - design](./images/all-products-selection.png)
+5. Select the radio board that is connected. The Launcher page will display the selected radio board's details.
 
-5. Type and select the radio board from the displayed list and click **Start**.
+   ![Silicon Labs - design](./images/matter-shell-connect-board.jpeg)
 
-   ![Silicon Labs - design](./images/select-efx-board.png)
-
-6. The Launcher page will display the selected radio board's details.
-
-   ![Silicon Labs - design](./images/overview-tab-efx32.png)
-
-7. Verify the following in the **General Information** section:
+6. Verify the following in the **General Information** section:
    - The Debug Mode is **Onboard Device (MCU)**.
    - The Preferred SDK is the version you selected earlier.
 
-   ![Silicon Labs - design](./images/create-project-verify-efx-general-information.png)
+7. Click the **Create New Project** option and create a project for the Matter Lock Application.
 
-8. Open the **Example Projects and Demos** tab and create a project for the Matter Lock Application.
+   ![Silicon Labs - design](./images/matter-shell-lock-app.jpeg)
 
-   ![Silicon Labs - design](./images/create-project-select-efx-lock-example.png)
+8. In the Project Configuration window, click **Finish**.
 
-9. In the New Project Wizard window, click **Finish**.
+   ![Silicon Labs - design](./images/matter-shell-project-generation.jpeg)
 
-   ![Silicon Labs - design](./images/create-project-lock-click-finish.png)
-
-10. After creation of project, open the **Software Components** tab and, in the search bar, type _Matter Shell_ and install it.
+9.  After creation of project, open the **Software Components** tab and, in the search bar, type _Matter Shell_ and install it.
 
     ![Silicon Labs - design](./images/matter-shell-enable.png)
 
-11. Build the project after enabling the **Matter Shell** component.
+10. Build the project after enabling the **Matter Shell** component.
 
-12. After a successful build, commission the device as described in [Commission Matter Platform](/matter/{build-docspace-version}/matter-wifi-run-demo/use-case-execution#creating-the-matter-network).
+11. After a successful build, commission the device as described in [Commission Matter Platform](/matter/{build-docspace-version}/matter-wifi-run-demo/use-case-execution#creating-the-matter-network).
 
-13. Open Tera Term and under **New connection**, select **Serial**, and in the dropdown, select the **JLink** port, and click **OK**.
+12. Open Tera Term and under **New connection**, select **Serial**, and in the dropdown, select the **JLink** port, and click **OK**.
 
     ![Silicon Labs - design](./images/tera-term-select-jlink-port.png)
 
-14. In the menu bar, click **Setup > Terminal**.
+13. In the menu bar, click **Setup > Terminal**.
 
     ![Silicon Labs - design](./images/tera-term-selection-in-terminal.png)
 
-15. Inside **Terminal**, set the values below and click **OK**.
+14. Inside **Terminal**, set the values below and click **OK**.
 
     - Terminal Size : 80 * 24
     - New-Line
@@ -69,23 +61,23 @@ To run matter shell on the Silicon Labs Platform, refer to the [Software Require
 
     ![Silicon Labs - design](./images/tera-term-terminal-setup.png)
 
-16. In the menu bar, click **Setup > Serial port**.
+15. In the menu bar, click **Setup > Serial port**.
 
     ![Silicon Labs - design](./images/tera-term-select-serial-port.png)
 
-17. Increase the speed to **115200** and click **New setting**.
+16. Increase the speed to **115200** and click **New setting**.
 
     ![Silicon Labs - design](./images/tera-term-select-speed.png)
 
-18. In the menu bar, click **File > TTY Record**. Create any empty file with extension ".tty" and click **Save**.
+17. In the menu bar, click **File > TTY Record**. Create any empty file with extension ".tty" and click **Save**.
 
     ![Silicon Labs - design](./images/tera-term-tty-record.png)
 
-19. After creating the tty file, press **Enter** to open the **matterCli** terminal.
+18. After creating the tty file, press **Enter** to open the **matterCli** terminal.
 
     ![Silicon Labs - design](./images/tera-term-matter-cli.png)
 
-20. Send any command through the **matterCli** terminal, from the below list of commands:
+19. Send any command through the **matterCli** terminal, from the below list of commands:
 
     - doorlock event door-state-change "DoorState"
         - Door State List
@@ -109,7 +101,7 @@ To run matter shell on the Silicon Labs Platform, refer to the [Software Require
 
       ![Silicon Labs - design](./images/matter-shell-command-send.png)
 
-21. After changing DoorState and AlarmCode in **matterCli**, run the commands below using chip-tool on Raspberry PI to verify the event.
+20. After changing DoorState and AlarmCode in **matterCli**, run the commands below using chip-tool on Raspberry PI to verify the event.
   
     - To Read Door State
   

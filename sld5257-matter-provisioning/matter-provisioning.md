@@ -55,7 +55,7 @@ The GFW performs the following tasks:
 - Stores the Attestation Data on the main flash (CD, PAI, DAC)
 - Stores the size and offsets used to store the Attestation Data, along with the KeyId used to store the private-key.
 
-The provisioning code resides under `extension/matter_extension` in the SiSDK directory tree for the SDK used in your Studio project, for example `SimplicityStudio/SDKs/sisdk_release/extension/matter_extension/provision`.
+The provisioning code resides under `provision` folder in the matter extension of the SDK used in your Studio project, for example `C:\Users\<username>\.silabs\slt\installs\conan\p\matte2e08d48896d06\p\provision`.
 
 The board support is located under `./support`. Pre-compiled images for the supported chips can be found in `./images`.
 Backwards-compatibility script files are stored under `./modules/vX_Y` where X.Y matches the targeted version.

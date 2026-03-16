@@ -5,11 +5,9 @@ To flash the application for EFR32 and SiWx917 SoC Board Simplicity Commander so
 Before flashing the application for EFR32 Boards, flash **bootloader images** as per board variants:
 
 - **BRD4186C Board**
-  - For MG24 + RS9116: Internal Bootloader (bootloader-storage-internal-single-512k-BRD4186C-gsdk4.1)
   - For MG24 + WF200: External Bootloader (bootloader-storage-spiflash-single-1024k-BRD4186C-gsdk4.1)
 
 - **BRD4187C Board**
-  - For MG24 + RS9116: Internal Bootloader (bootloader-storage-internal-single-512k-BRD4187C-gsdk4.1)
   - For MG24 + WF200: External Bootloader (bootloader-storage-spiflash-single-1024k-BRD4187C-gsdk4.1)
 
 **Note**: RS9116 is deprecated and no longer supported on Matter.
@@ -22,9 +20,9 @@ Bootloader binaries are available in the respective path of codebase **third_par
 
 1. On the Simplicity Studio home page, click **Tools**.
 
-2. In the Tools dialog, select **Simplicity Commander** and click **OK**.
+2. In the Tools tab, select **Commander** and click **Open Tool**.
 
-   ![Select Commander](./images/select-commander.png)
+   ![Select Commander](./images/studio-tools-commander.png)
 
 3. In the Simplicity Commander window, click **Select Kit** and choose your radio board.
 
@@ -44,9 +42,9 @@ Bootloader binaries are available in the respective path of codebase **third_par
 
 1. On the Simplicity Studio home page, click **Tools**.
 
-2. In the **Tools** dialog, select **Simplicity Commander** and click **OK**.
+2. In the Tools tab, select **Commander** and click **Open Tool**.
 
-   ![Select Commander](./images/select-commander.png)
+   ![Select Commander](./images/studio-tools-commander.png)
 
 3. In the Simplicity Commander window, click **Select Kit** and choose your radio board.
 
@@ -86,9 +84,9 @@ SiWx917 SoC device support is available in the latest [Simplicity Commander](htt
 
 5. On the Simplicity Studio home page, click **Tools**.
 
-6. In the Tools dialog, select **Simplicity Commander** and click **OK**.
+6. In the Tools tab, select **Commander** and click **Open Tool**.
 
-   ![Select Commander](./images/select-commander.png)
+   ![Select Commander](./images/studio-tools-commander.png)
 
 7. In the Simplicity Commander window, click **Select Kit** and choose your radio board.
 
