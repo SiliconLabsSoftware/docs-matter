@@ -72,4 +72,5 @@ Update digits based on the following criteria:
 |  v2.6.0-1.4  |  18-Jun-25     | 2025.6.0                       | v3.5.0   | 1.4 | Obsolete     |
 |  v2.6.1-1.4  |  23-Jul-25     | 2025.6.1                       | v3.5.1   | 1.4 | Maintained     |
 |  v2.7.0-1.4  |  25-Sep-25     | 2025.6.2                       | v3.5.2   | 1.4 | Maintained |
-|  v2.8.0-1.5  |  12-Jan-25     | 2025.12.0                      | v4.0.0   | 1.5 | Active     |
+|  v2.8.0-1.5  |  12-Jan-25     | 2025.12.0                      | v4.0.0   | 1.5 | Maintained |
+|  v2.8.1-1.5  |  12-Jan-25     | 2025.12.2                      | v4.0.1   | 1.5 | Active     |
