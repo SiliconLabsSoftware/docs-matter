@@ -4,7 +4,7 @@ This Quick-Start Guide demonstrates the out-of-box experience for adding an EFR3
 
 ## Software Requirements
 
-- Simplicity Studio v6 with SiSDK - 2025.12.0 + Silicon Labs Matter - 2.8.0
+- Simplicity Studio v6 with SiSDK - 2025.12.2 + Silicon Labs Matter - 2.8.1
 - Simplicity Connect mobile App on Smartphone
 
 ## Hardware Requirements
