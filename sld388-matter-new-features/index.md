@@ -1,5 +1,8 @@
 # New Features
 
+## New Features for v2.8.1-1.5
+- PSRAM board support in Matter now uses WiseConnect components. To place specific code/data in PSRAM, enable the corresponding WiseConnect component for the section or region you want to relocate.
+
 ## New Features for v2.8.0-1.5
 
 - Quality-tested Matter 1.5 solution for Thread MG24 / MG26 / MG30, Wi-Fi SiWG917 SoC and SiWN917 NCP mode, and Wi-Fi MG24/WF200
