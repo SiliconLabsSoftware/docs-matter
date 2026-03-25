@@ -1,19 +1,19 @@
 # Build Procedure For Matter + AWS
 
-Below steps are to be followed for setting the AWS configuration in the Matter SDK.
+Follow the steps below to set the AWS configuration in the Matter SDK.
 
-## Adding the AWS Server, Client ID and Cluster Details
+## Adding the AWS Server, Client ID, and Cluster Details
 
 1. Open Simplicity Studio. Go to `Settings > SDKs`. Click **Browse to Location** option by right-clicking **Silicon Labs Matter**.
    ![Matter Extension Browse to Location](images/aws-sdk-location.png)
 
 2. Go to the `third_party/matter_sdk/examples/platform/silabs/matter_aws/matter_aws_interface/include/`.   
 
-3. Update the definitions for the server ID, client ID and cluster in `MatterAwsConfig.h`:
+3. Update the definitions for the server ID, client ID, and cluster in `MatterAwsConfig.h`:
 
    - Update the AWS server name at `#define MATTER_AWS_SERVER_HOST ""`.
    - Update the client ID at `#define MATTER_AWS_CLIENT_ID ""`.
-   - Update the cluster server information from the below table, based on your app:
+   - Update the cluster server information as shown in the table below, based on your app:
   
    | Application Type | Cluster Definition |
    |------------------|--------------------|
@@ -29,7 +29,7 @@ Below steps are to be followed for setting the AWS configuration in the Matter S
 4. After making the above changes, refresh the `matter-extension` in Simplicity Studio.
    - In the **Home** tab, from the left panel, select **Settings**.
    ![Select Settings](images/aws-build-settings.jpg)
-   - Click on **SDKs**, ensure the correct version of the SDK is selected, and then click **Refresh** in the right side menu.
+   - Click **SDKs**, ensure the correct version of the SDK is selected, and then click **Refresh** in the right side menu.
    ![Select Refresh](images/aws-build-sdk-refresh.jpg)
 
 The following steps are common for all apps and should be modified using the Studio Project Configurator tool.
