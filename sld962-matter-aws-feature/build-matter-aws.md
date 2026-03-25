@@ -1,6 +1,6 @@
 # Build Procedure For Matter + AWS
 
-The following steps are for adding the AWS configurations in the Matter SDK.
+Below steps are to be followed for setting the AWS configuration in the Matter SDK.
 
 ## Adding the AWS Server, Client ID and Cluster Details
 
