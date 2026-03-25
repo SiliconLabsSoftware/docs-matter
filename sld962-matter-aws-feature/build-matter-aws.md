@@ -27,13 +27,9 @@ Below steps are to be followed for setting the AWS configuration in the Matter S
     ![MatterAwsConfig.h File](./images/matter-aws-config.png)
 
 4. After making the above changes, refresh the `matter-extension` in Simplicity Studio.
-
-5. In the **Home** tab, from the left panel, select **Settings**.
-
+   - In the **Home** tab, from the left panel, select **Settings**.
    ![Select Settings](images/aws-build-settings.jpg)
-
-6. Click on **SDKs**, ensure the correct version of the SDK is selected, and then click **Refresh** in the right side menu.
-
+   - Click on **SDKs**, ensure the correct version of the SDK is selected, and then click **Refresh** in the right side menu.
    ![Select Refresh](images/aws-build-sdk-refresh.jpg)
 
 The following steps are common for all apps and should be modified using the Studio Project Configurator tool.
