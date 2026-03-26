@@ -74,6 +74,6 @@ All the certificate should be added in below format:
       - char device_certificate[] - Fill it with Device Certificate downloaded from AWS in Step 7.
       - char device_key[] - Fill it with Device Key generated in Step 6.
 
-9.  Repeat Step 6 to create a new thing for use in MQTT Explorer, using the certificate generated for MQTT Explorer during OpenSLL certificate creation (e.g., `explorer.csr`). Create a `.pem` file from the CA certificate in Step 8 and use it as the server certificate in MQTT Explorer.
+9. Repeat Step 6 to create a new thing for use in MQTT Explorer, using the certificate generated for MQTT Explorer during OpenSLL certificate creation (e.g., `explorer.csr`). Create a `.pem` file from the CA certificate in Step 8 and use it as the server certificate in MQTT Explorer.
 
    > **Note**: The thing name must be unique as it will be used as the client ID.

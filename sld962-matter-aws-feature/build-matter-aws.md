@@ -1,5 +1,37 @@
 # Build Procedure For Matter + AWS
 
+Follow the steps below to set the AWS configuration in the Matter SDK.
+
+## Adding the AWS Server, Client ID, and Cluster Details
+
+1. Open Simplicity Studio. Go to `Settings > SDKs`. Click **Browse to Location** option by right-clicking **Silicon Labs Matter**.
+   ![Matter Extension Browse to Location](images/aws-sdk-location.png)
+
+2. Go to the `third_party/matter_sdk/examples/platform/silabs/matter_aws/matter_aws_interface/include/`.   
+
+3. Update the definitions for the server ID, client ID, and cluster in `MatterAwsConfig.h`:
+
+   - Update the AWS server name at `#define MATTER_AWS_SERVER_HOST ""`.
+   - Update the client ID at `#define MATTER_AWS_CLIENT_ID ""`.
+   - Update the cluster server information as shown in the table below, based on your app:
+  
+   | Application Type | Cluster Definition |
+   |------------------|--------------------|
+   | Thermostat | `#define ZCL_USING_THERMOSTAT_CLUSTER_SERVER` |
+   | Lighting | `#define ZCL_USING_ON_OFF_CLUSTER_SERVER` |
+   | Lock | `#define ZCL_USING_DOOR_LOCK_CLUSTER_SERVER` |
+   | Window Covering | `#define ZCL_USING_WINDOW_COVERING_CLUSTER_SERVER` |
+
+    **MatterAwsConfig.h File:**
+
+    ![MatterAwsConfig.h File](./images/matter-aws-config.png)
+
+4. After making the above changes, refresh the `matter-extension` in Simplicity Studio.
+   - In the **Home** tab, from the left panel, select **Settings**.
+   ![Select Settings](images/aws-build-settings.jpg)
+   - Click **SDKs**, ensure the correct version of the SDK is selected, and then click **Refresh** in the right side menu.
+   ![Select Refresh](images/aws-build-sdk-refresh.jpg)
+
 The following steps are common for all apps and should be modified using the Studio Project Configurator tool.
 
 ## Adding the Matter + AWS Component
@@ -30,44 +62,11 @@ To enable the component in Simplicity Studio, add the following components.
 
    ![TLS 1.2 PRF Component](images/tls-prf-component-install.png)
 
-## Adding the AWS Server, Client ID and Cluster Details
-
-1. Go to the `third_party/matter_sdk/examples/platform/silabs/matter_aws/matter_aws_interface/include/` folder from **Browse to Location** option by right-clicking **Silicon Labs Matter** in `Settings > SDKs`.
-
-   ![Matter Extension Browse to Location](images/aws-sdk-location.png)
-
-2. Update the definitions for the server ID, client ID and cluster in `MatterAwsConfig.h`:
-
-   - Update the AWS server name at `#define MATTER_AWS_SERVER_HOST ""`.
-   - Update the client ID at `#define MATTER_AWS_CLIENT_ID ""`.
-   - Update the cluster server information from the below table, based on your app:
-  
-   | Application Type | Cluster Definition |
-   |------------------|--------------------|
-   | Thermostat | `#define ZCL_USING_THERMOSTAT_CLUSTER_SERVER` |
-   | Lighting | `#define ZCL_USING_ON_OFF_CLUSTER_SERVER` |
-   | Lock | `#define ZCL_USING_DOOR_LOCK_CLUSTER_SERVER` |
-   | Window Covering | `#define ZCL_USING_WINDOW_COVERING_CLUSTER_SERVER` |
-
-    **MatterAwsConfig.h File:**
-
-    ![MatterAwsConfig.h File](./images/matter-aws-config.png)
-
 ## Building Matter + AWS Application
 
-1. After adding the Matter + AWS component as described above, refresh the `matter-extension` in Simplicity Studio.
+1. After adding the Matter + AWS component as described above, build the Matter + AWS application using Simplicity Studio as described in [Build SOC Application Using Studio](/matter/{build-docspace-version}/matter-wifi-run-demo/build-soc-application-using-studio).
 
-2. In the **Home** tab, from the left panel, select **Settings**.
-
-   ![Select Settings](images/aws-build-settings.jpg)
-
-3. Click on **SDKs**, ensure the correct version of the SDK is selected, and then click **Refresh** in the right side menu.
-
-   ![Select Refresh](images/aws-build-sdk-refresh.jpg)
-
-4. Build the Matter + AWS application using Simplicity Studio as described in [Build SOC Application Using Studio](/matter/{build-docspace-version}/matter-wifi-run-demo/build-soc-application-using-studio).
-
-5. After building and flashing the app, you can see [MATTER_AWS] logs after device bootup.
+2. After building and flashing the app, you can see [MATTER_AWS] logs after device bootup.
 
     ```console
     [00:00:23.400][info  ][SVR] [MATTER_AWS] connection callback started
@@ -75,11 +74,11 @@ To enable the component in Simplicity Studio, add the following components.
     [00:00:23.995][info  ][SVR] [MATTER_AWS] MQTT sub request callback: 0
     ```
 
-6. After subscribing to a topic in AWS IoT, you can see the publish logs.
+3. After subscribing to a topic in AWS IoT, you can see the publish logs.
 
    ![Device Logs AWS](./images/aws-device-logs-thermostat-app.png)
 
-7. You can see the same data in AWS IoT.
+4. You can see the same data in AWS IoT.
 
    ![AWS IoT App Data](./images/matter-aws-iot-app-data.png)
 
