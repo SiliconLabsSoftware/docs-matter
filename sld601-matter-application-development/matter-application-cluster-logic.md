@@ -60,7 +60,12 @@ Additionally, a corresponding component is automatically added to your project. 
 
 ## Step 4: Add Application Logic 
 
-Locate your project's `src/AppTask.cpp` file. This file acts as the central hub for application-specific logic, initialization, and event processing in a Matter application on Silicon Labs platforms. Start by adding two helper functions: a one-shot timer to expire in 10 seconds and the `OnOffTmrExpiryHandler` handler function.
+Application logic centers on AppTask, but Matter projects split responsibilities:
+
+- `autogen/AppTask.cpp`: default implementation, regenerated on project upgrade (do not edit for application logic, use as reference only).
+- `src/CustomerAppTask.cpp` and `include/CustomerAppTask.h`: your custom logic, add custom code and override `*Impl()` hooks here.
+
+In `src/CustomerAppTask.cpp`, add two helper functions: a one-shot timer to expire in 10 seconds and the `OnOffTmrExpiryHandler` handler function.
 
 ```C++
 #include "app-common/zap-generated/attributes/Accessors.h"
@@ -87,43 +92,36 @@ void OnOffTmrStart(){
 }
 ```
 
-Make sure to include `app-common/zap-generated/attributes/Accessors.h` in your `AppTask.cpp` file so you can access cluster attributes. 
+Make sure to include `app-common/zap-generated/attributes/Accessors.h` in `CustomerAppTask.cpp` so you can access cluster attributes.
 
-Next we will need an AppTask function to initiate the timer. Add the following function to your AppTask.cpp file:
+Next we will need an AppTask function to initiate the timer. Declare `OnOffAttributeWriteStartTimer()` in `include/CustomerAppTask.h` and define it in `src/CustomerAppTask.cpp`:
 
 ```C++
-void AppTask::OnOffAttributeWriteStartTimer()
+void OnOffAttributeWriteStartTimer()
 {
     OnOffTmrStart();
 }
 ```
 
-This function will have to be defined in AppTask.h as well as part of the AppTask class.
-
-Now, locate the `MatterPostAttributeChangeCallback()` function in the `src/DataModelCallbacks.cpp` file. This function is invoked by the application framework after an attribute value has been changed. Because you are modifying the OnOff attribute in the `OnOffTmrExpiryHandler()` function, use this callback to re-initiate the timer so that the attribute continues to toggle. To achieve this, call `AppTask::OnOffAttributeWriteStartTimer()`, which is part of the AppTask context.
-
-To implement this functionality, first obtain the AppTask instance using `AppTask::GetAppTask()`. Modify the `MatterPostAttributeChangeCallback()` function as shown below:
+Because you modify the OnOff attribute in `OnOffTmrExpiryHandler()`, restart the timer whenever the OnOff attribute changes. Override `DMPostAttributeChangeCallbackImpl()` in `CustomerAppTask` (the SDK routes attribute changes through `MatterPostAttributeChangeCallback` in `BaseApplication.cpp`, then `AppTask::DMPostAttributeChangeCallback` in autogen):
 
 ```C++
-void MatterPostAttributeChangeCallback(const chip::app::ConcreteAttributePath & attributePath, uint8_t type, uint16_t size,
-                                       uint8_t * value)
+void DMPostAttributeChangeCallbackImpl(const chip::app::ConcreteAttributePath & attributePath, uint8_t type, uint16_t size,
+                                                      uint8_t * value)
 {
     ClusterId clusterId     = attributePath.mClusterId;
     AttributeId attributeId = attributePath.mAttributeId;
-    
-    // Auto-generated code 
 
     if (clusterId == OnOff::Id && attributeId == OnOff::Attributes::OnOff::Id){
-      AppTask::GetAppTask().OnOffAttributeWriteStartTimer();
+      OnOffAttributeWriteStartTimer();
     }
 
 }
 ```
-Make sure to #include "AppTask.h" at the top of the `DataModelCallbacks.cpp` file to call the `AppTask::GetAppTask()` function. For more information on the AppTask, refer to AppTask.h.
 
-Finally, add a call to `OnOffTmrStart()` at the end of the `AppTask::AppInit()` function to start the attribute write sequence. The following image illustrates the code flow:
+Finally, add a call to `OnOffTmrStart()` at the end of your `AppInitImpl()` override in `CustomerAppTask.cpp` to start the attribute write sequence. The following image illustrates the code flow:
 
-![Code Flow](./images/ClusterLogic6.jpg)
+![Code Flow](./images/ClusterLogic6.png)
 
 In the flowchart above, `OnOffAttributeWriteStartTimer()` calls `OnOffTmrStart()` to restart the timer.
 

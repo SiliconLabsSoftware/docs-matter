@@ -20,3 +20,5 @@ CHIP_ERROR AppTask::Init()
 ```
 
 The ```AppTask.cpp``` file may also contain event handlers and helper code useful to the application.
+
+If you wish to customize initialization, override `AppInitImpl()` in `src/CustomerAppTask.cpp`. Default initialization logic lives in `autogen/AppTask.cpp`, override the corresponding `*Impl()` hooks in `CustomerAppTask` to customize behavior.

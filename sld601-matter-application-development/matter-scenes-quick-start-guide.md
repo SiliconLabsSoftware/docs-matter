@@ -165,9 +165,9 @@ public:
 
 ### Step 3 Implement Callbacks
 
-Make the following additions to the src/DataModelCallbacks.cpp file:
+Make the following additions to `src/CustomerAppTask.cpp`:
 
-:::collapsed{summary="Click to expand and view the DataModelCallbacks.cpp file"}
+:::collapsed{summary="Click to expand and view the CustomerAppTask.cpp additions"}
 ```c++
 // Color Transformer
 #include "ColorTransformer.h"
@@ -192,7 +192,7 @@ bool xyFlag = false;
 ```
 :::
 
-Then, inside `MatterPostAttributeChangeCallback` in _src/DataModelCallbacks.cpp_, implement the on/off functionality of the LED:
+Then, inside `DMPostAttributeChangeCallbackImpl()` in _src/CustomerAppTask.cpp_, implement the on/off functionality of the LED:
 
 ```c++
 if (clusterId == OnOff::Id && attributeId == OnOff::Attributes::OnOff::Id)
@@ -208,9 +208,6 @@ if (clusterId == OnOff::Id && attributeId == OnOff::Attributes::OnOff::Id)
 #ifdef DIC_ENABLE
         dic_sendmsg("light/state", (const char *) (value ? (*value ? "on" : "off") : "invalid"));
 #endif // DIC_ENABLE
-        LightMgr().InitiateAction(AppEvent::kEventType_Light, *value ? LightingManager::ON_ACTION : LightingManager::OFF_ACTION);
- 
- 
     }
 ```
 
@@ -247,7 +244,7 @@ else if (clusterId == ColorControl::Id)
     }
 ```
 
-Lastly, it is necessary to initialize the LED. In src/AppTask.cpp, add the following:
+Lastly, it is necessary to initialize the LED. In your `AppInitImpl()` override in `src/CustomerAppTask.cpp`. Add the following:
 
 ```c++
 #include "sl_simple_rgb_pwm_led.h"
@@ -255,15 +252,12 @@ Lastly, it is necessary to initialize the LED. In src/AppTask.cpp, add the follo
 #include "sl_led.h"
 ```
 
-Then, inside the init function `AppTask::Init()` of src/AppTask.cpp, add the following:
+Then, inside `AppInitImpl()`:
 
 ```c++
-CHIP_ERROR AppTask::Init()
+CHIP_ERROR AppInitImpl()
 {
     CHIP_ERROR err = CHIP_NO_ERROR;
-
-    sLightLED.Set(LightMgr().IsLightOn());
-     
 /* code to add */
     // Initialize LED
     sl_led_init((sl_led_t *)&sl_simple_rgb_pwm_led_rgb_led0);

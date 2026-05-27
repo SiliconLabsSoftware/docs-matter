@@ -3,7 +3,7 @@
 
 ## Event Handler
 
-The Matter event handler uses the FreeRTOS queue to transport a message from the producer to the consumer area. Events can be used to create an asynchronous message processing or an inter-task message communication.
+The Matter event handler uses the FreeRTOS queue to transport a message from the producer to the consumer area. Events can be used to create asynchronous message processing or inter-task communication. Custom event posting and handlers belong in `CustomerAppTask` overrides, not in `autogen/AppTask.cpp`.
 
 Steps to make an event work:
 
@@ -53,16 +53,16 @@ struct AppEvent
 
 ## Queue Posting
 
-When creating an event and pushing it to the event queue at minimum, **Handler** and **Type** must be defined in order for the event to work.
+When creating an event and pushing it to the event queue at minimum, **Handler** and **Type** must be defined in order for the event to work. The example below would live in a `CustomerAppTask` override when customizing behavior.
 
 ```C++
-void AppTask::CreateObserverEvent(void)
+void CreateObserverEvent(void)
 {
     AppEvent active_mode_event = {};
     active_mode_event.Type     = AppEvent::kEventType_Observer;
     active_mode_event.Handler  = SilabsSensors::SendSensorsValues;
 
-    sAppTask.PostEvent(&active_mode_event);
+    AppInstance().PostEvent(&active_mode_event);
 }
 ```
 
@@ -87,7 +87,7 @@ void AppTask::AppTaskMain(void * pvParameter)
     AppEvent event;
     QueueHandle_t sAppEventQueue = *(static_cast<QueueHandle_t *>(pvParameter));
 
-    CHIP_ERROR err = sAppTask.Init();
+    CHIP_ERROR err = AppInstance().Init();
     if (err != CHIP_NO_ERROR)
     {
         SILABS_LOG("AppTask.Init() failed");
@@ -95,10 +95,10 @@ void AppTask::AppTaskMain(void * pvParameter)
     }
 
 #if !(defined(CHIP_CONFIG_ENABLE_ICD_SERVER) && CHIP_CONFIG_ENABLE_ICD_SERVER)
-    sAppTask.StartStatusLEDTimer();
+    AppInstance().StartStatusLEDTimer();
 #endif
 
-    sAppTask.RegisterObserver();
+    AppInstance().RegisterObserver();
 
     SILABS_LOG("App Task started");
 

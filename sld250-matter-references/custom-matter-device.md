@@ -55,11 +55,12 @@ disable the Level Control cluster.
 ## Receiving Matter Commands
 
 All Matter commands reach the application through the intermediate function
-`MatterPostAttributeChangeCallback()`. When a request is made by a Matter client,
-the information contained in the request is forwarded to a Matter application
-through this function. The command can then be dissected using conditional logic
-to call the proper application functions based on the most recent command
-received.
+`MatterPostAttributeChangeCallback()`, which routes through CustomerAppTask 
+implementation of `DMPostAttributeChangeCallback` so that user overrides are 
+applied. When a request is made by a Matter client, the information contained 
+in the request is forwarded to a Matter application through this function. The 
+command can then be dissected using conditional logic to call the proper 
+application functions based on the most recent command received.
 
 ## Adding a Cluster to a ZAP Configuration
 
@@ -79,12 +80,10 @@ is set to enabled. Set the default value of this attribute as 1.
 Navigate to the commands tab in zap and enable the MoveToLevel command. Now save
 the current zap configuration, and run the generate.py script above.
 
-## React to Level Control Cluster Commands in ZclCallbacks
+## React to Level Control Cluster Commands
 
-In the MatterPostAttributeCallback function in ZclCallbacks, add the following
-line of code or a similar line. This will give the application the ability to react to
-MoveToLevel commands. You can define platform-specific behavior for a
-MoveToLevel action.
+In a new custom implementation of `DMPostAttributeChangeCallbackImpl()` in `src/CustomerAppTask.cpp`, add the following line of code or a similar line. This will 
+give the application the ability to react to MoveToLevel commands. You can define platform-specific behavior for a MoveToLevel action.
 
    ```cpp
     else if (clusterId == LevelControl::Id)
@@ -94,10 +93,8 @@ MoveToLevel action.
 
        if (attributeId == LevelControl::Attributes::CurrentLevel::Id)
        {
-          action_type = LightingManager::MOVE_TO_LEVEL;
+          sLightLED.SetLevel(*value);
        }
-
-       LightMgr().InitiateActionLight(AppEvent::kEventType_Light, action_type, endpoint, *value);
     }
    ```
 
