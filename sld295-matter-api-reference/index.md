@@ -24,17 +24,15 @@ Check your project in Project Explorer:
 
 **Sample apps on the new architecture in 2.9.0:**
 
-| Sample app | Notes |
-|---|---|
-| Lighting (`lighting-app`) | |
-| Zigbee Matter Light (`zigbee-matter-light`) | |
-| On/Off Plug (`onoff-plug-app`) | |
-| Thermostat | |
-| Lock (`lock-app`) | |
-| Light Switch (`light-switch-app`) | |
-| Rangehood (`rangehood-app`) | |
-| Platform Template (`platform-app`) | |
-| Air Quality Sensor (`air-quality-sensor-app`) | |
+- Lighting (`lighting-app`)
+- Zigbee Matter Light (`zigbee-matter-light`)
+- On/Off Plug (`onoff-plug-app`)
+- Thermostat
+- Lock (`lock-app`)
+- Light Switch (`light-switch-app`)
+- Rangehood (`rangehood-app`)
+- Platform Template (`platform-app`)
+- Air Quality Sensor (`air-quality-sensor-app`)
 
 All other Silicon Labs Matter sample apps in this release use the legacy model. Pages below label steps as **New architecture** or **Legacy architecture** where they differ.
 
