@@ -53,8 +53,7 @@ Now that the On/Off cluster has been successfully added to the Sample Door Lock 
 
 - Attributes, commands, and events for the cluster are added to your application’s data model.
 - Code is generated for attribute storage, command handling, and event notification.
-- Callback stubs are generated for you to implement application-specific behavior.
-- You interact with the cluster by filling in these stubs and using the generated data structures.
+- Implement application-specific behavior in `src/CustomerAppTask.cpp` by overriding `*Impl()` hooks (for example `DMPostAttributeChangeCallbackImpl()`) or by adding custom hooks, not by editing `autogen/AppTask.cpp`.
 
 Additionally, a corresponding component is automatically added to your project. This occurs because enabling a cluster in ZAP updates your project configuration to include the necessary software components and libraries required to support that cluster’s functionality. For clusters, this functionality is implemented in the `<matter_extension>/third_party/matter_sdk/src/app/clusters` directory. For the On/Off cluster, the server command handlers and related logic can be found in the `/on-off-server/on-off-server.cpp` file.
 

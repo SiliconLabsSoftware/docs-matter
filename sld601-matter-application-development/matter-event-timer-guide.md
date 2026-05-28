@@ -130,10 +130,10 @@ chip::DeviceLayer::PlatformMgr().UnlockChipStack();
 
 ### Callback
 
-Timer callback.
+Timer callback. Implement in `src/CustomerAppTask.cpp`.
 
 ```C++
-void AppTask::TestCallback(System::Layer * layer, void * aAppState)
+void TestCallback(System::Layer * layer, void * aAppState)
 {
 	// Do something
 }
