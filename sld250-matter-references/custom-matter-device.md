@@ -103,8 +103,10 @@ give the application the ability to react to MoveToLevel commands. You can defin
 
 ### Legacy architecture
 
-In `MatterPostAttributeChangeCallback()` in `src/DataModelCallbacks.cpp`, add the following line of code or a similar line:
-
+In the MatterPostAttributeCallback function in ZclCallbacks, add the following
+line of code or a similar line. This will give the application the ability to react to
+MoveToLevel commands. You can define platform-specific behavior for a
+MoveToLevel action.
    ```cpp
     else if (clusterId == LevelControl::Id)
     {

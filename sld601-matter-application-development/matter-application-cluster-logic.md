@@ -54,7 +54,7 @@ Now that the On/Off cluster has been successfully added to the Sample Door Lock 
 - Attributes, commands, and events for the cluster are added to your application’s data model.
 - Code is generated for attribute storage, command handling, and event notification.
 - **New architecture**: implement application-specific behavior in `src/CustomerAppTask.cpp` by overriding `*Impl()` hooks (for example `DMPostAttributeChangeCallbackImpl()`), not by editing `autogen/AppTask.cpp`.
-- **Legacy architecture**: callback stubs are generated for you to implement in `src/DataModelCallbacks.cpp`, interact with the cluster by filling in these stubs and using the generated data structures.
+- **Legacy architecture**: Callback stubs are generated for you to implement application-specific behavior. You interact with the cluster by filling in these stubs and using the generated data structures.
 
 Additionally, a corresponding component is automatically added to your project. This occurs because enabling a cluster in ZAP updates your project configuration to include the necessary software components and libraries required to support that cluster’s functionality. For clusters, this functionality is implemented in the `<matter_extension>/third_party/matter_sdk/src/app/clusters` directory. For the On/Off cluster, the server command handlers and related logic can be found in the `/on-off-server/on-off-server.cpp` file.
 
@@ -131,7 +131,7 @@ In the flowchart above, `OnOffAttributeWriteStartTimer()` calls `OnOffTmrStart()
 
 ### Legacy architecture
 
-Locate your project's `src/AppTask.cpp` file. Start by adding the same timer helper functions as above in `AppTask.cpp`.
+Locate your project's src/AppTask.cpp file. This file acts as the central hub for application-specific logic, initialization, and event processing in a Matter application on Silicon Labs platforms. Start by adding two helper functions: a one-shot timer to expire in 10 seconds and the OnOffTmrExpiryHandler handler function.
 
 Make sure to include `app-common/zap-generated/attributes/Accessors.h` in your `AppTask.cpp` file so you can access cluster attributes.
 
@@ -144,7 +144,7 @@ void AppTask::OnOffAttributeWriteStartTimer()
 }
 ```
 
-Locate `MatterPostAttributeChangeCallback()` in `src/DataModelCallbacks.cpp`. Because you modify the OnOff attribute in `OnOffTmrExpiryHandler()`, use this callback to re-initiate the timer:
+Now, locate the MatterPostAttributeChangeCallback() function in the src/DataModelCallbacks.cpp file. This function is invoked by the application framework after an attribute value has been changed. Because you are modifying the OnOff attribute in the OnOffTmrExpiryHandler() function, use this callback to re-initiate the timer so that the attribute continues to toggle. To achieve this, call AppTask::OnOffAttributeWriteStartTimer(), which is part of the AppTask context.
 
 ```C++
 void MatterPostAttributeChangeCallback(const chip::app::ConcreteAttributePath & attributePath, uint8_t type, uint16_t size,
@@ -160,7 +160,9 @@ void MatterPostAttributeChangeCallback(const chip::app::ConcreteAttributePath & 
 }
 ```
 
-Include `AppTask.h` at the top of `DataModelCallbacks.cpp`. Finally, add a call to `OnOffTmrStart()` at the end of `AppTask::Init()` in `src/AppTask.cpp`.
+Make sure to #include "AppTask.h" at the top of the DataModelCallbacks.cpp file to call the AppTask::GetAppTask() function. For more information on the AppTask, refer to AppTask.h.
+
+Finally, add a call to OnOffTmrStart() at the end of the AppTask::AppInit() function to start the attribute write sequence.
 
 ## Step 5: Interact with the On/Off Cluster 
 

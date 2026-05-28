@@ -360,6 +360,8 @@ CHIP_ERROR AppTask::Init()
 }
 ```
 
+This initializes the LED to be white.
+
 ### Step 4: Build and Flash
 
 Build the project and flash the binary to as many Matter devices as you wish to have in your scene. This demo includes two lighting devices. Ensure that the devices have been flashed with a bootloader prior to flashing the application for the first time.
