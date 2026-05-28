@@ -55,12 +55,13 @@ disable the Level Control cluster.
 ## Receiving Matter Commands
 
 All Matter commands reach the application through the intermediate function
-`MatterPostAttributeChangeCallback()`, which routes through CustomerAppTask 
-implementation of `DMPostAttributeChangeCallback` so that user overrides are 
-applied. When a request is made by a Matter client, the information contained 
-in the request is forwarded to a Matter application through this function. The 
-command can then be dissected using conditional logic to call the proper 
-application functions based on the most recent command received.
+`MatterPostAttributeChangeCallback()`. When a request is made by a Matter client,
+the information contained in the request is forwarded to a Matter application
+through this function. The command can then be dissected using conditional logic
+to call the proper application functions based on the most recent command
+received.
+
+Which file you edit depends on your sample app — see [Application customization models](/matter/{build-docspace-version}/matter-api-reference/#application-customization-models). New architecture apps route attribute changes through `CustomerAppTask` and `DMPostAttributeChangeCallbackImpl()`. Legacy architecture apps implement `MatterPostAttributeChangeCallback()` directly in `src/DataModelCallbacks.cpp`.
 
 ## Adding a Cluster to a ZAP Configuration
 
@@ -82,7 +83,9 @@ the current zap configuration, and run the generate.py script above.
 
 ## React to Level Control Cluster Commands
 
-In a new custom implementation of `DMPostAttributeChangeCallbackImpl()` in `src/CustomerAppTask.cpp`, add the following line of code or a similar line. This will 
+### New architecture
+
+In a custom implementation of `DMPostAttributeChangeCallbackImpl()` in `src/CustomerAppTask.cpp`, add the following line of code or a similar line. This will 
 give the application the ability to react to MoveToLevel commands. You can define platform-specific behavior for a MoveToLevel action.
 
    ```cpp
@@ -95,6 +98,25 @@ give the application the ability to react to MoveToLevel commands. You can defin
        {
           sLightLED.SetLevel(*value);
        }
+    }
+   ```
+
+### Legacy architecture
+
+In `MatterPostAttributeChangeCallback()` in `src/DataModelCallbacks.cpp`, add the following line of code or a similar line:
+
+   ```cpp
+    else if (clusterId == LevelControl::Id)
+    {
+       ChipLogProgress(Zcl, "Level Control attribute ID: " ChipLogFormatMEI " Type: %u Value: %u, length %u",
+                        ChipLogValueMEI(attributeId), type, *value, size);
+
+       if (attributeId == LevelControl::Attributes::CurrentLevel::Id)
+       {
+          action_type = LightingManager::MOVE_TO_LEVEL;
+       }
+
+       LightMgr().InitiateActionLight(AppEvent::kEventType_Light, action_type, endpoint, *value);
     }
    ```
 

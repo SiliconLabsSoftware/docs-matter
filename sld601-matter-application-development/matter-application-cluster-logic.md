@@ -53,13 +53,18 @@ Now that the On/Off cluster has been successfully added to the Sample Door Lock 
 
 - Attributes, commands, and events for the cluster are added to your application’s data model.
 - Code is generated for attribute storage, command handling, and event notification.
-- Implement application-specific behavior in `src/CustomerAppTask.cpp` by overriding `*Impl()` hooks (for example `DMPostAttributeChangeCallbackImpl()`) or by adding custom hooks, not by editing `autogen/AppTask.cpp`.
+- **New architecture**: implement application-specific behavior in `src/CustomerAppTask.cpp` by overriding `*Impl()` hooks (for example `DMPostAttributeChangeCallbackImpl()`), not by editing `autogen/AppTask.cpp`.
+- **Legacy architecture**: callback stubs are generated for you to implement in `src/DataModelCallbacks.cpp`, interact with the cluster by filling in these stubs and using the generated data structures.
 
 Additionally, a corresponding component is automatically added to your project. This occurs because enabling a cluster in ZAP updates your project configuration to include the necessary software components and libraries required to support that cluster’s functionality. For clusters, this functionality is implemented in the `<matter_extension>/third_party/matter_sdk/src/app/clusters` directory. For the On/Off cluster, the server command handlers and related logic can be found in the `/on-off-server/on-off-server.cpp` file.
 
 ## Step 4: Add Application Logic 
 
-Application logic centers on AppTask, but Matter projects split responsibilities:
+This guide uses the Lock sample app, which is on the **new architecture** in 2.9.0. See [Application customization models](/matter/{build-docspace-version}/matter-api-reference/#application-customization-models) to confirm which model your project uses.
+
+### New architecture
+
+Application logic centers on AppTask, but refactored Matter projects split responsibilities:
 
 - `autogen/AppTask.cpp`: default implementation, regenerated on project upgrade (do not edit for application logic, use as reference only).
 - `src/CustomerAppTask.cpp` and `include/CustomerAppTask.h`: your custom logic, add custom code and override `*Impl()` hooks here.
@@ -123,6 +128,39 @@ Finally, add a call to `OnOffTmrStart()` at the end of your `AppInitImpl()` over
 ![Code Flow](./images/ClusterLogic6.png)
 
 In the flowchart above, `OnOffAttributeWriteStartTimer()` calls `OnOffTmrStart()` to restart the timer.
+
+### Legacy architecture
+
+Locate your project's `src/AppTask.cpp` file. Start by adding the same timer helper functions as above in `AppTask.cpp`.
+
+Make sure to include `app-common/zap-generated/attributes/Accessors.h` in your `AppTask.cpp` file so you can access cluster attributes.
+
+Add the timer start function to `AppTask.cpp` and declare it in `AppTask.h`:
+
+```C++
+void AppTask::OnOffAttributeWriteStartTimer()
+{
+    OnOffTmrStart();
+}
+```
+
+Locate `MatterPostAttributeChangeCallback()` in `src/DataModelCallbacks.cpp`. Because you modify the OnOff attribute in `OnOffTmrExpiryHandler()`, use this callback to re-initiate the timer:
+
+```C++
+void MatterPostAttributeChangeCallback(const chip::app::ConcreteAttributePath & attributePath, uint8_t type, uint16_t size,
+                                       uint8_t * value)
+{
+    ClusterId clusterId     = attributePath.mClusterId;
+    AttributeId attributeId = attributePath.mAttributeId;
+
+    if (clusterId == OnOff::Id && attributeId == OnOff::Attributes::OnOff::Id){
+      AppTask::GetAppTask().OnOffAttributeWriteStartTimer();
+    }
+
+}
+```
+
+Include `AppTask.h` at the top of `DataModelCallbacks.cpp`. Finally, add a call to `OnOffTmrStart()` at the end of `AppTask::Init()` in `src/AppTask.cpp`.
 
 ## Step 5: Interact with the On/Off Cluster 
 

@@ -165,6 +165,10 @@ public:
 
 ### Step 3 Implement Callbacks
 
+This guide uses the Lighting sample app, which is on the **new architecture** in 2.9.0. See [Application customization models](/matter/{build-docspace-version}/matter-api-reference/#application-customization-models) to confirm which model your project uses.
+
+#### New architecture
+
 Make the following additions to `src/CustomerAppTask.cpp`:
 
 :::collapsed{summary="Click to expand and view the CustomerAppTask.cpp additions"}
@@ -276,6 +280,85 @@ CHIP_ERROR AppInitImpl()
 ```
 
 This initializes the LED to be white.
+
+#### Legacy architecture
+
+Make the following additions to `src/DataModelCallbacks.cpp`:
+
+:::collapsed{summary="Click to expand and view the DataModelCallbacks.cpp file"}
+```c++
+// Color Transformer
+#include "ColorTransformer.h"
+ 
+// Customer Application
+#include "sl_simple_rgb_pwm_led.h"
+#include "sl_simple_rgb_pwm_led_instances.h"
+#include "sl_led.h"
+.
+.
+// Initialize color mode x-y
+uint16_t cx = 0xFFFF;
+uint16_t cy = 0xFFFF;
+ 
+// Initialize RGB
+uint16_t r = 0xFFFF;
+uint16_t g = 0xFFFF;
+uint16_t b = 0xFFFF;
+ 
+// Initialize xy color mode flag
+bool xyFlag = false;
+```
+:::
+
+Then, inside `MatterPostAttributeChangeCallback` in _src/DataModelCallbacks.cpp_, implement the on/off functionality of the LED:
+
+```c++
+if (clusterId == OnOff::Id && attributeId == OnOff::Attributes::OnOff::Id)
+    {
+/* code to add */
+        if (*value) { // turn on LED
+            sl_led_turn_on((sl_led_t *)&sl_simple_rgb_pwm_led_rgb_led0);
+        } else {// turn off LED
+            sl_led_turn_off((sl_led_t *)&sl_simple_rgb_pwm_led_rgb_led0);
+        }
+/* ----------- */
+ 
+#ifdef DIC_ENABLE
+        dic_sendmsg("light/state", (const char *) (value ? (*value ? "on" : "off") : "invalid"));
+#endif // DIC_ENABLE
+        LightMgr().InitiateAction(AppEvent::kEventType_Light, *value ? LightingManager::ON_ACTION : LightingManager::OFF_ACTION);
+ 
+ 
+    }
+```
+
+Use the same Color Control cluster handling as in the **New architecture** section above.
+
+Lastly, initialize the LED in `src/AppTask.cpp`. Add the same includes, then inside `AppTask::Init()`:
+
+```c++
+CHIP_ERROR AppTask::Init()
+{
+    CHIP_ERROR err = CHIP_NO_ERROR;
+
+    sLightLED.Set(LightMgr().IsLightOn());
+     
+/* code to add */
+    // Initialize LED
+    sl_led_init((sl_led_t *)&sl_simple_rgb_pwm_led_rgb_led0);
+ 
+    // Set initial color to white and turn off
+    uint16_t red = 255; // max red
+    uint16_t green = 255; // no green
+    uint16_t blue = 255; // max blue
+    sl_led_set_rgb_color(&sl_simple_rgb_pwm_led_rgb_led0, red, green, blue);
+    sl_led_turn_off((sl_led_t *)&sl_simple_rgb_pwm_led_rgb_led0);
+/* ----------- */
+ 
+// Update the LCD with the Stored value. Show QR Code if not provisioned
+    return err;
+}
+```
 
 ### Step 4: Build and Flash
 
