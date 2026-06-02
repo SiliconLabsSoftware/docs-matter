@@ -96,7 +96,7 @@ User Setup (MQTT Explorer):
            - toggle
            - on
            - off
-    - Onoff-plug App
+    - Onoff Plug
       - Topic: command
         - Commands:
           - toggle
