@@ -25,7 +25,7 @@ Check your project in Project Explorer:
 **Sample apps on the new architecture in 2.9.0:**
 
 - Lighting 
-- Zigbee Matter Light
+- Zigbee Light
 - On/Off Plug
 - Thermostat
 - Lock

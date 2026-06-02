@@ -52,7 +52,7 @@ The following hands-on tutorial walks through the process of storing and recalli
 
 #### ZAP Configuration
 
-In Simplicity Studio, create a new MatterLightOverThread application. From the application .slcp file, navigate to _Configuration Tools_ > _ZCL Advanced Platform (ZAP)_.
+In Simplicity Studio, create a new Matter Thread - SoC Lighting FreeRTOS application. From the application .slcp file, navigate to _Configuration Tools_ > _ZCL Advanced Platform (ZAP)_.
 
 The Group Key Management cluster (under General) should already be enabled as a server on Endpoint 0.
 
@@ -75,15 +75,15 @@ The component should look like this:
 
 ![scenes RGB PWM LED config](./images/scenes-RGB-PWM-LED-config.png)
 
-The RGB PWM LED instance that has been created can be found in _MatterLightOverThread/autogen/sl_simple_rgb_pwm_led_instances.h_.
+The RGB PWM LED instance that has been created can be found in _matter_thread_soc_lighting_app_freertos/autogen/sl_simple_rgb_pwm_led_instances.h_.
 
-The documentation for the APIs that have been generated can be found here: [Simple RGB PWM LED Driver](https://docs.silabs.com/gecko-platform/latest/platform-driver/simple-rgb-pwm-led#simple-rgb-pwm-led-driver). The file that contains these APIs can be found in the directory: _MatterLightOverThread/simplicity_sdk_xxxx/platform/driver/leddrv/inc/sl_simple_rgb_pwm_led.h_.
+The documentation for the APIs that have been generated can be found here: [Simple RGB PWM LED Driver](https://docs.silabs.com/gecko-platform/latest/platform-driver/simple-rgb-pwm-led#simple-rgb-pwm-led-driver). The file that contains these APIs can be found in the directory: _matter_thread_soc_lighting_app_freertos/simplicity_sdk_xxxx/platform/driver/leddrv/inc/sl_simple_rgb_pwm_led.h_.
 
 ### Step 2: Add the ColorTransformer Class
 
 The RGB PWM LED operates in the RGB color space; however, the Matter Color Control Cluster does not operate in the RGB color space, so a transformation is required to convert the RGB values into something that can be recognized by Matter. In this example, use the xyY color space as defined by the Commission Internationale de l’Éclairage (CIE) specification which is also recognized in the Matter specification.
 
-Inside the src/ directory of the MatterLightOverThread project, create a new class called _ColorTransformer_ with the corresponding .cpp and .h files. Copy and paste the following to the *ColorTransformer.h* file.
+Inside the src/ directory of the matter_thread_soc_lighting_app_freertos project, create a new class called _ColorTransformer_ with the corresponding .cpp and .h files. Copy and paste the following to the *ColorTransformer.h* file.
 
 :::collapsed{summary="Click to expand and view the ColorTransformer.h file"}
 ```c++

@@ -2,7 +2,7 @@
 
 ## General
 
-Matter solutions allow the user to generate multiple projects at once, to generate a combined solution/binary and allow multiple post-build operations to provide flexibility and unison when developing a Matter example or application. For example, with the Matter Lighting over Thread with Bootloader Solution a user can generate a Matter Bootloader, a Matter Lighting example, and the combined Bootloader + Example production image. Solutions will also generate a .gbl binary for the users to make use of and create an .ota software image update binary (directions listed below).
+Matter solutions allow the user to generate multiple projects at once, to generate a combined solution/binary and allow multiple post-build operations to provide flexibility and unison when developing a Matter example or application. For example, with the Matter Thread - SoC Lighting with external Bootloader FreeRTOS solution a user can generate a Matter Bootloader, a Matter Lighting example, and the combined Bootloader + Example production image. Solutions will also generate a .gbl binary for the users to make use of and create an .ota software image update binary (directions listed below).
 
 ## Solution Creation
 

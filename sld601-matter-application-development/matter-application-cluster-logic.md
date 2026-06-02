@@ -18,9 +18,9 @@ To create the Matter Door Lock App, launch Simplicity Studio and connect a suppo
 
 ![Studio Launcher Window](./images/studio-device-create-project.jpeg)
 
-Select **Create New Project**, then use the filter to search for "Matter". Locate the "Matter - SoC Lock over Thread with External Bootloader" project. Click **Next**, then select **Finish**. 
+Select **Create New Project**, then use the filter to search for "Matter". Locate the "Matter Thread - SoC Lock with external Bootloader FreeRTOS" project. Click **Next**, then select **Finish**. 
 
-![Matter SoC Lock over Thread Project](./images/studio-lock-thread.png)
+![Matter Thread - SoC Lock with external Bootloader FreeRTOS Project](./images/studio-lock-thread.png)
 
 The sample application has been successfully created in Simplicity Studio. You can now proceed to Step 2.
 

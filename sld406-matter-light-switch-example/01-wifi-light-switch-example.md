@@ -56,7 +56,7 @@ To run the Light and Switch Example on SiWx917 SOC, software must be installed. 
 
    4. Open the Example Projects and Demos tab, select the **Matter** filter, and enter _Wi-Fi_ in **Filter on keywords**.
 
-   5. Select the **Matter - Lighting over Wi-Fi** example, click **Create**, rename the project if you wish, and click **Finish**.
+   5. Select the **Matter WiFi - SoC Lighting FreeRTOS** example, click **Create**, rename the project if you wish, and click **Finish**.
 
    6. Once the project is created, the perspective changes to the Simplicity IDE. In the Project Explorer view, right-click the project and select **Build Project**.
 
@@ -68,7 +68,7 @@ To run the Light and Switch Example on SiWx917 SOC, software must be installed. 
 
    10. **Optional**: Label this device (eg: my_light or my_switch) to make it easier to identify later.
 
-2. Repeat the process with the second Dev board, but select the **Matter - Light Switch over Wi-Fi** example instead.
+2. Repeat the process with the second Dev board, but select the **Matter WiFi - SoC Light Switch FreeRTOS** example instead.
 
 ## Creating the Matter Network
 
