@@ -25,7 +25,22 @@ In the newly created project, select the project's .slcp file, click the **Softw
 Silicon Labs recommends installing the **GBL Compression (LZMA)** component under **Platform > Bootloader > Core**. This allows the bootloader to handle compressed GBL
 files. This component is required for internal storage bootloaders.
 
-At this point, the project contains all the components necessary to support the Matter OTA Software Update functionality. Other components can now be added to support additional features such as Secure Boot. Refer to *UG489: Silicon Labs Gecko Bootloader User's Guide for GSDK 4.0 and Higher* for the description of various bootloader features and the steps to enable them.
+At this point, the project contains all the components necessary to support the Matter OTA Software Update functionality. To additionally secure updates for production (Secure Boot and signed firmware upgrades), see [Enabling Secure Upgrades for Production](#enabling-secure-upgrades-for-production) below. Refer to *UG489: Silicon Labs Gecko Bootloader User's Guide for GSDK 4.0 and Higher* for the full description of various bootloader features.
+
+## Enabling Secure Upgrades for Production
+
+Securing OTA updates depends on two standard Gecko Bootloader features: Secure Boot and signed firmware upgrade files, both using an ECDSA-P256 key. Enabling them is a generic setup covered in *UG489: Silicon Labs Gecko Bootloader User's Guide* section 9 and [AN1218: Series 2 Secure Boot with RTSL](https://www.silabs.com/documents/public/application-notes/an1218-secure-boot-with-rtsl.pdf).
+
+The only Matter specific change is how you build the GBL: create it from the Secure Boot signed application image, not the plain `.s37` used elsewhere in Matter OTA pages, and pass the signing key with `--sign` (and the AES key with `--encrypt` if encrypting):
+
+```shell
+commander gbl create chip-efr32-lighting-example.gbl \
+  --app chip-efr32-lighting-example-signed.s37 \
+  --sign signing-key \
+  --encrypt encryption-key
+```
+
+Use this signed GBL when creating the Matter `.ota` file as described in [Matter OTA Software Update](./02-ota-software-update.md).
 
 ### Building and Flashing the Bootloader
 
@@ -59,6 +74,8 @@ This example is for an internal storage bootloader for the Matter lighting app o
 - Build the application in Simplicity Studio after disabling all optional features such as the Matter QR Code, Matter Display, Matter Shell, and OpenThread CLI components.
 
 - Build the GBL file for the update image and note its size.
+
+    > **Development only**: The command below creates an unsigned GBL image. In production, add `--sign <signing-key>` to authenticate the image before the bootloader applies it. See [Enabling Secure Upgrades for Production](#enabling-secure-upgrades-for-production) for details.
 
     ```shell
     $ commander gbl create --compress lzma ~/chip/connectedhomeip/out/lighting-app/BRD4186A/chip-efr32-lighting-example.gbl --app ~/chip/connectedhomeip/out/lighting-app/BRD4186A/chip-efr32-lighting-example.s37

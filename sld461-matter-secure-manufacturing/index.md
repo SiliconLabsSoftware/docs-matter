@@ -33,7 +33,7 @@ What should your Matter device include?
 
 ## Other Recommended Security Specifications
 
-- Software updates: Devices must support secure OTA firmware updates to allow vulnerabilities to be patched.
+- Software updates: Devices must support secure OTA firmware updates to allow vulnerabilities to be patched. This requires GBL image signing and Secure Boot to be enabled in the Gecko Bootloader so that the device only accepts authenticated firmware. See [Enabling Secure Upgrades for Production](/matter/{build-docspace-version}/matter-ota/01-ota-bootloader#enabling-secure-upgrades-for-production) for step-by-step instructions.
 - Debug interfaces should be disabled to only allow authorized access (fusing). For more information on the different functionalities available by Silicon Labs, refer to [AN1190: Series 2 Secure Debug](https://www.silabs.com/documents/public/application-notes/an1190-efr32-secure-debug.pdf).
 - Devices should have a verified boot process based on a root of trust to ensure firmware authenticity. Silicon Labs offers Secure Boot to ensure firmware authenticity. For further information on Secure Boot, refer to [AN1218: Series 2 Secure Boot with RTSL](https://www.silabs.com/documents/public/application-notes/an1218-secure-boot-with-rtsl.pdf).
 - DACs and operational private key confidentiality should be protected from remote attacks.

@@ -61,6 +61,8 @@ See the following page for detailed steps: [build OTA application using studio](
     commander gbl create chip-efr32-lighting-example.gbl --app chip-efr32-lighting-example.s37
     ```
 
+    > **Development only**: The command above creates an unsigned GBL image. In production, add `--sign <signing-key>` to authenticate the image before the bootloader applies it. See [Enabling Secure Upgrades for Production](./01-ota-bootloader.md#enabling-secure-upgrades-for-production) for details.
+
 - Create the Matter OTA file from the bootable image file:
 
     ```shell
@@ -197,6 +199,8 @@ Combined OTA images are supported in both regular OTA and Multi-Chip OTA impleme
 
 3. Application upgrade only. This should be a standalone as described in the sections above.
 
+> **Development only**: The commands above create unsigned GBL images. In production, add `--sign <signing-key>` to authenticate the image before the bootloader applies it. See [Enabling Secure Upgrades for Production](./01-ota-bootloader.md#enabling-secure-upgrades-for-production) for details.
+
 >**Hint**: It can be useful to compress this image to reduce the size needed to OTA. This can be done via the optional flag `--compress lzma`. If you use LZMA compression for creating the OTA file, make sure that the bootloader has been built with the LZMA compress component.
 
 To create the .ota file, simply follow the method discussed above using the combined image:
@@ -294,6 +298,8 @@ commander gbl create --bootloader <bootloader_image>.s37 --app <application_imag
 ```
 
 For either of these cases, the `--compress lzma` option can be used to reduce the size of the resulting image. Just ensure that the bootloader has been built with the LZMA compress component.
+
+> **Development only**: The commands above create unsigned GBL images. In production, add `--sign <signing-key>` to authenticate the image before the bootloader applies it. See [Enabling Secure Upgrades for Production](./01-ota-bootloader.md#enabling-secure-upgrades-for-production) for details.
 
 Then, run the following command to create the .ota file.
 

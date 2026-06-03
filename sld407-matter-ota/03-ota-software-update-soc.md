@@ -161,6 +161,8 @@ Create a bootable image file from *.s37* (using the lock application image as an
 commander gbl create SiWx917-lock-example.gbl --app SiWx917-lock-example.s37 --compress lzma
 ```
 
+> **Development only**: The command above creates an unsigned GBL image. In production, add `--sign <signing-key>` to authenticate the image before the bootloader applies it. See [Enabling Secure Upgrades for Production](./01-ota-bootloader.md#enabling-secure-upgrades-for-production) for details.
+
 ```shell
 ./scripts/tools/silabs/ota/ota_multi_image_tool.py create -v 0xFFF1 -p 0x8005 -vn 2 -vs "2.0" -da sha256 --app-input-file SiWx917-lock-example.gbl SiWx917-lock-example.ota
 ```
@@ -211,3 +213,9 @@ Example command:./provision.py write -ok <ota_key>
 ```shell
 ./scripts/tools/silabs/ota/ota_multi_image_tool.py create -v 0xFFF1 -p 0x8005 -vn 2 -vs "2.0" -da sha256 --enc_enable --input_ota_key "<ota_key>" --app-input-file  SiWx917-lock-example.rps SiWx917-lock-example.ota
 ```
+
+## Secure Upgrades on SiWx917 SoC
+
+Unlike EFR32 devices, the SiWx917 SoC does not use the Gecko Bootloader. The M4 application and Wi-Fi firmware are delivered as `.rps` images and verified by the SiWx917's own Security Bootloader. Enabling secure boot and provisioning the keys is a generic setup. Follow [AN1442: SiWx917 SoC Secure Boot with Anti-Rollback Protection](https://www.silabs.com/documents/public/application-notes/an1442-siwx917-soc-secure-boot-with-anti-rollback-protection.pdf) and *UG574: SiWx917 SoC Manufacturing Utility User Guide* to complete it.
+
+The Matter specific change is encrypting the OTA payload: follow the Encrypted Image Upgrade subsection above, provisioning the AES key with the [Matter Provisioning](/matter/{build-docspace-version}/matter-provisioning/) tool. For the overall security model, see [Matter Secure Manufacturing](/matter/{build-docspace-version}/matter-secure-manufacturing).
