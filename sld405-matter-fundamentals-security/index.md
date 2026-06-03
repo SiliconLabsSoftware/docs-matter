@@ -263,7 +263,7 @@ This completes all the commissioning steps and now on the Matter Network.
 
 **Device Communication**: Communication between Matter Devices must be secured and encrypted using cryptographic keys and PBKDF. (SHALL)
 
-**Software Updates**: Devices must support OTA firmware updates to allow vulnerabilities to be patched. (SHALL)
+**Software Updates**: Devices must support a secure firmware upgrade mechanism so that vulnerabilities can be patched in the field (SHALL). This requirement is defined in Section 11.20.4.2 of the Matter Specification, version 1.5. On Silicon Labs platforms, it is satisfied by the [Gecko Bootloader Secure Firmware Upgrade](https://docs.silabs.com/mcu-bootloader/latest/bootloader-user-guide-gsdk-4/09-gecko-bootloader-security-features#secure-firmware-upgrade) feature — see [Matter OTA](/matter/{build-docspace-version}/matter-ota) for the Silicon Labs implementation.
 
 ### Other Security Specifications
 
