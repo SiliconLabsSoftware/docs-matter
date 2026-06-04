@@ -4,6 +4,8 @@ The Matter OTA Software Update functionality on EFR32 devices requires the use o
 
 The Gecko Bootloader is built with Silicon Labs Simplicity Studio. These instructions assume that you have installed Simplicity Studio 6, the Simplicity Commander tool (installed by default with Simplicity Studio), the GSDK and associated utilities, and that you are familiar with generating, compiling, and flashing an example application in the relevant version.
 
+Note: All Silicon Labs Matter products must use the Secure Firmware Upgrade feature to meet Matter certification requirements. Generating the image file and creating the bootloloader for this feature requires extra steps that are covered below. See [Enabling Secure Upgrades](/matter/{build-docspace-version}/matter-ota/01-ota-bootloader#enabling-secure-upgrades) for step-by-step instructions.
+
 ## Bootloader Project In Studio
 
 ### Creating the Project
@@ -25,9 +27,9 @@ In the newly created project, select the project's .slcp file, click the **Softw
 Silicon Labs recommends installing the **GBL Compression (LZMA)** component under **Platform > Bootloader > Core**. This allows the bootloader to handle compressed GBL
 files. This component is required for internal storage bootloaders.
 
-At this point, the project contains all the components necessary to support the Matter OTA Software Update functionality. To additionally secure updates for production (Secure Boot and signed firmware upgrades), see [Enabling Secure Upgrades for Production](#enabling-secure-upgrades-for-production) below. Refer to *UG489: Silicon Labs Gecko Bootloader User's Guide for GSDK 4.0 and Higher* for the full description of various bootloader features.
+At this point, the project contains all the components necessary to support the Matter OTA Software Update functionality. To additionally secure updates for production (Secure Boot and signed firmware upgrades), see [Enabling Secure Upgrades](#enabling-secure-upgrades) below. Refer to *UG489: Silicon Labs Gecko Bootloader User's Guide for GSDK 4.0 and Higher* for the full description of various bootloader features.
 
-## Enabling Secure Upgrades for Production
+## Enabling Secure Upgrades
 
 Securing OTA updates depends on two standard Gecko Bootloader features: Secure Boot and signed firmware upgrade files, both using an ECDSA-P256 key. Enabling them is a generic setup covered in *UG489: Silicon Labs Gecko Bootloader User's Guide* section 9 and [AN1218: Series 2 Secure Boot with RTSL](https://www.silabs.com/documents/public/application-notes/an1218-secure-boot-with-rtsl.pdf).
 
@@ -75,7 +77,7 @@ This example is for an internal storage bootloader for the Matter lighting app o
 
 - Build the GBL file for the update image and note its size.
 
-    > **Development only**: The command below creates an unsigned GBL image. In production, add `--sign <signing-key>` to authenticate the image before the bootloader applies it. See [Enabling Secure Upgrades for Production](#enabling-secure-upgrades-for-production) for details.
+    > **Note**: The command below creates an unsigned GBL image. For Matter devices, add `--sign <signing-key>` to authenticate the image before the bootloader applies it. See [Enabling Secure Upgrades](#enabling-secure-upgrades) for details.
 
     ```shell
     $ commander gbl create --compress lzma ~/chip/connectedhomeip/out/lighting-app/BRD4186A/chip-efr32-lighting-example.gbl --app ~/chip/connectedhomeip/out/lighting-app/BRD4186A/chip-efr32-lighting-example.s37
