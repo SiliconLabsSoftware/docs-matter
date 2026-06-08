@@ -38,9 +38,9 @@ All other Silicon Labs Matter sample apps in this release use the legacy model. 
 
 ### Initialization
 
-**New architecture:** Default initialization lives in `autogen/AppTask.cpp`. Override `AppInitImpl()` and other `*Impl()` hooks in `src/CustomerAppTask.cpp` to customize behavior.
+**New architecture:** Default initialization is included in `autogen/AppTask.cpp`. Override `AppInitImpl()` and other `*Impl()` hooks in `src/CustomerAppTask.cpp` to customize behavior.
 
-**Legacy architecture:** The application Init sequence lives in `src/AppTask.cpp` and is called at the beginning of the application to ensure that all components are properly initialized and ready to operate. It sets up necessary callbacks, initializes hardware components, and handles any errors that may occur during the process.
+**Legacy architecture:** The application Init sequence is included in `src/AppTask.cpp` and is called at the beginning of the application to ensure that all components are properly initialized and ready to operate. It sets up necessary callbacks, initializes hardware components, and handles any errors that may occur during the process.
 
 ```cpp
 CHIP_ERROR AppTask::Init()

@@ -196,7 +196,7 @@ bool xyFlag = false;
 ```
 :::
 
-Then, inside `DMPostAttributeChangeCallbackImpl()` in _src/CustomerAppTask.cpp_, implement the on/off functionality of the LED:
+Inside `DMPostAttributeChangeCallbackImpl()` in _src/CustomerAppTask.cpp_, implement the on/off functionality of the LED:
 
 ```c++
 if (clusterId == OnOff::Id && attributeId == OnOff::Attributes::OnOff::Id)
@@ -248,7 +248,7 @@ else if (clusterId == ColorControl::Id)
     }
 ```
 
-Lastly, it is necessary to initialize the LED. In your `AppInitImpl()` override in `src/CustomerAppTask.cpp`. Add the following:
+It is necessary to initialize the LED. To do so, override AppInitImpl() in src/CustomerAppTask.cpp and add the following:
 
 ```c++
 #include "sl_simple_rgb_pwm_led.h"
@@ -256,7 +256,7 @@ Lastly, it is necessary to initialize the LED. In your `AppInitImpl()` override 
 #include "sl_led.h"
 ```
 
-Then, inside `AppInitImpl()`:
+Inside `AppInitImpl()`:
 
 ```c++
 CHIP_ERROR AppInitImpl()
@@ -281,7 +281,7 @@ CHIP_ERROR AppInitImpl()
 
 This initializes the LED to be white.
 
-#### Legacy architecture
+#### Legacy Architecture
 
 Make the following additions to `src/DataModelCallbacks.cpp`:
 
@@ -310,7 +310,7 @@ bool xyFlag = false;
 ```
 :::
 
-Then, inside `MatterPostAttributeChangeCallback` in _src/DataModelCallbacks.cpp_, implement the on/off functionality of the LED:
+Inside `MatterPostAttributeChangeCallback` in _src/DataModelCallbacks.cpp_, implement the on/off functionality of the LED:
 
 ```c++
 if (clusterId == OnOff::Id && attributeId == OnOff::Attributes::OnOff::Id)
@@ -334,7 +334,7 @@ if (clusterId == OnOff::Id && attributeId == OnOff::Attributes::OnOff::Id)
 
 Use the same Color Control cluster handling as in the **New architecture** section above.
 
-Lastly, initialize the LED in `src/AppTask.cpp`. Add the same includes, then inside `AppTask::Init()`:
+Initialize the LED in `src/AppTask.cpp`. Add the same includes, then inside `AppTask::Init()`:
 
 ```c++
 CHIP_ERROR AppTask::Init()

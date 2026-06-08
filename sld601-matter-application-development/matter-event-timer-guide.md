@@ -5,7 +5,7 @@
 
 The Matter event handler uses the FreeRTOS queue to transport a message from the producer to the consumer area. Events can be used to create asynchronous message processing or inter-task communication.
 
-Which instructions apply depends on your sample app — see [Application Customization Models](/matter/{build-docspace-version}/matter-api-reference/#application-customization-models).
+Depending on your sample app, instructions apply. See [Application Customization Models](/matter/{build-docspace-version}/matter-api-reference/#application-customization-models).
 
 Steps to make an event work:
 
@@ -59,7 +59,7 @@ When creating an event and pushing it to the event queue at minimum, **Handler**
 
 ### New Architecture
 
-Custom event posting and handlers belong in `CustomerAppTask` overrides, not in `autogen/AppTask.cpp`.
+Custom event posting and handlers are overridden in the `CustomerAppTask` file, not in `autogen/AppTask.cpp`.
 
 ```C++
 void CreateObserverEvent(void)
@@ -72,7 +72,7 @@ void CreateObserverEvent(void)
 }
 ```
 
-### Legacy architecture
+### Legacy Architecture
 
 Post events from `src/AppTask.cpp`:
 
@@ -137,7 +137,7 @@ void AppTask::AppTaskMain(void * pvParameter)
 }
 ```
 
-### Legacy architecture
+### Legacy Architecture
 
 ```C++
 void AppTask::AppTaskMain(void * pvParameter)
@@ -199,7 +199,7 @@ void TestCallback(System::Layer * layer, void * aAppState)
 }
 ```
 
-### Legacy architecture
+### Legacy Architecture
 
 Timer callback. Implement in `src/AppTask.cpp`.
 

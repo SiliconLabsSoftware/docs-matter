@@ -129,11 +129,11 @@ Finally, add a call to `OnOffTmrStart()` at the end of your `AppInitImpl()` over
 
 In the flowchart above, `OnOffAttributeWriteStartTimer()` calls `OnOffTmrStart()` to restart the timer.
 
-### Legacy architecture
+### Legacy Architecture
 
 Locate your project's src/AppTask.cpp file. This file acts as the central hub for application-specific logic, initialization, and event processing in a Matter application on Silicon Labs platforms. Start by adding two helper functions: a one-shot timer to expire in 10 seconds and the OnOffTmrExpiryHandler handler function.
 
-Make sure to include `app-common/zap-generated/attributes/Accessors.h` in your `AppTask.cpp` file so you can access cluster attributes.
+Include `app-common/zap-generated/attributes/Accessors.h` in your `AppTask.cpp` file, so that you can access cluster attributes.
 
 Add the timer start function to `AppTask.cpp` and declare it in `AppTask.h`:
 

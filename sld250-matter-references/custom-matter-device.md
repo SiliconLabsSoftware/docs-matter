@@ -100,7 +100,7 @@ In a custom implementation of `DMPostAttributeChangeCallbackImpl()` in `src/Cust
     }
    ```
 
-### Legacy architecture
+### Legacy Architecture
 
 In the MatterPostAttributeCallback function in ZclCallbacks, add the following
 line of code or a similar line. This will give the application the ability to react to

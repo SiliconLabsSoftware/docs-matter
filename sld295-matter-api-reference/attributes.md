@@ -4,14 +4,13 @@ Attributes represent the current state of a device. For instance if the device i
 
 ## Attribute Changes
 
-Which instructions apply depends on your sample app — see [Application Customization Models](./index.md#application-customization-models).
+Depending on your sample app, instructions apply. For more information, refer to [Application customization models](./index.md#application-customization-models).
 
 ### New Architecture
 
 When a ZCL attribute is updated in the data model, the framework invokes the post-attribute-change path. The Silicon Labs Matter stack routes this as follows: `MatterPostAttributeChangeCallback` in `BaseApplication.cpp` → `AppTask::DMPostAttributeChangeCallback` in `autogen/AppTask.cpp` → your optional `DMPostAttributeChangeCallbackImpl()` override in `CustomerAppTask`.
 
-If this callback is implemented by the device it will be informed of the attribute change. The device may react to the attribute change. For example, in `DMPostAttributeChangeCallback` in `AppTask.cpp` in [onoff-plug-app/src](https://github.com/SiliconLabsSoftware/matter_sdk/blob/main/examples/onoff-plug-app/silabs/src/AppTask.cpp), say we want to add some custom handler code to control an RGB LED when on/off attribute in the `On-Off` Cluster changes, implement the following in 
-`DMPostAttributeChangeCallbackImpl` in `src/CustomerAppTask.cpp`:
+If this callback is implemented by the device, it is informed of the attribute change. The device may react to the attribute change. For example, in `DMPostAttributeChangeCallback` function the in `AppTask.cpp` file ([onoff-plug-app/src](https://github.com/SiliconLabsSoftware/matter_sdk/blob/main/examples/onoff-plug-app/silabs/src/AppTask.cpp)), if you want to add a custom handler code to control an RGB LED when on/off attribute in the `On-Off` Cluster changes, implement the following in `DMPostAttributeChangeCallbackImpl` in `src/CustomerAppTask.cpp`:
 
 ```cpp
 void DMPostAttributeChangeCallbackImpl(const chip::app::ConcreteAttributePath & attributePath,
@@ -40,7 +39,7 @@ void DMPostAttributeChangeCallbackImpl(const chip::app::ConcreteAttributePath & 
 }
 ```
 
-### Legacy architecture
+### Legacy Architecture
 
 When a ZCL attribute is updated in the data model, the framework calls `MatterPostAttributeChangeCallback()` in `src/DataModelCallbacks.cpp`. If this callback is implemented by the device it will be informed of the attribute change. For example, to control an RGB LED when the On/Off attribute changes:
 
