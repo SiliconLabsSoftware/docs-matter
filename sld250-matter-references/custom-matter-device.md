@@ -61,7 +61,7 @@ through this function. The command can then be dissected using conditional logic
 to call the proper application functions based on the most recent command
 received.
 
-Which file you edit depends on your sample app — see [Application Customization Models](/matter/{build-docspace-version}/matter-api-reference/#application-customization-models). New architecture apps route attribute changes through `CustomerAppTask` and `DMPostAttributeChangeCallbackImpl()`. Legacy architecture apps implement `MatterPostAttributeChangeCallback()` directly in `src/DataModelCallbacks.cpp`.
+Depending on your sample application, edit the files. For more information, refer to [Application Customization Models](/matter/{build-docspace-version}/matter-api-reference/#application-customization-models). New architecture apps route attribute changes through `CustomerAppTask` and `DMPostAttributeChangeCallbackImpl()`. Legacy architecture apps implement `MatterPostAttributeChangeCallback()` directly in `src/DataModelCallbacks.cpp`.
 
 ## Adding a Cluster to a ZAP Configuration
 
@@ -85,8 +85,7 @@ the current zap configuration, and run the generate.py script above.
 
 ### New Architecture
 
-In a custom implementation of `DMPostAttributeChangeCallbackImpl()` in `src/CustomerAppTask.cpp`, add the following line of code or a similar line. This will 
-give the application the ability to react to MoveToLevel commands. You can define platform-specific behavior for a MoveToLevel action.
+In a custom implementation of `DMPostAttributeChangeCallbackImpl()` in `src/CustomerAppTask.cpp`, add the following or similar code. This enables the application to react to the MoveToLevel commands.
 
    ```cpp
     else if (clusterId == LevelControl::Id)
