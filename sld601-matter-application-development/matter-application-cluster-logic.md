@@ -96,7 +96,7 @@ void OnOffTmrStart(){
 }
 ```
 
-Make sure to include `app-common/zap-generated/attributes/Accessors.h` in `CustomerAppTask.cpp` so you can access cluster attributes.
+Include `app-common/zap-generated/attributes/Accessors.h` in `CustomerAppTask.cpp`, so that you can access cluster attributes.
 
 Next we will need an AppTask function to initiate the timer. Declare `OnOffAttributeWriteStartTimer()` in `include/CustomerAppTask.h` and define it in `src/CustomerAppTask.cpp`:
 
