@@ -4,9 +4,9 @@ Attributes represent the current state of a device. For instance if the device i
 
 ## Attribute Changes
 
-Which instructions apply depends on your sample app — see [Application customization models](./index.md#application-customization-models).
+Which instructions apply depends on your sample app — see [Application Customization Models](./index.md#application-customization-models).
 
-### New architecture
+### New Architecture
 
 When a ZCL attribute is updated in the data model, the framework invokes the post-attribute-change path. The Silicon Labs Matter stack routes this as follows: `MatterPostAttributeChangeCallback` in `BaseApplication.cpp` → `AppTask::DMPostAttributeChangeCallback` in `autogen/AppTask.cpp` → your optional `DMPostAttributeChangeCallbackImpl()` override in `CustomerAppTask`.
 

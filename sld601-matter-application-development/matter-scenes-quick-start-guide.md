@@ -165,9 +165,9 @@ public:
 
 ### Step 3 Implement Callbacks
 
-This guide uses the Lighting sample app, which is on the **new architecture** in 2.9.0. See [Application customization models](/matter/{build-docspace-version}/matter-api-reference/#application-customization-models) to confirm which model your project uses.
+This guide uses the Lighting sample app, which is on the **new architecture** in 2.9.0. See [Application Customization Models](/matter/{build-docspace-version}/matter-api-reference/#application-customization-models) to confirm which model your project uses.
 
-#### New architecture
+#### New Architecture
 
 Make the following additions to `src/CustomerAppTask.cpp`:
 

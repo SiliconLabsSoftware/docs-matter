@@ -11,7 +11,7 @@ This section covers the various Application Programming Interfaces (APIs) that a
 
 ## Application APIs
 
-### Application customization models
+### Application Customization Models
 
 Matter Extension 2.9.0 migrates a subset of sample apps to the Curiously Recurring Template Pattern (CRTP) based architecture, which removes app manager and DataModelCallbacks files. All other sample apps keep the previous architecture until the patch release.
 

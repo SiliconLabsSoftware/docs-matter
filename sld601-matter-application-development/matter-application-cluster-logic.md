@@ -60,9 +60,9 @@ Additionally, a corresponding component is automatically added to your project. 
 
 ## Step 4: Add Application Logic 
 
-This guide uses the Lock sample app, which is on the **new architecture** in 2.9.0. See [Application customization models](/matter/{build-docspace-version}/matter-api-reference/#application-customization-models) to confirm which model your project uses.
+This guide uses the Lock sample app, which is on the **new architecture** in 2.9.0. See [Application Customization Models](/matter/{build-docspace-version}/matter-api-reference/#application-customization-models) to confirm which model your project uses.
 
-### New architecture
+### New Architecture
 
 Application logic centers on AppTask, but refactored Matter projects split responsibilities:
 

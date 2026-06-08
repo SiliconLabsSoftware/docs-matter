@@ -5,7 +5,7 @@
 
 The Matter event handler uses the FreeRTOS queue to transport a message from the producer to the consumer area. Events can be used to create asynchronous message processing or inter-task communication.
 
-Which instructions apply depends on your sample app — see [Application customization models](/matter/{build-docspace-version}/matter-api-reference/#application-customization-models).
+Which instructions apply depends on your sample app — see [Application Customization Models](/matter/{build-docspace-version}/matter-api-reference/#application-customization-models).
 
 Steps to make an event work:
 
@@ -57,7 +57,7 @@ struct AppEvent
 
 When creating an event and pushing it to the event queue at minimum, **Handler** and **Type** must be defined in order for the event to work.
 
-### New architecture
+### New Architecture
 
 Custom event posting and handlers belong in `CustomerAppTask` overrides, not in `autogen/AppTask.cpp`.
 
@@ -102,7 +102,7 @@ void SilabsSensors::SendSensorsValues(AppEvent * aEvent)
 
 **AppTaskMain** is dispatching all the events from the event list.
 
-### New architecture
+### New Architecture
 
 ```C++
 void AppTask::AppTaskMain(void * pvParameter)
@@ -188,7 +188,7 @@ chip::DeviceLayer::PlatformMgr().UnlockChipStack();
 
 ### Callback
 
-### New architecture
+### New Architecture
 
 Timer callback. Implement in `src/CustomerAppTask.cpp`.
 
