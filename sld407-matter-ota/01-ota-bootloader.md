@@ -4,7 +4,7 @@ The Matter OTA Software Update functionality on EFR32 devices requires the use o
 
 The Gecko Bootloader is built with Silicon Labs Simplicity Studio. These instructions assume that you have installed Simplicity Studio 6, the Simplicity Commander tool (installed by default with Simplicity Studio), the GSDK and associated utilities, and that you are familiar with generating, compiling, and flashing an example application in the relevant version.
 
-Note: All Silicon Labs Matter products must use the Secure Firmware Upgrade feature to meet Matter certification requirements. Generating the image file and creating the bootloloader for this feature requires extra steps such as setting "Require signed firmware upgrade files" in the Bootloader Core component Configuration in the bootloader project in Studio. See [Enabling Secure Upgrades](/matter/{build-docspace-version}/matter-ota/01-ota-bootloader#enabling-secure-upgrades) for step-by-step instructions.
+Note: All Silicon Labs Matter products must use the Secure Firmware Upgrade feature to meet Matter certification requirements. Generating the image file and creating the bootloloader for this feature requires extra steps such as setting "Require signed firmware upgrade files" in the Bootloader Core component Configuration in the bootloader project. See [Enabling Secure Upgrades](/matter/{build-docspace-version}/matter-ota/01-ota-bootloader#enabling-secure-upgrades) for step-by-step instructions.
 
 ## Bootloader Project In Studio
 
@@ -77,7 +77,7 @@ This example is for an internal storage bootloader for the Matter lighting app o
 
 - Build the GBL file for the update image and note its size.
 
-    > **Note**: The command below creates an unsigned GBL image. For Matter devices, add `--sign <signing-key>` to authenticate the image before the bootloader applies it. See [Enabling Secure Upgrades](#enabling-secure-upgrades) for details.
+    > **Note**: The command below creates an unsigned GBL image. For Matter devices, add `--sign <signing-key>` so the Gecko Bootloader can authenticate the GBL before it applies the update. See [Enabling Secure Upgrades](#enabling-secure-upgrades) for details.
 
     ```shell
     $ commander gbl create --compress lzma ~/chip/connectedhomeip/out/lighting-app/BRD4186A/chip-efr32-lighting-example.gbl --app ~/chip/connectedhomeip/out/lighting-app/BRD4186A/chip-efr32-lighting-example.s37
