@@ -44,7 +44,7 @@ The running image and the update image are regular Matter application images and
 
 See the following page for detailed steps: [build OTA application using studio](./04-build-ota-application-using-studio.md).
 
-### Obtaining the Bootloader binary
+### Obtaining the Bootloader Binary
 
 - Build or download the Gecko Bootloader binary which can be obtained in one of the following ways:
   - Follow the instructions in [Creating the Bootloader for Use in Matter OTA](01-ota-bootloader.md).
@@ -53,7 +53,7 @@ See the following page for detailed steps: [build OTA application using studio](
 
 - Using the Commander tool or Simplicity Studio, upload the bootloader to the device running the application.
 
-## Running the OTA Download demo scenario
+## Running the OTA Download Demo Scenario
 
 - Create a bootable image file (using the Lighting application image as an example):
    - If using a series 3 board: 
