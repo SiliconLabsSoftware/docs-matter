@@ -1,6 +1,8 @@
 # Matter over Thread Quick-Start Demo
 
-This Quick-Start Guide demonstrates the out-of-box experience for adding an EFR32MG24 Matter Accessory Device to ecosystems. Other boards are also supported. For the full list of Matter capable hardware, refer to the [Silicon Labs Matter Selector Guide](https://www.silabs.com/wireless/matter/selector-guide). This demo uses the **Matter Thread - SoC Lighting FreeRTOS** example application available in Simplicity Studio. The guide walks through flashing the EFR32 SoC device, commissioning it to an ecosystem using the Simplicity Connect mobile app, and controlling it from either Google Home or Apple Home apps.
+This quick start guide demonstrates an out-of-box experience for adding an EFR32MG24 Matter Accessory Device to ecosystems. Other boards are also supported. For the full list of Matter compatible hardware, refer to the [Silicon Labs Matter Selector Guide](https://www.silabs.com/wireless/matter/selector-guide). 
+
+This demo uses the **Matter Thread - SoC Lighting FreeRTOS** example application available in Simplicity Studio. The guide describes how to flash the EFR32 SoC device, commission it to an ecosystem using the Simplicity Connect mobile app, and control it from the Google Home or Apple Home app.
 
 ## Software Requirements
 
