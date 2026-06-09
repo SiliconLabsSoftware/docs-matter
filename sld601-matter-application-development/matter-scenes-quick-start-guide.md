@@ -52,7 +52,8 @@ The following hands-on tutorial walks through the process of storing and recalli
 
 #### ZAP Configuration
 
-In Simplicity Studio, create a new Matter Thread - SoC Lighting FreeRTOS application. From the application .slcp file, navigate to _Configuration Tools_ > _ZCL Advanced Platform (ZAP)_.
+1. In Simplicity Studio, create a new Matter Thread - SoC Lighting FreeRTOS application. 
+2. From the application .slcp file, navigate to _Configuration Tools_ > _ZCL Advanced Platform (ZAP)_.
 
 The Group Key Management cluster (under General) should already be enabled as a server on Endpoint 0.
 

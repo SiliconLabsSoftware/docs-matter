@@ -50,7 +50,9 @@ Type **lighting** into the keyword search and you will see the following screen.
 
 ![Simplicity Studio Example Projects & Demos](./images/studio-6-matter-thread-demo-lighting-projects.png)
 
-For this quick start guide, select the **Matter Thread - SoC Lighting FreeRTOS** demo. A number of other apps are also available including a Lock, Thermostat, Appliance, and Window Covering. When ready, click **Run** to flash the device. When the device is flashed, a QR code will appear on the WSTK screen.
+1. Select the **Matter Thread - SoC Lighting FreeRTOS** demo. 
+   > **Note**: A number of other apps are also available including a Lock, Thermostat, Appliance, and Window Covering. 
+2. When the project is ready, click **Run** to flash the device. When the device is flashed, a QR code will appear on the WSTK screen.
 
 ### Step 3: Prepare the Device for Commissioning
 
@@ -109,7 +111,7 @@ For instructions on installing Simplicity Studio and the Silicon Labs Extension 
 ### Step 1: Create a Matter Sample Project
 
 1. Open Simplicity Studio and repeat the same steps as [above](#flashing-the-efr32-soc-matter-accessory-device).
-2. Instead of selecting **Run** for the demo, click **Create** for the **Matter Thread - SoC Lighting with external Bootloader FreeRTOS** example.
+2. Click **Create** for the **Matter Thread - SoC Lighting with external Bootloader FreeRTOS** example.
 3. Review the Project Configuration and click **Finish**. Simplicity Studio creates a new Solution called matter_thread_soc_lighting_app_series_2_freertos with the matter_thread_soc_lighting_app_freertos project inside the workspace.
    ![Creating a project](./images/studio-6-matter-project-demo.png)
 4. After the project is created, click the **Open in VS Code** button to open the project in the Silicon Labs Extension for the Visual Studio Code IDE.
