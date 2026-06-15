@@ -78,13 +78,13 @@ You now have a working Matter hub. Keep the PuTTY session open for the following
 
    2. Once it displays in the **Devices** panel, select it.
 
-   3. This will bring up the Example Projects and Demos tab, check the **Matter** filter under **Wireless Technology**, and enter *lighting* in the **Filter on keywords** box. Select the **Matter - SoC Lighting over Thread with external Bootloader Solution** and click **Create**.
+   3. This will bring up the Example Projects and Demos tab, check the **Matter** filter under **Wireless Technology**, and enter *lighting* in the **Filter on keywords** box. Select the **Matter Thread - SoC Lighting with external Bootloader FreeRTOS** solution and click **Create**.
 
        ![Select the example project](resources/studio-6-matter-thread-demo-lighting-projects.png)
 
    4. Name your project and click **Finish** (no other changes are required at this time).
 
-   5. Once the solution is created, you will be redirected to the Projects view with the MatterLightOverThread.slcp file open. If not simply open the file yourself.
+   5. Once the solution is created, you will be redirected to the Projects view with the matter_thread_soc_lighting_app_freertos.slcp file open. If not simply open the file yourself.
 
       ![Build the project](resources/studio-6-matter-project-demo.png)
 
@@ -94,7 +94,7 @@ You now have a working Matter hub. Keep the PuTTY session open for the following
 
    8. Disconnect the dev board from your development computer.
 
-2. Repeat the process above with the second dev board but selecting the *Matter - SoC Light Switch over Thread* example instead.
+2. Repeat the process above with the second dev board but selecting the *Matter Thread - SoC Light Switch FreeRTOS* example instead.
 
 ## Creating the Matter Network
 

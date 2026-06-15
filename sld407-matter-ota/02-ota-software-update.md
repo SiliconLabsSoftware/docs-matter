@@ -271,7 +271,7 @@ Build the project, and flash the binary file to your matter device.
 
 #### Application (New)
 
-For the new application image, configure and set the Device software version and Device software version string to a higher number in Matter > Stack > Matter Core Components. For the purposes of this example the Matter sample application used is the MatterLightOverThread.
+For the new application image, configure and set the Device software version and Device software version string to a higher number in Matter > Stack > Matter Core Components. For the purposes of this example the Matter sample application used is the matter_thread_soc_lighting_app_freertos.
 
 ![Matter app version number](./images/ota-tutorial-app-version-number.png)
 
@@ -284,7 +284,7 @@ Then build the application and save the binary file in a known directory.
 If your version does not support Multi-chip OTA functionality or if you are **only** upgrading the application image, then we only need to convert the following files; app.s37 -> app.gbl -> app.ota by running this command:
 
 ```shell
-commander gbl create MatterLightOverThread.gbl --app MatterLightOverThread.s37
+commander gbl create matter_thread_soc_lighting_app_freertos.gbl --app matter_thread_soc_lighting_app_freertos.s37
 ```
 
 If your version supports Multi-chip OTA functionality, the following command combines the bootloader and application image into a single .gbl file with LMZA compression enabled.
@@ -298,7 +298,7 @@ For either of these cases, the `--compress lzma` option can be used to reduce th
 Then, run the following command to create the .ota file.
 
 ```shell
-commander ota create --type matter --input MatterLightOverThread.gbl --vendorid 0xFFF1 --productid 0x8005 --swstring "2.0" --swversion 2 --digest sha256 -o MatterLightOverThread.ota
+commander ota create --type matter --input matter_thread_soc_lighting_app_freertos.gbl --vendorid 0xFFF1 --productid 0x8005 --swstring "2.0" --swversion 2 --digest sha256 -o matter_thread_soc_lighting_app_freertos.ota
 ```
 
 ### Step 3: Setting up the Thread network and the OTA Provider application
@@ -314,7 +314,7 @@ If instead the chip-tool is used, replace the "mattertool" with "chip-tool" and 
 After that, start the Provider app and pass to it the path to the Matter OTA file created in the previous step:
 
 ```shell
-chip-ota-provider-app -f ./MatterLightOverThread.ota
+chip-ota-provider-app -f ./matter_thread_soc_lighting_app_freertos.ota
 ```
 
 In a new separate terminal, run the following commands to provision the Provider:

@@ -38,7 +38,9 @@ Click the **Example Projects & Demos** tab and filter for *Matter*.
 
 ![Simplicity Studio Example Projects & Demos](./images/wifi-light-demo.png)
 
-For this quick start guide, select the **Matter - SoC Siwx917 Lighting Example over Wi-Fi** demo. A number of other apps are also available including a Lock, Thermostat, Appliance, and Window Covering. When ready, click **Run** to flash the device. When the device is flashed, a QR code will appear on the WSTK screen. If no QR appears on the screen, the connectivity firmware may need to be updated. Follow the steps here for [Upgrading the Connectivity Firmware on SoC Devices](https://docs.silabs.com/matter/latest/matter-wifi-run-demo/loading-firmware-for-ncp-and-soc-boards#upgrading-the-connectivity-firmware-on-so-c-devices).
+1. Select the **Matter WiFi - SoC Lighting FreeRTOS** demo. 
+   > **Note**: A number of other apps are also available including a Lock, Thermostat, Appliance, and Window Covering. 
+2. When the project is ready, click **Run** to flash the device. When the device is flashed, a QR code will appear on the WSTK screen. If no QR appears on the screen, the connectivity firmware may require an update. Perform the steps for [Upgrading the Connectivity Firmware on SoC Devices](https://docs.silabs.com/matter/latest/matter-wifi-run-demo/loading-firmware-for-ncp-and-soc-boards#upgrading-the-connectivity-firmware-on-so-c-devices).
 
 ### Step 3: Prepare the Device for Commissioning
 
@@ -83,13 +85,13 @@ For instructions on installing Simplicity Studio and the Silicon Labs Extension 
 ### Step 1: Create a Matter Sample Project
 
 1. Open Simplicity Studio and repeat the same steps as [above](#flashing-the-siwx917-soc-matter-accessory-device).
-2. Instead of selecting **Run** for the demo, click **Create** for the **Matter - SoC Lighting over WiFi** example.
-3. Review the Project Configuration and click **Finish**. Simplicity Studio creates a new Solution called MatterLightOverWiFiolution with the MatterLightOverWiFi project inside the workspace.
+2. Click **Create** for the **Matter WiFi - SoC Lighting FreeRTOS** example.
+3. Review the Project Configuration and click **Finish**. Simplicity Studio creates a new Solution called matter_wifi_soc_lighting_app_freertos_solution with the matter_wifi_soc_lighting_app_freertos project inside the workspace.
 4. After the project is created, click the **Open in VS Code** button to open the project in the Silicon Labs Extension for the Visual Studio Code IDE.
 
 ### Step 2: Build the Project in the Silicon Labs Extension for the Visual Studio Code IDE
 
-1. Once the MatterLightOverWiFiSolution is open, hover over the solution and click the **Build** button.
+1. Once the matter_wifi_soc_lighting_app_freertos_solution is open, hover over the solution and click the **Build** button.
 
    ![Building the project](./images/studio-6-build.png)
 

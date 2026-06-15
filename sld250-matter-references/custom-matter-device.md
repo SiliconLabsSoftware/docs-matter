@@ -153,7 +153,7 @@ In order to use a custom cluster in an application, follow these steps:
       "value": "true"
     }   
  ```
-For an example, see [Sample ZAP file](https://github.com/SiliconLabsSoftware/matter_extension/blob/release_2.8-1.5/slc/apps/performance-test-app/thread/performance-test-app.zap)
+For an example, see [Sample ZAP file](https://github.com/SiliconLabsSoftware/matter_extension/blob/v2.9.0/slc/apps/performance_test_app/thread/performance-test-app.zap)
 - Install the **Custom ZAP generation** component under **Silicon Labs Matter -> Stack** in the project's Component Editor. 
 
 

@@ -2,7 +2,7 @@
 
 ## General
 
-Matter solutions allow the user to generate multiple projects at once, to generate a combined solution/binary and allow multiple post-build operations to provide flexibility and unison when developing a Matter example or application. For example, with the Matter Lighting over Thread with Bootloader Solution a user can generate a Matter Bootloader, a Matter Lighting example, and the combined Bootloader + Example production image. Solutions will also generate a .gbl binary for the users to make use of and create an .ota software image update binary (directions listed below).
+Matter solutions allow the user to generate multiple projects at once, to generate a combined solution/binary and allow multiple post-build operations to provide flexibility and unison when developing a Matter example or application. For example, with the Matter Thread - SoC Lighting with external Bootloader FreeRTOS solution a user can generate a Matter Bootloader, a Matter Lighting example, and the combined Bootloader + Example production image. Solutions will also generate a .gbl binary for the users to make use of and create an .ota software image update binary (directions listed below).
 
 ## Solution Creation
 
@@ -12,7 +12,7 @@ To create a Matter Solution, proceed to the **Example Project Selection** sectio
 
 ## Solution Building
 
-Building via solutions behaves just like a normal project. Just ensure the top-level solution is selected and build! Artifacts from the resulting projects can be found within the `artifact` directory under each distinct project within the solution. Users selecting to build _just_ the sample application may get an error at the end of their build assuming the bootloader was built with it as well. Disregard this notification.
+Building via solutions behaves just like a normal project. Just ensure the top-level solution is selected and build! Artifacts from the resulting projects can be found within the `Binaries` directory under each distinct project within the solution. Users selecting to build _just_ the sample application may get an error at the end of their build assuming the bootloader was built with it as well. Disregard this notification.
 
 ![Solution Artifacts](./images/solution-artifacts.png)
 
