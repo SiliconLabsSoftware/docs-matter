@@ -61,6 +61,8 @@ through this function. The command can then be dissected using conditional logic
 to call the proper application functions based on the most recent command
 received.
 
+Depending on your sample application, edit the files. For more information, refer to [Application Customization Models](/matter/{build-docspace-version}/matter-api-reference/#application-customization-models). New architecture apps route attribute changes through `CustomerAppTask` and `DMPostAttributeChangeCallbackImpl()`. Legacy architecture apps implement `MatterPostAttributeChangeCallback()` directly in `src/DataModelCallbacks.cpp`.
+
 ## Adding a Cluster to a ZAP Configuration
 
 In the ZAP UI, navigate to the Level Control cluster. Make sure this cluster is
@@ -79,13 +81,31 @@ is set to enabled. Set the default value of this attribute as 1.
 Navigate to the commands tab in zap and enable the MoveToLevel command. Now save
 the current zap configuration, and run the generate.py script above.
 
-## React to Level Control Cluster Commands in ZclCallbacks
+## React to Level Control Cluster Commands
+
+### New Architecture
+
+In a custom implementation of `DMPostAttributeChangeCallbackImpl()` in `src/CustomerAppTask.cpp`, add the following or similar code. This enables the application to react to the MoveToLevel commands.
+
+   ```cpp
+    else if (clusterId == LevelControl::Id)
+    {
+       ChipLogProgress(Zcl, "Level Control attribute ID: " ChipLogFormatMEI " Type: %u Value: %u, length %u",
+                        ChipLogValueMEI(attributeId), type, *value, size);
+
+       if (attributeId == LevelControl::Attributes::CurrentLevel::Id)
+       {
+          sLightLED.SetLevel(*value);
+       }
+    }
+   ```
+
+### Legacy Architecture
 
 In the MatterPostAttributeCallback function in ZclCallbacks, add the following
 line of code or a similar line. This will give the application the ability to react to
 MoveToLevel commands. You can define platform-specific behavior for a
 MoveToLevel action.
-
    ```cpp
     else if (clusterId == LevelControl::Id)
     {

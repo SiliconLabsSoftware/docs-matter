@@ -3,7 +3,9 @@
 
 ## Event Handler
 
-The Matter event handler uses the FreeRTOS queue to transport a message from the producer to the consumer area. Events can be used to create an asynchronous message processing or an inter-task message communication.
+The Matter event handler uses the FreeRTOS queue to transport a message from the producer to the consumer area. Events can be used to create asynchronous message processing or inter-task communication.
+
+Depending on your sample app, instructions apply. See [Application Customization Models](/matter/{build-docspace-version}/matter-api-reference/#application-customization-models).
 
 Steps to make an event work:
 
@@ -55,6 +57,25 @@ struct AppEvent
 
 When creating an event and pushing it to the event queue at minimum, **Handler** and **Type** must be defined in order for the event to work.
 
+### New Architecture
+
+Custom event posting and handlers are overridden in the `CustomerAppTask` file, not in `autogen/AppTask.cpp`.
+
+```C++
+void CreateObserverEvent(void)
+{
+    AppEvent active_mode_event = {};
+    active_mode_event.Type     = AppEvent::kEventType_Observer;
+    active_mode_event.Handler  = SilabsSensors::SendSensorsValues;
+
+    AppInstance().PostEvent(&active_mode_event);
+}
+```
+
+### Legacy Architecture
+
+Post events from `src/AppTask.cpp`:
+
 ```C++
 void AppTask::CreateObserverEvent(void)
 {
@@ -80,6 +101,43 @@ void SilabsSensors::SendSensorsValues(AppEvent * aEvent)
 ## Dispatcher
 
 **AppTaskMain** is dispatching all the events from the event list.
+
+### New Architecture
+
+```C++
+void AppTask::AppTaskMain(void * pvParameter)
+{
+    AppEvent event;
+    QueueHandle_t sAppEventQueue = *(static_cast<QueueHandle_t *>(pvParameter));
+
+    CHIP_ERROR err = AppInstance().Init();
+    if (err != CHIP_NO_ERROR)
+    {
+        SILABS_LOG("AppTask.Init() failed");
+        appError(err);
+    }
+
+#if !(defined(CHIP_CONFIG_ENABLE_ICD_SERVER) && CHIP_CONFIG_ENABLE_ICD_SERVER)
+    AppInstance().StartStatusLEDTimer();
+#endif
+
+    AppInstance().RegisterObserver();
+
+    SILABS_LOG("App Task started");
+
+    while (true)
+    {
+        BaseType_t eventReceived = xQueueReceive(sAppEventQueue, &event, portMAX_DELAY);
+        while (eventReceived == pdTRUE)
+        {
+            AppInstance().DispatchEvent(&event);
+            eventReceived = xQueueReceive(sAppEventQueue, &event, 0);
+        }
+    }
+}
+```
+
+### Legacy Architecture
 
 ```C++
 void AppTask::AppTaskMain(void * pvParameter)
@@ -130,7 +188,20 @@ chip::DeviceLayer::PlatformMgr().UnlockChipStack();
 
 ### Callback
 
-Timer callback.
+### New Architecture
+
+Timer callback. Implement in `src/CustomerAppTask.cpp`.
+
+```C++
+void TestCallback(System::Layer * layer, void * aAppState)
+{
+	// Do something
+}
+```
+
+### Legacy Architecture
+
+Timer callback. Implement in `src/AppTask.cpp`.
 
 ```C++
 void AppTask::TestCallback(System::Layer * layer, void * aAppState)
