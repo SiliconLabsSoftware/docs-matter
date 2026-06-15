@@ -157,13 +157,20 @@ Multi-Chip OTA on SiWN917 NCP supports application image upgrade, Wi-Fi(TA) imag
 
 Create a bootable image file from *.s37* (using the lock application image as an example):
 
-```shell
-commander gbl create SiWx917-lock-example.gbl --app SiWx917-lock-example.s37 --compress lzma
-```
+- If using a series 3 board: 
+  ```shell
+  commander gbl4 create SiWx917-lock-example.gbl --app SiWx917-lock-example.s37 --compress lzma
+  ```
 
-```shell
-./scripts/tools/silabs/ota/ota_multi_image_tool.py create -v 0xFFF1 -p 0x8005 -vn 2 -vs "2.0" -da sha256 --app-input-file SiWx917-lock-example.gbl SiWx917-lock-example.ota
-```
+- Otherwise:
+  ```shell
+  commander gbl create SiWx917-lock-example.gbl --app SiWx917-lock-example.s37 --compress lzma
+  ```
+
+- Then for any board series:
+  ```shell
+  ./scripts/tools/silabs/ota/ota_multi_image_tool.py create -v 0xFFF1 -p 0x8005 -vn 2 -vs "2.0" -da sha256 --app-input-file SiWx917-lock-example.gbl SiWx917-lock-example.ota
+  ```
 
 **Wi-Fi(TA) Image Upgrade**
 

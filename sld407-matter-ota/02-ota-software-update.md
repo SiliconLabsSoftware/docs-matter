@@ -44,7 +44,7 @@ The running image and the update image are regular Matter application images and
 
 See the following page for detailed steps: [build OTA application using studio](./04-build-ota-application-using-studio.md).
 
-### Obtaining the Bootloader binary
+### Obtaining the Bootloader Binary
 
 - Build or download the Gecko Bootloader binary which can be obtained in one of the following ways:
   - Follow the instructions in [Creating the Bootloader for Use in Matter OTA](01-ota-bootloader.md).
@@ -53,13 +53,19 @@ See the following page for detailed steps: [build OTA application using studio](
 
 - Using the Commander tool or Simplicity Studio, upload the bootloader to the device running the application.
 
-## Running the OTA Download demo scenario
+## Running the OTA Download Demo Scenario
 
 - Create a bootable image file (using the Lighting application image as an example):
+   - If using a series 3 board: 
 
-    ```shell
-    commander gbl create chip-efr32-lighting-example.gbl --app chip-efr32-lighting-example.s37
-    ```
+        ```shell
+        commander gbl4 create chip-efr32-lighting-example.gbl --app chip-efr32-lighting-example.s37
+        ```
+    
+   - Otherwise:
+        ```shell
+        commander gbl create chip-efr32-lighting-example.gbl --app chip-efr32-lighting-example.s37
+        ```
 
 - Create the Matter OTA file from the bootable image file:
 
@@ -138,7 +144,7 @@ Installing the Lower Power Mode component in the project's Software Components t
 
 Disabling logging in the configuration of the Matter Core Components component also helps to reduce the image size.
 
-Using LZMA compression when building the .gbl file (passing `--compress lzma` parameter to the `commander gbl create` command) further reduces the downloaded image size.
+Using LZMA compression when building the .gbl file (passing `--compress lzma` parameter to the `commander gbl4 create` command for series 3 boards, otherwise `commander gbl create`) further reduces the downloaded image size.
 
 When building an internal storage bootloader, the two key configuration parameters are the Slot Start Address and Slot Size in the Bootloader Storage Slot component. The storage slot must not overlap with the running image and the NVM section of the flash. In other words, the slot start address must be greater than the end of the running image address and the sum of the start address and the slot size must be less than the address of the NVM section. The simplest way to get the relevant addresses for the running image and NVM is by using the Silicon Labs `Simplicity Commander` (**Device Info > Main Flash > Flash Map**).
 
@@ -189,9 +195,15 @@ Combined OTA images are supported in both regular OTA and Multi-Chip OTA impleme
 
 1. Bootloader + application upgrade. This requires a combined image.
 
-    ```shell
-    commander gbl create --bootloader <bootloader_image>.s37 --app <new_application_image>.s37 <combined_image>.gbl
-    ```
+   - If using a series 3 board:
+        ```shell
+        commander gbl4 create --bootloader <bootloader_image>.s37 --app <new_application_image>.s37 <combined_image>.gbl
+        ```
+
+   - Otherwise: 
+        ```shell
+        commander gbl create --bootloader <bootloader_image>.s37 --app <new_application_image>.s37 <combined_image>.gbl
+        ```
 
 2. Bootloader upgrade only. This still requires a combined image so an unchanged application image should be used with the above command.
 
@@ -283,15 +295,27 @@ Then build the application and save the binary file in a known directory.
 
 If your version does not support Multi-chip OTA functionality or if you are **only** upgrading the application image, then we only need to convert the following files; app.s37 -> app.gbl -> app.ota by running this command:
 
-```shell
-commander gbl create MatterLightOverThread.gbl --app MatterLightOverThread.s37
-```
+- If using a series 3 board: 
+    ```shell
+    commander gbl4 create MatterLightOverThread.gbl --app MatterLightOverThread.s37
+    ```
+
+- Otherwise: 
+    ```shell
+    commander gbl create MatterLightOverThread.gbl --app MatterLightOverThread.s37
+    ```
 
 If your version supports Multi-chip OTA functionality, the following command combines the bootloader and application image into a single .gbl file with LMZA compression enabled.
 
-```shell
-commander gbl create --bootloader <bootloader_image>.s37 --app <application_image>.s37 <combined_image>.gbl
-```
+- If using a series 3 board: 
+    ```shell
+    commander gbl4 create --bootloader <bootloader_image>.s37 --app <application_image>.s37 <combined_image>.gbl
+    ```
+
+- Otherwise:
+    ```shell
+    commander gbl create --bootloader <bootloader_image>.s37 --app <application_image>.s37 <combined_image>.gbl
+    ```
 
 For either of these cases, the `--compress lzma` option can be used to reduce the size of the resulting image. Just ensure that the bootloader has been built with the LZMA compress component.
 
