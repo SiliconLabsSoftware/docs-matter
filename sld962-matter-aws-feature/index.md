@@ -9,6 +9,13 @@
 - Remote users can install a cloud-specific application to receive
     notifications about the attribute status.
 
+## Matter + AWS Flavors
+
+Matter + AWS is available in two build flavors:
+
+- **Standard flavor** — For **917 SoC** and **standard 917 NCP** boards. Uses the host LwIP stack for both Matter (IPv6) and AWS (IPv4) with `matter_lwip` and `matter_aws_transport_lwip`. See [Build Procedure for Matter + AWS](./build-matter-aws.md).
+- **Dual-stack flavor (917 NCP)** — For **917 NCP** boards only. Uses a split-stack architecture: Matter over **IPv6** on the EFR32 host LwIP stack and AWS over **IPv4** on the SiWx917 NWP offload stack with `matter_dual_stack` and `matter_aws_transport_nwp`. See [Matter + AWS Dual Stack Overview](./matter-aws-dual-stack-overview.md) and [Build Procedure for Matter + AWS Dual Stack](./build-matter-aws-dual-stack.md).
+
 ## Matter + AWS Feature Diagram
 
 The following diagram shows end-to-end flow for Direct Internet Connectivity.
@@ -24,7 +31,7 @@ official
 [Silicon Labs Matter hardware requirements](/matter/{build-docspace-version}/matter-prerequisites/hardware-requirements)
 documentation.
 
-> **Note:** This is supported for 917 SoC and NCP boards only.
+> **Note:** The standard flavor is supported for 917 SoC and NCP boards. The dual-stack flavor is supported for **917 NCP boards only** (BRD4186C, BRD4187C, BRD4120A).
 
 ### Software Requirements
 
@@ -55,7 +62,9 @@ Remote users are used to check the state of Matter devices. In this context, MQT
 
 ### Building Matter + AWS Application using Simplicity Studio
 
-Follow the instructions in [Build Procedure for Matter + AWS](./build-matter-aws.md) to enable the MATTER + AWS feature in your application code.
+Follow the instructions in [Build Procedure for Matter + AWS](./build-matter-aws.md) to enable the Matter + AWS feature for the **standard flavor** (917 SoC and standard 917 NCP).
+
+For the **dual-stack flavor** on 917 NCP boards, follow [Build Procedure for Matter + AWS Dual Stack](./build-matter-aws-dual-stack.md).
 
 ## End-to-End Test of Matter + AWS Application
 
