@@ -31,7 +31,7 @@ official
 [Silicon Labs Matter hardware requirements](/matter/{build-docspace-version}/matter-prerequisites/hardware-requirements)
 documentation.
 
-> **Note:** The standard flavor is supported for 917 SoC and NCP boards. The dual-stack flavor is supported for **917 NCP boards only** (BRD4186C, BRD4187C, BRD4120A).
+> **Note:** The standard flavor is supported for 917 SoC and NCP boards. The dual-stack flavor is supported for **917 NCP boards only** (EFR32 host + BRD4346A).
 
 ### Software Requirements
 

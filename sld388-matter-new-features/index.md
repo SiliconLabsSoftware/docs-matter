@@ -1,6 +1,6 @@
 # New Features
 
-## New Features for v2.9.0-1.5
+## New Features for v2.9.0-1.6
 
 - Added **Matter + AWS dual-stack** support for 917 NCP boards — alpha quality. Uses a split-stack architecture (IPv6 Matter on EFR32 host, IPv4 AWS on SiWx917 NWP). See [Matter + AWS Dual Stack Overview](/matter/{build-docspace-version}/matter-aws-feature/matter-aws-dual-stack-overview).
 

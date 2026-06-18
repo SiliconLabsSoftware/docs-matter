@@ -63,7 +63,7 @@ When building a dual-stack Matter + AWS application, verify the following:
 
 ### Hardware
 
-Dual-stack Matter + AWS is supported on **917 NCP boards only**:
+Dual-stack Matter + AWS is supported on **917 NCP Radio boards only(BRD4346A)**:
 
 - BRD4186C
 - BRD4187C

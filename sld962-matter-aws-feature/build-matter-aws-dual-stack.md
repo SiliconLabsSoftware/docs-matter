@@ -90,8 +90,6 @@ Commission the device over **EFR32 BLE** and verify Matter control with chip-too
 
 ## Compile Using New Thing for Different Certificates
 
-## Compile Using New/Different Certificates
-
 Two devices should not use the same client ID. Use a different client ID for your second connection. While using AWS, update the following information:
 
 1. Add your AWS certificates in file `examples/platform/silabs/matter_aws/matter_aws_interface/include/MatterAwsNvmCert.cpp`.
