@@ -6,7 +6,7 @@ For an architectural overview and flavor comparison, see [Matter + AWS Dual Stac
 
 For the standard Matter + AWS build (917 SoC or standard 917 NCP with host LwIP transport), see [Build Procedure for Matter + AWS](./build-matter-aws.md).
 
-> **Note:** Dual-stack Matter + AWS is currently **alpha quality** and supported on 917 NCP boards only (BRD4186C, BRD4187C, BRD4120A).
+> **Note:** Dual-stack Matter + AWS is currently supported on 917 NCP boards only (BRD4186C, BRD4187C, BRD4120A).
 
 ## Prerequisites
 
@@ -15,20 +15,19 @@ For the standard Matter + AWS build (917 SoC or standard 917 NCP with host LwIP 
 - AWS cloud configured per [AWS installation](./aws-configuration-registration.md).
 - Hardware and software requirements met as described in [Matter + AWS Prerequisites](./index.md#prerequisites).
 
-## Adding the AWS Server, Client ID, and Cluster Details
+## Adding the AWS Server, Client ID, and Certificate Details
 
-AWS server, client ID, and cluster configuration is the same as the standard Matter + AWS flavor. Follow the steps in [Adding the AWS Server, Client ID, and Cluster Details](./build-matter-aws.md#adding-the-aws-server-client-id-and-cluster-details) in the standard build guide to update `MatterAwsConfig.h` and refresh the Matter extension in Simplicity Studio.
+AWS server, client ID, and Certifcates are same as the standard Matter + AWS flavor. Follow the steps in [Adding the AWS Server, Client ID, and Cluster Details](./build-matter-aws.md#adding-the-aws-server-client-id-and-cluster-details) in the standard build guide and refresh the Matter extension in Simplicity Studio.
 
 ## Starting Point
 
-You can create a dual-stack Matter + AWS project in either of these ways:
+You can create a dual-stack Matter + AWS project using below steps:
 
-1. **From the reference example** — In Simplicity Studio, create a project from `matter_wifi_917_ncp_lock_app_dual_stack_freertos` (917 NCP Lock Dual Stack), then add the Matter AWS components described below.
-2. **From an existing 917 NCP project** — Adapt a 917 NCP Matter project by replacing the standard network and BLE components with the dual-stack equivalents listed in the next section.
+**From the reference example** — In Simplicity Studio, create a project from `matter_wifi_917_ncp_lock_app_dual_stack_freertos` (917 NCP Lock Dual Stack), then add the Matter AWS components described below.
 
 ## Adding Dual-Stack Matter + AWS Components
 
-Configure the project using the Simplicity Studio Project Configurator. The steps below cover only the **dual-stack-specific** differences from the [standard Matter + AWS build procedure](./build-matter-aws.md#adding-the-matter--aws-component).
+Configure the project using the Simplicity Studio Project Configurator. The steps below cover only the **dual-stack-specific** which is different from the [standard Matter + AWS build procedure](./build-matter-aws.md#adding-the-matter--aws-component).
 
 ### 1. Enable IPv4 on the Matter Wi-Fi Component
 

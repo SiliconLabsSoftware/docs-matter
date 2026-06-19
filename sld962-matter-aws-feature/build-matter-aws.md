@@ -18,7 +18,12 @@ Follow the steps below to set the AWS configuration in the Matter SDK.
 
     ![MatterAwsConfig.h File](./images/matter-aws-config.png)
 
-4. After making the above changes, refresh the `matter-extension` in Simplicity Studio.
+4.Add your AWS certificates in file `examples/platform/silabs/matter_aws/matter_aws_interface/include/MatterAwsNvmCert.cpp`.
+
+   - Provide the AWS Root CA key.
+   - Provide `device_certificate` and `device_key` with your device certificate and device key. For key generation details, refer to [AWS Thing Certificate Creation](./aws-configuration-registration.md).
+
+5. After making the above changes, refresh the `matter-extension` in Simplicity Studio.
    - In the **Home** tab, from the left panel, select **Settings**.
    ![Select Settings](images/aws-build-settings.jpg)
    - Click **SDKs**, ensure the correct version of the SDK is selected, and then click **Refresh** in the right side menu.
@@ -47,9 +52,11 @@ To enable the component in Simplicity Studio, add the following components.
 
 ![Matter AWS NWP Transport Component](images/matter-aws-dependency-2.png)
 
-   ![Default Entropy Source for Matter + AWS](images/matter-aws-dependency-1.png)
+![Default Entropy Source for Matter + AWS](images/matter-aws-dependency-1.png)
 
-   ![Public-Key Abstaction Layer for Matter + AWS](images/matter-aws-dependency-2.png)
+![X.509 Create certificates for Matter + AWS](images/matter-aws-dependency-5.png)
+
+![X.509 Use certificates for Matter + AWS](images/matter-aws-dependency-4.png)
 
 ### Additional Step Needed Only For 917 NCP
 

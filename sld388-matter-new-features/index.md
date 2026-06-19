@@ -2,7 +2,7 @@
 
 ## New Features for v2.9.0-1.6
 
-- Added **Matter + AWS dual-stack** support for 917 NCP boards — alpha quality. Uses a split-stack architecture (IPv6 Matter on EFR32 host, IPv4 AWS on SiWx917 NWP). See [Matter + AWS Dual Stack Overview](/matter/{build-docspace-version}/matter-aws-feature/matter-aws-dual-stack-overview).
+- Added **Matter + AWS dual-stack** support for 917 NCP boards. Uses a split-stack architecture (IPv6 Matter on EFR32 host, IPv4 AWS on SiWx917 NWP). See [Matter + AWS Dual Stack Overview](/matter/{build-docspace-version}/matter-aws-feature/matter-aws-dual-stack-overview).
 
 ## New Features for v2.8.1-1.5
 - PSRAM board support in Matter now uses WiseConnect components. To place specific code/data in PSRAM, enable the corresponding WiseConnect component for the section or region you want to relocate.
