@@ -62,7 +62,7 @@ Additionally, a corresponding component is automatically added to your project. 
 
 ## Step 4: Add Application Logic 
 
-This guide uses the Lock sample app, which is on the **new architecture** in 2.9.0. See [Application Customization Models](/matter/{build-docspace-version}/matter-api-reference/#application-customization-models) to confirm which model your project uses.
+This guide uses the Lock sample app, which is on the **new architecture** in 2.9.0. See [Application Customization Models](/matter/{build-docspace-version}/matter-references/custom-matter-device/#application-customization-models) to confirm which model your project uses.
 
 ### New Architecture
 

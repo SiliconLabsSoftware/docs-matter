@@ -4,7 +4,7 @@ Attributes represent the current state of a device. For instance if the device i
 
 ## Attribute Changes
 
-Depending on your sample app, instructions apply. For more information, refer to [Application customization models](./index.md#application-customization-models).
+Depending on your sample app, instructions apply. For more information, refer to [Application customization models](/matter/{build-docspace-version}/matter-references/custom-matter-device/#application-customization-models).
 
 ### New Architecture
 

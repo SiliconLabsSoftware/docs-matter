@@ -7,6 +7,31 @@ Build a customizable lighting app using the Matter protocol.
 This guide covers the basics of building a customizable lighting application
 using Matter.
 
+## Application Customization Models
+
+Matter Extension 2.9.0 migrates a subset of sample apps to the Curiously Recurring Template Pattern (CRTP) based architecture, which removes app manager and DataModelCallbacks files. All other sample apps keep the previous architecture until the patch release.
+
+Check your project in Project Explorer:
+
+| If you see… | Architecture | Where to add custom logic |
+|---|---|---|
+| `src/CustomerAppTask.cpp` and `autogen/AppTask.cpp` | **New** | Override `*Impl()` hooks in `CustomerAppTask`, do not edit `autogen/AppTask.cpp` |
+| `src/DataModelCallbacks.cpp` and editable `src/AppTask.cpp` | **Legacy** | Callbacks in `DataModelCallbacks.cpp`, init and app logic in `src/AppTask.cpp` |
+
+**Sample apps on the new architecture in 2.9.0:**
+
+- Lighting 
+- Zigbee Matter Light
+- On/Off Plug
+- Thermostat
+- Lock
+- Light Switch
+- Rangehood
+- Platform Template
+- Air Quality Sensor
+
+All other Silicon Labs Matter sample apps in this release use the legacy model. Related guides label steps as **New architecture** or **Legacy architecture** where they differ.
+
 ## Using Matter with Clusters
 
 In Matter, commands can be issued by using a cluster. A cluster is a set of
@@ -61,7 +86,7 @@ through this function. The command can then be dissected using conditional logic
 to call the proper application functions based on the most recent command
 received.
 
-Depending on your sample application, edit the files. For more information, refer to [Application Customization Models](/matter/{build-docspace-version}/matter-api-reference/#application-customization-models). New architecture apps route attribute changes through `CustomerAppTask` and `DMPostAttributeChangeCallbackImpl()`. Legacy architecture apps implement `MatterPostAttributeChangeCallback()` directly in `src/DataModelCallbacks.cpp`.
+Depending on your sample application, edit the files as described in [Application Customization Models](#application-customization-models). New architecture apps route attribute changes through `CustomerAppTask` and `DMPostAttributeChangeCallbackImpl()`. Legacy architecture apps implement `MatterPostAttributeChangeCallback()` directly in `src/DataModelCallbacks.cpp`.
 
 ## Adding a Cluster to a ZAP Configuration
 
