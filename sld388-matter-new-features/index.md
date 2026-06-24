@@ -2,7 +2,7 @@
 
 ## New Features for v2.9.0-1.6
 - Quality-tested Matter 1.6 solution for Thread MG24 / MG26 / MG30, Wi-Fi SiWG917 SoC and SiWN917 NCP mode.
-- Matter+AWS support enabled for 917 NCP dual Stack
+- Matter + AWS dual-stack support for 917 NCP boards.
 - Added LTO build support for SiWG917 sleepy and non-sleepy Matter Wi-Fi applications
 - Updated the GCC toolchain version to 14.2 release
 
