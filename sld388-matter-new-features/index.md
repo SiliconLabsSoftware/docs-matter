@@ -1,5 +1,9 @@
 # New Features
 
+## New Features for v2.9.0-1.6
+
+- Matter + AWS dual-stack support for 917 NCP boards.
+
 ## New Features for v2.8.1-1.5
 - PSRAM board support in Matter now uses WiseConnect components. To place specific code/data in PSRAM, enable the corresponding WiseConnect component for the section or region you want to relocate.
 

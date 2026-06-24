@@ -13,20 +13,17 @@ Follow the steps below to set the AWS configuration in the Matter SDK.
 
    - Update the AWS server name at `#define MATTER_AWS_SERVER_HOST ""`.
    - Update the client ID at `#define MATTER_AWS_CLIENT_ID ""`.
-   - Update the cluster server information as shown in the table below, based on your app:
-  
-   | Application Type | Cluster Definition |
-   |------------------|--------------------|
-   | Thermostat | `#define ZCL_USING_THERMOSTAT_CLUSTER_SERVER` |
-   | Lighting | `#define ZCL_USING_ON_OFF_CLUSTER_SERVER` |
-   | Lock | `#define ZCL_USING_DOOR_LOCK_CLUSTER_SERVER` |
-   | Window Covering | `#define ZCL_USING_WINDOW_COVERING_CLUSTER_SERVER` |
 
     **MatterAwsConfig.h File:**
 
     ![MatterAwsConfig.h File](./images/matter-aws-config.png)
 
-4. After making the above changes, refresh the `matter-extension` in Simplicity Studio.
+4. Add your AWS certificates in the `examples/platform/silabs/matter_aws/matter_aws_interface/include/MatterAwsNvmCert.cpp` file.
+
+   - Provide the AWS Root CA key.
+   - Provide `device_certificate` and `device_key` with your device certificate and device key. For key generation details, refer to [AWS Thing Certificate Creation](./aws-configuration-registration.md).
+
+5. After making the above changes, refresh the `matter-extension` in Simplicity Studio.
    - In the **Home** tab, from the left panel, select **Settings**.
    ![Select Settings](images/aws-build-settings.jpg)
    - Click **SDKs**, ensure the correct version of the SDK is selected, and then click **Refresh** in the right side menu.
@@ -51,10 +48,15 @@ To enable the component in Simplicity Studio, add the following components.
 3. Next, select the dependencies for the Matter AWS component.
 
    > Note: The order can vary, but in every case select the option with "+ AWS".
+   When prompted for the AWS transport dependency, select **Matter AWS LWIP Transport** (`matter_aws_transport_lwip`). Do **not** select Matter AWS NWP Transport.
 
-   ![Default Entropy Source for Matter + AWS](images/matter-aws-dependency-1.png)
+![Matter AWS NWP Transport Component](images/matter-aws-dependency-2.png)
 
-   ![Public-Key Abstaction Layer for Matter + AWS](images/matter-aws-dependency-2.png)
+![Default Entropy Source for Matter + AWS](images/matter-aws-dependency-1.png)
+
+![X.509 Create certificates for Matter + AWS](images/matter-aws-dependency-5.png)
+
+![X.509 Use certificates for Matter + AWS](images/matter-aws-dependency-4.png)
 
 ### Additional Step Needed Only For 917 NCP
 
@@ -100,4 +102,3 @@ Two devices should not use the same client ID. Use a different client ID for you
 
    - Provide `MATTER_AWS_SERVER_HOST` with your AWS Server name.
    - Provide `MATTER_AWS_CLIENT_ID` with your device/thing ID.
-   - Update `ZCL_USING_ON_OFF_CLUSTER_SERVER` with the cluster server details based on your app.
