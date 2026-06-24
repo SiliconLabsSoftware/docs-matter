@@ -18,7 +18,7 @@ Follow the steps below to set the AWS configuration in the Matter SDK.
 
     ![MatterAwsConfig.h File](./images/matter-aws-config.png)
 
-4.Add your AWS certificates in file `examples/platform/silabs/matter_aws/matter_aws_interface/include/MatterAwsNvmCert.cpp`.
+4. Add your AWS certificates in the `examples/platform/silabs/matter_aws/matter_aws_interface/include/MatterAwsNvmCert.cpp` file.
 
    - Provide the AWS Root CA key.
    - Provide `device_certificate` and `device_key` with your device certificate and device key. For key generation details, refer to [AWS Thing Certificate Creation](./aws-configuration-registration.md).

@@ -1,23 +1,23 @@
 # Matter + AWS Dual Stack Overview
 
-The **dual-stack flavor** of Matter + AWS is a Silicon Labs–specific configuration for **917 NCP** (Network Co-Processor) designs. It enables Matter devices to connect locally on the Matter fabric over **IPv6** on the EFR32 host while connecting to AWS over **IPv4** on the SiWx917 network processor (NWP).
+The dual-stack flavor of Matter + AWS is a Silicon Labs–specific configuration for 917 NCP (Network Co-Processor) designs. It enables Matter devices to connect locally to the Matter fabric over IPv6 through the EFR32 host and to AWS over IPv4 through the SiWx917 network wireless processor (NWP).
 
-> **Note:** Dual-stack here is **not** classic single-stack IPv4+IPv6 on one TCP/IP stack. It is a **split-stack NCP architecture** with separate network stacks on the host and the NWP.
+> **Note:** Dual-stack here is not classic single-stack IPv4+IPv6 on one TCP/IP stack. It is a split-stack NCP architecture with separate network stacks on the host and the NWP.
 
 ## When to Use the Dual-Stack Flavor
 
 Use the dual-stack flavor when all of the following apply:
 
-- Your design uses a **917 NCP** board (EFR32 host + SiWx917 co-processor over SPI).
-- You need **Matter + AWS** (Direct Internet Connectivity) on that NCP platform.
-- Matter traffic must remain on **IPv6** on the EFR32 host LwIP stack.
-- AWS MQTT/TLS traffic must run over **IPv4** on the SiWx917 NWP offload stack.
+- Your design uses a 917 NCP board (EFR32 host + SiWx917 co-processor over SPI).
+- You need Matter + AWS (Direct Internet Connectivity) on that NCP platform.
+- Matter traffic must remain on IPv6 on the EFR32 host LwIP stack.
+- AWS MQTT/TLS traffic must run over IPv4 on the SiWx917 NWP offload stack.
 
 For **917 SoC** or **standard 917 NCP** builds that use a single host LwIP stack for both Matter and AWS, use the [standard Matter + AWS build procedure](./build-matter-aws.md) instead.
 
 ## Dual-Stack Architecture
 
-The following diagram shows how traffic is split between the EFR32 host and the SiWx917 NWP.
+The following diagram shows how traffic is divided between the EFR32 host and the SiWx917 NWP.
 
 ![Matter + AWS dual-stack architecture](./images/matter-aws-dual-stack-architecture.png)
 
@@ -79,7 +79,7 @@ Standard Matter + AWS on 917 SoC and standard 917 NCP boards is documented separ
 
 ## Reference Example
 
-The Matter Extension provides a reference lock application for dual-stack builds:
+The Matter Extension provides a reference door lock application for dual-stack builds:
 
 - **Project:** `matter_wifi_917_ncp_lock_app_dual_stack_freertos`
 - **Description:** Matter over Wi-Fi door lock with BLE on the EFR32 host (IPv6 on EFR32, IPv4 on SiWx917)
@@ -94,6 +94,6 @@ This is currently the only Matter example project configured for the dual-stack 
 
 ## Next Steps
 
-- [Build Procedure for Matter + AWS Dual Stack](./build-matter-aws-dual-stack.md) — component installation and project configuration
-- [Build Procedure for Matter + AWS (standard flavor)](./build-matter-aws.md) — 917 SoC and standard 917 NCP
-- [Matter + AWS index](./index.md) — AWS cloud setup, end-to-end testing, and shared configuration
+- [Build Procedure for Matter + AWS Dual Stack](./build-matter-aws-dual-stack.md): For component installation and project configuration.
+- [Build Procedure for Matter + AWS (standard flavor)](./build-matter-aws.md): For 917 SoC and standard 917 NCP.
+- [Matter + AWS index](./index.md): For AWS cloud setup, end-to-end testing, and shared configuration.

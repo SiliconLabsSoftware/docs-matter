@@ -62,7 +62,7 @@ Remote users are used to check the state of Matter devices. In this context, MQT
 
 ### Building Matter + AWS Application using Simplicity Studio
 
-Follow the instructions in [Build Procedure for Matter + AWS](./build-matter-aws.md) to enable the Matter + AWS feature for the **standard flavor** (917 SoC and standard 917 NCP).
+Follow the steps in [Build Procedure for Matter + AWS](./build-matter-aws.md) to enable the Matter + AWS feature for the **standard flavor** (917 SoC and standard 917 NCP).
 
 For the **dual-stack flavor** on 917 NCP boards, follow [Build Procedure for Matter + AWS Dual Stack](./build-matter-aws-dual-stack.md).
 
