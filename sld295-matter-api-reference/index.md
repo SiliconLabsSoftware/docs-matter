@@ -11,30 +11,7 @@ This section covers the various Application Programming Interfaces (APIs) that a
 
 ## Application APIs
 
-### Application Customization Models
-
-Matter Extension 2.9.0 migrates a subset of sample apps to the Curiously Recurring Template Pattern (CRTP) based architecture, which removes app manager and DataModelCallbacks files. All other sample apps keep the previous architecture until the patch release.
-
-Check your project in Project Explorer:
-
-| If you see… | Architecture | Where to add custom logic |
-|---|---|---|
-| `src/CustomerAppTask.cpp` and `autogen/AppTask.cpp` | **New** | Override `*Impl()` hooks in `CustomerAppTask`, do not edit `autogen/AppTask.cpp` |
-| `src/DataModelCallbacks.cpp` and editable `src/AppTask.cpp` | **Legacy** | Callbacks in `DataModelCallbacks.cpp`, init and app logic in `src/AppTask.cpp` |
-
-**Sample apps on the new architecture in 2.9.0:**
-
-- Lighting 
-- Zigbee Matter Light
-- On/Off Plug
-- Thermostat
-- Lock
-- Light Switch
-- Rangehood
-- Platform Template
-- Air Quality Sensor
-
-All other Silicon Labs Matter sample apps in this release use the legacy model. Pages below label steps as **New architecture** or **Legacy architecture** where they differ.
+For guidance on new vs legacy sample app architecture and where to add custom logic, see [Application Customization Models](/matter/{build-docspace-version}/matter-references/custom-matter-device/#application-customization-models).
 
 ### Initialization
 
