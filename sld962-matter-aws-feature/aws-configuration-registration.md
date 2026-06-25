@@ -33,7 +33,7 @@ AWS IoT Core provides secure, bi-directional communication for Internet-connecte
 7. Complete the following steps to create a thing and generate certificates for your Matter application to use in the `MatterAwsNvmCert.cpp` source file:
 
    - Go to **All Devices > Things** and select **Create Things**.
-    ![Create Thing](./images/device-create-things.png)
+     ![Create Thing](./images/device-create-things.png)
    - Select **Create Single Thing** and click **Next**.
    - Under **Specific thing properties > Thing properties**, specify the thing name (this will be the `MATTER_AWS_CLIENT_ID` in `MatterAwsConfig.h`), then click **Next**.
       ![Add Thing Name](./images/aws-add-thing-name.png)
@@ -41,7 +41,7 @@ AWS IoT Core provides secure, bi-directional communication for Internet-connecte
 
       - For 917 NCP Dual Stack:
          - Select **Auto-generate a new certificate**. 
-      ![Auto-generate a new certificate](./images/thing-auto-gen-aws-certs.png)
+           ![Auto-generate a new certificate](./images/thing-auto-gen-aws-certs.png)
          - Download the Amazon Root CA1.
          - Download the Public and Private keys.
          - Skip **Certificate signing request** step for 917 NCP Dual Stack.
