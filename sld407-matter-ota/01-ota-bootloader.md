@@ -77,16 +77,21 @@ This example is for an internal storage bootloader for the Matter lighting app o
 
 - Build the GBL file for the update image and note its size.
 
-    > **Note**: The command below creates an unsigned GBL image. For Matter devices, add `--sign <signing-key>` so the Gecko Bootloader can authenticate the GBL before it applies the update. See [Enabling Secure Upgrades](#enabling-secure-upgrades) for details.
+   - If using a series 3 board:
+        ```shell
+        $ commander gbl4 create --compress lzma ~/chip/connectedhomeip/out/lighting-app/BRD4186A/chip-efr32-lighting-example.gbl --app ~/chip/connectedhomeip/out/lighting-app/BRD4186A/chip-efr32-lighting-example.s37
+        ```
 
-    ```shell
-    $ commander gbl create --compress lzma ~/chip/connectedhomeip/out/lighting-app/BRD4186A/chip-efr32-lighting-example.gbl --app ~/chip/connectedhomeip/out/lighting-app/BRD4186A/chip-efr32-lighting-example.s37
-    ```
+   - Otherwise:
+        ```shell
+        $ commander gbl create --compress lzma ~/chip/connectedhomeip/out/lighting-app/BRD4186A/chip-efr32-lighting-example.gbl --app ~/chip/connectedhomeip/out/lighting-app/BRD4186A/chip-efr32-lighting-example.s37
+        ```
 
-    ```shell
-    $ ls -la out/lighting-app/BRD4186A/chip-efr32-lighting-example.gbl
-    451176 Jul 19 16:39 out/lighting-app/BRD4186A/chip-efr32-lighting-example.gbl
-    ```
+   - Then for any board series:
+        ```shell
+        $ ls -la out/lighting-app/BRD4186A/chip-efr32-lighting-example.gbl
+        451176 Jul 19 16:39 out/lighting-app/BRD4186A/chip-efr32-lighting-example.gbl
+        ```
 
 - Flash the application image and bootloader. Erase the flash.
 
