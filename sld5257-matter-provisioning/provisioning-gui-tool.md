@@ -86,7 +86,7 @@ In an existing installation of Simplicity Studio, the MPT can be installed from 
 
 Before you can use the Matter Provisioning Tool GUI, you need to perform the steps below.
 
-1. Using the Matter SDK, create a Matter Project that supports provisioning of certificates on the Device. Example of Projects: Matter - SoC Thermostat over Thread.
+1. Using the Matter SDK, create a Matter Project that supports provisioning of certificates on the Device. Example of Projects: Matter Thread - SoC Thermostat FreeRTOS.
 
 2. In Launcher perspective, select **Create New Project**, select the **Matter** filter, select **Project**, and then click **Next**. Specify a project name and then click **Finish**.  
 

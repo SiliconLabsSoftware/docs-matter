@@ -7,6 +7,31 @@ Build a customizable lighting app using the Matter protocol.
 This guide covers the basics of building a customizable lighting application
 using Matter.
 
+## Application Customization Models
+
+Matter Extension 2.9.0 migrates a subset of sample apps to the Curiously Recurring Template Pattern (CRTP) based architecture, which removes app manager and DataModelCallbacks files. All other sample apps keep the previous architecture until the patch release.
+
+Check your project in Project Explorer:
+
+| If you see… | Architecture | Where to add custom logic |
+|---|---|---|
+| `src/CustomerAppTask.cpp` and `autogen/AppTask.cpp` | **New** | Override `*Impl()` hooks in `CustomerAppTask`, do not edit `autogen/AppTask.cpp` |
+| `src/DataModelCallbacks.cpp` and editable `src/AppTask.cpp` | **Legacy** | Callbacks in `DataModelCallbacks.cpp`, init and app logic in `src/AppTask.cpp` |
+
+**Sample apps on the new architecture in 2.9.0:**
+
+- Lighting 
+- Zigbee Matter Light
+- On/Off Plug
+- Thermostat
+- Lock
+- Light Switch
+- Rangehood
+- Platform Template
+- Air Quality Sensor
+
+All other Silicon Labs Matter sample apps in this release use the legacy model. Related guides label steps as **New architecture** or **Legacy architecture** where they differ.
+
 ## Using Matter with Clusters
 
 In Matter, commands can be issued by using a cluster. A cluster is a set of
@@ -61,6 +86,8 @@ through this function. The command can then be dissected using conditional logic
 to call the proper application functions based on the most recent command
 received.
 
+Depending on your sample application, edit the files as described in [Application Customization Models](#application-customization-models). New architecture apps route attribute changes through `CustomerAppTask` and `DMPostAttributeChangeCallbackImpl()`. Legacy architecture apps implement `MatterPostAttributeChangeCallback()` directly in `src/DataModelCallbacks.cpp`.
+
 ## Adding a Cluster to a ZAP Configuration
 
 In the ZAP UI, navigate to the Level Control cluster. Make sure this cluster is
@@ -79,13 +106,31 @@ is set to enabled. Set the default value of this attribute as 1.
 Navigate to the commands tab in zap and enable the MoveToLevel command. Now save
 the current zap configuration, and run the generate.py script above.
 
-## React to Level Control Cluster Commands in ZclCallbacks
+## React to Level Control Cluster Commands
+
+### New Architecture
+
+In a custom implementation of `DMPostAttributeChangeCallbackImpl()` in `src/CustomerAppTask.cpp`, add the following or similar code. This enables the application to react to the MoveToLevel commands.
+
+   ```cpp
+    else if (clusterId == LevelControl::Id)
+    {
+       ChipLogProgress(Zcl, "Level Control attribute ID: " ChipLogFormatMEI " Type: %u Value: %u, length %u",
+                        ChipLogValueMEI(attributeId), type, *value, size);
+
+       if (attributeId == LevelControl::Attributes::CurrentLevel::Id)
+       {
+          sLightLED.SetLevel(*value);
+       }
+    }
+   ```
+
+### Legacy Architecture
 
 In the MatterPostAttributeCallback function in ZclCallbacks, add the following
 line of code or a similar line. This will give the application the ability to react to
 MoveToLevel commands. You can define platform-specific behavior for a
 MoveToLevel action.
-
    ```cpp
     else if (clusterId == LevelControl::Id)
     {
@@ -133,7 +178,7 @@ In order to use a custom cluster in an application, follow these steps:
       "value": "true"
     }   
  ```
-For an example, see [Sample ZAP file](https://github.com/SiliconLabsSoftware/matter_extension/blob/release_2.8-1.5/slc/apps/performance-test-app/thread/performance-test-app.zap)
+For an example, see [Sample ZAP file](https://github.com/SiliconLabsSoftware/matter_extension/blob/v2.9.0/slc/apps/performance_test_app/thread/performance-test-app.zap)
 - Install the **Custom ZAP generation** component under **Silicon Labs Matter -> Stack** in the project's Component Editor. 
 
 

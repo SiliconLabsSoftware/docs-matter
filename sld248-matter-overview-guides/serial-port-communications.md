@@ -30,11 +30,11 @@ To run matter shell on the Silicon Labs Platform, refer to the [Software Require
 
 7. Click the **Create New Project** option and create a project for the Matter Lock Application.
 
-   ![Silicon Labs - design](./images/matter-shell-lock-app.jpeg)
+   ![Silicon Labs - design](./images/matter-shell-lock-app.png)
 
 8. In the Project Configuration window, click **Finish**.
 
-   ![Silicon Labs - design](./images/matter-shell-project-generation.jpeg)
+   ![Silicon Labs - design](./images/matter-shell-project-generation.png)
 
 9.  After creation of project, open the **Software Components** tab and, in the search bar, type _Matter Shell_ and install it.
 

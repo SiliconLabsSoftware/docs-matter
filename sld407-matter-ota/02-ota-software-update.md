@@ -67,6 +67,8 @@ See the following page for detailed steps: [build OTA application using studio](
         commander gbl create chip-efr32-lighting-example.gbl --app chip-efr32-lighting-example.s37
         ```
 
+    > **Note**: The command above creates an unsigned GBL image. For Matter devices, add `--sign <signing-key>` so the Gecko Bootloader can authenticate the GBL before it applies the update. See [Enabling Secure Upgrades](./01-ota-bootloader.md#enabling-secure-upgrades) for details.
+
 - Create the Matter OTA file from the bootable image file:
 
     ```shell
@@ -209,6 +211,8 @@ Combined OTA images are supported in both regular OTA and Multi-Chip OTA impleme
 
 3. Application upgrade only. This should be a standalone as described in the sections above.
 
+> **Note**: The commands above create unsigned GBL images. For Matter devices, add `--sign <signing-key>` so the Gecko Bootloader can authenticate the GBL before it applies the update. See [Enabling Secure Upgrades](./01-ota-bootloader.md#enabling-secure-upgrades) for details.
+
 >**Hint**: It can be useful to compress this image to reduce the size needed to OTA. This can be done via the optional flag `--compress lzma`. If you use LZMA compression for creating the OTA file, make sure that the bootloader has been built with the LZMA compress component.
 
 To create the .ota file, simply follow the method discussed above using the combined image:
@@ -283,7 +287,7 @@ Build the project, and flash the binary file to your matter device.
 
 #### Application (New)
 
-For the new application image, configure and set the Device software version and Device software version string to a higher number in Matter > Stack > Matter Core Components. For the purposes of this example the Matter sample application used is the MatterLightOverThread.
+For the new application image, configure and set the Device software version and Device software version string to a higher number in Matter > Stack > Matter Core Components. For the purposes of this example the Matter sample application used is the matter_thread_soc_lighting_app_freertos.
 
 ![Matter app version number](./images/ota-tutorial-app-version-number.png)
 
@@ -319,10 +323,12 @@ If your version supports Multi-chip OTA functionality, the following command com
 
 For either of these cases, the `--compress lzma` option can be used to reduce the size of the resulting image. Just ensure that the bootloader has been built with the LZMA compress component.
 
+> **Note**: The commands above create unsigned GBL images. For Matter devices, add `--sign <signing-key>` so the Gecko Bootloader can authenticate the GBL before it applies the update. See [Enabling Secure Upgrades](./01-ota-bootloader.md#enabling-secure-upgrades) for details.
+
 Then, run the following command to create the .ota file.
 
 ```shell
-commander ota create --type matter --input MatterLightOverThread.gbl --vendorid 0xFFF1 --productid 0x8005 --swstring "2.0" --swversion 2 --digest sha256 -o MatterLightOverThread.ota
+commander ota create --type matter --input matter_thread_soc_lighting_app_freertos.gbl --vendorid 0xFFF1 --productid 0x8005 --swstring "2.0" --swversion 2 --digest sha256 -o matter_thread_soc_lighting_app_freertos.ota
 ```
 
 ### Step 3: Setting up the Thread network and the OTA Provider application
@@ -338,7 +344,7 @@ If instead the chip-tool is used, replace the "mattertool" with "chip-tool" and 
 After that, start the Provider app and pass to it the path to the Matter OTA file created in the previous step:
 
 ```shell
-chip-ota-provider-app -f ./MatterLightOverThread.ota
+chip-ota-provider-app -f ./matter_thread_soc_lighting_app_freertos.ota
 ```
 
 In a new separate terminal, run the following commands to provision the Provider:

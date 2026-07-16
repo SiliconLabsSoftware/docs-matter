@@ -11,12 +11,16 @@ This section covers the various Application Programming Interfaces (APIs) that a
 
 ## Application APIs
 
+For guidance on new vs legacy sample app architecture and where to add custom logic, see [Application Customization Models](/matter/{build-docspace-version}/matter-references/custom-matter-device/#application-customization-models).
+
 ### Initialization
 
-The application 'Init' sequence lives in the ```AppTask.cpp``` file, and is called at the beginning of the application to ensure that all components are properly initialized and ready to operate. It sets up necessary callbacks, initializes hardware components, and handles any errors that may occur during the process. This function is crucial for the stable operation of the application.
+**New architecture:** Default initialization is included in `autogen/AppTask.cpp`. Override `AppInitImpl()` and other `*Impl()` hooks in `src/CustomerAppTask.cpp` to customize behavior.
+
+**Legacy architecture:** The application Init sequence is included in `src/AppTask.cpp` and is called at the beginning of the application to ensure that all components are properly initialized and ready to operate. It sets up necessary callbacks, initializes hardware components, and handles any errors that may occur during the process.
 
 ```cpp
 CHIP_ERROR AppTask::Init()
 ```
 
-The ```AppTask.cpp``` file may also contain event handlers and helper code useful to the application.
+The `AppTask.cpp` file may also contain event handlers and helper code useful to the application.

@@ -5,7 +5,7 @@ In Simplicity Studio 6, create the Light MAD:
 1. In Simplicity Studio, click **Matter**, under **Example Projects and Demos**, select a project, and click **Create**.
 
    ![Example Projects and Demos](images/studio-home-tab.png)
-   ![Example Projects and Demos](images/studio-create-project.jpeg)  
+   ![Example Projects and Demos](images/studio-create-project.png)  
 
 2. In the Project Configuration window, Select the board and click **Next**.
    ![Select Board](images/studio-select-board.png)
@@ -14,7 +14,7 @@ In Simplicity Studio 6, create the Light MAD:
       - Select Target IDE.
       - Click **Finish**.
 
-   ![Finish project](images/studio-project-configuration.jpeg)
+   ![Finish project](images/studio-project-configuration.png)
 
 3. Once the project is created, click the **Open in VS Code** option on the top right corner.
     ![Open project in VS Code](images/studio-open-vscode.png)
@@ -25,7 +25,7 @@ In Simplicity Studio 6, create the Light MAD:
 
 5. Once the project is compiled successfully, the binaries can be flashed either using the **Simplicity Commander** from the tools or using the **Flash** option beside the **Build**.
 
-    ![Flash Project](images/vscode-flash.jpeg)
+    ![Flash Project](images/vscode-flash.png)
 
 6. When using Commander, select the kit and click the **Flash** option in the left panel. Click **Erase chip**.
 

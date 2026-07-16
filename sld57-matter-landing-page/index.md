@@ -31,7 +31,7 @@ Want to get a Matter application up and running quickly? Here's a high-level ove
 
 4. **[Optional] Customize Matter App Behavior and Logic**
    - Use Project Configurator and other Studio tools to customize your app logic: [Developing with Project Configurator](https://docs.silabs.com/ssv6ug/latest/ssv6-configure-project/)
-   - If necessary, add custom source files for your application logic
+   - Customize app behavior using the model your sample app provides — see [Application Customization Models](/matter/{build-docspace-version}/matter-references/custom-matter-device/#application-customization-models). Refactored apps use `CustomerAppTask` and `autogen/AppTask.cpp`, all other apps use `DataModelCallbacks.cpp` and `src/AppTask.cpp`.
    - Follow documentation to develop a custom matter device with ZAP and corresponding callbacks: [Custom Matter Device Development](/matter/{build-docspace-version}/matter-references/custom-matter-device)
 
 5. **Build and Flash**
@@ -48,7 +48,7 @@ Want to get a Matter application up and running quickly? Here's a high-level ove
 
 ## Other Resources
 
-**To see release notes** containing a list of features and known issues, go to [Matter Release Notes on Silicon Labs Matter Extension](https://github.com/SiliconLabs/matter_extension/releases/tag/v2.8.1).
+**To see release notes** containing a list of features and known issues, go to [Matter Release Notes on Silicon Labs Matter Extension](https://github.com/SiliconLabs/matter_extension/releases/tag/v2.9.0).
 
 **If you are new to Matter** or would like more information about Silicon Labs Matter-based products, see the [Matter content on silabs.com](https://www.silabs.com/wireless/matter).
 

@@ -37,7 +37,7 @@ The following hands-on tutorial walks through the process of storing and recalli
 
 ### Requirements
 
-- Simplicity SDK 2025.12.2 + Matter extension 2.8.1 (or newer)
+- Simplicity SDK 2026.6.0 + Matter extension 2.9.0 (or newer)
 - Raspberry Pi 4 + MatterHub Image
 - 1x Silabs WTSK EFR32xG21 (BRD4108B) in RCP configuration
 - 2x [EFR32xG24-DK2601B Dev Kit](https://www.silabs.com/development-tools/wireless/efr32xg24-dev-kit?tab=overview)
@@ -52,7 +52,8 @@ The following hands-on tutorial walks through the process of storing and recalli
 
 #### ZAP Configuration
 
-In Simplicity Studio, create a new MatterLightOverThread application. From the application .slcp file, navigate to _Configuration Tools_ > _ZCL Advanced Platform (ZAP)_.
+1. In Simplicity Studio, create a new Matter Thread - SoC Lighting FreeRTOS application. 
+2. From the application .slcp file, navigate to _Configuration Tools_ > _ZCL Advanced Platform (ZAP)_.
 
 The Group Key Management cluster (under General) should already be enabled as a server on Endpoint 0.
 
@@ -75,15 +76,15 @@ The component should look like this:
 
 ![scenes RGB PWM LED config](./images/scenes-RGB-PWM-LED-config.png)
 
-The RGB PWM LED instance that has been created can be found in _MatterLightOverThread/autogen/sl_simple_rgb_pwm_led_instances.h_.
+The RGB PWM LED instance that has been created can be found in _matter_thread_soc_lighting_app_freertos/autogen/sl_simple_rgb_pwm_led_instances.h_.
 
-The documentation for the APIs that have been generated can be found here: [Simple RGB PWM LED Driver](https://docs.silabs.com/gecko-platform/latest/platform-driver/simple-rgb-pwm-led#simple-rgb-pwm-led-driver). The file that contains these APIs can be found in the directory: _MatterLightOverThread/simplicity_sdk_xxxx/platform/driver/leddrv/inc/sl_simple_rgb_pwm_led.h_.
+The documentation for the APIs that have been generated can be found here: [Simple RGB PWM LED Driver](https://docs.silabs.com/gecko-platform/latest/platform-driver/simple-rgb-pwm-led#simple-rgb-pwm-led-driver). The file that contains these APIs can be found in the directory: _matter_thread_soc_lighting_app_freertos/simplicity_sdk_xxxx/platform/driver/leddrv/inc/sl_simple_rgb_pwm_led.h_.
 
 ### Step 2: Add the ColorTransformer Class
 
 The RGB PWM LED operates in the RGB color space; however, the Matter Color Control Cluster does not operate in the RGB color space, so a transformation is required to convert the RGB values into something that can be recognized by Matter. In this example, use the xyY color space as defined by the Commission Internationale de l’Éclairage (CIE) specification which is also recognized in the Matter specification.
 
-Inside the src/ directory of the MatterLightOverThread project, create a new class called _ColorTransformer_ with the corresponding .cpp and .h files. Copy and paste the following to the *ColorTransformer.h* file.
+Inside the src/ directory of the matter_thread_soc_lighting_app_freertos project, create a new class called _ColorTransformer_ with the corresponding .cpp and .h files. Copy and paste the following to the *ColorTransformer.h* file.
 
 :::collapsed{summary="Click to expand and view the ColorTransformer.h file"}
 ```c++
@@ -165,9 +166,13 @@ public:
 
 ### Step 3 Implement Callbacks
 
-Make the following additions to the src/DataModelCallbacks.cpp file:
+This guide uses the Lighting sample app, which is on the **new architecture** in 2.9.0. See [Application Customization Models](/matter/{build-docspace-version}/matter-references/custom-matter-device/#application-customization-models) to confirm which model your project uses.
 
-:::collapsed{summary="Click to expand and view the DataModelCallbacks.cpp file"}
+#### New Architecture
+
+Make the following additions to `src/CustomerAppTask.cpp`:
+
+:::collapsed{summary="Click to expand and view the CustomerAppTask.cpp additions"}
 ```c++
 // Color Transformer
 #include "ColorTransformer.h"
@@ -192,7 +197,7 @@ bool xyFlag = false;
 ```
 :::
 
-Then, inside `MatterPostAttributeChangeCallback` in _src/DataModelCallbacks.cpp_, implement the on/off functionality of the LED:
+Inside `DMPostAttributeChangeCallbackImpl()` in _src/CustomerAppTask.cpp_, implement the on/off functionality of the LED:
 
 ```c++
 if (clusterId == OnOff::Id && attributeId == OnOff::Attributes::OnOff::Id)
@@ -208,9 +213,6 @@ if (clusterId == OnOff::Id && attributeId == OnOff::Attributes::OnOff::Id)
 #ifdef DIC_ENABLE
         dic_sendmsg("light/state", (const char *) (value ? (*value ? "on" : "off") : "invalid"));
 #endif // DIC_ENABLE
-        LightMgr().InitiateAction(AppEvent::kEventType_Light, *value ? LightingManager::ON_ACTION : LightingManager::OFF_ACTION);
- 
- 
     }
 ```
 
@@ -247,7 +249,7 @@ else if (clusterId == ColorControl::Id)
     }
 ```
 
-Lastly, it is necessary to initialize the LED. In src/AppTask.cpp, add the following:
+It is necessary to initialize the LED. To do so, override AppInitImpl() in src/CustomerAppTask.cpp and add the following:
 
 ```c++
 #include "sl_simple_rgb_pwm_led.h"
@@ -255,7 +257,85 @@ Lastly, it is necessary to initialize the LED. In src/AppTask.cpp, add the follo
 #include "sl_led.h"
 ```
 
-Then, inside the init function `AppTask::Init()` of src/AppTask.cpp, add the following:
+Inside `AppInitImpl()`:
+
+```c++
+CHIP_ERROR AppInitImpl()
+{
+    CHIP_ERROR err = CHIP_NO_ERROR;
+/* code to add */
+    // Initialize LED
+    sl_led_init((sl_led_t *)&sl_simple_rgb_pwm_led_rgb_led0);
+ 
+    // Set initial color to white and turn off
+    uint16_t red = 255; // max red
+    uint16_t green = 255; // no green
+    uint16_t blue = 255; // max blue
+    sl_led_set_rgb_color(&sl_simple_rgb_pwm_led_rgb_led0, red, green, blue);
+    sl_led_turn_off((sl_led_t *)&sl_simple_rgb_pwm_led_rgb_led0);
+/* ----------- */
+ 
+// Update the LCD with the Stored value. Show QR Code if not provisioned
+    return err;
+}
+```
+
+This initializes the LED to be white.
+
+#### Legacy Architecture
+
+Make the following additions to `src/DataModelCallbacks.cpp`:
+
+:::collapsed{summary="Click to expand and view the DataModelCallbacks.cpp file"}
+```c++
+// Color Transformer
+#include "ColorTransformer.h"
+ 
+// Customer Application
+#include "sl_simple_rgb_pwm_led.h"
+#include "sl_simple_rgb_pwm_led_instances.h"
+#include "sl_led.h"
+.
+.
+// Initialize color mode x-y
+uint16_t cx = 0xFFFF;
+uint16_t cy = 0xFFFF;
+ 
+// Initialize RGB
+uint16_t r = 0xFFFF;
+uint16_t g = 0xFFFF;
+uint16_t b = 0xFFFF;
+ 
+// Initialize xy color mode flag
+bool xyFlag = false;
+```
+:::
+
+Inside `MatterPostAttributeChangeCallback` in _src/DataModelCallbacks.cpp_, implement the on/off functionality of the LED:
+
+```c++
+if (clusterId == OnOff::Id && attributeId == OnOff::Attributes::OnOff::Id)
+    {
+/* code to add */
+        if (*value) { // turn on LED
+            sl_led_turn_on((sl_led_t *)&sl_simple_rgb_pwm_led_rgb_led0);
+        } else {// turn off LED
+            sl_led_turn_off((sl_led_t *)&sl_simple_rgb_pwm_led_rgb_led0);
+        }
+/* ----------- */
+ 
+#ifdef DIC_ENABLE
+        dic_sendmsg("light/state", (const char *) (value ? (*value ? "on" : "off") : "invalid"));
+#endif // DIC_ENABLE
+        LightMgr().InitiateAction(AppEvent::kEventType_Light, *value ? LightingManager::ON_ACTION : LightingManager::OFF_ACTION);
+ 
+ 
+    }
+```
+
+Use the same Color Control cluster handling as in the **New architecture** section above.
+
+Initialize the LED in `src/AppTask.cpp`. Add the same includes, then inside `AppTask::Init()`:
 
 ```c++
 CHIP_ERROR AppTask::Init()

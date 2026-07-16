@@ -312,9 +312,9 @@ Incoming(4):
 
 ### Building a Sample Application - Studio - Matter Extension
 
-#### Create a New Lighting Over Thread Project
+#### Create a New Matter Thread - SoC Lighting with external Bootloader FreeRTOS Project
 
-![Lighting over Thread example](images/studio-thread-light.png)
+![Matter Thread - SoC Lighting with external Bootloader FreeRTOS example](images/studio-thread-light.png)
 
 #### Install Matter Device Attestation Credentials Component
 

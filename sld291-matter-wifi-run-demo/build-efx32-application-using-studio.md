@@ -9,7 +9,7 @@ This page provides a detailed description on how to create a Wi-Fi NCP project f
 3. In Simplicity Studio, click **Matter**, under **Example Projects and Demos**, select a project, and click **Create**.
 
    ![Example Projects and Demos](images/studio-home-tab.png)
-   ![Example Projects and Demos](images/studio-create-project.jpeg)  
+   ![Example Projects and Demos](images/studio-create-project.png)  
 
 4. In the Project Configuration window, after selecting the board, click **Next**.
     - Set -
@@ -17,7 +17,7 @@ This page provides a detailed description on how to create a Wi-Fi NCP project f
       - Select Target IDE.
       - Click **Finish**.
 
-   ![Finish project](images/studio-project-configuration.jpeg)
+   ![Finish project](images/studio-project-configuration.png)
 
 5. Once the project is created, click the **Open in VS Code** option on the top right corner.
     ![Open project in VS Code](images/studio-open-vscode.png)
@@ -28,7 +28,7 @@ This page provides a detailed description on how to create a Wi-Fi NCP project f
 
 7. Once the project is compiled successfully, the binaries can be flashed either using the **Simplicity Commander** from the tools or using the **Flash** option beside the **Build**.
 
-    ![Flash Project](images/vscode-flash.jpeg)
+    ![Flash Project](images/vscode-flash.png)
 
 8. When using Commander, select the kit and click the **Flash** option in the left panel. Click **Erase chip**.
 
