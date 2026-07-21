@@ -24,7 +24,7 @@ To implement custom app behavior you can override any Silicon Labs implemented A
 
 ### DataModelCallbacks and CustomerAppTask
 
-What used to live in `DataModelCallbacks.cpp` now lives in `AppTask.cpp`. The
+What used to live in `DataModelCallbacks.cpp` before Matter Extension 2.9.0 now lives in `AppTask.cpp`. The
 Matter SDK's `MatterPostAttributeChangeCallback` is implemented in
 `examples/platform/silabs/BaseApplication.cpp` and forwards to
 `AppTask::DMPostAttributeChangeCallback` (defined in `AppTask.cpp`), which you
