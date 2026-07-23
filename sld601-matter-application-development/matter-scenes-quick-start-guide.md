@@ -166,7 +166,7 @@ public:
 
 ### Step 3 Implement Callbacks
 
-See [Extending Base App Implementation](/matter/{build-docspace-version}/matter-references/custom-matter-device/#extending-base-app-implementation) for an overview of how to customize app behavior.
+For information about customizing app behavior, see [Extending Base App Implementation](/matter/{build-docspace-version}/matter-references/custom-matter-device/#extending-base-app-implementation).
 
 Make the following additions to `src/CustomerAppTask.cpp`:
 
