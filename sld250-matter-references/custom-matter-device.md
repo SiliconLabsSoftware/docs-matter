@@ -11,16 +11,17 @@ using Matter.
 
 ### CustomerAppTask
 
-To implement custom app behavior you can override any Silicon Labs implemented API in the CustomerAppTask file. This example provides `CustomerAppTask.h` and `CustomerAppTask.cpp` for that purpose. The base implementation and the full set of overridable `*Impl()` APIs are supplied by the build system in `AppTask.cpp` and `AppTaskImpl.h` under `autogen/`. Any `*Impl()` you do not override keeps the Silicon Labs default behavior.
-
+To customize app behavior, override any Silicon Labs implemented API in `CustomerAppTask`. This example provides `CustomerAppTask.h` and `CustomerAppTask.cpp` for that purpose. The build system generates the base implementation and the complete set of overridable `*Impl()` APIs in `autogen/AppTask.cpp` and `autogen/AppTaskImpl.h`. Any `*Impl()` methods that you do not override use the Silicon Labs default implementation.
 ### How to Override APIs
 
-`CustomerAppTask` extends the base AppTask through the Curiously Recurring Template Pattern (CRTP). You override only the `*Impl()` methods you need, the base declares one `*Impl()` per overridable API. Steps:
+`CustomerAppTask` extends the base `AppTask` by using the Curiously Recurring Template Pattern (CRTP). The base class declares one `*Impl()` method for each overridable API. Override only the `*Impl()` methods that you need. To override a `*Impl()` method:
 
-1. Find the method to override in the base API (see [Override API reference](#override-api-reference) below).
-2. Declare the same method signature in `CustomerAppTask` in your `CustomerAppTask.h` under `private:`. Match the base *Impl() signature exactly — note that *Impl() overrides are non-static instance methods even when the public dispatcher (e.g. ButtonEventHandler) is static.
+1. Find the method to override in the base API. For more information, see [Override API reference](#override-api-reference).
+2. Declare the same method signature in `CustomerAppTask.h` under the `private:` section. Match the base `*Impl()` signature exactly.
+ > [!NOTE]
+ > `*Impl()` overrides are non-static instance methods, even when the corresponding public dispatcher (for example, `ButtonEventHandler`) is static.
 3. Implement the method in `CustomerAppTask.cpp`.
-4. Build the project. Each overridable API is resolved as follows: **if you implemented that `*Impl()` in CustomerAppTask, your implementation is used, otherwise the Silicon Labs default implementation is used.** You only implement what you need, everything else falls back to the default automatically.
+4. Build the project. If you implement the corresponding `*Impl()` method in `CustomerAppTask`, your implementation is used. Otherwise, the Silicon Labs default implementation is used. You only need to implement the methods that you want to customize. All other methods automatically use the default implementation.
 
 ### DataModelCallbacks and CustomerAppTask
 
@@ -124,12 +125,12 @@ void CustomerAppTask::ButtonEventHandlerImpl(uint8_t button, uint8_t btnAction)
 
 ### Override API Reference
 
-The base API and implementation are generated into your project and live under `autogen/` directory. These files are regenerated on every project upgrade and match your installed SDK version. Use them as the reference for overridable methods and app configuration.
+The base API and implementation are generated into the `autogen/` directory. These files are regenerated whenever you upgrade the project and match the installed SDK version. Use them as a reference for overridable methods and app configuration.
 
 | File | Purpose |
 |------|--------|
 | `autogen/AppTaskImpl.h` | Declarations of every overridable `*Impl()` method. Copy the signatures you need from here into `CustomerAppTask.h`. |
-| `autogen/AppTask.cpp` | Silicon Labs default implementation of AppTask. This is what runs for any `*Impl()` you do not override. Use as reference when customizing behavior. |
+| `autogen/AppTask.cpp` | Silicon Labs provides the default `AppTask` implementation. Any `*Impl()` methods that you don't override use this implementation. Use it as a reference when customizing app behavior. |
 
 ## Using Matter with Clusters
 

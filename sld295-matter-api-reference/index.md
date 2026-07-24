@@ -11,7 +11,7 @@ This section covers the various Application Programming Interfaces (APIs) that a
 
 ## Application APIs
 
-For guidance on customizing app behavior with `CustomerAppTask`, see [Extending Base App Implementation](/matter/{build-docspace-version}/matter-references/custom-matter-device/#extending-base-app-implementation).
+For information about customizing app behavior with `CustomerAppTask`, see [Extending Base App Implementation](/matter/{build-docspace-version}/matter-references/custom-matter-device/#extending-base-app-implementation).
 
 ### Initialization
 
