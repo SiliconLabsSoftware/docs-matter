@@ -11,7 +11,7 @@ For the standard Matter + AWS build (917 SoC or standard 917 NCP with host LwIP 
 ## Prerequisites
 
 - A **917 NCP** Matter project or the reference example `matter_wifi_917_ncp_lock_app_dual_stack_freertos`.
-- Matter Extension **2.9.0** or later, and WiseConnect SDK **4.1.0** or later installed in Simplicity Studio.
+- Matter Extension **2.9.1** or later, and WiseConnect SDK **4.1.1** or later installed in Simplicity Studio.
 - AWS cloud configured according to [AWS installation](./aws-configuration-registration.md).
 - Hardware and software requirements are met as described in [Matter + AWS Prerequisites](./index.md#prerequisites).
 

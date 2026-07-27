@@ -9,7 +9,7 @@ using Matter.
 
 ## Application Customization Models
 
-Matter Extension 2.9.0 migrates a subset of sample apps to the Curiously Recurring Template Pattern (CRTP) based architecture, which removes app manager and DataModelCallbacks files. All other sample apps keep the previous architecture until the patch release.
+Matter Extension 2.9.1 migrates a subset of sample apps to the Curiously Recurring Template Pattern (CRTP) based architecture, which removes app manager and DataModelCallbacks files. All other sample apps keep the previous architecture until the patch release.
 
 Check your project in Project Explorer:
 
@@ -18,7 +18,7 @@ Check your project in Project Explorer:
 | `src/CustomerAppTask.cpp` and `autogen/AppTask.cpp` | **New** | Override `*Impl()` hooks in `CustomerAppTask`, do not edit `autogen/AppTask.cpp` |
 | `src/DataModelCallbacks.cpp` and editable `src/AppTask.cpp` | **Legacy** | Callbacks in `DataModelCallbacks.cpp`, init and app logic in `src/AppTask.cpp` |
 
-**Sample apps on the new architecture in 2.9.0:**
+**Sample apps on the new architecture in 2.9.1:**
 
 - Lighting 
 - Zigbee Matter Light
@@ -178,7 +178,7 @@ In order to use a custom cluster in an application, follow these steps:
       "value": "true"
     }   
  ```
-For an example, see [Sample ZAP file](https://github.com/SiliconLabsSoftware/matter_extension/blob/v2.9.0/slc/apps/performance_test_app/thread/performance-test-app.zap)
+For an example, see [Sample ZAP file](https://github.com/SiliconLabsSoftware/matter_extension/blob/v2.9.1/slc/apps/performance_test_app/thread/performance-test-app.zap)
 - Install the **Custom ZAP generation** component under **Silicon Labs Matter -> Stack** in the project's Component Editor. 
 
 
