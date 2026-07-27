@@ -10,7 +10,9 @@ https://github.com/SiliconLabs/matter_extension/releases/tag/v2.9.1
 
 The Matter Hub image is intended to be flashed onto an SD card for a Raspberry Pi. The Matter Hub image provides both an Open Thread Border Router and the Matter chip-tool. Note the image is ~7GB in size so depending on your internet connection this download may take some time. Start the Matter Hub Raspberry Pi image download here:
 
-https://www.silabs.com/documents/public/software/SilabsMatterPi_2.9.1-1.6-extension.zip
+https://www.silabs.com/documents/public/software/SilabsMatterPi_2.9.0-1.6-extension.zip
+
+>**Note:** This release uses the same MatterHub image as the one from the 2.9.0 release
 
 ## Radio Co-Processor (RCP) Images
 
