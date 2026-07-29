@@ -25,7 +25,7 @@ To customize app behavior, override any Silicon Labs implemented API in `Custome
 
 ### DataModelCallbacks and CustomerAppTask
 
-What used to live in `DataModelCallbacks.cpp` before Matter Extension 2.9.0 now lives in `AppTask.cpp`. The
+What used to live in `DataModelCallbacks.cpp` before Matter Extension 2.9.1 now lives in `AppTask.cpp`. The
 Matter SDK's `MatterPostAttributeChangeCallback` is implemented in
 `examples/platform/silabs/BaseApplication.cpp` and forwards to
 `AppTask::DMPostAttributeChangeCallback` (defined in `AppTask.cpp`), which you
@@ -255,7 +255,7 @@ In order to use a custom cluster in an application, follow these steps:
       "value": "true"
     }   
  ```
-For an example, see [Sample ZAP file](https://github.com/SiliconLabsSoftware/matter_extension/blob/v2.9.0/slc/apps/performance_test_app/thread/performance-test-app.zap)
+For an example, see [Sample ZAP file](https://github.com/SiliconLabsSoftware/matter_extension/blob/v2.9.1/slc/apps/performance_test_app/thread/performance-test-app.zap)
 - Install the **Custom ZAP generation** component under **Silicon Labs Matter -> Stack** in the project's Component Editor. 
 
 
