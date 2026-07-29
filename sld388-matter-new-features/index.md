@@ -1,7 +1,7 @@
 # New Features
 
 ## New Features for v2.9.1-1.6
-- LLVM compiler support for Matter projects
+- LLVM compiler support for Matter projects.
 
 ## New Features for v2.9.0-1.6
 - Quality-tested Matter 1.6 solution for Thread MG24 / MG26 / MG30, Wi-Fi SiWG917 SoC and SiWN917 NCP mode.
