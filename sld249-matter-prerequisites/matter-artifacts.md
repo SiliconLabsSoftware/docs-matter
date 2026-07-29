@@ -12,7 +12,7 @@ The Matter Hub image is intended to be flashed onto an SD card for a Raspberry P
 
 https://www.silabs.com/documents/public/software/SilabsMatterPi_2.9.0-1.6-extension.zip
 
->**Note:** This release uses the same MatterHub image as the one from the 2.9.0 release
+> **Note:** This release uses the same MatterHub image as the 2.9.0 release.
 
 ## Radio Co-Processor (RCP) Images
 
