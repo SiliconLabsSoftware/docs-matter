@@ -18,8 +18,8 @@ To customize app behavior, override any Silicon Labs implemented API in `Custome
 
 1. Find the method to override in the base API. For more information, see [Override API reference](#override-api-reference).
 2. Declare the same method signature in `CustomerAppTask.h` under the `private:` section. Match the base `*Impl()` signature exactly.
- > [!NOTE]
- > `*Impl()` overrides are non-static instance methods, even when the corresponding public dispatcher (for example, `ButtonEventHandler`) is static.
+   > **NOTE:**
+   > `*Impl()` overrides are non-static instance methods, even when the corresponding public dispatcher (for example, `ButtonEventHandler`) is static.
 3. Implement the method in `CustomerAppTask.cpp`.
 4. Build the project. If you implement the corresponding `*Impl()` method in `CustomerAppTask`, your implementation is used. Otherwise, the Silicon Labs default implementation is used. You only need to implement the methods that you want to customize. All other methods automatically use the default implementation.
 
