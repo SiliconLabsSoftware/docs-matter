@@ -73,8 +73,8 @@ Standard Matter + AWS on 917 SoC and standard 917 NCP boards is documented separ
 
 ### Software
 
-- Matter Extension **2.9.0** or later
-- WiseConnect SDK **4.1.0** or later
+- Matter Extension **2.9.1** or later
+- WiseConnect SDK **4.1.1** or later
 - Correct SiWx917 NCP connectivity firmware supporting dual network stack mode
 
 ## Reference Example
