@@ -1,6 +1,6 @@
-# Air Quality Sensor application override APIs
+# Air Quality Sensor Application Override APIs
 
-Override each hook below by declaring the `*Impl()` method in `CustomerAppTask.h`
+To override any of the following hooks, declare the corresponding `*Impl()` method in `CustomerAppTask.h` and implement it in `CustomerAppTask.cpp`. Ensure that the method signature matches the declaration in `autogen/AppTaskImpl.h`.
 and implementing it in `CustomerAppTask.cpp`. Match the signature in
 `autogen/AppTaskImpl.h`.
 
@@ -8,9 +8,9 @@ and implementing it in `CustomerAppTask.cpp`. Match the signature in
 
 | Override | Public API | Default behavior |
 |---|---|---|
-| `AppInitImpl` | `AppInit` | Register the button callback, set the LCD UI, and initialize the air quality sensor. |
-| `InitAirQualitySensorImpl` | `InitAirQualitySensor` | Create the periodic sensor timer, initialize hardware when present, and start sampling. |
-| `GetAirQualityValueImpl` | `GetAirQualityValue` | Read the onboard air quality sensor, or a simulated value if none is present. |
-| `ButtonEventHandlerImpl` | `ButtonEventHandler` | Route function button events to the base application handler. |
-| `SensorTimerEventHandlerImpl` | `SensorTimerEventHandler` | Read the sensor and schedule an Air Quality attribute update. |
-| `DMPostAttributeChangeCallbackImpl` | `DMPostAttributeChangeCallback` | Log Identify attribute changes. |
+| `AppInitImpl` | `AppInit` | Registers the button callback, configures the LCD UI, and initializes the air quality sensor. |
+| `InitAirQualitySensorImpl` | `InitAirQualitySensor` | Creates the periodic sensor timer, initializes the sensor hardware when available, and starts sampling. |
+| GetAirQualityValueImpl | GetAirQualityValue | Reads the value from the onboard air quality sensor. If the sensor is unavailable, returns a simulated value. |
+| `ButtonEventHandlerImpl` | `ButtonEventHandler` | Routes function-button events to the base application handler. |
+| `SensorTimerEventHandlerImpl` | `SensorTimerEventHandler` | Reads the sensor value and schedules an update to the Air Quality attribute. |
+| `DMPostAttributeChangeCallbackImpl` | `DMPostAttributeChangeCallback` | Logs changes to the Identify attribute. |
