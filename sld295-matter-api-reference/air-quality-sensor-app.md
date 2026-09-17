@@ -1,8 +1,6 @@
 # Air Quality Sensor Application Override APIs
 
 To override any of the following hooks, declare the corresponding `*Impl()` method in `CustomerAppTask.h` and implement it in `CustomerAppTask.cpp`. Ensure that the method signature matches the declaration in `autogen/AppTaskImpl.h`.
-and implementing it in `CustomerAppTask.cpp`. Match the signature in
-`autogen/AppTaskImpl.h`.
 
 ## AppTask
 

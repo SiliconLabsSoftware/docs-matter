@@ -1,14 +1,12 @@
-# EVSE application override APIs
+# EVSE Application Override APIs
 
-Override each hook below by declaring the `*Impl()` method in `CustomerAppTask.h`
-and implementing it in `CustomerAppTask.cpp`. Match the signature in
-`autogen/AppTaskImpl.h`.
+To override any of the following hooks, declare the corresponding `*Impl()` method in `CustomerAppTask.h` and implement it in `CustomerAppTask.cpp`. Ensure that the method signature matches the declaration in `autogen/AppTaskImpl.h`.
 
 ## AppTask
 
 | Override | Public API | Default behavior |
 |---|---|---|
-| `AppInitImpl` | `AppInit` | Register the button callback, run `ApplicationInit`, and register EVSE test event triggers when enabled. |
-| `ApplicationInitImpl` | `ApplicationInit` | Initialize the EVSE application and energy management LED. |
-| `ButtonEventHandlerImpl` | `ButtonEventHandler` | Route EVSE control button presses to `EnergyManagementActionEventHandler` and function button events to the base application handler. |
-| `EnergyManagementActionEventHandlerImpl` | `EnergyManagementActionEventHandler` | Log the control button event. The default does not start a charging action. |
+| `AppInitImpl` | `AppInit` | Registers the button callback, runs `ApplicationInit`, and registers EVSE test event triggers when enabled. |
+| `ApplicationInitImpl` | `ApplicationInit` | Initializes the EVSE application and energy management LED. |
+| `ButtonEventHandlerImpl` | `ButtonEventHandler` | Routes EVSE control button presses to `EnergyManagementActionEventHandler` and function button events to the base application handler. |
+| `EnergyManagementActionEventHandlerImpl` | `EnergyManagementActionEventHandler` | Logs the control button event. The default does not start a charging action. |

@@ -1,20 +1,18 @@
-# Multi Sensor application override APIs
+# Multi Sensor Application Override APIs
 
-Override each hook below by declaring the `*Impl()` method in `CustomerAppTask.h`
-and implementing it in `CustomerAppTask.cpp`. Match the signature in
-`autogen/AppTaskImpl.h`.
+To override any of the following hooks, declare the corresponding `*Impl()` method in `CustomerAppTask.h` and implement it in `CustomerAppTask.cpp`. Ensure that the method signature matches the declaration in `autogen/AppTaskImpl.h`.
 
 ## AppTask
 
 | Override | Public API | Default behavior |
 |---|---|---|
-| `AppInitImpl` | `AppInit` | Register the button callback, initialize the occupancy LED and display, and start the sensor manager. |
-| `InitSensorManagerImpl` | `InitSensorManager` | Initialize sensor clusters, register the attribute listener, and schedule periodic sampling. |
-| `GetTemperatureAndHumidityImpl` | `GetTemperatureAndHumidity` | Read the Si70xx sensor when present, otherwise supply simulated temperature and humidity values. |
-| `ButtonEventHandlerImpl` | `ButtonEventHandler` | Route function button events and occupancy toggle button events. |
-| `ProcessButtonEventImpl` | `ProcessButtonEvent` | Toggle the Occupancy attribute for an application button event. |
-| `TriggerSensorActionImpl` | `TriggerSensorAction` | Sample temperature and humidity and update their measured value attributes. |
-| `OccupancyAttributeUpdateEventImpl` | `OccupancyAttributeUpdateEvent` | Update the occupancy LED and display after an Occupancy change. |
-| `SensorAttributeUpdateEventImpl` | `SensorAttributeUpdateEvent` | Update the display after a temperature or humidity change. |
-| `OnAttributeChangedImpl` | `OnAttributeChanged` | Translate Occupancy, Temperature Measurement, and Relative Humidity Measurement changes into application events. |
-| `DMPostAttributeChangeCallbackImpl` | `DMPostAttributeChangeCallback` | Log Identify attribute changes. |
+| `AppInitImpl` | `AppInit` | Registers the button callback, initializes the occupancy LED and display, and starts the sensor manager. |
+| `InitSensorManagerImpl` | `InitSensorManager` | Initializes sensor clusters, registers the attribute listener, and schedules periodic sampling. |
+| `GetTemperatureAndHumidityImpl` | `GetTemperatureAndHumidity` | Reads the Si70xx sensor when present, otherwise supplies simulated temperature and humidity values. |
+| `ButtonEventHandlerImpl` | `ButtonEventHandler` | Routes function button events and occupancy toggle button events. |
+| `ProcessButtonEventImpl` | `ProcessButtonEvent` | Toggles the Occupancy attribute for an application button event. |
+| `TriggerSensorActionImpl` | `TriggerSensorAction` | Samples temperature and humidity and updates their measured value attributes. |
+| `OccupancyAttributeUpdateEventImpl` | `OccupancyAttributeUpdateEvent` | Updates the occupancy LED and display after an Occupancy change. |
+| `SensorAttributeUpdateEventImpl` | `SensorAttributeUpdateEvent` | Updates the display after a temperature or humidity change. |
+| `OnAttributeChangedImpl` | `OnAttributeChanged` | Translates Occupancy, Temperature Measurement, and Relative Humidity Measurement changes into application events. |
+| `DMPostAttributeChangeCallbackImpl` | `DMPostAttributeChangeCallback` | Logs Identify attribute changes. |

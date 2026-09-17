@@ -1,20 +1,18 @@
-# Fan Control application override APIs
+# Fan Control Application Override APIs
 
-Override each hook below by declaring the `*Impl()` method in `CustomerAppTask.h`
-and implementing it in `CustomerAppTask.cpp`. Match the signature in
-`autogen/AppTaskImpl.h`.
+To override any of the following hooks, declare the corresponding `*Impl()` method in `CustomerAppTask.h` and implement it in `CustomerAppTask.cpp`. Ensure that the method signature matches the declaration in `autogen/AppTaskImpl.h`.
 
 ## AppTask
 
 | Override | Public API | Default behavior |
 |---|---|---|
-| `AppInitImpl` | `AppInit` | Register the button callback, initialize fan control, and update the display. |
-| `InitFanControlImpl` | `InitFanControl` | Install Fan Control delegates, initialize the LED, and apply the initial attribute state. |
-| `HandleStepImpl` | `HandleStep` | Handle a Fan Control Step command by updating speed or percentage settings. |
-| `ButtonEventHandlerImpl` | `ButtonEventHandler` | Route function button events to the base application handler. |
-| `FanUiUpdateEventHandlerImpl` | `FanUiUpdateEventHandler` | Update the fan LED and, when enabled, the display. |
-| `HandleFanModeChangeImpl` | `HandleFanModeChange` | Synchronize speed and percentage settings after a FanMode change. |
-| `DeriveFanModeFromPercentImpl` | `DeriveFanModeFromPercent` | Map PercentSetting to Off, Low, Medium, or High fan mode. |
-| `HandlePercentSettingChangeImpl` | `HandlePercentSettingChange` | Update PercentCurrent after PercentSetting changes. |
-| `HandleSpeedSettingChangeImpl` | `HandleSpeedSettingChange` | Update SpeedCurrent after SpeedSetting changes. |
-| `DMPostAttributeChangeCallbackImpl` | `DMPostAttributeChangeCallback` | Apply Fan Control PercentSetting, SpeedSetting, and FanMode changes, and log Identify changes. |
+| `AppInitImpl` | `AppInit` | Registers the button callback, initializes fan control, and updates the display. |
+| `InitFanControlImpl` | `InitFanControl` | Installs Fan Control delegates, initializes the LED, and applies the initial attribute state. |
+| `HandleStepImpl` | `HandleStep` | Handles a Fan Control Step command by updating speed or percentage settings. |
+| `ButtonEventHandlerImpl` | `ButtonEventHandler` | Routes function button events to the base application handler. |
+| `FanUiUpdateEventHandlerImpl` | `FanUiUpdateEventHandler` | Updates the fan LED and, when enabled, the display. |
+| `HandleFanModeChangeImpl` | `HandleFanModeChange` | Synchronizes speed and percentage settings after a FanMode change. |
+| `DeriveFanModeFromPercentImpl` | `DeriveFanModeFromPercent` | Maps PercentSetting to Off, Low, Medium, or High fan mode. |
+| `HandlePercentSettingChangeImpl` | `HandlePercentSettingChange` | Updates PercentCurrent after PercentSetting changes. |
+| `HandleSpeedSettingChangeImpl` | `HandleSpeedSettingChange` | Updates SpeedCurrent after SpeedSetting changes. |
+| `DMPostAttributeChangeCallbackImpl` | `DMPostAttributeChangeCallback` | Applies Fan Control PercentSetting, SpeedSetting, and FanMode changes, and logs Identify changes. |

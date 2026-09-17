@@ -1,19 +1,17 @@
-# Closure application override APIs
+# Closure Application Override APIs
 
-Override each `AppTask` hook below by declaring the `*Impl()` method in
-`CustomerAppTask.h` and implementing it in `CustomerAppTask.cpp`. Match the
-signature in `autogen/AppTaskImpl.h`.
+To override any of the following AppTask hooks, declare the corresponding `*Impl()` method in `CustomerAppTask.h` and implement it in `CustomerAppTask.cpp`. Ensure that the method signature matches the declaration in `autogen/AppTaskImpl.h`.
 
 ## AppTask
 
 | Override | Public API | Default behavior |
 |---|---|---|
-| `AppInitImpl` | `AppInit` | Register the button callback, initialize the display, and initialize Closure Manager. |
-| `ButtonEventHandlerImpl` | `ButtonEventHandler` | Route closure button presses to `ClosureButtonActionEventHandler` and function button events to the base application handler. |
-| `ClosureButtonActionEventHandlerImpl` | `ClosureButtonActionEventHandler` | Stop motion if a closure action is in progress, otherwise start a MoveTo toward the opposite position. |
-| `DMPostAttributeChangeCallbackImpl` | `DMPostAttributeChangeCallback` | Log Identify attribute changes. |
-| `DMClosureControlClusterAttributeChangedCallbackImpl` | `DMClosureControlClusterAttributeChangedCallback` | Refresh the UI when Closure Control `MainState` or `OverallCurrentState` changes. |
-| `DMClosureDimensionClusterAttributeChangedCallbackImpl` | `DMClosureDimensionClusterAttributeChangedCallback` | Log Closure Dimension attribute changes. |
+| `AppInitImpl` | `AppInit` | Registers the button callback, initializes the display, and initializes Closure Manager. |
+| `ButtonEventHandlerImpl` | `ButtonEventHandler` | Routes closure button presses to `ClosureButtonActionEventHandler` and function button events to the base application handler. |
+| `ClosureButtonActionEventHandlerImpl` | `ClosureButtonActionEventHandler` | Stops motion if a closure action is in progress, otherwise starts a MoveTo toward the opposite position. |
+| `DMPostAttributeChangeCallbackImpl` | `DMPostAttributeChangeCallback` | Logs Identify attribute changes. |
+| `DMClosureControlClusterAttributeChangedCallbackImpl` | `DMClosureControlClusterAttributeChangedCallback` | Refreshes the UI when Closure Control `MainState` or `OverallCurrentState` changes. |
+| `DMClosureDimensionClusterAttributeChangedCallbackImpl` | `DMClosureDimensionClusterAttributeChangedCallback` | Logs Closure Dimension attribute changes. |
 
 ## ClosureManager
 
@@ -25,16 +23,16 @@ overrides in `CustomerAppTask`.
 
 | Override | Public API | Default behavior |
 |---|---|---|
-| `InitImpl` | `Init` | Initialize the closure timer, closure endpoints, and panel endpoints. |
-| `OnCalibrateCommandImpl` | `OnCalibrateCommand` | Validate and start an asynchronous closure calibration. |
-| `OnMoveToCommandImpl` | `OnMoveToCommand` | Validate a MoveTo command and set overall panel targets. |
-| `OnStopCommandImpl` | `OnStopCommand` | Stop the active closure operation and complete the stop action. |
-| `OnSetTargetCommandImpl` | `OnSetTargetCommand` | Validate a SetTarget command and set the selected panel target. |
-| `OnStepCommandImpl` | `OnStepCommand` | Validate a Step command and set the selected panel step target. |
-| `HandleClosureActionCompleteImpl` | `HandleClosureActionComplete` | Finalize a completed calibrate, stop, move, or unlatch action. |
-| `HandleClosureMotionActionImpl` | `HandleClosureMotionAction` | Advance closure panels toward their target positions. |
-| `HandleClosureUnlatchActionImpl` | `HandleClosureUnlatchAction` | Update closure and panel states for an unlatch action. |
-| `GetPanelNextPositionImpl` | `GetPanelNextPosition` | Calculate the next position between a panel's current and target positions. |
-| `HandlePanelSetTargetActionImpl` | `HandlePanelSetTargetAction` | Advance one panel toward a SetTarget position. |
-| `HandlePanelUnlatchActionImpl` | `HandlePanelUnlatchAction` | Update one panel for an unlatch action. |
-| `HandlePanelStepActionImpl` | `HandlePanelStepAction` | Apply a Step action to one panel. |
+| `InitImpl` | `Init` | Initializes the closure timer, closure endpoints, and panel endpoints. |
+| `OnCalibrateCommandImpl` | `OnCalibrateCommand` | Validates and starts an asynchronous closure calibration. |
+| `OnMoveToCommandImpl` | `OnMoveToCommand` | Validates a MoveTo command and sets overall panel targets. |
+| `OnStopCommandImpl` | `OnStopCommand` | Stops the active closure operation and completes the stop action. |
+| `OnSetTargetCommandImpl` | `OnSetTargetCommand` | Validates a SetTarget command and sets the selected panel target. |
+| `OnStepCommandImpl` | `OnStepCommand` | Validates a Step command and sets the selected panel step target. |
+| `HandleClosureActionCompleteImpl` | `HandleClosureActionComplete` | Finalizes a completed calibrate, stop, move, or unlatch action. |
+| `HandleClosureMotionActionImpl` | `HandleClosureMotionAction` | Advances closure panels toward their target positions. |
+| `HandleClosureUnlatchActionImpl` | `HandleClosureUnlatchAction` | Updates closure and panel states for an unlatch action. |
+| `GetPanelNextPositionImpl` | `GetPanelNextPosition` | Calculates the next position between a panel's current and target positions. |
+| `HandlePanelSetTargetActionImpl` | `HandlePanelSetTargetAction` | Advances one panel toward a SetTarget position. |
+| `HandlePanelUnlatchActionImpl` | `HandlePanelUnlatchAction` | Updates one panel for an unlatch action. |
+| `HandlePanelStepActionImpl` | `HandlePanelStepAction` | Applies a Step action to one panel. |
