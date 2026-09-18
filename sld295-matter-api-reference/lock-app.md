@@ -7,11 +7,11 @@ To override any of the following hooks, declare the corresponding `*Impl()` meth
 | Override | Public API | Default behavior |
 |---|---|---|
 | `AppInitImpl` | `AppInit` | Registers the button callback, initializes the lock, and synchronizes the Door Lock cluster state. |
-| `InitLockImpl` | `InitLock` | Initializes lock state, credential storage, actuator timers, and the Door Lock server. |
-| `ButtonEventHandlerImpl` | `ButtonEventHandler` | Routes lock action and function button events. |
-| `LockButtonActionHandlerImpl` | `LockButtonActionHandler` | Converts a lock button press into a lock or unlock action. |
+| `InitLockImpl` | `InitLock` | Initializes the lock state, credential storage, actuator timers, and the Door Lock server. |
+| `ButtonEventHandlerImpl` | `ButtonEventHandler` | Routes lock-action and function-button events. |
+| `LockButtonActionHandlerImpl` | `LockButtonActionHandler` | Converts a lock-button press into a lock or unlock action. |
 | `UnlatchCallbackImpl` | `UnlatchCallback` | Schedules the transition from the unlatched state to the unlocked state when the unlatch timer expires. |
-| `ActuatorMovementEventHandlerImpl` | `ActuatorMovementEventHandler` | Completes actuator motion, updates the Door Lock state, and processes a pending request. |
+| `ActuatorMovementEventHandlerImpl` | `ActuatorMovementEventHandler` | Completes the actuator movement, updates the Door Lock state, and processes any pending request. |
 | `LockActionEventHandlerImpl` | `LockActionEventHandler` | Starts the lock, unlock, or unlatch action carried by an application event. |
 | `LockRequestEventHandlerImpl` | `LockRequestEventHandler` | Drains a staged Door Lock request and passes it to the application task. |
 | `HandleLockRequestOnAppTaskImpl` | `HandleLockRequestOnAppTask` | Queues, completes, or starts a Door Lock request according to actuator state. |
