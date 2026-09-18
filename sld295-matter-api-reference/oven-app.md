@@ -17,7 +17,7 @@ To override any of the following hooks, declare the corresponding `*Impl()` meth
 | `DMPostAttributeChangeCallbackImpl` | `DMPostAttributeChangeCallback` | Routes OnOff changes and observes Temperature Control and Identify changes. |
 | `OnAttributeChangedImpl` | `OnAttributeChanged` | Converts an Oven Mode `CurrentMode` change into an application event. |
 | `DMOvenModeClusterInitCallbackImpl` | `DMOvenModeClusterInitCallback` | Performs no application-specific action by default. |
-| `DMOvenModeClusterShutdownCallbackImpl` | `DMOvenModeClusterShutdownCallback` | No default application logic. The Oven Mode cluster shutdown callback does nothing. |
+| `DMOvenModeClusterShutdownCallbackImpl` | `DMOvenModeClusterShutdownCallback` | Performs no application-specific action by default. |
 | `InitOvenImpl` | `InitOven` | Initializes the oven endpoints, delegates, binding, supported levels, and initial cluster state. |
 | `OnOffAttributeChangeHandlerImpl` | `OnOffAttributeChangeHandler` | Synchronizes the cooktop and cooking-surface states after a change to the OnOff attribute. |
 | `IsTransitionBlockedImpl` | `IsTransitionBlocked` | Returns true if the requested Oven Mode transition is in the blocked-transition list. |
