@@ -8,14 +8,14 @@ To override any of the following AppTask hooks, declare the corresponding `*Impl
 |---|---|---|
 | `AppInitImpl` | `AppInit` | Registers the button callback, initializes the display, and initializes Closure Manager. |
 | `ButtonEventHandlerImpl` | `ButtonEventHandler` | Routes closure button presses to `ClosureButtonActionEventHandler` and function button events to the base application handler. |
-| `ClosureButtonActionEventHandlerImpl` | `ClosureButtonActionEventHandler` | Stops motion if a closure action is in progress, otherwise starts a MoveTo toward the opposite position. |
+| `ClosureButtonActionEventHandlerImpl` | `ClosureButtonActionEventHandler` | Stops motion if a closure action is in progress; otherwise, it starts a MoveTo toward the opposite position. |
 | `DMPostAttributeChangeCallbackImpl` | `DMPostAttributeChangeCallback` | Logs Identify attribute changes. |
 | `DMClosureControlClusterAttributeChangedCallbackImpl` | `DMClosureControlClusterAttributeChangedCallback` | Refreshes the UI when Closure Control `MainState` or `OverallCurrentState` changes. |
 | `DMClosureDimensionClusterAttributeChangedCallbackImpl` | `DMClosureDimensionClusterAttributeChangedCallback` | Logs Closure Dimension attribute changes. |
 
 ## ClosureManager
 
-These APIs use the Closure app's separate manager override chain. Declare and
+These APIs use the Closure app's separate manager override chain. Declare and implement the corresponding `*Impl()` methods in `CustomerAppManager`, which derives from `ClosureManagerImpl<CustomerAppManager>`. Use `autogen/ClosureManagerImpl.h` for exact signatures. Do not place these overrides in `CustomerAppTask`.
 implement the corresponding `*Impl()` methods in `CustomerAppManager`, which
 derives from `ClosureManagerImpl<CustomerAppManager>`. Use
 `autogen/ClosureManagerImpl.h` for exact signatures. Do not place these

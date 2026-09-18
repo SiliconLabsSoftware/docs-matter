@@ -4,7 +4,7 @@ Use this reference to find the application customization APIs available in a
 Silicon Labs Matter application. The available APIs depend on the application
 and its configuration.
 
-Most APIs below are exposed through the generated `AppTask` interface. To
+Most **of the following** APIs are exposed through the generated `AppTask` interface. To customize those APIs, derive `CustomerAppTask` from the generated implementation and override the corresponding `*Impl()` hook. The Closure app also exposes `ClosureManager` APIs through a separate `CustomerAppManager` override chain. See [Extending Base App Implementation](#extending-base-app-implementation) for the implementation workflow.
 customize those APIs, derive `CustomerAppTask` from the generated implementation
 and override the corresponding `*Impl()` hook. The Closure app also exposes
 `ClosureManager` APIs through a separate `CustomerAppManager` override chain.
@@ -37,7 +37,9 @@ a `*Impl()` method:
 2. Declare the same method signature in `CustomerAppTask.h` under the `private:`
    section. Match the base `*Impl()` signature exactly.
 3. Implement the method in `CustomerAppTask.cpp`.
-4. Build the project. If you implement the corresponding `*Impl()` method in
+4. Build the project.
+
+If you implement the corresponding `*Impl()` method in `CustomerAppTask`, the application uses your implementation. Otherwise, it uses the Silicon Labs default implementation. All other methods automatically use their default implementations.
    `CustomerAppTask`, your implementation is used. Otherwise, the Silicon Labs
    default implementation is used. You only need to implement the methods that
    you want to customize. All other methods automatically use the default
@@ -56,7 +58,7 @@ implementation.
 
 ### DataModelCallbacks and CustomerAppTask
 
-What used to live in `DataModelCallbacks.cpp` before Matter Extension 2.9.1
+Code that previously resided in `DataModelCallbacks.cpp` before Matter Extension 2.9.1 now resides in `AppTask.cpp`. The Matter SDK's `MatterPostAttributeChangeCallback` is implemented in `examples/platform/silabs/BaseApplication.cpp` and forwards to `AppTask::DMPostAttributeChangeCallback`, which is defined in `AppTask.cpp`. You can customize this callback by overriding `DMPostAttributeChangeCallbackImpl()` in `CustomerAppTask`.
 now lives in `AppTask.cpp`. The Matter SDK's
 `MatterPostAttributeChangeCallback` is implemented in
 `examples/platform/silabs/BaseApplication.cpp` and forwards to
@@ -76,7 +78,7 @@ Forwarding into `AppTask` still goes through CRTP as described in
 
 ### Sample Implementation
 
-The following shows a minimal example `CustomerAppTask` that overrides
+The following example shows a minimal `CustomerAppTask` that overrides
 `AppInitImpl()` and `ButtonEventHandlerImpl()` from the lighting app
 implementation.
 
@@ -158,7 +160,7 @@ void CustomerAppTask::ButtonEventHandlerImpl(uint8_t button, uint8_t btnAction)
 
 ### Override API Reference
 
-The base API and implementation are generated into the `autogen/` directory.
+The base API and implementation files are generated in the `autogen/` directory. These files are regenerated whenever you upgrade the project to match the installed SDK version. Use them as a reference for overridable methods and app configuration. The app-specific pages in the following list describe each `*Impl()` override, its public API, and the default behavior.
 These files are regenerated whenever you upgrade the project and match the
 installed SDK version. Use them as a reference for overridable methods and app
 configuration. The app-specific pages below list each `*Impl()` override, its

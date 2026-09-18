@@ -6,7 +6,7 @@ To override any of the following hooks, declare the corresponding `*Impl()` meth
 
 | Override | Public API | Default behavior |
 |---|---|---|
-| `AppInitImpl` | `AppInit` | Registers the button callback, initializes the lock, and syncs the Door Lock cluster state. |
+| `AppInitImpl` | `AppInit` | Registers the button callback, initializes the lock, and synchronizes the Door Lock cluster state. |
 | `InitLockImpl` | `InitLock` | Initializes lock state, credential storage, actuator timers, and the Door Lock server. |
 | `ButtonEventHandlerImpl` | `ButtonEventHandler` | Routes lock action and function button events. |
 | `LockButtonActionHandlerImpl` | `LockButtonActionHandler` | Converts a lock button press into a lock or unlock action. |

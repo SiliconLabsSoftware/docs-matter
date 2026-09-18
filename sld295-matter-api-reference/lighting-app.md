@@ -7,7 +7,7 @@ To override any of the following hooks, declare the corresponding `*Impl()` meth
 | Override | Public API | Default behavior |
 |---|---|---|
 | `AppInitImpl` | `AppInit` | Registers the button callback, initializes the light, LED, and display. |
-| `InitLightImpl` | `InitLight` | Creates the off effect timer and loads OnOff (and RGB color attributes when enabled) from cluster state. |
+| `InitLightImpl` | `InitLight` | Creates the off-effect timer and loads the OnOff attribute and, when enabled, the RGB color attributes from the cluster state. |
 | `ButtonEventHandlerImpl` | `ButtonEventHandler` | Routes light action and function button events. |
 | `OnTriggerOffWithEffectImpl` | `OnTriggerOffWithEffect` | Selects and starts the timer for an OffWithEffect command. |
 | `LightActionEventHandlerImpl` | `LightActionEventHandler` | Toggles the light for a button event and synchronizes the OnOff attribute. |

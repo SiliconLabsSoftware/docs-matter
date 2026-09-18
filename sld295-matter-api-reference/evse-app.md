@@ -9,4 +9,4 @@ To override any of the following hooks, declare the corresponding `*Impl()` meth
 | `AppInitImpl` | `AppInit` | Registers the button callback, runs `ApplicationInit`, and registers EVSE test event triggers when enabled. |
 | `ApplicationInitImpl` | `ApplicationInit` | Initializes the EVSE application and energy management LED. |
 | `ButtonEventHandlerImpl` | `ButtonEventHandler` | Routes EVSE control button presses to `EnergyManagementActionEventHandler` and function button events to the base application handler. |
-| `EnergyManagementActionEventHandlerImpl` | `EnergyManagementActionEventHandler` | Logs the control button event. The default does not start a charging action. |
+| `EnergyManagementActionEventHandlerImpl` | `EnergyManagementActionEventHandler` | Logs the control button event. By default, the handler does not start a charging action. |
