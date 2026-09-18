@@ -15,9 +15,9 @@ To override any of the following hooks, declare the corresponding `*Impl()` meth
 | `CookTopBindingPropagateStateImpl` | `CookTopBindingPropagateState` | Notifies bound OnOff and Fan Control clusters of the cooktop state. |
 | `BoundDeviceChangedHandlerImpl` | `BoundDeviceChangedHandler` | Writes the pending cooktop state to a matching bound OnOff or Fan Control peer. |
 | `DMPostAttributeChangeCallbackImpl` | `DMPostAttributeChangeCallback` | Routes OnOff changes and observes Temperature Control and Identify changes. |
-| `OnAttributeChangedImpl` | `OnAttributeChanged` | Translates an Oven Mode `CurrentMode` change into an application event. |
-| `DMOvenModeClusterInitCallbackImpl` | `DMOvenModeClusterInitCallback` | No default application logic. The Oven Mode cluster init callback does nothing. |
+| `OnAttributeChangedImpl` | `OnAttributeChanged` | Converts an Oven Mode `CurrentMode` change into an application event. |
+| `DMOvenModeClusterInitCallbackImpl` | `DMOvenModeClusterInitCallback` | Performs no application-specific action by default. |
 | `DMOvenModeClusterShutdownCallbackImpl` | `DMOvenModeClusterShutdownCallback` | No default application logic. The Oven Mode cluster shutdown callback does nothing. |
-| `InitOvenImpl` | `InitOven` | Initializes oven endpoints, delegates, binding, supported levels, and initial cluster state. |
-| `OnOffAttributeChangeHandlerImpl` | `OnOffAttributeChangeHandler` | Synchronizes cooktop and cooking surface state after an OnOff change. |
-| `IsTransitionBlockedImpl` | `IsTransitionBlocked` | Returns true when the requested Oven Mode transition is in the blocked transition list. |
+| `InitOvenImpl` | `InitOven` | Initializes the oven endpoints, delegates, binding, supported levels, and initial cluster state. |
+| `OnOffAttributeChangeHandlerImpl` | `OnOffAttributeChangeHandler` | Synchronizes the cooktop and cooking-surface states after a change to the OnOff attribute. |
+| `IsTransitionBlockedImpl` | `IsTransitionBlocked` | Returns true if the requested Oven Mode transition is in the blocked-transition list. |
