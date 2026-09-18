@@ -15,7 +15,7 @@ To override any of the following hooks, declare the corresponding `*Impl()` meth
 | `LockActionEventHandlerImpl` | `LockActionEventHandler` | Starts the lock, unlock, or unlatch action carried by an application event. |
 | `LockRequestEventHandlerImpl` | `LockRequestEventHandler` | Drains a staged Door Lock request and passes it to the application task. |
 | `HandleLockRequestOnAppTaskImpl` | `HandleLockRequestOnAppTask` | Queues, completes, or starts a Door Lock request according to actuator state. |
-| `UnlockAfterUnlatchImpl` | `UnlockAfterUnlatch` | Changes an unlatched lock to unlocked and stages the unlock request. |
+| `UnlockAfterUnlatchImpl` | `UnlockAfterUnlatch` | Changes an unlatched lock to the unlocked state and stages an unlock request. |
 | `DMPostAttributeChangeCallbackImpl` | `DMPostAttributeChangeCallback` | Responds to Door Lock `LockState` attribute changes. |
 | `DMDoorLockOnDoorLockCommandImpl` | `DMDoorLockOnDoorLockCommand` | Validates a Lock command and stages a request for the locked state. |
 | `DMDoorLockOnDoorUnlockCommandImpl` | `DMDoorLockOnDoorUnlockCommand` | Validates an Unlock command and stages an unlock or unlatch request, depending on Unbolt support. |
@@ -26,8 +26,8 @@ To override any of the following hooks, declare the corresponding `*Impl()` meth
 | `DMDoorLockSetUserImpl` | `DMDoorLockSetUser` | Persists user data for the Door Lock server. |
 | `DMDoorLockGetWeekDayScheduleImpl` | `DMDoorLockGetWeekDaySchedule` | Retrieves a user's weekday schedule. |
 | `DMDoorLockSetWeekDayScheduleImpl` | `DMDoorLockSetWeekDaySchedule` | Persists a user's weekday schedule. |
-| `DMDoorLockGetYearDayScheduleImpl` | `DMDoorLockGetYearDaySchedule` | Retrieves a user's year day schedule. |
-| `DMDoorLockSetYearDayScheduleImpl` | `DMDoorLockSetYearDaySchedule` | Persists a user's year day schedule. |
+| `DMDoorLockGetYearDayScheduleImpl` | `DMDoorLockGetYearDaySchedule` | Retrieves a user's year-day schedule. |
+| `DMDoorLockSetYearDayScheduleImpl` | `DMDoorLockSetYearDaySchedule` | Persists a user's year-day schedule. |
 | `DMDoorLockGetHolidayScheduleImpl` | `DMDoorLockGetHolidaySchedule` | Retrieves a holiday schedule. |
 | `DMDoorLockSetHolidayScheduleImpl` | `DMDoorLockSetHolidaySchedule` | Persists a holiday schedule. |
 | `DMDoorLockOnAutoRelockImpl` | `DMDoorLockOnAutoRelock` | Starts a lock action when automatic relocking occurs. |

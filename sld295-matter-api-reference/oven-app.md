@@ -6,11 +6,11 @@ To override any of the following hooks, declare the corresponding `*Impl()` meth
 
 | Override | Public API | Default behavior |
 |---|---|---|
-| `AppInitImpl` | `AppInit` | Registers the button callback, initializes the oven, connectivity handler, cooktop LED, and display. |
-| `ButtonEventHandlerImpl` | `ButtonEventHandler` | Routes oven action and function button events. |
+| `AppInitImpl` | `AppInit` | Registers the button callback and initializes the oven, connectivity handler, cooktop LED, and display. |
+| `ButtonEventHandlerImpl` | `ButtonEventHandler` | Routes oven-action and function-button events. |
 | `OvenButtonHandlerImpl` | `OvenButtonHandler` | Converts an oven button press into a cooktop on/off action. |
 | `OvenActionHandlerImpl` | `OvenActionHandler` | Applies an oven or cooktop action and updates the application UI. |
-| `ConnectivityEventHandlerImpl` | `ConnectivityEventHandler` | Propagates the cooktop off state after DNS-SD initializes. |
+| `ConnectivityEventHandlerImpl` | `ConnectivityEventHandler` | Propagates the cooktop off state after DNS-SD initialization completes. |
 | `InitBindingHandlerImpl` | `InitBindingHandler` | Initializes the Binding Manager and registers its command and context release handlers. |
 | `CookTopBindingPropagateStateImpl` | `CookTopBindingPropagateState` | Notifies bound OnOff and Fan Control clusters of the cooktop state. |
 | `BoundDeviceChangedHandlerImpl` | `BoundDeviceChangedHandler` | Writes the pending cooktop state to a matching bound OnOff or Fan Control peer. |
