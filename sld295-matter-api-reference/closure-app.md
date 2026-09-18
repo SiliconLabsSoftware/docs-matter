@@ -15,7 +15,7 @@ To override any of the following AppTask hooks, declare the corresponding `*Impl
 
 ## ClosureManager
 
-These APIs use the Closure app's separate manager override chain. Declare and implement the corresponding `*Impl()` methods in `CustomerAppManager`, which derives from `ClosureManagerImpl<CustomerAppManager>`. Use `autogen/ClosureManagerImpl.h` for exact signatures. Do not place these overrides in `CustomerAppTask`.
+These APIs use the Closure app's separate manager override chain. Declare and
 implement the corresponding `*Impl()` methods in `CustomerAppManager`, which
 derives from `ClosureManagerImpl<CustomerAppManager>`. Use
 `autogen/ClosureManagerImpl.h` for exact signatures. Do not place these
