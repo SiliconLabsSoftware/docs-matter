@@ -1,7 +1,6 @@
 # Refrigerator Application Override APIs
 
 To override any of the following hooks, declare the corresponding `*Impl()` method in `CustomerAppTask.h` and implement it in `CustomerAppTask.cpp`. Ensure that the method signature matches its declaration in `autogen/AppTaskImpl.h`. The public `Init()` method maps to `CabinetModeInitImpl()` rather than `InitImpl()`.
-`CabinetModeInitImpl()`, not `InitImpl()`.
 
 ## AppTask
 

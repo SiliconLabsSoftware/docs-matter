@@ -4,7 +4,7 @@ Use this reference to find the application customization APIs available in a
 Silicon Labs Matter application. The available APIs depend on the application
 and its configuration.
 
-Most **of the following** APIs are exposed through the generated `AppTask`
+Most of the following APIs are exposed through the generated `AppTask`
 interface. To customize those APIs, derive `CustomerAppTask` from the generated
 implementation and override the corresponding `*Impl()` hook. The Closure app
 also exposes `ClosureManager` APIs through a separate `CustomerAppManager`
