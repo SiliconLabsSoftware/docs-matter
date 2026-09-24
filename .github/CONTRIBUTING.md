@@ -12,7 +12,7 @@ If you haven't already done so, you'll need to create a (free) GitHub account at
 and have Git tools available on your development system. You also need to add your email address to your account.
 
 As a contributor, you'll want to be familiar with the Silicon Labs tooling:
-- [Simplicity Studio](https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-overview/)  
+- [Simplicity Studio](https://docs.silabs.com/ssv6ug/latest/ssv6ug-overview/)  
 - [Platform](https://docs.silabs.com/gecko-platform/latest/platform-overview/)  
 - [Simplicity Commander](https://docs.silabs.com/simplicity-commander/latest/simplicity-commander-start/)  
 
