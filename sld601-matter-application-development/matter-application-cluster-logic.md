@@ -61,7 +61,7 @@ Additionally, a corresponding component is automatically added to your project. 
 
 ## Step 4: Add Application Logic 
 
-For information about customizing app behavior, see [Extending Base App Implementation](/matter/{build-docspace-version}/matter-references/custom-matter-device/#extending-base-app-implementation).
+For information about customizing app behavior, see [Matter API Reference](/matter/{build-docspace-version}/matter-api-reference/).
 
 Application logic centers on AppTask:
 
