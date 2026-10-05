@@ -58,7 +58,7 @@ implementation.
 ### DataModelCallbacks and CustomerAppTask
 
 Code that previously resided in `DataModelCallbacks.cpp` before Matter
-Extension 2.9.1 now resides in `AppTask.cpp`. The Matter SDK's
+Extension 2.9.2 now resides in `AppTask.cpp`. The Matter SDK's
 `MatterPostAttributeChangeCallback` is implemented in
 `examples/platform/silabs/BaseApplication.cpp` and forwards to
 `AppTask::DMPostAttributeChangeCallback`, which is defined in `AppTask.cpp`.
