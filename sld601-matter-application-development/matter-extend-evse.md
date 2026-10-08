@@ -1,10 +1,10 @@
 # Overview
 
-The Matter over Thread EVSE sample demonstrates an Electric Vehicle Supply Equipment device running on a Silicon Labs EFR32 SoC.
+The Matter over Thread EVSE sample demonstrates an Electric Vehicle Supply Equipment (EVSE) device running on a Silicon Labs EFR32 SoC.
 
-The base sample includes the Matter EVSE functionality, but it does not simulate a connected electric vehicle. In this guide, we extend the application with a simple simulated EV so the EVSE states can be exercised without external EV hardware.
+The base sample includes Matter EVSE functionality, but it does not simulate a connected electric vehicle (EV). In this guide, you extend the application with a simple simulated EV so you can exercise the EVSE states without external EV hardware.
 
-The simulated EV uses BTN1 for interaction:
+Use BTN1 to interact with the simulated EV:
 | BTN1 Action | Result |
 | --- | --- |
 | Short Press | Connect or Disconnect EV |
