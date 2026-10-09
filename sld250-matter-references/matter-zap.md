@@ -195,7 +195,7 @@ The image above is what the multiple device type endpoints looks like after conf
 ## Defining a Custom Cluster
 
 In order to use a custom cluster in an application, follow these steps:
-- Create an XML file with custom cluster definitions. For an example, see [Sample MEI Cluster](https://github.com/project-chip/connectedhomeip/blob/master/src/app/zap-templates/zcl/data-model/chip/sample-mei-cluster.xml). 
+- Create an XML file with custom cluster definitions. Guide: [Creating your own custom XML in Matter](https://docs.silabs.com/zap-tool/latest/zap-users-guide/custom-xml#manufacturer-specific-clusters-in-matter), example: [Sample MEI Cluster](https://github.com/project-chip/connectedhomeip/blob/master/src/app/zap-templates/zcl/data-model/chip/sample-mei-cluster.xml). 
 - In ZAP, click **Extensions** and add the XML file. The newly defined cluster can then be enabled in any endpoint under the domain for which it was defined (for example General). Its Commands and Attributes can be managed like those of any other cluster. Click Ctrl+S to save the changes.
 - Manually edit the project's .zap file (located in config/zap/ in the project directory) to add the following block to the "keyValuePairs" array.
   
