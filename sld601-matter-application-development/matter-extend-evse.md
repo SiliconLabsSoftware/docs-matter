@@ -1,7 +1,7 @@
 # Introduction
 Matter EVSE is a relatively new device type, and ecosystem support for it is still limited. Support for commissioning and controlling an EVSE may therefore vary across Matter controllers and smart home platforms. Therefore, in this guide the chip-tool/mattertool is used in order to commission and control this device. 
 
-# Overview
+# Extend the Matter over Thread EVSE Sample with a Simulated EV
 
 The Matter over Thread EVSE sample demonstrates an Electric Vehicle Supply Equipment (EVSE) device running on a Silicon Labs EFR32 SoC.
 
@@ -225,7 +225,7 @@ CHIP_ERROR CustomerAppTask::AppInitImpl()
 ```
 
 # Forward BTN1 Press and Release Events
-The default EVSE button handler forwards BTN1 only when it receives a button-press event. To distinguish a short press from a long press, the application needs both the press and release events.
+Override the button handler so that both BTN1 actions reach the Energy Management action event handler while preserving the default BTN0 behavior:
 Override the button handler so that both BTN1 actions reach the Energy Management action event handler while preserving the default BTN0 behavior:
 
 
