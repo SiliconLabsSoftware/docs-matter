@@ -7,46 +7,46 @@ The base sample includes Matter EVSE functionality, but it does not simulate a c
 Use BTN1 to interact with the simulated EV:
 | BTN1 Action | Result |
 | --- | --- |
-| Short Press | Connect or Disconnect EV |
-| Long Press | Toogle EV Charge Demand |
+| Short press | Connect or disconnect the EV |
+| Long press | Toggle EV charge demand |
 
 LED1 indicates whether the simulated EV is connected.
 
-Using the simulated EV together with Matter commands such as EnableCharging and Disable, the following EVSE states can be demonstrated:
+Using the simulated EV together with Matter commands such as `EnableCharging` and `Disable`, you can demonstrate the following EVSE states:
 
 ![EVSE States](./images/EVSE-states.png)
 
-The existing EVSE state machine handles the transition to PluggedInCharging when the EV is requesting energy and charging is enabled.
+The existing EVSE state machine handles the transition to `PluggedInCharging` when the EV requests energy and charging is enabled.
 
-# Matter Over Thread EVSE Example 
+# Create the Matter Over Thread EVSE Example
 
-In Simplicity Studio, create the EVSE Example
+In Simplicity Studio, create the EVSE example:
 
-1. Connect one compatible dev board to your development computer. This example uses a BRD4187C.
+1. Connect a compatible development board to your development computer. This example uses a BRD4187C.
 
-2. Once it displays in the Devices panel, select it.
+2. When the board appears in the Devices panel, select it.
 
-3. This will bring up the Example Projects and Demos tab, check the Matter filter under Wireless Technology, and enter evse in the Filter on keywords box. Select the Matter Thread - SoC EVSE with external Bootloader FreeRTOS solution and click Create.
+3. In the Example Projects and Demos tab, select the Matter filter under Wireless Technology, and enter `evse` in the Filter on keywords box. Select the Matter Thread - SoC EVSE with external Bootloader FreeRTOS solution, and then click Create.
 
 ![EVSE Studio](./images/EVSE-studio.png)
 
-4. Name your project and click Finish (no other changes are required at this time).
+4. Name your project, and then click Finish. No other changes are required at this time.
 
-5. Once the solution is created, you will be redirected to the Projects view with the matter_thread_soc_lighting_app_freertos.slcp file open. If not simply open the file yourself.
+5. After the solution is created, Simplicity Studio opens the Projects view with the `matter_thread_soc_lighting_app_freertos.slcp` file open. If the file doesn't open automatically, open it manually.
 
 ![EVSE SLCP](./images/EVSE-SLCP.png)
 
 # Extend the Application with CustomerAppTask
 
-The EVSE example provides CustomerAppTask.h and CustomerAppTask.cpp for adding application-specific behavior. Use these files instead of modifying the generated AppTask.cpp.
+The EVSE example provides `CustomerAppTask.h` and `CustomerAppTask.cpp` for adding application-specific behavior. Use these files instead of modifying the generated `AppTask.cpp`.
 
 Silicon Labs uses an *Impl() override pattern. To customize an existing application function:
 
-1. Find the corresponding *Impl() method in autogen/AppTaskImpl.h.
-2. Copy the exact method signature into the private: section of CustomerAppTask.h.
-3. Implement the method in CustomerAppTask.cpp.
+1. Find the corresponding `*Impl()` method in `autogen/AppTaskImpl.h`.
+2. Copy the exact method signature into the `private:` section of `CustomerAppTask.h`.
+3. Implement the method in `CustomerAppTask.cpp`.
 
-If a method is not overridden, the default Silicon Labs implementation continues to be used.
+If you don't override a method, the default Silicon Labs implementation continues to be used.
 
 For example:
 
@@ -65,16 +65,16 @@ private:
 };
 ```
 
-This approach keeps the EV simulation changes isolated from the base EVSE application and prevents application-specific changes from being lost when generated files are regenerated or the project is upgraded. For more information on App Customization please reference [Extending Base App Implementation](/matter/{build-docspace-version}/matter-references/custom-matter-device/#extending-base-app-implementation).
+This approach keeps the EV simulation changes isolated from the base EVSE application and prevents application-specific changes from being lost when generated files are regenerated or the project is upgraded. For more information about app customization, see [Extending Base App Implementation](/matter/{build-docspace-version}/matter-references/custom-matter-device/#extending-base-app-implementation).
 
 # Add the Simulated EV
 
-The EVSE sample provides the Matter EVSE functionality, but it does not include a physical or simulated electric vehicle. BTN1 is reserved for an Energy Management action, but the base application does not use it to simulate EV connection or demand.
-To exercise the EVSE state machine without external EV hardware, add a minimal simulated EV. The simulator tracks only the two EV-side conditions needed for this demonstration:
+The EVSE sample provides Matter EVSE functionality, but it does not include a physical or simulated electric vehicle. BTN1 is reserved for an Energy Management action, but the base application does not use it to simulate EV connection or demand.
+To exercise the EVSE state machine without external EV hardware, add a minimal simulated EV. The simulator tracks only the two EV-side conditions required for this demonstration:
 - Whether an EV is connected
 - Whether the EV has charge demand
 
-The Matter EVSE implementation remains responsible for determining whether charging is allowed and for transitioning into the charging state.
+The Matter EVSE implementation remains responsible for determining whether charging is allowed and for transitioning to the charging state.
 
 ## Update SimulatedEv.h
  ```cpp
@@ -129,15 +129,16 @@ The simulator starts disconnected with no charge demand. No explicit initializat
 
 ## Add the Source File to the Build
 
-Make sure SimulatedEv.cpp is included in the application build. Adding the file to the project directory alone is not sufficient if it is not part of the source list.
+Make sure `SimulatedEv.cpp` is included in the application build. Adding the file to the project directory isn't sufficient if the file isn't included in the source list.
 
-# Update Customer AppTask.h
+# Update CustomerAppTask.h
 
-The following methods are used for the simulated EV integration:
+Use the following methods to integrate the simulated EV:
+
 
 - `AppInitImpl()` registers the custom `CustomerAppTask` button handler after the base application is initialized.
-- `ButtonEventHandlerImpl()` forwards both BTN1 press and release events to the Energy Management action Event Handler.
-- `EnergyManagementActionEventHandlerImpl()` determines whether BTN1 was short- or long-pressed and updates the simulated EV accordingly.
+- `ButtonEventHandlerImpl()` forwards both BTN1 press and release events to the Energy Management action event handler.
+- `EnergyManagementActionEventHandlerImpl()` determines whether BTN1 was short-pressed or long-pressed and updates the simulated EV accordingly.
 - `UpdateSimulatedEv()` maps the simulated EV connection and demand state to the corresponding EVSE state.
 
 ```cpp
@@ -200,7 +201,7 @@ constexpr uint32_t kLongPressMs = 1000;
 
 # Initialize the LEDWidget Instance
 
-Override the AppInitiImpl() to initialize the LED instance and set the LED off. 
+Override `AppInitImpl()` to initialize the LED instance and turn off the LED:
 
 
 
@@ -250,7 +251,7 @@ void CustomerAppTask::ButtonEventHandlerImpl(uint8_t button, uint8_t btnAction)
 ```
 # Detect Short and Long Presses
 
-Use the press and release timestamps to determine which simulated EV action to perform, for a short press the Ev will Toggle the connected state. And for a long press the Ev will toggle the demand state:
+Use the press and release timestamps to determine which simulated EV action to perform. A short press toggles the EV connection state. A long press toggles the EV charge-demand state:
 
 
 
@@ -302,10 +303,10 @@ void CustomerAppTask::EnergyManagementActionEventHandlerImpl(AppEvent * aEvent)
 }
 ```
 
-A long press is therefore recognized when BTN1 is released after being held for at least 1 second.
+A long press is recognized when you release BTN1 after holding it for at least one second.
 
 # Report the Simulated EV State
-UpdateSimulatedEv() translates the two simulated EV conditions into the hardware-facing EVSE states:
+`UpdateSimulatedEv()` translates the two simulated EV conditions into the hardware-facing EVSE states:
 
 
 ```cpp
@@ -346,7 +347,7 @@ void CustomerAppTask::UpdateSimulatedEv()
 }
 ```
 
-The simulated EV reports only the physical EV conditions. The EVSE delegate handles higher-level transitions such as PluggedInCharging.
+The simulated EV reports only the physical EV conditions. The EVSE delegate handles higher-level transitions such as `PluggedInCharging`.
 
 # Expected Behavior
 
@@ -356,17 +357,17 @@ The application can now exercise the first three EVSE states directly:
 
 ## Commission and Test EVSE Charging with the Matter Controller
 
-Before testing the simulated EV states, commission the device onto the Thread network using mattertool.
+Before testing the simulated EV states, commission the device onto the Thread network using `mattertool`.
 
 ## Start the Thread Network
 
-On the Matter Hub:
+On the Matter Hub, run:
 
 ```
 mattertool startThread
 ```
 
-This creates the Thread network and stores the operational dataset used for commissioning.
+This command creates the Thread network and stores the operational dataset used for commissioning.
 
 ## Commission the Device
 
@@ -382,7 +383,7 @@ For example:
 mattertool bleThread -n 1
 ```
 
-mattertool bleThread performs BLE commissioning and provisions the device onto the Thread network.
+The `mattertool bleThread` command performs BLE commissioning and provisions the device onto the Thread network.
 
 ## Verify the Initial EVSE State
 
@@ -420,7 +421,7 @@ Expected:
 
 State = 2    -> PluggedInDemand
 
-Matter defines this as the EV being plugged in and requesting current while the EVSE is not currently allowing current to flow.
+Matter defines this state as the EV being plugged in and requesting current while the EVSE is not currently allowing current to flow.
 
 ## Enable Charging
 
@@ -435,7 +436,7 @@ For example:
 mattertool energy-evse enable-charging null 6000 32000 1 1
 ```
 
-A null ChargingEnabledUntil value enables charging without an expiration time.
+A `null` `ChargingEnabledUntil` value enables charging without an expiration time.
 
 Verify the state:
 
@@ -465,4 +466,4 @@ Because the EV remains connected and still has demand, the EVSE should return to
 
 State = 2    -> PluggedInDemand
 
-The Disable command stops power flow and changes the EVSE supply state to disabled.
+The `Disable` command stops power flow and changes the EVSE supply state to disabled.
