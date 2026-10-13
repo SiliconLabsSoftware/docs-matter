@@ -1,3 +1,6 @@
+# Introduction
+Matter EVSE is a relatively new device type, and ecosystem support for it is still limited. Support for commissioning and controlling an EVSE may therefore vary across Matter controllers and smart home platforms. Therefore, in this guide the chip-tool/mattertool is used in order to commission and control this device. 
+
 # Overview
 
 The Matter over Thread EVSE sample demonstrates an Electric Vehicle Supply Equipment (EVSE) device running on a Silicon Labs EFR32 SoC.
@@ -386,6 +389,10 @@ mattertool bleThread -n 1
 The `mattertool bleThread` command performs BLE commissioning and provisions the device onto the Thread network.
 
 ## Verify the Initial EVSE State
+
+You can find the different `mattertool` commands available for EVSE by typing `mattertool energyevse `, this should show you the available commands: 
+
+![EVSE Commands](./images/EVSE-commands.png)
 
 Read the EVSE state:
 
