@@ -162,6 +162,6 @@ You've completed all of the items in the pre-production checklist and are ready 
 
 16. Once the DACs are available, the order will go into Silicon Labs manufacturing to be programmed and shipped to your address once the samples are complete.
 
-17. You can then Approve or Reject the samples once your organization is able to test the sample parts. Silicon Labs recommends at this time that you test these samples with your device commissioner to ensure that the samples can properly attest to the Matter network. Sample generation typically takes from 4 to 6 weeks to produce, assuming all of the integrations with Kudelski IoT are in place to receive DACs.
+17. You can then Approve or Reject the samples once your organization is able to test the sample parts. Silicon Labs recommends at this time that you test these samples with your device commissioner to ensure that the samples can properly attest to the Matter network. Sample generation typically takes 8 weeks to produce, assuming all of the integrations with Kudelski IoT are in place to receive DACs.
 
 18. Once approved, you will be able to order these parts, based on the OPN for that part. You can do this through Silicon Labs or through a third-party distributor. You may also opt to work with a Silicon Labs Field Application Engineer to help get this order executed.
