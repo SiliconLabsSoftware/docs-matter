@@ -1,5 +1,8 @@
 # New Features
 
+## New Features for v2.9.2-1.6
+None
+
 ## New Features for v2.9.1-1.6
 - LLVM compiler support for Matter projects.
 

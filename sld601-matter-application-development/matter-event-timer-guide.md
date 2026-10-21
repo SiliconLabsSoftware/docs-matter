@@ -5,7 +5,7 @@
 
 The Matter event handler uses the FreeRTOS queue to transport a message from the producer to the consumer area. Events can be used to create asynchronous message processing or inter-task communication.
 
-For information about customizing app behavior, see [Extending Base App Implementation](/matter/{build-docspace-version}/matter-references/custom-matter-device/#extending-base-app-implementation).
+For information about customizing app behavior, see [Matter API Reference](/matter/{build-docspace-version}/matter-api-reference/).
 
 Steps to make an event work:
 

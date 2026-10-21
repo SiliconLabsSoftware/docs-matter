@@ -6,7 +6,7 @@ This demo uses the **Matter Thread - SoC Lighting FreeRTOS** example application
 
 ## Software Requirements
 
-- Simplicity Studio v6 with SiSDK - 2026.6.1 + Silicon Labs Matter - 2.9.1
+- Simplicity Studio v6 with SiSDK - 2026.6.2 + Silicon Labs Matter - 2.9.2
 - Simplicity Connect mobile App on Smartphone
 
 ## Hardware Requirements

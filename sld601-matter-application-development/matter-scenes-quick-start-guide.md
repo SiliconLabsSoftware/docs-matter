@@ -37,7 +37,7 @@ The following hands-on tutorial walks through the process of storing and recalli
 
 ### Requirements
 
-- Simplicity SDK 2026.6.1 + Matter extension 2.9.1 (or newer)
+- Simplicity SDK 2026.6.2 + Matter extension 2.9.2 (or newer)
 - Raspberry Pi 4 + MatterHub Image
 - 1x Silabs WTSK EFR32xG21 (BRD4108B) in RCP configuration
 - 2x [EFR32xG24-DK2601B Dev Kit](https://www.silabs.com/development-tools/wireless/efr32xg24-dev-kit?tab=overview)
@@ -166,7 +166,7 @@ public:
 
 ### Step 3 Implement Callbacks
 
-For information about customizing app behavior, see [Extending Base App Implementation](/matter/{build-docspace-version}/matter-references/custom-matter-device/#extending-base-app-implementation).
+For information about customizing app behavior, see [Matter API Reference](/matter/{build-docspace-version}/matter-api-reference/).
 
 Make the following additions to `src/CustomerAppTask.cpp`:
 
