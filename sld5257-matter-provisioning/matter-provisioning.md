@@ -42,7 +42,7 @@ this script is replaced by an actual CA.
 
 ## Generator Firmware
 
-The _Generator Firmware_ (GFW) is a FreeRTOS application that runs on the targeted device, and assists with the provisioning of the device.
+The _Generator Firmware_ (GFW) is an application that runs on the targeted device, and assists with the provisioning of the device.
 The GFW performs the following tasks:
 
 - When key-generation is used:
@@ -158,6 +158,7 @@ file defines the well-known (default) parameters used by the automatic provision
 | Parameters                | Conformance          | Type               | Description                                                                             |
 | ------------------------- | -------------------- | ------------------ | --------------------------------------------------------------------------------------- |
 | -v,  --version            | optional             | string             | Provisioning version.   |
+| -os, --rtos               | optional             | string             | Selects RTOS-specific generator firmware and device settings. Use `zephyr` for Zephyr devices. Use `default` for FreeRTOS. Default is `default`. |
 | -p,  --params             | optional             | path               | YAML parameters file.   |
 | -i,  --inputs             | optional             | path               | JSON inputs file. Formerly --config.       |
 | -o,  --output             | optional             | path               | JSON output file.       |
@@ -304,6 +305,27 @@ python3 provision.py read "vendor_name, product_name, version, dac_cert" --dac_c
 
 ## Use
 
+### Zephyr
+
+Add `--rtos zephyr` to the normal provisioning command. The tool selects the
+Zephyr Generator Firmware (GFW) and device settings from `config/devices.yaml`.
+
+```sh
+python3 ./provision.py ... --rtos zephyr
+```
+
+Replace `...` with the provisioning arguments for your device. Use a provisioning
+tool version that includes Zephyr GFW for the target device.
+
+In the device's `zephyr` section of `config/devices.yaml`, `flash_addr` must match
+the offset of the application's `storage` partition, and `flash_size` must match
+its size. These are partition values, not the device's total flash size. If you
+change the application's partition layout, update these settings before provisioning.
+
+The [All-Devices Application](../sld9999-matter-zephyr/03-all-devices-app.md)
+uses Silicon Labs provisioning data when built with `CONFIG_CHIP_FACTORY_DATA=y`.
+Provision the device before running an application that requires factory data.
+
 ### Zero Command-line Arguments
 
 The simplest use of the Provision Tool is using all-defaults, for instance:
@@ -449,8 +471,9 @@ python3 ./provision.py --vendor_id 0x1049 --product_id 0x8005 \
 
 ## Self-Provisioning
 
-Silicon Labs' Matter examples include the same provisioning engine used by the GFW. This allows applications to be flashed once
-but provisioned multiple times. There are two ways to put the application in provisioning mode:
+Silicon Labs' Matter examples include the same provisioning engine used by the GFW. This allows applications to be flashed once but provisioned multiple times.
+Self-provisioning is not available for Zephyr applications; use the Zephyr GFW instead.
+For non-Zephyr applications, there are two ways to enter provisioning mode:
 
 - Factory-reset by pressing both BTN0 and BTN1 for six seconds
 - Write 1 to the NVM3 key 0x87228. This is useful in boards with less than two buttons, and can be accomplished using Simplicity Commander:
