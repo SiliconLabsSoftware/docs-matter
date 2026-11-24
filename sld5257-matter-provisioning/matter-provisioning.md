@@ -307,15 +307,15 @@ python3 provision.py read "vendor_name, product_name, version, dac_cert" --dac_c
 
 ### Zephyr
 
-Add `--rtos zephyr` to the normal provisioning command. The tool selects the
+Add `--rtos zephyr` to the standard provisioning command. The tool selects the
 Zephyr Generator Firmware (GFW) and device settings from `config/devices.yaml`.
 
 ```sh
 python3 ./provision.py ... --rtos zephyr
 ```
 
-Replace `...` with the provisioning arguments for your device. Use a provisioning
-tool version that includes Zephyr GFW for the target device.
+Replace `...` with the provisioning arguments for your device. Use a version of
+the provisioning tool version that includes Zephyr GFW for the target device.
 
 In the device's `zephyr` section of `config/devices.yaml`, `flash_addr` must match
 the offset of the application's `storage` partition, and `flash_size` must match

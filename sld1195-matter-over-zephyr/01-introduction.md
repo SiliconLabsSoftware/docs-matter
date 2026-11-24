@@ -1,10 +1,10 @@
 # Introduction
 
-Matter applications can run on Silicon Labs hardware with the Zephyr RTOS. This guide uses the Simplicity SDK for Zephyr and the Silicon Labs Matter SDK.
+This guide explains how to develop and run Matter applications on Silicon Labs hardware using the Zephyr RTOS, the Simplicity SDK for Zephyr, and the Silicon Labs Matter SDK.
 
-Development uses West, CMake, Kconfig, and devicetree rather than the SLC project workflow. The Zephyr implementation also uses Zephyr storage services, such as NVS, instead of Silicon Labs NVM3.
+You'll use Zephyr development tools, including West, CMake, Kconfig, and devicetree, instead of the SLC project workflow. The Zephyr implementation also uses Zephyr storage services, such as NVS, instead of Silicon Labs NVM3.
 
-Start with [Set Up the Zephyr Workspace](02-setup-zephyr.md), then build the [All-Devices Application](03-all-devices-app.md).
+To get started, [set up the Zephyr workspace](02-setup-zephyr.md), then [build the All-Devices application](03-all-devices-app.md).
 
 ## Supported Hardware
 
@@ -21,7 +21,7 @@ SiWx917 provides Matter over Wi-Fi. Install the matching network processor (NWP)
 
 ### EFR32xG24 and MGM240
 
-These boards provide Matter over Thread. Except for `xg24_ek2703a`, the application uses external MX25 flash for the secondary OTA image slot.
+The EFR32xG24 and MGM240 boards support Matter over Thread. Except for `xg24_ek2703a`, the application uses external MX25 flash for the secondary OTA image slot.
 
 | Board Target | Board | Notes |
 | --- | --- | --- |
@@ -36,7 +36,7 @@ These boards provide Matter over Thread. Except for `xg24_ek2703a`, the applicat
 
 ### EFR32xG26 and MGM260
 
-These boards provide Matter over Thread. The application stores both image slots in internal flash.
+The EFR32xG26 and MGM260 boards support Matter over Thread. The application stores both image slots in internal flash.
 
 | Board Target | Board |
 | --- | --- |

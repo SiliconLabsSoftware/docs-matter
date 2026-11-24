@@ -2,7 +2,7 @@
 
 The commands in this guide use a POSIX shell and assume the West workspace is `~/workspace`.
 
-## 1. Set Up Simplicity SDK for Zephyr
+## Set Up Simplicity SDK for Zephyr
 
 Follow the [Simplicity SDK for Zephyr Getting Started Guide](https://docs.silabs.com/zephyr/latest/zephyr-getting-started/getting-started-guide) to install the host tools, create the workspace, fetch the Silicon Labs binary blobs, and install the toolchain. For SiWx917, also flash the matching NWP firmware.
 
@@ -13,9 +13,9 @@ cd ~/workspace
 source .venv/bin/activate
 ```
 
-## 2. Install GN
+## Install GN
 
-Zephyr uses CMake, but the Matter module also uses GN to generate Ninja build files. GN must be available in your `PATH`.
+Zephyr uses CMake, while the Matter module uses GN to generate Ninja build files. Make sure GN is available in your `PATH`.
 
 Download a [prebuilt GN binary](https://chrome-infra-packages.appspot.com/p/gn/gn) for your host, or build GN from source. For example, on Linux:
 
@@ -35,9 +35,9 @@ Verify that GN is available:
 gn --version
 ```
 
-## 3. Add Matter to the Workspace
+## Add Matter to the Workspace
 
-The Silicon Labs setup uses `zephyr-silabs` as the manifest repository. Confirm the location:
+The Silicon Labs setup uses zephyr-silabs as the manifest repository. Verify its location:
 
 ```sh
 cd ~/workspace
@@ -52,9 +52,9 @@ manifest:
         import: submanifests
 ```
 
-Merge this setting into the existing manifest; do not replace its projects or other settings. If your workspace uses a different manifest repository, apply this setting there instead.
+Merge this setting into the existing manifest without replacing its projects or other settings. If your workspace uses a different manifest repository, add the setting to that repository’s manifest instead.
 
-Create the directory:
+Create the following directory:
 
 ```sh
 mkdir -p ~/workspace/zephyr-silabs/submanifests
@@ -89,9 +89,9 @@ west list matter
 
 Confirm that `west list matter` reports `modules/lib/matter`. If the project is not found, check the manifest import above. Matter's `zephyr/module.yml` registers it as the Zephyr module `connectedhomeip`.
 
-## 4. Create the Pigweed Environment File
+## Create the Pigweed Environment File
 
-The West workflow does not run the Matter bootstrap, which normally generates `build_overrides/pigweed_environment.gni`. If the file is missing, create an empty file as a workaround:
+The West workflow does not run the Matter bootstrap, which normally generates `build_overrides/pigweed_environment.gni`. If this file is missing, create an empty file as a workaround:
 
 ```sh
 touch ~/workspace/modules/lib/matter/build_overrides/pigweed_environment.gni
