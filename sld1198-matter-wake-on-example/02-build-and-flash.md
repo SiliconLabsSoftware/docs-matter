@@ -1,6 +1,6 @@
-# Building and Flashing the Wake on Matter Example
+# Build and Flash the Wake on Matter Example
 
-## Building the Device Application
+## Build the Device Application
 
 The Wake on Matter application supports only the SLC toolchain. Use one of the following methods to build the application:
 
