@@ -128,6 +128,12 @@ Finally, add a call to `OnOffTmrStart()` at the end of your `AppInitImpl()` over
 
 In the flowchart above, `OnOffAttributeWriteStartTimer()` calls `OnOffTmrStart()` to restart the timer.
 
+### Configuration considerations for devices with multiple endpoints
+
+If your device has several more endpoints than the Silicon Labs sample applications, some default Matter SDK resource limits may be insufficient. Review the defaults in `CHIPConfig.h` if interactions with the controller do not behave as expected.
+
+For example, `CHIP_IM_SERVER_MAX_NUM_DIRTY_SET` may need increasing if the number of distinct pending attribute-change paths can exceed that capacity; otherwise, the SDK merges paths into broader wildcard paths, and subscription reports may include unchanged attributes.
+
 ## Step 5: Interact with the On/Off Cluster 
 
 After building your project, flash the compiled firmware onto your target board. Once the device is running, you should observe log messages approximately every 10 seconds indicating that the OnOff cluster's OnOff attribute is being written to. This confirms that the cluster is active and functioning as expected.
