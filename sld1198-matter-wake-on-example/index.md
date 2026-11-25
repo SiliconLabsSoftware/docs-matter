@@ -1,13 +1,13 @@
 # Matter Wake on Matter Example
 
-The Wake on Matter (WoM) example shows a Matter node running alongside an OpenThread Network Co-Processor (OT-NCP) and a Bluetooth LE Radio Co-Processor (BLE-RCP) on one Silicon Labs device.
+The Wake on Matter (WoM) example demonstrates how to run a Matter node alongside an OpenThread network co-processor (OT-NCP) and a Bluetooth Low Energy radio co-processor (BLE-RCP) on a single Silicon Labs device.
 
-The Matter node subscribes to attributes on other Matter devices. When a subscription report matches a wake-up trigger that you configure, the device wakes the host. The BLE-RCP stack is available to the host over the Co-Processor Communication (CPC) interface.
+The Matter node subscribes to attributes on other Matter devices. When a subscription report matches a configured wake-up trigger, the WoM device wakes the host. The host can also access the BLE-RCP stack through the Co-Processor Communication (CPC) interface.
 
 A typical setup includes:
 
-- A Silicon Labs device flashed with the Wake on Matter example and connected to a Linux host, such as a Raspberry Pi, over CPC.
-- A Linux host that runs `cpcd`, `otbr-agent`, `chip-tool`, and `mmic_host`.
+- A Silicon Labs device flashed with the Wake on Matter example and connected to a Linux host, such as a Raspberry Pi, through CPC.
+- A Linux host running `cpcd`, `otbr-agent`, `chip-tool`, and `mmic_host`.
 - A second Matter accessory, such as the `lighting-app`, that the WoM device subscribes to.
 
 ```mermaid

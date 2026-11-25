@@ -1,39 +1,39 @@
 # Wake on Matter End-to-End Validation
 
-The example's `scripts/` directory includes two helper scripts. Together, they test a complete Wake on Matter setup from an Ubuntu-based OpenThread Border Router (OTBR) host:
+The example's `scripts/` directory includes two helper scripts that you can use to validate a complete Wake on Matter setup on an Ubuntu-based OpenThread Border Router (OTBR) host:
 
-- `scripts/verify_install.sh`: checks that `cpcd.service`, `otbr-agent.service`, and the `wpan0` interface are present and running.
-- `scripts/tests/end_to_end_validation.sh`: runs the checks above. Then it commissions an accessory and the Wake on Matter NCP, writes the ACL, and establishes a subscription.
+- `scripts/verify_install.sh`: Checks that `cpcd.service` and `otbr-agent.service` are installed and running, and that the `wpan0` interface is available and up.
+- `scripts/tests/end_to_end_validation.sh`: Runs the installation checks, commissions a Matter accessory and the Wake on Matter NCP, configures the ACL, and establishes a subscription.
 
-> **Note:** The end-to-end validation script is a work in progress. Use it at your own risk.
+> **Note:** The end-to-end validation script is still under development. Use it at your own risk.
 
-## Running the Script
+## Run the Script
 
-Complete the [Prerequisites](./01-prerequisites.md) first, then run:
+Complete the [Prerequisites](./01-prerequisites.md) before running the validation script:
 
 ```sh
 ./scripts/tests/end_to_end_validation.sh
 ```
 
-## Script Steps
+## Validate Script Steps
 
-The script runs these steps in order:
+The script performs the following steps in order:
 
-1. **Verify the installation:** runs `verify_install.sh` to check `cpcd.service`, `otbr-agent.service`, and `wpan0`. If a dataset exists but `wpan0` is down, the script brings it up with `ot-ctl`.
-2. **Commission the accessory over BLE-Thread:** reads the active dataset with `sudo ot-ctl dataset active -x`, then runs:
+1. **Verify the installation:** Runs `verify_install.sh` to check `cpcd.service`, `otbr-agent.service`, and `wpan0`. If an active dataset exists but `wpan0` is down, the script attempts to bring up the interface using `ot-ctl`.
+2. **Commission the accessory over BLE-Thread:** Reads the active dataset using `sudo ot-ctl dataset active -x` and then runs:
 
    ```sh
    chip-tool pairing ble-thread <ACCESSORY_NODE_ID> hex:<dataset> <SETUP_PINCODE> <DISCRIMINATOR>
    ```
 
-3. **Commission the Wake on Matter NCP:** first checks the device with `mmic_host matter_state`. If a fabric is already present, the script runs `mmic_host decommission` and checks that the fabric count is back to 0. Then it runs:
+3. **Commission the Wake on Matter NCP:** Checks the device state using `mmic_host matter_state`. If a fabric already exists, the script runs `mmic_host decommission` and verifies that the fabric count returns to 0. It then runs:
 
    ```sh
    mmic_host commission <NCP_NODE_ID>
    mmic_host matter_state          # must show the new nodeId
    ```
 
-4. **Grant ACL access:** lets the NCP open a CASE session with the accessory:
+4. **Grant ACL access:** Grant the NCP permission to establish  a CASE session with the accessory:
 
    ```sh
    chip-tool accesscontrol write acl \
@@ -41,7 +41,7 @@ The script runs these steps in order:
        <ACCESSORY_NODE_ID> 0
    ```
 
-5. **Establish a subscription** from the NCP to the accessory:
+5. **Establish a subscription**: Establishes a subscription from the NCP to the accessory:
 
    ```sh
    mmic_host establish_subscription \
@@ -49,11 +49,13 @@ The script runs these steps in order:
        <SUB_ENDPOINT_ID> <SUB_CLUSTER_ID> <SUB_ATTRIBUTE_ID>
    ```
 
-Each step prints `[PASS]` or `[FAIL]`. The script stops at the first failed step with exit code `1`, then prints a summary. If you press `Ctrl+C`, the script stops with exit code `130`.
+The script reports `[PASS]` or `[FAIL]` for each step. If a step fails, the script stops with exit code `1`, tand prints a summary. If you interrupt the script using `Ctrl+C`, it stops with exit code `130`.
 
 ## Configuration
 
-You can override every value with an environment variable. Default values are shown below.
+You can override the default configuration values using environment variables.
+
+The following table lists the available variables and their default values.
 
 | Variable             | Default                          | Purpose                                    |
 | -------------------- | -------------------------------- | ------------------------------------------ |
@@ -74,8 +76,8 @@ You can override every value with an environment variable. Default values are sh
 
 ### Example
 
-This example commissions the NCP with node ID `200`. It targets a `lighting-app` accessory with node ID `42`, subscribing to the `OnOff` attribute (`0x0000`) of the `OnOff` cluster (`0x0006`) on endpoint `1`:
-
+This example commissions the Wake on Matter NCP with node ID `200` and targets a `lighting-app` accessory with node ID `42`. It subscribes to the `OnOff` attribute (`0x0000`) of the `OnOff` cluster (`0x0006`) on endpoint `1`:
+Run the following command to override the default values:
 ```sh
 NCP_NODE_ID=200 \
 ACCESSORY_NODE_ID=42 \

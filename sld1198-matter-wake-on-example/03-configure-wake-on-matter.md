@@ -64,7 +64,7 @@ addWakeUp 6 0 0 1
 
 ## Step 5: Verify the Wake-Up Triggers
 
-List the active triggers to check that the trigger was added:
+List the active wake-up triggers to verify that the trigger was added:
 
 ```sh
 > wakeUpList
