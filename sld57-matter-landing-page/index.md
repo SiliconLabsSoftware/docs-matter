@@ -53,3 +53,5 @@ Want to get a Matter application up and running quickly? Here's a high-level ove
 **If you are new to Matter** or would like more information about Silicon Labs Matter-based products, see the [Matter content on silabs.com](https://www.silabs.com/wireless/matter).
 
 **For background information on the Matter standard**, see the [Connectivity Standard Alliance page](https://csa-iot.org/all-solutions/matter/).
+
+**For AI-assisted Matter development workflows**, see the [Simplicity AI SDK Quick Reference](https://docs.silabs.com/simplicity-ai-sdk/latest/simplicity-ai-sdk-user-guide/quick-reference) for available Matter skills and example usage.
