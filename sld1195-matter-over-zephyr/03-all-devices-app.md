@@ -51,6 +51,14 @@ west build -d build/all-devices-app
 
 Menuconfig changes apply only to the current build directory. To preserve these settings for a clean build, add the corresponding options to `applications/all-devices-app/zephyr/prj.conf`. For example:
 
+A single device type:
+
+```ini
+CONFIG_ALL_DEVICES_DEVICE_DISHWASHER=y
+```
+
+Multiple device types:
+
 ```ini
 CONFIG_ALL_DEVICES_DEVICE_ON_OFF_LIGHT=y
 CONFIG_ALL_DEVICES_DEVICE_OCCUPANCY_SENSOR=y
