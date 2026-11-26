@@ -303,9 +303,9 @@ python3 provision.py write --vendor_name "Silicon Labs" --product_name "Silabs E
 python3 provision.py read "vendor_name, product_name, version, dac_cert" --dac_cert cert.der
 ```
 
-## Use
+## Usage
 
-### Zephyr
+### When using Zephyr RTOS
 
 Add `--rtos zephyr` to the standard provisioning command. The tool selects the
 Zephyr Generator Firmware (GFW) and device settings from `config/devices.yaml`.
