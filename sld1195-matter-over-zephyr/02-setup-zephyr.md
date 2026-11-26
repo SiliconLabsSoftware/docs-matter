@@ -13,7 +13,7 @@ cd ~/workspace
 source .venv/bin/activate
 ```
 
-## Install GN
+## Install Generate-Ninja (GN)
 
 Zephyr uses CMake, while the Matter module uses GN to generate Ninja build files. Make sure GN is available in your `PATH`.
 
@@ -48,8 +48,8 @@ In `~/workspace/zephyr-silabs/west.yml`, add `self.import` under `manifest` to i
 
 ```yaml
 manifest:
-    self:
-        import: submanifests
+  self:
+    import: submanifests
 ```
 
 Merge this setting into the existing manifest without replacing its projects or other settings. If your workspace uses a different manifest repository, add the setting to that repository’s manifest instead.
@@ -64,19 +64,19 @@ Create `~/workspace/zephyr-silabs/submanifests/matter.yaml` with the following c
 
 ```yaml
 manifest:
-    projects:
-        - name: matter
-          url: https://github.com/SiliconLabsSoftware/matter_sdk
-          revision: release_2.10-1.6.1
-          path: modules/lib/matter
-          submodules:
-              - path: third_party/editline/repo
-              - path: third_party/jsoncpp/repo
-              - path: third_party/nlassert/repo
-              - path: third_party/nlio/repo
-              - path: third_party/uriparser/repo
-              - path: third_party/pigweed/repo
-              - path: third_party/silabs/matter_support
+  projects:
+    - name: matter
+      url: https://github.com/SiliconLabsSoftware/matter_sdk
+      revision: release_2.10-1.6.1
+      path: modules/lib/matter
+      submodules:
+        - path: third_party/editline/repo
+        - path: third_party/jsoncpp/repo
+        - path: third_party/nlassert/repo
+        - path: third_party/nlio/repo
+        - path: third_party/uriparser/repo
+        - path: third_party/pigweed/repo
+        - path: third_party/silabs/matter_support
 ```
 
 Fetch Matter and its required submodules:

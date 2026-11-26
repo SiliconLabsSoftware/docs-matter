@@ -72,7 +72,7 @@ The directory structure is as follows:
     - efr32mg26
     - mgm24
     - si917
-  
+
 ## Provision Script
 
 The `provision.py` file is the main script used to load all the required data on the Matter device. This script requires:
@@ -110,9 +110,9 @@ Verion 1 defines the following commands:
 - CSR: Used for on-device key and CSR generation.
 - Import: Used to transmit files to the device (DAC, DAC key, PAI, and CD). Each file is sent whole in a single exchange.
 - Setup: Used to transmit all other factory device to the device. The transmitted data is sent in a single package,
-in precise order, with fixed data types and sizes.
-Users of version 1.0 do not execute any of these commands manually. The script simply execute these commands sequentially as needed.
-There are no extension capabilities on this protocol, nor any provision to read-back the provisioned data.
+  in precise order, with fixed data types and sizes.
+  Users of version 1.0 do not execute any of these commands manually. The script simply execute these commands sequentially as needed.
+  There are no extension capabilities on this protocol, nor any provision to read-back the provisioned data.
 
 ### Version 2.x
 
@@ -135,11 +135,11 @@ Instead of fixed-positions, this protocol uses IDs to identify the arguments in 
 The Provision Tool can transfer the arguments to the device in two ways:
 
 - J-Link RTT: When the device is physically connected to the host, the GFW can communicate through the serial port using J-Link RTT.
-This method can be used both in development and factory environments. This method works with the legacy Protocol version 1.x or
-the new protocol version 2.x.
+  This method can be used both in development and factory environments. This method works with the legacy Protocol version 1.x or
+  the new protocol version 2.x.
 - Bluetooth: The provision script can transmit the data directly to applications running in provision-mode. While in this mode,
-Silicon Labs' example applications use the bluetooth communication to receive provisioning data. The Bluetooh channel requires
-Provision Protocol v2.x.
+  Silicon Labs' example applications use the bluetooth communication to receive provisioning data. The Bluetooh channel requires
+  Provision Protocol v2.x.
 
 ## Storage
 
@@ -218,8 +218,8 @@ file defines the well-known (default) parameters used by the automatic provision
 ^6 Salt and verifier must be provided as base64 string
 
 WARNING:
-    With the release of version 2.0, many shortcuts have been modified. Single-characters are now reserved for tool options.
-    Most long versions have been preserved, with the exception of `--config` and `--att_certs`.
+With the release of version 2.0, many shortcuts have been modified. Single-characters are now reserved for tool options.
+Most long versions have been preserved, with the exception of `--config` and `--att_certs`.
 
 ### Custom Parameters
 
@@ -288,8 +288,8 @@ When using version 1.x, there is only action available, which performs device pr
 In contrast, version 2.x defines the following actions:
 
 - `auto`: This is the default action, and emulates the automatic provisioning performed in version 1.
-   This action sends: `version`, `serial_number`, `vendor_id`, `vendor_name`, `product_id`, `product_name`, `product_label`, `product_url`, `part_number`, `hw_version`, `hw_version_str`, `manufacturing_date`, `unique_id`, `discriminator`, `spake2p_passcode`, `spake2p_iterations`, `spake2p_salt`, `spake2p_verifier`, `setup_payload`, `commissioning_flow`, `rendezvous_flags`, `firmware_info`, `dac_cert`, `pai_cert`, `certification`, `dac_key`
-    And reads-back: `unique_id`, `discriminator`, `spake2p_passcode`, `setup_payload`
+  This action sends: `version`, `serial_number`, `vendor_id`, `vendor_name`, `product_id`, `product_name`, `product_label`, `product_url`, `part_number`, `hw_version`, `hw_version_str`, `manufacturing_date`, `unique_id`, `discriminator`, `spake2p_passcode`, `spake2p_iterations`, `spake2p_salt`, `spake2p_verifier`, `setup_payload`, `commissioning_flow`, `rendezvous_flags`, `firmware_info`, `dac_cert`, `pai_cert`, `certification`, `dac_key`
+  And reads-back: `unique_id`, `discriminator`, `spake2p_passcode`, `setup_payload`
 - `write`: Only arguments defined either in input files or command-line are sent, for instance:
 
 ```shell
@@ -297,7 +297,7 @@ python3 provision.py write --vendor_name "Silicon Labs" --product_name "Silabs E
 ```
 
 - `read`: Only arguments defined in a comma-separated list are read from the device. Arguments of type `path` are read in binary form, and
-stored in the given path, for instance:
+  stored in the given path, for instance:
 
 ```shell
 python3 provision.py read "vendor_name, product_name, version, dac_cert" --dac_cert cert.der
@@ -319,11 +319,12 @@ the provisioning tool version that includes Zephyr GFW for the target device.
 
 In the device's `zephyr` section of `config/devices.yaml`, `flash_addr` must match
 the offset of the application's `storage` partition, and `flash_size` must match
-its size. These are partition values, not the device's total flash size. If you
-change the application's partition layout, update these settings before provisioning.
+the partition size. These values refer to the partition, not the device's total flash size.
+If you change the application's partition layout, update these settings before provisioning.
 
-The [All-Devices Application](../sld9999-matter-zephyr/03-all-devices-app.md)
+The [All-Devices application](../sld9999-matter-zephyr/03-all-devices-app.md)
 uses Silicon Labs provisioning data when built with `CONFIG_CHIP_FACTORY_DATA=y`.
+
 Provision the device before running an application that requires factory data.
 
 ### Zero Command-line Arguments
@@ -445,6 +446,7 @@ By default, `provision.py` uses the Matter Test PAA [Chip-Test-PAA-NoVID-Cert.de
 ### Example
 
 From the root of the Silicon Labs Matter repo, build an sample application. For instance:
+
 ```shell
 ./scripts/examples/gn_silabs_example.sh ./examples/lighting-app/silabs ./out/lighting-app/ BRD4187C
 ```
